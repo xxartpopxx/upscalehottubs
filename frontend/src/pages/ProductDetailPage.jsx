@@ -198,6 +198,11 @@ const ProductDetailPage = () => {
           
           {/* Product Info */}
           <div>
+            {product.brand && (
+              <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">
+                {product.brand}
+              </p>
+            )}
             {product.series && (
               <p className="text-sm text-[#B91C1C] font-semibold uppercase tracking-wider mb-2">
                 {product.series}

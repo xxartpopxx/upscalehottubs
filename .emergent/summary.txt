@@ -10,89 +10,105 @@ The user wants to rebuild and significantly improve their existing website, .
     - Prominently display the slogan: “Start Living Your Healthiest Life Today.”
 - **Product Imagery:**
     - Use high-quality product images from  and .
-    - Optimize all images for performance (WebP/AVIF, compression, lazy loading).
+    - Optimize all images for performance.
 - **Product Pages:**
-    - Each product needs a detail page with original content, an enhanced image gallery, clean layout, features, specs, and strong CTAs.
-    - User wants to click a product and be taken to a detail page similar to .
-    - Implement a color-changing feature on the product detail page.
-- **Jingle:** Add an optional, user-triggered jingle with a mute/unmute toggle whose preference is saved.
-- **Lighthouse Score:** Achieve a 100% score across Performance, Accessibility, Best Practices, and SEO (Non-negotiable).
-- **UX/Design:** Modern, clean, premium, fast, mobile-first, and conversion-focused. Improve layout, navigation (sticky header), and CTA visibility.
-- **Contact Form:** The form should be functional and work with Netlify forms.
-- **Map:** Add a Google Map to the contact page.
-- **Social Media:** Integrate Instagram and Facebook with a lightweight feed display.
-- **Technical Rules:** Clean semantic HTML, lightweight CSS/JS, and performance-first architecture.
+    - Each product needs a detail page with an image gallery, clean layout, features, specs, and strong CTAs, similar to .
+    - Implement a color-changing feature that swaps the main product image for each color combination.
+    - Add a model comparison table on product pages.
+- **Navigation & Content:**
+    - Consolidate navigation into Shop, Discover, Resources, etc.
+    - Add a Wellness page with content inspired by .
+- **Filters:** Add filtering for brands (Grand River vs. Viking) on the shopping page.
+- **Lighthouse Score:** Achieve a 100% score across all categories (non-negotiable).
+- **UX/Design:** Modern, clean, fast, mobile-first, and conversion-focused. Add more animations and remove distracting ones (like the bouncing mouse).
 
 **User's preferred language**: English
 
 **what currently exists?**
-A single-page React application built with Vite and Tailwind CSS. The entire website logic, including routing and page components, is contained within a single large file: . The site features a hero section with a video, product catalog sections, an about page, a contact page with a functional form and an embedded Google Map, and a Spa Butler content page. It also includes a pop-up modal. Most of the content and imagery have been scraped and integrated from the original site and specified supplier sites.
+The application has been completely refactored from a monolithic single-file app into a scalable, modern React application. It uses Vite, Tailwind CSS, and  for routing. The structure now includes separate directories for pages, layout components (Header, Footer), and UI elements. All product data, including specs and image URLs for both Grand River and Viking spas, is centralized in .
+
+The site features a homepage, a consolidated navigation bar, a Wellness page, a shop page with brand filters, and dynamic product detail pages.
 
 **Last working item**:
-    - Last item agent was working: The agent was beginning the implementation of a major new feature: creating individual product detail pages with a color-changing functionality, as requested by the user who referenced . The agent's last action was to crawl the supplier's website to gather the necessary data (product details, color options, images) to build these pages.
+    - Last item agent was working: The agent was implementing a new set of user requests to enhance the product detail pages. This involved scraping the reference site to get URLs for every possible color combination image to enable a true image-swapping system. The agent was in the process of updating the  data file with this new information and preparing to redesign the  to include a model comparison table and match the reference site's layout more closely.
     - Status: IN PROGRESS
     - Agent Testing Done: N
-    - Which testing method agent to use? both
+    - Which testing method agent to use? frontend
     - User Testing Done: N
 
 **All Pending/In progress Issue list**:
-  - Issue 1: The current codebase is not scalable because the entire application is in a single  file. This makes it difficult to maintain and add new features like the requested product detail pages. (PRIORITY: P0)
+  - Issue 1: Product detail page layout needs to be redesigned to match the reference site (). (PRIORITY: P0)
+  - Issue 2: The bouncing mouse animation on the Wellness page needs to be removed. (PRIORITY: P1)
+  - Issue 3: The most jets filter on the shop page must be removed. (PRIORITY: P1)
 
   Issues Detail:
-  - Issue 1: 
-     - Attempted fixes: None. The agent has been adding more code to the same file.
-     - Next debug checklist: 
-       - Refactor  by breaking it down into smaller, reusable components.
-       - Create a  directory with subdirectories for ,  (Header, Footer), and  (ProductCard, Button).
-       - Implement a proper routing system using  to handle navigation between pages (e.g., , , , ).
-     - Why fix this issue and what will be achieved with the fix? This refactoring is critical for maintainability and will make it feasible to build the new product detail page feature without creating more technical debt.
-     - Status:  NOT STARTED
-     - Is recurring issue? Y/N: N
+  - Issue 1:
+     - Attempted fixes: The current page is functional but does not have the layout or model comparison table requested by the user.
+     - Next debug checklist:
+        - View .
+        - Implement a new layout that includes a model comparison table, similar to the reference link.
+        - Ensure the content and structure align with the user's request for a near-identical look.
+     - Why fix this issue and what will be achieved with the fix? To meet the user's explicit design requirements and improve the user experience for product comparison.
+     - Status: NOT STARTED
+     - Is recurring issue? N
      - Should Test frontend/backend/both after fix? frontend
-     - Blocked on other issue: None
+     - Blocked on other issue: None.
+  - Issue 2:
+     - Attempted fixes: None.
+     - Next debug checklist:
+        - Locate the bouncing mouse animation code within .
+        - Remove the component or CSS causing the animation.
+     - Why fix this issue and what will be achieved with the fix? To address a direct user request and improve the page's UI by removing a distracting element.
+     - Status: NOT STARTED
+     - Is recurring issue? N
+     - Should Test frontend/backend/both after fix? frontend
+     - Blocked on other issue: None.
+  - Issue 3:
+     - Attempted fixes: None.
+     - Next debug checklist:
+        - View .
+        - Locate the filter logic and UI.
+        - Remove the most jets filter option.
+     - Why fix this issue and what will be achieved with the fix? To clean up the UI and remove an unwanted feature as per the user's request.
+     - Status: NOT STARTED
+     - Is recurring issue? N
+     - Should Test frontend/backend/both after fix? frontend
+     - Blocked on other issue: None.
 
 **In progress Task List**:
-  - Task 1:  Implement Product Detail Pages with Color Swatches (PRIORITY: P0)
+  - Task 1: Implement true image-swapping for color selection. (PRIORITY: P0)
 
  Task Detail:
-  - Task 1: 
-     - Where to resume: The agent has finished crawling the supplier site for product data. The next step is to process this data and architect the new feature. It's highly recommended to first refactor  (as noted in the Pending Issue) and then:
-        1. Create a new route and a  component.
-        2. Update the  component to link to this new detail page, passing the product ID.
-        3. On the , display all scraped product information.
-        4. Implement the color swatch UI. Clicking a swatch should update the main product image.
-     - What will be achieved with this? Users will have a rich, interactive experience, allowing them to view detailed product information and visualize color options, mimicking the functionality of the reference site and improving conversion potential.
-     - Status:  IN PROGRESS
+  - Task 1:
+     - Where to resume: The agent has crawled for the image URL patterns () and was updating . The next step is to modify  and  to use this data to swap the main product image whenever a color swatch is clicked.
+     - What will be achieved with this? A dynamic and realistic product visualization experience, fulfilling a critical user requirement.
+     - Status: IN PROGRESS
      - Should Test frontend/backend/both after fix? frontend
-     - Blocked on something: Blocked by the need to refactor  for a scalable implementation.
+     - Blocked on something: None.
 
 **Upcoming and Future Tasks**
     - **Upcoming Tasks:**
-        - **P0: Code Refactoring:** Break down the monolithic  into modular components and pages.
-        - **P1: Achieve 100% Lighthouse Score:** Explicitly run and optimize for a 100% Lighthouse score, focusing on Performance, Accessibility, Best Practices, and SEO. This was a non-negotiable requirement.
-        - **P1: Implement Full SEO Requirements:** Add structured data/schema (LocalBusiness, Product) and ensure all other SEO elements from the original site are perfectly preserved and implemented.
+        - **P0: Add Model Comparison Table:** Integrate the model comparison feature into the redesigned .
+        - **P1: Achieve 100% Lighthouse Score:** Run Lighthouse tests and optimize for 100% across Performance, Accessibility, Best Practices, and SEO.
+        - **P1: Implement Full SEO Requirements:** Add structured data/schema (LocalBusiness, Product) to the site.
+        - **P2: Add More Animation Effects:** Add subtle, modern animations to improve user experience.
     - **Future Tasks:**
-        - **P2: Jingle Functionality:** Implement the user-triggered jingle with a visible mute/unmute button and persist the user's preference using .
-        - **P2: Social Media Feed Integration:** Replace the current social media icon links with lightweight, embedded feeds for Instagram and Facebook.
-        - **P2: Add Testimonials/Reviews Section:** Add a section for customer testimonials and reviews to build trust.
+        - **P2: Jingle Functionality:** Implement the user-triggered jingle with a mute/unmute toggle and persist the state using .
+        - **P2: Social Media Feed Integration:** Replace social media links with lightweight, embedded feeds for Instagram and Facebook.
+        - **P2: Add Testimonials/Reviews Section:** Create a new section to display customer testimonials.
 
 **Completed work in this session**
-- **Website Rebuild:** Created a new React-based website from scratch.
-- **Content Migration:** Scraped and integrated content from .
-- **Component Implementation:**
-    - Hero section with video background, animated slogan, and larger logo ().
-    - Product sections with swipeable image carousels for multiple views ().
-    - Tax Special promotional pop-up modal ().
-    - Spa Butler and About Us pages with migrated content ().
-    - Functional contact form and embedded Google Map on the contact page ().
-- **Styling and UX:**
-    - Implemented a patriotic color scheme and modern UI based on design guidelines.
-    - Fixed mobile navigation issues and broken image links.
-    - Updated the Open Graph image in  for better social sharing.
-- **Testing:** Regularly used the testing agent to verify functionality after major changes, achieving high pass rates.
+- **Massive Code Refactor:** Migrated the entire application from a single monolithic  into a scalable, component-based React structure using .
+- **Component & Page Creation:** Built out a full set of new components and pages, including , , , ,  (shop), and .
+- **Feature Implementation:**
+    - **Shop Page:** Created a shop page () with product grids and filters to separate spas by brand (Grand River vs. Viking).
+    - **Wellness Page:** Built a new  with a hero section, image gallery, and benefit sections.
+    - **Consolidated Navigation:** Refactored the header to use dropdown menus for Shop and Discover.
+- **Data Management:** Centralized all product data (for both brands) into a structured  file.
+- **Testing:** Successfully used the testing agent multiple times to validate the refactoring and new features.
 
 **Earlier issues found/mentioned but not fixed**
-None. Issues that arose during development (e.g., broken images, mobile nav links) were addressed in subsequent steps. The pending items are unaddressed requirements from the original problem statement, listed in Upcoming and Future Tasks.
+None. All prior issues were resolved. The current pending items are from the most recent user requests.
 
 **Known issue recurrence from previous fork**
 - Issue recurrence in previous fork: None
@@ -104,67 +120,68 @@ None. Issues that arose during development (e.g., broken images, mobile nav link
 
 **Key Technical Concepts**
 - **Frontend:** React, Vite, Tailwind CSS
-- **Architecture:** Single Page Application (SPA) currently implemented as a single, large component.
-- **Data:** All content is hardcoded into the  component, based on scraped data.
+- **Routing:** 
+- **Architecture:** Component-based SPA with centralized static data.
 
 **key DB schema**
-- N/A. The project is frontend-only with no database.
+- N/A. The project is frontend-only.
 
 **changes in tech stack**
-- None.
+- **Added:**  for handling client-side routing.
 
 **All files of reference**
-- : The most critical file, containing the entire application's UI and logic. It exists because the agent built the entire site within this single file.
-- : Updated to set the  for social media sharing.
-- : Contains the product requirements and a log of completed work. It exists to track project progress.
+- : Now serves as the main router configuration for the application.
+- : The source of truth for all product information, including specs and image URLs.
+- : The component to be modified for the image-swapping and model comparison features.
+- : The shop page containing the filters.
+- : The page where the bouncing mouse animation needs to be removed.
+- : Contains the product requirements and project log.
 - : Contains JSON reports from the testing agent.
 
 **Areas that need refactoring**:
-The entire application resides in . This file is over 1500 lines long and is unmanageable. It MUST be broken down into a proper React project structure with separate components for pages, layouts (Header, Footer), and UI elements (ProductCard, Modal). A router like  should be used to handle page navigation instead of the current conditional rendering logic.
+-  needs a significant layout overhaul to incorporate the model comparison table and match the reference site's design.
 
 **key api endpoints**
 - N/A.
 
 **Critical Info for New Agent**
-- **Refactor First:** Do not add the new product detail page feature to the existing  file. The immediate priority is to refactor the codebase into a standard React component structure. Attempting to build on the current monolithic file will be slow and error-prone.
-- **User's Goal:** The user's primary goal is a high-quality, interactive site that drives conversions, closely mimicking the experience of .
-- **Key Unfinished Requirements:** Remember the non-negotiable 100% Lighthouse score and the detailed SEO schema requirements. These are critical for project success and have not been validated.
+- **Priority 1: Implement True Image Swapping.** The CSS overlay/tinting approach was a temporary step. The user wants a system that loads a different, pre-rendered image for each selected color combination. The data for this is being gathered in . You must implement this logic in .
+- **Priority 2: Redesign Product Detail Page.** Concurrently with the image swapping, you must redesign the  layout to add the model comparison table and align it with the look and feel of .
+- **Address Minor Fixes:** Do not forget to remove the most jets filter and the bouncing mouse on the Wellness page.
 
 **documents and test reports created in this job**
-- 
-- 
-- 
+-  (updated)
 - 
 - 
 - 
 
-**Last 10 User Messages and any pending HUMAN messages** 
-1.  **User:** Requests a product detail page similar to , including color-changing functionality. Also wants products separated by brand (Grand River, Viking). (Status: IN PROGRESS)
-2.  **User:** Asks to lower the hero logo, add content for a Spa Butler page, and embed a Google Map on the contact page. (Status: COMPLETED)
-3.  **User:** Requests the About page to feature a specific image, product thumbnails to default to the side view, a swipeable gallery on the product card, American Made text to be moved above the logo, and videos to autoplay on mobile. (Status: COMPLETED)
-4.  **User:** Requests zooming in on the hero video, making the logo bigger, adding more animations, making a button more visible, pulling two images per product, removing two sections, and adding a pop-up. (Status: COMPLETED)
-5.  **User:** Provides an updated logo and reiterates several core requirements: use uploaded photos, pull all content from the old site, make the contact form real, and ensure product listings do not link externally. (Status: COMPLETED)
+**Last 10 User Messages and any pending HUMAN messages**
+1.  **User:** Requests several major improvements: pull all color combination images for true image swapping, add a model comparison table to product pages, make the layout similar to the reference site, remove the most jets filter, ensure the brand filter exists, add more animations, and remove the bouncing mouse on the wellness page. (Status: IN PROGRESS)
+2.  **User:** Expresses dissatisfaction with the color-changing feature, stating that the entire image should not be swapped. The base image should remain consistent, with only the shell and cabinet colors changing, akin to a true color variation system, not an image replacement system. Also requested more images on the wellness page. (Status: COMPLETED, but now superseded by the latest request)
+3.  **User:** Requests to implement filters for pricing, separate products by brand (Viking vs. Grand River), and make the color swatches on the product detail page actually change the hot tub image. (Status: COMPLETED)
+4.  **User:** Asks for product detail pages similar to a reference site, with a color-changing feature. (Status: COMPLETED, but is now being iterated upon)
 
 **Project Health Check:**
-- **Mocked:** The entire application is a functional prototype. All data is hardcoded.
-- **Broken:** The architecture is broken. The single  file is a major liability and needs immediate refactoring.
+- **Mocked:** The application is a functional frontend prototype. All product data is hardcoded in .
+- **Broken:** N/A. The application architecture is stable.
 
 **3rd Party Integrations**
-- **Google Maps:** An  is used to embed a map on the contact page.
-- **Netlify Forms:** The contact form is configured with Netlify attributes ().
+- **Google Maps:** An  is used on the contact page.
+- **Netlify Forms:** The contact form is configured with .
 
 **Testing status**
   - Testing agent used after significant changes: YES
   - Troubleshoot agent used after agent stuck in loop: NO
   - Test files created: []
-  - Known regressions: None. Previous issues were fixed.
+  - Known regressions: None.
 
 **Credentials to test flow:**
 N/A
 
 **What agent forgot to execute**
-- **Lighthouse 100% Mandate:** The agent never ran a Lighthouse test to verify the non-negotiable 100% score requirement.
-- **SEO Schema Markup:** The agent was instructed to implement , , and  schema, which has not been done.
-- **Jingle Functionality:** The specific requirement for a user-triggered jingle with persistent mute/unmute state via  was not implemented.
-- **Social Media Feed:** The agent added links to social profiles but did not implement the requested embedded feeds.
-- **Testimonials/Reviews:** This section, mentioned in the PRD, was never created.</analysis>
+The following high-priority items from the original problem statement have not yet been addressed:
+- **Lighthouse 100% Mandate:** No Lighthouse tests have been run to verify the 100% score requirement.
+- **SEO Schema Markup:** Structured data (, ) has not been implemented.
+- **Jingle Functionality:** The user-triggered jingle with persistent mute/unmute state has not been implemented.
+- **Social Media Feed:** Social media links have not been replaced with embedded feeds.
+- **Testimonials/Reviews:** This section has not been created.</analysis>

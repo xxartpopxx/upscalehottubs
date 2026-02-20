@@ -519,9 +519,9 @@ const IncludedSection = () => (
 const CategoriesSection = () => {
   const categories = [
     { name: 'Hot Tubs', href: '/hot-tubs', image: PREMIER_PRODUCTS.chariton2.primary },
-    { name: 'Swim Spas', href: '/swim-spas', image: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png' },
+    { name: 'Swim Spas', href: '/swim-spas', image: PREMIER_PRODUCTS.chesapeake2.primary },
     { name: 'Saunas', href: '/saunas', image: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80' },
-    { name: 'Cold Plunges', href: '/cold-plunges', image: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg' },
+    { name: 'Cold Plunges', href: '/cold-plunges', image: PREMIER_PRODUCTS.swift.primary },
   ];
 
   return (

@@ -121,8 +121,8 @@ const SAUNAS = [
 ];
 
 const COLD_PLUNGES = [
-  { id: 1, name: 'Endurance Cold Plunge Bundle', price: 'Call for Price', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg', secondary: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg' }, description: 'Complete cold plunge system with chiller.' },
-  { id: 2, name: 'The Resolute Pro', price: 'Call for Price', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg', secondary: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg' }, description: 'Professional-grade cold plunge tub.' },
+  { id: 1, name: 'Endurance Cold Plunge Bundle', price: 'Call for Price', images: { primary: PREMIER_PRODUCTS.swift.primary, secondary: PREMIER_PRODUCTS.swift.secondary }, description: 'Complete cold plunge system with chiller.' },
+  { id: 2, name: 'The Resolute Pro', price: 'Call for Price', images: { primary: PREMIER_PRODUCTS.manistee.primary, secondary: PREMIER_PRODUCTS.manistee.secondary }, description: 'Professional-grade cold plunge tub.' },
 ];
 
 // Tax Special Popup Component

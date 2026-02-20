@@ -92,17 +92,7 @@ const WellnessPage = () => {
           </motion.div>
         </div>
         
-        {/* Scroll indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ delay: 1, y: { repeat: Infinity, duration: 1.5 } }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-8 h-12 border-2 border-white/50 rounded-full flex items-start justify-center pt-2">
-            <div className="w-2 h-2 bg-white rounded-full animate-bounce" />
-          </div>
-        </motion.div>
+{/* Scroll indicator removed as per user request */}
       </section>
       
       <div className="max-w-7xl mx-auto px-4 md:px-8">

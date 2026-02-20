@@ -18,119 +18,77 @@ Premium hot tub retailer website serving Naples, FL and South Carolina.
 - **Icons:** Lucide React
 - **Architecture:** Modular component-based SPA
 
-## Code Architecture
-```
-/app/frontend/src/
-├── App.js                    # Main app with routes
-├── components/
-│   ├── layout/
-│   │   ├── Header.jsx        # Navigation with Shop/Discover dropdowns
-│   │   ├── Footer.jsx        # Site footer
-│   │   └── JinglePlayer.jsx  # Audio jingle button
-│   ├── products/
-│   │   ├── ProductCard.jsx   # Product card with image gallery
-│   │   ├── ProductGrid.jsx   # Products grid layout
-│   │   └── ColorSelector.jsx # Shell/cabinet color picker with checkmarks
-│   └── ui/                   # Shadcn UI components
-├── pages/
-│   ├── HomePage.jsx          # Hero, products, categories
-│   ├── HotTubsPage.jsx       # Hot tubs with FILTERS + brand separation
-│   ├── SwimSpasPage.jsx      # Swim spas catalog
-│   ├── SaunasPage.jsx        # Saunas catalog
-│   ├── ColdPlungesPage.jsx   # Cold plunges catalog
-│   ├── ProductDetailPage.jsx # Product with COLOR-CHANGING swatches
-│   ├── WellnessPage.jsx      # Health benefits content
-│   ├── AboutPage.jsx         # Dynasty Spas info
-│   ├── ContactPage.jsx       # Form + Google Map
-│   ├── EventsPage.jsx        # Community events
-│   ├── FinancingPage.jsx     # Financing options
-│   └── SpaButlerPage.jsx     # Maintenance services
-└── data/
-    ├── products.js           # Products with colorImages, filter/sort functions
-    └── constants.js          # Site constants, wellness content
-```
-
 ## What's Been Implemented
 
-### ✅ Product Color Swatches (NEW - Feb 20, 2026)
-- [x] Shell color swatches change product images when clicked
-- [x] Cabinet color swatches change product images when clicked
-- [x] Checkmarks appear on selected colors
-- [x] Fallback image logic when exact color combo not available
-- [x] Brand name displayed above series name
+### ✅ Color Visualization System (UPDATED - Feb 20, 2026)
+**KEY CHANGE:** No longer swaps images when colors change!
+- [x] **Single base image per product** - same photo stays consistent
+- [x] **CSS color tint overlays** - shell/cabinet colors applied via blend modes
+- [x] **Color indicator badges** on image showing selected colors
+- [x] **Color name labels** under each swatch
+- [x] **Color summary section** at bottom of selector
+- [x] **Info tooltip** explaining color visualization
 
-### ✅ Shop Filters (NEW - Feb 20, 2026)
-- [x] Filter toggle button with active filter count
+Technical implementation:
+- `ColorTintOverlay` component uses CSS gradients with `mixBlendMode: multiply`
+- Shell color applies to upper/inner portion via radial gradient
+- Cabinet color applies to lower/outer portion via linear gradient
+- Smooth 500ms transition when colors change
+
+### ✅ Wellness Page (ENHANCED - Feb 20, 2026)
+- [x] **Hero section** with "Live Your Best Life" messaging
+- [x] **Image gallery** with 3 lifestyle/product images
+- [x] **5 benefit sections** each with:
+  - Real lifestyle images
+  - 3 bullet points with leaf icons
+  - Icon badges
+- [x] **Statistics section** (37°C, 15-20 min, 40% stress reduction)
+- [x] **2 testimonials** with 5-star ratings
+- [x] **Feature grid** (Joint Relief, Circulation, Sleep, Recovery)
+- [x] **CTA section** with gradient background
+
+### ✅ Shop Filters
 - [x] Brand filter: All Brands, Grand River Spas, Viking Spas
-- [x] Price filters: Min ($5k, $7k, $9k, $10k) / Max ($7k-$15k)
+- [x] Price filters: Min/Max
 - [x] Capacity filter: 1-3, 4-6, 7+ persons
 - [x] Series filter (dynamic based on brand)
 - [x] Seating layout filter: Open / Lounge
 - [x] Sort: Featured, Price Low/High, Name A-Z, Most Jets
-- [x] Clear all filters button
 
-### ✅ Brand Separation (NEW - Feb 20, 2026)
-- [x] Grand River Spas section with 12 products
-- [x] Viking Spas section with 15 products
-- [x] Both brands on same page when "All Brands" selected
-- [x] Viking products include: Elite Series, Heirloom Series, Element Series
+### ✅ Brand Separation
+- [x] Grand River Spas section (12 products)
+- [x] Viking Spas section (15 products)
 
-### ✅ Navigation (Consolidated)
-- [x] Home link
+### ✅ Navigation
 - [x] Shop dropdown (Hot Tubs, Swim Spas, Saunas, Cold Plunges)
 - [x] Wellness link
-- [x] Discover dropdown (About Us, Events, Financing, Spa Butler)
-- [x] Contact link
-- [x] Mobile responsive menu
+- [x] Discover dropdown (About, Events, Financing, Spa Butler)
 
-### ✅ Product Detail Pages
-- [x] Individual routes for each product (/products/:id)
-- [x] Color swatches with image changing
-- [x] Side view / Overhead view toggle
-- [x] Product specifications display
-- [x] Features and options tabs
-- [x] Request Quote CTA
-
-### ✅ Wellness Page
-- [x] Hero section with hot tub image
-- [x] "Live Your Best Life" messaging
-- [x] Health benefits sections
-- [x] CTAs to shop/contact
-
-### ✅ Other Pages
-- [x] Homepage with hero video, products, categories
-- [x] About page with Dynasty Spas info
-- [x] Contact page with Netlify form + Google Map
-- [x] Events, Financing, Spa Butler pages
+## Code Architecture
+```
+/app/frontend/src/
+├── components/products/
+│   ├── ColorSelector.jsx     # Color swatches with labels
+│   └── ProductCard.jsx       # Product cards
+├── pages/
+│   ├── ProductDetailPage.jsx # ColorTintOverlay system
+│   ├── WellnessPage.jsx      # Enhanced with images
+│   └── HotTubsPage.jsx       # Filters + brand separation
+└── data/
+    └── products.js           # 27 hot tubs + filters
+```
 
 ## Product Data Summary
-
-### Grand River Spas (12 products)
-- Premier Series: Chariton 1-2, Chesapeake 1-2, Saginaw 1-2, Thornapple 1-2, Muskegon 2, Sturgeon, Swift, Manistee
-- Price range: $6,599 - $10,995
-- IDs: gr-chariton-2, gr-chariton-1, etc.
-
-### Viking Spas (15 products)
-- Elite Series: Heritage, Tradition, Apex, Ascent, Royale X, Regal X, Elevate X
-- Heirloom Series: Regal, Royale, Elevate, Viking
-- Element Series: Regal P+, Royale P+, Elevate P+, Viking P+
-- Price range: $5,495 - $12,995
-- IDs: vs-heritage, vs-tradition, etc.
-
-### Swim Spas (4 products)
-- Valhalla, Asgard, Odin, Thor
-- Price range: $24,995 - $39,995
-
-## Color Options
-- **Shell Colors:** White Satin, Silver Satin, Opal Satin
-- **Cabinet Colors (Grand River):** Coastal Gray, Walnut, Barnwood, Black Slate
-- **Cabinet Colors (Viking):** Stone, Chestnut, Slate, Ash Gray
+- **Grand River Spas:** 12 products (Premier Series)
+- **Viking Spas:** 15 products (Elite/Heirloom/Element Series)
+- **Swim Spas:** 4 products
+- **Total Hot Tubs:** 27 products
 
 ## Testing Status
 - ✅ All features tested (100% success rate)
-- ✅ Color swatches changing images - verified
-- ✅ Filters working correctly - verified
-- ✅ Brand separation - verified
+- ✅ Color overlay system - verified
+- ✅ Wellness page images - verified
+- ✅ Filters and brand separation - verified
 
 ## Prioritized Backlog
 
@@ -140,7 +98,5 @@ Premium hot tub retailer website serving Naples, FL and South Carolina.
 
 ### P2 (Future)
 - [ ] Jingle with localStorage preference
-- [ ] Social media embedded feeds (Instagram/Facebook)
-- [ ] Testimonials/Reviews section
-- [ ] Image optimization (WebP/AVIF compression)
+- [ ] Social media embedded feeds
 - [ ] Product comparison feature

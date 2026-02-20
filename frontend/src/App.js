@@ -264,7 +264,7 @@ const Navigation = () => {
   );
 };
 
-// Hero Section - AMERICAN MADE on top, Logo below
+// Hero Section - AMERICAN MADE on top, Logo below (lowered)
 const HeroSection = () => (
   <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden" data-testid="hero-section">
     {/* Zoomed Video - autoplay on mobile */}
@@ -273,16 +273,16 @@ const HeroSection = () => (
     </video>
     <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/40 via-[#0A1628]/30 to-[#0A1628]/70" />
     
-    <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+    <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto mt-16">
       <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
         {/* AMERICAN MADE on TOP */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex items-center justify-center gap-3 mb-6">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex items-center justify-center gap-3 mb-4">
           <Flag className="text-[#B91C1C]" size={28} />
           <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">American Made</span>
           <Flag className="text-[#B91C1C]" size={28} />
         </motion.div>
         
-        {/* Logo BELOW American Made */}
+        {/* Logo BELOW American Made - lowered */}
         <motion.img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-32 md:h-40 mx-auto mb-8" initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.5, type: "spring" }} />
         
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="font-['Barlow_Condensed'] text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6">

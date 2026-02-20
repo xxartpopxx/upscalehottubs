@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler } from 'lucide-react';
-import { getProductById, SHELL_COLORS, CABINET_COLORS } from '../../data/products';
-import { ASSETS, CONTACT } from '../../data/constants';
-import ColorSelector from '../../components/products/ColorSelector';
+import { getProductById, SHELL_COLORS, CABINET_COLORS } from '../data/products';
+import { ASSETS, CONTACT } from '../data/constants';
+import ColorSelector from '../components/products/ColorSelector';
 
 const ProductDetailPage = () => {
   const { id } = useParams();

@@ -106,12 +106,12 @@ const HOT_TUBS = [
   { id: 12, name: 'MANISTEE', persons: '5 PERSON', price: '$6,599.00', jets: 35, images: PREMIER_PRODUCTS.manistee, description: 'Energy-efficient 5-person hot tub.' },
 ];
 
-// Swim Spas - Side view as primary
+// Swim Spas - Side view as primary (using Grand River images for reliability)
 const SWIM_SPAS = [
-  { id: 1, name: "Family Island Oasis Single Lounger", price: '$16,500.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Valhalla_overhead.png' }, description: 'Perfect family swim spa with lounger seating.' },
-  { id: 2, name: "13' AQUEX PARTY- BENCH", price: '$24,995.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-2-768x579.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png' }, description: '13-foot party swim spa with bench seating.' },
-  { id: 3, name: "13' AQUEX PRO PLUS", price: '$29,595.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor_Corner-View_dropshadow-768x678.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png' }, description: 'Professional-grade 13-foot swim spa.' },
-  { id: 4, name: "16' AQUEX TRAINER-Lounger", price: '$33,595.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-3-768x512.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png' }, description: 'Full-size 16-foot trainer swim spa.' },
+  { id: 1, name: "Family Island Oasis Single Lounger", price: '$16,500.00', images: { primary: PREMIER_PRODUCTS.chariton2.primary, secondary: PREMIER_PRODUCTS.chariton2.secondary }, description: 'Perfect family swim spa with lounger seating.' },
+  { id: 2, name: "13' AQUEX PARTY- BENCH", price: '$24,995.00', images: { primary: PREMIER_PRODUCTS.chesapeake2.primary, secondary: PREMIER_PRODUCTS.chesapeake2.secondary }, description: '13-foot party swim spa with bench seating.' },
+  { id: 3, name: "13' AQUEX PRO PLUS", price: '$29,595.00', images: { primary: PREMIER_PRODUCTS.thornapple2.primary, secondary: PREMIER_PRODUCTS.thornapple2.secondary }, description: 'Professional-grade 13-foot swim spa.' },
+  { id: 4, name: "16' AQUEX TRAINER-Lounger", price: '$33,595.00', images: { primary: PREMIER_PRODUCTS.saginaw2.primary, secondary: PREMIER_PRODUCTS.saginaw2.secondary }, description: 'Full-size 16-foot trainer swim spa.' },
 ];
 
 // Saunas and Cold Plunges

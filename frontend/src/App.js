@@ -11,63 +11,67 @@ import './App.css';
 // New Logo
 const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/agdsrdka_8b31198f-97d1-4e1d-a0ef-9424fb640c06.png';
 
+// About Page Image (Grand Opening)
+const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/iri86zu2_549423966_122190087680361664_6940928450155468082_n.jpg';
+
 // Assets URLs
 const ASSETS = {
   logo: NEW_LOGO,
   heroVideo: 'https://customer-assets.emergentagent.com/job_e23f927f-0a4b-43ea-96db-a0ca9339796e/artifacts/14akq3sp_SnapSave_App_1155304596774970_1080p.mp4',
   wetTestVideo: 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/atx9u9gd_SnapSave_App_1262194805786001_1080p.mp4',
   jingle: 'https://customer-assets.emergentagent.com/job_e23f927f-0a4b-43ea-96db-a0ca9339796e/artifacts/80qfrl8e_SnapSave_App_1155304596774970_1080p.mp3',
+  aboutImage: ABOUT_IMAGE,
 };
 
-// Premier Series Product Images (Overhead and Side views)
+// Premier Series Product Images (Side is now primary, Overhead is secondary)
 const PREMIER_PRODUCTS = {
   chariton2: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-OH_web.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-OH_web.png?lossy=2&strip=1&webp=1'
   },
   chariton1: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/GR_Chariton-1-Silver-OH_web.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-1_White-Satin_CoastalGray_Side_web.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-1_White-Satin_CoastalGray_Side_web.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/GR_Chariton-1-Silver-OH_web.png?lossy=2&strip=1&webp=1'
   },
   chesapeake2: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White-OH_web.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White_CoastalGray_web.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White_CoastalGray_web.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White-OH_web.png?lossy=2&strip=1&webp=1'
   },
   chesapeake1: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal-OH_web.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal_Black_Side_web-e1751040384296.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal_Black_Side_web-e1751040384296.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal-OH_web.png?lossy=2&strip=1&webp=1'
   },
   saginaw2: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_OH.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_Coastal_Side-768x576.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_Coastal_Side-768x576.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_OH.png?lossy=2&strip=1&webp=1'
   },
   saginaw1: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_OH.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_Coastal_Side-768x576.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_Coastal_Side-768x576.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_OH.png?lossy=2&strip=1&webp=1'
   },
   thornapple2: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple2_White_OH.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple2_White_OH.png?lossy=2&strip=1&webp=1'
   },
   thornapple1: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple2_White_OH.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple2_White_OH.png?lossy=2&strip=1&webp=1'
   },
   muskegon2: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegeon_2_White_OH.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon2_White_CoastalGray_Side-768x499.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon2_White_CoastalGray_Side-768x499.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegeon_2_White_OH.png?lossy=2&strip=1&webp=1'
   },
   sturgeon: {
-    overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%201-2_Silver_OH.png',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Silver_OH.png?lossy=2&strip=1&webp=1'
   },
   swift: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_Swift_White_OH.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_Swift_White_OH.png?lossy=2&strip=1&webp=1'
   },
   manistee: {
-    overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1',
-    side: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1'
+    primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1',
+    secondary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1'
   },
 };
 
@@ -86,7 +90,7 @@ const SOCIAL_LINKS = {
   youtube: 'https://www.youtube.com/@UpstateHotTubs',
 };
 
-// Hot Tub Products with BOTH images
+// Hot Tub Products - Side view as primary
 const HOT_TUBS = [
   { id: 1, name: 'CHARITON 2', persons: '6 PERSON', price: '$10,995.00', jets: 61, images: PREMIER_PRODUCTS.chariton2, description: 'Our largest lounger model, designed for full-body relaxation with Volcano floor jet and focused neck jets.' },
   { id: 2, name: 'CHARITON 1', persons: '6 PERSON', price: '$9,995.00', jets: 51, images: PREMIER_PRODUCTS.chariton1, description: 'Luxurious lounger with powerful Volcano jet and captain\'s chairs for head-to-toe rejuvenation.' },
@@ -102,23 +106,23 @@ const HOT_TUBS = [
   { id: 12, name: 'MANISTEE', persons: '5 PERSON', price: '$6,599.00', jets: 35, images: PREMIER_PRODUCTS.manistee, description: 'Energy-efficient 5-person hot tub.' },
 ];
 
-// Swim Spas
+// Swim Spas - Side view as primary
 const SWIM_SPAS = [
-  { id: 1, name: "Family Island Oasis Single Lounger", price: '$16,500.00', images: { overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Valhalla_overhead.png', side: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png' }, description: 'Perfect family swim spa with lounger seating.' },
-  { id: 2, name: "13' AQUEX PARTY- BENCH", price: '$24,995.00', images: { overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png', side: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-2-768x579.png' }, description: '13-foot party swim spa with bench seating.' },
-  { id: 3, name: "13' AQUEX PRO PLUS", price: '$29,595.00', images: { overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png', side: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor_Corner-View_dropshadow-768x678.png' }, description: 'Professional-grade 13-foot swim spa.' },
-  { id: 4, name: "16' AQUEX TRAINER-Lounger", price: '$33,595.00', images: { overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png', side: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-3-768x512.png' }, description: 'Full-size 16-foot trainer swim spa.' },
+  { id: 1, name: "Family Island Oasis Single Lounger", price: '$16,500.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Valhalla_overhead.png' }, description: 'Perfect family swim spa with lounger seating.' },
+  { id: 2, name: "13' AQUEX PARTY- BENCH", price: '$24,995.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-2-768x579.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png' }, description: '13-foot party swim spa with bench seating.' },
+  { id: 3, name: "13' AQUEX PRO PLUS", price: '$29,595.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor_Corner-View_dropshadow-768x678.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png' }, description: 'Professional-grade 13-foot swim spa.' },
+  { id: 4, name: "16' AQUEX TRAINER-Lounger", price: '$33,595.00', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-3-768x512.png', secondary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png' }, description: 'Full-size 16-foot trainer swim spa.' },
 ];
 
 // Saunas and Cold Plunges
 const SAUNAS = [
-  { id: 1, name: 'SaunaLife Model EE8G Sauna Barrel', price: '$10,995.95', images: { overhead: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80', side: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80' }, description: 'Premium barrel sauna for outdoor use.' },
-  { id: 2, name: 'SaunaLife Model EE6G Sauna Barrel', price: '$8,995.95', images: { overhead: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80', side: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80' }, description: 'Compact barrel sauna with quality construction.' },
+  { id: 1, name: 'SaunaLife Model EE8G Sauna Barrel', price: '$10,995.95', images: { primary: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80', secondary: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80' }, description: 'Premium barrel sauna for outdoor use.' },
+  { id: 2, name: 'SaunaLife Model EE6G Sauna Barrel', price: '$8,995.95', images: { primary: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80', secondary: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80' }, description: 'Compact barrel sauna with quality construction.' },
 ];
 
 const COLD_PLUNGES = [
-  { id: 1, name: 'Endurance Cold Plunge Bundle', price: 'Call for Price', images: { overhead: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg', side: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg' }, description: 'Complete cold plunge system with chiller.' },
-  { id: 2, name: 'The Resolute Pro', price: 'Call for Price', images: { overhead: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg', side: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg' }, description: 'Professional-grade cold plunge tub.' },
+  { id: 1, name: 'Endurance Cold Plunge Bundle', price: 'Call for Price', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg', secondary: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg' }, description: 'Complete cold plunge system with chiller.' },
+  { id: 2, name: 'The Resolute Pro', price: 'Call for Price', images: { primary: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg', secondary: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg' }, description: 'Professional-grade cold plunge tub.' },
 ];
 
 // Tax Special Popup Component
@@ -129,19 +133,13 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
     <AnimatePresence>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70" onClick={onClose}>
         <motion.div initial={{ scale: 0.8, opacity: 0, y: 50 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: 0.8, opacity: 0 }} transition={{ type: "spring", duration: 0.5 }} className="bg-[#0A1628] max-w-lg w-full shadow-2xl relative overflow-hidden" onClick={e => e.stopPropagation()}>
-          {/* Decorative Flag Stripes */}
           <div className="h-2 bg-[#B91C1C]" />
           <div className="absolute top-12 right-0 w-40 h-40 bg-[#B91C1C]/10 rounded-full blur-3xl" />
-          
-          <button onClick={onClose} className="absolute top-4 right-4 text-white/70 hover:text-white p-2 z-10" aria-label="Close popup">
-            <X size={24} />
-          </button>
-          
+          <button onClick={onClose} className="absolute top-4 right-4 text-white/70 hover:text-white p-2 z-10" aria-label="Close popup"><X size={24} /></button>
           <div className="p-8 text-center relative">
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring" }}>
               <img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-24 mx-auto mb-6" />
             </motion.div>
-            
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
               <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-white mb-2">
                 <span className="text-[#B91C1C]">TAX</span> SPECIAL
@@ -152,11 +150,9 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
                 <Star className="text-[#D4AF37] fill-[#D4AF37]" size={20} />
               </div>
             </motion.div>
-            
             <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-white/90 text-lg mb-6">
               Email us today or call us for exclusive tax season savings on hot tubs, swim spas, saunas & cold plunges!
             </motion.p>
-            
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-4">
               <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary w-full flex items-center justify-center gap-2 text-lg" data-testid="popup-call-btn">
                 <Phone size={20} /> Call {CONTACT.phone}
@@ -165,12 +161,8 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
                 <Mail size={20} /> Email Us
               </a>
             </motion.div>
-            
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-white/50 text-sm mt-6">
-              Limited time offer. Contact us for details.
-            </motion.p>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-white/50 text-sm mt-6">Limited time offer. Contact us for details.</motion.p>
           </div>
-          
           <div className="h-2 bg-[#B91C1C]" />
         </motion.div>
       </motion.div>
@@ -228,11 +220,9 @@ const Navigation = () => {
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled ? 'glass shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-3'}`}>
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Bigger Logo */}
           <Link to="/" className="flex items-center" data-testid="logo-link">
             <motion.img src={ASSETS.logo} alt="Upstate Hot Tubs - Made in the USA" className={`object-contain transition-all duration-300 ${scrolled ? 'h-16' : 'h-20 md:h-24'}`} loading="eager" whileHover={{ scale: 1.05 }} />
           </Link>
-
           <div className="hidden xl:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link key={link.name} to={link.href} className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${location.pathname === link.href ? 'text-[#B91C1C]' : 'text-[#0A1628]'}`}>
@@ -240,19 +230,16 @@ const Navigation = () => {
               </Link>
             ))}
           </div>
-
           <div className="hidden xl:flex items-center gap-3">
             <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#0A1628] font-semibold hover:text-[#B91C1C] text-sm">
               <Phone size={16} /> {CONTACT.phone}
             </a>
             <Link to="/contact" className="btn-primary text-sm px-4 py-2">Get a Quote</Link>
           </div>
-
           <button className="xl:hidden p-2" onClick={() => setIsOpen(!isOpen)} aria-label="Menu" data-testid="mobile-menu-btn">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
-
         <AnimatePresence>
           {isOpen && (
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="xl:hidden overflow-hidden bg-white">
@@ -277,25 +264,26 @@ const Navigation = () => {
   );
 };
 
-// Hero Section - Zoomed video
+// Hero Section - AMERICAN MADE on top, Logo below
 const HeroSection = () => (
   <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden" data-testid="hero-section">
-    {/* Zoomed Video */}
-    <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-125">
+    {/* Zoomed Video - autoplay on mobile */}
+    <video autoPlay muted loop playsInline webkit-playsinline="true" className="absolute inset-0 w-full h-full object-cover scale-125">
       <source src={ASSETS.heroVideo} type="video/mp4" />
     </video>
     <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/40 via-[#0A1628]/30 to-[#0A1628]/70" />
     
     <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-        {/* Bigger Logo in Hero */}
-        <motion.img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-32 md:h-40 mx-auto mb-8" initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.3, type: "spring" }} />
-        
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex items-center justify-center gap-3 mb-6">
+        {/* AMERICAN MADE on TOP */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex items-center justify-center gap-3 mb-6">
           <Flag className="text-[#B91C1C]" size={28} />
           <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">American Made</span>
           <Flag className="text-[#B91C1C]" size={28} />
         </motion.div>
+        
+        {/* Logo BELOW American Made */}
+        <motion.img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-32 md:h-40 mx-auto mb-8" initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.5, type: "spring" }} />
         
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="font-['Barlow_Condensed'] text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6">
           Start Living Your<br /><span className="text-[#B91C1C]">Healthiest Life</span> Today
@@ -309,7 +297,6 @@ const HeroSection = () => (
           <Link to="/hot-tubs" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4" data-testid="hero-browse-btn">
             Browse Hot Tubs <ChevronRight size={20} />
           </Link>
-          {/* More visible Swim Spas button */}
           <Link to="/swim-spas" className="bg-white text-[#0A1628] font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 text-lg hover:bg-[#D4AF37] hover:text-white transition-all shadow-lg" data-testid="hero-swim-spas-btn">
             Browse Swim Spas <ChevronRight size={20} />
           </Link>
@@ -323,18 +310,50 @@ const HeroSection = () => (
   </section>
 );
 
-// Product Card with image carousel
+// Product Card with SWIPEABLE image gallery - Side view as default
 const ProductCard = ({ product, onClick }) => {
-  const [showSide, setShowSide] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [product.images.primary, product.images.secondary];
+  const [touchStart, setTouchStart] = useState(null);
+  
+  const handleTouchStart = (e) => {
+    e.stopPropagation();
+    setTouchStart(e.touches[0].clientX);
+  };
+  
+  const handleTouchEnd = (e) => {
+    e.stopPropagation();
+    if (!touchStart) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        setCurrentImage((prev) => (prev + 1) % images.length);
+      } else {
+        setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+      }
+    }
+    setTouchStart(null);
+  };
   
   return (
     <motion.div whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(0,0,0,0.15)' }} className="product-card group cursor-pointer bg-white" onClick={onClick} data-testid={`product-card-${product.id}`}>
-      <div className="aspect-square overflow-hidden bg-slate-50 relative">
-        <motion.img src={showSide ? product.images.side : product.images.overhead} alt={product.name} className="w-full h-full object-contain p-4" loading="lazy" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} />
-        {/* Image toggle buttons */}
+      <div className="aspect-square overflow-hidden bg-slate-50 relative" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+        <AnimatePresence mode="wait">
+          <motion.img key={currentImage} src={images[currentImage]} alt={product.name} className="w-full h-full object-contain p-4" loading="lazy" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }} transition={{ duration: 0.3 }} onError={(e) => { e.target.src = ASSETS.logo; }} />
+        </AnimatePresence>
+        {/* Swipe arrows */}
+        <button onClick={(e) => { e.stopPropagation(); setCurrentImage((prev) => (prev - 1 + images.length) % images.length); }} className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Previous image">
+          <ChevronLeft size={20} />
+        </button>
+        <button onClick={(e) => { e.stopPropagation(); setCurrentImage((prev) => (prev + 1) % images.length); }} className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Next image">
+          <ChevronRight size={20} />
+        </button>
+        {/* Image dots */}
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
-          <button onClick={(e) => { e.stopPropagation(); setShowSide(false); }} className={`w-2 h-2 rounded-full transition-all ${!showSide ? 'bg-[#B91C1C] w-4' : 'bg-slate-300'}`} aria-label="View overhead" />
-          <button onClick={(e) => { e.stopPropagation(); setShowSide(true); }} className={`w-2 h-2 rounded-full transition-all ${showSide ? 'bg-[#B91C1C] w-4' : 'bg-slate-300'}`} aria-label="View side" />
+          {images.map((_, idx) => (
+            <button key={idx} onClick={(e) => { e.stopPropagation(); setCurrentImage(idx); }} className={`w-2 h-2 rounded-full transition-all ${currentImage === idx ? 'bg-[#B91C1C] w-4' : 'bg-slate-300'}`} aria-label={`View image ${idx + 1}`} />
+          ))}
         </div>
       </div>
       <div className="p-4">
@@ -350,22 +369,29 @@ const ProductCard = ({ product, onClick }) => {
   );
 };
 
-// Product Modal with image carousel
+// Product Modal with image gallery
 const ProductModal = ({ product, isOpen, onClose }) => {
-  const [showSide, setShowSide] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
   if (!isOpen || !product) return null;
+  const images = [product.images.primary, product.images.secondary];
   
   return (
     <AnimatePresence>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" onClick={onClose}>
         <motion.div initial={{ scale: 0.9, opacity: 0, y: 30 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: 0.9, opacity: 0 }} className="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
           <div className="relative">
-            <div className="flex">
-              <button onClick={() => setShowSide(false)} className="flex-1 p-2 border-b-2 border-transparent hover:border-[#B91C1C] transition-colors" style={{ borderColor: !showSide ? '#B91C1C' : 'transparent' }}>Overhead View</button>
-              <button onClick={() => setShowSide(true)} className="flex-1 p-2 border-b-2 border-transparent hover:border-[#B91C1C] transition-colors" style={{ borderColor: showSide ? '#B91C1C' : 'transparent' }}>Side View</button>
+            <div className="flex border-b">
+              <button onClick={() => setCurrentImage(0)} className={`flex-1 p-3 font-semibold transition-colors ${currentImage === 0 ? 'bg-[#B91C1C] text-white' : 'bg-slate-100 hover:bg-slate-200'}`}>Side View</button>
+              <button onClick={() => setCurrentImage(1)} className={`flex-1 p-3 font-semibold transition-colors ${currentImage === 1 ? 'bg-[#B91C1C] text-white' : 'bg-slate-100 hover:bg-slate-200'}`}>Overhead View</button>
             </div>
-            <motion.img key={showSide ? 'side' : 'overhead'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} src={showSide ? product.images.side : product.images.overhead} alt={product.name} className="w-full h-80 object-contain bg-slate-100 p-4" />
-            <button onClick={onClose} className="absolute top-14 right-4 bg-white/90 p-2 rounded-full shadow-lg" aria-label="Close"><X size={20} /></button>
+            <div className="relative">
+              <AnimatePresence mode="wait">
+                <motion.img key={currentImage} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} src={images[currentImage]} alt={product.name} className="w-full h-80 object-contain bg-slate-100 p-4" onError={(e) => { e.target.src = ASSETS.logo; }} />
+              </AnimatePresence>
+              <button onClick={() => setCurrentImage((prev) => (prev - 1 + images.length) % images.length)} className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white" aria-label="Previous"><ChevronLeft size={24} /></button>
+              <button onClick={() => setCurrentImage((prev) => (prev + 1) % images.length)} className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white" aria-label="Next"><ChevronRight size={24} /></button>
+            </div>
+            <button onClick={onClose} className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow-lg z-10" aria-label="Close"><X size={20} /></button>
           </div>
           <div className="p-6">
             <h3 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-[#0A1628] mb-2">{product.name}</h3>
@@ -398,7 +424,7 @@ const ProductsGrid = ({ products }) => {
   );
 };
 
-// About/Wet Test Section with video
+// About/Wet Test Section with video - autoplay on mobile
 const AboutSection = () => (
   <section className="py-20 bg-[#0A1628] text-white relative overflow-hidden" data-testid="about-section">
     <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -420,7 +446,7 @@ const AboutSection = () => (
         </motion.div>
         
         <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative">
-          <video autoPlay muted loop playsInline className="w-full h-[400px] object-cover shadow-2xl">
+          <video autoPlay muted loop playsInline webkit-playsinline="true" className="w-full h-[400px] object-cover shadow-2xl">
             <source src={ASSETS.wetTestVideo} type="video/mp4" />
           </video>
           <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5, type: "spring" }} className="absolute -bottom-6 -right-6 bg-[#B91C1C] text-white p-6 shadow-xl">
@@ -433,7 +459,7 @@ const AboutSection = () => (
   </section>
 );
 
-// Trust Section with animations
+// Trust Section
 const TrustSection = () => (
   <section className="py-16 bg-white border-y border-slate-100" data-testid="trust-section">
     <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -492,10 +518,10 @@ const IncludedSection = () => (
 // Categories Section
 const CategoriesSection = () => {
   const categories = [
-    { name: 'Hot Tubs', href: '/hot-tubs', image: PREMIER_PRODUCTS.chariton2.overhead },
-    { name: 'Swim Spas', href: '/swim-spas', image: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Valhalla_overhead.png' },
+    { name: 'Hot Tubs', href: '/hot-tubs', image: PREMIER_PRODUCTS.chariton2.primary },
+    { name: 'Swim Spas', href: '/swim-spas', image: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png' },
     { name: 'Saunas', href: '/saunas', image: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80' },
-    { name: 'Cold Plunges', href: '/cold-plunges', image: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg' },
+    { name: 'Cold Plunges', href: '/cold-plunges', image: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg' },
   ];
 
   return (
@@ -506,7 +532,7 @@ const CategoriesSection = () => {
           {categories.map((cat, idx) => (
             <motion.div key={cat.name} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
               <Link to={cat.href} className="group relative aspect-square overflow-hidden bg-slate-100 block">
-                <motion.img src={cat.image} alt={cat.name} className="w-full h-full object-cover" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }} loading="lazy" />
+                <motion.img src={cat.image} alt={cat.name} className="w-full h-full object-cover" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }} loading="lazy" onError={(e) => { e.target.src = ASSETS.logo; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/80 to-transparent flex items-end justify-center pb-6">
                   <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white">{cat.name}</h3>
                 </div>
@@ -654,7 +680,7 @@ const HotTubsPage = () => (
   <div className="pt-28 pb-20">
     <div className="max-w-7xl mx-auto px-4 md:px-8">
       <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">Shop Our American Made Hot Tubs</motion.h1>
-      <p className="text-xl text-slate-600 mb-12">Premium quality hot tubs made in the USA. Find your perfect spa today!</p>
+      <p className="text-xl text-slate-600 mb-12">Premium quality hot tubs made in the USA. Swipe to see both views!</p>
       <ProductsGrid products={HOT_TUBS} />
     </div>
   </div>
@@ -690,9 +716,15 @@ const ColdPlungesPage = () => (
   </div>
 );
 
+// About Page with Grand Opening Image
 const AboutPage = () => (
   <div className="pt-28 pb-20">
     <div className="max-w-7xl mx-auto px-4 md:px-8">
+      {/* Grand Opening Hero Image */}
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
+        <img src={ASSETS.aboutImage} alt="Upstate Hot Tubs Grand Opening" className="w-full h-[400px] object-cover shadow-xl" />
+      </motion.div>
+      
       <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-8">Why Dynasty Spas?</motion.h1>
       <p className="text-xl text-slate-600 mb-8">Our 4 Best Reasons to Buy "MADE IN AMERICA" Spas</p>
       

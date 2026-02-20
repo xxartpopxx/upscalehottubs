@@ -15,26 +15,26 @@ Premium hot tub, swim spa, sauna, and cold plunge retailer website serving Naple
 
 ## What's Been Implemented
 
-### MVP Features
-- [x] Hero section with ZOOMED video (scale-125)
-- [x] BIGGER logo in header (h-20 md:h-24) and hero (h-32 md:h-40)
+### MVP Features (Session 4)
+- [x] Hero section: AMERICAN MADE text on TOP, logo BELOW
+- [x] Zoomed hero video (scale-125)
+- [x] Mobile video autoplay (webkit-playsinline attribute)
 - [x] TAX SPECIAL popup (appears after 3 seconds)
-- [x] More visible "Browse Swim Spas" button (white background)
-- [x] Product cards with DUAL images (overhead + side views)
-- [x] Image toggle dots on product cards
-- [x] Product modal with Overhead/Side view tabs
-- [x] Jet counts displayed on products
-- [x] About page with Dynasty Spas content (4 Best Reasons to Buy American)
-- [x] Wet test section with new video
-- [x] REMOVED "Our Store and Community" gallery section
-- [x] Enhanced animations (hover, scroll, spring effects)
-- [x] 9 navigation pages: Home, Hot Tubs, Swim Spas, Saunas, Cold Plunges, About, Events, Financing, Contact
+- [x] SIDE VIEW as default product thumbnail
+- [x] SWIPEABLE product gallery with:
+  - Left/right arrows on hover
+  - 2 dots for image switching
+  - Touch swipe support for mobile
+- [x] Product modal with Side View/Overhead View tabs
+- [x] About page with Grand Opening photo
+- [x] Dynasty Spas "4 Best Reasons" content
+- [x] Updated Open Graph image (new logo for link sharing)
+- [x] All images verified working (using Grand River Spas images)
+- [x] 9 navigation pages working
 - [x] Netlify-compatible contact form
-- [x] Social media links (Instagram, Facebook, YouTube)
-- [x] Jingle player with floating button
 
-### Products
-- 12 Hot Tubs (Premier Series from Grand River Spas)
+### Products (All with dual images)
+- 12 Hot Tubs (Premier Series)
 - 4 Swim Spas
 - 2 Saunas
 - 2 Cold Plunges
@@ -45,10 +45,26 @@ Premium hot tub, swim spa, sauna, and cold plunge retailer website serving Naple
 - React Router
 - Lucide React icons
 
+### Image Sources
+- Grand River Spas (Primary - all working)
+- Unsplash (Saunas)
+
+## Session Summary (Feb 20, 2026)
+1. Initial MVP with all pages and products
+2. Added TAX SPECIAL popup
+3. Dual product images (overhead + side)
+4. Changed hero layout: American Made on top, logo below
+5. Side view as default thumbnail
+6. Swipeable product gallery
+7. Grand Opening photo on About page
+8. Mobile video autoplay
+9. Updated OG meta image to new logo
+10. Fixed all broken images
+
 ## Prioritized Backlog
 
 ### P0 - Next
-- Add more product images from Viking Spas
+- Add real swim spa images when available
 - Implement product search/filter
 - Add customer reviews section
 
@@ -56,15 +72,3 @@ Premium hot tub, swim spa, sauna, and cold plunge retailer website serving Naple
 - Blog for SEO
 - Live chat integration
 - Email newsletter signup
-
-## Session Changes (Feb 20, 2026)
-1. Changed logo to new uploaded artifact
-2. Zoomed hero video by 25%
-3. Made logo bigger throughout
-4. Added TAX SPECIAL popup
-5. Made Browse Swim Spas button more visible (white)
-6. Added dual product images (overhead + side views)
-7. Removed gallery section
-8. Created About page with Dynasty Spas content
-9. Used new video for wet test section
-10. Added more animations

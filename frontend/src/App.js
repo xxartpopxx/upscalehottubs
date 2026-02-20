@@ -817,10 +817,125 @@ const ContactPage = () => (
               <div className="flex items-center gap-3 text-slate-300"><Clock size={20} className="text-[#B91C1C]" /> {CONTACT.hours}</div>
             </div>
           </div>
-          <div className="bg-slate-50 p-8">
+          <div className="bg-slate-50 p-8 mb-8">
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold mb-4">Service Areas</h3>
             <div className="flex flex-wrap gap-2">{CONTACT.serviceAreas.map(area => <span key={area} className="bg-white px-3 py-1 text-sm text-slate-600 border">{area}</span>)}</div>
           </div>
+        </div>
+      </div>
+      
+      {/* Google Map */}
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12">
+        <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-6">Find Us</h2>
+        <div className="w-full h-[400px] bg-slate-100">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.5!2d-82.2573!3d34.7370!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88582b5c0a8b7f31%3A0x1234567890abcdef!2s1004%20W%20Georgia%20Rd%2C%20Simpsonville%2C%20SC%2029680!5e0!3m2!1sen!2sus!4v1234567890"
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Upstate Hot Tubs Location"
+            className="w-full h-full"
+          />
+        </div>
+        <div className="mt-4 text-center">
+          <a 
+            href="https://www.google.com/maps/dir/?api=1&destination=1004+W+Georgia+Rd+Simpsonville+SC+29680" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            <MapPin size={18} /> Get Directions
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+// Spa Butler Page
+const SpaButlerPage = () => (
+  <div className="pt-28 pb-20">
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">Spa Butler</motion.h1>
+      
+      <div className="bg-[#B91C1C] text-white p-6 mb-8">
+        <p className="text-xl font-semibold">Did you know that 85% of all hot tub service calls and repair bills are related to improper water chemistry?</p>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-12 mb-12">
+        <div>
+          <p className="text-lg text-slate-600 mb-6">
+            Our service fee is <strong className="text-[#0A1628]">$175.00 per hour</strong> plus parts. We do charge $175 for service call which is an hour diagnostic fee.
+          </p>
+          <p className="text-lg text-slate-600 mb-6">
+            We understand busy lifestyles and schedules, so let us help take your hot tub water chemistry and preserve the life of your hot tub with regular hot tub maintenance. We are pleased to offer our New Maintenance Packages to save you both time and money and ensure that your investment is protected, whether you already have a hot tub or have purchased a new hot tub from us.
+          </p>
+          <p className="text-lg text-slate-600 mb-8">
+            Please check out our packages below and let us know if you need help to determine which hot tub maintenance schedule is right for you.
+          </p>
+          
+          <div className="bg-[#0A1628] text-white p-8">
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase mb-4">Always Have Clear And Safe Water</h2>
+            <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#D4AF37] mb-6">Call The Spa Butler Today!</h3>
+            <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary inline-flex items-center gap-2">
+              <Phone size={20} /> {CONTACT.phone}
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <img 
+            src="https://static.wixstatic.com/media/5c7c78_5360bbabef8844e784f7ffff55a4cb12~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Cleaning%20services%20brochure%20design.jpg" 
+            alt="Spa Butler Cleaning Services" 
+            className="w-full h-auto shadow-xl mb-6"
+            loading="lazy"
+          />
+          
+          <div className="grid grid-cols-2 gap-4">
+            <img 
+              src="https://static.wixstatic.com/media/5c7c78_7e5fc46ea2664d66a83b881674b8ade2~mv2.jpg/v1/fill/w_447,h_298,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_7e5fc46ea2664d66a83b881674b8ade2~mv2.jpg" 
+              alt="Hot Tub Service" 
+              className="w-full h-auto shadow-lg"
+              loading="lazy"
+            />
+            <img 
+              src="https://static.wixstatic.com/media/5c7c78_9685abf36e9a47debc0a79fc8151d6f1~mv2.jpg/v1/fill/w_447,h_298,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dynasty%20Spas%2C%20a%20hot%20tub%20and%20swim%20spa%20manufacturer%2C%20is%20known%20for%20its%20_reverse%20pull%20neck%20jet.jpg" 
+              alt="Dynasty Spas Service" 
+              className="w-full h-auto shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+      
+      {/* Maintenance Packages */}
+      <div className="mb-12">
+        <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-8 text-center">Our Maintenance Packages</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { name: 'Basic', price: '$75/visit', features: ['Water testing', 'Chemical balancing', 'Filter cleaning', 'Surface wipe down'] },
+            { name: 'Standard', price: '$125/visit', features: ['Everything in Basic', 'Jet inspection', 'Cover conditioning', 'Equipment check'] },
+            { name: 'Premium', price: '$175/visit', features: ['Everything in Standard', 'Deep cleaning', 'Full diagnostic', 'Priority scheduling'] },
+          ].map((pkg, idx) => (
+            <motion.div key={pkg.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className="bg-white border-2 border-slate-200 p-6 hover:border-[#B91C1C] transition-colors">
+              <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-2">{pkg.name}</h3>
+              <p className="text-[#B91C1C] font-bold text-xl mb-4">{pkg.price}</p>
+              <ul className="space-y-2">
+                {pkg.features.map(f => <li key={f} className="text-slate-600 text-sm flex items-center gap-2"><span className="text-[#B91C1C]">✓</span> {f}</li>)}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Contact Form */}
+      <div className="bg-slate-50 p-8">
+        <h2 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-6 text-center">Get a Quote for Spa Butler Service</h2>
+        <div className="max-w-xl mx-auto">
+          <ContactForm />
         </div>
       </div>
     </div>

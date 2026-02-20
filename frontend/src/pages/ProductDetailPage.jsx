@@ -11,15 +11,23 @@ const ProductDetailPage = () => {
   const navigate = useNavigate();
   const product = getProductById(id);
   
-  const [selectedShell, setSelectedShell] = useState('white');
-  const [selectedCabinet, setSelectedCabinet] = useState('coastalGray');
-  const [currentView, setCurrentView] = useState('side'); // 'side' or 'overhead'
+  // Set default colors based on product's available colors
+  const defaultShell = product?.shellColors?.[0] || 'white';
+  const defaultCabinet = product?.cabinetColors?.[0] || 'coastalGray';
+  
+  const [selectedShell, setSelectedShell] = useState(defaultShell);
+  const [selectedCabinet, setSelectedCabinet] = useState(defaultCabinet);
+  const [currentView, setCurrentView] = useState('side');
   const [activeTab, setActiveTab] = useState('overview');
   
-  // Scroll to top when product changes
+  // Reset colors when product changes
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    if (product) {
+      setSelectedShell(product.shellColors?.[0] || 'white');
+      setSelectedCabinet(product.cabinetColors?.[0] || 'coastalGray');
+    }
+  }, [id, product]);
   
   if (!product) {
     return (
@@ -35,12 +43,40 @@ const ProductDetailPage = () => {
   
   // Get the image based on selected colors and view
   const getDisplayImage = () => {
-    const colorKey = `${selectedShell}-${selectedCabinet}`;
-    if (product.colorImages && product.colorImages[colorKey]) {
-      return currentView === 'overhead' 
-        ? product.colorImages[colorKey].overhead 
-        : product.colorImages[colorKey].side;
+    if (product.colorImages) {
+      // Try exact color combination
+      const colorKey = `${selectedShell}-${selectedCabinet}`;
+      if (product.colorImages[colorKey]) {
+        return currentView === 'overhead' 
+          ? product.colorImages[colorKey].overhead 
+          : product.colorImages[colorKey].side;
+      }
+      
+      // Try to find any matching shell color
+      const shellMatch = Object.keys(product.colorImages).find(key => key.startsWith(selectedShell + '-'));
+      if (shellMatch && product.colorImages[shellMatch]) {
+        return currentView === 'overhead' 
+          ? product.colorImages[shellMatch].overhead 
+          : product.colorImages[shellMatch].side;
+      }
+      
+      // Try to find any matching cabinet color
+      const cabinetMatch = Object.keys(product.colorImages).find(key => key.endsWith('-' + selectedCabinet));
+      if (cabinetMatch && product.colorImages[cabinetMatch]) {
+        return currentView === 'overhead' 
+          ? product.colorImages[cabinetMatch].overhead 
+          : product.colorImages[cabinetMatch].side;
+      }
+      
+      // Use first available color combination
+      const firstKey = Object.keys(product.colorImages)[0];
+      if (firstKey && product.colorImages[firstKey]) {
+        return currentView === 'overhead' 
+          ? product.colorImages[firstKey].overhead 
+          : product.colorImages[firstKey].side;
+      }
     }
+    
     return currentView === 'overhead' ? product.images.overhead : product.images.primary;
   };
   

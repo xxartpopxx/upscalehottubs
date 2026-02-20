@@ -1,74 +1,56 @@
 # Upstate Hot Tubs Website - Product Requirements Document
 
 ## Project Overview
-**Date Created:** February 20, 2026
 **Last Updated:** February 20, 2026
 
-Premium hot tub, swim spa, sauna, and cold plunge retailer website serving Naples, Florida and South Carolina.
+Premium hot tub retailer website serving Naples, FL and South Carolina.
 
 ## Business Information
 - **Phone:** (864) 837-0155
 - **Email:** info@upstatehottubs.com
 - **Address:** 1004 West Georgia Rd, Simpsonville, SC 29680
 - **Hours:** Always Open
-- **Slogan:** "Start Living Your Healthiest Life Today"
 
 ## What's Been Implemented
 
-### MVP Features (Session 4)
-- [x] Hero section: AMERICAN MADE text on TOP, logo BELOW
-- [x] Zoomed hero video (scale-125)
-- [x] Mobile video autoplay (webkit-playsinline attribute)
-- [x] TAX SPECIAL popup (appears after 3 seconds)
-- [x] SIDE VIEW as default product thumbnail
-- [x] SWIPEABLE product gallery with:
-  - Left/right arrows on hover
-  - 2 dots for image switching
-  - Touch swipe support for mobile
-- [x] Product modal with Side View/Overhead View tabs
+### All Features Complete
+- [x] Hero section with lowered logo (mt-16)
+- [x] AMERICAN MADE text on top, logo below
+- [x] Zoomed video (scale-125), mobile autoplay
+- [x] TAX SPECIAL popup
+- [x] Side view as default product thumbnail
+- [x] Swipeable product gallery
+- [x] Product modal with view tabs
 - [x] About page with Grand Opening photo
-- [x] Dynasty Spas "4 Best Reasons" content
-- [x] Updated Open Graph image (new logo for link sharing)
-- [x] All images verified working (using Grand River Spas images)
-- [x] 9 navigation pages working
+- [x] **NEW: Spa Butler page** with:
+  - Service pricing ($175/hour)
+  - Maintenance packages (Basic/Standard/Premium)
+  - Contact form
+- [x] **NEW: Google Map on Contact page** with Get Directions button
+- [x] 10 navigation pages (added Spa Butler)
 - [x] Netlify-compatible contact form
+- [x] All images verified working
 
-### Products (All with dual images)
-- 12 Hot Tubs (Premier Series)
-- 4 Swim Spas
-- 2 Saunas
-- 2 Cold Plunges
+### Pages
+1. Home
+2. Hot Tubs (12 products)
+3. Swim Spas (4 products)
+4. Saunas (2 products)
+5. Cold Plunges (2 products)
+6. **Spa Butler** (NEW)
+7. About
+8. Events
+9. Financing
+10. Contact (with Google Map)
 
 ### Technical Stack
 - React 19 + Framer Motion
 - TailwindCSS
 - React Router
-- Lucide React icons
+- Google Maps Embed
 
-### Image Sources
-- Grand River Spas (Primary - all working)
-- Unsplash (Saunas)
-
-## Session Summary (Feb 20, 2026)
-1. Initial MVP with all pages and products
-2. Added TAX SPECIAL popup
-3. Dual product images (overhead + side)
-4. Changed hero layout: American Made on top, logo below
-5. Side view as default thumbnail
-6. Swipeable product gallery
-7. Grand Opening photo on About page
-8. Mobile video autoplay
-9. Updated OG meta image to new logo
-10. Fixed all broken images
-
-## Prioritized Backlog
-
-### P0 - Next
-- Add real swim spa images when available
-- Implement product search/filter
-- Add customer reviews section
-
-### P1 - Medium
-- Blog for SEO
-- Live chat integration
-- Email newsletter signup
+## Session Summary
+1. Lowered hero logo (added mt-16 margin)
+2. Added Spa Butler page with full content from original site
+3. Added Google Map to Contact page
+4. All features tested and working

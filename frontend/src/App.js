@@ -210,6 +210,7 @@ const Navigation = () => {
     { name: 'Swim Spas', href: '/swim-spas' },
     { name: 'Saunas', href: '/saunas' },
     { name: 'Cold Plunges', href: '/cold-plunges' },
+    { name: 'Spa Butler', href: '/spa-butler' },
     { name: 'About', href: '/about' },
     { name: 'Events', href: '/events' },
     { name: 'Financing', href: '/financing' },

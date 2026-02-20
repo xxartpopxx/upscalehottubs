@@ -234,12 +234,12 @@ const Navigation = () => {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden overflow-hidden bg-white"
             >
-              <div className="py-4 space-y-4">
+              <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="block px-4 py-2 font-semibold text-[#0A1628] uppercase tracking-wider hover:text-[#B91C1C] hover:bg-slate-50 transition-colors"
+                    className="block px-4 py-3 font-semibold text-[#0A1628] uppercase tracking-wider hover:text-[#B91C1C] hover:bg-slate-50 transition-colors min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                     data-testid={`mobile-nav-${link.name.toLowerCase().replace(' ', '-')}`}
                   >

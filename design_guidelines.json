@@ -1,0 +1,160 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Upstate Hot Tubs",
+      "tone": "American • Premium • Clean • Healthy Lifestyle • Trustworthy",
+      "theme_mode": "light",
+      "target_audience": "Homeowners in SC & FL, Families, Military/Veterans, Health-conscious"
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Barlow Condensed, sans-serif",
+        "body": "Inter, sans-serif",
+        "accent": "Outfit, sans-serif"
+      },
+      "scale": {
+        "h1": "text-6xl md:text-8xl font-black tracking-tight uppercase",
+        "h2": "text-4xl md:text-6xl font-bold tracking-tight uppercase",
+        "h3": "text-2xl md:text-3xl font-bold tracking-normal uppercase",
+        "body_lg": "text-lg md:text-xl font-normal leading-relaxed",
+        "body_base": "text-base font-normal leading-relaxed text-slate-600",
+        "caption": "text-sm font-medium tracking-wider uppercase text-slate-500"
+      },
+      "imports": [
+        "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700&display=swap"
+      ]
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "#0A1628",
+          "light": "#1B2B45",
+          "dark": "#050B14",
+          "foreground": "#FFFFFF"
+        },
+        "secondary": {
+          "DEFAULT": "#B91C1C",
+          "light": "#DC2626",
+          "dark": "#991B1B",
+          "foreground": "#FFFFFF"
+        },
+        "background": {
+          "DEFAULT": "#FFFFFF",
+          "alt": "#F8FAFC",
+          "subtle": "#F1F5F9"
+        },
+        "text": {
+          "primary": "#0F172A",
+          "secondary": "#475569",
+          "muted": "#94A3B8"
+        },
+        "accent": {
+          "gold": "#D4AF37",
+          "cool_blue": "#E0F2FE"
+        }
+      },
+      "usage": {
+        "header_bg": "rgba(255, 255, 255, 0.9)",
+        "footer_bg": "#0A1628",
+        "hero_overlay": "linear-gradient(to bottom, rgba(10, 22, 40, 0.3), rgba(10, 22, 40, 0.7))",
+        "card_bg": "#FFFFFF"
+      }
+    },
+    "layout": {
+      "grid_system": "Use 'Bento' grid (CSS Grid) for product categories. Avoid uniform e-commerce grids.",
+      "spacing": {
+        "section_py": "py-24 md:py-32",
+        "container_px": "px-6 md:px-12",
+        "gap_base": "gap-8"
+      },
+      "container_width": "max-w-7xl mx-auto"
+    },
+    "components": {
+      "buttons": {
+        "primary": "bg-secondary text-white hover:bg-secondary-light rounded-none uppercase font-bold tracking-widest px-8 py-4 transition-all hover:scale-105 shadow-lg",
+        "secondary": "border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-none uppercase font-bold tracking-widest px-8 py-4 transition-all",
+        "jingle_float": "fixed bottom-8 right-8 z-50 bg-secondary text-white p-4 rounded-full shadow-2xl hover:scale-110 cursor-pointer animate-pulse-slow"
+      },
+      "cards": {
+        "product": "group relative overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-slate-100",
+        "feature": "p-8 bg-slate-50 border-l-4 border-secondary hover:bg-white transition-colors"
+      },
+      "navigation": {
+        "style": "sticky top-0 z-40 backdrop-blur-md border-b border-slate-100 bg-white/90",
+        "link": "text-primary font-bold uppercase tracking-wider hover:text-secondary transition-colors text-sm"
+      }
+    },
+    "visual_enhancers": {
+      "borders": "Sharp corners (rounded-none) for a 'Strong/American' feel, or minimal rounded-sm.",
+      "shadows": "shadow-lg for floating elements, shadow-sm for cards.",
+      "textures": "Subtle noise overlay on solid backgrounds. Water ripple effects on hover.",
+      "icons": "Lucide React (clean, stroke-based). Use 'Flag' icon for patriotism."
+    },
+    "accessibility": {
+      "rules": [
+        "Ensure 4.5:1 contrast ratio for text.",
+        "Interactive elements must have aria-labels.",
+        "Focus states must be visible (ring-2 ring-primary).",
+        "Images must have alt text."
+      ]
+    },
+    "motion": {
+      "library": "Framer Motion",
+      "preferences": {
+        "scroll": "Lenis for smooth scrolling",
+        "entrance": "Staggered fade-up for grid items",
+        "hover": "Scale 1.05 for images, underline slide for links"
+      }
+    }
+  },
+  "assets": {
+    "image_urls": {
+      "hero": {
+        "main": "https://images.unsplash.com/photo-1713270232684-b63930585172?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Luxury hot tub in forest setting"
+      },
+      "products": {
+        "hot_tubs": "https://images.unsplash.com/photo-1670140274653-659c76f0f8e1?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "swim_spas": "https://images.unsplash.com/photo-1768576544627-c0a7149d0c5b?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "saunas": "https://images.unsplash.com/photo-1770573319185-049b29ab0ca9?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "cold_plunges": "https://images.unsplash.com/photo-15814247-pexels-photo-15814247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      "lifestyle": {
+        "family": "https://images.unsplash.com/photo-1760724894696-56585c772a83?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "couple": "https://images.unsplash.com/photo-1682906324513-5370a2e99e1a?crop=entropy&cs=srgb&fm=jpg&q=85"
+      },
+      "backgrounds": {
+        "flag_texture": "https://images.unsplash.com/photo-1669066961438-fe673c235e98?crop=entropy&cs=srgb&fm=jpg&q=85"
+      }
+    }
+  },
+  "content_strategy": {
+    "slogan": "Start Living Your Healthiest Life Today.",
+    "trust_badges": ["First Responders Discount", "Military & Veterans Discount", "Family Owned", "Made in USA"],
+    "sections": [
+      "Hero (Video/Image + Slogan + CTA)",
+      "Why Choose Upstate (Trust/Patriotism)",
+      "Product Categories (Bento Grid)",
+      "The Wet Test Experience (Promo)",
+      "Testimonials / Reviews",
+      "Footer (Contact + Map)"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "INSTALL: npm install framer-motion lucide-react clsx tailwind-merge @radix-ui/react-slot lenis",
+    "CONFIG: Update tailwind.config.js to include the specific colors and fonts defined above.",
+    "LAYOUT: Do not use a sidebar. Use a sticky top navbar.",
+    "JINGLE: Create a 'JinglePlayer' component that is fixed position. Default state is Muted. User must click to play.",
+    "FORMS: Use Netlify compatible form attributes (name='contact' method='POST' data-netlify='true').",
+    "SEO: Ensure all headings are semantic (H1, H2, H3).",
+    "PERFORMANCE: Use 'lazy' loading for all images below the fold.",
+    "THEME: STRICTLY LIGHT MODE. Do not implement a dark mode toggle. The brand is 'Clean & Bright'."
+  ],
+  "universal_guidelines": [
+    "Don't make generic centered layouts. Use asymmetry.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Every interaction needs micro-animations.",
+    "Use glass-morphism effects with backdrop filters for the sticky header.",
+    "Interactive elements must include data-testid attributes."
+  ]
+}

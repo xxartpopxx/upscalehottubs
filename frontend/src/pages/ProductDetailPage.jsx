@@ -235,6 +235,7 @@ const ProductDetailPage = () => {
                 selectedCabinet={selectedCabinet}
                 onShellChange={setSelectedShell}
                 onCabinetChange={setSelectedCabinet}
+                colorImages={product.colorImages}
               />
             )}
             

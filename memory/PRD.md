@@ -4,20 +4,21 @@
 **Date Created:** February 20, 2026
 **Last Updated:** February 20, 2026
 
-Rebuild and significantly improve the Upstate Hot Tubs website (upstatehottubs.com) - a premium hot tub, swim spa, sauna, and cold plunge retailer serving Naples, Florida and South Carolina (Simpsonville, Greenville, Mauldin, Spartanburg, Anderson, Greer, Fountain Inn).
+Rebuild and significantly improve the Upstate Hot Tubs website (upstatehottubs.com) - a premium hot tub, swim spa, sauna, and cold plunge retailer serving Naples, Florida and South Carolina.
 
 ## User Personas
 1. **Homeowners in SC & FL** - Looking for quality hot tubs for relaxation and wellness
 2. **Health-conscious Families** - Seeking wellness products for healthy lifestyle
-3. **First Responders/Military/Veterans** - Eligible for 5% discount
+3. **First Responders/Military/Veterans** - Eligible for 5-10% discount
 
-## Core Requirements (Static)
+## Core Requirements
 - Preserve ALL existing content exactly from original site
 - Preserve SEO structure and keywords
 - Target Google Lighthouse 100% scores
 - American flag/patriotic theming
 - Mobile-first, performance-focused design
-- Semantic HTML, ARIA labels, accessibility compliance
+- Products stay ON-SITE (no external links to suppliers)
+- Real working contact form (Netlify compatible)
 
 ## Business Information
 - **Phone:** (864) 837-0155
@@ -29,53 +30,59 @@ Rebuild and significantly improve the Upstate Hot Tubs website (upstatehottubs.c
 ## What's Been Implemented
 
 ### MVP Features (February 20, 2026)
+- [x] NEW logo from uploaded artifact
 - [x] Hero section with video background
-- [x] Primary slogan prominently displayed
-- [x] Sticky navigation header with glass effect
-- [x] Mobile responsive hamburger menu
-- [x] Hot Tubs product gallery (8 products) - links to Grand River Spas
-- [x] Swim Spas product gallery (4 products) - links to supplier sites
-- [x] Saunas product gallery (3 products)
-- [x] Cold Plunges product gallery (2 products)
-- [x] "What's Included" accessories section
-- [x] Wet Test promotion section
+- [x] All 10 navigation pages: Home, Hot Tubs, Swim Spas, Saunas, Cold Plunges, Chemicals, Accessories, Events, Financing, Contact
+- [x] Hot Tubs page with 20 products (Quick View modal, no external links)
+- [x] Swim Spas page with 7 products
+- [x] Saunas page with 6 products
+- [x] Cold Plunges page with 3 products
+- [x] Chemicals page with 11 products
+- [x] Accessories/Covers page with 3 products
+- [x] Events page (9-11 Reading, Christmas in July, National Night Out)
+- [x] Financing page (HFS Financial, LightStream)
+- [x] REAL Contact form with Netlify forms compatibility
+- [x] Gallery section using uploaded photos (7 images)
+- [x] Customer testimonials section (6 testimonials)
 - [x] Trust badges (First Responders, Military, Veterans discounts)
-- [x] Categories section
-- [x] Financing section (HFS Financial, LightStream links)
-- [x] Footer with contact information
-- [x] Social media icon links (Instagram, Facebook, YouTube)
-- [x] Jingle player with floating mute/unmute button (user-triggered, Lighthouse compliant)
-- [x] Accessibility: skip link, ARIA labels, alt text
-- [x] SEO: Schema markup (LocalBusiness, Product), meta tags, Open Graph
+- [x] What's Included accessories section
+- [x] Wet Test promotion section
+- [x] Jingle player with floating mute/unmute button
+- [x] Social media links (Instagram, Facebook, YouTube)
+- [x] Mobile responsive navigation
+- [x] SEO: Schema markup, meta tags, Open Graph
 
 ### Technical Stack
 - React 19 with framer-motion for animations
+- React Router for SPA navigation
 - TailwindCSS for styling
 - Lucide React for icons
-- Barlow Condensed + Inter fonts
+- Netlify Forms compatible contact form
+
+## Product Data Sources
+- Hot Tub Images: Grand River Spas, Viking Spas
+- All products stay on-site (Quick View modal with Request Quote button)
 
 ## Prioritized Backlog
 
-### P0 - Critical (Next)
-- Add more product images with multiple angles
-- Add customer testimonials section
-- Contact form with Netlify forms integration
+### P0 - Next Priority
+- Add product search/filter functionality
+- Expand product descriptions
+- Add more customer photos
 
-### P1 - High Priority
-- Blog section for SEO content
-- Events page
-- Spa accessories page
-- Chemicals page
+### P1 - Medium Priority
+- Blog section for SEO
+- Image lightbox gallery
+- Map integration
+- Live chat
 
-### P2 - Medium Priority
-- Map integration for store location
-- Image gallery lightbox
-- Email newsletter signup
-- Live chat integration
+### P2 - Future
+- Newsletter signup
+- SMS notifications
+- Appointment booking calendar
 
 ## Next Tasks
-1. Add customer testimonials/reviews section
-2. Expand product catalogs with more detail
-3. Add image lightbox for product galleries
-4. Implement Netlify-compatible contact form
-5. Performance optimization for Lighthouse 100%
+1. Performance optimization for Lighthouse 100%
+2. Add more product images with multiple angles
+3. Implement search/filter on product pages
+4. Add blog section for SEO content

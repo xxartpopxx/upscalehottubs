@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { Check } from 'lucide-react';
 import { SHELL_COLORS, CABINET_COLORS } from '../../data/products';
 
 const ColorSelector = ({ 
@@ -8,8 +9,15 @@ const ColorSelector = ({
   selectedShell,
   selectedCabinet,
   onShellChange,
-  onCabinetChange 
+  onCabinetChange,
+  colorImages = {}
 }) => {
+  // Check if a specific color combination has a dedicated image
+  const hasColorImage = (shell, cabinet) => {
+    const key = `${shell}-${cabinet}`;
+    return colorImages && colorImages[key];
+  };
+
   return (
     <div className="bg-slate-50 p-6 space-y-6">
       <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628]">
@@ -23,6 +31,8 @@ const ColorSelector = ({
           {shellColors.map((colorKey) => {
             const color = SHELL_COLORS[colorKey];
             if (!color) return null;
+            const isSelected = selectedShell === colorKey;
+            
             return (
               <motion.button
                 key={colorKey}
@@ -30,7 +40,7 @@ const ColorSelector = ({
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className={`relative w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                  selectedShell === colorKey 
+                  isSelected
                     ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-2' 
                     : 'border-slate-200 hover:border-slate-400'
                 }`}
@@ -50,6 +60,15 @@ const ColorSelector = ({
                 ) : (
                   <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
                 )}
+                {isSelected && (
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center"
+                  >
+                    <Check className="text-[#B91C1C]" size={24} strokeWidth={3} />
+                  </motion.div>
+                )}
               </motion.button>
             );
           })}
@@ -66,6 +85,9 @@ const ColorSelector = ({
           {cabinetColors.map((colorKey) => {
             const color = CABINET_COLORS[colorKey];
             if (!color) return null;
+            const isSelected = selectedCabinet === colorKey;
+            const hasImage = hasColorImage(selectedShell, colorKey);
+            
             return (
               <motion.button
                 key={colorKey}
@@ -73,7 +95,7 @@ const ColorSelector = ({
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className={`relative w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                  selectedCabinet === colorKey 
+                  isSelected
                     ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-2' 
                     : 'border-slate-200 hover:border-slate-400'
                 }`}
@@ -92,6 +114,19 @@ const ColorSelector = ({
                   />
                 ) : (
                   <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
+                )}
+                {isSelected && (
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center"
+                  >
+                    <Check className="text-[#B91C1C]" size={24} strokeWidth={3} />
+                  </motion.div>
+                )}
+                {/* Indicator for available color image */}
+                {hasImage && !isSelected && (
+                  <div className="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full" title="Image available" />
                 )}
               </motion.button>
             );

@@ -1,0 +1,170 @@
+<analysis>**original_problem_statement:**
+The user wants to rebuild and significantly improve their existing website, .
+
+**PRODUCT REQUIREMENTS:**
+- **Primary Objective:** Create a modern, visually polished, high-conversion website.
+- **Content & SEO:** Preserve ALL existing content, SEO structure, keywords, meta data, and headings. Only fix typos and improve layout.
+- **Branding:**
+    - Preserve existing brand colors.
+    - Create a strong American-focused branding with a clean, premium, patriotic, and modern tone.
+    - Prominently display the slogan: “Start Living Your Healthiest Life Today.”
+- **Product Imagery:**
+    - Use high-quality product images from  and .
+    - Optimize all images for performance (WebP/AVIF, compression, lazy loading).
+- **Product Pages:**
+    - Each product needs a detail page with original content, an enhanced image gallery, clean layout, features, specs, and strong CTAs.
+    - User wants to click a product and be taken to a detail page similar to .
+    - Implement a color-changing feature on the product detail page.
+- **Jingle:** Add an optional, user-triggered jingle with a mute/unmute toggle whose preference is saved.
+- **Lighthouse Score:** Achieve a 100% score across Performance, Accessibility, Best Practices, and SEO (Non-negotiable).
+- **UX/Design:** Modern, clean, premium, fast, mobile-first, and conversion-focused. Improve layout, navigation (sticky header), and CTA visibility.
+- **Contact Form:** The form should be functional and work with Netlify forms.
+- **Map:** Add a Google Map to the contact page.
+- **Social Media:** Integrate Instagram and Facebook with a lightweight feed display.
+- **Technical Rules:** Clean semantic HTML, lightweight CSS/JS, and performance-first architecture.
+
+**User's preferred language**: English
+
+**what currently exists?**
+A single-page React application built with Vite and Tailwind CSS. The entire website logic, including routing and page components, is contained within a single large file: . The site features a hero section with a video, product catalog sections, an about page, a contact page with a functional form and an embedded Google Map, and a Spa Butler content page. It also includes a pop-up modal. Most of the content and imagery have been scraped and integrated from the original site and specified supplier sites.
+
+**Last working item**:
+    - Last item agent was working: The agent was beginning the implementation of a major new feature: creating individual product detail pages with a color-changing functionality, as requested by the user who referenced . The agent's last action was to crawl the supplier's website to gather the necessary data (product details, color options, images) to build these pages.
+    - Status: IN PROGRESS
+    - Agent Testing Done: N
+    - Which testing method agent to use? both
+    - User Testing Done: N
+
+**All Pending/In progress Issue list**:
+  - Issue 1: The current codebase is not scalable because the entire application is in a single  file. This makes it difficult to maintain and add new features like the requested product detail pages. (PRIORITY: P0)
+
+  Issues Detail:
+  - Issue 1: 
+     - Attempted fixes: None. The agent has been adding more code to the same file.
+     - Next debug checklist: 
+       - Refactor  by breaking it down into smaller, reusable components.
+       - Create a  directory with subdirectories for ,  (Header, Footer), and  (ProductCard, Button).
+       - Implement a proper routing system using  to handle navigation between pages (e.g., , , , ).
+     - Why fix this issue and what will be achieved with the fix? This refactoring is critical for maintainability and will make it feasible to build the new product detail page feature without creating more technical debt.
+     - Status:  NOT STARTED
+     - Is recurring issue? Y/N: N
+     - Should Test frontend/backend/both after fix? frontend
+     - Blocked on other issue: None
+
+**In progress Task List**:
+  - Task 1:  Implement Product Detail Pages with Color Swatches (PRIORITY: P0)
+
+ Task Detail:
+  - Task 1: 
+     - Where to resume: The agent has finished crawling the supplier site for product data. The next step is to process this data and architect the new feature. It's highly recommended to first refactor  (as noted in the Pending Issue) and then:
+        1. Create a new route and a  component.
+        2. Update the  component to link to this new detail page, passing the product ID.
+        3. On the , display all scraped product information.
+        4. Implement the color swatch UI. Clicking a swatch should update the main product image.
+     - What will be achieved with this? Users will have a rich, interactive experience, allowing them to view detailed product information and visualize color options, mimicking the functionality of the reference site and improving conversion potential.
+     - Status:  IN PROGRESS
+     - Should Test frontend/backend/both after fix? frontend
+     - Blocked on something: Blocked by the need to refactor  for a scalable implementation.
+
+**Upcoming and Future Tasks**
+    - **Upcoming Tasks:**
+        - **P0: Code Refactoring:** Break down the monolithic  into modular components and pages.
+        - **P1: Achieve 100% Lighthouse Score:** Explicitly run and optimize for a 100% Lighthouse score, focusing on Performance, Accessibility, Best Practices, and SEO. This was a non-negotiable requirement.
+        - **P1: Implement Full SEO Requirements:** Add structured data/schema (LocalBusiness, Product) and ensure all other SEO elements from the original site are perfectly preserved and implemented.
+    - **Future Tasks:**
+        - **P2: Jingle Functionality:** Implement the user-triggered jingle with a visible mute/unmute button and persist the user's preference using .
+        - **P2: Social Media Feed Integration:** Replace the current social media icon links with lightweight, embedded feeds for Instagram and Facebook.
+        - **P2: Add Testimonials/Reviews Section:** Add a section for customer testimonials and reviews to build trust.
+
+**Completed work in this session**
+- **Website Rebuild:** Created a new React-based website from scratch.
+- **Content Migration:** Scraped and integrated content from .
+- **Component Implementation:**
+    - Hero section with video background, animated slogan, and larger logo ().
+    - Product sections with swipeable image carousels for multiple views ().
+    - Tax Special promotional pop-up modal ().
+    - Spa Butler and About Us pages with migrated content ().
+    - Functional contact form and embedded Google Map on the contact page ().
+- **Styling and UX:**
+    - Implemented a patriotic color scheme and modern UI based on design guidelines.
+    - Fixed mobile navigation issues and broken image links.
+    - Updated the Open Graph image in  for better social sharing.
+- **Testing:** Regularly used the testing agent to verify functionality after major changes, achieving high pass rates.
+
+**Earlier issues found/mentioned but not fixed**
+None. Issues that arose during development (e.g., broken images, mobile nav links) were addressed in subsequent steps. The pending items are unaddressed requirements from the original problem statement, listed in Upcoming and Future Tasks.
+
+**Known issue recurrence from previous fork**
+- Issue recurrence in previous fork: None
+- Recurrence count: 0
+- Status: RESOLVED
+
+**Code Architecture**
+
+
+**Key Technical Concepts**
+- **Frontend:** React, Vite, Tailwind CSS
+- **Architecture:** Single Page Application (SPA) currently implemented as a single, large component.
+- **Data:** All content is hardcoded into the  component, based on scraped data.
+
+**key DB schema**
+- N/A. The project is frontend-only with no database.
+
+**changes in tech stack**
+- None.
+
+**All files of reference**
+- : The most critical file, containing the entire application's UI and logic. It exists because the agent built the entire site within this single file.
+- : Updated to set the  for social media sharing.
+- : Contains the product requirements and a log of completed work. It exists to track project progress.
+- : Contains JSON reports from the testing agent.
+
+**Areas that need refactoring**:
+The entire application resides in . This file is over 1500 lines long and is unmanageable. It MUST be broken down into a proper React project structure with separate components for pages, layouts (Header, Footer), and UI elements (ProductCard, Modal). A router like  should be used to handle page navigation instead of the current conditional rendering logic.
+
+**key api endpoints**
+- N/A.
+
+**Critical Info for New Agent**
+- **Refactor First:** Do not add the new product detail page feature to the existing  file. The immediate priority is to refactor the codebase into a standard React component structure. Attempting to build on the current monolithic file will be slow and error-prone.
+- **User's Goal:** The user's primary goal is a high-quality, interactive site that drives conversions, closely mimicking the experience of .
+- **Key Unfinished Requirements:** Remember the non-negotiable 100% Lighthouse score and the detailed SEO schema requirements. These are critical for project success and have not been validated.
+
+**documents and test reports created in this job**
+- 
+- 
+- 
+- 
+- 
+- 
+
+**Last 10 User Messages and any pending HUMAN messages** 
+1.  **User:** Requests a product detail page similar to , including color-changing functionality. Also wants products separated by brand (Grand River, Viking). (Status: IN PROGRESS)
+2.  **User:** Asks to lower the hero logo, add content for a Spa Butler page, and embed a Google Map on the contact page. (Status: COMPLETED)
+3.  **User:** Requests the About page to feature a specific image, product thumbnails to default to the side view, a swipeable gallery on the product card, American Made text to be moved above the logo, and videos to autoplay on mobile. (Status: COMPLETED)
+4.  **User:** Requests zooming in on the hero video, making the logo bigger, adding more animations, making a button more visible, pulling two images per product, removing two sections, and adding a pop-up. (Status: COMPLETED)
+5.  **User:** Provides an updated logo and reiterates several core requirements: use uploaded photos, pull all content from the old site, make the contact form real, and ensure product listings do not link externally. (Status: COMPLETED)
+
+**Project Health Check:**
+- **Mocked:** The entire application is a functional prototype. All data is hardcoded.
+- **Broken:** The architecture is broken. The single  file is a major liability and needs immediate refactoring.
+
+**3rd Party Integrations**
+- **Google Maps:** An  is used to embed a map on the contact page.
+- **Netlify Forms:** The contact form is configured with Netlify attributes ().
+
+**Testing status**
+  - Testing agent used after significant changes: YES
+  - Troubleshoot agent used after agent stuck in loop: NO
+  - Test files created: []
+  - Known regressions: None. Previous issues were fixed.
+
+**Credentials to test flow:**
+N/A
+
+**What agent forgot to execute**
+- **Lighthouse 100% Mandate:** The agent never ran a Lighthouse test to verify the non-negotiable 100% score requirement.
+- **SEO Schema Markup:** The agent was instructed to implement , , and  schema, which has not been done.
+- **Jingle Functionality:** The specific requirement for a user-triggered jingle with persistent mute/unmute state via  was not implemented.
+- **Social Media Feed:** The agent added links to social profiles but did not implement the requested embedded feeds.
+- **Testimonials/Reviews:** This section, mentioned in the PRD, was never created.</analysis>

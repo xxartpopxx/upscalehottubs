@@ -1,51 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler } from 'lucide-react';
-import { getProductById, SHELL_COLORS, CABINET_COLORS } from '../data/products';
+import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X } from 'lucide-react';
+import { getProductById, getRelatedModel, SHELL_COLORS, CABINET_COLORS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
-import ColorSelector from '../components/products/ColorSelector';
 
-// Color tint overlay component for the main image
-const ColorTintOverlay = ({ shellColor, cabinetColor }) => {
-  const shellHex = SHELL_COLORS[shellColor]?.hex || '#F5F5F0';
-  const cabinetHex = CABINET_COLORS[cabinetColor]?.hex || '#6B7280';
+// Base URL for Grand River Spas visualizer images
+const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
+
+// Generate the actual color combination image URL
+const getColorComboImageUrl = (product, shellColor, cabinetColor) => {
+  if (!product || product.brand !== 'Grand River Spas') {
+    return null;
+  }
   
-  return (
-    <>
-      {/* Shell color tint - applies to upper/inner portion */}
-      <div 
-        className="absolute inset-0 pointer-events-none transition-all duration-500"
-        style={{
-          background: `radial-gradient(ellipse at 50% 30%, ${shellHex}25 0%, ${shellHex}15 30%, transparent 60%)`,
-          mixBlendMode: 'multiply',
-        }}
-      />
-      
-      {/* Cabinet color tint - applies to outer/lower portion */}
-      <div 
-        className="absolute inset-0 pointer-events-none transition-all duration-500"
-        style={{
-          background: `linear-gradient(0deg, ${cabinetHex}35 0%, ${cabinetHex}20 25%, transparent 50%)`,
-          mixBlendMode: 'multiply',
-        }}
-      />
-      
-      {/* Side cabinet tints */}
-      <div 
-        className="absolute inset-0 pointer-events-none transition-all duration-500"
-        style={{
-          background: `linear-gradient(90deg, ${cabinetHex}30 0%, transparent 20%, transparent 80%, ${cabinetHex}30 100%)`,
-          mixBlendMode: 'multiply',
-        }}
-      />
-    </>
-  );
+  // Extract model name from product name (e.g., "Chariton 2" -> "Chariton")
+  const modelName = product.modelFamily || product.name.split(' ')[0];
+  
+  // Map shell colors to proper casing
+  const shellMap = {
+    white: 'White',
+    silver: 'Silver',
+    opal: 'Opal'
+  };
+  
+  // Map cabinet colors to proper casing
+  const cabinetMap = {
+    coastalGray: 'CoastalGray',
+    walnut: 'Walnut',
+    barnwood: 'Barnwood',
+    black: 'Black'
+  };
+  
+  const shell = shellMap[shellColor] || 'White';
+  const cabinet = cabinetMap[cabinetColor] || 'CoastalGray';
+  
+  // URL pattern: {Model}_{Shell}_{Cabinet}_{Corner}.jpg
+  // Corner typically matches cabinet color
+  return `${GR_VISUALIZER_BASE}/${modelName}_${shell}_${cabinet}_${cabinet}.jpg`;
 };
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const product = getProductById(id);
+  const relatedModel = useMemo(() => getRelatedModel(product), [product]);
   
   // Set default colors based on product's available colors
   const defaultShell = product?.shellColors?.[0] || 'white';
@@ -53,8 +51,10 @@ const ProductDetailPage = () => {
   
   const [selectedShell, setSelectedShell] = useState(defaultShell);
   const [selectedCabinet, setSelectedCabinet] = useState(defaultCabinet);
-  const [currentView, setCurrentView] = useState('side');
+  const [currentView, setCurrentView] = useState('color'); // 'color', 'overhead', 'side'
   const [activeTab, setActiveTab] = useState('overview');
+  const [imageError, setImageError] = useState(false);
+  const [showColorInfo, setShowColorInfo] = useState(false);
   
   // Reset colors when product changes
   useEffect(() => {
@@ -62,8 +62,15 @@ const ProductDetailPage = () => {
     if (product) {
       setSelectedShell(product.shellColors?.[0] || 'white');
       setSelectedCabinet(product.cabinetColors?.[0] || 'coastalGray');
+      setImageError(false);
+      setCurrentView('color');
     }
   }, [id, product]);
+  
+  // Reset image error when colors change
+  useEffect(() => {
+    setImageError(false);
+  }, [selectedShell, selectedCabinet]);
   
   if (!product) {
     return (
@@ -77,8 +84,24 @@ const ProductDetailPage = () => {
     );
   }
   
-  // Use consistent base image - don't swap images, just apply color overlays
-  const baseImage = currentView === 'overhead' ? product.images.overhead : product.images.primary;
+  // Get the current display image based on view and color selection
+  const getDisplayImage = () => {
+    if (currentView === 'overhead') {
+      return product.images.overhead;
+    }
+    if (currentView === 'side') {
+      return product.images.primary;
+    }
+    // Color view - use color combo image if available
+    const colorComboUrl = getColorComboImageUrl(product, selectedShell, selectedCabinet);
+    if (colorComboUrl && !imageError) {
+      return colorComboUrl;
+    }
+    return product.images.primary;
+  };
+  
+  const currentImage = getDisplayImage();
+  const isGrandRiver = product.brand === 'Grand River Spas';
   
   const specs = [
     { label: 'Seats', value: product.persons ? `${product.persons} Adults` : null, icon: Users },
@@ -103,71 +126,83 @@ const ProductDetailPage = () => {
         
         {/* Main Product Section */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Image Gallery with Color Overlay */}
+          {/* Image Gallery with Color Swapping */}
           <div>
             <div className="bg-slate-50 relative aspect-square mb-4 overflow-hidden">
-              {/* Base product image - stays consistent */}
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={`${baseImage}-${currentView}`}
-                  src={baseImage}
-                  alt={`${product.name} - ${currentView} view`}
-                  className="w-full h-full object-contain p-8"
+                  key={`${currentImage}-${selectedShell}-${selectedCabinet}`}
+                  src={currentImage}
+                  alt={`${product.name} - ${SHELL_COLORS[selectedShell]?.name} shell with ${CABINET_COLORS[selectedCabinet]?.name} cabinet`}
+                  className="w-full h-full object-contain p-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  onError={(e) => { e.target.src = ASSETS.logo; }}
+                  onError={(e) => {
+                    if (currentView === 'color') {
+                      setImageError(true);
+                      e.target.src = product.images.primary;
+                    }
+                  }}
                 />
               </AnimatePresence>
               
-              {/* Color tint overlays - these change based on selection */}
-              <ColorTintOverlay 
-                shellColor={selectedShell} 
-                cabinetColor={selectedCabinet} 
-              />
-              
               {/* Color indicator badges */}
-              <div className="absolute bottom-4 left-4 flex gap-2 z-10">
-                <motion.div 
-                  key={selectedShell}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg text-xs font-medium"
-                >
-                  <div 
-                    className="w-4 h-4 rounded-full border border-slate-200"
-                    style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }}
-                  />
-                  <span>{SHELL_COLORS[selectedShell]?.name}</span>
-                </motion.div>
-                <motion.div 
-                  key={selectedCabinet}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                  className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg text-xs font-medium"
-                >
-                  <div 
-                    className="w-4 h-4 rounded-full border border-slate-200"
-                    style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }}
-                  />
-                  <span>{CABINET_COLORS[selectedCabinet]?.name}</span>
-                </motion.div>
-              </div>
+              {currentView === 'color' && isGrandRiver && (
+                <div className="absolute bottom-4 left-4 flex gap-2 z-10">
+                  <motion.div 
+                    key={`shell-${selectedShell}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg text-xs font-medium"
+                  >
+                    <div 
+                      className="w-4 h-4 rounded-full border border-slate-200"
+                      style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }}
+                    />
+                    <span>{SHELL_COLORS[selectedShell]?.name}</span>
+                  </motion.div>
+                  <motion.div 
+                    key={`cabinet-${selectedCabinet}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg text-xs font-medium"
+                  >
+                    <div 
+                      className="w-4 h-4 rounded-full border border-slate-200"
+                      style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }}
+                    />
+                    <span>{CABINET_COLORS[selectedCabinet]?.name}</span>
+                  </motion.div>
+                </div>
+              )}
               
-              {/* View toggle arrows */}
+              {/* Navigation arrows */}
               <button 
-                onClick={() => setCurrentView(currentView === 'side' ? 'overhead' : 'side')}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg z-10"
+                onClick={() => {
+                  const views = isGrandRiver ? ['color', 'overhead', 'side'] : ['side', 'overhead'];
+                  const currentIdx = views.indexOf(currentView);
+                  const prevIdx = currentIdx === 0 ? views.length - 1 : currentIdx - 1;
+                  setCurrentView(views[prevIdx]);
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg z-10 transition-colors"
                 aria-label="Previous view"
+                data-testid="prev-view-btn"
               >
                 <ChevronLeft size={24} />
               </button>
               <button 
-                onClick={() => setCurrentView(currentView === 'side' ? 'overhead' : 'side')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg z-10"
+                onClick={() => {
+                  const views = isGrandRiver ? ['color', 'overhead', 'side'] : ['side', 'overhead'];
+                  const currentIdx = views.indexOf(currentView);
+                  const nextIdx = (currentIdx + 1) % views.length;
+                  setCurrentView(views[nextIdx]);
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg z-10 transition-colors"
                 aria-label="Next view"
+                data-testid="next-view-btn"
               >
                 <ChevronRight size={24} />
               </button>
@@ -175,6 +210,19 @@ const ProductDetailPage = () => {
             
             {/* View selector tabs */}
             <div className="flex border border-slate-200">
+              {isGrandRiver && (
+                <button
+                  onClick={() => setCurrentView('color')}
+                  className={`flex-1 py-3 font-semibold text-sm uppercase tracking-wider transition-colors ${
+                    currentView === 'color' 
+                      ? 'bg-[#B91C1C] text-white' 
+                      : 'bg-white text-[#0A1628] hover:bg-slate-50'
+                  }`}
+                  data-testid="view-color-btn"
+                >
+                  Color Preview
+                </button>
+              )}
               <button
                 onClick={() => setCurrentView('side')}
                 className={`flex-1 py-3 font-semibold text-sm uppercase tracking-wider transition-colors ${
@@ -201,11 +249,31 @@ const ProductDetailPage = () => {
             
             {/* Thumbnails */}
             <div className="flex gap-4 mt-4">
+              {isGrandRiver && (
+                <button
+                  onClick={() => setCurrentView('color')}
+                  className={`w-20 h-20 border-2 overflow-hidden relative ${
+                    currentView === 'color' ? 'border-[#B91C1C]' : 'border-slate-200'
+                  }`}
+                  data-testid="thumb-color"
+                >
+                  <img 
+                    src={getColorComboImageUrl(product, selectedShell, selectedCabinet) || product.images.primary}
+                    alt="Color preview" 
+                    className="w-full h-full object-contain p-1"
+                    onError={(e) => { e.target.src = product.images.primary; }}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-[10px] text-center py-0.5">
+                    Colors
+                  </div>
+                </button>
+              )}
               <button
                 onClick={() => setCurrentView('side')}
                 className={`w-20 h-20 border-2 overflow-hidden relative ${
                   currentView === 'side' ? 'border-[#B91C1C]' : 'border-slate-200'
                 }`}
+                data-testid="thumb-side"
               >
                 <img 
                   src={product.images.primary} 
@@ -219,6 +287,7 @@ const ProductDetailPage = () => {
                 className={`w-20 h-20 border-2 overflow-hidden relative ${
                   currentView === 'overhead' ? 'border-[#B91C1C]' : 'border-slate-200'
                 }`}
+                data-testid="thumb-overhead"
               >
                 <img 
                   src={product.images.overhead} 
@@ -265,20 +334,166 @@ const ProductDetailPage = () => {
               ))}
             </div>
             
-            {/* Color Selector */}
+            {/* Color Selector Section */}
             {product.shellColors && product.cabinetColors && (
-              <ColorSelector
-                shellColors={product.shellColors}
-                cabinetColors={product.cabinetColors}
-                selectedShell={selectedShell}
-                selectedCabinet={selectedCabinet}
-                onShellChange={setSelectedShell}
-                onCabinetChange={setSelectedCabinet}
-              />
+              <div className="bg-slate-50 p-6 mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628]">
+                    Customize Your Spa Colors
+                  </h3>
+                  <button 
+                    onClick={() => setShowColorInfo(!showColorInfo)}
+                    className="text-slate-400 hover:text-slate-600 transition-colors"
+                    aria-label="Color information"
+                  >
+                    <Info size={20} />
+                  </button>
+                </div>
+                
+                {showColorInfo && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="bg-blue-50 border border-blue-200 text-blue-800 p-4 text-sm rounded mb-4"
+                  >
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <p className="font-semibold mb-1">Color Visualization</p>
+                        <p>Select colors below to see a realistic preview. Actual colors may vary slightly. Contact us for physical color samples.</p>
+                      </div>
+                      <button onClick={() => setShowColorInfo(false)} className="text-blue-600 hover:text-blue-800">
+                        <X size={18} />
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+                
+                {/* Shell Colors */}
+                <div className="mb-6">
+                  <p className="text-sm font-semibold text-slate-600 mb-3">Shell Color</p>
+                  <div className="flex gap-3 flex-wrap">
+                    {product.shellColors.map((colorKey) => {
+                      const color = SHELL_COLORS[colorKey];
+                      if (!color) return null;
+                      const isSelected = selectedShell === colorKey;
+                      
+                      return (
+                        <motion.button
+                          key={colorKey}
+                          onClick={() => {
+                            setSelectedShell(colorKey);
+                            if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="relative group"
+                          data-testid={`shell-color-${colorKey}`}
+                          aria-label={`Select ${color.name} shell color`}
+                        >
+                          <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                            isSelected
+                              ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-2' 
+                              : 'border-slate-200 hover:border-slate-400'
+                          }`}>
+                            {color.image ? (
+                              <img 
+                                src={color.image} 
+                                alt={color.name} 
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  e.target.style.display = 'none';
+                                  e.target.parentElement.style.backgroundColor = color.hex;
+                                }}
+                              />
+                            ) : (
+                              <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
+                            )}
+                            {isSelected && (
+                              <motion.div 
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg"
+                              >
+                                <Check className="text-[#B91C1C]" size={20} strokeWidth={3} />
+                              </motion.div>
+                            )}
+                          </div>
+                          <p className={`text-xs mt-1 text-center font-medium ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                            {color.name.split(' ')[0]}
+                          </p>
+                        </motion.button>
+                      );
+                    })}
+                  </div>
+                </div>
+                
+                {/* Cabinet Colors */}
+                <div>
+                  <p className="text-sm font-semibold text-slate-600 mb-3">Cabinet Color</p>
+                  <div className="flex gap-3 flex-wrap">
+                    {product.cabinetColors.map((colorKey) => {
+                      const color = CABINET_COLORS[colorKey];
+                      if (!color) return null;
+                      const isSelected = selectedCabinet === colorKey;
+                      
+                      return (
+                        <motion.button
+                          key={colorKey}
+                          onClick={() => {
+                            setSelectedCabinet(colorKey);
+                            if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="relative group"
+                          data-testid={`cabinet-color-${colorKey}`}
+                          aria-label={`Select ${color.name} cabinet color`}
+                        >
+                          <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                            isSelected
+                              ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-2' 
+                              : 'border-slate-200 hover:border-slate-400'
+                          }`}>
+                            {color.image ? (
+                              <img 
+                                src={color.image} 
+                                alt={color.name} 
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  e.target.style.display = 'none';
+                                  e.target.parentElement.style.backgroundColor = color.hex;
+                                }}
+                              />
+                            ) : (
+                              <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
+                            )}
+                            {isSelected && (
+                              <motion.div 
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg"
+                              >
+                                <Check className="text-[#B91C1C]" size={20} strokeWidth={3} />
+                              </motion.div>
+                            )}
+                          </div>
+                          <p className={`text-xs mt-1 text-center font-medium ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                            {color.name.split(' ')[0]}
+                          </p>
+                        </motion.button>
+                      );
+                    })}
+                  </div>
+                </div>
+                
+                <p className="text-xs text-slate-400 italic mt-4">
+                  Color preview is approximate. Actual product colors may vary. Contact us for physical samples.
+                </p>
+              </div>
             )}
             
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/contact" 
                 className="btn-primary flex-1 flex items-center justify-center gap-2 text-lg py-4"
@@ -296,6 +511,82 @@ const ProductDetailPage = () => {
             </div>
           </div>
         </div>
+        
+        {/* Model Comparison Section - only show if there's a related model */}
+        {relatedModel && (
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-[#0A1628] text-center mb-8">
+              Quick Comparison
+            </h2>
+            <div className="bg-slate-50 overflow-hidden">
+              <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                {/* Current Product */}
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center justify-center mb-6">
+                    <img 
+                      src={product.images.overhead}
+                      alt={product.name}
+                      className="h-48 object-contain"
+                      onError={(e) => { e.target.src = ASSETS.logo; }}
+                    />
+                  </div>
+                  <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] text-center mb-4">
+                    {product.name}
+                  </h3>
+                  <div className="space-y-3">
+                    <ComparisonRow label="Dimensions" value={product.dimensions} />
+                    <ComparisonRow label="Seats" value={`${product.persons} Adults`} />
+                    <ComparisonRow label="Jet Count" value={product.jets} highlight />
+                    <ComparisonRow label="Seating Layout" value={product.seatingLayout} />
+                    <ComparisonRow label="Water Capacity" value={product.waterCapacity} />
+                    <ComparisonRow label="Electrical" value={product.electrical} />
+                  </div>
+                  <div className="mt-6 text-center">
+                    <p className="text-2xl font-bold text-[#B91C1C]">{product.price}</p>
+                    <p className="text-xs text-slate-500 mt-1">Currently Viewing</p>
+                  </div>
+                </div>
+                
+                {/* Related Model */}
+                <div className="p-6 md:p-8 bg-white">
+                  <div className="flex items-center justify-center mb-6">
+                    <img 
+                      src={relatedModel.images.overhead}
+                      alt={relatedModel.name}
+                      className="h-48 object-contain"
+                      onError={(e) => { e.target.src = ASSETS.logo; }}
+                    />
+                  </div>
+                  <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] text-center mb-4">
+                    {relatedModel.name}
+                  </h3>
+                  <div className="space-y-3">
+                    <ComparisonRow label="Dimensions" value={relatedModel.dimensions} />
+                    <ComparisonRow label="Seats" value={`${relatedModel.persons} Adults`} />
+                    <ComparisonRow label="Jet Count" value={relatedModel.jets} highlight />
+                    <ComparisonRow label="Seating Layout" value={relatedModel.seatingLayout} />
+                    <ComparisonRow label="Water Capacity" value={relatedModel.waterCapacity} />
+                    <ComparisonRow label="Electrical" value={relatedModel.electrical} />
+                  </div>
+                  <div className="mt-6 text-center">
+                    <p className="text-2xl font-bold text-[#B91C1C]">{relatedModel.price}</p>
+                    <Link 
+                      to={`/products/${relatedModel.id}`}
+                      className="inline-flex items-center gap-2 mt-2 text-sm text-[#B91C1C] hover:underline font-semibold"
+                    >
+                      View {relatedModel.name} <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+        )}
         
         {/* Tabs Section */}
         <div className="border-t border-slate-200 pt-12">
@@ -452,5 +743,15 @@ const ProductDetailPage = () => {
     </div>
   );
 };
+
+// Helper component for comparison rows
+const ComparisonRow = ({ label, value, highlight = false }) => (
+  <div className="flex justify-between items-center py-2 border-b border-slate-100 last:border-0">
+    <span className="text-slate-500 text-sm">{label}</span>
+    <span className={`font-semibold ${highlight ? 'text-[#B91C1C] text-lg' : 'text-[#0A1628]'}`}>
+      {value || '-'}
+    </span>
+  </div>
+);
 
 export default ProductDetailPage;

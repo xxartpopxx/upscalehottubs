@@ -960,6 +960,7 @@ function App() {
             <Route path="/swim-spas" element={<SwimSpasPage />} />
             <Route path="/saunas" element={<SaunasPage />} />
             <Route path="/cold-plunges" element={<ColdPlungesPage />} />
+            <Route path="/spa-butler" element={<SpaButlerPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/financing" element={<FinancingPage />} />

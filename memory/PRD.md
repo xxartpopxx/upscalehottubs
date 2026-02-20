@@ -4,21 +4,7 @@
 **Date Created:** February 20, 2026
 **Last Updated:** February 20, 2026
 
-Rebuild and significantly improve the Upstate Hot Tubs website (upstatehottubs.com) - a premium hot tub, swim spa, sauna, and cold plunge retailer serving Naples, Florida and South Carolina.
-
-## User Personas
-1. **Homeowners in SC & FL** - Looking for quality hot tubs for relaxation and wellness
-2. **Health-conscious Families** - Seeking wellness products for healthy lifestyle
-3. **First Responders/Military/Veterans** - Eligible for 5-10% discount
-
-## Core Requirements
-- Preserve ALL existing content exactly from original site
-- Preserve SEO structure and keywords
-- Target Google Lighthouse 100% scores
-- American flag/patriotic theming
-- Mobile-first, performance-focused design
-- Products stay ON-SITE (no external links to suppliers)
-- Real working contact form (Netlify compatible)
+Premium hot tub, swim spa, sauna, and cold plunge retailer website serving Naples, Florida and South Carolina.
 
 ## Business Information
 - **Phone:** (864) 837-0155
@@ -29,60 +15,56 @@ Rebuild and significantly improve the Upstate Hot Tubs website (upstatehottubs.c
 
 ## What's Been Implemented
 
-### MVP Features (February 20, 2026)
-- [x] NEW logo from uploaded artifact
-- [x] Hero section with video background
-- [x] All 10 navigation pages: Home, Hot Tubs, Swim Spas, Saunas, Cold Plunges, Chemicals, Accessories, Events, Financing, Contact
-- [x] Hot Tubs page with 20 products (Quick View modal, no external links)
-- [x] Swim Spas page with 7 products
-- [x] Saunas page with 6 products
-- [x] Cold Plunges page with 3 products
-- [x] Chemicals page with 11 products
-- [x] Accessories/Covers page with 3 products
-- [x] Events page (9-11 Reading, Christmas in July, National Night Out)
-- [x] Financing page (HFS Financial, LightStream)
-- [x] REAL Contact form with Netlify forms compatibility
-- [x] Gallery section using uploaded photos (7 images)
-- [x] Customer testimonials section (6 testimonials)
-- [x] Trust badges (First Responders, Military, Veterans discounts)
-- [x] What's Included accessories section
-- [x] Wet Test promotion section
-- [x] Jingle player with floating mute/unmute button
+### MVP Features
+- [x] Hero section with ZOOMED video (scale-125)
+- [x] BIGGER logo in header (h-20 md:h-24) and hero (h-32 md:h-40)
+- [x] TAX SPECIAL popup (appears after 3 seconds)
+- [x] More visible "Browse Swim Spas" button (white background)
+- [x] Product cards with DUAL images (overhead + side views)
+- [x] Image toggle dots on product cards
+- [x] Product modal with Overhead/Side view tabs
+- [x] Jet counts displayed on products
+- [x] About page with Dynasty Spas content (4 Best Reasons to Buy American)
+- [x] Wet test section with new video
+- [x] REMOVED "Our Store and Community" gallery section
+- [x] Enhanced animations (hover, scroll, spring effects)
+- [x] 9 navigation pages: Home, Hot Tubs, Swim Spas, Saunas, Cold Plunges, About, Events, Financing, Contact
+- [x] Netlify-compatible contact form
 - [x] Social media links (Instagram, Facebook, YouTube)
-- [x] Mobile responsive navigation
-- [x] SEO: Schema markup, meta tags, Open Graph
+- [x] Jingle player with floating button
+
+### Products
+- 12 Hot Tubs (Premier Series from Grand River Spas)
+- 4 Swim Spas
+- 2 Saunas
+- 2 Cold Plunges
 
 ### Technical Stack
-- React 19 with framer-motion for animations
-- React Router for SPA navigation
-- TailwindCSS for styling
-- Lucide React for icons
-- Netlify Forms compatible contact form
-
-## Product Data Sources
-- Hot Tub Images: Grand River Spas, Viking Spas
-- All products stay on-site (Quick View modal with Request Quote button)
+- React 19 + Framer Motion
+- TailwindCSS
+- React Router
+- Lucide React icons
 
 ## Prioritized Backlog
 
-### P0 - Next Priority
-- Add product search/filter functionality
-- Expand product descriptions
-- Add more customer photos
+### P0 - Next
+- Add more product images from Viking Spas
+- Implement product search/filter
+- Add customer reviews section
 
-### P1 - Medium Priority
-- Blog section for SEO
-- Image lightbox gallery
-- Map integration
-- Live chat
+### P1 - Medium
+- Blog for SEO
+- Live chat integration
+- Email newsletter signup
 
-### P2 - Future
-- Newsletter signup
-- SMS notifications
-- Appointment booking calendar
-
-## Next Tasks
-1. Performance optimization for Lighthouse 100%
-2. Add more product images with multiple angles
-3. Implement search/filter on product pages
-4. Add blog section for SEO content
+## Session Changes (Feb 20, 2026)
+1. Changed logo to new uploaded artifact
+2. Zoomed hero video by 25%
+3. Made logo bigger throughout
+4. Added TAX SPECIAL popup
+5. Made Browse Swim Spas button more visible (white)
+6. Added dual product images (overhead + side views)
+7. Removed gallery section
+8. Created About page with Dynasty Spas content
+9. Used new video for wet test section
+10. Added more animations

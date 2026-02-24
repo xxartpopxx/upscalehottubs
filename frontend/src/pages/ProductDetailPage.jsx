@@ -213,7 +213,7 @@ const ProductDetailPage = () => {
   
   if (!product) {
     return (
-      <div className="pt-28 pb-20 text-center">
+      <div className="pt-36 pb-20 text-center">
         <h2 className="text-2xl font-bold text-[#0A1628]">Product not found</h2>
         <Link to="/hot-tubs" className="text-[#B91C1C] hover:underline mt-4 inline-block">
           Return to Hot Tubs
@@ -253,7 +253,7 @@ const ProductDetailPage = () => {
           <meta name="keywords" content={seoKeywords} />
         </Helmet>
       )}
-      <div className="pt-28 pb-20" data-testid="product-detail-page">
+      <div className="pt-36 pb-20" data-testid="product-detail-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Breadcrumb */}
           <nav className="mb-6">

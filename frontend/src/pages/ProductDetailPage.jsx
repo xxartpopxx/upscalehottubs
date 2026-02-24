@@ -677,6 +677,73 @@ const ProductDetailPage = () => {
             </div>
           </div>
           
+          {/* Dynasty Spas - Color Reference Section */}
+          {isDynasty && product.shellColors && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="dynasty-color-reference"
+            >
+              <div className="bg-slate-50 p-6 lg:p-8">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center">
+                  Available Color Options
+                </h3>
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Acrylic Colors */}
+                  <div>
+                    <h4 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-[#0A1628] mb-4">Acrylic Color Options</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      {product.shellColors.map((colorKey) => {
+                        const color = getShellColorData(colorKey);
+                        if (!color) return null;
+                        return (
+                          <div key={colorKey} className="flex items-center gap-3" data-testid={`dynasty-shell-ref-${colorKey}`}>
+                            <div className="w-16 h-16 rounded-lg border border-slate-300 flex-shrink-0" style={{ backgroundColor: color.hex }} />
+                            <div>
+                              <p className="font-semibold text-sm text-[#0A1628]">{color.name}</p>
+                              {colorKey === product.shellColors[0] && (
+                                <p className="text-xs text-slate-500">Standard</p>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  {/* Skirt Colors */}
+                  <div>
+                    <h4 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-[#0A1628] mb-4">Skirt Color Options</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      {product.cabinetColors.map((colorKey) => {
+                        const color = getCabinetColorData(colorKey);
+                        if (!color) return null;
+                        return (
+                          <div key={colorKey} className="flex items-center gap-3" data-testid={`dynasty-cabinet-ref-${colorKey}`}>
+                            <div className="w-16 h-16 rounded-lg border border-slate-300 flex-shrink-0" style={{ backgroundColor: color.hex }} />
+                            <div>
+                              <p className="font-semibold text-sm text-[#0A1628]">{color.name}</p>
+                              {(colorKey === 'blackConfer' || colorKey === 'grayConfer') && (
+                                <p className="text-xs text-slate-500">Standard</p>
+                              )}
+                              {(colorKey === 'ashElite' || colorKey === 'coastalGrayElite') && (
+                                <p className="text-xs text-amber-600">Upgrade</p>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mt-6 text-center">
+                  Actual colors may vary. Contact us for physical color samples.
+                </p>
+              </div>
+            </motion.div>
+          )}
+
           {/* Model Comparison for Grand River (existing related model) */}
           {relatedModel && isGrandRiver && (
             <motion.div

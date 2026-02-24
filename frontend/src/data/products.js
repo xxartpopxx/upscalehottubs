@@ -1379,8 +1379,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Professional-grade 13-foot swim spa with enhanced features.',
     features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'LED river jets', 'Professional swim current', 'RMAX insulation'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_ae48cc5d30dd4e0a82daecf1c5c0ccb1~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_ae48cc5d30dd4e0a82daecf1c5c0ccb1~mv2.jpg'
+      primary: 'https://static.wixstatic.com/media/5c7c78_ae48cc5d30dd4e0a82daecf1c5c0ccb1~mv2.jpg'
     }
   },
   {
@@ -1394,8 +1393,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: '16-foot trainer swim spa designed for serious swimmers.',
     features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'Lounger seating', 'Professional swim current', 'Energy efficient'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_ba33eab37b454202aebad500bba79305~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_ba33eab37b454202aebad500bba79305~mv2.webp'
+      primary: 'https://static.wixstatic.com/media/5c7c78_ba33eab37b454202aebad500bba79305~mv2.webp'
     }
   },
   {
@@ -1409,8 +1407,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Our largest 19-foot dual-zone swim spa with separate hot tub section.',
     features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'Dual temperature zones', 'Professional swim current', 'Bench seating'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     }
   }
 ];

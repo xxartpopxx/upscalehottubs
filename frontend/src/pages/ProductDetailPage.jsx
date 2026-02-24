@@ -374,6 +374,7 @@ const ProductDetailPage = () => {
             </div>
             
             {/* Color Selector Panel - 5 columns */}
+            {!isSaunaOrColdPlunge && (
             <div className="lg:col-span-5">
               {product.shellColors && product.cabinetColors && !isDynasty && !isSwimSpa ? (
                 <div className="bg-slate-50 p-5 h-full">

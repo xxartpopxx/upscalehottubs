@@ -1546,11 +1546,20 @@ export const DYNASTY_SWIM_SPAS = [
     length: '16 ft',
     price: '$32,500.00',
     priceValue: 32500,
-    description: '16-foot trainer swim spa designed for serious swimmers.',
-    features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'Lounger seating', 'Professional swim current', 'Energy efficient'],
+    dimensions: '92" x 192" x 60"',
+    waterCapacity: '1,850 gallons',
+    electrical: '220v/60amp',
+    pumps: '3 - 5.0bhp + 1 - 7.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '2700 lbs',
+    filledWeight: '17500 lbs',
+    description: '16-foot trainer swim spa with swim coach multi-programmable workout, in.Mix lighting, and in.Stream audio.',
+    features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Exercise/Rowing & Swim Tether', 'LED Illuminated Fountains', 'LED Corner Lighting'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_ba33eab37b454202aebad500bba79305~mv2.webp'
-    }
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/16+AQUEX+TRAINER+SWIM+SPA+vert+NE-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer']
   },
   {
     id: 'ds-ss-aquex-dual-pro',

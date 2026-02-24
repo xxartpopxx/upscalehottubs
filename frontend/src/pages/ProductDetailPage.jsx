@@ -8,57 +8,89 @@ import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
+// Base URL for Viking Spas visualizer images
+const VS_VISUALIZER_BASE = 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
 
 // Shell and Cabinet colors for display
 const SHELL_COLORS = {
-  white: { name: 'White Satin', hex: '#F5F5F0', image: `${GR_VISUALIZER_BASE}/white.png` },
-  silver: { name: 'Silver Satin', hex: '#C0C0C0', image: `${GR_VISUALIZER_BASE}/silver.png` },
-  opal: { name: 'Opal Satin', hex: '#A8B5B8', image: `${GR_VISUALIZER_BASE}/opal.png` },
+  white: { name: 'White Satin', hex: '#F5F5F0', image: `${VS_VISUALIZER_BASE}/white.png` },
+  silver: { name: 'Silver Satin', hex: '#C0C0C0', image: `${VS_VISUALIZER_BASE}/silver.png` },
+  opal: { name: 'Opal Satin', hex: '#A8B5B8', image: `${VS_VISUALIZER_BASE}/opal.png` },
 };
 
 const CABINET_COLORS = {
+  // Grand River
   coastalGray: { name: 'Coastal Gray', hex: '#6B7280', image: `${GR_VISUALIZER_BASE}/coastalgray.png` },
-  walnut: { name: 'Walnut', hex: '#5D4037', image: `${GR_VISUALIZER_BASE}/walnut.png` },
-  barnwood: { name: 'Barnwood', hex: '#8B7355', image: `${GR_VISUALIZER_BASE}/barnwood.png` },
-  black: { name: 'Black Slate', hex: '#1a1a1a', image: `${GR_VISUALIZER_BASE}/black.png` },
+  walnut: { name: 'Walnut', hex: '#5D4037', image: `${VS_VISUALIZER_BASE}/walnut.png` },
+  barnwood: { name: 'Barnwood', hex: '#8B7355', image: `${VS_VISUALIZER_BASE}/barnwood.png` },
+  black: { name: 'Black Slate', hex: '#1a1a1a', image: `${VS_VISUALIZER_BASE}/black.png` },
   taupe: { name: 'Taupe', hex: '#8B7D6B', image: `${GR_VISUALIZER_BASE}/walnut.png` },
   // Viking Elite Series
-  slate: { name: 'Slate', hex: '#708090', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/slate.png' },
-  chestnut: { name: 'Chestnut', hex: '#954535', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/chestnut.png' },
-  stone: { name: 'Stone', hex: '#8B8B83', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/stone.png' },
-  carbon: { name: 'Carbon', hex: '#333333', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/carbon.png' },
+  slate: { name: 'Slate', hex: '#708090', image: `${VS_VISUALIZER_BASE}/slate.png` },
+  chestnut: { name: 'Chestnut', hex: '#954535', image: `${VS_VISUALIZER_BASE}/chestnut.png` },
+  stone: { name: 'Stone', hex: '#8B8B83', image: `${VS_VISUALIZER_BASE}/stone.png` },
+  carbon: { name: 'Carbon', hex: '#333333', image: `${VS_VISUALIZER_BASE}/carbon.png` },
   // Viking Heirloom Series
-  ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/ash.png' },
+  ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: `${VS_VISUALIZER_BASE}/ash.png` },
 };
 
-// Generate the actual color combination image URL with corner color support
-// Corner can only be "Match Cabinet" (same as cabinet) or "Black"
-const getColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption) => {
+// Corner color options for Viking Spas
+const CORNER_COLORS = {
+  // Elite Series corners
+  carbon: { name: 'Carbon', hex: '#333333', image: `${VS_VISUALIZER_BASE}/carbon.png` },
+  // Heirloom Series corners
+  black: { name: 'Black Slate', hex: '#1a1a1a', image: `${VS_VISUALIZER_BASE}/black.png` },
+};
+
+// Generate the actual color combination image URL for Grand River
+const getGRColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption) => {
   if (!product || product.brand !== 'Grand River Spas') {
     return null;
   }
   
   const modelName = product.modelFamily || product.name.split(' ')[0];
   
-  const shellMap = {
-    white: 'White',
-    silver: 'Silver',
-    opal: 'Opal'
-  };
-  
-  const cabinetMap = {
-    coastalGray: 'CoastalGray',
-    walnut: 'Walnut',
-    barnwood: 'Barnwood',
-    black: 'Black'
-  };
+  const shellMap = { white: 'White', silver: 'Silver', opal: 'Opal' };
+  const cabinetMap = { coastalGray: 'CoastalGray', walnut: 'Walnut', barnwood: 'Barnwood', black: 'Black', taupe: 'Taupe' };
   
   const shell = shellMap[shellColor] || 'White';
   const cabinet = cabinetMap[cabinetColor] || 'CoastalGray';
-  // Corner is either 'match' (same as cabinet) or 'black'
   const corner = cornerOption === 'black' ? 'Black' : cabinet;
   
   return `${GR_VISUALIZER_BASE}/${modelName}_${shell}_${cabinet}_${corner}.jpg`;
+};
+
+// Generate the actual color combination image URL for Viking Spas
+const getVSColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption) => {
+  if (!product || product.brand !== 'Viking Spas') {
+    return null;
+  }
+  
+  // Use the colorVisualizerBase if available, otherwise derive from name
+  const modelBase = product.colorVisualizerBase || product.modelFamily || product.name;
+  
+  const shellMap = { white: 'White', silver: 'Silver', opal: 'Opal' };
+  
+  // Elite Series cabinet map
+  const eliteCabinetMap = { slate: 'Slate', chestnut: 'Chestnut', stone: 'Stone', carbon: 'Carbon' };
+  // Heirloom Series cabinet map  
+  const heirloomCabinetMap = { ashGray: 'Ash', walnut: 'Walnut', barnwood: 'Barnwood', black: 'Black' };
+  
+  const isElite = product.series === 'Elite Series';
+  const cabinetMap = isElite ? eliteCabinetMap : heirloomCabinetMap;
+  
+  const shell = shellMap[shellColor] || 'Opal';
+  const cabinet = cabinetMap[cabinetColor] || (isElite ? 'Carbon' : 'Ash');
+  
+  // Corner: 'match' means same as cabinet, otherwise use Carbon (Elite) or Black (Heirloom)
+  let corner;
+  if (cornerOption === 'match') {
+    corner = cabinet;
+  } else {
+    corner = isElite ? 'Carbon' : 'Black';
+  }
+  
+  return `${VS_VISUALIZER_BASE}/${modelBase}_${shell}_${cabinet}_${corner}.png`;
 };
 
 const ProductDetailPage = () => {

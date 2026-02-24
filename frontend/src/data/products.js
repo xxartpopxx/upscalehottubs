@@ -968,13 +968,13 @@ export const SAUNAS = [
     brand: 'SaunaLife',
     series: 'Barrel Saunas',
     price: '$10,995.95',
-    priceValue: 10995,
+    priceValue: 10995.95,
     persons: 8,
-    description: 'Premium barrel sauna for outdoor use.',
-    features: ['8-person capacity', 'Premium wood construction', 'Electric heater included'],
+    description: 'Premium 8-person barrel sauna for outdoor use. The EE8G features premium Thermowood construction and a powerful electric heater.',
+    features: ['8-person capacity', 'Premium Thermowood construction', 'Electric heater included', 'Outdoor ready', 'Easy assembly'],
     images: {
-      primary: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80',
-      overhead: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80'
+      primary: 'https://static.wixstatic.com/media/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg'
     }
   },
   {
@@ -983,13 +983,73 @@ export const SAUNAS = [
     brand: 'SaunaLife',
     series: 'Barrel Saunas',
     price: '$8,995.95',
-    priceValue: 8995,
+    priceValue: 8995.95,
     persons: 6,
-    description: 'Compact barrel sauna with quality construction.',
-    features: ['6-person capacity', 'Thermowood construction', 'Easy assembly'],
+    description: 'Compact 6-person barrel sauna with quality Thermowood construction. Perfect for smaller spaces.',
+    features: ['6-person capacity', 'Thermowood construction', 'Easy assembly', 'Electric heater included'],
     images: {
-      primary: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80',
-      overhead: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80'
+      primary: 'https://static.wixstatic.com/media/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg'
+    }
+  },
+  {
+    id: 'sauna-gl4',
+    name: 'SaunaLife GL4 Outdoor Sauna Kit',
+    brand: 'SaunaLife',
+    series: 'Outdoor Saunas',
+    price: '$13,995.95',
+    priceValue: 13995.95,
+    persons: 4,
+    description: 'Premium outdoor sauna kit with modern glass design. The GL4 combines traditional sauna benefits with contemporary aesthetics.',
+    features: ['4-person capacity', 'Modern glass design', 'Outdoor ready', 'Premium construction', 'Electric heater included'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg'
+    }
+  },
+  {
+    id: 'sauna-cl3g',
+    name: 'SaunaLife Model CL3G',
+    brand: 'SaunaLife',
+    series: 'Cabin Saunas',
+    price: '$5,995.95',
+    priceValue: 5995.95,
+    persons: 3,
+    description: 'Compact cabin-style sauna perfect for smaller spaces. The CL3G offers authentic sauna experience in a space-efficient design.',
+    features: ['3-person capacity', 'Cabin-style design', 'Compact footprint', 'Electric heater included', 'Easy assembly'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg'
+    }
+  },
+  {
+    id: 'sauna-g6',
+    name: 'SaunaLife Model G6 Pre-Assembled Outdoor Home Sauna',
+    brand: 'SaunaLife',
+    series: 'Premium Outdoor Saunas',
+    price: '$34,995.95',
+    priceValue: 34995.95,
+    persons: 6,
+    description: 'Our flagship pre-assembled outdoor sauna. The G6 delivers the ultimate luxury sauna experience with premium materials and craftsmanship.',
+    features: ['6-person capacity', 'Pre-assembled delivery', 'Premium glass design', 'Luxury finish', 'Professional installation available'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg'
+    }
+  },
+  {
+    id: 'sauna-cl7g',
+    name: 'SaunaLife Model CL7G',
+    brand: 'SaunaLife',
+    series: 'Cabin Saunas',
+    price: '$11,995.95',
+    priceValue: 11995.95,
+    persons: 7,
+    description: 'Large cabin-style sauna for groups and families. The CL7G offers spacious interior with premium construction.',
+    features: ['7-person capacity', 'Cabin-style design', 'Spacious interior', 'Electric heater included', 'Premium wood construction'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg'
     }
   }
 ];

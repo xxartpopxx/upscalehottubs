@@ -412,14 +412,14 @@ const ProductDetailPage = () => {
                             key={colorKey}
                             onClick={() => {
                               setSelectedCabinet(colorKey);
-                              if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
+                              if (currentView !== 'color' && hasColorSelector) setCurrentView('color');
                             }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="relative group"
                             data-testid={`cabinet-color-${colorKey}`}
                           >
-                            <div className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                            <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
                               isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
                             }`}>
                               {color.image ? (
@@ -442,42 +442,90 @@ const ProductDetailPage = () => {
                     </div>
                   </div>
                   
-                  {/* Corner Colors - Only Match Cabinet or Black options */}
-                  <div className="mb-5">
-                    <p className="text-sm font-semibold text-slate-600 mb-2">Corner Color</p>
-                    <div className="flex gap-3 flex-wrap">
-                      {/* Match Cabinet Option */}
-                      <motion.button
-                        onClick={() => {
-                          setSelectedCorner('match');
-                          if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
-                        }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative group"
-                        data-testid="corner-color-match"
-                      >
-                        <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                          selectedCorner === 'match' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
-                        }`}>
-                          <div className="w-full h-full" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
-                          {selectedCorner === 'match' && (
-                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
-                              <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
-                            </motion.div>
-                          )}
-                        </div>
-                        <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'match' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
-                          Match Cabinet
-                        </p>
-                      </motion.button>
-                      
-                      {/* Black Slate Option */}
-                      <motion.button
-                        onClick={() => {
-                          setSelectedCorner('black');
-                          if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
-                        }}
+                  {/* Corner Colors - Viking Spas specific */}
+                  {isViking && (
+                    <div className="mb-5">
+                      <p className="text-sm font-semibold text-slate-600 mb-2">Corner Color</p>
+                      <div className="flex gap-3 flex-wrap">
+                        {cornerOptions.map((option) => {
+                          const isSelected = selectedCorner === option.key;
+                          const cornerColor = option.key === 'match' 
+                            ? CABINET_COLORS[selectedCabinet] 
+                            : CORNER_COLORS[option.key];
+                          
+                          return (
+                            <motion.button
+                              key={option.key}
+                              onClick={() => {
+                                setSelectedCorner(option.key);
+                                if (currentView !== 'color') setCurrentView('color');
+                              }}
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="relative group"
+                              data-testid={`corner-color-${option.key}`}
+                            >
+                              <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                                isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                              }`}>
+                                {cornerColor?.image ? (
+                                  <img src={cornerColor.image} alt={option.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.backgroundColor = cornerColor?.hex; }} />
+                                ) : (
+                                  <div className="w-full h-full" style={{ backgroundColor: cornerColor?.hex }} />
+                                )}
+                                {isSelected && (
+                                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                    <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
+                                  </motion.div>
+                                )}
+                              </div>
+                              <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                                {option.name}
+                              </p>
+                            </motion.button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Corner Colors - Grand River (Match Cabinet or Black) */}
+                  {isGrandRiver && (
+                    <div className="mb-5">
+                      <p className="text-sm font-semibold text-slate-600 mb-2">Corner Color</p>
+                      <div className="flex gap-3 flex-wrap">
+                        {/* Match Cabinet Option */}
+                        <motion.button
+                          onClick={() => {
+                            setSelectedCorner('match');
+                            if (currentView !== 'color') setCurrentView('color');
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="relative group"
+                          data-testid="corner-color-match"
+                        >
+                          <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                            selectedCorner === 'match' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                          }`}>
+                            <div className="w-full h-full" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
+                            {selectedCorner === 'match' && (
+                              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
+                              </motion.div>
+                            )}
+                          </div>
+                          <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'match' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                            Match Cabinet
+                          </p>
+                        </motion.button>
+                        
+                        {/* Black Slate Option */}
+                        <motion.button
+                          onClick={() => {
+                            setSelectedCorner('black');
+                            if (currentView !== 'color') setCurrentView('color');
+                          }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="relative group"

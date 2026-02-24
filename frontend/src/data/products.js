@@ -15,25 +15,43 @@ const getGRColorImage = (model, shell, cabinet, corner = null) => {
   return `${GR_VISUALIZER_BASE}/${model}_${shellName}_${cabinetName}_${cornerName}.jpg`;
 };
 
-// Shell Color Options
-export const SHELL_COLORS = {
-  white: { name: 'White Satin', hex: '#F5F5F0', image: `${GR_VISUALIZER_BASE}/white.png` },
-  silver: { name: 'Silver Satin', hex: '#C0C0C0', image: `${GR_VISUALIZER_BASE}/silver.png` },
-  opal: { name: 'Opal Satin', hex: '#A8B5B8', image: `${GR_VISUALIZER_BASE}/opal.png` },
+// Viking Spas Color Options
+// ELITE SERIES: Shell (White, Silver, Opal) + Cabinet (Slate, Chestnut, Stone, Carbon) + Corner (Match/Carbon)
+// HEIRLOOM SERIES: Shell (White, Silver, Opal) + Cabinet (Ash Gray, Walnut, Barnwood, Black) + Corner (Match/Black)
+
+// Viking Elite Series cabinet colors
+export const VS_ELITE_CABINET_COLORS = {
+  slate: { name: 'Slate', hex: '#708090', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/slate.png' },
+  chestnut: { name: 'Chestnut', hex: '#954535', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/chestnut.png' },
+  stone: { name: 'Stone', hex: '#8B8B83', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/stone.png' },
+  carbon: { name: 'Carbon', hex: '#333333', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/carbon.png' },
 };
 
-// Cabinet Color Options
-export const CABINET_COLORS = {
-  coastalGray: { name: 'Coastal Gray', hex: '#6B7280', image: `${GR_VISUALIZER_BASE}/coastalgray.png` },
-  walnut: { name: 'Walnut', hex: '#5D4037', image: `${GR_VISUALIZER_BASE}/walnut.png` },
-  barnwood: { name: 'Barnwood', hex: '#8B7355', image: `${GR_VISUALIZER_BASE}/barnwood.png` },
-  black: { name: 'Black Slate', hex: '#1a1a1a', image: `${GR_VISUALIZER_BASE}/black.png` },
-  stone: { name: 'Stone', hex: '#8B8B83', image: `${GR_VISUALIZER_BASE}/coastalgray.png` },
-  chestnut: { name: 'Chestnut', hex: '#954535', image: `${GR_VISUALIZER_BASE}/walnut.png` },
-  ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: `${GR_VISUALIZER_BASE}/coastalgray.png` },
-  slate: { name: 'Slate', hex: '#708090', image: `${GR_VISUALIZER_BASE}/black.png` },
-  taupe: { name: 'Taupe', hex: '#8B7D6B', image: `${GR_VISUALIZER_BASE}/walnut.png` },
-  carbon: { name: 'Carbon', hex: '#333333', image: `${GR_VISUALIZER_BASE}/black.png` },
+// Viking Heirloom Series cabinet colors
+export const VS_HEIRLOOM_CABINET_COLORS = {
+  ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/ash.png' },
+  walnut: { name: 'Walnut', hex: '#5D4037', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/walnut.png' },
+  barnwood: { name: 'Barnwood', hex: '#8B7355', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/barnwood.png' },
+  black: { name: 'Black Slate', hex: '#1a1a1a', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/black.png' },
+};
+
+// Viking Shell Colors (same for all series)
+export const VS_SHELL_COLORS = {
+  white: { name: 'White Satin', hex: '#F5F5F0', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/white.png' },
+  silver: { name: 'Silver Satin', hex: '#C0C0C0', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/silver.png' },
+  opal: { name: 'Opal Satin', hex: '#A8B5B8', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/opal.png' },
+};
+
+// Dynasty Spas Color Options
+export const DYNASTY_SHELL_COLORS = {
+  sterling: { name: 'Sterling Marble', hex: '#E8E8E0', image: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp' },
+};
+
+export const DYNASTY_CABINET_COLORS = {
+  blackConfer: { name: 'Black Confer', hex: '#1a1a1a' },
+  grayConfer: { name: 'Gray Confer', hex: '#6B7280' },
+  ashElite: { name: 'Ash Elite', hex: '#B2BEB5' },
+  coastalGrayElite: { name: 'Coastal Gray Elite', hex: '#6B7280' },
 };
 
 // Helper to generate all color combinations for a Grand River model

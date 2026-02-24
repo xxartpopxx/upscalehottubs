@@ -127,11 +127,13 @@ const ProductDetailPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{seoTitle}</title>
-        <meta name="description" content={seoDescription} />
-        <meta name="keywords" content={seoKeywords} />
-      </Helmet>
+      {product && (
+        <Helmet>
+          <title>{String(seoTitle)}</title>
+          <meta name="description" content={String(seoDescription)} />
+          <meta name="keywords" content={String(seoKeywords)} />
+        </Helmet>
+      )}
       <div className="pt-28 pb-20" data-testid="product-detail-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Breadcrumb */}

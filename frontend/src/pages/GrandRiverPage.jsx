@@ -228,20 +228,6 @@ const GrandRiverPage = () => {
             <ProductGrid products={filteredProducts} linkPrefix="/products" />
           )}
           
-          {/* Slogan Banner */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 bg-[#0A1628] p-8 text-center"
-          >
-            <p className="text-white text-xl md:text-2xl font-['Barlow_Condensed'] uppercase tracking-wider mb-2">
-              Live Your Healthiest Life While Enjoying a Vacation Everyday at Home
-            </p>
-            <p className="text-[#D4AF37] font-semibold flex items-center justify-center gap-2">
-              <Flag size={16} /> American Made & Proud of It
-            </p>
-          </motion.div>
         </div>
       </div>
     </>

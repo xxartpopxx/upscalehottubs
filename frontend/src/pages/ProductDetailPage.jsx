@@ -55,6 +55,15 @@ const ProductDetailPage = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [imageError, setImageError] = useState(false);
   
+  // Set document title - must be before any early returns
+  useEffect(() => {
+    if (product) {
+      document.title = `${product.name} | ${product.brand} | Upstate Hot Tubs`;
+    } else {
+      document.title = 'Product Not Found | Upstate Hot Tubs';
+    }
+  }, [product]);
+  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (product) {

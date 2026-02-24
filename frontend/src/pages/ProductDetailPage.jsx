@@ -157,7 +157,7 @@ const ProductDetailPage = () => {
   const isGrandRiver = product?.brand === 'Grand River Spas';
   const isViking = product?.brand === 'Viking Spas';
   const isDynasty = product?.brand === 'Dynasty Spas';
-  const isSaunaOrColdPlunge = product?.category === 'saunas' || product?.category === 'cold-plunges' || product?.brand === 'SaunaLife' || product?.brand === 'Renu Therapy';
+  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound';
   const isSwimSpa = !!product?.length;
   const hasColorSelector = (isGrandRiver || isViking) && !isSwimSpa;
   

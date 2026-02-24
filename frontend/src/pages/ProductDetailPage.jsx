@@ -168,6 +168,13 @@ const ProductDetailPage = () => {
       : [{ key: 'match', name: 'Match Cabinet' }, { key: 'black', name: 'Black Slate' }];
   }, [isViking, product?.series]);
   
+  // Determine available views based on brand - must be before early returns
+  const views = useMemo(() => {
+    if (isDynasty) return ['side'];
+    if (hasColorSelector) return ['color', 'side', 'overhead'];
+    return ['side', 'overhead'];
+  }, [isDynasty, hasColorSelector]);
+  
   const currentImage = useMemo(() => {
     if (!product) return ASSETS.logo;
     

@@ -213,7 +213,7 @@ const ProductDetailPage = () => {
               {isGrandRiver && (
                 <button
                   onClick={() => setCurrentView('color')}
-                  className={`flex-1 py-3 font-semibold text-sm uppercase tracking-wider transition-colors ${
+                  className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
                     currentView === 'color' 
                       ? 'bg-[#B91C1C] text-white' 
                       : 'bg-white text-[#0A1628] hover:bg-slate-50'
@@ -225,7 +225,7 @@ const ProductDetailPage = () => {
               )}
               <button
                 onClick={() => setCurrentView('side')}
-                className={`flex-1 py-3 font-semibold text-sm uppercase tracking-wider transition-colors ${
+                className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
                   currentView === 'side' 
                     ? 'bg-[#B91C1C] text-white' 
                     : 'bg-white text-[#0A1628] hover:bg-slate-50'
@@ -236,7 +236,7 @@ const ProductDetailPage = () => {
               </button>
               <button
                 onClick={() => setCurrentView('overhead')}
-                className={`flex-1 py-3 font-semibold text-sm uppercase tracking-wider transition-colors ${
+                className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
                   currentView === 'overhead' 
                     ? 'bg-[#B91C1C] text-white' 
                     : 'bg-white text-[#0A1628] hover:bg-slate-50'
@@ -248,11 +248,11 @@ const ProductDetailPage = () => {
             </div>
             
             {/* Thumbnails */}
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-3 mt-3">
               {isGrandRiver && (
                 <button
                   onClick={() => setCurrentView('color')}
-                  className={`w-20 h-20 border-2 overflow-hidden relative ${
+                  className={`w-16 h-16 border-2 overflow-hidden relative ${
                     currentView === 'color' ? 'border-[#B91C1C]' : 'border-slate-200'
                   }`}
                   data-testid="thumb-color"

@@ -290,7 +290,7 @@ const ProductDetailPage = () => {
                 </button>
                 
                 {/* Color indicator badges */}
-                {currentView === 'color' && isGrandRiver && (
+                {currentView === 'color' && hasColorSelector && (
                   <div className="absolute bottom-3 left-3 flex flex-wrap gap-2 z-10">
                     <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
                       <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }} />
@@ -300,48 +300,50 @@ const ProductDetailPage = () => {
                       <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
                       <span>Cabinet: {CABINET_COLORS[selectedCabinet]?.name}</span>
                     </div>
-                    {selectedCorner === 'black' && (
+                    {isViking && selectedCorner !== 'match' && (
                       <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
-                        <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: '#1a1a1a' }} />
-                        <span>Corner: Black Slate</span>
+                        <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CORNER_COLORS[selectedCorner]?.hex || '#333' }} />
+                        <span>Corner: {CORNER_COLORS[selectedCorner]?.name}</span>
                       </div>
                     )}
                   </div>
                 )}
               </div>
               
-              {/* View Tabs & Thumbnails */}
-              <div className="flex border border-slate-200 mt-2">
-                {isGrandRiver && (
+              {/* View Tabs & Thumbnails - Only show for non-Dynasty products */}
+              {!isDynasty && (
+                <div className="flex border border-slate-200 mt-2">
+                  {hasColorSelector && (
+                    <button
+                      onClick={() => setCurrentView('color')}
+                      className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
+                        currentView === 'color' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
+                      }`}
+                      data-testid="view-color-btn"
+                    >
+                      Color Preview
+                    </button>
+                  )}
                   <button
-                    onClick={() => setCurrentView('color')}
+                    onClick={() => setCurrentView('side')}
                     className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
-                      currentView === 'color' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
+                      currentView === 'side' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
                     }`}
-                    data-testid="view-color-btn"
+                    data-testid="view-side-btn"
                   >
-                    Color Preview
+                    Side View
                   </button>
-                )}
-                <button
-                  onClick={() => setCurrentView('side')}
-                  className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
-                    currentView === 'side' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
-                  }`}
-                  data-testid="view-side-btn"
-                >
-                  Side View
-                </button>
-                <button
-                  onClick={() => setCurrentView('overhead')}
-                  className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
-                    currentView === 'overhead' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
-                  }`}
-                  data-testid="view-overhead-btn"
-                >
-                  Overhead View
-                </button>
-              </div>
+                  <button
+                    onClick={() => setCurrentView('overhead')}
+                    className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
+                      currentView === 'overhead' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
+                    }`}
+                    data-testid="view-overhead-btn"
+                  >
+                    Overhead View
+                  </button>
+                </div>
+              )}
             </div>
             
             {/* Color Selector Panel - 5 columns */}
@@ -366,14 +368,14 @@ const ProductDetailPage = () => {
                             key={colorKey}
                             onClick={() => {
                               setSelectedShell(colorKey);
-                              if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
+                              if (currentView !== 'color' && hasColorSelector) setCurrentView('color');
                             }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="relative group"
                             data-testid={`shell-color-${colorKey}`}
                           >
-                            <div className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                            <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
                               isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
                             }`}>
                               {color.image ? (

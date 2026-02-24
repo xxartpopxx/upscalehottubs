@@ -39,13 +39,9 @@ const CABINET_COLORS = {
   coastalGrayElite: { name: 'Coastal Gray Elite', hex: '#708090' },
 };
 
-// Dynasty Spas Shell Colors
-const DYNASTY_SHELLS = {
-  sterlingMarble: { name: 'Sterling Marble', hex: '#E8E8E0' },
-  stormClouds: { name: 'Storm Clouds', hex: '#6B7B8A' },
-  tuscanSun: { name: 'Tuscan Sun', hex: '#C4A35A' },
-  smokyMountain: { name: 'Smoky Mountain', hex: '#8B7355' },
-};
+// Unified color lookup - checks brand-specific colors first (with images), then generic
+const getShellColorData = (colorKey) => DYNASTY_SHELL_COLORS[colorKey] || SHELL_COLORS[colorKey] || null;
+const getCabinetColorData = (colorKey) => DYNASTY_CABINET_COLORS[colorKey] || CABINET_COLORS[colorKey] || null;
 
 // Corner color options for Viking Spas
 const CORNER_COLORS = {

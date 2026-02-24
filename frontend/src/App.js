@@ -38,42 +38,46 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="App">
-        <a href="#main-content" className="skip-link">Skip to main content</a>
-        <Header />
-        <main id="main-content" role="main">
-          <Routes>
-            {/* Main Pages */}
-            <Route path="/" element={<HomePage />} />
-            
-            {/* Shop Pages */}
-            <Route path="/hot-tubs" element={<HotTubsPage />} />
-            <Route path="/swim-spas" element={<SwimSpasPage />} />
-            <Route path="/saunas" element={<SaunasPage />} />
-            <Route path="/cold-plunges" element={<ColdPlungesPage />} />
-            
-            {/* Product Detail */}
-            <Route path="/products/:id" element={<ProductDetailPage />} />
-            
-            {/* Wellness */}
-            <Route path="/wellness" element={<WellnessPage />} />
-            
-            {/* Discover Pages */}
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/financing" element={<FinancingPage />} />
-            <Route path="/spa-butler" element={<SpaButlerPage />} />
-            
-            {/* Contact */}
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </main>
-        <Footer />
-        <JinglePlayer />
-      </div>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="App">
+          <a href="#main-content" className="skip-link">Skip to main content</a>
+          <Header />
+          <main id="main-content" role="main">
+            <Routes>
+              {/* Main Pages */}
+              <Route path="/" element={<HomePage />} />
+              
+              {/* Shop Pages - Individual Brand Pages */}
+              <Route path="/hot-tubs" element={<HotTubsPage />} />
+              <Route path="/grand-river-spas" element={<GrandRiverPage />} />
+              <Route path="/viking-spas" element={<VikingSpasPage />} />
+              <Route path="/swim-spas" element={<SwimSpasPage />} />
+              <Route path="/saunas" element={<SaunasPage />} />
+              <Route path="/cold-plunges" element={<ColdPlungesPage />} />
+              
+              {/* Product Detail */}
+              <Route path="/products/:id" element={<ProductDetailPage />} />
+              
+              {/* Wellness */}
+              <Route path="/wellness" element={<WellnessPage />} />
+              
+              {/* Discover Pages */}
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/financing" element={<FinancingPage />} />
+              <Route path="/spa-butler" element={<SpaButlerPage />} />
+              
+              {/* Contact */}
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <Footer />
+          <JinglePlayer />
+        </div>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

@@ -1493,6 +1493,29 @@ export const DYNASTY_SWIM_SPAS = [
     }
   },
   {
+    id: 'ds-ss-aquex-pro',
+    name: "13' Aquex Pro",
+    brand: 'Dynasty Spas',
+    series: 'Aquex Collection',
+    length: '13 ft',
+    price: '$24,500.00',
+    priceValue: 24500,
+    dimensions: '92" x 160" x 55"',
+    waterCapacity: '1,530 gallons',
+    electrical: '220v/60amp',
+    pumps: '2 - 5.0bhp + 1 - 7.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '2100 lbs',
+    filledWeight: '14500 lbs',
+    description: 'Professional 13-foot swim spa with exercise equipment and new swim current technology.',
+    features: ['K.1000 Topside Control', 'LED Top Rail Lighting', 'LED Illuminated Fountains', 'LED Illuminated Diverters', 'New Exercise Equipment', 'Stainless Steel Grab Bars', 'Ozonator System', 'RMAX Insulation'],
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/13-AQUEX-SWIM-SPA-web-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
+  },
+  {
     id: 'ds-ss-aquex-pro-plus',
     name: "13' Aquex Pro Plus",
     brand: 'Dynasty Spas',
@@ -1500,11 +1523,20 @@ export const DYNASTY_SWIM_SPAS = [
     length: '13 ft',
     price: '$26,500.00',
     priceValue: 26500,
-    description: 'Professional-grade 13-foot swim spa with enhanced features.',
-    features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'LED river jets', 'Professional swim current', 'RMAX insulation'],
+    dimensions: '92" x 160" x 55"',
+    waterCapacity: '1,530 gallons',
+    electrical: '220v/60amp',
+    pumps: '3 - 5.0bhp + 1 - 7.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '2100 lbs',
+    filledWeight: '14500 lbs',
+    description: 'Premium 13-foot swim spa with in.Mix illuminated jets, in.Stream audio, and swim coach workout system.',
+    features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'LED Illuminated Jets', 'LED Illuminated Waterfalls', 'New Exercise Equipment', 'Stainless Steel Grab Bars'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_ae48cc5d30dd4e0a82daecf1c5c0ccb1~mv2.jpg'
-    }
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/2025+13+AQUEX+PRO+PLUS+W-TAG+SWIM+SPA+TOP-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-ss-aquex-trainer',

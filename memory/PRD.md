@@ -1,170 +1,58 @@
 # Upstate Hot Tubs Website - Product Requirements Document
 
-## Project Overview
-**Last Updated:** February 24, 2026
+## Original Problem Statement
+Build and maintain an e-commerce website for Upstate Hot Tubs featuring products from multiple brands: Grand River Spas, Viking Spas, Dynasty Spas, plus saunas and cold plunges.
 
-Premium hot tub retailer website serving Naples, FL and South Carolina.
+## Core Requirements
+1. Product catalog with data scraped from manufacturer websites
+2. Color visualizer/selector for each brand
+3. Model comparison feature
+4. Complete product information (specs, pricing, images)
 
-## Brand Slogans
-- **Main Slogan:** "Live your healthiest life while enjoying a vacation everyday at home."
-- **Secondary Slogan:** "American Made & Proud of It"
+## Architecture
+- **Frontend**: React + Tailwind CSS + Framer Motion
+- **Data**: All products hardcoded in `frontend/src/data/products.js`
+- **No Backend**: Pure frontend application, no database
 
-## Business Information
-- **Phone:** (864) 837-0155
-- **Email:** info@upstatehottubs.com
-- **Address:** 1004 West Georgia Rd, Simpsonville, SC 29680
-- **Hours:** Always Open
+## Key Files
+- `frontend/src/data/products.js` - ALL product data (monolithic)
+- `frontend/src/pages/ProductDetailPage.jsx` - Product detail + color selector + comparison
+- `frontend/src/pages/DynastySpasPage.jsx` - Dynasty listing
+- `frontend/src/pages/SwimSpasPage.jsx` - Swim spas with brand filtering
+- `frontend/src/components/Header.jsx` - Navigation
 
-## Technical Stack
-- **Frontend:** React 19 + Vite + Tailwind CSS
-- **Routing:** react-router-dom
-- **Animations:** Framer Motion
-- **Icons:** Lucide React
-- **SEO:** react-helmet-async + document.title for dynamic titles
-- **Architecture:** Modular component-based SPA
+## Completed Features (as of Feb 2026)
+- [x] Grand River Spas products with color visualizer (shell, cabinet, corner)
+- [x] Viking Spas products with 3-part color selector (shell, cabinet, corner)
+- [x] Dynasty Spas hot tubs (19 models across Hideaway, Vacation, Oasis, Luxury collections)
+- [x] Dynasty Spas color selector with bigger swatches (w-20 h-20) and real CDN images
+- [x] Dynasty color names shown in full under swatches
+- [x] Dynasty "Your Selection" summary (Shell + Skirt)
+- [x] Dynasty "Skirt Color" label (vs "Cabinet Color" for other brands)
+- [x] Dynasty swim spas (7 models: Family Island Oasis SL/Dual, Aquex Party/Pro/Pro Plus, 16' Trainer, 17' Pro Plus, 19' Dual Pro)
+- [x] Compare Models feature for Viking and Dynasty
+- [x] Swim Spas page with brand filtering
+- [x] Saunas page
+- [x] Cold Plunges page
+- [x] About page with YouTube video
+- [x] 30th Anniversary models (Bahama Royale, Imperial Royale)
 
-## What's Been Implemented
+## Dynasty Spas Models (Complete List)
+### Hot Tubs
+- Hideaway Collection: Bay Bliss, High Tide
+- Vacation Collection: Bimini, Treasure Cay, Sunset Cove, Tranquility Harbor, Serenity Cove
+- Oasis Collection: Coconut Bay II/III, Caribbean Breeze, Nassau Royal, Cabana Bay, Ocean Breeze, Twin Palms
+- Luxury Collection: Paradise Bay III, Paradise Bay II, Palm Island, Pleasure Cove, Bahama Royale, Imperial Royale
 
-### ✅ Color Visualizer Fix (Feb 24, 2026 - LATEST)
-- [x] **Fixed image URL generation** - Correct URL pattern: `{Model}_{Shell}_{Cabinet}_{Corner}.jpg`
-- [x] **Corner color options corrected** - Now only "Match Cabinet" or "Black Slate" (matching grandriverspas.com)
-- [x] **Dynamic page titles** - Using document.title instead of Helmet for product pages
-- [x] **SEO meta tags working** - Description and keywords via Helmet
-- [x] **All Grand River products working** - Chariton, Chesapeake, Saginaw, etc.
+### Swim Spas
+- Family Collection: 11' Family Island Oasis SL, 11' Family Island Oasis
+- Aquex Collection: 13' Aquex Party, 13' Aquex Pro, 13' Aquex Pro Plus, 16' Aquex Trainer, 17' Aquex Pro Plus, 19' Aquex Dual Pro
 
-### ✅ Separate Shopping Pages (Feb 24, 2026)
-- [x] **Grand River Spas Page** (/grand-river-spas) - Dedicated page for Grand River products
-- [x] **Viking Spas Page** (/viking-spas) - Dedicated page for Viking Spas products  
-- [x] **Saunas Page** (/saunas) - Standalone saunas page
-- [x] **Navigation Updated** - Direct links instead of dropdown (Home, Grand River Spas, Viking Spas, Saunas, Swim Spas, Cold Plunges, Wellness, Discover, Contact)
-
-### ✅ Slogans Throughout Website (Feb 24, 2026)
-- [x] **Hero Section** - "LIVE YOUR HEALTHIEST LIFE WHILE ENJOYING A VACATION EVERYDAY AT HOME"
-- [x] **Header** - "American Made & Proud of It" badge on shop pages
-- [x] **Footer** - Slogan banner at top + "Proudly Made in America"
-- [x] **Shop Pages** - Slogans included on Grand River, Viking, and Saunas pages
-
-### ✅ Product Detail Page Layout (Feb 24, 2026)
-- [x] **Side-by-side layout** - Product image on left, color selector on right
-- [x] **Corner color selector** - "Match Cabinet" and "Black Slate" options only
-- [x] **Dynamic image URL** - Real images from Grand River CDN
-- [x] **Color indicator badges** - Show selected shell, cabinet, and corner colors
-- [x] **View tabs** - Color Preview, Side View, Overhead View
-
-### ✅ SEO Optimization (Feb 24, 2026)
-- [x] **react-helmet-async** for meta tags
-- [x] **Dynamic page titles** via document.title (workaround for Helmet title issues)
-- [x] **Meta descriptions** with keywords on all pages
-- [x] **Open Graph** tags for social sharing
-
-### ✅ True Image Swapping Color System (Feb 20, 2026)
-**KEY FEATURE:** Real color combination images from Grand River Spas CDN!
-- [x] **True image swapping** - selecting shell/cabinet colors loads actual product images
-- [x] **CDN Integration** - Uses Grand River Spas visualizer
-- [x] **URL Pattern:** `https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/{Model}_{Shell}_{Cabinet}_{Corner}.jpg`
-- [x] **Shell colors:** White, Silver, Opal
-- [x] **Cabinet colors:** Coastal Gray, Walnut, Barnwood, Black
-- [x] **Corner colors:** Match Cabinet (same as cabinet) or Black Slate
-
-## Code Architecture
-```
-/app/frontend/src/
-├── components/
-│   ├── layout/
-│   │   ├── Header.jsx          # Updated navigation (no Shop dropdown)
-│   │   ├── Footer.jsx          # Updated with slogans
-│   │   └── JinglePlayer.jsx
-│   └── products/
-│       ├── ColorSelector.jsx
-│       ├── ProductCard.jsx
-│       └── ProductGrid.jsx
-├── pages/
-│   ├── HomePage.jsx            # Updated hero with slogans
-│   ├── GrandRiverPage.jsx      # Grand River Spas page
-│   ├── VikingSpasPage.jsx      # Viking Spas page
-│   ├── SaunasPage.jsx          # Saunas with slogans + SEO
-│   ├── SwimSpasPage.jsx        # Swim Spas with filters
-│   ├── ProductDetailPage.jsx   # Color visualizer + SEO
-│   ├── WellnessPage.jsx
-│   ├── HotTubsPage.jsx
-│   └── [other pages]
-└── data/
-    ├── products.js             # All product data with color options
-    └── constants.js
-```
-
-## Product Data Summary
-- **Grand River Spas:** 16 products (Premier + Eco Series)
-- **Viking Spas:** 15 products (Elite/Heirloom/Element Series)
-- **Dynasty Spas:** 15 products (Luxury/Oasis/Vacation/Hideaway Collections)
-- **Swim Spas:** 8 products (4 Grand River + 4 Viking)
-- **Saunas:** 6 products (SaunaLife barrel, cabin, and outdoor saunas)
-- **Cold Plunges:** 2 products (Endurance Bundle $2,999, Resolute Pro $7,999)
-- **Total Hot Tubs:** 46 products (16 GR + 15 Viking + 15 Dynasty)
-
-## Latest Updates (Feb 24, 2026)
-
-### ✅ Dynasty Spas Page Created - 15 Products
-New dedicated page at `/dynasty-spas` with:
-- **Luxury Collection:** Paradise Bay III, Paradise Bay II, Palm Island, Pleasure Cove
-- **Oasis Collection:** Coconut Bay, Caribbean Breeze, Nassau Royal  
-- **Vacation Collection:** Cabana Bay, Ocean Breeze, Treasure Cay, Tranquility Harbor, Serenity Cove
-- **Hideaway Collection:** Twin Palms, Bimini, Sunset Cove
-
-Prices range from $7,500 - $13,956
-
-Features:
-- Filter by collection, capacity, seating layout, and price
-- YouTube video embedded
-- Standard features section
-- Industry-leading warranty info (20/5/3 year)
-- Dynasty logo from uploaded image
-
-### ✅ Saunas Updated - 6 Products with Real Prices
-| Model | Price |
-|-------|-------|
-| SaunaLife Model EE8G Barrel | $10,995.95 |
-| SaunaLife Model EE6G Barrel | $8,995.95 |
-| SaunaLife GL4 Outdoor Kit | $13,995.95 |
-| SaunaLife Model CL3G | $5,995.95 |
-| SaunaLife Model G6 Pre-Assembled | $34,995.95 |
-| SaunaLife Model CL7G | $11,995.95 |
-
-### ✅ Cold Plunges Updated - 2 Products with Prices
-| Model | Price |
-|-------|-------|
-| Endurance Cold Plunge Bundle | $2,999.00 |
-| The Resolute Pro | $7,999.00 |
-
-### ✅ Dynasty Spas YouTube Video Added
-- Video embedded on About page: https://www.youtube.com/embed/aRDW_vz1bUw
-- Video embedded on Dynasty Spas page
-- M.A.E. Certified section added with full lab specifications
-- 4 Seasons of Benefits expanded with complete insulation details
-
-## Testing Status
-- ✅ Color visualizer fully tested (iteration_9.json)
-- ✅ All shell colors working
-- ✅ All cabinet colors working
-- ✅ Corner colors (Match Cabinet / Black Slate) working
-- ✅ Dynamic page titles working
-- ✅ SEO meta tags working
-- ✅ All Grand River products tested (Chariton 2, Chesapeake 2, Saginaw 2)
-
-## Prioritized Backlog
-
-### P0 (Completed - Feb 24, 2026)
-- [x] Fix color visualizer - image updates correctly with color selections
-- [x] Fix corner color options to match grandriverspas.com (Match Cabinet / Black Slate)
-- [x] Fix SEO title on product pages
-
-### P1 (Next Priority)
-- [ ] Full product data audit against grandriverspas.com and vikingspas.com
-- [ ] Add Schema.org JSON-LD for products (structured data)
-- [ ] Lighthouse 100% audit and optimization
-
-### P2 (Future)
-- [ ] Add more subtle animations
-- [ ] Jingle with localStorage preference
-- [ ] Social media embedded feeds (Instagram/Facebook)
-- [ ] Testimonials/Reviews section enhancement
+## Backlog / Future Tasks
+- [ ] Full product data audit against source websites (price verification)
+- [ ] Schema.org JSON-LD structured data for SEO
+- [ ] Lighthouse performance optimization
+- [ ] Refactor ProductDetailPage.jsx into brand-specific sub-components
+- [ ] Migrate product data from hardcoded JS to backend API + database
+- [ ] Testimonials/Reviews section
+- [ ] Social media integration (Instagram/Facebook)

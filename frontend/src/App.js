@@ -54,6 +54,7 @@ function App() {
               <Route path="/hot-tubs" element={<HotTubsPage />} />
               <Route path="/grand-river-spas" element={<GrandRiverPage />} />
               <Route path="/viking-spas" element={<VikingSpasPage />} />
+              <Route path="/dynasty-spas" element={<DynastySpasPage />} />
               <Route path="/swim-spas" element={<SwimSpasPage />} />
               <Route path="/saunas" element={<SaunasPage />} />
               <Route path="/cold-plunges" element={<ColdPlungesPage />} />

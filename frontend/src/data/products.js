@@ -1365,82 +1365,106 @@ export const VIKING_SPAS_PRODUCTS = [
 // SWIM SPAS - GRAND RIVER SPAS
 // ===========================================
 export const GRAND_RIVER_SWIM_SPAS = [
-  // Grand River Spas shares swim spa models with Viking Spas
-  // Currently not selling swim spas under the Grand River brand
-];
-
-// ===========================================
-// SWIM SPAS - VIKING SPAS
-// ===========================================
-export const VIKING_SWIM_SPAS = [
   {
-    id: 'vs-ss-valhalla',
+    id: 'gr-ss-valhalla',
     name: 'Valhalla',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
+    brand: 'Grand River Spas',
+    series: 'Swim Spas',
     length: '19 ft',
-    jets: 55,
+    persons: 9,
+    jets: 47,
     price: '$39,995.00',
     priceValue: 39995,
-    dimensions: '19\' x 7\' 10" x 52"',
-    waterCapacity: '2,200 gallons',
-    description: 'Our largest swim spa with separate hot tub section for dual-zone temperature control.',
-    features: ['Dual zone temperature', 'Powerful swim jets', 'Full hot tub section', '3 River Swim jets', 'LED lighting'],
+    dimensions: '19\' x 7\'6" x 52"',
+    waterCapacity: '1,870 gallons',
+    electrical: '2 x 5.5 kW/220V',
+    pumps: 'Spa Zone 2x3.0BHP, Swim Zone 3x4.0BHP',
+    filtration: '6 filters, 50 sq ft each',
+    description: 'Our largest swim spa with separate spa and swim zones, dual temperature control, and powerful jet system.',
+    features: ['Dual Zone Temperature', 'Spa Zone 6 Seats', 'Swim Zone 3 Seats', '47 Jets Total', 'LED Lighting', '6 Filtration Filters'],
     images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png'
-    }
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/Valhalla-Overhead-square-1.jpg?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/Valhalla-Overhead-square-1.jpg?lossy=2&strip=1&webp=1'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['grayOak']
   },
   {
-    id: 'vs-ss-asgard',
+    id: 'gr-ss-asgard',
     name: 'Asgard',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
+    brand: 'Grand River Spas',
+    series: 'Swim Spas',
     length: '15 ft 9 in',
+    persons: 5,
     jets: 42,
     price: '$34,995.00',
     priceValue: 34995,
-    dimensions: '15\' 9" x 7\' 6" x 52"',
+    dimensions: '15\'9" x 7\'6" x 52"',
     waterCapacity: '1,717 gallons',
-    description: 'Mid-size swim spa with versatile design for exercise and relaxation.',
-    features: ['3 River Swim jets', 'Swim stabilization jet', 'LED color changing lights', 'BBA audio system'],
+    electrical: '220V',
+    pumps: '3x4.0BHP + 1x3.0BHP',
+    filtration: '4 filters, 50 sq ft each',
+    description: 'Mid-size swim spa with powerful swim zone and relaxation seating.',
+    features: ['5-Person Seating', '42 Jets', '3 River Swim Jets', 'Swim Stabilization Jet', 'LED Color Changing Lights', 'BBA Audio System'],
     images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-2-768x579.png'
-    }
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png?lossy=2&strip=1&webp=1'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['grayOak']
   },
   {
-    id: 'vs-ss-odin',
+    id: 'gr-ss-odin',
     name: 'Odin',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
-    length: '15 ft',
-    jets: 38,
+    brand: 'Grand River Spas',
+    series: 'Swim Spas',
+    length: '14 ft 9 in',
+    persons: 6,
+    jets: 59,
     price: '$29,995.00',
     priceValue: 29995,
-    dimensions: '15\' x 7\' 6" x 52"',
-    waterCapacity: '1,600 gallons',
-    description: '15-foot swim spa perfect for exercise and relaxation.',
-    features: ['Variable speed jets', 'Exercise zone', 'Relaxation seating', 'LED lighting'],
+    dimensions: '14\'9" x 7\'6" x 52"',
+    waterCapacity: '1,584 gallons',
+    electrical: '220V',
+    pumps: '3x4.0BHP + 1x3.0BHP',
+    filtration: '4 filters, 50 sq ft each',
+    description: '15-foot swim spa with 59 jets and 6-person seating for exercise and relaxation.',
+    features: ['6-Person Seating', '59 Jets', 'Variable Speed Jets', 'Exercise Zone', 'Relaxation Seating', 'LED Lighting'],
     images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-3-768x512.png'
-    }
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png?lossy=2&strip=1&webp=1'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['grayOak']
   },
   {
-    id: 'vs-ss-thor',
+    id: 'gr-ss-thor',
     name: 'Thor',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
-    length: '13 ft',
-    jets: 35,
+    brand: 'Grand River Spas',
+    series: 'Swim Spas',
+    length: '13 ft 2 in',
+    persons: 3,
+    jets: 21,
     price: '$24,995.00',
     priceValue: 24995,
-    dimensions: '13\' x 7\' 6" x 52"',
-    waterCapacity: '1,400 gallons',
+    dimensions: '13\'2" x 7\'6" x 52"',
+    waterCapacity: '1,453 gallons',
+    electrical: '220V',
+    pumps: '2x4.0BHP + 1x3.0BHP',
+    filtration: '4 filters, 50 sq ft each',
     description: 'Compact swim spa with powerful performance for smaller spaces.',
-    features: ['Space-efficient', 'Swim jets', 'Therapy seats', 'LED lighting'],
+    features: ['3-Person Seating', '21 Jets', 'Space-Efficient', 'Swim Jets', 'Therapy Seats', 'LED Lighting'],
     images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor_Corner-View_dropshadow-768x678.png'
-    }
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png?lossy=2&strip=1&webp=1'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['grayOak']
   }
+];
+
+export const VIKING_SWIM_SPAS = [
+  // Viking Swim Spas now listed under Grand River Spas brand
 ];
 
 // ===========================================

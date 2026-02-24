@@ -51,10 +51,12 @@ const ProductDetailPage = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [imageError, setImageError] = useState(false);
   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (product) {
       setSelectedShell(product.shellColors?.[0] || 'white');
       setSelectedCabinet(product.cabinetColors?.[0] || 'coastalGray');
+      setSelectedCorner(product.cabinetColors?.[0] || 'coastalGray');
       setImageError(false);
     }
   }, [product?.id]);
@@ -72,7 +74,7 @@ const ProductDetailPage = () => {
     }
     
     if (isGrandRiver && !imageError) {
-      const colorComboUrl = getColorComboImageUrl(product, selectedShell, selectedCabinet);
+      const colorComboUrl = getColorComboImageUrl(product, selectedShell, selectedCabinet, selectedCorner);
       if (colorComboUrl) {
         return colorComboUrl;
       }

@@ -90,7 +90,7 @@ const SwimSpasPage = () => {
         <link rel="canonical" href="https://upstatehottubs.com/swim-spas" />
       </Helmet>
       
-      <div className="pt-28 pb-20" data-testid="swim-spas-page">
+      <div className="pt-36 pb-20" data-testid="swim-spas-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 

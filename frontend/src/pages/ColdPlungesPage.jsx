@@ -14,7 +14,7 @@ const ColdPlungesPage = () => {
         <meta name="keywords" content="cold plunge, ice bath, cold therapy, recovery, wellness, Icebound, Endurance, Resolute Pro, Upstate Hot Tubs, Simpsonville SC" />
       </Helmet>
       
-      <div className="pt-28 pb-20" data-testid="cold-plunges-page">
+      <div className="pt-36 pb-20" data-testid="cold-plunges-page">
         {/* Hero Banner */}
         <div className="relative bg-gradient-to-r from-[#0A1628] to-slate-800 text-white py-16 mb-12">
           <div className="max-w-7xl mx-auto px-4 md:px-8">

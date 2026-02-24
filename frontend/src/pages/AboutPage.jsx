@@ -13,7 +13,7 @@ const AboutPage = () => {
         <meta name="keywords" content="Dynasty Spas, American made hot tubs, Made in USA spas, hot tub quality, Upstate Hot Tubs, Simpsonville SC" />
       </Helmet>
       
-      <div className="pt-28 pb-20" data-testid="about-page">
+      <div className="pt-36 pb-20" data-testid="about-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Grand Opening Hero Image */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">

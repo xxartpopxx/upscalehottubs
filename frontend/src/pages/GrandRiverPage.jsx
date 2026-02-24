@@ -57,7 +57,7 @@ const GrandRiverPage = () => {
         <link rel="canonical" href="https://upstatehottubs.com/grand-river-spas" />
       </Helmet>
       
-      <div className="pt-28 pb-20" data-testid="grand-river-page">
+      <div className="pt-36 pb-20" data-testid="grand-river-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Header */}
           <motion.div 

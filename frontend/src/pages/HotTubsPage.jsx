@@ -55,7 +55,7 @@ const HotTubsPage = () => {
   const activeFilterCount = Object.values(filters).filter(v => v && v !== 'all' && v !== '').length;
 
   return (
-    <div className="pt-28 pb-20" data-testid="hot-tubs-page">
+    <div className="pt-36 pb-20" data-testid="hot-tubs-page">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
         <motion.div 

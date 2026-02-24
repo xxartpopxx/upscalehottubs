@@ -125,10 +125,10 @@ const ProductDetailPage = () => {
         </nav>
         
         {/* Main Product Section */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {/* Image Gallery with Color Swapping */}
           <div>
-            <div className="bg-slate-50 relative aspect-square mb-4 overflow-hidden">
+            <div className="bg-slate-50 relative aspect-[4/3] mb-3 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={`${currentImage}-${selectedShell}-${selectedCabinet}`}
@@ -150,15 +150,15 @@ const ProductDetailPage = () => {
               
               {/* Color indicator badges */}
               {currentView === 'color' && isGrandRiver && (
-                <div className="absolute bottom-4 left-4 flex gap-2 z-10">
+                <div className="absolute bottom-3 left-3 flex gap-2 z-10">
                   <motion.div 
                     key={`shell-${selectedShell}`}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg text-xs font-medium"
+                    className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium"
                   >
                     <div 
-                      className="w-4 h-4 rounded-full border border-slate-200"
+                      className="w-3 h-3 rounded-full border border-slate-200"
                       style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }}
                     />
                     <span>{SHELL_COLORS[selectedShell]?.name}</span>
@@ -168,10 +168,10 @@ const ProductDetailPage = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg text-xs font-medium"
+                    className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium"
                   >
                     <div 
-                      className="w-4 h-4 rounded-full border border-slate-200"
+                      className="w-3 h-3 rounded-full border border-slate-200"
                       style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }}
                     />
                     <span>{CABINET_COLORS[selectedCabinet]?.name}</span>

@@ -59,65 +59,96 @@ const Header = () => {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-6">
-            {mainLinks.map((link) => (
-              link.dropdown ? (
-                <div 
-                  key={link.name}
-                  className="relative"
-                  onMouseEnter={() => link.name === 'Shop' ? setShopDropdown(true) : setDiscoverDropdown(true)}
-                  onMouseLeave={() => link.name === 'Shop' ? setShopDropdown(false) : setDiscoverDropdown(false)}
-                >
-                  <button 
-                    className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors flex items-center gap-1 ${
-                      (link.name === 'Shop' && shopLinks.some(l => location.pathname === l.href)) ||
-                      (link.name === 'Discover' && discoverLinks.some(l => location.pathname === l.href))
-                        ? 'text-[#B91C1C]' 
-                        : 'text-[#0A1628]'
-                    }`}
-                    data-testid={`nav-${link.name.toLowerCase()}-btn`}
-                  >
-                    {link.name}
-                    <ChevronDown size={14} className={`transition-transform ${(link.name === 'Shop' ? shopDropdown : discoverDropdown) ? 'rotate-180' : ''}`} />
-                  </button>
-                  
-                  <AnimatePresence>
-                    {(link.name === 'Shop' ? shopDropdown : discoverDropdown) && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-0 mt-2 bg-white shadow-xl border border-slate-100 min-w-[200px] py-2"
-                      >
-                        {link.links.map((subLink) => (
-                          <Link
-                            key={subLink.name}
-                            to={subLink.href}
-                            className={`block px-4 py-2 text-sm font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
-                              location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
-                            }`}
-                            data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
-                          >
-                            {subLink.name}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link 
-                  key={link.name} 
-                  to={link.href} 
-                  className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
-                    location.pathname === link.href ? 'text-[#B91C1C]' : 'text-[#0A1628]'
-                  }`}
-                  data-testid={`nav-${link.name.toLowerCase()}-link`}
-                >
-                  {link.name}
-                </Link>
-              )
+          <div className="hidden xl:flex items-center gap-5">
+            {/* Home Link */}
+            <Link 
+              to="/" 
+              className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+              }`}
+              data-testid="nav-home-link"
+            >
+              Home
+            </Link>
+            
+            {/* Shop Links - Direct Navigation */}
+            {shopLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
+                  location.pathname === link.href ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+                }`}
+                data-testid={`nav-${link.name.toLowerCase().replace(/\s+/g, '-')}-link`}
+              >
+                {link.name}
+              </Link>
             ))}
+            
+            {/* Wellness Link */}
+            <Link 
+              to="/wellness" 
+              className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/wellness' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+              }`}
+              data-testid="nav-wellness-link"
+            >
+              Wellness
+            </Link>
+            
+            {/* Discover Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setDiscoverDropdown(true)}
+              onMouseLeave={() => setDiscoverDropdown(false)}
+            >
+              <button 
+                className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors flex items-center gap-1 ${
+                  discoverLinks.some(l => location.pathname === l.href)
+                    ? 'text-[#B91C1C]' 
+                    : 'text-[#0A1628]'
+                }`}
+                data-testid="nav-discover-btn"
+              >
+                Discover
+                <ChevronDown size={14} className={`transition-transform ${discoverDropdown ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {discoverDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 bg-white shadow-xl border border-slate-100 min-w-[200px] py-2"
+                  >
+                    {discoverLinks.map((subLink) => (
+                      <Link
+                        key={subLink.name}
+                        to={subLink.href}
+                        className={`block px-4 py-2 text-sm font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
+                          location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
+                        }`}
+                        data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            
+            {/* Contact Link */}
+            <Link 
+              to="/contact" 
+              className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/contact' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+              }`}
+              data-testid="nav-contact-link"
+            >
+              Contact
+            </Link>
           </div>
           
           <div className="hidden xl:flex items-center gap-3">

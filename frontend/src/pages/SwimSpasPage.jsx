@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Flag, Filter, X, ChevronDown } from 'lucide-react';
-import { GRAND_RIVER_SWIM_SPAS, VIKING_SWIM_SPAS } from '../data/products';
+import { GRAND_RIVER_SWIM_SPAS, VIKING_SWIM_SPAS, DYNASTY_SWIM_SPAS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const SwimSpasPage = () => {
@@ -51,16 +51,21 @@ const SwimSpasPage = () => {
 
   // Apply filters and sorting
   const filteredGrandRiver = useMemo(() => {
-    if (filters.brand === 'viking') return [];
+    if (filters.brand === 'viking' || filters.brand === 'dynasty') return [];
     return sortProducts(filterProducts(GRAND_RIVER_SWIM_SPAS));
   }, [filters, sortBy]);
 
   const filteredViking = useMemo(() => {
-    if (filters.brand === 'grandriver') return [];
+    if (filters.brand === 'grandriver' || filters.brand === 'dynasty') return [];
     return sortProducts(filterProducts(VIKING_SWIM_SPAS));
   }, [filters, sortBy]);
 
-  const totalProducts = filteredGrandRiver.length + filteredViking.length;
+  const filteredDynasty = useMemo(() => {
+    if (filters.brand === 'grandriver' || filters.brand === 'viking') return [];
+    return sortProducts(filterProducts(DYNASTY_SWIM_SPAS));
+  }, [filters, sortBy]);
+
+  const totalProducts = filteredGrandRiver.length + filteredViking.length + filteredDynasty.length;
 
   const clearFilters = () => {
     setFilters({

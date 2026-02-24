@@ -335,47 +335,61 @@ const ProductDetailPage = () => {
                     </div>
                   </div>
                   
-                  {/* Corner Colors */}
+                  {/* Corner Colors - Only Match Cabinet or Black options */}
                   <div className="mb-5">
                     <p className="text-sm font-semibold text-slate-600 mb-2">Corner Color</p>
-                    <div className="flex gap-2 flex-wrap">
-                      {product.cabinetColors.map((colorKey) => {
-                        const color = CABINET_COLORS[colorKey];
-                        if (!color) return null;
-                        const isSelected = selectedCorner === colorKey;
-                        
-                        return (
-                          <motion.button
-                            key={colorKey}
-                            onClick={() => {
-                              setSelectedCorner(colorKey);
-                              if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
-                            }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="relative group"
-                            data-testid={`corner-color-${colorKey}`}
-                          >
-                            <div className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${
-                              isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
-                            }`}>
-                              {color.image ? (
-                                <img src={color.image} alt={color.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.backgroundColor = color.hex; }} />
-                              ) : (
-                                <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
-                              )}
-                              {isSelected && (
-                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
-                                  <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
-                                </motion.div>
-                              )}
-                            </div>
-                            <p className={`text-[10px] mt-1 text-center font-medium ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
-                              {color.name.split(' ')[0]}
-                            </p>
-                          </motion.button>
-                        );
-                      })}
+                    <div className="flex gap-3 flex-wrap">
+                      {/* Match Cabinet Option */}
+                      <motion.button
+                        onClick={() => {
+                          setSelectedCorner('match');
+                          if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="relative group"
+                        data-testid="corner-color-match"
+                      >
+                        <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                          selectedCorner === 'match' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                        }`}>
+                          <div className="w-full h-full" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
+                          {selectedCorner === 'match' && (
+                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                              <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
+                            </motion.div>
+                          )}
+                        </div>
+                        <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'match' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                          Match Cabinet
+                        </p>
+                      </motion.button>
+                      
+                      {/* Black Slate Option */}
+                      <motion.button
+                        onClick={() => {
+                          setSelectedCorner('black');
+                          if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="relative group"
+                        data-testid="corner-color-black"
+                      >
+                        <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                          selectedCorner === 'black' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                        }`}>
+                          <div className="w-full h-full" style={{ backgroundColor: '#1a1a1a' }} />
+                          {selectedCorner === 'black' && (
+                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                              <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
+                            </motion.div>
+                          )}
+                        </div>
+                        <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'black' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                          Black Slate
+                        </p>
+                      </motion.button>
                     </div>
                   </div>
                   

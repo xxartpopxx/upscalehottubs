@@ -576,6 +576,21 @@ const ProductDetailPage = () => {
                     </div>
                   )}
                   
+                  {/* Dynasty Selected Colors Summary */}
+                  {isDynasty && (
+                    <div className="mt-4 pt-4 border-t border-slate-200">
+                      <p className="text-sm font-semibold text-[#0A1628] mb-2">Your Selection</p>
+                      <div className="space-y-1">
+                        <p className="text-sm text-slate-600">
+                          Shell: <span className="font-semibold text-[#0A1628]">{getShellColorData(selectedShell)?.name || selectedShell}</span>
+                        </p>
+                        <p className="text-sm text-slate-600">
+                          Skirt: <span className="font-semibold text-[#0A1628]">{getCabinetColorData(selectedCabinet)?.name || selectedCabinet}</span>
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                  
                   <p className="text-xs text-slate-500 mt-4">
                     Actual colors may vary. Contact us for physical color samples.
                   </p>

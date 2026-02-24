@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Snowflake, Heart, Zap, Moon } from 'lucide-react';
+import { Snowflake, Heart, Zap, Moon } from 'lucide-react';
 import { COLD_PLUNGES } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 

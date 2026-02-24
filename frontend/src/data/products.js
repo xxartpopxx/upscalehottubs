@@ -1322,27 +1322,6 @@ export const VIKING_SWIM_SPAS = [
 // ===========================================
 // SWIM SPAS - DYNASTY SPAS
 // ===========================================
-export const DYNASTY_SWIM_SPAS = [
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png'
-    }
-  },
-  {
-    id: 'vs-ss-thor',
-    name: 'Thor',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
-    length: '13 ft',
-    price: '$24,995.00',
-    priceValue: 24995,
-    description: 'Compact swim spa with powerful performance.',
-    features: ['Space-efficient', 'Swim jets', 'Therapy seats'],
-    images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor_Corner-View_dropshadow-768x678.png',
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png'
-    }
-  }
-];
-
 // ===========================================
 // SWIM SPAS - DYNASTY SPAS
 // ===========================================
@@ -1358,8 +1337,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Family-size swim spa with single lounger for relaxation and exercise.',
     features: ['LED illuminated river jets', 'Single lounger', 'LED underwater lights', 'Stainless steel grab bars', 'RMAX insulation'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
+      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
     }
   },
   {
@@ -1373,8 +1351,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Family-size swim spa with dual loungers for maximum comfort.',
     features: ['LED illuminated river jets', 'Dual loungers', 'LED underwater lights', 'Stainless steel grab bars', 'RMAX insulation'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
+      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
     }
   },
   {
@@ -1388,8 +1365,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Party-ready 13-foot swim spa with bench seating for entertaining.',
     features: ['K.1000 Digital Controls', 'LED illuminated fountain jets', 'Bench seating', 'Ozonator system', 'Energy efficient heater'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_fcdebac2c1024c1284976af634020059~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_fcdebac2c1024c1284976af634020059~mv2.webp'
+      primary: 'https://static.wixstatic.com/media/5c7c78_fcdebac2c1024c1284976af634020059~mv2.webp'
     }
   },
   {

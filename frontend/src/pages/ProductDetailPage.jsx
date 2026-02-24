@@ -9,7 +9,8 @@ import { ASSETS, CONTACT } from '../data/constants';
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
 
 // Generate the actual color combination image URL with corner color support
-const getColorComboImageUrl = (product, shellColor, cabinetColor, cornerColor) => {
+// Corner can only be "Match Cabinet" (same as cabinet) or "Black"
+const getColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption) => {
   if (!product || product.brand !== 'Grand River Spas') {
     return null;
   }
@@ -31,7 +32,8 @@ const getColorComboImageUrl = (product, shellColor, cabinetColor, cornerColor) =
   
   const shell = shellMap[shellColor] || 'White';
   const cabinet = cabinetMap[cabinetColor] || 'CoastalGray';
-  const corner = cabinetMap[cornerColor] || cabinet;
+  // Corner is either 'match' (same as cabinet) or 'black'
+  const corner = cornerOption === 'black' ? 'Black' : cabinet;
   
   return `${GR_VISUALIZER_BASE}/${modelName}_${shell}_${cabinet}_${corner}.jpg`;
 };

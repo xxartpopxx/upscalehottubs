@@ -269,6 +269,21 @@ const SwimSpasPage = () => {
             </motion.div>
           )}
 
+          {/* Dynasty Spas Swim Spas Section */}
+          {filteredDynasty.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-16"
+            >
+              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-[#0A1628] mb-6 pb-2 border-b-2 border-[#B91C1C]">
+                Dynasty Spas Swim Spas
+              </h2>
+              <ProductGrid products={filteredDynasty} linkPrefix="/products" />
+            </motion.div>
+          )}
+
           {/* No Results */}
           {totalProducts === 0 && (
             <div className="text-center py-16">

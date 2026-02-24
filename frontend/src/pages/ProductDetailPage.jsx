@@ -300,21 +300,25 @@ const ProductDetailPage = () => {
                   />
                 </AnimatePresence>
                 
-                {/* Navigation Arrows */}
-                <button
-                  onClick={handlePrevView}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 shadow-lg transition-all"
-                  data-testid="prev-view-btn"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <button
-                  onClick={handleNextView}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 shadow-lg transition-all"
-                  data-testid="next-view-btn"
-                >
-                  <ChevronRight size={24} />
-                </button>
+                {/* Navigation Arrows - only show when multiple views */}
+                {views.length > 1 && (
+                  <>
+                    <button
+                      onClick={handlePrevView}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 shadow-lg transition-all"
+                      data-testid="prev-view-btn"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button
+                      onClick={handleNextView}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 shadow-lg transition-all"
+                      data-testid="next-view-btn"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                  </>
+                )}
                 
                 {/* Color indicator badges */}
                 {currentView === 'color' && hasColorSelector && (

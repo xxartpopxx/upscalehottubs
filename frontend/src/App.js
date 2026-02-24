@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Layout Components
 import Header from './components/layout/Header';
@@ -9,6 +10,8 @@ import JinglePlayer from './components/layout/JinglePlayer';
 // Pages
 import HomePage from './pages/HomePage';
 import HotTubsPage from './pages/HotTubsPage';
+import GrandRiverPage from './pages/GrandRiverPage';
+import VikingSpasPage from './pages/VikingSpasPage';
 import SwimSpasPage from './pages/SwimSpasPage';
 import SaunasPage from './pages/SaunasPage';
 import ColdPlungesPage from './pages/ColdPlungesPage';

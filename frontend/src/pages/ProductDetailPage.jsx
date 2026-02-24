@@ -186,12 +186,18 @@ const ProductDetailPage = () => {
                   <div className="absolute bottom-3 left-3 flex flex-wrap gap-2 z-10">
                     <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
                       <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }} />
-                      <span>{SHELL_COLORS[selectedShell]?.name}</span>
+                      <span>Shell: {SHELL_COLORS[selectedShell]?.name}</span>
                     </div>
                     <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
                       <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
-                      <span>{CABINET_COLORS[selectedCabinet]?.name}</span>
+                      <span>Cabinet: {CABINET_COLORS[selectedCabinet]?.name}</span>
                     </div>
+                    {selectedCorner !== selectedCabinet && (
+                      <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
+                        <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CABINET_COLORS[selectedCorner]?.hex }} />
+                        <span>Corner: {CABINET_COLORS[selectedCorner]?.name}</span>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

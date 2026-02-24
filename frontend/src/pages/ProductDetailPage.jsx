@@ -227,13 +227,6 @@ const ProductDetailPage = () => {
     { icon: Ruler, label: 'Dimensions', value: product.dimensions },
   ];
   
-  // Determine available views based on brand
-  const views = useMemo(() => {
-    if (isDynasty) return ['side']; // Dynasty only has one photo
-    if (hasColorSelector) return ['color', 'side', 'overhead'];
-    return ['side', 'overhead'];
-  }, [isDynasty, hasColorSelector]);
-  
   const currentViewIndex = views.indexOf(currentView);
   
   const handlePrevView = () => {

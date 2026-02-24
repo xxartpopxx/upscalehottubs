@@ -345,18 +345,6 @@ const HomePage = () => {
       </div>
       
       <CategoriesSection />
-      
-      {/* Slogan Section */}
-      <section className="py-12 bg-[#0A1628]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-white text-2xl md:text-3xl font-['Barlow_Condensed'] uppercase tracking-wider mb-3">
-            Live Your Healthiest Life While Enjoying a Vacation Everyday at Home
-          </p>
-          <p className="text-[#D4AF37] text-lg font-semibold flex items-center justify-center gap-2">
-            <Flag size={18} /> American Made & Proud of It
-          </p>
-        </div>
-      </section>
     </>
   );
 };

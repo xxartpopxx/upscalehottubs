@@ -48,7 +48,8 @@ const ProductDetailPage = () => {
   
   const [selectedShell, setSelectedShell] = useState(defaultShell);
   const [selectedCabinet, setSelectedCabinet] = useState(defaultCabinet);
-  const [selectedCorner, setSelectedCorner] = useState(defaultCabinet);
+  // Corner option: 'match' means match cabinet color, 'black' means Black Slate
+  const [selectedCorner, setSelectedCorner] = useState('match');
   const [currentView, setCurrentView] = useState('color');
   const [activeTab, setActiveTab] = useState('overview');
   const [imageError, setImageError] = useState(false);

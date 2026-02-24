@@ -341,8 +341,8 @@ const ProductDetailPage = () => {
                 )}
               </div>
               
-              {/* View Tabs & Thumbnails - Only show for non-Dynasty products */}
-              {!isDynasty && (
+              {/* View Tabs & Thumbnails - Only show for hot tubs with multiple views */}
+              {!isDynasty && !isSaunaOrColdPlunge && !isSwimSpa && (
                 <div className="flex border border-slate-200 mt-2">
                   {hasColorSelector && (
                     <button

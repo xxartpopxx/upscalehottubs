@@ -80,7 +80,7 @@ const HeroSection = () => (
       <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex items-center justify-center gap-3 mb-4">
           <Flag className="text-[#B91C1C]" size={28} />
-          <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">American Made</span>
+          <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">American Made & Proud of It</span>
           <Flag className="text-[#B91C1C]" size={28} />
         </motion.div>
         
@@ -99,7 +99,7 @@ const HeroSection = () => (
           transition={{ delay: 0.7 }} 
           className="font-['Barlow_Condensed'] text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6"
         >
-          Start Living Your<br /><span className="text-[#B91C1C]">Healthiest Life</span> Today
+          Live Your <span className="text-[#B91C1C]">Healthiest Life</span><br />While Enjoying a Vacation<br />Everyday at Home
         </motion.h1>
         
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }} className="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto opacity-90">
@@ -107,11 +107,11 @@ const HeroSection = () => (
         </motion.p>
         
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/hot-tubs" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4" data-testid="hero-browse-btn">
-            Browse Hot Tubs <ChevronRight size={20} />
+          <Link to="/grand-river-spas" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4" data-testid="hero-browse-btn">
+            Grand River Spas <ChevronRight size={20} />
           </Link>
-          <Link to="/swim-spas" className="bg-white text-[#0A1628] font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 text-lg hover:bg-[#D4AF37] hover:text-white transition-all shadow-lg" data-testid="hero-swim-spas-btn">
-            Browse Swim Spas <ChevronRight size={20} />
+          <Link to="/viking-spas" className="bg-white text-[#0A1628] font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 text-lg hover:bg-[#D4AF37] hover:text-white transition-all shadow-lg" data-testid="hero-swim-spas-btn">
+            Viking Spas <ChevronRight size={20} />
           </Link>
         </motion.div>
         

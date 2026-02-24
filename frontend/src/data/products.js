@@ -897,7 +897,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_2025_Elite_Heritage1_Opal_OH-_dropshadow.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['stone', 'chestnut', 'black', 'slate'],
+    cabinetColors: ['slate', 'chestnut', 'stone', 'carbon'],
+    colorVisualizerBase: 'Heritage',
     relatedModel: null
   },
   {
@@ -920,7 +921,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/07/VS_2025_Elite_Tradition1_White_OH_dropshadow.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['stone', 'chestnut', 'black', 'slate'],
+    cabinetColors: ['slate', 'chestnut', 'stone', 'carbon'],
+    colorVisualizerBase: 'Tradition',
     relatedModel: null
   },
   {
@@ -943,7 +945,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/06/VS_2025_Apex2_White_OH_121324.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['stone', 'chestnut', 'black', 'slate'],
+    cabinetColors: ['slate', 'chestnut', 'stone', 'carbon'],
+    colorVisualizerBase: 'Apex',
     relatedModel: null
   },
   {
@@ -966,7 +969,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2025/01/VS_2025_Ascent_II_White_OH_Dropshadow_1440px.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['stone', 'chestnut', 'black', 'slate'],
+    cabinetColors: ['slate', 'chestnut', 'stone', 'carbon'],
+    colorVisualizerBase: 'Apex',
     relatedModel: null
   },
   {
@@ -989,7 +993,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_RoyalX_White_Overhead-scaled.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['slate', 'carbon', 'stone', 'chestnut'],
+    cabinetColors: ['slate', 'chestnut', 'stone', 'carbon'],
+    colorVisualizerBase: 'Elite_RoyalX',
     relatedModel: null
   },
   {
@@ -1012,7 +1017,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_RegalX_Opal_Overhead.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['stone', 'carbon', 'slate', 'chestnut'],
+    cabinetColors: ['slate', 'chestnut', 'stone', 'carbon'],
+    colorVisualizerBase: 'Elite_RegalX',
     relatedModel: null
   },
   {
@@ -1035,7 +1041,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_ElevateX_White_OH-scaled.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['slate', 'stone', 'carbon', 'chestnut'],
+    cabinetColors: ['slate', 'chestnut', 'stone', 'carbon'],
+    colorVisualizerBase: 'Elite_ElevateX',
     relatedModel: null
   },
   // HEIRLOOM SERIES
@@ -1059,7 +1066,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_2025_Regal_White-OH_dropshadow.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['coastalGray', 'walnut', 'black', 'barnwood'],
+    cabinetColors: ['ashGray', 'walnut', 'barnwood', 'black'],
+    colorVisualizerBase: 'Regal',
     relatedModel: null
   },
   {
@@ -1082,7 +1090,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/07/VS_2025_Royale_Silver-OH_dropshadow-2.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['walnut', 'coastalGray', 'black', 'barnwood'],
+    cabinetColors: ['ashGray', 'walnut', 'barnwood', 'black'],
+    colorVisualizerBase: 'Royale',
     relatedModel: null
   },
   {
@@ -1105,7 +1114,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Heirloom_Elevate_White_OH-scaled.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['ashGray', 'walnut', 'black', 'barnwood'],
+    cabinetColors: ['ashGray', 'walnut', 'barnwood', 'black'],
+    colorVisualizerBase: 'Heirloom_Elevate',
     relatedModel: null
   },
   {
@@ -1128,7 +1138,8 @@ export const VIKING_SPAS_PRODUCTS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/07/Viking-3_White-OH_dropshadow.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['coastalGray', 'walnut', 'black', 'barnwood'],
+    cabinetColors: ['ashGray', 'walnut', 'barnwood', 'black'],
+    colorVisualizerBase: 'Viking-3',
     relatedModel: null
   },
   // ELEMENT SERIES (Plug & Play)

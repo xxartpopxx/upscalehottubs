@@ -195,10 +195,10 @@ const ProductDetailPage = () => {
                       <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
                       <span>Cabinet: {CABINET_COLORS[selectedCabinet]?.name}</span>
                     </div>
-                    {selectedCorner !== selectedCabinet && (
+                    {selectedCorner === 'black' && (
                       <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
-                        <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CABINET_COLORS[selectedCorner]?.hex }} />
-                        <span>Corner: {CABINET_COLORS[selectedCorner]?.name}</span>
+                        <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: '#1a1a1a' }} />
+                        <span>Corner: Black Slate</span>
                       </div>
                     )}
                   </div>

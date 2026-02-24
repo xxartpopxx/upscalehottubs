@@ -122,6 +122,12 @@ const ProductDetailPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{product.name} | {product.brand} | Upstate Hot Tubs</title>
+        <meta name="description" content={`${product.name} by ${product.brand}. ${product.description} Seats ${product.persons} adults with ${product.jets} jets. ${product.price}. American Made & Proud of It.`} />
+        <meta name="keywords" content={`${product.name}, ${product.brand}, ${product.series}, hot tub, spa, ${product.persons} person hot tub, hydrotherapy`} />
+        <link rel="canonical" href={`https://upstatehottubs.com/products/${product.id}`} />
+      </Helmet>
       <div className="pt-28 pb-20" data-testid="product-detail-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Breadcrumb */}

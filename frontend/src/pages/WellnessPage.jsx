@@ -112,6 +112,28 @@ const WellnessPage = () => {
           </p>
         </motion.div>
         
+        {/* Health Benefits Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+          data-testid="health-benefits-video"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-center text-[#0A1628] mb-8">
+            Health Benefits of Hot Tubs
+          </h2>
+          <div className="max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/AKrbIy5gTSg"
+              title="Health Benefits of Hot Tubs"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </motion.div>
+        
         {/* Image Gallery */}
         <motion.div 
           initial={{ opacity: 0 }}

@@ -1318,97 +1318,11 @@ export const VIKING_SWIM_SPAS = [
     }
   }
 ];
-    name: 'Asgard',
-    brand: 'Grand River Spas',
-    series: 'Freestyle Swim Spas',
-    length: '17 ft',
-    price: '$34,995.00',
-    priceValue: 34995,
-    description: '17-foot swim spa with versatile design.',
-    features: ['Swim current system', 'Therapy seating', 'LED lighting'],
-    images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-2-768x579.png',
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png'
-    }
-  },
-  {
-    id: 'gr-ss-odin',
-    name: 'Odin',
-    brand: 'Grand River Spas',
-    series: 'Freestyle Swim Spas',
-    length: '15 ft',
-    price: '$29,995.00',
-    priceValue: 29995,
-    description: '15-foot swim spa perfect for exercise and relaxation.',
-    features: ['Variable speed jets', 'Exercise zone', 'Relaxation seating'],
-    images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-3-768x512.png',
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png'
-    }
-  },
-  {
-    id: 'gr-ss-thor',
-    name: 'Thor',
-    brand: 'Grand River Spas',
-    series: 'Freestyle Swim Spas',
-    length: '13 ft',
-    price: '$24,995.00',
-    priceValue: 24995,
-    description: 'Compact swim spa with powerful performance.',
-    features: ['Space-efficient', 'Swim jets', 'Therapy seats'],
-    images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor_Corner-View_dropshadow-768x678.png',
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png'
-    }
-  }
-];
 
 // ===========================================
-// SWIM SPAS - VIKING SPAS
+// SWIM SPAS - DYNASTY SPAS
 // ===========================================
-export const VIKING_SWIM_SPAS = [
-  {
-    id: 'vs-ss-valhalla',
-    name: 'Valhalla',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
-    length: '19 ft',
-    price: '$39,995.00',
-    priceValue: 39995,
-    description: 'Our largest swim spa with separate hot tub section.',
-    features: ['Dual zone temperature', 'Powerful swim jets', 'Full hot tub section'],
-    images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png',
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Valhalla_overhead.png'
-    }
-  },
-  {
-    id: 'vs-ss-asgard',
-    name: 'Asgard',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
-    length: '17 ft',
-    price: '$34,995.00',
-    priceValue: 34995,
-    description: '17-foot swim spa with versatile design.',
-    features: ['Swim current system', 'Therapy seating', 'LED lighting'],
-    images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-2-768x579.png',
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png'
-    }
-  },
-  {
-    id: 'vs-ss-odin',
-    name: 'Odin',
-    brand: 'Viking Spas',
-    series: 'Freestyle Swim Spas',
-    length: '15 ft',
-    price: '$29,995.00',
-    priceValue: 29995,
-    description: '15-foot swim spa perfect for exercise and relaxation.',
-    features: ['Variable speed jets', 'Exercise zone', 'Relaxation seating'],
-    images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-3-768x512.png',
+export const DYNASTY_SWIM_SPAS = [
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png'
     }
   },

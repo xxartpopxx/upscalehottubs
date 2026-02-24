@@ -384,9 +384,10 @@ const ProductDetailPage = () => {
                     <p className="text-sm font-semibold text-slate-600 mb-2">Shell Color</p>
                     <div className="flex gap-2 flex-wrap">
                       {product.shellColors.map((colorKey) => {
-                        const color = SHELL_COLORS[colorKey];
+                        const color = getShellColorData(colorKey);
                         if (!color) return null;
                         const isSelected = selectedShell === colorKey;
+                        const swatchSize = isDynasty ? 'w-20 h-20' : 'w-14 h-14';
                         
                         return (
                           <motion.button
@@ -400,7 +401,7 @@ const ProductDetailPage = () => {
                             className="relative group"
                             data-testid={`shell-color-${colorKey}`}
                           >
-                            <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                            <div className={`${swatchSize} rounded-lg overflow-hidden border-2 transition-all ${
                               isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
                             }`}>
                               {color.image ? (
@@ -414,8 +415,8 @@ const ProductDetailPage = () => {
                                 </motion.div>
                               )}
                             </div>
-                            <p className={`text-[10px] mt-1 text-center font-medium ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
-                              {color.name.split(' ')[0]}
+                            <p className={`text-[10px] mt-1 text-center font-medium ${isDynasty ? 'max-w-20' : 'max-w-14'} ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                              {isDynasty ? color.name : color.name.split(' ')[0]}
                             </p>
                           </motion.button>
                         );

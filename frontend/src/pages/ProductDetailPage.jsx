@@ -108,6 +108,21 @@ const ProductDetailPage = () => {
   const [currentView, setCurrentView] = useState('color');
   const [activeTab, setActiveTab] = useState('overview');
   const [imageError, setImageError] = useState(false);
+  const [selectedCompareModel, setSelectedCompareModel] = useState(null);
+  const [showCompareModal, setShowCompareModal] = useState(false);
+  
+  // Get comparable models from the same brand
+  const comparableModels = useMemo(() => {
+    if (!product) return [];
+    
+    if (product.brand === 'Viking Spas') {
+      return VIKING_SPAS_PRODUCTS.filter(p => p.id !== product.id);
+    }
+    if (product.brand === 'Dynasty Spas') {
+      return DYNASTY_SPAS_PRODUCTS.filter(p => p.id !== product.id);
+    }
+    return [];
+  }, [product]);
   
   // Set document title - must be before any early returns
   useEffect(() => {
@@ -126,6 +141,7 @@ const ProductDetailPage = () => {
       setSelectedCorner('match'); // Default to matching cabinet
       setCurrentView('color'); // Reset to color view
       setImageError(false);
+      setSelectedCompareModel(null);
     }
   }, [product?.id]);
   

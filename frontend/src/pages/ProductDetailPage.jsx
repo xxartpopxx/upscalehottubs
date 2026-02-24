@@ -332,6 +332,50 @@ const ProductDetailPage = () => {
                     </div>
                   </div>
                   
+                  {/* Corner Colors */}
+                  <div className="mb-5">
+                    <p className="text-sm font-semibold text-slate-600 mb-2">Corner Color</p>
+                    <div className="flex gap-2 flex-wrap">
+                      {product.cabinetColors.map((colorKey) => {
+                        const color = CABINET_COLORS[colorKey];
+                        if (!color) return null;
+                        const isSelected = selectedCorner === colorKey;
+                        
+                        return (
+                          <motion.button
+                            key={colorKey}
+                            onClick={() => {
+                              setSelectedCorner(colorKey);
+                              if (currentView !== 'color' && isGrandRiver) setCurrentView('color');
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="relative group"
+                            data-testid={`corner-color-${colorKey}`}
+                          >
+                            <div className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                              isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                            }`}>
+                              {color.image ? (
+                                <img src={color.image} alt={color.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.backgroundColor = color.hex; }} />
+                              ) : (
+                                <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
+                              )}
+                              {isSelected && (
+                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                  <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
+                                </motion.div>
+                              )}
+                            </div>
+                            <p className={`text-[10px] mt-1 text-center font-medium ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                              {color.name.split(' ')[0]}
+                            </p>
+                          </motion.button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  
                   <p className="text-xs text-slate-500 mt-4">
                     Actual colors may vary. Contact us for physical color samples.
                   </p>
@@ -368,16 +412,10 @@ const ProductDetailPage = () => {
             </div>
           </div>
           
-          {/* Product Info Section */}
+          {/* Product Description Section */}
           <div className="grid lg:grid-cols-2 gap-8 mb-8">
-            {/* Left - Name, Price, Description */}
+            {/* Left - Description */}
             <div>
-              <p className="text-sm text-slate-500 uppercase tracking-wider mb-1">{product.brand}</p>
-              <p className="text-sm text-[#B91C1C] font-semibold uppercase tracking-wider mb-2">{product.series}</p>
-              <h1 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-3">
-                {product.name}
-              </h1>
-              <p className="text-3xl font-bold text-[#B91C1C] mb-4">{product.price}</p>
               <p className="text-slate-600 leading-relaxed mb-6">
                 {product.longDescription || product.description}
               </p>

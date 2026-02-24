@@ -628,6 +628,7 @@ const ProductDetailPage = () => {
                 </div>
               )}
             </div>
+            )}
           </div>
           
           {/* Product Description Section */}

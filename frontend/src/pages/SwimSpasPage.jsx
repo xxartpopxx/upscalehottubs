@@ -180,7 +180,7 @@ const SwimSpasPage = () => {
                 >
                   <option value="all">All Brands</option>
                   <option value="grandriver">Grand River Spas</option>
-                  <option value="viking">Viking Spas</option>
+                  <option value="viking" className="hidden">Viking Spas</option>
                   <option value="dynasty">Dynasty Spas</option>
                 </select>
               </div>

@@ -103,7 +103,7 @@ const ProductDetailPage = () => {
   
   const [selectedShell, setSelectedShell] = useState(defaultShell);
   const [selectedCabinet, setSelectedCabinet] = useState(defaultCabinet);
-  // Corner option: 'match' means match cabinet color, 'black' means Black Slate
+  // Corner option: 'match' means match cabinet color, or specific color like 'carbon' or 'black'
   const [selectedCorner, setSelectedCorner] = useState('match');
   const [currentView, setCurrentView] = useState('color');
   const [activeTab, setActiveTab] = useState('overview');
@@ -124,14 +124,32 @@ const ProductDetailPage = () => {
       setSelectedShell(product.shellColors?.[0] || 'white');
       setSelectedCabinet(product.cabinetColors?.[0] || 'coastalGray');
       setSelectedCorner('match'); // Default to matching cabinet
+      setCurrentView('color'); // Reset to color view
       setImageError(false);
     }
   }, [product?.id]);
   
   const isGrandRiver = product?.brand === 'Grand River Spas';
+  const isViking = product?.brand === 'Viking Spas';
+  const isDynasty = product?.brand === 'Dynasty Spas';
+  const hasColorSelector = isGrandRiver || isViking;
+  
+  // Determine corner color options based on series
+  const cornerOptions = useMemo(() => {
+    if (!isViking) return [];
+    const isElite = product?.series === 'Elite Series';
+    return isElite 
+      ? [{ key: 'match', name: 'Match Cabinet' }, { key: 'carbon', name: 'Carbon' }]
+      : [{ key: 'match', name: 'Match Cabinet' }, { key: 'black', name: 'Black Slate' }];
+  }, [isViking, product?.series]);
   
   const currentImage = useMemo(() => {
     if (!product) return ASSETS.logo;
+    
+    // For Dynasty Spas - only show primary image
+    if (isDynasty) {
+      return product.images.primary;
+    }
     
     if (currentView === 'overhead') {
       return product.images.overhead;
@@ -140,14 +158,24 @@ const ProductDetailPage = () => {
       return product.images.primary;
     }
     
+    // Color visualizer for Grand River
     if (isGrandRiver && !imageError) {
-      const colorComboUrl = getColorComboImageUrl(product, selectedShell, selectedCabinet, selectedCorner);
+      const colorComboUrl = getGRColorComboImageUrl(product, selectedShell, selectedCabinet, selectedCorner);
       if (colorComboUrl) {
         return colorComboUrl;
       }
     }
+    
+    // Color visualizer for Viking Spas
+    if (isViking && !imageError) {
+      const colorComboUrl = getVSColorComboImageUrl(product, selectedShell, selectedCabinet, selectedCorner);
+      if (colorComboUrl) {
+        return colorComboUrl;
+      }
+    }
+    
     return product.images.primary;
-  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, imageError]);
+  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, isViking, isDynasty, imageError]);
   
   if (!product) {
     return (

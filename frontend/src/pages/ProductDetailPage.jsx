@@ -263,14 +263,14 @@ const ProductDetailPage = () => {
                     className="w-full h-full object-contain p-1"
                     onError={(e) => { e.target.src = product.images.primary; }}
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-[10px] text-center py-0.5">
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-[8px] text-center">
                     Colors
                   </div>
                 </button>
               )}
               <button
                 onClick={() => setCurrentView('side')}
-                className={`w-20 h-20 border-2 overflow-hidden relative ${
+                className={`w-16 h-16 border-2 overflow-hidden relative ${
                   currentView === 'side' ? 'border-[#B91C1C]' : 'border-slate-200'
                 }`}
                 data-testid="thumb-side"
@@ -284,7 +284,7 @@ const ProductDetailPage = () => {
               </button>
               <button
                 onClick={() => setCurrentView('overhead')}
-                className={`w-20 h-20 border-2 overflow-hidden relative ${
+                className={`w-16 h-16 border-2 overflow-hidden relative ${
                   currentView === 'overhead' ? 'border-[#B91C1C]' : 'border-slate-200'
                 }`}
                 data-testid="thumb-overhead"

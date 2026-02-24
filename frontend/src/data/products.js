@@ -753,7 +753,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Compact 3-person dual lounger perfect for couples.',
     features: ['LED Top Rail Lighting', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'K.1000 Digital Topside'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/2025-TWIN-PALMS-TOP-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_0eda11c7c2bd4659886b1569a18263e4~mv2.png'
     },
     shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
@@ -910,7 +910,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Compact lounger spa perfect for intimate relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
     features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/BAY+BLISS-6d5e88fa-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer']
@@ -936,7 +936,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Bench-style spa with ample seating for relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
     features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/HIGH+TIDE-83502db6-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer']
@@ -963,7 +963,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Premium 30th Anniversary lounger spa with deep oversized seating, K.1000 topside control, in.Touch app, and full LED in.Mix lighting throughout.',
     features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/2025+30TH+SEL+TOP+SHOT+72-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
     },
     shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
     cabinetColors: ['coastalGrayElite', 'ashElite']
@@ -989,7 +989,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Premium 30th Anniversary bench spa seating 7, with deep oversized seating, K.1000 topside control, in.Touch app, and full LED in.Mix lighting.',
     features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/30TH+BENCH+TOP+-1920w.jpg'
+      primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
     },
     shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
     cabinetColors: ['coastalGrayElite', 'ashElite']

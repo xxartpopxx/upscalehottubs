@@ -526,27 +526,28 @@ const ProductDetailPage = () => {
                             setSelectedCorner('black');
                             if (currentView !== 'color') setCurrentView('color');
                           }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative group"
-                        data-testid="corner-color-black"
-                      >
-                        <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                          selectedCorner === 'black' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
-                        }`}>
-                          <div className="w-full h-full" style={{ backgroundColor: '#1a1a1a' }} />
-                          {selectedCorner === 'black' && (
-                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
-                              <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
-                            </motion.div>
-                          )}
-                        </div>
-                        <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'black' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
-                          Black Slate
-                        </p>
-                      </motion.button>
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="relative group"
+                          data-testid="corner-color-black"
+                        >
+                          <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                            selectedCorner === 'black' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                          }`}>
+                            <div className="w-full h-full" style={{ backgroundColor: '#1a1a1a' }} />
+                            {selectedCorner === 'black' && (
+                              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
+                              </motion.div>
+                            )}
+                          </div>
+                          <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'black' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                            Black Slate
+                          </p>
+                        </motion.button>
+                      </div>
                     </div>
-                  </div>
+                  )}
                   
                   <p className="text-xs text-slate-500 mt-4">
                     Actual colors may vary. Contact us for physical color samples.

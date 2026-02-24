@@ -1452,31 +1452,49 @@ export const VIKING_SWIM_SPAS = [
 export const DYNASTY_SWIM_SPAS = [
   {
     id: 'ds-ss-family-island-single',
-    name: 'Family Island Oasis Single Lounger',
+    name: "11' Family Island Oasis SL",
     brand: 'Dynasty Spas',
     series: 'Family Collection',
     length: '11 ft',
     price: '$16,500.00',
     priceValue: 16500,
-    description: 'Family-size swim spa with single lounger for relaxation and exercise.',
-    features: ['LED illuminated river jets', 'Single lounger', 'LED underwater lights', 'Stainless steel grab bars', 'RMAX insulation'],
+    dimensions: '92" x 132" x 38"',
+    waterCapacity: '550 gallons',
+    electrical: '220v/60amp',
+    pumps: '2 - 7.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '2127 lbs',
+    filledWeight: '6527 lbs',
+    description: 'Family-size swim spa with single lounger, K.1000 topside control, and LED lighting throughout.',
+    features: ['K.1000 Topside Control', 'Single Lounger', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Waterfalls', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
-    }
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/FAMILY+OASIS+sl+TALL+2025-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-ss-family-island-dual',
-    name: 'Family Island Oasis Dual Lounger',
+    name: "11' Family Island Oasis",
     brand: 'Dynasty Spas',
     series: 'Family Collection',
     length: '11 ft',
     price: '$18,500.00',
     priceValue: 18500,
-    description: 'Family-size swim spa with dual loungers for maximum comfort.',
-    features: ['LED illuminated river jets', 'Dual loungers', 'LED underwater lights', 'Stainless steel grab bars', 'RMAX insulation'],
+    dimensions: '92" x 132" x 38"',
+    waterCapacity: '550 gallons',
+    electrical: '220v/60amp',
+    pumps: '2 - 7.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '2127 lbs',
+    filledWeight: '6527 lbs',
+    description: 'Family-size swim spa with dual loungers for maximum comfort and exercise.',
+    features: ['K.1000 Topside Control', 'Dual Loungers', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Waterfalls', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
-    }
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/FAMILY+OASIS+sl+TALL+2025-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-ss-aquex-party',
@@ -1486,11 +1504,20 @@ export const DYNASTY_SWIM_SPAS = [
     length: '13 ft',
     price: '$22,500.00',
     priceValue: 22500,
-    description: 'Party-ready 13-foot swim spa with bench seating for entertaining.',
-    features: ['K.1000 Digital Controls', 'LED illuminated fountain jets', 'Bench seating', 'Ozonator system', 'Energy efficient heater'],
+    dimensions: '92" x 160" x 51"',
+    waterCapacity: '1,100 gallons',
+    electrical: '220v/60amp',
+    pumps: '2 - 4.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '2200 lbs',
+    filledWeight: '11000 lbs',
+    description: 'Party-ready 13-foot swim spa with bench seating, K.1000 digital controls, and LED illuminated fountain jets.',
+    features: ['K.1000 Digital Topside Control', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Water Fountains', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests', 'Stainless Steel Grab Bar'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_fcdebac2c1024c1284976af634020059~mv2.webp'
-    }
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/13-+AQUEX+PARTY+SWIM+SPA+small+NEW+2025+W_EXERCISE.+2-ba9bdde3-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-ss-aquex-pro',

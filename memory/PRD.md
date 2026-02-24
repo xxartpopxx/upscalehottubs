@@ -97,9 +97,32 @@ Premium hot tub retailer website serving Naples, FL and South Carolina.
 - **Grand River Spas:** 16 products (Premier + Eco Series)
 - **Viking Spas:** 15 products (Elite/Heirloom/Element Series)
 - **Swim Spas:** 8 products (4 Grand River + 4 Viking)
-- **Saunas:** 2 products
-- **Cold Plunges:** 1 product
+- **Saunas:** 6 products (SaunaLife barrel, cabin, and outdoor saunas)
+- **Cold Plunges:** 2 products (Endurance Bundle $2,999, Resolute Pro $7,999)
 - **Total Hot Tubs:** 31 products
+
+## Latest Updates (Feb 24, 2026)
+
+### ✅ Saunas Updated - 6 Products with Real Prices
+| Model | Price |
+|-------|-------|
+| SaunaLife Model EE8G Barrel | $10,995.95 |
+| SaunaLife Model EE6G Barrel | $8,995.95 |
+| SaunaLife GL4 Outdoor Kit | $13,995.95 |
+| SaunaLife Model CL3G | $5,995.95 |
+| SaunaLife Model G6 Pre-Assembled | $34,995.95 |
+| SaunaLife Model CL7G | $11,995.95 |
+
+### ✅ Cold Plunges Updated - 2 Products with Prices
+| Model | Price |
+|-------|-------|
+| Endurance Cold Plunge Bundle | $2,999.00 |
+| The Resolute Pro | $7,999.00 |
+
+### ✅ Dynasty Spas YouTube Video Added
+- Video embedded on About page: https://www.youtube.com/embed/aRDW_vz1bUw
+- M.A.E. Certified section added with full lab specifications
+- 4 Seasons of Benefits expanded with complete insulation details
 
 ## Testing Status
 - ✅ Color visualizer fully tested (iteration_9.json)

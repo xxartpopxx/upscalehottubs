@@ -32,6 +32,19 @@ const CABINET_COLORS = {
   carbon: { name: 'Carbon', hex: '#333333', image: `${VS_VISUALIZER_BASE}/carbon.png` },
   // Viking Heirloom Series
   ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: `${VS_VISUALIZER_BASE}/ash.png` },
+  // Dynasty Spas Cabinet Colors
+  blackConfer: { name: 'Black Confer', hex: '#1a1a1a' },
+  grayConfer: { name: 'Gray Confer', hex: '#6B7280' },
+  ashElite: { name: 'Ash Elite', hex: '#B2BEB5' },
+  coastalGrayElite: { name: 'Coastal Gray Elite', hex: '#708090' },
+};
+
+// Dynasty Spas Shell Colors
+const DYNASTY_SHELLS = {
+  sterlingMarble: { name: 'Sterling Marble', hex: '#E8E8E0' },
+  stormClouds: { name: 'Storm Clouds', hex: '#6B7B8A' },
+  tuscanSun: { name: 'Tuscan Sun', hex: '#C4A35A' },
+  smokyMountain: { name: 'Smoky Mountain', hex: '#8B7355' },
 };
 
 // Corner color options for Viking Spas

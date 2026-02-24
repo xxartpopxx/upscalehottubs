@@ -306,6 +306,16 @@ const HomePage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Upstate Hot Tubs | American Made Hot Tubs & Swim Spas | Naples FL & SC</title>
+        <meta name="description" content="Live your healthiest life while enjoying a vacation everyday at home. American made hot tubs, swim spas, saunas & cold plunges from Grand River Spas and Viking Spas. Serving Naples FL, Greenville, Simpsonville SC." />
+        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, American made, Grand River Spas, Viking Spas, Naples FL, Greenville SC, Simpsonville SC" />
+        <meta property="og:title" content="Upstate Hot Tubs | American Made Hot Tubs & Swim Spas" />
+        <meta property="og:description" content="Live your healthiest life while enjoying a vacation everyday at home. American made and proud of it!" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://upstatehottubs.com" />
+      </Helmet>
+      
       <TaxSpecialPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
       <HeroSection />
       <TrustSection />
@@ -316,11 +326,13 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-4">Shop Our American Made Hot Tubs</h2>
+            <p className="text-lg text-slate-600 mb-4">Live your healthiest life while enjoying a vacation everyday at home</p>
             <div className="w-24 h-1 bg-[#B91C1C] mx-auto" />
           </motion.div>
           <ProductGrid products={HOT_TUBS.slice(0, 8)} linkPrefix="/products" />
-          <div className="text-center mt-8">
-            <Link to="/hot-tubs" className="btn-secondary inline-flex items-center gap-2">View All Hot Tubs <ChevronRight size={18} /></Link>
+          <div className="text-center mt-8 space-x-4">
+            <Link to="/grand-river-spas" className="btn-primary inline-flex items-center gap-2">Grand River Spas <ChevronRight size={18} /></Link>
+            <Link to="/viking-spas" className="btn-secondary inline-flex items-center gap-2">Viking Spas <ChevronRight size={18} /></Link>
           </div>
         </div>
       </div>
@@ -333,6 +345,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-4">American Made Swim Spas</h2>
+            <p className="text-lg text-slate-600 mb-4">American Made & Proud of It</p>
             <div className="w-24 h-1 bg-[#B91C1C] mx-auto" />
           </motion.div>
           <ProductGrid products={SWIM_SPAS} linkPrefix="/products" />
@@ -340,6 +353,18 @@ const HomePage = () => {
       </div>
       
       <CategoriesSection />
+      
+      {/* Slogan Section */}
+      <section className="py-12 bg-[#0A1628]">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-white text-2xl md:text-3xl font-['Barlow_Condensed'] uppercase tracking-wider mb-3">
+            Live Your Healthiest Life While Enjoying a Vacation Everyday at Home
+          </p>
+          <p className="text-[#D4AF37] text-lg font-semibold flex items-center justify-center gap-2">
+            <Flag size={18} /> American Made & Proud of It
+          </p>
+        </div>
+      </section>
     </>
   );
 };

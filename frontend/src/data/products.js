@@ -1468,7 +1468,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Family-size swim spa with single lounger, K.1000 topside control, and LED lighting throughout.',
     features: ['K.1000 Topside Control', 'Single Lounger', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Waterfalls', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/FAMILY+OASIS+sl+TALL+2025-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
@@ -1491,7 +1491,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Family-size swim spa with dual loungers for maximum comfort and exercise.',
     features: ['K.1000 Topside Control', 'Dual Loungers', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Waterfalls', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/FAMILY+OASIS+sl+TALL+2025-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
@@ -1514,7 +1514,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Party-ready 13-foot swim spa with bench seating, K.1000 digital controls, and LED illuminated fountain jets.',
     features: ['K.1000 Digital Topside Control', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Water Fountains', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests', 'Stainless Steel Grab Bar'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/13-+AQUEX+PARTY+SWIM+SPA+small+NEW+2025+W_EXERCISE.+2-ba9bdde3-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
@@ -1537,7 +1537,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Professional 13-foot swim spa with exercise equipment and new swim current technology.',
     features: ['K.1000 Topside Control', 'LED Top Rail Lighting', 'LED Illuminated Fountains', 'LED Illuminated Diverters', 'New Exercise Equipment', 'Stainless Steel Grab Bars', 'Ozonator System', 'RMAX Insulation'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/13-AQUEX-SWIM-SPA-web-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
@@ -1560,7 +1560,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: 'Premium 13-foot swim spa with in.Mix illuminated jets, in.Stream audio, and swim coach workout system.',
     features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'LED Illuminated Jets', 'LED Illuminated Waterfalls', 'New Exercise Equipment', 'Stainless Steel Grab Bars'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/2025+13+AQUEX+PRO+PLUS+W-TAG+SWIM+SPA+TOP-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
@@ -1583,7 +1583,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: '16-foot trainer swim spa with swim coach multi-programmable workout, in.Mix lighting, and in.Stream audio.',
     features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Exercise/Rowing & Swim Tether', 'LED Illuminated Fountains', 'LED Corner Lighting'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/16+AQUEX+TRAINER+SWIM+SPA+vert+NE-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer', 'grayConfer']
@@ -1606,7 +1606,7 @@ export const DYNASTY_SWIM_SPAS = [
     description: '17-foot professional swim spa with dual zone capability, swim coach, and premium in.Mix/in.Stream systems.',
     features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Exercise/Rowing & Swim Tether', 'LED Illuminated Jets', 'LED Corner Lighting', 'Stainless Steel Grab Bars'],
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/16+AQUEX+TRAINER+SWIM+SPA+vert+NE-1920w.png'
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']

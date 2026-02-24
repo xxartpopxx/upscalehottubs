@@ -116,9 +116,9 @@ const ProductDetailPage = () => {
   return (
     <>
       <Helmet>
-        <title>{String(product.name + ' | ' + product.brand + ' | Upstate Hot Tubs')}</title>
-        <meta name="description" content={String(product.name + ' - ' + product.description + ' ' + product.jets + ' jets, seats ' + product.persons + '. American made and proud of it.')} />
-        <meta name="keywords" content={String(product.name + ', ' + product.brand + ', hot tub, ' + product.series + ', spa')} />
+        <title>{`${product.name || ''} | ${product.brand || ''} | Upstate Hot Tubs`}</title>
+        <meta name="description" content={`${product.name || ''} - ${product.description || ''} ${product.jets || ''} jets, seats ${product.persons || ''}. American made and proud of it.`} />
+        <meta name="keywords" content={`${product.name || ''}, ${product.brand || ''}, hot tub, ${product.series || ''}, spa`} />
       </Helmet>
       
       <div className="pt-28 pb-20" data-testid="product-detail-page">

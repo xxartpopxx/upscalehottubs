@@ -9,9 +9,13 @@ const SaunasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Saunas | American Made | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop premium saunas at Upstate Hot Tubs. Live your healthiest life while enjoying a vacation everyday at home. American made and proud of it." />
-        <meta name="keywords" content="saunas, infrared sauna, traditional sauna, wellness, American made, Upstate Hot Tubs" />
+        <title>Saunas | Barrel Saunas & Infrared Saunas | Upstate Hot Tubs</title>
+        <meta name="description" content="Shop premium barrel saunas and infrared saunas at Upstate Hot Tubs. RELAX-RENEW-REPEAT. Live your healthiest life while enjoying a vacation everyday at home. American made and proud of it. Free delivery in Naples FL and South Carolina." />
+        <meta name="keywords" content="saunas, barrel saunas, infrared sauna, traditional sauna, outdoor sauna, wellness, SaunaLife, Upstate Hot Tubs, Naples FL, Greenville SC" />
+        <meta property="og:title" content="Premium Saunas | Upstate Hot Tubs" />
+        <meta property="og:description" content="RELAX-RENEW-REPEAT. Premium barrel saunas for your backyard oasis." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://upstatehottubs.com/saunas" />
       </Helmet>
       
       <div className="pt-28 pb-20" data-testid="saunas-page">

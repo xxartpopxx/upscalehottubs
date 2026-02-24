@@ -157,23 +157,25 @@ const ProductDetailPage = () => {
   const isGrandRiver = product?.brand === 'Grand River Spas';
   const isViking = product?.brand === 'Viking Spas';
   const isDynasty = product?.brand === 'Dynasty Spas';
-  const hasColorSelector = isGrandRiver || isViking;
+  const isSaunaOrColdPlunge = product?.category === 'saunas' || product?.category === 'cold-plunges' || product?.brand === 'SaunaLife' || product?.brand === 'Renu Therapy';
+  const isSwimSpa = !!product?.length;
+  const hasColorSelector = (isGrandRiver || isViking) && !isSwimSpa;
   
   // Determine corner color options based on series
   const cornerOptions = useMemo(() => {
-    if (!isViking) return [];
+    if (!isViking || isSwimSpa) return [];
     const isElite = product?.series === 'Elite Series';
     return isElite 
       ? [{ key: 'match', name: 'Match Cabinet' }, { key: 'carbon', name: 'Carbon' }]
       : [{ key: 'match', name: 'Match Cabinet' }, { key: 'black', name: 'Black Slate' }];
-  }, [isViking, product?.series]);
+  }, [isViking, isSwimSpa, product?.series]);
   
   // Determine available views based on brand - must be before early returns
   const views = useMemo(() => {
-    if (isDynasty) return ['side'];
+    if (isDynasty || isSaunaOrColdPlunge || isSwimSpa) return ['side'];
     if (hasColorSelector) return ['color', 'side', 'overhead'];
     return ['side', 'overhead'];
-  }, [isDynasty, hasColorSelector]);
+  }, [isDynasty, isSaunaOrColdPlunge, isSwimSpa, hasColorSelector]);
   
   const currentImage = useMemo(() => {
     if (!product) return ASSETS.logo;

@@ -347,7 +347,93 @@ const DynastySpasPage = () => {
             </div>
           </motion.div>
 
-          {/* Slogan Banner */}
+          {/* Features and Benefits Section */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16">
+            <h2 className="font-['Barlow_Condensed'] text-4xl font-bold text-center text-[#0A1628] mb-8 uppercase">
+              Features & Benefits
+            </h2>
+            
+            {/* Component List */}
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+              <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-6">Dynasty Spas Are Equipped With The Following Components</h3>
+              <div className="grid md:grid-cols-3 gap-3">
+                {['Digital Controls', 'LED Lights', 'UV Treated Pillows', 'Air/Water Multi-Jets', 'Ozone Sanitation System', 'VGB Compliant Intake', 'Quick Temp Heater', 'Ecological RMAX Insulation', 'Lucite Acrylic Shell', 'Insulated & Soundproof Fiberglass Cabinet', 'Full Wrap Around ABS Bottom', '5"-3" Standard Taper Cover'].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 py-2 border-b border-slate-100">
+                    <div className="w-2 h-2 rounded-full bg-[#B91C1C] flex-shrink-0" />
+                    <span className="text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Banner Image */}
+            <img
+              src="https://static.wixstatic.com/media/5c7c78_56061b97847b4bdbaa660b07d63aebb5~mv2.jpg/v1/fill/w_1744,h_383,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_56061b97847b4bdbaa660b07d63aebb5~mv2.jpg"
+              alt="Dynasty Spas Features"
+              className="w-full rounded-lg shadow-lg mb-12"
+            />
+
+            {/* RMAX */}
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-4">RMAX Insulation</h3>
+                <p className="text-slate-600 text-lg">Up to 7 Times The R-Value of other hot tubs on the market.</p>
+              </div>
+              <div className="flex gap-4">
+                <img src="https://static.wixstatic.com/media/5c7c78_d8c6a37528bc4fa2b61a8e5c17e6130e~mv2.png/v1/fill/w_744,h_545,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dynasty%20Spas%2C%20a%20hot%20tub%20and%20swim%20spa%20manufacturer%2C%20is%20known%20for%20its%20_reverse%20pull%20neck%20jet.png" alt="RMAX Insulation" className="w-1/2 rounded-lg object-cover" />
+                <img src="https://static.wixstatic.com/media/5c7c78_e47e3d358f424da783adfec768acb0ba~mv2.png/v1/fill/w_544,h_703,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dynasty%20Spas%2C%20a%20hot%20tub%20and%20swim%20spa%20manufacturer%2C%20is%20known%20for%20its%20_reverse%20pull%20neck%20jet.png" alt="RMAX Detail" className="w-1/2 rounded-lg object-cover" />
+              </div>
+            </div>
+
+            {/* Elegant & Strong */}
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-4">Elegant And Strong</h3>
+                <p className="text-slate-600 mb-4">
+                  Dynasty Spas uses the best Lucite timeless acrylic with stunning solids and complex patterns for a luxurious finish.
+                  Lucite Spa continuous cast acrylic sheet is the preferred choice of manufacturers worldwide.
+                </p>
+                <p className="text-slate-600">
+                  Dynasty offers a variety of polymer cabinet color options. The maintenance-free cabinetry is extremely durable,
+                  moisture and impact resistant &mdash; it doesn't crack, peel or fade. Custom rounded corners and removable panels
+                  allow access to all areas inside the spa.
+                </p>
+              </div>
+              <img src="https://static.wixstatic.com/media/5c7c78_d47544bf91ed4bb884494e0734b40eaf~mv2.jpg/v1/fill/w_744,h_942,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dynasty%20Spas%2C%20a%20hot%20tub%20and%20swim%20spa%20man.jpg" alt="Elegant Cabinet" className="w-full rounded-lg shadow-lg" />
+            </div>
+
+            {/* Maintenance Free */}
+            <div className="bg-slate-50 rounded-lg p-8 mb-12">
+              <h3 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-4">Maintenance Free</h3>
+              <div className="space-y-4 text-slate-600">
+                <p><strong>Structure</strong> &mdash; Quality pressure treated wood structure (50-year life expectancy). Removable side panels. Anti-moisture ABS plastic base for increased stability and heat retention.</p>
+                <p><strong>Dynacrete Base</strong> &mdash; Made of recycled acrylic and resin. Isolates frame bottom from moisture. The most durable and solid spas in the industry.</p>
+                <p><strong>Reinforced Finish</strong> &mdash; Lucite Cast Acrylic and reinforced fiberglass finish to ensure strength and durability. Hand rolled process eliminates air pockets which can cause separation.</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <img src="https://static.wixstatic.com/media/5c7c78_b4b5ce84e1564a49bbc0f8cdf56246b0~mv2.jpg/v1/fill/w_568,h_293,q_90,enc_avif,quality_auto/5c7c78_b4b5ce84e1564a49bbc0f8cdf56246b0~mv2.jpg" alt="Structure" className="w-full rounded-lg" />
+                <img src="https://static.wixstatic.com/media/5c7c78_59ff939a6bab428983832cf5df9b662d~mv2.jpg/v1/fill/w_568,h_293,q_90,enc_avif,quality_auto/5c7c78_59ff939a6bab428983832cf5df9b662d~mv2.jpg" alt="Base" className="w-full rounded-lg" />
+              </div>
+            </div>
+
+            {/* Tech Features Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'In Touch2 Wi-Fi Remote', img: 'https://static.wixstatic.com/media/5c7c78_58009c490b214bc79265f26815f366e9~mv2.png/v1/fill/w_886,h_1171,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Heavy-Duty%20Hot%20Tub%20Cover%20Lifter%2C%20No-Drill%20Spa%20Cover%20Lift%20for%206%27-8%27%20Hot%20Tubs%2C%20Adjustable%20He.png' },
+                { title: 'In Stream 2 Bluetooth Audio', img: 'https://static.wixstatic.com/media/5c7c78_838d568c2e9840ad8fbdcdb579746c1f~mv2.png/v1/fill/w_973,h_626,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Heavy-Duty%20Hot%20Tub%20Cover%20Lifter%2C%20No-Drill%20Spa%20Cover%20Lift%20for%206%27-8%27%20Hot%20Tubs%2C%20Adjustable%20He.png' },
+                { title: 'In Mix LED Controls', img: 'https://static.wixstatic.com/media/5c7c78_f8d100e8553e4e24a2def91b6f4d3305~mv2.png/v1/fill/w_973,h_575,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Heavy-Duty%20Hot%20Tub%20Cover%20Lifter%2C%20No-Drill%20Spa%20Cover%20Lift%20for%206%27-8%27%20Hot%20Tubs%2C%20Adjustable%20He.png' },
+                { title: 'CMP Ozone & Controls', img: 'https://static.wixstatic.com/media/5c7c78_1ce016ef8ca44b58860b12005430ff0a~mv2.png/v1/fill/w_781,h_973,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Heavy-Duty%20Hot%20Tub%20Cover%20Lifter%2C%20No-Drill%20Spa%20Cover%20Lift%20for%206%27-8%27%20Hot%20Tubs%2C%20Adjustable%20He.png' },
+              ].map((feat, i) => (
+                <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src={feat.img} alt={feat.title} className="w-full h-48 object-contain p-4" />
+                  <div className="p-4">
+                    <h4 className="font-['Barlow_Condensed'] text-lg font-bold text-[#0A1628] text-center">{feat.title}</h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </>

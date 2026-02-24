@@ -1369,8 +1369,104 @@ export const VIKING_SWIM_SPAS = [
   }
 ];
 
+// ===========================================
+// SWIM SPAS - DYNASTY SPAS
+// ===========================================
+export const DYNASTY_SWIM_SPAS = [
+  {
+    id: 'ds-ss-family-island-single',
+    name: 'Family Island Oasis Single Lounger',
+    brand: 'Dynasty Spas',
+    series: 'Family Collection',
+    length: '11 ft',
+    price: '$16,500.00',
+    priceValue: 16500,
+    description: 'Family-size swim spa with single lounger for relaxation and exercise.',
+    features: ['LED illuminated river jets', 'Single lounger', 'LED underwater lights', 'Stainless steel grab bars', 'RMAX insulation'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
+    }
+  },
+  {
+    id: 'ds-ss-family-island-dual',
+    name: 'Family Island Oasis Dual Lounger',
+    brand: 'Dynasty Spas',
+    series: 'Family Collection',
+    length: '11 ft',
+    price: '$18,500.00',
+    priceValue: 18500,
+    description: 'Family-size swim spa with dual loungers for maximum comfort.',
+    features: ['LED illuminated river jets', 'Dual loungers', 'LED underwater lights', 'Stainless steel grab bars', 'RMAX insulation'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_bd2ac56e6c054ea8a6279dbc774c6315~mv2.webp'
+    }
+  },
+  {
+    id: 'ds-ss-aquex-party',
+    name: "13' Aquex Party",
+    brand: 'Dynasty Spas',
+    series: 'Aquex Collection',
+    length: '13 ft',
+    price: '$22,500.00',
+    priceValue: 22500,
+    description: 'Party-ready 13-foot swim spa with bench seating for entertaining.',
+    features: ['K.1000 Digital Controls', 'LED illuminated fountain jets', 'Bench seating', 'Ozonator system', 'Energy efficient heater'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_fcdebac2c1024c1284976af634020059~mv2.webp',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_fcdebac2c1024c1284976af634020059~mv2.webp'
+    }
+  },
+  {
+    id: 'ds-ss-aquex-pro-plus',
+    name: "13' Aquex Pro Plus",
+    brand: 'Dynasty Spas',
+    series: 'Aquex Collection',
+    length: '13 ft',
+    price: '$26,500.00',
+    priceValue: 26500,
+    description: 'Professional-grade 13-foot swim spa with enhanced features.',
+    features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'LED river jets', 'Professional swim current', 'RMAX insulation'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_ae48cc5d30dd4e0a82daecf1c5c0ccb1~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_ae48cc5d30dd4e0a82daecf1c5c0ccb1~mv2.jpg'
+    }
+  },
+  {
+    id: 'ds-ss-aquex-trainer',
+    name: "16' Aquex Trainer",
+    brand: 'Dynasty Spas',
+    series: 'Aquex Collection',
+    length: '16 ft',
+    price: '$32,500.00',
+    priceValue: 32500,
+    description: '16-foot trainer swim spa designed for serious swimmers.',
+    features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'Lounger seating', 'Professional swim current', 'Energy efficient'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_ba33eab37b454202aebad500bba79305~mv2.webp',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_ba33eab37b454202aebad500bba79305~mv2.webp'
+    }
+  },
+  {
+    id: 'ds-ss-aquex-dual-pro',
+    name: "19' Aquex Dual Pro",
+    brand: 'Dynasty Spas',
+    series: 'Aquex Collection',
+    length: '19 ft',
+    price: '$42,500.00',
+    priceValue: 42500,
+    description: 'Our largest 19-foot dual-zone swim spa with separate hot tub section.',
+    features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'Dual temperature zones', 'Professional swim current', 'Bench seating'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
+    }
+  }
+];
+
 // Combined Swim Spas (for backward compatibility)
-export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...VIKING_SWIM_SPAS];
+export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...VIKING_SWIM_SPAS, ...DYNASTY_SWIM_SPAS];
 
 // Saunas and Cold Plunges
 export const SAUNAS = [

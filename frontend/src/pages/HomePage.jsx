@@ -105,6 +105,9 @@ const HeroSection = () => (
           <Link to="/viking-spas" className="bg-white text-[#0A1628] font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 text-lg hover:bg-[#D4AF37] hover:text-white transition-all shadow-lg" data-testid="hero-swim-spas-btn">
             Viking Spas <ChevronRight size={20} />
           </Link>
+          <Link to="/dynasty-spas" className="bg-[#D4AF37] text-[#0A1628] font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 text-lg hover:bg-white hover:text-[#0A1628] transition-all shadow-lg" data-testid="hero-dynasty-btn">
+            Dynasty Spas <ChevronRight size={20} />
+          </Link>
         </motion.div>
         
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="mt-8 text-lg font-semibold text-[#D4AF37]">

@@ -105,7 +105,7 @@ const SwimSpasPage = () => {
               American Made Swim Spas
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl">
-              Live your healthiest life while enjoying a vacation everyday at home. Exercise, swim, and relax in our premium swim spas.
+              Exercise, swim, and relax in our premium American-made swim spas. The best of both worlds - hot tub comfort with full-size swimming.
             </p>
           </motion.div>
 

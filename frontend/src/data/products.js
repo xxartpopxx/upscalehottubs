@@ -1619,11 +1619,20 @@ export const DYNASTY_SWIM_SPAS = [
     length: '19 ft',
     price: '$42,500.00',
     priceValue: 42500,
-    description: 'Our largest 19-foot dual-zone swim spa with separate hot tub section.',
-    features: ['in.Mix illuminated jet system', 'in.Stream audio system', 'Dual temperature zones', 'Professional swim current', 'Bench seating'],
+    dimensions: '92" x 228" x 60"',
+    waterCapacity: '2,500 gallons',
+    electrical: '220v/60amp',
+    pumps: '4 - 5.0bhp + 1 - 7.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '3200 lbs',
+    filledWeight: '23200 lbs',
+    description: 'Our largest 19-foot dual-zone swim spa with separate hot tub section, swim coach, and premium features.',
+    features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Dual Temperature Zones', 'Exercise/Rowing & Swim Tether', 'LED Corner Lighting', 'Bench Seating in Hot Tub'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
-    }
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   }
 ];
 

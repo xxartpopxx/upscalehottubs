@@ -59,7 +59,7 @@ const ProductDetailPage = () => {
     if (product) {
       setSelectedShell(product.shellColors?.[0] || 'white');
       setSelectedCabinet(product.cabinetColors?.[0] || 'coastalGray');
-      setSelectedCorner(product.cabinetColors?.[0] || 'coastalGray');
+      setSelectedCorner('match'); // Default to matching cabinet
       setImageError(false);
     }
   }, [product?.id]);

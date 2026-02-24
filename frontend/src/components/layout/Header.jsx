@@ -33,6 +33,10 @@ const Header = () => {
 
   const discoverLinks = [
     { name: 'About Us', href: '/about' },
+    { name: 'Covers', href: '/covers' },
+    { name: 'Anatomy of a Spa', href: '/anatomy-of-a-spa' },
+    { name: 'Balneotherapy', href: '/balneotherapy' },
+    { name: 'Jets', href: '/jets' },
     { name: 'Events', href: '/events' },
     { name: 'Financing', href: '/financing' },
     { name: 'Spa Butler Service', href: '/spa-butler' },

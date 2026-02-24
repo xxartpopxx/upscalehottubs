@@ -278,8 +278,8 @@ const ProductDetailPage = () => {
           
           {/* Main Product Section - Image + Color Selector Side by Side */}
           <div className="grid lg:grid-cols-12 gap-6 mb-8">
-            {/* Image Gallery - 7 columns */}
-            <div className="lg:col-span-7">
+            {/* Image Gallery */}
+            <div className={isSaunaOrColdPlunge ? 'lg:col-span-12' : 'lg:col-span-7'}>
               <div className="bg-slate-50 relative aspect-[4/3] overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img

@@ -131,6 +131,16 @@ const ProductDetailPage = () => {
             </ol>
           </nav>
           
+          {/* Product Name Header */}
+          <div className="mb-4">
+            <p className="text-sm text-slate-500 uppercase tracking-wider">{product.brand}</p>
+            <p className="text-sm text-[#B91C1C] font-semibold uppercase tracking-wider">{product.series}</p>
+            <h1 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628]">
+              {product.name}
+            </h1>
+            <p className="text-2xl font-bold text-[#B91C1C] mt-1">{product.price}</p>
+          </div>
+          
           {/* Main Product Section - Image + Color Selector Side by Side */}
           <div className="grid lg:grid-cols-12 gap-6 mb-8">
             {/* Image Gallery - 7 columns */}
@@ -138,7 +148,7 @@ const ProductDetailPage = () => {
               <div className="bg-slate-50 relative aspect-[4/3] overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
-                    key={`${currentImage}-${selectedShell}-${selectedCabinet}`}
+                    key={`${currentImage}-${selectedShell}-${selectedCabinet}-${selectedCorner}`}
                     src={currentImage}
                     alt={`${product.name} - ${SHELL_COLORS[selectedShell]?.name} shell with ${CABINET_COLORS[selectedCabinet]?.name} cabinet`}
                     className="w-full h-full object-contain p-4"
@@ -173,7 +183,7 @@ const ProductDetailPage = () => {
                 
                 {/* Color indicator badges */}
                 {currentView === 'color' && isGrandRiver && (
-                  <div className="absolute bottom-3 left-3 flex gap-2 z-10">
+                  <div className="absolute bottom-3 left-3 flex flex-wrap gap-2 z-10">
                     <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
                       <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }} />
                       <span>{SHELL_COLORS[selectedShell]?.name}</span>

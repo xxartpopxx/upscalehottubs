@@ -1056,16 +1056,55 @@ export const SAUNAS = [
 
 export const COLD_PLUNGES = [
   {
-    id: 'cp-chill-therapy',
-    name: 'Chill Therapy Cold Plunge',
-    brand: 'Viking Spas',
-    series: 'Chill Therapy',
-    price: 'Call for Price',
-    description: 'Professional-grade cold plunge for recovery and wellness.',
-    features: ['Temperature control', 'Insulated design', 'Easy maintenance'],
+    id: 'cp-endurance',
+    name: 'Endurance Cold Plunge Bundle',
+    brand: 'Icebound',
+    series: 'Endurance',
+    price: '$2,999.00',
+    priceValue: 2999,
+    description: 'Transform your recovery routine with the Endurance Plunge Bundle – your personal polar paradise. This premium package combines a spacious inflatable tub with a powerful 1HP chiller.',
+    longDescription: 'Transform your recovery routine with the Endurance Plunge Bundle – your personal polar paradise. This premium package combines our spacious inflatable tub with a powerful 1HP chiller, delivering temperatures from 37°F to 107.6°F. With WiFi controls, Ozone sanitization, a 5-micron filter, and a self-priming pump, it\'s the ultimate portable solution for serious athletes.',
+    features: [
+      'Professional-Grade Temperature Control (37°F to 107.6°F)',
+      'WiFi-enabled app control',
+      '1HP Water Chiller + Heater',
+      'Ozone sanitization system',
+      '5-micron filtration',
+      'Fits two adults comfortably',
+      'Dimensions: 63" × 38.5" × 26"',
+      'Max Capacity: 155 gallons',
+      'Indoor/outdoor versatility'
+    ],
+    specs: {
+      dimensions: '63" × 38.5" × 26"',
+      capacity: '155 gallons',
+      tempRange: '37°F to 107.6°F',
+      power: '1HP Chiller'
+    },
     images: {
-      primary: 'https://vikingspas.com/wp-content/uploads/2024/07/Chill-Therapy_Corner-View1-600x450-1.jpg',
-      overhead: 'https://vikingspas.com/wp-content/uploads/2024/06/Chill-Therapy_Overhead-600x433-1.jpg'
+      primary: 'https://static.wixstatic.com/media/5c7c78_4888e9c65f014715a52d6f4282ea0929~mv2.png/v1/fill/w_487,h_487,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_4888e9c65f014715a52d6f4282ea0929~mv2.png',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_b188f0afaa784b1f9b2968c342fa437b~mv2.png/v1/fill/w_487,h_487,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_b188f0afaa784b1f9b2968c342fa437b~mv2.png'
+    }
+  },
+  {
+    id: 'cp-resolute-pro',
+    name: 'The Resolute Pro',
+    brand: 'Icebound',
+    series: 'Resolute',
+    price: '$7,999.00',
+    priceValue: 7999,
+    description: 'Professional-grade cold plunge for serious recovery and wellness. The Resolute Pro offers premium construction and advanced temperature control for athletes and wellness enthusiasts.',
+    features: [
+      'Professional-grade construction',
+      'Advanced temperature control',
+      'Premium insulated design',
+      'Easy maintenance',
+      'Built for daily use',
+      'Commercial-grade durability'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_c8b890519518456695312043eb9b8256~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_c8b890519518456695312043eb9b8256~mv2.jpg',
+      overhead: 'https://static.wixstatic.com/media/5c7c78_d0866f32060c4474b537bab6b8a5f1ff~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_d0866f32060c4474b537bab6b8a5f1ff~mv2.jpg'
     }
   }
 ];

@@ -23,6 +23,10 @@ import EventsPage from './pages/EventsPage';
 import FinancingPage from './pages/FinancingPage';
 import SpaButlerPage from './pages/SpaButlerPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import CoversPage from './pages/CoversPage';
+import AnatomyPage from './pages/AnatomyPage';
+import BalneotherapyPage from './pages/BalneotherapyPage';
+import JetsPage from './pages/JetsPage';
 
 import './App.css';
 
@@ -67,6 +71,10 @@ function App() {
               
               {/* Discover Pages */}
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/covers" element={<CoversPage />} />
+              <Route path="/anatomy-of-a-spa" element={<AnatomyPage />} />
+              <Route path="/balneotherapy" element={<BalneotherapyPage />} />
+              <Route path="/jets" element={<JetsPage />} />
               <Route path="/events" element={<EventsPage />} />
               <Route path="/financing" element={<FinancingPage />} />
               <Route path="/spa-butler" element={<SpaButlerPage />} />

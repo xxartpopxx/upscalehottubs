@@ -222,7 +222,8 @@ const CategoriesSection = () => {
   const categories = [
     { name: 'Hot Tubs', href: '/hot-tubs', image: HOT_TUBS[0]?.images?.primary },
     { name: 'Swim Spas', href: '/swim-spas', image: HOT_TUBS[2]?.images?.primary },
-    { name: 'Saunas', href: '/saunas', image: 'https://images.unsplash.com/photo-1612362141890-59bc3be0cfc5?w=600&q=80' },
+    { name: 'Dynasty Spas', href: '/dynasty-spas', image: HOT_TUBS.find(p => p.brand === 'Dynasty Spas')?.images?.primary },
+    { name: 'Saunas', href: '/saunas', image: 'https://static.wixstatic.com/media/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg' },
     { name: 'Cold Plunges', href: '/cold-plunges', image: HOT_TUBS[10]?.images?.primary },
   ];
 
@@ -232,7 +233,7 @@ const CategoriesSection = () => {
         <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-center text-[#0A1628] mb-12">
           Shop By Categories
         </motion.h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           {categories.map((cat, idx) => (
             <motion.div 
               key={cat.name} 

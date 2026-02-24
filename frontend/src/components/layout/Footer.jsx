@@ -24,7 +24,7 @@ const Footer = () => {
           <div>
             <img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-24 mb-6" loading="lazy" />
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Live your healthiest life while enjoying a vacation everyday at home. Buy American and start living your best life today!
+              Buy American and start living your best life today! Premium hot tubs, swim spas, saunas and cold plunges.
             </p>
             <div className="flex gap-3">
               {[

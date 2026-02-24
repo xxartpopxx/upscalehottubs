@@ -181,6 +181,7 @@ const SwimSpasPage = () => {
                   <option value="all">All Brands</option>
                   <option value="grandriver">Grand River Spas</option>
                   <option value="viking">Viking Spas</option>
+                  <option value="dynasty">Dynasty Spas</option>
                 </select>
               </div>
 
@@ -194,6 +195,7 @@ const SwimSpasPage = () => {
                   data-testid="filter-min-price"
                 >
                   <option value="">No Min</option>
+                  <option value="15000">$15,000</option>
                   <option value="20000">$20,000</option>
                   <option value="25000">$25,000</option>
                   <option value="30000">$30,000</option>
@@ -210,6 +212,7 @@ const SwimSpasPage = () => {
                   data-testid="filter-max-price"
                 >
                   <option value="">No Max</option>
+                  <option value="20000">$20,000</option>
                   <option value="25000">$25,000</option>
                   <option value="30000">$30,000</option>
                   <option value="35000">$35,000</option>

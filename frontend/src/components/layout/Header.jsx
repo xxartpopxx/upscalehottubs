@@ -7,7 +7,6 @@ import { ASSETS, CONTACT } from '../../data/constants';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [shopDropdown, setShopDropdown] = useState(false);
   const [discoverDropdown, setDiscoverDropdown] = useState(false);
   const location = useLocation();
 
@@ -19,15 +18,15 @@ const Header = () => {
 
   // Close dropdowns when route changes
   useEffect(() => {
-    setShopDropdown(false);
     setDiscoverDropdown(false);
     setIsOpen(false);
   }, [location.pathname]);
 
   const shopLinks = [
-    { name: 'Hot Tubs', href: '/hot-tubs' },
-    { name: 'Swim Spas', href: '/swim-spas' },
+    { name: 'Grand River Spas', href: '/grand-river-spas' },
+    { name: 'Viking Spas', href: '/viking-spas' },
     { name: 'Saunas', href: '/saunas' },
+    { name: 'Swim Spas', href: '/swim-spas' },
     { name: 'Cold Plunges', href: '/cold-plunges' },
   ];
 
@@ -40,7 +39,6 @@ const Header = () => {
 
   const mainLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Shop', href: '#', dropdown: true, links: shopLinks },
     { name: 'Wellness', href: '/wellness' },
     { name: 'Discover', href: '#', dropdown: true, links: discoverLinks },
     { name: 'Contact', href: '/contact' },

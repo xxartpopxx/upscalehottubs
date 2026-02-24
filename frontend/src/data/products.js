@@ -44,14 +44,17 @@ export const VS_SHELL_COLORS = {
 
 // Dynasty Spas Color Options
 export const DYNASTY_SHELL_COLORS = {
-  sterling: { name: 'Sterling Marble', hex: '#E8E8E0', image: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp' },
+  sterlingMarble: { name: 'Sterling Marble', hex: '#E8E8E0', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/acrylic-sterling-marble-1920w.jpg' },
+  stormClouds: { name: 'Storm Clouds', hex: '#6B7B8A', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/acrylic-storm-clouds-1920w.jpg' },
+  tuscanSun: { name: 'Tuscan Sun', hex: '#C4A35A', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/acrylic-tuscan-sun-1920w.jpg' },
+  smokyMountain: { name: 'Smoky Mountain', hex: '#8B7355', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/acrylic-smoky-mountain-1920w.jpg' },
 };
 
 export const DYNASTY_CABINET_COLORS = {
-  blackConfer: { name: 'Black Confer', hex: '#1a1a1a' },
-  grayConfer: { name: 'Gray Confer', hex: '#6B7280' },
-  ashElite: { name: 'Ash Elite', hex: '#B2BEB5' },
-  coastalGrayElite: { name: 'Coastal Gray Elite', hex: '#6B7280' },
+  blackConfer: { name: 'Black Confer', hex: '#1a1a1a', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/skirt-black-confer-1920w.jpg' },
+  grayConfer: { name: 'Gray Confer', hex: '#6B7280', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/skirt-gray-confer-1920w.jpg' },
+  ashElite: { name: 'Ash Elite', hex: '#B2BEB5', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/skirt-ash-elite-1920w.jpg' },
+  coastalGrayElite: { name: 'Coastal Gray Elite', hex: '#708090', image: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/skirt-coastal-gray-elite-1920w.jpg' },
 };
 
 // Helper to generate all color combinations for a Grand River model

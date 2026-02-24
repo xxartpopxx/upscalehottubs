@@ -400,21 +400,21 @@ export const GRAND_RIVER_PRODUCTS = [
     series: 'Premier Series',
     modelFamily: 'Manistee',
     persons: 5,
-    jets: 35,
+    jets: 20,
     price: '$6,599.00',
     priceValue: 6599,
     seatingLayout: 'Open',
-    dimensions: '78″ x 78″ x 33″',
+    dimensions: '72″ round x 35″ tall',
     electrical: '240v/40amp',
-    description: 'Energy-efficient 5-person hot tub with great value.',
-    features: ['Energy efficient', '35 jets', 'Seating for 5', 'Value pricing'],
+    description: 'Round 5-person hot tub with LED lights and therapeutic jets.',
+    features: ['Round design', '20 jets', 'Seating for 5', 'LED lighting'],
     images: {
-      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1',
-      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1'
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_White_Taupe_Side-768x672.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee-ManisteeEco_White_OH-768x768.png?lossy=2&strip=1&webp=1'
     },
     colorImages: generateGRColorImages('Manistee'),
-    shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['coastalGray', 'walnut', 'barnwood', 'black'],
+    shellColors: ['white', 'opal'],
+    cabinetColors: ['taupe', 'walnut'],
     relatedModel: null
   },
   // ECO SERIES

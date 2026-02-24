@@ -94,27 +94,19 @@ const DynastySpasPage = () => {
                 </p>
               </div>
               <div className="flex-shrink-0 w-full md:w-auto md:min-w-[400px]">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  {/* Acrylic Colors */}
-                  <h3 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-white mb-4">Acrylic Color Options</h3>
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {Object.entries(DYNASTY_SHELL_COLORS).map(([key, color]) => (
-                      <div key={key} className="flex items-center gap-3">
-                        <div className="w-14 h-14 rounded-lg border-2 border-white/30 flex-shrink-0" style={{ backgroundColor: color.hex }} />
-                        <span className="text-sm text-white font-medium">{color.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                  {/* Skirt Colors */}
-                  <h3 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-white mb-4">Skirt Color Options</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {Object.entries(DYNASTY_CABINET_COLORS).map(([key, color]) => (
-                      <div key={key} className="flex items-center gap-3">
-                        <div className="w-14 h-14 rounded-lg border-2 border-white/30 flex-shrink-0" style={{ backgroundColor: color.hex }} />
-                        <span className="text-sm text-white font-medium">{color.name}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="space-y-4">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_c3c8047e-ccd6-49d5-bc84-656a3cc35381/artifacts/5gzal0ze_Screenshot%202026-02-24%20at%206.23.02%E2%80%AFPM.png" 
+                    alt="Acrylic Color Options - Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain" 
+                    className="w-full max-w-[480px] rounded-lg shadow-lg"
+                    data-testid="dynasty-acrylic-colors-img"
+                  />
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_c3c8047e-ccd6-49d5-bc84-656a3cc35381/artifacts/mr6zlgt0_Screenshot%202026-02-24%20at%206.23.04%E2%80%AFPM.png" 
+                    alt="Skirt Color Options - Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite" 
+                    className="w-full max-w-[480px] rounded-lg shadow-lg"
+                    data-testid="dynasty-skirt-colors-img"
+                  />
                 </div>
               </div>
             </motion.div>

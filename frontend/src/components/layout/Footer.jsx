@@ -50,13 +50,19 @@ const Footer = () => {
           <div>
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mb-6">Shop</h3>
             <div className="space-y-2">
-              {['Hot Tubs', 'Swim Spas', 'Saunas', 'Cold Plunges'].map(link => (
+              {[
+                { name: 'Grand River Spas', href: '/grand-river-spas' },
+                { name: 'Viking Spas', href: '/viking-spas' },
+                { name: 'Saunas', href: '/saunas' },
+                { name: 'Swim Spas', href: '/swim-spas' },
+                { name: 'Cold Plunges', href: '/cold-plunges' }
+              ].map(link => (
                 <Link 
-                  key={link} 
-                  to={`/${link.toLowerCase().replace(' ', '-')}`} 
+                  key={link.name} 
+                  to={link.href}
                   className="block text-slate-400 hover:text-white text-sm transition-colors"
                 >
-                  {link}
+                  {link.name}
                 </Link>
               ))}
             </div>

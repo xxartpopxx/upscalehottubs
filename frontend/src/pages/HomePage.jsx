@@ -77,21 +77,7 @@ const HeroSection = () => (
     </video>
     <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/40 via-[#0A1628]/30 to-[#0A1628]/70" />
     
-    {/* Logo at the top of the video */}
-    <motion.div 
-      initial={{ opacity: 0, y: -20 }} 
-      animate={{ opacity: 1, y: 0 }} 
-      transition={{ duration: 0.8 }}
-      className="absolute top-24 left-1/2 -translate-x-1/2 z-20"
-    >
-      <img 
-        src={ASSETS.logo} 
-        alt="Upstate Hot Tubs - American Made" 
-        className="h-28 md:h-36 lg:h-44 drop-shadow-2xl" 
-      />
-    </motion.div>
-    
-    <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto mt-32">
+    <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex items-center justify-center gap-3 mb-6">
           <Flag className="text-[#B91C1C]" size={28} />
@@ -108,11 +94,11 @@ const HeroSection = () => (
           Live Your <span className="text-[#B91C1C]">Healthiest Life</span><br />While Enjoying a Vacation<br />Everyday at Home
         </motion.h1>
         
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }} className="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto opacity-90">
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto opacity-90">
           The Best Hot Tubs & Swim Spas Store in Naples Florida, Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
         </motion.p>
         
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="flex flex-col sm:flex-row gap-4 justify-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/grand-river-spas" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4" data-testid="hero-browse-btn">
             Grand River Spas <ChevronRight size={20} />
           </Link>
@@ -121,7 +107,7 @@ const HeroSection = () => (
           </Link>
         </motion.div>
         
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }} className="mt-8 text-lg font-semibold text-[#D4AF37]">
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="mt-8 text-lg font-semibold text-[#D4AF37]">
           Ask about Free Hot Tub & Swim Spa Delivery in Florida and SC
         </motion.p>
       </motion.div>

@@ -129,13 +129,6 @@ const ProductDetailPage = () => {
     setCurrentView(views[newIndex]);
   };
 
-  // Set document title directly using useEffect (Helmet has issues with dynamic titles)
-  useEffect(() => {
-    if (product) {
-      document.title = `${product.name} | ${product.brand} | Upstate Hot Tubs`;
-    }
-  }, [product]);
-
   // SEO metadata
   const seoDescription = product ? `${product.name} by ${product.brand}. ${product.description} Seats ${product.persons} adults with ${product.jets} jets. ${product.price}. American Made & Proud of It.` : '';
   const seoKeywords = product ? `${product.name}, ${product.brand}, ${product.series}, hot tub, spa, ${product.persons} person hot tub, hydrotherapy` : '';

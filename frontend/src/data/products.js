@@ -518,9 +518,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Premium 5-person lounger with 83 powerful jets and illuminated fountain features.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-paradise-bay-ii',
@@ -543,9 +544,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '5-person lounger with 83 jets featuring illuminated fountain jets.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-palm-island',
@@ -568,9 +570,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Spacious 7-person bench spa with 76 jets and illuminated fountain features.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_bca37801d2234c42920ff45b5ef8b947~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_bca37801d2234c42920ff45b5ef8b947~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-pleasure-cove',
@@ -593,9 +596,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '5-person dual lounger with 80 jets featuring illuminated waterfalls.',
     features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_ee35b0a0b9df47e1911c752a6dc65d80~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_ee35b0a0b9df47e1911c752a6dc65d80~mv2.jpg'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-coconut-bay',
@@ -618,9 +622,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '5-person lounger with 74 jets and beautiful illuminated waterfalls.',
     features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_7b87b150ef5a451db8a4599e9b9aa68f~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_7b87b150ef5a451db8a4599e9b9aa68f~mv2.jpg'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-caribbean-breeze',
@@ -643,9 +648,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '7-person bench spa with 73 jets and illuminated fountain features.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_fbd8a68293fc44af9ba6616677d13e52~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_fbd8a68293fc44af9ba6616677d13e52~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-nassau-royal',
@@ -668,9 +674,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '5-person lounger with 73 jets and illuminated waterfall.',
     features: ['Illuminated Waterfall', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_cbdbc08c5de94874956a54d800585201~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_cbdbc08c5de94874956a54d800585201~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   // VACATION COLLECTION
   {
@@ -694,9 +701,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '5-person lounger with cascading waterfall and 42 jets.',
     features: ['Cascading Waterfall', 'Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_5513dfe4f07146e6b3769397e333b714~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_5513dfe4f07146e6b3769397e333b714~mv2.jpg'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-ocean-breeze',
@@ -719,15 +727,16 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '7-person bench spa with 4 water features and 42 jets.',
     features: ['4 Water Features', 'Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_d99c32d0154b4d5784b516fb7f9cf64b~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_d99c32d0154b4d5784b516fb7f9cf64b~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-twin-palms',
     name: 'Twin Palms',
     brand: 'Dynasty Spas',
-    series: 'Hideaway Collection',
+    series: 'Oasis Collection',
     modelFamily: 'Twin Palms',
     persons: 3,
     jets: 50,
@@ -742,11 +751,12 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '375 lbs',
     filledWeight: '2175 lbs',
     description: 'Compact 3-person dual lounger perfect for couples.',
-    features: ['Illuminated Jets', 'Illuminated Diverters', 'Digital Controls', 'LED Lights', 'Compact Design'],
+    features: ['LED Top Rail Lighting', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'K.1000 Digital Topside'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_0eda11c7c2bd4659886b1569a18263e4~mv2.png',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/2025-TWIN-PALMS-TOP-1920w.png'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-bimini',
@@ -769,9 +779,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Intimate 2-person lounger perfect for small spaces.',
     features: ['Compact Design', 'Digital Controls', 'LED Lights', 'Perfect for Couples'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-treasure-cay',
@@ -794,9 +805,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '5-person lounger with comfortable seating and 45 jets.',
     features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_d5dd6e6b07c84184a58183333213387f~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_d5dd6e6b07c84184a58183333213387f~mv2.jpg'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-sunset-cove',
@@ -819,9 +831,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Compact 3-person lounger ideal for patios and smaller spaces.',
     features: ['Compact Design', 'Digital Controls', 'LED Lights', 'Space Efficient'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-tranquility-harbor',
@@ -844,9 +857,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: 'Spacious 7-person bench spa with 48 jets for family enjoyment.',
     features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Family Size'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_4f5108db76954c94977c8c470414a6df~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_4f5108db76954c94977c8c470414a6df~mv2.jpg'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
   {
     id: 'ds-serenity-cove',
@@ -869,9 +883,10 @@ export const DYNASTY_SPAS_PRODUCTS = [
     description: '5-person lounger designed for relaxation and tranquility.',
     features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Relaxation Focused'],
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_5f4c9ca90ad0409a98e88227bc7a74d7~mv2.jpg'
-    }
+      primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   }
 ];
 

@@ -32,6 +32,8 @@ export const CABINET_COLORS = {
   chestnut: { name: 'Chestnut', hex: '#954535', image: `${GR_VISUALIZER_BASE}/walnut.png` },
   ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: `${GR_VISUALIZER_BASE}/coastalgray.png` },
   slate: { name: 'Slate', hex: '#708090', image: `${GR_VISUALIZER_BASE}/black.png` },
+  taupe: { name: 'Taupe', hex: '#8B7D6B', image: `${GR_VISUALIZER_BASE}/walnut.png` },
+  carbon: { name: 'Carbon', hex: '#333333', image: `${GR_VISUALIZER_BASE}/black.png` },
 };
 
 // Helper to generate all color combinations for a Grand River model
@@ -53,7 +55,7 @@ const generateGRColorImages = (modelName) => {
 };
 
 // ===========================================
-// GRAND RIVER SPAS PRODUCTS
+// GRAND RIVER SPAS PRODUCTS - PREMIER SERIES
 // ===========================================
 export const GRAND_RIVER_PRODUCTS = [
   {
@@ -74,29 +76,8 @@ export const GRAND_RIVER_PRODUCTS = [
     filledWeight: '3738 lbs. | 1693 kg',
     electrical: '240v/60amp',
     description: 'Our largest lounger model, designed for full-body relaxation with Volcano floor jet and focused neck jets.',
-    longDescription: 'Step into luxurious comfort with the Chariton—our largest lounger model, designed for full-body relaxation. Every detail is crafted with purpose, from the powerful Volcano floor jet to the focused neck jets in the roomy captain\'s chairs. With its unmatched hydrotherapy and spacious design, the Chariton delivers head-to-toe rejuvenation and elevates every soak into a true spa experience.',
+    longDescription: 'Step into luxurious comfort with the Chariton—our largest lounger model, designed for full-body relaxation. Every detail is crafted with purpose, from the powerful Volcano floor jet to the focused neck jets in the roomy captain\'s chairs.',
     features: ['Volcano floor jet for full-body massage', 'Captain\'s chairs with focused neck jets', 'Infinity Edge water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System', '5.5kW Heater', 'Mazzei ozone injection system'],
-    jetDetails: {
-      volcano: 1,
-      twoInchDirectional: 8,
-      twoInchMultiPort: 10,
-      twoInchNeck: 8,
-      threeInchDirectional: 8,
-      threeInchRotating: 8,
-      fourInchDirectional: 4,
-      fourInchRotating: 6,
-      fiveInchDirectional: 3,
-      twoInchStationary: 4,
-      ozoneJet: 1,
-      waterFeatureJets: 2
-    },
-    options: {
-      controls: 'SpaTouch™ 4',
-      entertainment: 'Bluetooth® stereo, integrated 5" speakers',
-      advancedJetting: 'Air X® Therapy System',
-      coverLifter: 'Standard Grand River Spas lifter',
-      steps: 'Premium or Standard | Black'
-    },
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-OH_web.png?lossy=2&strip=1&webp=1'
@@ -118,34 +99,9 @@ export const GRAND_RIVER_PRODUCTS = [
     priceValue: 9995,
     seatingLayout: 'Lounge',
     dimensions: '92″ x 92″ x 37.5″',
-    dimensionsMetric: '234 cm x 234 cm x 95.25cm',
-    waterCapacity: '370 gallons | 1,400 liters',
-    dryWeight: '650 lbs. | 295 kg',
-    filledWeight: '3738 lbs. | 1693 kg',
     electrical: '240v/60amp',
     description: 'Luxurious lounger with powerful Volcano jet and captain\'s chairs for head-to-toe rejuvenation.',
-    longDescription: 'Experience the perfect blend of comfort and therapy with the Chariton 1. This 6-person lounger features a powerful Volcano floor jet and captain\'s chairs with targeted neck jets. Every detail is designed to deliver a full-body spa experience.',
-    features: ['Volcano floor jet', 'Captain\'s chairs with neck jets', 'Infinity Edge water feature', 'LED lighting system', 'Balboa Control System', '5.5kW Heater'],
-    jetDetails: {
-      volcano: 1,
-      twoInchDirectional: 6,
-      twoInchMultiPort: 10,
-      twoInchNeck: 10,
-      threeInchDirectional: 4,
-      threeInchRotating: 6,
-      fourInchDirectional: 4,
-      fourInchRotating: 4,
-      fiveInchDirectional: 3,
-      ozoneJet: 1,
-      waterFeatureJets: 2
-    },
-    options: {
-      controls: 'SpaTouch™ 4',
-      entertainment: 'Bluetooth® stereo, integrated 5" speakers',
-      advancedJetting: 'Air X® Therapy System',
-      coverLifter: 'Standard Grand River Spas lifter',
-      steps: 'Premium or Standard | Black'
-    },
+    features: ['Volcano floor jet', 'Captain\'s chairs with neck jets', 'Infinity Edge water feature', 'LED lighting system', 'Balboa Control System'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-1_White-Satin_CoastalGray_Side_web.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/GR_Chariton-1-Silver-OH_web.png?lossy=2&strip=1&webp=1'
@@ -167,21 +123,9 @@ export const GRAND_RIVER_PRODUCTS = [
     priceValue: 10995,
     seatingLayout: 'Open',
     dimensions: '92″ x 92″ x 37.5″',
-    dimensionsMetric: '234 cm x 234 cm x 95.25cm',
-    waterCapacity: '430 gallons | 1,628 liters',
-    dryWeight: '700 lbs. | 318 kg',
-    filledWeight: '3312 lbs. | 1501 kg',
     electrical: '240v/60amp',
     description: 'Spacious open-seating hot tub with exclusive three-direction swing seats.',
-    longDescription: 'Discover total-body relaxation with the Chesapeake — a spacious, open-seating hot tub designed for comfort and rejuvenation. It features two versions of our exclusive three-direction "swing" seat, allowing you to lounge across nearby seats or sink into captain\'s chairs with targeted jet therapy.',
-    features: ['Three-direction "swing" seats', 'Captain\'s chairs with jet therapy', 'Cascade water feature', '63 powerful jets', 'LED lighting', 'Balboa Control System'],
-    options: {
-      controls: 'SpaTouch™ 4',
-      entertainment: 'Bluetooth® stereo, integrated 5" speakers',
-      advancedJetting: 'Air X® Therapy System',
-      coverLifter: 'Standard Grand River Spas lifter',
-      steps: 'Premium or Standard | Black'
-    },
+    features: ['Three-direction "swing" seats', 'Captain\'s chairs with jet therapy', 'Cascade water feature', '63 powerful jets', 'LED lighting'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White_CoastalGray_web.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White-OH_web.png?lossy=2&strip=1&webp=1'
@@ -203,14 +147,9 @@ export const GRAND_RIVER_PRODUCTS = [
     priceValue: 9995,
     seatingLayout: 'Open',
     dimensions: '92″ x 92″ x 37.5″',
-    dimensionsMetric: '234 cm x 234 cm x 95.25cm',
-    waterCapacity: '430 gallons | 1,628 liters',
-    dryWeight: '700 lbs. | 318 kg',
-    filledWeight: '3312 lbs. | 1501 kg',
     electrical: '240v/60amp',
     description: 'Total-body relaxation with targeted jet therapy for neck, wrists, and feet.',
-    longDescription: 'The Chesapeake 1 delivers total-body relaxation with targeted jet therapy. Carefully placed jets deliver relief to your neck, wrists, and feet, so every soak feels like a personal spa session.',
-    features: ['Targeted neck, wrist, and foot therapy', 'Three-direction swing seats', 'Open seating for 7', 'Cascade water feature', 'LED lighting'],
+    features: ['Targeted neck, wrist, and foot therapy', 'Three-direction swing seats', 'Open seating for 7', 'Cascade water feature'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal_Black_Side_web-e1751040384296.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal-OH_web.png?lossy=2&strip=1&webp=1'
@@ -232,8 +171,6 @@ export const GRAND_RIVER_PRODUCTS = [
     priceValue: 9995,
     seatingLayout: 'Open',
     dimensions: '84″ x 84″ x 37.5″',
-    dimensionsMetric: '213 cm x 213 cm x 95.25cm',
-    waterCapacity: '340 gallons | 1,287 liters',
     electrical: '240v/60amp',
     description: 'Premium 6-person hot tub with advanced jet system and LED lighting.',
     features: ['61 therapeutic jets', 'Advanced LED lighting', 'Open seating design', 'Premium insulation'],
@@ -258,14 +195,12 @@ export const GRAND_RIVER_PRODUCTS = [
     priceValue: 8995,
     seatingLayout: 'Open',
     dimensions: '84″ x 84″ x 37.5″',
-    dimensionsMetric: '213 cm x 213 cm x 95.25cm',
-    waterCapacity: '340 gallons | 1,287 liters',
     electrical: '240v/60amp',
-    description: 'Comfortable 6-person spa with therapeutic jets.',
-    features: ['51 therapeutic jets', 'LED lighting', 'Open seating design', 'Energy efficient'],
+    description: 'Well-rounded 6-person spa with quality hydrotherapy.',
+    features: ['51 jets', 'Open seating', 'LED lighting', 'Quality construction'],
     images: {
-      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_Coastal_Side-768x576.png?lossy=2&strip=1&webp=1',
-      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_OH.png?lossy=2&strip=1&webp=1'
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_1_Silver_Black_Side.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_1_Silver_OH.png?lossy=2&strip=1&webp=1'
     },
     colorImages: generateGRColorImages('Saginaw'),
     shellColors: ['white', 'silver', 'opal'],
@@ -278,17 +213,15 @@ export const GRAND_RIVER_PRODUCTS = [
     brand: 'Grand River Spas',
     series: 'Premier Series',
     modelFamily: 'Thornapple',
-    persons: 7,
-    jets: 61,
-    price: '$9,995.00',
-    priceValue: 9995,
+    persons: 6,
+    jets: 56,
+    price: '$9,495.00',
+    priceValue: 9495,
     seatingLayout: 'Lounge',
-    dimensions: '92″ x 92″ x 37.5″',
-    dimensionsMetric: '234 cm x 234 cm x 95.25cm',
-    waterCapacity: '370 gallons | 1,400 liters',
+    dimensions: '84″ x 84″ x 37.5″',
     electrical: '240v/60amp',
-    description: 'Spacious 7-person hot tub with lounger seating.',
-    features: ['Full-body lounger', '61 powerful jets', 'Seating for 7', 'LED lighting'],
+    description: 'Thoughtfully designed lounger with unique knee and calf jets.',
+    features: ['Unique knee and calf jets', 'Lounger seating', '56 jets', 'Cascade water feature'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple2_White_OH.png?lossy=2&strip=1&webp=1'
@@ -304,20 +237,18 @@ export const GRAND_RIVER_PRODUCTS = [
     brand: 'Grand River Spas',
     series: 'Premier Series',
     modelFamily: 'Thornapple',
-    persons: 7,
-    jets: 51,
-    price: '$8,995.00',
-    priceValue: 8995,
+    persons: 6,
+    jets: 46,
+    price: '$8,495.00',
+    priceValue: 8495,
     seatingLayout: 'Lounge',
-    dimensions: '92″ x 92″ x 37.5″',
-    dimensionsMetric: '234 cm x 234 cm x 95.25cm',
-    waterCapacity: '370 gallons | 1,400 liters',
+    dimensions: '84″ x 84″ x 37.5″',
     electrical: '240v/60amp',
-    description: 'Family-size 7-person spa with premium features.',
-    features: ['Lounger seating', '51 jets', 'Family-size capacity', 'LED lighting'],
+    description: 'Comfortable lounger with excellent jet coverage.',
+    features: ['Lounger seating', '46 jets', 'LED lighting', 'Value pricing'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
-      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple2_White_OH.png?lossy=2&strip=1&webp=1'
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple1_White_OH.png?lossy=2&strip=1&webp=1'
     },
     colorImages: generateGRColorImages('Thornapple'),
     shellColors: ['white', 'silver', 'opal'],
@@ -330,17 +261,15 @@ export const GRAND_RIVER_PRODUCTS = [
     brand: 'Grand River Spas',
     series: 'Premier Series',
     modelFamily: 'Muskegon',
-    persons: 6,
-    jets: 51,
-    price: '$8,995.00',
-    priceValue: 8995,
+    persons: 7,
+    jets: 56,
+    price: '$9,495.00',
+    priceValue: 9495,
     seatingLayout: 'Open',
     dimensions: '84″ x 84″ x 37.5″',
-    dimensionsMetric: '213 cm x 213 cm x 95.25cm',
-    waterCapacity: '320 gallons | 1,211 liters',
     electrical: '240v/60amp',
-    description: 'Versatile 6-person hot tub perfect for relaxation.',
-    features: ['Compact design', '51 jets', 'Versatile seating', 'LED lighting'],
+    description: 'Spacious 7-person open-seating spa with powerful hydrotherapy.',
+    features: ['7-person capacity', '56 jets', 'Open seating', 'LED lighting'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon2_White_CoastalGray_Side-768x499.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegeon_2_White_OH.png?lossy=2&strip=1&webp=1'
@@ -348,33 +277,79 @@ export const GRAND_RIVER_PRODUCTS = [
     colorImages: generateGRColorImages('Muskegon'),
     shellColors: ['white', 'silver', 'opal'],
     cabinetColors: ['coastalGray', 'walnut', 'barnwood', 'black'],
-    relatedModel: null
+    relatedModel: 'gr-muskegon-1'
   },
   {
-    id: 'gr-sturgeon',
-    name: 'Sturgeon',
+    id: 'gr-muskegon-1',
+    name: 'Muskegon 1',
+    brand: 'Grand River Spas',
+    series: 'Premier Series',
+    modelFamily: 'Muskegon',
+    persons: 7,
+    jets: 46,
+    price: '$8,495.00',
+    priceValue: 8495,
+    seatingLayout: 'Open',
+    dimensions: '84″ x 84″ x 37.5″',
+    electrical: '240v/60amp',
+    description: 'Great value 7-person spa with quality features.',
+    features: ['7-person capacity', '46 jets', 'Open seating', 'Value pricing'],
+    images: {
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon1_Opal_Walnut_Side-768x499.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegeon_1_Silver_OH.png?lossy=2&strip=1&webp=1'
+    },
+    colorImages: generateGRColorImages('Muskegon'),
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['coastalGray', 'walnut', 'barnwood', 'black'],
+    relatedModel: 'gr-muskegon-2'
+  },
+  {
+    id: 'gr-sturgeon-2',
+    name: 'Sturgeon 2',
     brand: 'Grand River Spas',
     series: 'Premier Series',
     modelFamily: 'Sturgeon',
     persons: 6,
-    jets: 45,
-    price: '$7,995.00',
-    priceValue: 7995,
+    jets: 50,
+    price: '$8,495.00',
+    priceValue: 8495,
     seatingLayout: 'Open',
     dimensions: '84″ x 84″ x 35″',
-    dimensionsMetric: '213 cm x 213 cm x 89cm',
-    waterCapacity: '300 gallons | 1,135 liters',
     electrical: '240v/60amp',
     description: 'Value-packed 6-person spa with quality construction.',
-    features: ['Value pricing', '45 jets', 'Quality construction', 'LED lighting'],
+    features: ['50 jets', 'Quality construction', 'LED lighting', 'Value pricing'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
-      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Silver_OH.png?lossy=2&strip=1&webp=1'
+      overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%201-2_Silver_OH.png'
     },
     colorImages: generateGRColorImages('Sturgeon'),
     shellColors: ['white', 'silver', 'opal'],
     cabinetColors: ['coastalGray', 'walnut', 'barnwood', 'black'],
-    relatedModel: null
+    relatedModel: 'gr-sturgeon-1'
+  },
+  {
+    id: 'gr-sturgeon-1',
+    name: 'Sturgeon 1',
+    brand: 'Grand River Spas',
+    series: 'Premier Series',
+    modelFamily: 'Sturgeon',
+    persons: 6,
+    jets: 40,
+    price: '$7,495.00',
+    priceValue: 7495,
+    seatingLayout: 'Open',
+    dimensions: '84″ x 84″ x 35″',
+    electrical: '240v/60amp',
+    description: 'Excellent entry-level Premier Series hot tub.',
+    features: ['40 jets', 'Open seating', 'LED lighting', 'Entry-level Premier'],
+    images: {
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%201-2_Silver_OH.png'
+    },
+    colorImages: generateGRColorImages('Sturgeon'),
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['coastalGray', 'walnut', 'barnwood', 'black'],
+    relatedModel: 'gr-sturgeon-2'
   },
   {
     id: 'gr-swift',
@@ -388,10 +363,8 @@ export const GRAND_RIVER_PRODUCTS = [
     priceValue: 6995,
     seatingLayout: 'Open',
     dimensions: '78″ x 60″ x 33″',
-    dimensionsMetric: '198 cm x 152 cm x 84cm',
-    waterCapacity: '200 gallons | 757 liters',
     electrical: '120v/15amp convertible',
-    description: 'Compact 3-person hot tub that fits perfectly in small outdoor spaces.',
+    description: 'Compact 3-person hot tub perfect for smaller spaces.',
     features: ['Compact design', 'Plug-and-play option', '33 jets', 'Perfect for couples'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1',
@@ -414,10 +387,8 @@ export const GRAND_RIVER_PRODUCTS = [
     priceValue: 6599,
     seatingLayout: 'Open',
     dimensions: '78″ x 78″ x 33″',
-    dimensionsMetric: '198 cm x 198 cm x 84cm',
-    waterCapacity: '280 gallons | 1,060 liters',
     electrical: '240v/40amp',
-    description: 'Energy-efficient 5-person hot tub.',
+    description: 'Energy-efficient 5-person hot tub with great value.',
     features: ['Energy efficient', '35 jets', 'Seating for 5', 'Value pricing'],
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1',
@@ -427,6 +398,76 @@ export const GRAND_RIVER_PRODUCTS = [
     shellColors: ['white', 'silver', 'opal'],
     cabinetColors: ['coastalGray', 'walnut', 'barnwood', 'black'],
     relatedModel: null
+  },
+  // ECO SERIES
+  {
+    id: 'gr-sturgeon-eco',
+    name: 'Sturgeon Eco',
+    brand: 'Grand River Spas',
+    series: 'Eco Series',
+    modelFamily: 'Sturgeon',
+    persons: 6,
+    jets: 35,
+    price: '$5,995.00',
+    priceValue: 5995,
+    seatingLayout: 'Open',
+    dimensions: '84″ x 84″ x 35″',
+    electrical: '240v/40amp',
+    description: 'Eco-friendly 6-person hot tub with value pricing.',
+    features: ['Eco-friendly design', '35 jets', '6-person capacity', 'Budget-friendly'],
+    images: {
+      primary: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%20Eco_White_Taupe_Side-768x617.png',
+      overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%20Eco_White_OH.png'
+    },
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['taupe', 'black'],
+    relatedModel: null
+  },
+  {
+    id: 'gr-swift-eco',
+    name: 'Swift Eco',
+    brand: 'Grand River Spas',
+    series: 'Eco Series',
+    modelFamily: 'Swift',
+    persons: 3,
+    jets: 25,
+    price: '$4,995.00',
+    priceValue: 4995,
+    seatingLayout: 'Open',
+    dimensions: '78″ x 60″ x 33″',
+    electrical: '120v/15amp',
+    description: 'Budget-friendly compact 3-person hot tub.',
+    features: ['Plug-and-play', 'Compact design', '25 jets', 'Most affordable'],
+    images: {
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_Swift_White_OH.png?lossy=2&strip=1&webp=1'
+    },
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['taupe', 'black'],
+    relatedModel: null
+  },
+  {
+    id: 'gr-manistee-eco',
+    name: 'Manistee Eco',
+    brand: 'Grand River Spas',
+    series: 'Eco Series',
+    modelFamily: 'Manistee',
+    persons: 5,
+    jets: 28,
+    price: '$5,495.00',
+    priceValue: 5495,
+    seatingLayout: 'Open',
+    dimensions: '78″ x 78″ x 33″',
+    electrical: '240v/40amp',
+    description: 'Value-packed 5-person Eco Series hot tub.',
+    features: ['Eco-friendly', '28 jets', '5-person capacity', 'Great value'],
+    images: {
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_1_Opal_Walnut_web-768x576.png?lossy=2&strip=1&webp=1'
+    },
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['taupe', 'black'],
+    relatedModel: null
   }
 ];
 
@@ -434,6 +475,7 @@ export const GRAND_RIVER_PRODUCTS = [
 // VIKING SPAS PRODUCTS
 // ===========================================
 export const VIKING_SPAS_PRODUCTS = [
+  // ELITE SERIES
   {
     id: 'vs-heritage',
     name: 'Heritage',
@@ -516,8 +558,8 @@ export const VIKING_SPAS_PRODUCTS = [
     seatingLayout: 'Open',
     dimensions: '78″ x 78″ x 36″',
     electrical: '240v/60amp',
-    description: 'Rise to new levels of relaxation.',
-    features: ['Compact Elite design', 'airX Therapy System', 'LED lighting'],
+    description: 'Compact Elite Series with powerful performance.',
+    features: ['5-person capacity', 'airX Therapy System', 'LED lighting'],
     images: {
       primary: 'https://vikingspas.com/wp-content/uploads/2025/01/VS_2025_Ascent_II_White_Chestnut_Side_Dropshadow_1440PX-768x485.png',
       overhead: 'https://vikingspas.com/wp-content/uploads/2025/01/VS_2025_Ascent_II_White_OH_Dropshadow_1440px.png'
@@ -527,26 +569,96 @@ export const VIKING_SPAS_PRODUCTS = [
     relatedModel: null
   },
   {
+    id: 'vs-royale-x',
+    name: 'Royale X',
+    brand: 'Viking Spas',
+    series: 'Elite Series',
+    modelFamily: 'Royale X',
+    persons: 7,
+    jets: 62,
+    price: '$13,495.00',
+    priceValue: 13495,
+    seatingLayout: 'Lounge',
+    dimensions: '92″ x 84″ x 38″',
+    electrical: '240v/60amp',
+    description: 'Premium lounger with our most advanced features.',
+    features: ['Full-body lounger', 'airX Therapy System', 'Premium jets', 'Bluetooth stereo'],
+    images: {
+      primary: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_RoyalX_White_Slate_Carbon-768x395.png',
+      overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_RoyalX_White_Overhead-scaled.png'
+    },
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['slate', 'carbon', 'stone', 'chestnut'],
+    relatedModel: null
+  },
+  {
+    id: 'vs-regal-x',
+    name: 'Regal X',
+    brand: 'Viking Spas',
+    series: 'Elite Series',
+    modelFamily: 'Regal X',
+    persons: 6,
+    jets: 58,
+    price: '$12,495.00',
+    priceValue: 12495,
+    seatingLayout: 'Open',
+    dimensions: '84″ x 84″ x 38″',
+    electrical: '240v/60amp',
+    description: 'Premium open-seating spa with advanced therapy.',
+    features: ['Open seating', 'airX Therapy System', 'Premium construction', 'LED lighting'],
+    images: {
+      primary: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_RegalX_Opal_Stone-1-768x439.png',
+      overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_RegalX_Opal_Overhead.png'
+    },
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['stone', 'carbon', 'slate', 'chestnut'],
+    relatedModel: null
+  },
+  {
+    id: 'vs-elevate-x',
+    name: 'Elevate X',
+    brand: 'Viking Spas',
+    series: 'Elite Series',
+    modelFamily: 'Elevate X',
+    persons: 5,
+    jets: 52,
+    price: '$11,495.00',
+    priceValue: 11495,
+    seatingLayout: 'Open',
+    dimensions: '78″ x 78″ x 36″',
+    electrical: '240v/60amp',
+    description: 'Compact Elite with maximum features.',
+    features: ['5-person capacity', 'airX Therapy System', 'Premium jets'],
+    images: {
+      primary: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_ElevateX_White_Slate-768x561.png',
+      overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Elite_ElevateX_White_OH-scaled.png'
+    },
+    shellColors: ['white', 'silver', 'opal'],
+    cabinetColors: ['slate', 'stone', 'carbon', 'chestnut'],
+    relatedModel: null
+  },
+  // HEIRLOOM SERIES
+  {
     id: 'vs-regal-heirloom',
     name: 'Regal',
     brand: 'Viking Spas',
     series: 'Heirloom Series',
     modelFamily: 'Regal',
     persons: 6,
-    jets: 48,
+    jets: 45,
     price: '$8,995.00',
     priceValue: 8995,
     seatingLayout: 'Open',
-    dimensions: '84″ x 84″ x 36″',
+    dimensions: '84″ x 84″ x 34″',
     electrical: '240v/60amp',
-    description: 'Premium features at an accessible price.',
-    features: ['6-person seating', 'airX Therapy optional', 'LED lighting'],
+    description: 'Premium features at an excellent value.',
+    features: ['6-person seating', 'LED lighting', 'Quality construction'],
     images: {
       primary: 'https://vikingspas.com/wp-content/uploads/2024/07/VS_2025_RegalETS_Silver_black_side_dropshadow-768x500.png',
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_2025_Regal_White-OH_dropshadow.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['black', 'walnut', 'barnwood', 'coastalGray'],
+    cabinetColors: ['coastalGray', 'walnut', 'black', 'barnwood'],
     relatedModel: null
   },
   {
@@ -556,37 +668,37 @@ export const VIKING_SPAS_PRODUCTS = [
     series: 'Heirloom Series',
     modelFamily: 'Royale',
     persons: 7,
-    jets: 52,
+    jets: 50,
     price: '$9,495.00',
     priceValue: 9495,
     seatingLayout: 'Lounge',
-    dimensions: '92″ x 92″ x 36″',
+    dimensions: '92″ x 84″ x 34″',
     electrical: '240v/60amp',
-    description: 'Family-size comfort with lounger seating.',
-    features: ['Lounger seating', 'airX Therapy optional', 'LED lighting'],
+    description: 'Spacious lounger with Heirloom quality.',
+    features: ['7-person capacity', 'Lounger seating', 'LED lighting'],
     images: {
       primary: 'https://vikingspas.com/wp-content/uploads/2024/07/VS_2025_RoyaleETS_Opal_Walnut_side_dropshadow-768x490.png',
       overhead: 'https://vikingspas.com/wp-content/uploads/2024/07/VS_2025_Royale_Silver-OH_dropshadow-2.png'
     },
     shellColors: ['white', 'silver', 'opal'],
-    cabinetColors: ['walnut', 'black', 'barnwood', 'coastalGray'],
+    cabinetColors: ['walnut', 'coastalGray', 'black', 'barnwood'],
     relatedModel: null
   },
   {
-    id: 'vs-elevate-heirloom',
+    id: 'vs-elevate',
     name: 'Elevate',
     brand: 'Viking Spas',
     series: 'Heirloom Series',
     modelFamily: 'Elevate',
     persons: 5,
-    jets: 40,
+    jets: 38,
     price: '$7,995.00',
     priceValue: 7995,
     seatingLayout: 'Open',
-    dimensions: '78″ x 78″ x 34″',
+    dimensions: '78″ x 78″ x 32″',
     electrical: '240v/60amp',
-    description: 'Compact comfort with quality features.',
-    features: ['Compact design', 'LED lighting', 'Energy efficient'],
+    description: 'Compact Heirloom with excellent value.',
+    features: ['5-person capacity', 'LED lighting', 'Quality construction'],
     images: {
       primary: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Heirloom_Elevate_White_AshGray-768x489.png',
       overhead: 'https://vikingspas.com/wp-content/uploads/2025/12/VS_Heirloom_Elevate_White_OH-scaled.png'
@@ -596,7 +708,7 @@ export const VIKING_SPAS_PRODUCTS = [
     relatedModel: null
   },
   {
-    id: 'vs-viking',
+    id: 'vs-viking-heirloom',
     name: 'Viking',
     brand: 'Viking Spas',
     series: 'Heirloom Series',
@@ -618,6 +730,7 @@ export const VIKING_SPAS_PRODUCTS = [
     cabinetColors: ['coastalGray', 'walnut', 'black', 'barnwood'],
     relatedModel: null
   },
+  // ELEMENT SERIES (Plug & Play)
   {
     id: 'vs-regal-p',
     name: 'Regal P+',
@@ -713,11 +826,77 @@ export const VIKING_SPAS_PRODUCTS = [
 ];
 
 // ===========================================
-// SWIM SPAS
+// SWIM SPAS - GRAND RIVER SPAS
 // ===========================================
-export const SWIM_SPAS = [
+export const GRAND_RIVER_SWIM_SPAS = [
   {
-    id: 'ss-valhalla',
+    id: 'gr-ss-valhalla',
+    name: 'Valhalla',
+    brand: 'Grand River Spas',
+    series: 'Freestyle Swim Spas',
+    length: '19 ft',
+    price: '$39,995.00',
+    priceValue: 39995,
+    description: 'Our largest swim spa with separate hot tub section.',
+    features: ['Dual zone temperature', 'Powerful swim jets', 'Full hot tub section'],
+    images: {
+      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI2-768x512.png',
+      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Valhalla_overhead.png'
+    }
+  },
+  {
+    id: 'gr-ss-asgard',
+    name: 'Asgard',
+    brand: 'Grand River Spas',
+    series: 'Freestyle Swim Spas',
+    length: '17 ft',
+    price: '$34,995.00',
+    priceValue: 34995,
+    description: '17-foot swim spa with versatile design.',
+    features: ['Swim current system', 'Therapy seating', 'LED lighting'],
+    images: {
+      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-2-768x579.png',
+      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Asgard_Overhead.png'
+    }
+  },
+  {
+    id: 'gr-ss-odin',
+    name: 'Odin',
+    brand: 'Grand River Spas',
+    series: 'Freestyle Swim Spas',
+    length: '15 ft',
+    price: '$29,995.00',
+    priceValue: 29995,
+    description: '15-foot swim spa perfect for exercise and relaxation.',
+    features: ['Variable speed jets', 'Exercise zone', 'Relaxation seating'],
+    images: {
+      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SWI1-3-768x512.png',
+      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Odin_overhead.png'
+    }
+  },
+  {
+    id: 'gr-ss-thor',
+    name: 'Thor',
+    brand: 'Grand River Spas',
+    series: 'Freestyle Swim Spas',
+    length: '13 ft',
+    price: '$24,995.00',
+    priceValue: 24995,
+    description: 'Compact swim spa with powerful performance.',
+    features: ['Space-efficient', 'Swim jets', 'Therapy seats'],
+    images: {
+      primary: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor_Corner-View_dropshadow-768x678.png',
+      overhead: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_SwimSpa_Thor-Overhead.png'
+    }
+  }
+];
+
+// ===========================================
+// SWIM SPAS - VIKING SPAS
+// ===========================================
+export const VIKING_SWIM_SPAS = [
+  {
+    id: 'vs-ss-valhalla',
     name: 'Valhalla',
     brand: 'Viking Spas',
     series: 'Freestyle Swim Spas',
@@ -732,7 +911,7 @@ export const SWIM_SPAS = [
     }
   },
   {
-    id: 'ss-asgard',
+    id: 'vs-ss-asgard',
     name: 'Asgard',
     brand: 'Viking Spas',
     series: 'Freestyle Swim Spas',
@@ -747,7 +926,7 @@ export const SWIM_SPAS = [
     }
   },
   {
-    id: 'ss-odin',
+    id: 'vs-ss-odin',
     name: 'Odin',
     brand: 'Viking Spas',
     series: 'Freestyle Swim Spas',
@@ -762,7 +941,7 @@ export const SWIM_SPAS = [
     }
   },
   {
-    id: 'ss-thor',
+    id: 'vs-ss-thor',
     name: 'Thor',
     brand: 'Viking Spas',
     series: 'Freestyle Swim Spas',
@@ -777,6 +956,9 @@ export const SWIM_SPAS = [
     }
   }
 ];
+
+// Combined Swim Spas (for backward compatibility)
+export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...VIKING_SWIM_SPAS];
 
 // Saunas and Cold Plunges
 export const SAUNAS = [

@@ -1562,6 +1562,29 @@ export const DYNASTY_SWIM_SPAS = [
     cabinetColors: ['blackConfer', 'grayConfer']
   },
   {
+    id: 'ds-ss-aquex-pro-plus-17',
+    name: "17' Aquex Pro Plus",
+    brand: 'Dynasty Spas',
+    series: 'Aquex Collection',
+    length: '17 ft',
+    price: '$38,500.00',
+    priceValue: 38500,
+    dimensions: '92" x 204" x 60"',
+    waterCapacity: '2,100 gallons',
+    electrical: '220v/60amp',
+    pumps: '3 - 5.0bhp + 1 - 7.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '2800 lbs',
+    filledWeight: '19600 lbs',
+    description: '17-foot professional swim spa with dual zone capability, swim coach, and premium in.Mix/in.Stream systems.',
+    features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Exercise/Rowing & Swim Tether', 'LED Illuminated Jets', 'LED Corner Lighting', 'Stainless Steel Grab Bars'],
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/16+AQUEX+TRAINER+SWIM+SPA+vert+NE-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
+  },
+  {
     id: 'ds-ss-aquex-dual-pro',
     name: "19' Aquex Dual Pro",
     brand: 'Dynasty Spas',

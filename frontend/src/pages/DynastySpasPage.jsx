@@ -81,7 +81,7 @@ const DynastySpasPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="flex flex-col md:flex-row items-center justify-between gap-8"
             >
-              <div className="flex-1">
+              <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Flag className="text-[#B91C1C]" size={24} />
                   <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
@@ -92,22 +92,6 @@ const DynastySpasPage = () => {
                 <p className="text-xl text-slate-300 max-w-2xl">
                   Premium American-made hot tubs with industry-leading 20-year shell warranty. Quality craftsmanship built right here in the USA.
                 </p>
-              </div>
-              <div className="flex-shrink-0 w-full md:w-auto md:min-w-[400px]">
-                <div className="space-y-4">
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_c3c8047e-ccd6-49d5-bc84-656a3cc35381/artifacts/5gzal0ze_Screenshot%202026-02-24%20at%206.23.02%E2%80%AFPM.png" 
-                    alt="Acrylic Color Options - Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain" 
-                    className="w-full max-w-[480px] rounded-lg shadow-lg"
-                    data-testid="dynasty-acrylic-colors-img"
-                  />
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_c3c8047e-ccd6-49d5-bc84-656a3cc35381/artifacts/mr6zlgt0_Screenshot%202026-02-24%20at%206.23.04%E2%80%AFPM.png" 
-                    alt="Skirt Color Options - Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite" 
-                    className="w-full max-w-[480px] rounded-lg shadow-lg"
-                    data-testid="dynasty-skirt-colors-img"
-                  />
-                </div>
               </div>
             </motion.div>
           </div>

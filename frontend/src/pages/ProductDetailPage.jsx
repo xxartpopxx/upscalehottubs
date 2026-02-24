@@ -120,13 +120,17 @@ const ProductDetailPage = () => {
     setCurrentView(views[newIndex]);
   };
 
+  // Generate SEO title and description
+  const seoTitle = product ? `${product.name} | ${product.brand} | Upstate Hot Tubs` : 'Product | Upstate Hot Tubs';
+  const seoDescription = product ? `${product.name} by ${product.brand}. ${product.description} Seats ${product.persons} adults with ${product.jets} jets. ${product.price}. American Made & Proud of It.` : '';
+  const seoKeywords = product ? `${product.name}, ${product.brand}, ${product.series}, hot tub, spa, ${product.persons} person hot tub, hydrotherapy` : '';
+
   return (
     <>
       <Helmet>
-        <title>{product.name} | {product.brand} | Upstate Hot Tubs</title>
-        <meta name="description" content={`${product.name} by ${product.brand}. ${product.description} Seats ${product.persons} adults with ${product.jets} jets. ${product.price}. American Made & Proud of It.`} />
-        <meta name="keywords" content={`${product.name}, ${product.brand}, ${product.series}, hot tub, spa, ${product.persons} person hot tub, hydrotherapy`} />
-        <link rel="canonical" href={`https://upstatehottubs.com/products/${product.id}`} />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <meta name="keywords" content={seoKeywords} />
       </Helmet>
       <div className="pt-28 pb-20" data-testid="product-detail-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">

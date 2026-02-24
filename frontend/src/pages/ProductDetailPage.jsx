@@ -3,11 +3,33 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, Flag } from 'lucide-react';
-import { getProductById, getRelatedModel, SHELL_COLORS, CABINET_COLORS } from '../data/products';
+import { getProductById, getRelatedModel, VS_SHELL_COLORS, VS_ELITE_CABINET_COLORS, VS_HEIRLOOM_CABINET_COLORS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
+
+// Shell and Cabinet colors for display
+const SHELL_COLORS = {
+  white: { name: 'White Satin', hex: '#F5F5F0', image: `${GR_VISUALIZER_BASE}/white.png` },
+  silver: { name: 'Silver Satin', hex: '#C0C0C0', image: `${GR_VISUALIZER_BASE}/silver.png` },
+  opal: { name: 'Opal Satin', hex: '#A8B5B8', image: `${GR_VISUALIZER_BASE}/opal.png` },
+};
+
+const CABINET_COLORS = {
+  coastalGray: { name: 'Coastal Gray', hex: '#6B7280', image: `${GR_VISUALIZER_BASE}/coastalgray.png` },
+  walnut: { name: 'Walnut', hex: '#5D4037', image: `${GR_VISUALIZER_BASE}/walnut.png` },
+  barnwood: { name: 'Barnwood', hex: '#8B7355', image: `${GR_VISUALIZER_BASE}/barnwood.png` },
+  black: { name: 'Black Slate', hex: '#1a1a1a', image: `${GR_VISUALIZER_BASE}/black.png` },
+  taupe: { name: 'Taupe', hex: '#8B7D6B', image: `${GR_VISUALIZER_BASE}/walnut.png` },
+  // Viking Elite Series
+  slate: { name: 'Slate', hex: '#708090', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/slate.png' },
+  chestnut: { name: 'Chestnut', hex: '#954535', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/chestnut.png' },
+  stone: { name: 'Stone', hex: '#8B8B83', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/stone.png' },
+  carbon: { name: 'Carbon', hex: '#333333', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/carbon.png' },
+  // Viking Heirloom Series
+  ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/ash.png' },
+};
 
 // Generate the actual color combination image URL with corner color support
 // Corner can only be "Match Cabinet" (same as cabinet) or "Black"

@@ -96,12 +96,29 @@ Premium hot tub retailer website serving Naples, FL and South Carolina.
 ## Product Data Summary
 - **Grand River Spas:** 16 products (Premier + Eco Series)
 - **Viking Spas:** 15 products (Elite/Heirloom/Element Series)
+- **Dynasty Spas:** 15 products (Luxury/Oasis/Vacation/Hideaway Collections)
 - **Swim Spas:** 8 products (4 Grand River + 4 Viking)
 - **Saunas:** 6 products (SaunaLife barrel, cabin, and outdoor saunas)
 - **Cold Plunges:** 2 products (Endurance Bundle $2,999, Resolute Pro $7,999)
-- **Total Hot Tubs:** 31 products
+- **Total Hot Tubs:** 46 products (16 GR + 15 Viking + 15 Dynasty)
 
 ## Latest Updates (Feb 24, 2026)
+
+### ✅ Dynasty Spas Page Created - 15 Products
+New dedicated page at `/dynasty-spas` with:
+- **Luxury Collection:** Paradise Bay III, Paradise Bay II, Palm Island, Pleasure Cove
+- **Oasis Collection:** Coconut Bay, Caribbean Breeze, Nassau Royal  
+- **Vacation Collection:** Cabana Bay, Ocean Breeze, Treasure Cay, Tranquility Harbor, Serenity Cove
+- **Hideaway Collection:** Twin Palms, Bimini, Sunset Cove
+
+Prices range from $7,500 - $13,956
+
+Features:
+- Filter by collection, capacity, seating layout, and price
+- YouTube video embedded
+- Standard features section
+- Industry-leading warranty info (20/5/3 year)
+- Dynasty logo from uploaded image
 
 ### ✅ Saunas Updated - 6 Products with Real Prices
 | Model | Price |
@@ -121,6 +138,7 @@ Premium hot tub retailer website serving Naples, FL and South Carolina.
 
 ### ✅ Dynasty Spas YouTube Video Added
 - Video embedded on About page: https://www.youtube.com/embed/aRDW_vz1bUw
+- Video embedded on Dynasty Spas page
 - M.A.E. Certified section added with full lab specifications
 - 4 Seasons of Benefits expanded with complete insulation details
 

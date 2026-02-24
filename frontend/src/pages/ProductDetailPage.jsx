@@ -80,7 +80,7 @@ const ProductDetailPage = () => {
       }
     }
     return product.images.primary;
-  }, [product, currentView, selectedShell, selectedCabinet, isGrandRiver, imageError]);
+  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, imageError]);
   
   if (!product) {
     return (

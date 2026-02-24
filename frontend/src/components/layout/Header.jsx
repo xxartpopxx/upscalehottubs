@@ -25,6 +25,7 @@ const Header = () => {
   const shopLinks = [
     { name: 'Grand River Spas', href: '/grand-river-spas' },
     { name: 'Viking Spas', href: '/viking-spas' },
+    { name: 'Dynasty Spas', href: '/dynasty-spas' },
     { name: 'Saunas', href: '/saunas' },
     { name: 'Swim Spas', href: '/swim-spas' },
     { name: 'Cold Plunges', href: '/cold-plunges' },

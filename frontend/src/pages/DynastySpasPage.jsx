@@ -93,12 +93,29 @@ const DynastySpasPage = () => {
                   Premium American-made hot tubs with industry-leading 20-year shell warranty. Quality craftsmanship built right here in the USA.
                 </p>
               </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_sauna-dynasty-sync/artifacts/dxhibdbh_638442127_923260190154530_1297348544301572794_n.png" 
-                  alt="Dynasty Spas" 
-                  className="w-48 h-auto"
-                />
+              <div className="flex-shrink-0 w-full md:w-auto md:min-w-[400px]">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                  {/* Acrylic Colors */}
+                  <h3 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-white mb-4">Acrylic Color Options</h3>
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    {Object.entries(DYNASTY_SHELL_COLORS).map(([key, color]) => (
+                      <div key={key} className="flex items-center gap-3">
+                        <div className="w-14 h-14 rounded-lg border-2 border-white/30 flex-shrink-0" style={{ backgroundColor: color.hex }} />
+                        <span className="text-sm text-white font-medium">{color.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Skirt Colors */}
+                  <h3 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-white mb-4">Skirt Color Options</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {Object.entries(DYNASTY_CABINET_COLORS).map(([key, color]) => (
+                      <div key={key} className="flex items-center gap-3">
+                        <div className="w-14 h-14 rounded-lg border-2 border-white/30 flex-shrink-0" style={{ backgroundColor: color.hex }} />
+                        <span className="text-sm text-white font-medium">{color.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

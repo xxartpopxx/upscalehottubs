@@ -8,8 +8,8 @@ import { ASSETS, CONTACT } from '../data/constants';
 // Base URL for Grand River Spas visualizer images
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
 
-// Generate the actual color combination image URL
-const getColorComboImageUrl = (product, shellColor, cabinetColor) => {
+// Generate the actual color combination image URL with corner color support
+const getColorComboImageUrl = (product, shellColor, cabinetColor, cornerColor) => {
   if (!product || product.brand !== 'Grand River Spas') {
     return null;
   }
@@ -31,8 +31,9 @@ const getColorComboImageUrl = (product, shellColor, cabinetColor) => {
   
   const shell = shellMap[shellColor] || 'White';
   const cabinet = cabinetMap[cabinetColor] || 'CoastalGray';
+  const corner = cabinetMap[cornerColor] || cabinet;
   
-  return `${GR_VISUALIZER_BASE}/${modelName}_${shell}_${cabinet}_${cabinet}.jpg`;
+  return `${GR_VISUALIZER_BASE}/${modelName}_${shell}_${cabinet}_${corner}.jpg`;
 };
 
 const ProductDetailPage = () => {
@@ -45,6 +46,7 @@ const ProductDetailPage = () => {
   
   const [selectedShell, setSelectedShell] = useState(defaultShell);
   const [selectedCabinet, setSelectedCabinet] = useState(defaultCabinet);
+  const [selectedCorner, setSelectedCorner] = useState(defaultCabinet);
   const [currentView, setCurrentView] = useState('color');
   const [activeTab, setActiveTab] = useState('overview');
   const [imageError, setImageError] = useState(false);

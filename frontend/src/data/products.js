@@ -887,6 +887,112 @@ export const DYNASTY_SPAS_PRODUCTS = [
     },
     shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
+  },
+  // HIDEAWAY COLLECTION - NEW MODELS
+  {
+    id: 'ds-bay-bliss',
+    name: 'Bay Bliss',
+    brand: 'Dynasty Spas',
+    series: 'Hideaway Collection',
+    modelFamily: 'Bay Bliss',
+    persons: 4,
+    jets: 30,
+    price: '$7,500.00',
+    priceValue: 7500,
+    seatingLayout: 'Lounger',
+    dimensions: '82" x 82" x 39"',
+    waterCapacity: '295 gallons',
+    electrical: '220v/60amp',
+    pumps: '2 - 6.0bhp',
+    filtration: '50 ft²',
+    dryWeight: '350 lbs',
+    filledWeight: '2710 lbs',
+    description: 'Compact lounger spa perfect for intimate relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
+    features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/BAY+BLISS-6d5e88fa-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer']
+  },
+  {
+    id: 'ds-high-tide',
+    name: 'High Tide',
+    brand: 'Dynasty Spas',
+    series: 'Hideaway Collection',
+    modelFamily: 'High Tide',
+    persons: 4,
+    jets: 30,
+    price: '$7,500.00',
+    priceValue: 7500,
+    seatingLayout: 'Bench',
+    dimensions: '82" x 82" x 39"',
+    waterCapacity: '295 gallons',
+    electrical: '220v/60amp',
+    pumps: '2 - 6.0bhp',
+    filtration: '50 ft²',
+    dryWeight: '350 lbs',
+    filledWeight: '2710 lbs',
+    description: 'Bench-style spa with ample seating for relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
+    features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/HIGH+TIDE-83502db6-1920w.png'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer']
+  },
+  // LUXURY COLLECTION - 30TH ANNIVERSARY MODELS
+  {
+    id: 'ds-bahama-royale',
+    name: 'Bahama Royale',
+    brand: 'Dynasty Spas',
+    series: 'Luxury Collection',
+    modelFamily: 'Bahama Royale',
+    persons: 5,
+    jets: 83,
+    price: '$14,956.00',
+    priceValue: 14956,
+    seatingLayout: 'Lounger',
+    dimensions: '92" x 92" x 39"',
+    waterCapacity: '425 gallons',
+    electrical: '220v/60amp',
+    pumps: '3 - 6.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '1000 lbs',
+    filledWeight: '4400 lbs',
+    description: 'Premium 30th Anniversary lounger spa with deep oversized seating, K.1000 topside control, in.Touch app, and full LED in.Mix lighting throughout.',
+    features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting'],
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/2025+30TH+SEL+TOP+SHOT+72-1920w.png'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['coastalGrayElite', 'ashElite']
+  },
+  {
+    id: 'ds-imperial-royale',
+    name: 'Imperial Royale',
+    brand: 'Dynasty Spas',
+    series: 'Luxury Collection',
+    modelFamily: 'Imperial Royale',
+    persons: 7,
+    jets: 83,
+    price: '$14,956.00',
+    priceValue: 14956,
+    seatingLayout: 'Bench',
+    dimensions: '92" x 92" x 39"',
+    waterCapacity: '450 gallons',
+    electrical: '220v/60amp',
+    pumps: '3 - 6.0bhp',
+    filtration: '100 ft²',
+    dryWeight: '1000 lbs',
+    filledWeight: '4400 lbs',
+    description: 'Premium 30th Anniversary bench spa seating 7, with deep oversized seating, K.1000 topside control, in.Touch app, and full LED in.Mix lighting.',
+    features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting'],
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/30TH+BENCH+TOP+-1920w.jpg'
+    },
+    shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
+    cabinetColors: ['coastalGrayElite', 'ashElite']
   }
 ];
 

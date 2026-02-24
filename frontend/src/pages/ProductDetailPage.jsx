@@ -373,7 +373,7 @@ const ProductDetailPage = () => {
             
             {/* Color Selector Panel - 5 columns */}
             <div className="lg:col-span-5">
-              {product.shellColors && product.cabinetColors ? (
+              {product.shellColors && product.cabinetColors && !isDynasty ? (
                 <div className="bg-slate-50 p-5 h-full">
                   <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-4">
                     Customize Your Spa Colors

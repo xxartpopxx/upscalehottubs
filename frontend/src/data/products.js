@@ -1470,9 +1470,6 @@ export const VIKING_SWIM_SPAS = [
 // ===========================================
 // SWIM SPAS - DYNASTY SPAS
 // ===========================================
-// ===========================================
-// SWIM SPAS - DYNASTY SPAS
-// ===========================================
 export const DYNASTY_SWIM_SPAS = [
   {
     id: 'ds-ss-family-island-single',

@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Flag, Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon } from 'lucide-react';
-import { DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS } from '../data/products';
+import { DYNASTY_SPAS_PRODUCTS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const DynastySpasPage = () => {

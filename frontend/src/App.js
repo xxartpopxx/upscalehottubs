@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import HotTubsPage from './pages/HotTubsPage';
 import GrandRiverPage from './pages/GrandRiverPage';
 import VikingSpasPage from './pages/VikingSpasPage';
+import DynastySpasPage from './pages/DynastySpasPage';
 import SwimSpasPage from './pages/SwimSpasPage';
 import SaunasPage from './pages/SaunasPage';
 import ColdPlungesPage from './pages/ColdPlungesPage';

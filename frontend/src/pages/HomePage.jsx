@@ -318,7 +318,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-4">Shop Our American Made Hot Tubs</h2>
-            <p className="text-lg text-slate-600 mb-4">Live your healthiest life while enjoying a vacation everyday at home</p>
+            <p className="text-lg text-slate-600 mb-4">Premium American-made hot tubs for the ultimate relaxation experience</p>
             <div className="w-24 h-1 bg-[#B91C1C] mx-auto" />
           </motion.div>
           <ProductGrid products={HOT_TUBS.slice(0, 8)} linkPrefix="/products" />

@@ -73,7 +73,7 @@ const GrandRiverPage = () => {
               Grand River Spas Hot Tubs
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl">
-              Live your healthiest life while enjoying a vacation everyday at home. Premium quality hot tubs with advanced hydrotherapy features.
+              Premium quality hot tubs with advanced hydrotherapy features. American made craftsmanship you can trust.
             </p>
           </motion.div>
 

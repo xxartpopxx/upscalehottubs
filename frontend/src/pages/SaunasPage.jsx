@@ -33,7 +33,7 @@ const SaunasPage = () => {
               Shop Our Saunas
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl">
-              RELAX-RENEW-REPEAT - Live your healthiest life while enjoying a vacation everyday at home with a premium sauna!
+              RELAX-RENEW-REPEAT - Premium barrel and infrared saunas for your wellness journey.
             </p>
           </motion.div>
           

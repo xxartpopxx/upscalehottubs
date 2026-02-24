@@ -73,7 +73,7 @@ const VikingSpasPage = () => {
               Viking Spas Hot Tubs
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl">
-              Live your healthiest life while enjoying a vacation everyday at home. Quality crafted hot tubs for the ultimate relaxation experience.
+              Quality crafted hot tubs for the ultimate relaxation experience. American made and proud of it.
             </p>
           </motion.div>
 

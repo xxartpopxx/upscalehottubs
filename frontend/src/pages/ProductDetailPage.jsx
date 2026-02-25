@@ -686,38 +686,72 @@ const ProductDetailPage = () => {
           </div>
           
           {/* Dynasty Spas - Color Reference Section */}
-          {isDynasty && product.shellColors && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8"
-              data-testid="dynasty-color-reference"
-            >
-              <div className="bg-slate-50 p-6 lg:p-8">
-                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center">
-                  Available Color Options
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
+          {isDynasty && product.shellColors && (() => {
+            const hideawayModels = ['ds-bay-bliss', 'ds-high-tide', 'ds-seaside'];
+            const luxuryModels = ['ds-bahama-royale', 'ds-imperial-royale'];
+            const isHideaway = hideawayModels.includes(product.id);
+            const isLuxury = luxuryModels.includes(product.id);
+            const colorImg = isHideaway
+              ? '/assets/dynasty_colors_hideaway.png'
+              : isLuxury
+              ? '/assets/dynasty_colors_luxury.png'
+              : null;
+            return colorImg ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-8"
+                data-testid="dynasty-color-reference"
+              >
+                <div className="bg-slate-50 p-6 lg:p-8">
+                  <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center">
+                    Available Color Options
+                  </h3>
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_c3c8047e-ccd6-49d5-bc84-656a3cc35381/artifacts/5gzal0ze_Screenshot%202026-02-24%20at%206.23.02%E2%80%AFPM.png" 
-                    alt="Acrylic Color Options - Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain" 
-                    className="w-full rounded-lg shadow-md"
-                    data-testid="dynasty-acrylic-ref-img"
+                    src={colorImg}
+                    alt={isHideaway ? "Acrylic Color: Sterling Marble, Skirt Color: Black Confer" : "Acrylic & Skirt Color Options"}
+                    className="w-full max-w-3xl mx-auto rounded-lg shadow-md"
+                    data-testid="dynasty-color-ref-img"
                   />
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_c3c8047e-ccd6-49d5-bc84-656a3cc35381/artifacts/mr6zlgt0_Screenshot%202026-02-24%20at%206.23.04%E2%80%AFPM.png" 
-                    alt="Skirt Color Options - Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite" 
-                    className="w-full rounded-lg shadow-md"
-                    data-testid="dynasty-skirt-ref-img"
-                  />
+                  <p className="text-xs text-slate-500 mt-4 text-center">
+                    Actual colors may vary. Contact us for physical color samples.
+                  </p>
                 </div>
-                <p className="text-xs text-slate-500 mt-4 text-center">
-                  Actual colors may vary. Contact us for physical color samples.
-                </p>
-              </div>
-            </motion.div>
-          )}
+              </motion.div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-8"
+                data-testid="dynasty-color-reference"
+              >
+                <div className="bg-slate-50 p-6 lg:p-8">
+                  <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center">
+                    Available Color Options
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <img 
+                      src="/assets/dynasty_colors_acrylic.jpg"
+                      alt="Acrylic Color Options - Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain" 
+                      className="w-full rounded-lg shadow-md"
+                      data-testid="dynasty-acrylic-ref-img"
+                    />
+                    <img 
+                      src="/assets/dynasty_colors_skirt.jpg"
+                      alt="Skirt Color Options - Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite" 
+                      className="w-full rounded-lg shadow-md"
+                      data-testid="dynasty-skirt-ref-img"
+                    />
+                  </div>
+                  <p className="text-xs text-slate-500 mt-4 text-center">
+                    Actual colors may vary. Contact us for physical color samples.
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })()}
 
           {/* Model Comparison for Grand River (existing related model) */}
           {relatedModel && isGrandRiver && (

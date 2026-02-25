@@ -82,6 +82,9 @@ function App() {
               
               {/* Contact */}
               <Route path="/contact" element={<ContactPage />} />
+              
+              {/* AR Visualizer */}
+              <Route path="/ar-visualizer" element={<ARVisualizerPage />} />
             </Routes>
           </main>
           <Footer />

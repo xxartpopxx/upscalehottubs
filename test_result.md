@@ -184,6 +184,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "User's uploaded image (couple in hot tub with mountain view) replaces old logo banner"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Featured image banner displays correctly with uploaded image (couple enjoying hot tub with mountain view). Image is properly centered, responsive, and styled with shadow effects."
 
   - task: "Wellness Journey Section"
     implemented: true

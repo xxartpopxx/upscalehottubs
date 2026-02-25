@@ -209,12 +209,6 @@ const SeriesCardsSection = () => {
       image: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_2025_Heritage1_Opal_Stone_side_dropshadow-768x512.png'
     },
     { 
-      name: 'Dynasty Spas', 
-      tagline: 'Luxury & Innovation', 
-      link: '/dynasty-spas',
-      image: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
-    },
-    { 
       name: 'Swim Spas', 
       tagline: 'Swim, Exercise & Relax', 
       link: '/swim-spas',

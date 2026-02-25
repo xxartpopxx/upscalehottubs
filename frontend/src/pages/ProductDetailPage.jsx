@@ -696,7 +696,7 @@ const ProductDetailPage = () => {
               : isLuxury
               ? '/assets/dynasty_colors_luxury.png'
               : null;
-            return colorImg ? (
+            return (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -709,42 +709,11 @@ const ProductDetailPage = () => {
                     Available Color Options
                   </h3>
                   <img 
-                    src={colorImg}
+                    src={isHideaway ? '/assets/dynasty_colors_hideaway.png' : '/assets/dynasty_colors_luxury.png'}
                     alt={isHideaway ? "Acrylic Color: Sterling Marble, Skirt Color: Black Confer" : "Acrylic & Skirt Color Options"}
                     className="w-full max-w-3xl mx-auto rounded-lg shadow-md"
                     data-testid="dynasty-color-ref-img"
                   />
-                  <p className="text-xs text-slate-500 mt-4 text-center">
-                    Actual colors may vary. Contact us for physical color samples.
-                  </p>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-8"
-                data-testid="dynasty-color-reference"
-              >
-                <div className="bg-slate-50 p-6 lg:p-8">
-                  <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center">
-                    Available Color Options
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <img 
-                      src="/assets/dynasty_colors_acrylic.jpg"
-                      alt="Acrylic Color Options - Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain" 
-                      className="w-full rounded-lg shadow-md"
-                      data-testid="dynasty-acrylic-ref-img"
-                    />
-                    <img 
-                      src="/assets/dynasty_colors_skirt.jpg"
-                      alt="Skirt Color Options - Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite" 
-                      className="w-full rounded-lg shadow-md"
-                      data-testid="dynasty-skirt-ref-img"
-                    />
-                  </div>
                   <p className="text-xs text-slate-500 mt-4 text-center">
                     Actual colors may vary. Contact us for physical color samples.
                   </p>

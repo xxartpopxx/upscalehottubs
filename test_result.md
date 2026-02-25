@@ -124,6 +124,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "Products on homepage now sorted by price (lowest to highest)"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Product sorting verified. 'Sorted by price: Lowest to Highest' text displays correctly above Hot Tubs and Swim Spas sections. Products are properly sorted by priceValue in ascending order."
 
   - task: "Product Comparison Estimator"
     implemented: true

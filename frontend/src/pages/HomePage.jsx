@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ChevronRight, Flag, Shield, Award, Heart, Phone, Mail, X, Star } from 'lucide-react';
+import { ChevronRight, Flag, Shield, Award, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Minus, Sparkles } from 'lucide-react';
 import { ASSETS, CONTACT } from '../data/constants';
-import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES } from '../data/products';
+import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
+
+// Sort products by price (least to most expensive)
+const sortByPrice = (products) => {
+  return [...products].sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
+};
+
+const SORTED_HOT_TUBS = sortByPrice(HOT_TUBS);
+const SORTED_SWIM_SPAS = sortByPrice(SWIM_SPAS);
 
 // Tax Special Popup Component
 const TaxSpecialPopup = ({ isOpen, onClose }) => {
@@ -118,16 +126,36 @@ const HeroSection = () => (
   </section>
 );
 
-// Trust Section
+// Updated Trust Section with new content
 const TrustSection = () => (
   <section className="py-16 bg-white border-y border-slate-100" data-testid="trust-section">
     <div className="max-w-7xl mx-auto px-4 md:px-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {[
-          { icon: Shield, title: '5% Discount', desc: 'First Responders & Law Enforcement' },
-          { icon: Award, title: 'Military & Veterans', desc: 'Special Discounts Available' },
-          { icon: Flag, title: 'American Made', desc: 'All Products Made in USA' },
-          { icon: Heart, title: 'Family Owned', desc: 'American and Proud of it!' },
+          { 
+            icon: Shield, 
+            title: '5% Discount', 
+            desc: 'Military, Veterans, First Responders & Law Enforcement',
+            subDesc: 'Special Discounts Available'
+          },
+          { 
+            icon: Flag, 
+            title: 'American Made', 
+            desc: 'All Products Made in the USA',
+            subDesc: null
+          },
+          { 
+            icon: Heart, 
+            title: 'Family Owned', 
+            desc: 'American & Proud of It',
+            subDesc: null
+          },
+          { 
+            icon: Truck, 
+            title: 'Ask About Free Hot Tub & Swim Spa Delivery', 
+            desc: 'Available in Florida & South Carolina',
+            subDesc: null
+          },
         ].map((item, idx) => (
           <motion.div 
             key={item.title} 
@@ -142,6 +170,7 @@ const TrustSection = () => (
             </motion.div>
             <h3 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-[#0A1628]">{item.title}</h3>
             <p className="text-sm text-slate-600">{item.desc}</p>
+            {item.subDesc && <p className="text-xs text-[#B91C1C] mt-1 font-semibold">{item.subDesc}</p>}
           </motion.div>
         ))}
       </div>
@@ -177,6 +206,268 @@ const AboutSection = () => (
           <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5, type: "spring" }} className="absolute -bottom-6 -right-6 bg-[#B91C1C] text-white p-6 shadow-xl">
             <p className="font-['Barlow_Condensed'] text-2xl font-bold uppercase">Wet Test</p>
             <p className="font-['Barlow_Condensed'] text-2xl font-bold uppercase">Available!</p>
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+// Product Comparison Estimator Component
+const ComparisonEstimator = () => {
+  const [selectedProducts, setSelectedProducts] = useState([]);
+  const [showSelector, setShowSelector] = useState(false);
+  
+  // Combine all products for comparison
+  const allProducts = [
+    ...HOT_TUBS.map(p => ({ ...p, category: 'Hot Tub' })),
+    ...SWIM_SPAS.map(p => ({ ...p, category: 'Swim Spa' })),
+    ...SAUNAS.map(p => ({ ...p, category: 'Sauna' })),
+    ...COLD_PLUNGES.map(p => ({ ...p, category: 'Cold Plunge' })),
+  ].sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
+
+  const addProduct = (product) => {
+    if (selectedProducts.length < 3 && !selectedProducts.find(p => p.id === product.id)) {
+      setSelectedProducts([...selectedProducts, product]);
+    }
+    setShowSelector(false);
+  };
+
+  const removeProduct = (productId) => {
+    setSelectedProducts(selectedProducts.filter(p => p.id !== productId));
+  };
+
+  return (
+    <section className="py-20 bg-[#F8FAFC]">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          className="text-center mb-12"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-4">
+            Compare Products
+          </h2>
+          <p className="text-lg text-slate-600 mb-4">Select up to 3 products to compare side-by-side</p>
+          <div className="w-24 h-1 bg-[#B91C1C] mx-auto" />
+        </motion.div>
+
+        {/* Comparison Table */}
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+            {/* Headers/Labels Column */}
+            <div className="bg-[#0A1628] text-white p-4 hidden md:block">
+              <div className="h-48 flex items-end pb-4">
+                <span className="font-['Barlow_Condensed'] text-xl font-bold">Features</span>
+              </div>
+              <div className="py-4 border-t border-white/20">Category</div>
+              <div className="py-4 border-t border-white/20">Price</div>
+              <div className="py-4 border-t border-white/20">Capacity</div>
+              <div className="py-4 border-t border-white/20">Jets</div>
+              <div className="py-4 border-t border-white/20">Dimensions</div>
+              <div className="py-4 border-t border-white/20">Brand</div>
+              <div className="py-4 border-t border-white/20"></div>
+            </div>
+
+            {/* Product Columns */}
+            {[0, 1, 2].map((index) => {
+              const product = selectedProducts[index];
+              return (
+                <div key={index} className="border-l border-slate-200 first:border-l-0">
+                  {product ? (
+                    <>
+                      <div className="p-4 h-48 flex flex-col items-center justify-center relative bg-slate-50">
+                        <button 
+                          onClick={() => removeProduct(product.id)}
+                          className="absolute top-2 right-2 p-1 bg-red-100 text-red-600 rounded-full hover:bg-red-200"
+                        >
+                          <X size={16} />
+                        </button>
+                        <img 
+                          src={product.images?.primary} 
+                          alt={product.name}
+                          className="h-24 object-contain mb-2"
+                          onError={(e) => e.target.src = ASSETS.logo}
+                        />
+                        <h4 className="font-['Barlow_Condensed'] text-lg font-bold text-center">{product.name}</h4>
+                      </div>
+                      <div className="py-4 px-4 border-t text-center md:hidden font-semibold text-slate-500">Category</div>
+                      <div className="py-4 px-4 border-t text-center">
+                        <span className="inline-block px-3 py-1 bg-[#0A1628] text-white text-sm rounded-full">
+                          {product.category}
+                        </span>
+                      </div>
+                      <div className="py-4 px-4 border-t text-center md:hidden font-semibold text-slate-500">Price</div>
+                      <div className="py-4 px-4 border-t text-center font-bold text-[#B91C1C] text-lg">
+                        {product.price || 'Call for Price'}
+                      </div>
+                      <div className="py-4 px-4 border-t text-center md:hidden font-semibold text-slate-500">Capacity</div>
+                      <div className="py-4 px-4 border-t text-center">
+                        {product.persons ? `${product.persons} Person${product.persons > 1 ? 's' : ''}` : '-'}
+                      </div>
+                      <div className="py-4 px-4 border-t text-center md:hidden font-semibold text-slate-500">Jets</div>
+                      <div className="py-4 px-4 border-t text-center">{product.jets || '-'}</div>
+                      <div className="py-4 px-4 border-t text-center md:hidden font-semibold text-slate-500">Dimensions</div>
+                      <div className="py-4 px-4 border-t text-center text-sm">{product.dimensions || '-'}</div>
+                      <div className="py-4 px-4 border-t text-center md:hidden font-semibold text-slate-500">Brand</div>
+                      <div className="py-4 px-4 border-t text-center">{product.brand || '-'}</div>
+                      <div className="py-4 px-4 border-t text-center">
+                        <Link 
+                          to={`/products/${product.id}`}
+                          className="btn-primary text-sm px-4 py-2"
+                        >
+                          View Details
+                        </Link>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="h-full min-h-[500px] flex items-center justify-center p-4">
+                      <button 
+                        onClick={() => setShowSelector(true)}
+                        className="flex flex-col items-center gap-4 p-8 border-2 border-dashed border-slate-300 rounded-lg hover:border-[#B91C1C] hover:bg-red-50 transition-all group"
+                      >
+                        <div className="w-16 h-16 rounded-full bg-slate-100 group-hover:bg-[#B91C1C] flex items-center justify-center transition-colors">
+                          <Plus className="text-slate-400 group-hover:text-white" size={32} />
+                        </div>
+                        <span className="font-['Barlow_Condensed'] text-lg font-bold text-slate-600 group-hover:text-[#B91C1C]">
+                          Add Product
+                        </span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Product Selector Modal */}
+        {showSelector && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
+            onClick={() => setShowSelector(false)}
+          >
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="bg-white max-w-2xl w-full max-h-[80vh] rounded-lg overflow-hidden"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="bg-[#0A1628] text-white p-4 flex items-center justify-between">
+                <h3 className="font-['Barlow_Condensed'] text-xl font-bold">Select a Product</h3>
+                <button onClick={() => setShowSelector(false)} className="p-1 hover:bg-white/10 rounded">
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="p-4 overflow-y-auto max-h-[60vh]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {allProducts.map(product => (
+                    <button
+                      key={product.id}
+                      onClick={() => addProduct(product)}
+                      disabled={selectedProducts.find(p => p.id === product.id)}
+                      className={`p-4 border rounded-lg text-left hover:border-[#B91C1C] hover:bg-red-50 transition-all ${
+                        selectedProducts.find(p => p.id === product.id) ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <img 
+                          src={product.images?.primary} 
+                          alt={product.name}
+                          className="w-16 h-16 object-contain"
+                          onError={(e) => e.target.src = ASSETS.logo}
+                        />
+                        <div>
+                          <h4 className="font-semibold">{product.name}</h4>
+                          <p className="text-sm text-slate-500">{product.category}</p>
+                          <p className="text-sm font-bold text-[#B91C1C]">{product.price || 'Call'}</p>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+// AR Visualizer Section
+const ARVisualizerSection = () => (
+  <section className="py-20 bg-[#0A1628] text-white">
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Camera className="text-[#D4AF37]" size={32} />
+            <span className="text-[#D4AF37] font-semibold uppercase tracking-wider">AR Technology</span>
+          </div>
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase mb-6">
+            See It In Your <span className="text-[#B91C1C]">Backyard</span>
+          </h2>
+          <p className="text-xl leading-relaxed mb-6 text-slate-300">
+            Not sure how it will look? Use our AR Visualizer to place a virtual hot tub, swim spa, or sauna in your space using your phone's camera.
+          </p>
+          <ul className="space-y-3 mb-8 text-slate-300">
+            <li className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+              Works on most modern smartphones
+            </li>
+            <li className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+              Visualize different models and sizes
+            </li>
+            <li className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+              Share with family for input
+            </li>
+          </ul>
+          <Link 
+            to="/ar-visualizer" 
+            className="btn-primary inline-flex items-center gap-2 text-lg"
+          >
+            <Smartphone size={20} />
+            Launch AR Visualizer
+          </Link>
+        </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true }}
+          className="relative"
+        >
+          <div className="bg-gradient-to-br from-[#1a2d4a] to-[#0A1628] rounded-lg p-8 aspect-square flex items-center justify-center">
+            <div className="text-center">
+              <motion.div 
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-32 h-32 mx-auto mb-6 bg-[#B91C1C]/20 rounded-full flex items-center justify-center"
+              >
+                <Camera className="w-16 h-16 text-[#B91C1C]" />
+              </motion.div>
+              <p className="text-xl text-white/80 mb-4">Point your camera at your backyard</p>
+              <p className="text-white/50">Available on mobile devices</p>
+            </div>
+          </div>
+          <motion.div 
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, type: "spring" }}
+            className="absolute -bottom-4 -right-4 bg-[#D4AF37] text-[#0A1628] p-4 rounded-lg shadow-xl"
+          >
+            <Smartphone className="w-8 h-8" />
           </motion.div>
         </motion.div>
       </div>
@@ -266,19 +557,90 @@ const CategoriesSection = () => {
   );
 };
 
-// Logo Banner
-const LogoBanner = () => (
+// Featured Image Banner (replacing logo banner with user's image)
+const FeaturedImageBanner = () => (
   <section className="py-12 bg-[#F8FAFC]">
     <div className="max-w-7xl mx-auto px-4 flex justify-center">
       <motion.img 
-        src={ASSETS.logo} 
-        alt="Upstate Hot Tubs" 
-        className="h-32 md:h-40" 
-        initial={{ opacity: 0, scale: 0.8 }} 
+        src="https://customer-assets.emergentagent.com/job_b1f56408-f888-480b-a4b9-0fa546a42f73/artifacts/1frscfpx_VS_EliteSeries_IN_T_W_2-scaled-1.jpg" 
+        alt="Hot Tub Lifestyle - Couple enjoying mountain view" 
+        className="w-full max-w-4xl rounded-lg shadow-2xl" 
+        initial={{ opacity: 0, scale: 0.95 }} 
         whileInView={{ opacity: 1, scale: 1 }} 
         viewport={{ once: true }} 
         transition={{ type: "spring" }} 
       />
+    </div>
+  </section>
+);
+
+// Wellness Journey Section
+const WellnessJourneySection = () => (
+  <section className="py-20 bg-gradient-to-br from-[#0A1628] to-[#1a3352] text-white">
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }} 
+        className="text-center mb-12"
+      >
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <Sparkles className="text-[#D4AF37]" size={28} />
+          <span className="text-[#D4AF37] font-semibold uppercase tracking-wider">Discover More</span>
+          <Sparkles className="text-[#D4AF37]" size={28} />
+        </div>
+        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase mb-4">
+          Expand Your <span className="text-[#B91C1C]">Wellness Journey</span>
+        </h2>
+        <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          Learn about the health benefits and science behind hydrotherapy
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Health & Wellness',
+            description: 'Discover the therapeutic benefits of hot water therapy for your body and mind.',
+            link: '/wellness',
+            icon: '🌿'
+          },
+          {
+            title: 'Balneotherapy',
+            description: 'Learn about the ancient practice of water-based healing and its modern applications.',
+            link: '/balneotherapy',
+            icon: '💧'
+          },
+          {
+            title: 'Anatomy of a Spa',
+            description: 'Understand the components that make our spas the best in comfort and durability.',
+            link: '/anatomy-of-a-spa',
+            icon: '⚙️'
+          }
+        ].map((item, idx) => (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.1 }}
+          >
+            <Link 
+              to={item.link}
+              className="block bg-white/5 border border-white/10 rounded-lg p-8 hover:bg-white/10 hover:border-[#D4AF37]/50 transition-all group h-full"
+            >
+              <div className="text-5xl mb-4">{item.icon}</div>
+              <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase mb-3 group-hover:text-[#D4AF37] transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-slate-300 mb-4">{item.description}</p>
+              <span className="inline-flex items-center gap-2 text-[#D4AF37] font-semibold group-hover:gap-3 transition-all">
+                Learn More <ChevronRight size={18} />
+              </span>
+            </Link>
+          </motion.div>
+        ))}
+      </div>
     </div>
   </section>
 );
@@ -315,15 +677,16 @@ const HomePage = () => {
       <TrustSection />
       <AboutSection />
       
-      {/* Hot Tubs Section */}
+      {/* Hot Tubs Section - Sorted by price (least to most expensive) */}
       <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-4">Shop Our American Made Hot Tubs</h2>
             <p className="text-lg text-slate-600 mb-4">Premium American-made hot tubs for the ultimate relaxation experience</p>
-            <div className="w-24 h-1 bg-[#B91C1C] mx-auto" />
+            <p className="text-sm text-[#B91C1C] font-semibold">Sorted by price: Lowest to Highest</p>
+            <div className="w-24 h-1 bg-[#B91C1C] mx-auto mt-4" />
           </motion.div>
-          <ProductGrid products={HOT_TUBS.slice(0, 8)} linkPrefix="/products" />
+          <ProductGrid products={SORTED_HOT_TUBS.slice(0, 8)} linkPrefix="/products" />
           <div className="text-center mt-8 space-x-4">
             <Link to="/grand-river-spas" className="btn-primary inline-flex items-center gap-2">Grand River Spas <ChevronRight size={18} /></Link>
             <Link to="/viking-spas" className="btn-secondary inline-flex items-center gap-2">Viking Spas <ChevronRight size={18} /></Link>
@@ -332,17 +695,29 @@ const HomePage = () => {
       </div>
       
       <IncludedSection />
-      <LogoBanner />
       
-      {/* Swim Spas Section */}
+      {/* Comparison Estimator */}
+      <ComparisonEstimator />
+      
+      {/* AR Visualizer Section */}
+      <ARVisualizerSection />
+      
+      {/* Featured Image (replacing logo banner) */}
+      <FeaturedImageBanner />
+      
+      {/* Wellness Journey Section */}
+      <WellnessJourneySection />
+      
+      {/* Swim Spas Section - Sorted by price */}
       <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-4">American Made Swim Spas</h2>
             <p className="text-lg text-slate-600 mb-4">American Made & Proud of It</p>
-            <div className="w-24 h-1 bg-[#B91C1C] mx-auto" />
+            <p className="text-sm text-[#B91C1C] font-semibold">Sorted by price: Lowest to Highest</p>
+            <div className="w-24 h-1 bg-[#B91C1C] mx-auto mt-4" />
           </motion.div>
-          <ProductGrid products={SWIM_SPAS} linkPrefix="/products" />
+          <ProductGrid products={SORTED_SWIM_SPAS} linkPrefix="/products" />
         </div>
       </div>
       

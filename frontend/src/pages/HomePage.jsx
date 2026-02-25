@@ -224,9 +224,9 @@ const IncludedSection = () => (
 const CategoriesSection = () => {
   const categories = [
     { name: 'Hot Tubs', href: '/hot-tubs', image: HOT_TUBS[0]?.images?.primary },
-    { name: 'Swim Spas', href: '/swim-spas', image: HOT_TUBS[2]?.images?.primary },
+    { name: 'Swim Spas', href: '/swim-spas', image: SWIM_SPAS[0]?.images?.primary },
     { name: 'Saunas', href: '/saunas', image: 'https://static.wixstatic.com/media/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg' },
-    { name: 'Cold Plunges', href: '/cold-plunges', image: HOT_TUBS[10]?.images?.primary },
+    { name: 'Cold Plunges', href: '/cold-plunges', image: COLD_PLUNGES[0]?.images?.primary },
   ];
 
   return (

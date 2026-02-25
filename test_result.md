@@ -199,6 +199,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "Section with links to /wellness, /balneotherapy, /anatomy-of-a-spa"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Wellness Journey section displays with 'Expand Your Wellness Journey' heading. All three cards are visible and clickable: (1) Health & Wellness, (2) Balneotherapy, (3) Anatomy of a Spa. Each card includes icon, title, description, and 'Learn More' link."
 
   - task: "Google Analytics Integration"
     implemented: true

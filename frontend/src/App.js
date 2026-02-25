@@ -27,6 +27,7 @@ import CoversPage from './pages/CoversPage';
 import AnatomyPage from './pages/AnatomyPage';
 import BalneotherapyPage from './pages/BalneotherapyPage';
 import JetsPage from './pages/JetsPage';
+import ARVisualizerPage from './pages/ARVisualizerPage';
 
 import './App.css';
 

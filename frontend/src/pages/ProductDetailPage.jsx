@@ -688,14 +688,7 @@ const ProductDetailPage = () => {
           {/* Dynasty Spas - Color Reference Section */}
           {isDynasty && product.shellColors && (() => {
             const hideawayModels = ['ds-bay-bliss', 'ds-high-tide', 'ds-seaside'];
-            const luxuryModels = ['ds-bahama-royale', 'ds-imperial-royale'];
             const isHideaway = hideawayModels.includes(product.id);
-            const isLuxury = luxuryModels.includes(product.id);
-            const colorImg = isHideaway
-              ? '/assets/dynasty_colors_hideaway.png'
-              : isLuxury
-              ? '/assets/dynasty_colors_luxury.png'
-              : null;
             return (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Camera, RotateCcw, ChevronLeft, Smartphone, Info, ZoomIn, ZoomOut, Move, Check, X as CloseIcon } from 'lucide-react';
+import { Camera, RotateCcw, ChevronLeft, Smartphone, Info, ZoomIn, ZoomOut, Move, Check, X as CloseIcon, ImageIcon, Upload } from 'lucide-react';
 import { HOT_TUBS, SWIM_SPAS, SAUNAS, COLD_PLUNGES } from '../data/products';
+import { ASSETS } from '../data/constants';
 
 // Combine all products for selection
 const ALL_PRODUCTS = [
@@ -15,50 +16,44 @@ const ALL_PRODUCTS = [
 
 const ARVisualizerPage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isARSupported, setIsARSupported] = useState(false);
   const [isARActive, setIsARActive] = useState(false);
   const [arError, setArError] = useState(null);
   const [showInstructions, setShowInstructions] = useState(true);
   const [productScale, setProductScale] = useState(1);
-  const [productPosition, setProductPosition] = useState({ x: 0, y: 0 });
+  const [productPosition, setProductPosition] = useState({ x: 50, y: 50 });
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const [mode, setMode] = useState('upload'); // 'upload' or 'camera'
+  const [isDragging, setIsDragging] = useState(false);
+  
   const videoRef = useRef(null);
-  const canvasRef = useRef(null);
   const streamRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const containerRef = useRef(null);
 
-  // Check WebXR support on mount
+  // Cleanup on unmount
   useEffect(() => {
-    checkARSupport();
     return () => {
       stopCamera();
     };
   }, []);
 
-  const checkARSupport = async () => {
-    // Check for WebXR AR support
-    if ('xr' in navigator) {
-      try {
-        const supported = await navigator.xr.isSessionSupported('immersive-ar');
-        setIsARSupported(supported);
-      } catch (e) {
-        console.log('WebXR AR not supported:', e);
-        setIsARSupported(false);
-      }
-    }
-    // Also check for basic camera access as fallback
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      setIsARSupported(true);
-    }
-  };
-
   const startCamera = async () => {
     try {
       setArError(null);
+      
+      // Check if getUserMedia is supported
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        setArError('Camera access is not supported in your browser. Please try uploading an image instead.');
+        return;
+      }
+
       const constraints = {
         video: {
-          facingMode: { ideal: 'environment' },
-          width: { ideal: 1920 },
-          height: { ideal: 1080 }
-        }
+          facingMode: 'environment',
+          width: { ideal: 1280 },
+          height: { ideal: 720 }
+        },
+        audio: false
       };
       
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
@@ -66,57 +61,140 @@ const ARVisualizerPage = () => {
       
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
-        videoRef.current.play();
+        
+        // Wait for video to be ready
+        videoRef.current.onloadedmetadata = () => {
+          videoRef.current.play()
+            .then(() => {
+              setIsARActive(true);
+              setMode('camera');
+              setShowInstructions(false);
+            })
+            .catch(err => {
+              console.error('Video play error:', err);
+              setArError('Unable to start video. Please try again.');
+            });
+        };
       }
-      
-      setIsARActive(true);
-      setShowInstructions(false);
     } catch (error) {
       console.error('Camera access error:', error);
-      setArError('Unable to access camera. Please ensure you have granted camera permissions and are using HTTPS.');
+      
+      if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+        setArError('Camera permission denied. Please allow camera access in your browser settings, or upload an image instead.');
+      } else if (error.name === 'NotFoundError' || error.name === 'DevicesNotFoundError') {
+        setArError('No camera found. Please upload an image of your space instead.');
+      } else if (error.name === 'NotReadableError' || error.name === 'TrackStartError') {
+        setArError('Camera is in use by another application. Please close other apps using the camera.');
+      } else {
+        setArError('Unable to access camera. Please try uploading an image instead.');
+      }
     }
   };
 
-  const stopCamera = () => {
+  const stopCamera = useCallback(() => {
     if (streamRef.current) {
-      streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current.getTracks().forEach(track => {
+        track.stop();
+      });
       streamRef.current = null;
     }
+    if (videoRef.current) {
+      videoRef.current.srcObject = null;
+    }
     setIsARActive(false);
+  }, []);
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (!file.type.startsWith('image/')) {
+        setArError('Please upload an image file (JPG, PNG, etc.)');
+        return;
+      }
+      
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setUploadedImage(event.target.result);
+        setIsARActive(true);
+        setMode('upload');
+        setShowInstructions(false);
+        setArError(null);
+      };
+      reader.onerror = () => {
+        setArError('Failed to read the image. Please try another file.');
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleProductSelect = (product) => {
     setSelectedProduct(product);
     setProductScale(1);
-    setProductPosition({ x: 0, y: 0 });
+    setProductPosition({ x: 50, y: 50 });
   };
 
   const handleScaleUp = () => {
-    setProductScale(prev => Math.min(prev + 0.1, 2));
+    setProductScale(prev => Math.min(prev + 0.15, 3));
   };
 
   const handleScaleDown = () => {
-    setProductScale(prev => Math.max(prev - 0.1, 0.3));
+    setProductScale(prev => Math.max(prev - 0.15, 0.2));
   };
 
   const handleReset = () => {
     setProductScale(1);
-    setProductPosition({ x: 0, y: 0 });
+    setProductPosition({ x: 50, y: 50 });
   };
 
-  // Handle drag on touch devices
-  const handleTouchMove = (e) => {
-    if (!isARActive || !selectedProduct) return;
-    const touch = e.touches[0];
-    const container = e.target.closest('.ar-container');
-    if (container) {
-      const rect = container.getBoundingClientRect();
-      setProductPosition({
-        x: ((touch.clientX - rect.left) / rect.width) * 100 - 50,
-        y: ((touch.clientY - rect.top) / rect.height) * 100 - 50
-      });
-    }
+  const handleClear = () => {
+    stopCamera();
+    setUploadedImage(null);
+    setIsARActive(false);
+    setArError(null);
   };
+
+  // Mouse/Touch event handlers for dragging product
+  const handleMouseDown = (e) => {
+    if (!isARActive || !selectedProduct) return;
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = useCallback((e) => {
+    if (!isDragging || !containerRef.current) return;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    
+    const x = ((clientX - rect.left) / rect.width) * 100;
+    const y = ((clientY - rect.top) / rect.height) * 100;
+    
+    setProductPosition({
+      x: Math.max(10, Math.min(90, x)),
+      y: Math.max(10, Math.min(90, y))
+    });
+  }, [isDragging]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('touchmove', handleMouseMove);
+      document.addEventListener('touchend', handleMouseUp);
+    }
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchmove', handleMouseMove);
+      document.removeEventListener('touchend', handleMouseUp);
+    };
+  }, [isDragging, handleMouseMove, handleMouseUp]);
 
   return (
     <>
@@ -152,10 +230,10 @@ const ARVisualizerPage = () => {
             <div className="lg:col-span-1 space-y-6">
               <div className="bg-white/5 rounded-lg p-6">
                 <h2 className="font-['Barlow_Condensed'] text-xl font-bold text-white uppercase mb-4">
-                  Select a Product
+                  1. Select a Product
                 </h2>
                 
-                <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                <div className="space-y-2 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
                   {ALL_PRODUCTS.slice(0, 20).map((product) => (
                     <button
                       key={product.id}
@@ -170,15 +248,15 @@ const ARVisualizerPage = () => {
                         <img 
                           src={product.images?.primary} 
                           alt={product.name}
-                          className="w-12 h-12 object-cover rounded"
-                          onError={(e) => e.target.src = 'https://via.placeholder.com/48'}
+                          className="w-12 h-12 object-contain rounded bg-white/10"
+                          onError={(e) => e.target.src = ASSETS.logo}
                         />
                         <div className="flex-1 min-w-0">
                           <p className="font-semibold truncate">{product.name}</p>
                           <p className="text-sm opacity-70">{product.category} • {product.price}</p>
                         </div>
                         {selectedProduct?.id === product.id && (
-                          <Check size={20} className="text-white" />
+                          <Check size={20} className="text-white flex-shrink-0" />
                         )}
                       </div>
                     </button>
@@ -194,22 +272,22 @@ const ARVisualizerPage = () => {
                   className="bg-white/5 rounded-lg p-6"
                 >
                   <h3 className="font-['Barlow_Condensed'] text-lg font-bold text-white uppercase mb-4">
-                    Adjust Placement
+                    3. Adjust Size
                   </h3>
                   
                   <div className="flex items-center justify-center gap-4 mb-4">
                     <button 
                       onClick={handleScaleDown}
-                      className="p-3 bg-white/10 rounded-lg hover:bg-white/20 text-white"
+                      className="p-3 bg-white/10 rounded-lg hover:bg-white/20 text-white active:scale-95 transition-transform"
                     >
                       <ZoomOut size={24} />
                     </button>
-                    <span className="text-white font-semibold">
+                    <span className="text-white font-semibold min-w-[60px] text-center">
                       {Math.round(productScale * 100)}%
                     </span>
                     <button 
                       onClick={handleScaleUp}
-                      className="p-3 bg-white/10 rounded-lg hover:bg-white/20 text-white"
+                      className="p-3 bg-white/10 rounded-lg hover:bg-white/20 text-white active:scale-95 transition-transform"
                     >
                       <ZoomIn size={24} />
                     </button>
@@ -217,10 +295,18 @@ const ARVisualizerPage = () => {
                   
                   <button 
                     onClick={handleReset}
-                    className="w-full btn-secondary flex items-center justify-center gap-2"
+                    className="w-full btn-secondary flex items-center justify-center gap-2 mb-3"
                   >
                     <RotateCcw size={18} />
-                    Reset Position
+                    Reset Position & Size
+                  </button>
+                  
+                  <button 
+                    onClick={handleClear}
+                    className="w-full bg-white/10 text-white py-2 px-4 rounded hover:bg-white/20 flex items-center justify-center gap-2"
+                  >
+                    <CloseIcon size={18} />
+                    Clear & Start Over
                   </button>
                 </motion.div>
               )}
@@ -229,103 +315,148 @@ const ARVisualizerPage = () => {
             {/* AR View Panel */}
             <div className="lg:col-span-2">
               <div 
-                className="ar-container relative bg-black rounded-lg overflow-hidden aspect-video"
-                onTouchMove={handleTouchMove}
+                ref={containerRef}
+                className="ar-container relative bg-black rounded-lg overflow-hidden aspect-video select-none"
+                style={{ touchAction: 'none' }}
               >
-                {/* Video Feed */}
+                {/* Camera Video Feed */}
                 <video 
                   ref={videoRef}
-                  className={`absolute inset-0 w-full h-full object-cover ${isARActive ? 'block' : 'hidden'}`}
+                  className={`absolute inset-0 w-full h-full object-cover ${isARActive && mode === 'camera' ? 'block' : 'hidden'}`}
                   playsInline
                   muted
+                  autoPlay
                 />
+
+                {/* Uploaded Image */}
+                {isARActive && mode === 'upload' && uploadedImage && (
+                  <img 
+                    src={uploadedImage}
+                    alt="Your space"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
 
                 {/* Product Overlay */}
                 {isARActive && selectedProduct && (
-                  <motion.div
-                    className="absolute pointer-events-none"
+                  <div
+                    className={`absolute cursor-move ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
                     style={{
-                      left: `${50 + productPosition.x}%`,
-                      top: `${50 + productPosition.y}%`,
+                      left: `${productPosition.x}%`,
+                      top: `${productPosition.y}%`,
                       transform: `translate(-50%, -50%) scale(${productScale})`,
+                      transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+                      zIndex: 10,
                     }}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: productScale }}
-                    transition={{ duration: 0.3 }}
+                    onMouseDown={handleMouseDown}
+                    onTouchStart={handleMouseDown}
                   >
                     <img 
                       src={selectedProduct.images?.primary}
                       alt={selectedProduct.name}
-                      className="max-w-[300px] max-h-[200px] object-contain drop-shadow-2xl"
+                      className="max-w-[250px] max-h-[180px] object-contain pointer-events-none"
                       style={{ 
-                        filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))'
+                        filter: 'drop-shadow(0 8px 25px rgba(0,0,0,0.6))',
                       }}
+                      draggable={false}
                     />
-                    <div className="bg-[#B91C1C] text-white text-center py-1 px-3 rounded mt-2 text-sm font-semibold">
+                    <div className="bg-[#B91C1C] text-white text-center py-1 px-3 rounded mt-2 text-xs font-semibold pointer-events-none">
                       {selectedProduct.name}
                     </div>
-                  </motion.div>
+                  </div>
                 )}
 
-                {/* Placeholder when camera is off */}
+                {/* Placeholder when not active */}
                 {!isARActive && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#0A1628] to-[#1a2d4a]">
-                    <div className="text-center p-8">
-                      <Camera className="w-24 h-24 text-white/20 mx-auto mb-6" />
-                      <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-white mb-4">
-                        AR Preview
+                    <div className="text-center p-8 max-w-md">
+                      <Camera className="w-20 h-20 text-white/20 mx-auto mb-4" />
+                      <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-white mb-2">
+                        2. Add Your Space
                       </h3>
-                      <p className="text-white/60 mb-6 max-w-md">
+                      <p className="text-white/60 mb-6">
                         {selectedProduct 
                           ? `Ready to preview: ${selectedProduct.name}` 
-                          : 'Select a product and start the camera to see it in your space'}
+                          : 'First select a product, then add an image of your space'}
                       </p>
                       
                       {arError && (
-                        <div className="bg-red-500/20 border border-red-500 rounded-lg p-4 mb-6 text-red-200">
+                        <div className="bg-red-500/20 border border-red-500 rounded-lg p-4 mb-6 text-red-200 text-sm">
                           {arError}
                         </div>
                       )}
                       
-                      <button 
-                        onClick={startCamera}
-                        disabled={!selectedProduct}
-                        className={`btn-primary flex items-center gap-2 mx-auto ${!selectedProduct ? 'opacity-50 cursor-not-allowed' : ''}`}
-                      >
-                        <Camera size={20} />
-                        Start Camera
-                      </button>
+                      <div className="space-y-3">
+                        {/* Upload Image Button - Primary */}
+                        <button 
+                          onClick={() => fileInputRef.current?.click()}
+                          disabled={!selectedProduct}
+                          className={`btn-primary w-full flex items-center justify-center gap-2 ${!selectedProduct ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
+                          <Upload size={20} />
+                          Upload Photo of Your Space
+                        </button>
+                        
+                        {/* Camera Button - Secondary */}
+                        <button 
+                          onClick={startCamera}
+                          disabled={!selectedProduct}
+                          className={`w-full bg-white/10 text-white py-3 px-6 rounded font-semibold flex items-center justify-center gap-2 hover:bg-white/20 transition-colors ${!selectedProduct ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
+                          <Camera size={20} />
+                          Use Camera (if available)
+                        </button>
+                      </div>
+                      
+                      <input 
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        className="hidden"
+                      />
                     </div>
                   </div>
                 )}
 
-                {/* Stop button when active */}
+                {/* Stop/Clear button when active */}
                 {isARActive && (
                   <button 
-                    onClick={stopCamera}
-                    className="absolute top-4 right-4 bg-[#B91C1C] text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors"
+                    onClick={handleClear}
+                    className="absolute top-4 right-4 bg-[#B91C1C] text-white p-2 rounded-full shadow-lg hover:bg-red-700 transition-colors z-20"
                   >
-                    <CloseIcon size={24} />
+                    <CloseIcon size={20} />
                   </button>
                 )}
 
-                {/* Touch hint */}
+                {/* Drag hint */}
                 {isARActive && selectedProduct && (
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm flex items-center gap-2">
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm flex items-center gap-2 z-20">
                     <Move size={16} />
-                    Touch and drag to move
+                    Drag product to reposition
                   </div>
                 )}
               </div>
 
-              {/* Mobile tip */}
-              <div className="mt-4 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-lg p-4 flex items-start gap-3">
-                <Smartphone className="text-[#D4AF37] flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h4 className="font-semibold text-[#D4AF37] mb-1">Best on Mobile</h4>
-                  <p className="text-white/70 text-sm">
-                    For the best AR experience, use this feature on your smartphone with the rear camera facing your backyard or patio.
-                  </p>
+              {/* Tips */}
+              <div className="mt-4 grid md:grid-cols-2 gap-4">
+                <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-lg p-4 flex items-start gap-3">
+                  <ImageIcon className="text-[#D4AF37] flex-shrink-0 mt-1" size={20} />
+                  <div>
+                    <h4 className="font-semibold text-[#D4AF37] mb-1 text-sm">Best Results</h4>
+                    <p className="text-white/70 text-xs">
+                      Upload a photo of your backyard or patio for the most realistic visualization.
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-4 flex items-start gap-3">
+                  <Smartphone className="text-white/50 flex-shrink-0 mt-1" size={20} />
+                  <div>
+                    <h4 className="font-semibold text-white/70 mb-1 text-sm">Camera Option</h4>
+                    <p className="text-white/50 text-xs">
+                      Camera requires HTTPS and browser permissions. Upload works everywhere!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -355,19 +486,19 @@ const ARVisualizerPage = () => {
                 <ol className="space-y-4 text-white/80 mb-8">
                   <li className="flex items-start gap-3">
                     <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">1</span>
-                    <span>Select a hot tub, swim spa, sauna, or cold plunge from the list</span>
+                    <span>Select a hot tub, swim spa, sauna, or cold plunge from the product list</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">2</span>
-                    <span>Click "Start Camera" and grant camera permissions</span>
+                    <span><strong>Upload a photo</strong> of your backyard/patio, or use your camera if available</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">3</span>
-                    <span>Point your camera at where you want to place the product</span>
+                    <span><strong>Drag the product</strong> to position it where you want in your space</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">4</span>
-                    <span>Touch and drag to reposition, use zoom controls to resize</span>
+                    <span>Use the <strong>zoom controls</strong> to resize the product to scale</span>
                   </li>
                 </ol>
                 

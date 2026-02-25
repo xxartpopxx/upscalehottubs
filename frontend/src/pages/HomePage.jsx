@@ -115,7 +115,7 @@ const HeroSection = () => (
         </motion.div>
         
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="mt-8 text-lg font-semibold text-[#D4AF37]">
-          Ask about Free Hot Tub & Swim Spa Delivery in Florida and SC
+          Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in Florida and SC
         </motion.p>
       </motion.div>
     </div>

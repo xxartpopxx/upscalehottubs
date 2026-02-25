@@ -101,3 +101,116 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: |
+  Add features to Upstate Hot Tubs website:
+  1. Simple comparison estimator for hot tubs/saunas/swim spas on homepage
+  2. List products from least expensive to most expensive on homepage
+  3. AR visualizer using WebXR for viewing products in backyard
+  4. Update Trust Section with new wording about discounts and delivery
+  5. Replace logo banner with uploaded image (couple enjoying hot tub)
+  6. Add wellness journey section with links to wellness pages
+  7. Add Google Analytics (G-R9V25T33X1)
+
+frontend:
+  - task: "Product price sorting (least to most expensive)"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Products on homepage now sorted by price (lowest to highest)"
+
+  - task: "Product Comparison Estimator"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Side-by-side comparison table with up to 3 products, showing category, price, capacity, jets, dimensions, brand"
+
+  - task: "AR Visualizer Page"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/ARVisualizerPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "WebXR-based AR feature with camera access, product selection, zoom/position controls"
+
+  - task: "Updated Trust Section"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Updated to show 5% discount for Military/Veterans/First Responders, American Made, Family Owned, Free Delivery in FL/SC"
+
+  - task: "Featured Image Banner (replacing logo)"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "User's uploaded image (couple in hot tub with mountain view) replaces old logo banner"
+
+  - task: "Wellness Journey Section"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Section with links to /wellness, /balneotherapy, /anatomy-of-a-spa"
+
+  - task: "Google Analytics Integration"
+    implemented: true
+    working: true
+    file: "frontend/public/index.html"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "GA4 tracking code added with measurement ID G-R9V25T33X1"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Product Comparison Estimator"
+    - "AR Visualizer Page"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Implemented all requested features: comparison estimator, AR visualizer, price sorting, updated trust section, featured image, wellness section, Google Analytics. All features visually verified via screenshots."

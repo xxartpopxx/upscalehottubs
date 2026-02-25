@@ -437,8 +437,8 @@ export const GRAND_RIVER_PRODUCTS = [
     description: 'Eco-friendly 6-person hot tub with value pricing.',
     features: ['Eco-friendly design', '35 jets', '6-person capacity', 'Budget-friendly'],
     images: {
-      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon-Eco_Opal_Walnut_Side_Web.png?lossy=2&strip=1&webp=1',
-      overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon-Eco_Opal_Walnut_OH_Web.png?lossy=2&strip=1&webp=1'
+      primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
+      overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%201-2_Silver_OH.png'
     },
     shellColors: ['white', 'silver', 'opal'],
     cabinetColors: ['taupe', 'black'],

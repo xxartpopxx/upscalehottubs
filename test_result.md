@@ -169,6 +169,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "Updated to show 5% discount for Military/Veterans/First Responders, American Made, Family Owned, Free Delivery in FL/SC"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Trust Section displays correctly with all 4 items: (1) '5% DISCOUNT' with 'Military, Veterans, First Responders & Law Enforcement' and 'Special Discounts Available', (2) 'AMERICAN MADE' with 'All Products Made in the USA', (3) 'FAMILY OWNED' with 'American & Proud of It', (4) 'ASK ABOUT FREE HOT TUB & SWIM SPA DELIVERY' with 'Available in Florida & South Carolina'. All content verified and visible."
 
   - task: "Featured Image Banner (replacing logo)"
     implemented: true

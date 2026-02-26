@@ -247,22 +247,22 @@ const WetTestBanner = () => (
   </section>
 );
 
-// NEW Resource Cards Section (like File 4 - 3 large cards)
+// NEW Resource Cards Section (like File 4 - 3 large cards) - Updated with Hot Tub/Sauna Images
 const ResourceCardsSection = () => {
   const cards = [
     {
       title: 'Owner Resources',
-      image: 'https://images.unsplash.com/photo-1574427386945-ae011838ee9a?w=600&h=400&fit=crop',
+      image: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_2025_Heritage1_Opal_Stone_side_dropshadow-768x512.png',
       link: '/about',
     },
     {
       title: 'Get a Brochure',
-      image: 'https://images.unsplash.com/photo-1647833190352-0e7e579b45b6?w=600&h=400&fit=crop',
+      image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
       link: '/contact',
     },
     {
       title: 'Visit Our Showroom',
-      image: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&h=400&fit=crop',
+      image: SAUNAS[0]?.images?.primary || 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/Valhalla-Overhead-square-1.jpg?lossy=2&strip=1&webp=1',
       link: '/contact',
     },
   ];

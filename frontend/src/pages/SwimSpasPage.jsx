@@ -109,47 +109,6 @@ const SwimSpasPage = () => {
             </p>
           </motion.div>
 
-          {/* Fitness Videos Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold text-[#0A1628] mb-6">
-              Swim Spa Fitness Classes
-            </h2>
-            <p className="text-lg text-slate-600 mb-6">
-              Get fit from home with our virtual swim spa fitness classes. Low-impact, high-results workouts in your own backyard.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
-                <video 
-                  autoPlay 
-                  muted 
-                  loop 
-                  playsInline 
-                  controls
-                  className="w-full h-full object-cover"
-                >
-                  <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/rcc9xx08_Fitness%20class%20virtual%20copy.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
-                <video 
-                  autoPlay 
-                  muted 
-                  loop 
-                  playsInline 
-                  controls
-                  className="w-full h-full object-cover"
-                >
-                  <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/0j4cqp5e_Fitness%20class%20virtual.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </motion.div>
-
           {/* Filter Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200">
             <div className="flex items-center gap-4">

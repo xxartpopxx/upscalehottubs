@@ -558,13 +558,16 @@ const WhyHotTubsSection = () => (
   </section>
 );
 
-// Shop All Models Carousel
+// Shop All Models Carousel - HIGHEST PRICE FIRST
 const ShopAllModelsSection = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const sortedProducts = sortByPrice([...HOT_TUBS, ...SWIM_SPAS]).slice(0, 16);
+  // Sort by HIGHEST price first
+  const sortedProducts = [...HOT_TUBS, ...SWIM_SPAS]
+    .sort((a, b) => (b.priceValue || 0) - (a.priceValue || 0))
+    .slice(0, 16);
 
   const checkScroll = () => {
     if (scrollRef.current) {
@@ -608,7 +611,7 @@ const ShopAllModelsSection = () => {
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628]">
               Shop All Models
             </h2>
-            <p className="text-lg text-slate-600 mt-1">Sorted by price: Lowest to Highest</p>
+            <p className="text-lg text-slate-600 mt-1">Our Premium Collection - Highest to Lowest</p>
           </div>
           <div className="flex gap-2">
             <button 
@@ -647,16 +650,11 @@ const ShopAllModelsSection = () => {
                 className="group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
               >
                 <div className="relative aspect-square bg-slate-50 overflow-hidden">
-                  <img 
-                    src={product.images?.overhead || product.images?.primary}
-                    alt={product.name}
-                    className="absolute inset-0 w-full h-full object-contain p-4 opacity-100 group-hover:opacity-0 transition-opacity"
-                    onError={(e) => e.target.src = ASSETS.logo}
-                  />
+                  {/* Show PRIMARY image (actual hot tub), not overhead/jets */}
                   <img 
                     src={product.images?.primary}
                     alt={product.name}
-                    className="absolute inset-0 w-full h-full object-contain p-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute inset-0 w-full h-full object-contain p-4"
                     onError={(e) => e.target.src = ASSETS.logo}
                   />
                   <div className="absolute top-3 left-3">

@@ -579,7 +579,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     id: 'ds-pleasure-cove',
     name: 'Pleasure Cove III',
     brand: 'Dynasty Spas',
-    series: 'Luxury Collection',
+    series: 'Oasis Collection',
     modelFamily: 'Pleasure Cove',
     persons: 5,
     jets: 80,

@@ -79,15 +79,16 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
   );
 };
 
-// NEW Hero Section - Video without text overlay, text below - BIGGER VIDEO
+// NEW Hero Section - Video without text overlay, text below
 const HeroSection = () => (
-  <section className="relative" data-testid="hero-section">
-    {/* Video Section - No Text Overlay */}
-    <div className="relative h-[60vh] min-h-[450px] md:h-[70vh] overflow-hidden">
-      <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-        <source src={ASSETS.heroVideo} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A1628]/90" />
+  <section className="relative bg-[#0A1628]" data-testid="hero-section">
+    {/* Video Section - Contained, not full width */}
+    <div className="max-w-5xl mx-auto px-4 pt-8">
+      <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+          <source src={ASSETS.heroVideo} type="video/mp4" />
+        </video>
+      </div>
     </div>
     
     {/* Text Content Below Video - Red White Blue Theme */}

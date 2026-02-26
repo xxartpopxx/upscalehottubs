@@ -558,16 +558,29 @@ const WhyHotTubsSection = () => (
   </section>
 );
 
-// Shop All Models Carousel - HIGHEST PRICE FIRST
+// Shop All Models Carousel - Mixed brands from Dynasty, Viking, Grand River
 const ShopAllModelsSection = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Sort by HIGHEST price first
-  const sortedProducts = [...HOT_TUBS, ...SWIM_SPAS]
-    .sort((a, b) => (b.priceValue || 0) - (a.priceValue || 0))
-    .slice(0, 16);
+  // Mix products from different brands, sorted by lowest price first
+  const allProducts = [...HOT_TUBS, ...SWIM_SPAS, ...DYNASTY_SPAS_PRODUCTS]
+    .filter(p => p.brand === 'Grand River Spas' || p.brand === 'Viking Spas' || p.brand === 'Dynasty Spas')
+    .sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
+  
+  // Get a mix of products from each brand
+  const grandRiver = allProducts.filter(p => p.brand === 'Grand River Spas').slice(0, 5);
+  const viking = allProducts.filter(p => p.brand === 'Viking Spas').slice(0, 5);
+  const dynasty = allProducts.filter(p => p.brand === 'Dynasty Spas').slice(0, 5);
+  
+  // Interleave the brands for variety
+  const mixedProducts = [];
+  for (let i = 0; i < 5; i++) {
+    if (grandRiver[i]) mixedProducts.push(grandRiver[i]);
+    if (viking[i]) mixedProducts.push(viking[i]);
+    if (dynasty[i]) mixedProducts.push(dynasty[i]);
+  }
 
   const checkScroll = () => {
     if (scrollRef.current) {
@@ -611,7 +624,6 @@ const ShopAllModelsSection = () => {
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628]">
               Shop All Models
             </h2>
-            <p className="text-lg text-slate-600 mt-1">Our Premium Collection - Highest to Lowest</p>
           </div>
           <div className="flex gap-2">
             <button 
@@ -636,7 +648,7 @@ const ShopAllModelsSection = () => {
           className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {sortedProducts.map((product, idx) => (
+          {mixedProducts.map((product, idx) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
@@ -650,7 +662,7 @@ const ShopAllModelsSection = () => {
                 className="group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
               >
                 <div className="relative aspect-square bg-slate-50 overflow-hidden">
-                  {/* Show PRIMARY image (actual hot tub), not overhead/jets */}
+                  {/* Show PRIMARY image (actual hot tub) */}
                   <img 
                     src={product.images?.primary}
                     alt={product.name}
@@ -659,7 +671,7 @@ const ShopAllModelsSection = () => {
                   />
                   <div className="absolute top-3 left-3">
                     <span className="bg-[#0A1628] text-white text-sm px-3 py-1 rounded font-semibold">
-                      {product.series || product.brand}
+                      {product.brand}
                     </span>
                   </div>
                 </div>

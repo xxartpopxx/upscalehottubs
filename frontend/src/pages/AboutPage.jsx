@@ -149,6 +149,33 @@ const AboutPage = () => {
             </div>
           </motion.div>
           
+          {/* Hot Tub Benefits Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold text-[#0A1628] mb-4">
+              Hot Tub Benefits
+            </h2>
+            <p className="text-lg text-slate-600 mb-6">
+              Discover the many health and wellness benefits of owning a hot tub from Upstate Hot Tubs.
+            </p>
+            <div className="max-w-4xl aspect-video rounded-lg overflow-hidden shadow-2xl">
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                controls
+                className="w-full h-full object-cover"
+              >
+                <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/bdjzdr8j_Hot%20Tub%20Benefits%20Upstate%20Hot%20Tubs%20Simpsonville%20SC.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+          
           {/* M.A.E. Certified Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

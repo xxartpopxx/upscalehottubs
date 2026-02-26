@@ -496,12 +496,12 @@ export const GRAND_RIVER_PRODUCTS = [
 // DYNASTY SPAS PRODUCTS
 // ===========================================
 export const DYNASTY_SPAS_PRODUCTS = [
-  // LUXURY COLLECTION
+  // OASIS COLLECTION
   {
     id: 'ds-paradise-bay-iii',
     name: 'Paradise Bay III',
     brand: 'Dynasty Spas',
-    series: 'Luxury Collection',
+    series: 'Oasis Collection',
     modelFamily: 'Paradise Bay',
     persons: 5,
     jets: 83,

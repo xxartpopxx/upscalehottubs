@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ChevronRight, ChevronLeft, Flag, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Flag, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun } from 'lucide-react';
 import { ASSETS, CONTACT } from '../data/constants';
 import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
 
@@ -79,259 +79,90 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
   );
 };
 
-// Hero Section (kept the same as requested)
+// NEW Hero Section - Video without text overlay, text below
 const HeroSection = () => (
-  <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden" data-testid="hero-section">
-    <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-125">
-      <source src={ASSETS.heroVideo} type="video/mp4" />
-    </video>
-    <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/40 via-[#0A1628]/30 to-[#0A1628]/70" />
+  <section className="relative" data-testid="hero-section">
+    {/* Video Section - No Text Overlay */}
+    <div className="relative h-[50vh] min-h-[400px] md:h-[60vh] overflow-hidden">
+      <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+        <source src={ASSETS.heroVideo} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A1628]/90" />
+    </div>
     
-    <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-      <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex items-center justify-center gap-3 mb-6">
-          <Flag className="text-[#B91C1C]" size={28} />
-          <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">American Made & Proud of It</span>
-          <Flag className="text-[#B91C1C]" size={28} />
-        </motion.div>
-        
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ delay: 0.5 }} 
-          className="font-['Barlow_Condensed'] text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6"
-        >
-          Live Your <span className="text-[#B91C1C]">Healthiest Life</span><br />While Enjoying a Vacation<br />Everyday at Home
-        </motion.h1>
-        
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto opacity-90">
-          The Best Hot Tubs & Swim Spas Store in Naples Florida, Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
-        </motion.p>
-        
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/hot-tubs" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4">
-            Explore All Models <ChevronRight size={20} />
-          </Link>
-        </motion.div>
-        
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="mt-8 text-lg font-semibold text-[#D4AF37]">
-          Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in Florida and SC
-        </motion.p>
-      </motion.div>
-    </div>
-  </section>
-);
-
-// Quick Links Section (Viking style)
-const QuickLinksSection = () => (
-  <section className="py-8 bg-[#0A1628]">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {[
-          { icon: BookOpen, title: 'Owner Resources', link: '/about', desc: 'Tips & Support' },
-          { icon: FileText, title: 'Get a Brochure', link: '/contact', desc: 'Download Info' },
-          { icon: MapPin, title: 'Visit Our Showroom', link: '/contact', desc: 'See In Person' },
-          { icon: Sparkles, title: 'Expand Your Wellness', link: '/wellness', desc: 'Learn More' },
-        ].map((item, idx) => (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-          >
-            <Link 
-              to={item.link}
-              className="block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#D4AF37]/50 rounded-lg p-4 text-center transition-all group"
-            >
-              <item.icon className="w-8 h-8 mx-auto mb-2 text-[#D4AF37] group-hover:scale-110 transition-transform" />
-              <h3 className="font-['Barlow_Condensed'] text-sm font-bold uppercase text-white">{item.title}</h3>
-              <p className="text-xs text-white/60">{item.desc}</p>
+    {/* Text Content Below Video - Red White Blue Theme */}
+    <div className="bg-[#0A1628] text-white py-12 md:py-16">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Flag className="text-[#B91C1C]" size={32} />
+            <span className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white">American Made & Proud of It</span>
+            <Flag className="text-[#B91C1C]" size={32} />
+          </div>
+          
+          <h1 className="font-['Barlow_Condensed'] text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6">
+            Live Your <span className="text-[#B91C1C]">Healthiest Life</span>
+            <br />
+            <span className="text-white">While Enjoying a Vacation</span>
+            <br />
+            <span className="text-white">Everyday at Home</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl lg:text-3xl font-medium mb-8 max-w-4xl mx-auto text-slate-200">
+            The Best Hot Tubs & Swim Spas Store in Naples Florida, Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link to="/hot-tubs" className="btn-primary inline-flex items-center justify-center gap-2 text-xl px-10 py-5">
+              Explore All Models <ChevronRight size={24} />
             </Link>
-          </motion.div>
-        ))}
+          </div>
+          
+          <p className="text-xl md:text-2xl font-bold text-[#D4AF37]">
+            Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in Florida and SC
+          </p>
+        </motion.div>
       </div>
     </div>
   </section>
 );
 
-// Trust Badges Section (Compact Viking style)
+// Trust Badges Section - Bigger, Red White Blue
 const TrustBadgesSection = () => (
-  <section className="py-6 bg-white border-b border-slate-100">
+  <section className="py-8 bg-white border-b-4 border-[#B91C1C]">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-center">
-        <div className="flex items-center gap-2">
-          <Shield className="w-6 h-6 text-[#B91C1C]" />
-          <div className="text-left">
-            <span className="font-['Barlow_Condensed'] text-sm font-bold uppercase text-[#0A1628] block">5% Discount</span>
-            <span className="text-xs text-slate-500">Military, Veterans, First Responders</span>
-          </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="flex flex-col items-center gap-2 p-4">
+          <Shield className="w-10 h-10 text-[#B91C1C]" />
+          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">5% Discount</span>
+          <span className="text-sm md:text-base text-slate-600">Military, Veterans, First Responders & Law Enforcement</span>
         </div>
-        <div className="flex items-center gap-2">
-          <Flag className="w-6 h-6 text-[#B91C1C]" />
-          <div className="text-left">
-            <span className="font-['Barlow_Condensed'] text-sm font-bold uppercase text-[#0A1628] block">American Made</span>
-            <span className="text-xs text-slate-500">All Products Made in USA</span>
-          </div>
+        <div className="flex flex-col items-center gap-2 p-4">
+          <Flag className="w-10 h-10 text-[#1E40AF]" />
+          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">American Made</span>
+          <span className="text-sm md:text-base text-slate-600">All Products Made in the USA</span>
         </div>
-        <div className="flex items-center gap-2">
-          <Heart className="w-6 h-6 text-[#B91C1C]" />
-          <div className="text-left">
-            <span className="font-['Barlow_Condensed'] text-sm font-bold uppercase text-[#0A1628] block">Family Owned</span>
-            <span className="text-xs text-slate-500">American & Proud of It</span>
-          </div>
+        <div className="flex flex-col items-center gap-2 p-4">
+          <Heart className="w-10 h-10 text-[#B91C1C]" />
+          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">Family Owned</span>
+          <span className="text-sm md:text-base text-slate-600">American & Proud of It</span>
         </div>
-        <div className="flex items-center gap-2">
-          <Truck className="w-6 h-6 text-[#B91C1C]" />
-          <div className="text-left">
-            <span className="font-['Barlow_Condensed'] text-sm font-bold uppercase text-[#0A1628] block">Free Delivery</span>
-            <span className="text-xs text-slate-500">Florida & South Carolina</span>
-          </div>
+        <div className="flex flex-col items-center gap-2 p-4">
+          <Truck className="w-10 h-10 text-[#1E40AF]" />
+          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">Free Delivery</span>
+          <span className="text-sm md:text-base text-slate-600">Available in Florida & South Carolina</span>
         </div>
       </div>
     </div>
   </section>
 );
 
-// Series/Categories Cards Section (Viking style)
-const SeriesCardsSection = () => {
-  const series = [
-    { 
-      name: 'Grand River Spas', 
-      tagline: 'Premier American Craftsmanship', 
-      link: '/grand-river-spas',
-      image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1'
-    },
-    { 
-      name: 'Viking Spas', 
-      tagline: 'Family Owned, American Built', 
-      link: '/viking-spas',
-      image: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_2025_Heritage1_Opal_Stone_side_dropshadow-768x512.png'
-    },
-    { 
-      name: 'Swim Spas', 
-      tagline: 'Swim, Exercise & Relax', 
-      link: '/swim-spas',
-      image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/Valhalla-Overhead-square-1.jpg?lossy=2&strip=1&webp=1'
-    },
-    { 
-      name: 'Cold Plunges', 
-      tagline: 'Benefits of Cold Immersion', 
-      link: '/cold-plunges',
-      image: COLD_PLUNGES[0]?.images?.primary || ASSETS.logo
-    },
-  ];
-
-  return (
-    <section className="py-16 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-2">
-            Explore Our Collections
-          </h2>
-          <p className="text-lg text-slate-600">Find the perfect spa for your lifestyle</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {series.map((item, idx) => (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-            >
-              <Link 
-                to={item.link}
-                className="group block bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all h-full"
-              >
-                <div className="aspect-square overflow-hidden bg-slate-100">
-                  <img 
-                    src={item.image} 
-                    alt={item.name}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => e.target.src = ASSETS.logo}
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-slate-500 mt-1">{item.tagline}</p>
-                  <span className="inline-flex items-center gap-1 text-[#B91C1C] text-sm font-semibold mt-3 group-hover:gap-2 transition-all">
-                    Learn More <ChevronRight size={16} />
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Why Hot Tub Section (Viking style)
-const WhyHotTubSection = () => (
-  <section className="py-20 bg-white">
+// NEW Try Before You Buy - Wet Test Section
+const WetTestSection = () => (
+  <section className="py-16 md:py-20 bg-[#0A1628] text-white">
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-6">
-            Why a <span className="text-[#B91C1C]">Hot Tub</span>?
-          </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-6">
-            For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress. From the luxurious baths of ancient Rome to today's inviting hot tubs, immersing ourselves in warm water leads to remarkable physical and mental rejuvenation.
-          </p>
-          <p className="text-lg text-slate-600 leading-relaxed mb-8">
-            Experience the therapeutic benefits of hydrotherapy - reduced stress, better sleep, pain relief, and improved circulation - all from the comfort of your backyard.
-          </p>
-          <Link to="/wellness" className="btn-primary inline-flex items-center gap-2">
-            Discover the Benefits <ChevronRight size={18} />
-          </Link>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <img 
-            src="https://customer-assets.emergentagent.com/job_b1f56408-f888-480b-a4b9-0fa546a42f73/artifacts/1frscfpx_VS_EliteSeries_IN_T_W_2-scaled-1.jpg"
-            alt="Couple enjoying hot tub with mountain view"
-            className="w-full rounded-lg shadow-2xl"
-          />
-          <motion.div 
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, type: "spring" }}
-            className="absolute -bottom-6 -left-6 bg-[#B91C1C] text-white p-6 rounded-lg shadow-xl"
-          >
-            <p className="font-['Barlow_Condensed'] text-2xl font-bold uppercase">Wet Test</p>
-            <p className="text-sm">Available Daily!</p>
-          </motion.div>
-        </motion.div>
-      </div>
-    </div>
-  </section>
-);
-
-// Why Upstate Section (Viking style)
-const WhyUpstateSection = () => (
-  <section className="py-20 bg-[#0A1628] text-white">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Image Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -343,19 +174,22 @@ const WhyUpstateSection = () => (
           </video>
         </motion.div>
         
+        {/* Content Side */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="order-1 md:order-2"
         >
-          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase mb-6">
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4">
             Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
           </h2>
-          <p className="text-lg text-slate-300 leading-relaxed mb-6">
+          
+          <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-6">
             Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges with superior components and craftsmanship.
           </p>
-          <ul className="space-y-3 mb-8">
+          
+          <ul className="space-y-4 mb-8 text-lg md:text-xl">
             {[
               'Free delivery & installation in FL & SC',
               'Try before you buy - Wet Tests available',
@@ -363,13 +197,14 @@ const WhyUpstateSection = () => (
               'Military, Veterans & First Responder discounts',
             ].map((item, idx) => (
               <li key={idx} className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[#D4AF37] rounded-full" />
+                <div className="w-3 h-3 bg-[#D4AF37] rounded-full flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
-          <Link to="/about" className="btn-primary inline-flex items-center gap-2">
-            Learn About Us <ChevronRight size={18} />
+          
+          <Link to="/about" className="btn-primary inline-flex items-center gap-2 text-lg">
+            Learn About Us <ChevronRight size={20} />
           </Link>
         </motion.div>
       </div>
@@ -377,7 +212,344 @@ const WhyUpstateSection = () => (
   </section>
 );
 
-// Shop All Models Carousel (Viking style)
+// NEW Prominent Wet Test Banner
+const WetTestBanner = () => (
+  <section className="py-16 md:py-20 bg-gradient-to-r from-[#B91C1C] to-[#991B1B] text-white">
+    <div className="max-w-6xl mx-auto px-4 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase mb-4">
+          Try Before You Buy
+        </h2>
+        <h3 className="font-['Barlow_Condensed'] text-3xl md:text-5xl font-bold uppercase mb-6 text-white/90">
+          "Wet Test"
+        </h3>
+        <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl mx-auto">
+          Bring your suits — we have <span className="font-bold">robes, slippers, and towels</span>. Try today!
+        </p>
+        <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-[#B91C1C] px-10 py-5 font-['Barlow_Condensed'] text-xl font-bold uppercase tracking-wider hover:bg-slate-100 transition-all">
+          Schedule Your Wet Test <ChevronRight size={24} />
+        </Link>
+      </motion.div>
+    </div>
+  </section>
+);
+
+// NEW Resource Cards Section (like File 4 - 3 large cards)
+const ResourceCardsSection = () => {
+  const cards = [
+    {
+      title: 'Owner Resources',
+      image: 'https://images.unsplash.com/photo-1574427386945-ae011838ee9a?w=600&h=400&fit=crop',
+      link: '/about',
+    },
+    {
+      title: 'Get a Brochure',
+      image: 'https://images.unsplash.com/photo-1647833190352-0e7e579b45b6?w=600&h=400&fit=crop',
+      link: '/contact',
+    },
+    {
+      title: 'Visit Our Showroom',
+      image: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&h=400&fit=crop',
+      link: '/contact',
+    },
+  ];
+
+  return (
+    <section className="py-12 bg-[#F8FAFC]">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-6">
+          {cards.map((card, idx) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+            >
+              <Link 
+                to={card.link}
+                className="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all h-64 md:h-80"
+              >
+                <img 
+                  src={card.image} 
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold text-white mb-2">
+                    {card.title}
+                  </h3>
+                  <span className="inline-flex items-center gap-2 text-white font-semibold text-lg group-hover:gap-3 transition-all">
+                    LEARN MORE <ChevronRight size={20} />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// NEW Product Collection Grid (like File 5)
+const ProductCollectionSection = () => {
+  const collections = [
+    {
+      name: 'Hot Tubs',
+      subtitle: 'Viking, Grand River & Dynasty Spas',
+      tagline: 'Premium American Craftsmanship',
+      link: '/hot-tubs',
+      image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
+    },
+    {
+      name: 'Saunas',
+      subtitle: 'Traditional & Infrared',
+      tagline: 'Relaxation & Detoxification',
+      link: '/saunas',
+      image: SAUNAS[0]?.images?.primary || 'https://images.unsplash.com/photo-1574427386945-ae011838ee9a?w=600',
+    },
+    {
+      name: 'Cold Plunges',
+      subtitle: 'Cold Therapy Benefits',
+      tagline: 'Recovery & Wellness',
+      link: '/cold-plunges',
+      image: COLD_PLUNGES[0]?.images?.primary || 'https://images.unsplash.com/photo-1574427386945-ae011838ee9a?w=600',
+    },
+  ];
+
+  const bottomCollections = [
+    {
+      name: 'Swim Spas',
+      subtitle: 'Exercise & Relaxation',
+      tagline: 'Swim, Exercise and Relax',
+      link: '/swim-spas',
+      image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/Valhalla-Overhead-square-1.jpg?lossy=2&strip=1&webp=1',
+    },
+  ];
+
+  return (
+    <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
+            Expand Your <span className="text-[#B91C1C]">Wellness Journey</span>
+          </h2>
+          <p className="text-lg md:text-xl text-slate-600">Find the perfect product for your lifestyle</p>
+        </motion.div>
+
+        {/* Top Row - 3 Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          {collections.map((item, idx) => (
+            <motion.div
+              key={item.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+            >
+              <Link 
+                to={item.link}
+                className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all h-full"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => e.target.src = ASSETS.logo}
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
+                    {item.name}
+                  </h3>
+                  <p className="text-base md:text-lg text-[#B91C1C] font-semibold mt-1">{item.subtitle}</p>
+                  <p className="text-sm md:text-base text-slate-500 mt-2">{item.tagline}</p>
+                  <span className="inline-flex items-center gap-2 text-[#B91C1C] text-lg font-bold mt-4 group-hover:gap-3 transition-all">
+                    Learn More <ChevronRight size={20} />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom Row - Centered Swim Spas */}
+        <div className="flex justify-center">
+          {bottomCollections.map((item, idx) => (
+            <motion.div
+              key={item.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="w-full md:w-1/2 lg:w-1/3"
+            >
+              <Link 
+                to={item.link}
+                className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => e.target.src = ASSETS.logo}
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
+                    {item.name}
+                  </h3>
+                  <p className="text-base md:text-lg text-[#B91C1C] font-semibold mt-1">{item.subtitle}</p>
+                  <p className="text-sm md:text-base text-slate-500 mt-2">{item.tagline}</p>
+                  <span className="inline-flex items-center gap-2 text-[#B91C1C] text-lg font-bold mt-4 group-hover:gap-3 transition-all">
+                    Learn More <ChevronRight size={20} />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// NEW The Collection - Location Based Section
+const LocationCollectionSection = () => (
+  <section className="py-16 md:py-20 bg-[#0A1628] text-white">
+    <div className="max-w-7xl mx-auto px-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4">
+          The <span className="text-[#B91C1C]">Collection</span>
+        </h2>
+        <p className="text-lg md:text-xl text-slate-300">Shop by your location for the best selection</p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Greenville SC & The Upstate */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-[#B91C1C] transition-all"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <MapPin className="text-[#B91C1C]" size={32} />
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase">
+              Greenville SC & The Upstate
+            </h3>
+          </div>
+          <p className="text-lg md:text-xl text-slate-300 mb-6">
+            Click for <span className="text-white font-bold">Grand River and Dynasty Spas</span> — American Made
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link to="/grand-river-spas" className="btn-primary flex items-center justify-center gap-2 text-lg">
+              Grand River Spas <ChevronRight size={20} />
+            </Link>
+            <Link to="/dynasty-spas" className="btn-secondary border-white text-white hover:bg-white hover:text-[#0A1628] flex items-center justify-center gap-2 text-lg">
+              Dynasty Spas <ChevronRight size={20} />
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Naples & Southwest FL */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-[#B91C1C] transition-all"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <MapPin className="text-[#D4AF37]" size={32} />
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase">
+              Naples & Southwest FL
+            </h3>
+          </div>
+          <p className="text-lg md:text-xl text-slate-300 mb-6">
+            Click for <span className="text-white font-bold">Viking, Grand River and Dynasty Spas</span>
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link to="/viking-spas" className="btn-primary flex items-center justify-center gap-2 text-lg">
+              Viking Spas <ChevronRight size={20} />
+            </Link>
+            <Link to="/grand-river-spas" className="btn-secondary border-white text-white hover:bg-white hover:text-[#0A1628] flex items-center justify-center gap-2 text-lg">
+              More Options <ChevronRight size={20} />
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+// NEW Why Hot Tubs Section - Reinforced
+const WhyHotTubsSection = () => (
+  <section className="py-16 md:py-20 bg-white">
+    <div className="max-w-7xl mx-auto px-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
+          Why a <span className="text-[#B91C1C]">Hot Tub</span>?
+        </h2>
+        <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+          For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress. Experience the therapeutic benefits of hydrotherapy from the comfort of your backyard.
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: Droplets, title: 'Hydrotherapy', desc: 'Improve circulation, muscle recovery, and reduce anxiety with the power of water.' },
+          { icon: Moon, title: 'Better Sleep', desc: 'Warm water and jets melt away stress, helping you sleep soundly.' },
+          { icon: Heart, title: 'Stress Relief', desc: 'Release endorphins and unwind from the day in soothing warm water.' },
+          { icon: Activity, title: 'Pain Relief', desc: 'Ease joint stiffness, reduce inflammation, and increase flexibility naturally.' },
+        ].map((item, idx) => (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.1 }}
+            className="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition-all border-2 border-transparent hover:border-[#B91C1C]"
+          >
+            <item.icon className="w-12 h-12 mx-auto text-[#B91C1C] mb-4" />
+            <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-bold uppercase text-[#0A1628] mb-2">{item.title}</h3>
+            <p className="text-base md:text-lg text-slate-600">{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="text-center mt-10">
+        <Link to="/wellness" className="btn-primary inline-flex items-center gap-2 text-lg">
+          Discover All Benefits <ChevronRight size={20} />
+        </Link>
+      </div>
+    </div>
+  </section>
+);
+
+// Shop All Models Carousel
 const ShopAllModelsSection = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -396,7 +568,7 @@ const ShopAllModelsSection = () => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = 320;
+      const scrollAmount = 350;
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -427,7 +599,7 @@ const ShopAllModelsSection = () => {
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628]">
               Shop All Models
             </h2>
-            <p className="text-slate-600 mt-1">Sorted by price: Lowest to Highest</p>
+            <p className="text-lg text-slate-600 mt-1">Sorted by price: Lowest to Highest</p>
           </div>
           <div className="flex gap-2">
             <button 
@@ -435,14 +607,14 @@ const ShopAllModelsSection = () => {
               disabled={!canScrollLeft}
               className={`p-3 rounded-full transition-all ${canScrollLeft ? 'bg-[#0A1628] text-white hover:bg-[#B91C1C]' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={28} />
             </button>
             <button 
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
               className={`p-3 rounded-full transition-all ${canScrollRight ? 'bg-[#0A1628] text-white hover:bg-[#B91C1C]' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={28} />
             </button>
           </div>
         </motion.div>
@@ -459,11 +631,11 @@ const ShopAllModelsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: Math.min(idx * 0.05, 0.3) }}
-              className="flex-shrink-0 w-[300px]"
+              className="flex-shrink-0 w-[320px]"
             >
               <Link 
                 to={`/products/${product.id}`}
-                className="group block bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all"
+                className="group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
               >
                 <div className="relative aspect-square bg-slate-50 overflow-hidden">
                   <img 
@@ -479,19 +651,19 @@ const ShopAllModelsSection = () => {
                     onError={(e) => e.target.src = ASSETS.logo}
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="bg-[#0A1628] text-white text-xs px-2 py-1 rounded">
+                    <span className="bg-[#0A1628] text-white text-sm px-3 py-1 rounded font-semibold">
                       {product.series || product.brand}
                     </span>
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
+                <div className="p-5">
+                  <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-bold text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-sm text-slate-500">{product.persons} Person • {product.jets} Jets</p>
-                  <p className="text-lg font-bold text-[#B91C1C] mt-2">{product.price}</p>
-                  <span className="inline-flex items-center gap-1 text-[#0A1628] text-sm font-semibold mt-2 group-hover:text-[#B91C1C] group-hover:gap-2 transition-all">
-                    Learn More <ChevronRight size={14} />
+                  <p className="text-base text-slate-500 mt-1">{product.persons} Person • {product.jets} Jets</p>
+                  <p className="text-xl font-bold text-[#B91C1C] mt-2">{product.price}</p>
+                  <span className="inline-flex items-center gap-1 text-[#0A1628] text-base font-semibold mt-3 group-hover:text-[#B91C1C] group-hover:gap-2 transition-all">
+                    Learn More <ChevronRight size={18} />
                   </span>
                 </div>
               </Link>
@@ -499,9 +671,9 @@ const ShopAllModelsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <Link to="/hot-tubs" className="btn-primary inline-flex items-center gap-2">
-            View All Products <ChevronRight size={18} />
+        <div className="text-center mt-10">
+          <Link to="/hot-tubs" className="btn-primary inline-flex items-center gap-2 text-lg">
+            View All Products <ChevronRight size={20} />
           </Link>
         </div>
       </div>
@@ -520,34 +692,34 @@ const ARVisualizerSection = () => (
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-3 mb-4">
-            <Camera className="text-[#D4AF37]" size={32} />
-            <span className="text-[#D4AF37] font-semibold uppercase tracking-wider text-sm">AR Technology</span>
+            <Camera className="text-[#D4AF37]" size={36} />
+            <span className="text-[#D4AF37] font-bold uppercase tracking-wider text-lg">AR Technology</span>
           </div>
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-6">
             See It In Your <span className="text-[#B91C1C]">Backyard</span>
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-6">
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
             Not sure how it will look? Use our AR Visualizer to place a virtual hot tub, swim spa, or sauna in your space using your phone's camera.
           </p>
-          <ul className="space-y-3 mb-8">
-            <li className="flex items-center gap-3 text-slate-600">
-              <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+          <ul className="space-y-4 mb-8">
+            <li className="flex items-center gap-3 text-lg text-slate-600">
+              <div className="w-3 h-3 bg-[#D4AF37] rounded-full"></div>
               Works on most modern smartphones
             </li>
-            <li className="flex items-center gap-3 text-slate-600">
-              <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+            <li className="flex items-center gap-3 text-lg text-slate-600">
+              <div className="w-3 h-3 bg-[#D4AF37] rounded-full"></div>
               Visualize different models and sizes
             </li>
-            <li className="flex items-center gap-3 text-slate-600">
-              <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+            <li className="flex items-center gap-3 text-lg text-slate-600">
+              <div className="w-3 h-3 bg-[#D4AF37] rounded-full"></div>
               Share with family for input
             </li>
           </ul>
           <Link 
             to="/ar-visualizer" 
-            className="btn-primary inline-flex items-center gap-2"
+            className="btn-primary inline-flex items-center gap-2 text-lg"
           >
-            <Smartphone size={20} />
+            <Smartphone size={22} />
             Launch AR Visualizer
           </Link>
         </motion.div>
@@ -558,17 +730,17 @@ const ARVisualizerSection = () => (
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="bg-gradient-to-br from-[#0A1628] to-[#1a3352] rounded-lg p-8 aspect-video flex items-center justify-center">
+          <div className="bg-gradient-to-br from-[#0A1628] to-[#1a3352] rounded-xl p-8 aspect-video flex items-center justify-center">
             <div className="text-center">
               <motion.div 
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-24 h-24 mx-auto mb-4 bg-[#B91C1C]/20 rounded-full flex items-center justify-center"
+                className="w-28 h-28 mx-auto mb-4 bg-[#B91C1C]/20 rounded-full flex items-center justify-center"
               >
-                <Camera className="w-12 h-12 text-[#B91C1C]" />
+                <Camera className="w-14 h-14 text-[#B91C1C]" />
               </motion.div>
-              <p className="text-lg text-white/80 mb-2">Point your camera at your backyard</p>
-              <p className="text-sm text-white/50">Available on mobile devices</p>
+              <p className="text-xl text-white/80 mb-2">Point your camera at your backyard</p>
+              <p className="text-base text-white/50">Available on mobile devices</p>
             </div>
           </div>
         </motion.div>
@@ -612,21 +784,21 @@ const ComparisonSection = () => {
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-white mb-2">
             Compare Products
           </h2>
-          <p className="text-slate-400">Select up to 3 products to compare side-by-side</p>
+          <p className="text-lg text-slate-400">Select up to 3 products to compare side-by-side</p>
         </motion.div>
 
-        <div className="bg-white rounded-lg overflow-hidden shadow-xl">
+        <div className="bg-white rounded-xl overflow-hidden shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
             <div className="bg-[#0A1628] text-white p-4 hidden md:block">
               <div className="h-32 flex items-end pb-2">
-                <span className="font-['Barlow_Condensed'] text-lg font-bold">Features</span>
+                <span className="font-['Barlow_Condensed'] text-xl font-bold">Features</span>
               </div>
-              <div className="py-3 border-t border-white/20 text-sm">Category</div>
-              <div className="py-3 border-t border-white/20 text-sm">Price</div>
-              <div className="py-3 border-t border-white/20 text-sm">Capacity</div>
-              <div className="py-3 border-t border-white/20 text-sm">Jets</div>
-              <div className="py-3 border-t border-white/20 text-sm">Dimensions</div>
-              <div className="py-3 border-t border-white/20 text-sm"></div>
+              <div className="py-3 border-t border-white/20 text-base">Category</div>
+              <div className="py-3 border-t border-white/20 text-base">Price</div>
+              <div className="py-3 border-t border-white/20 text-base">Capacity</div>
+              <div className="py-3 border-t border-white/20 text-base">Jets</div>
+              <div className="py-3 border-t border-white/20 text-base">Dimensions</div>
+              <div className="py-3 border-t border-white/20 text-base"></div>
             </div>
 
             {[0, 1, 2].map((index) => {
@@ -640,30 +812,30 @@ const ComparisonSection = () => {
                           onClick={() => removeProduct(product.id)}
                           className="absolute top-2 right-2 p-1 bg-red-100 text-red-600 rounded-full hover:bg-red-200"
                         >
-                          <X size={14} />
+                          <X size={16} />
                         </button>
                         <img src={product.images?.primary} alt={product.name} className="h-16 object-contain mb-1" onError={(e) => e.target.src = ASSETS.logo} />
-                        <h4 className="font-['Barlow_Condensed'] font-bold text-sm text-center">{product.name}</h4>
+                        <h4 className="font-['Barlow_Condensed'] font-bold text-base text-center">{product.name}</h4>
                       </div>
-                      <div className="py-3 px-4 border-t text-center text-sm"><span className="inline-block px-2 py-0.5 bg-[#0A1628] text-white text-xs rounded">{product.category}</span></div>
-                      <div className="py-3 px-4 border-t text-center font-bold text-[#B91C1C]">{product.price || 'Call'}</div>
-                      <div className="py-3 px-4 border-t text-center text-sm">{product.persons ? `${product.persons} Person` : '-'}</div>
-                      <div className="py-3 px-4 border-t text-center text-sm">{product.jets || '-'}</div>
-                      <div className="py-3 px-4 border-t text-center text-xs">{product.dimensions || '-'}</div>
+                      <div className="py-3 px-4 border-t text-center text-base"><span className="inline-block px-3 py-1 bg-[#0A1628] text-white text-sm rounded font-semibold">{product.category}</span></div>
+                      <div className="py-3 px-4 border-t text-center font-bold text-[#B91C1C] text-lg">{product.price || 'Call'}</div>
+                      <div className="py-3 px-4 border-t text-center text-base">{product.persons ? `${product.persons} Person` : '-'}</div>
+                      <div className="py-3 px-4 border-t text-center text-base">{product.jets || '-'}</div>
+                      <div className="py-3 px-4 border-t text-center text-sm">{product.dimensions || '-'}</div>
                       <div className="py-3 px-4 border-t text-center">
-                        <Link to={`/products/${product.id}`} className="text-[#B91C1C] text-sm font-semibold hover:underline">View Details</Link>
+                        <Link to={`/products/${product.id}`} className="text-[#B91C1C] text-base font-semibold hover:underline">View Details</Link>
                       </div>
                     </>
                   ) : (
                     <div className="h-full min-h-[320px] flex items-center justify-center p-4">
                       <button 
                         onClick={() => setShowSelector(true)}
-                        className="flex flex-col items-center gap-3 p-6 border-2 border-dashed border-slate-300 rounded-lg hover:border-[#B91C1C] hover:bg-red-50 transition-all group"
+                        className="flex flex-col items-center gap-3 p-6 border-2 border-dashed border-slate-300 rounded-xl hover:border-[#B91C1C] hover:bg-red-50 transition-all group"
                       >
-                        <div className="w-12 h-12 rounded-full bg-slate-100 group-hover:bg-[#B91C1C] flex items-center justify-center transition-colors">
-                          <Plus className="text-slate-400 group-hover:text-white" size={24} />
+                        <div className="w-14 h-14 rounded-full bg-slate-100 group-hover:bg-[#B91C1C] flex items-center justify-center transition-colors">
+                          <Plus className="text-slate-400 group-hover:text-white" size={28} />
                         </div>
-                        <span className="font-['Barlow_Condensed'] font-bold text-slate-600 group-hover:text-[#B91C1C]">Add Product</span>
+                        <span className="font-['Barlow_Condensed'] font-bold text-lg text-slate-600 group-hover:text-[#B91C1C]">Add Product</span>
                       </button>
                     </div>
                   )}
@@ -675,21 +847,21 @@ const ComparisonSection = () => {
 
         {showSelector && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70" onClick={() => setShowSelector(false)}>
-            <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="bg-white max-w-2xl w-full max-h-[80vh] rounded-lg overflow-hidden" onClick={e => e.stopPropagation()}>
+            <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="bg-white max-w-2xl w-full max-h-[80vh] rounded-xl overflow-hidden" onClick={e => e.stopPropagation()}>
               <div className="bg-[#0A1628] text-white p-4 flex items-center justify-between">
-                <h3 className="font-['Barlow_Condensed'] text-xl font-bold">Select a Product</h3>
-                <button onClick={() => setShowSelector(false)}><X size={24} /></button>
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold">Select a Product</h3>
+                <button onClick={() => setShowSelector(false)}><X size={28} /></button>
               </div>
               <div className="p-4 overflow-y-auto max-h-[60vh]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {allProducts.map(product => (
                     <button key={product.id} onClick={() => addProduct(product)} disabled={selectedProducts.find(p => p.id === product.id)} className={`p-3 border rounded-lg text-left hover:border-[#B91C1C] hover:bg-red-50 transition-all ${selectedProducts.find(p => p.id === product.id) ? 'opacity-50' : ''}`}>
                       <div className="flex items-center gap-3">
-                        <img src={product.images?.primary} alt={product.name} className="w-12 h-12 object-contain" onError={(e) => e.target.src = ASSETS.logo} />
+                        <img src={product.images?.primary} alt={product.name} className="w-14 h-14 object-contain" onError={(e) => e.target.src = ASSETS.logo} />
                         <div>
-                          <h4 className="font-semibold text-sm">{product.name}</h4>
-                          <p className="text-xs text-slate-500">{product.category}</p>
-                          <p className="text-xs font-bold text-[#B91C1C]">{product.price || 'Call'}</p>
+                          <h4 className="font-semibold text-base">{product.name}</h4>
+                          <p className="text-sm text-slate-500">{product.category}</p>
+                          <p className="text-sm font-bold text-[#B91C1C]">{product.price || 'Call'}</p>
                         </div>
                       </div>
                     </button>
@@ -703,47 +875,6 @@ const ComparisonSection = () => {
     </section>
   );
 };
-
-// Wellness Journey Section
-const WellnessJourneySection = () => (
-  <section className="py-16 bg-[#F8FAFC]">
-    <div className="max-w-7xl mx-auto px-4">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
-        viewport={{ once: true }} 
-        className="text-center mb-10"
-      >
-        <div className="flex items-center justify-center gap-3 mb-3">
-          <Sparkles className="text-[#D4AF37]" size={24} />
-          <span className="text-[#D4AF37] font-semibold uppercase tracking-wider text-sm">Discover More</span>
-          <Sparkles className="text-[#D4AF37]" size={24} />
-        </div>
-        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-2">
-          Expand Your <span className="text-[#B91C1C]">Wellness Journey</span>
-        </h2>
-        <p className="text-slate-600">Learn about the health benefits and science behind hydrotherapy</p>
-      </motion.div>
-
-      <div className="grid md:grid-cols-3 gap-6">
-        {[
-          { title: 'Health & Wellness', description: 'Discover the therapeutic benefits of hot water therapy.', link: '/wellness', icon: '🌿' },
-          { title: 'Balneotherapy', description: 'Learn about ancient water-based healing practices.', link: '/balneotherapy', icon: '💧' },
-          { title: 'Anatomy of a Spa', description: 'Understand what makes our spas exceptional.', link: '/anatomy-of-a-spa', icon: '⚙️' }
-        ].map((item, idx) => (
-          <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
-            <Link to={item.link} className="block bg-white border border-slate-200 rounded-lg p-6 hover:border-[#B91C1C] hover:shadow-lg transition-all group h-full">
-              <div className="text-4xl mb-3">{item.icon}</div>
-              <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-2 group-hover:text-[#B91C1C] transition-colors">{item.title}</h3>
-              <p className="text-slate-600 text-sm mb-3">{item.description}</p>
-              <span className="inline-flex items-center gap-1 text-[#B91C1C] text-sm font-semibold group-hover:gap-2 transition-all">Learn More <ChevronRight size={14} /></span>
-            </Link>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
 // Home Page Component
 const HomePage = () => {
@@ -774,25 +905,31 @@ const HomePage = () => {
       
       <TaxSpecialPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
       
-      {/* Keep Hero Section */}
+      {/* Hero Section - Video without overlay text */}
       <HeroSection />
       
-      {/* Quick Links (Viking style) */}
-      <QuickLinksSection />
-      
-      {/* Trust Badges (Compact) */}
+      {/* Trust Badges - Bigger */}
       <TrustBadgesSection />
       
-      {/* Series/Category Cards (Viking style) */}
-      <SeriesCardsSection />
+      {/* Try Before You Buy - Wet Test Banner */}
+      <WetTestBanner />
       
-      {/* Why Hot Tub Section (Viking style) */}
-      <WhyHotTubSection />
+      {/* Resource Cards - Large 3-card grid */}
+      <ResourceCardsSection />
       
-      {/* Why Upstate Section (Viking style) */}
-      <WhyUpstateSection />
+      {/* Product Collection Grid */}
+      <ProductCollectionSection />
       
-      {/* Shop All Models Carousel (Viking style) */}
+      {/* Location-Based Collection */}
+      <LocationCollectionSection />
+      
+      {/* Why Hot Tubs Section */}
+      <WhyHotTubsSection />
+      
+      {/* Why Upstate / Wet Test Section */}
+      <WetTestSection />
+      
+      {/* Shop All Models Carousel */}
       <ShopAllModelsSection />
       
       {/* AR Visualizer Section */}
@@ -800,9 +937,6 @@ const HomePage = () => {
       
       {/* Comparison Section */}
       <ComparisonSection />
-      
-      {/* Wellness Journey Section */}
-      <WellnessJourneySection />
     </>
   );
 };

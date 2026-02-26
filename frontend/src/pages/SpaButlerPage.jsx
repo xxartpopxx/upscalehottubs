@@ -147,6 +147,30 @@ const SpaButlerPage = () => {
             Did you know that 85% of all hot tub service calls and repair bills are related to improper water chemistry?
           </p>
         </div>
+
+        {/* Spa Butler Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold text-[#0A1628] mb-4">
+            See Our Spa Butler Service in Action
+          </h2>
+          <div className="max-w-4xl aspect-video rounded-lg overflow-hidden shadow-2xl">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls
+              className="w-full h-full object-cover"
+            >
+              <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/v0qvpa8s_SPA%20BUTLER.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div>

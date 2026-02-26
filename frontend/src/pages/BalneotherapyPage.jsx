@@ -40,6 +40,33 @@ const BalneotherapyPage = () => {
             ))}
           </motion.div>
 
+          {/* Hydrotherapy Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-center text-[#0A1628] mb-4">
+              The Power of Hydrotherapy
+            </h2>
+            <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Learn how hydrotherapy can transform your health and well-being through the therapeutic power of water.
+            </p>
+            <div className="max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                controls
+                className="w-full h-full object-cover"
+              >
+                <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/q5m6dja0_hydrotheraphy%20video.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+
           {/* 20-3 Protocol */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#0A1628] text-white rounded-lg p-8 mb-16 text-center">
             <h2 className="font-['Barlow_Condensed'] text-4xl font-bold mb-4">20 Minutes, 3x a Week</h2>

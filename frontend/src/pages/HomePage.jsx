@@ -918,8 +918,11 @@ const HomePage = () => {
       {/* Trust Badges - Bigger */}
       <TrustBadgesSection />
       
-      {/* Try Before You Buy - Wet Test Banner */}
-      <WetTestBanner />
+      {/* Why Upstate / Wet Test Section - MOVED HIGHER with Wet Test info */}
+      <WetTestSection />
+      
+      {/* Comparison Section - MOVED HIGHER */}
+      <ComparisonSection />
       
       {/* Resource Cards - Large 3-card grid */}
       <ResourceCardsSection />
@@ -927,23 +930,17 @@ const HomePage = () => {
       {/* Product Collection Grid */}
       <ProductCollectionSection />
       
+      {/* Shop All Models Carousel - Premium first */}
+      <ShopAllModelsSection />
+      
       {/* Location-Based Collection */}
       <LocationCollectionSection />
       
       {/* Why Hot Tubs Section */}
       <WhyHotTubsSection />
       
-      {/* Why Upstate / Wet Test Section */}
-      <WetTestSection />
-      
-      {/* Shop All Models Carousel */}
-      <ShopAllModelsSection />
-      
       {/* AR Visualizer Section */}
       <ARVisualizerSection />
-      
-      {/* Comparison Section */}
-      <ComparisonSection />
     </>
   );
 };

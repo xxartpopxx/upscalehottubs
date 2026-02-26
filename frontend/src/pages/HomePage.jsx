@@ -82,8 +82,8 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
 // NEW Hero Section - Video without text overlay, text below - BIGGER VIDEO
 const HeroSection = () => (
   <section className="relative" data-testid="hero-section">
-    {/* Video Section - No Text Overlay - BIGGER */}
-    <div className="relative h-[70vh] min-h-[500px] md:h-[80vh] overflow-hidden">
+    {/* Video Section - No Text Overlay */}
+    <div className="relative h-[60vh] min-h-[450px] md:h-[70vh] overflow-hidden">
       <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
         <source src={ASSETS.heroVideo} type="video/mp4" />
       </video>

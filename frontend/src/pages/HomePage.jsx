@@ -157,12 +157,12 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Try Before You Buy - Wet Test Section
+// NEW Try Before You Buy - Wet Test Section with Video (moved higher)
 const WetTestSection = () => (
   <section className="py-16 md:py-20 bg-[#0A1628] text-white">
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        {/* Image Side */}
+        {/* Video Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -174,7 +174,7 @@ const WetTestSection = () => (
           </video>
         </motion.div>
         
-        {/* Content Side */}
+        {/* Content Side - With Wet Test Info */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -189,10 +189,19 @@ const WetTestSection = () => (
             Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges with superior components and craftsmanship.
           </p>
           
+          {/* Try Before You Buy - Wet Test Highlight */}
+          <div className="bg-[#B91C1C] rounded-lg p-6 mb-6">
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase mb-2">
+              Try Before You Buy "Wet Test"
+            </h3>
+            <p className="text-lg md:text-xl">
+              Bring your suits — we have <span className="font-bold">robes, slippers, and towels</span>. Try today!
+            </p>
+          </div>
+          
           <ul className="space-y-4 mb-8 text-lg md:text-xl">
             {[
               'Free delivery & installation in FL & SC',
-              'Try before you buy - Wet Tests available',
               'Cover, cover lifter, steps & chemicals included',
               'Military, Veterans & First Responder discounts',
             ].map((item, idx) => (

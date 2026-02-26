@@ -257,7 +257,7 @@ const ResourceCardsSection = () => {
     },
     {
       title: 'Get a Brochure',
-      image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
+      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop',
       link: '/contact',
     },
     {

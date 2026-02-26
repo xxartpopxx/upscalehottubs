@@ -39,7 +39,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 18px; /* Bigger base font for older users */
+}
+
+/* Larger text for readability */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

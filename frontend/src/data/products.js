@@ -553,7 +553,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     id: 'ds-palm-island',
     name: 'Palm Island II/III',
     brand: 'Dynasty Spas',
-    series: 'Luxury Collection',
+    series: 'Oasis Collection',
     modelFamily: 'Palm Island',
     persons: 7,
     jets: 76,

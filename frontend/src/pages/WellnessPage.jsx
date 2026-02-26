@@ -124,13 +124,16 @@ const WellnessPage = () => {
             Health Benefits of Hot Tubs
           </h2>
           <div className="max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
-            <iframe
-              src="https://www.youtube.com/embed/AKrbIy5gTSg"
-              title="Health Benefits of Hot Tubs"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls
+              className="w-full h-full object-cover"
+            >
+              <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/7cncod5z_Hot%20Tub%20Benefits%20Upstate%20Hot%20Tubs%20Simpsonville%20SC.mp4" type="video/mp4" />
+            </video>
           </div>
         </motion.div>
         

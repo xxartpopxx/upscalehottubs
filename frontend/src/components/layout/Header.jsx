@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, Search } from 'lucide-react';
 import { ASSETS, CONTACT } from '../../data/constants';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [shopDropdown, setShopDropdown] = useState(false);
   const [discoverDropdown, setDiscoverDropdown] = useState(false);
   const location = useLocation();
 
@@ -18,6 +19,7 @@ const Header = () => {
 
   // Close dropdowns when route changes
   useEffect(() => {
+    setShopDropdown(false);
     setDiscoverDropdown(false);
     setIsOpen(false);
   }, [location.pathname]);
@@ -42,65 +44,82 @@ const Header = () => {
     { name: 'Spa Butler Service', href: '/spa-butler' },
   ];
 
-  const mainLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Wellness', href: '/wellness' },
-    { name: 'Discover', href: '#', dropdown: true, links: discoverLinks },
-    { name: 'Contact', href: '/contact' },
-  ];
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled ? 'glass shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-3'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-3'}`}>
+      {/* Top Bar - Contact Info (Viking Style) */}
+      <div className="hidden lg:block bg-[#0A1628] text-white text-sm py-2">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-6">
+          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
+            <Phone size={14} /> {CONTACT.phone}
+          </a>
+          <Link to="/contact" className="hover:text-[#D4AF37] transition-colors">Contact</Link>
+        </div>
+      </div>
+
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center" data-testid="logo-link">
+          {/* Logo - Viking Style with Text */}
+          <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
             <motion.img 
               src={ASSETS.logo} 
-              alt="Upstate Hot Tubs - Made in the USA" 
-              className={`object-contain transition-all duration-300 ${scrolled ? 'h-16' : 'h-20 md:h-24'}`} 
+              alt="Upstate Hot Tubs" 
+              className={`object-contain transition-all duration-300 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'}`} 
               loading="eager" 
-              whileHover={{ scale: 1.05 }} 
+              whileHover={{ scale: 1.02 }} 
             />
+            <div className="hidden sm:block">
+              <span className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase text-[#0A1628] tracking-tight block leading-tight">
+                UPSTATE
+              </span>
+              <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-semibold uppercase text-slate-500 tracking-wider block leading-tight">
+                HOT TUBS
+              </span>
+            </div>
           </Link>
           
-          {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-5">
-            {/* Home Link */}
-            <Link 
-              to="/" 
-              className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
-                location.pathname === '/' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
-              }`}
-              data-testid="nav-home-link"
+          {/* Desktop Navigation - Viking Clean Style */}
+          <div className="hidden xl:flex items-center gap-1">
+            {/* Shop Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setShopDropdown(true)}
+              onMouseLeave={() => setShopDropdown(false)}
             >
-              Home
-            </Link>
-            
-            {/* Shop Links - Direct Navigation */}
-            {shopLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
-                  location.pathname === link.href ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+              <button 
+                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 ${
+                  shopLinks.some(l => location.pathname === l.href) ? 'text-[#B91C1C]' : 'text-[#0A1628]'
                 }`}
-                data-testid={`nav-${link.name.toLowerCase().replace(/\s+/g, '-')}-link`}
+                data-testid="nav-shop-btn"
               >
-                {link.name}
-              </Link>
-            ))}
-            
-            {/* Wellness Link */}
-            <Link 
-              to="/wellness" 
-              className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
-                location.pathname === '/wellness' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
-              }`}
-              data-testid="nav-wellness-link"
-            >
-              Wellness
-            </Link>
-            
+                Shop
+                <ChevronDown size={16} className={`transition-transform ${shopDropdown ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {shopDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-0 bg-white shadow-xl border border-slate-100 min-w-[220px] py-2"
+                  >
+                    {shopLinks.map((subLink) => (
+                      <Link
+                        key={subLink.name}
+                        to={subLink.href}
+                        className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
+                          location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
+                        }`}
+                        data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {/* Discover Dropdown */}
             <div 
               className="relative"
@@ -108,15 +127,13 @@ const Header = () => {
               onMouseLeave={() => setDiscoverDropdown(false)}
             >
               <button 
-                className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors flex items-center gap-1 ${
-                  discoverLinks.some(l => location.pathname === l.href)
-                    ? 'text-[#B91C1C]' 
-                    : 'text-[#0A1628]'
+                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 ${
+                  discoverLinks.some(l => location.pathname === l.href) ? 'text-[#B91C1C]' : 'text-[#0A1628]'
                 }`}
                 data-testid="nav-discover-btn"
               >
                 Discover
-                <ChevronDown size={14} className={`transition-transform ${discoverDropdown ? 'rotate-180' : ''}`} />
+                <ChevronDown size={16} className={`transition-transform ${discoverDropdown ? 'rotate-180' : ''}`} />
               </button>
               
               <AnimatePresence>
@@ -125,13 +142,13 @@ const Header = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full left-0 mt-2 bg-white shadow-xl border border-slate-100 min-w-[200px] py-2"
+                    className="absolute top-full left-0 mt-0 bg-white shadow-xl border border-slate-100 min-w-[220px] py-2"
                   >
                     {discoverLinks.map((subLink) => (
                       <Link
                         key={subLink.name}
                         to={subLink.href}
-                        className={`block px-4 py-2 text-sm font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
+                        className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
                           location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
                         }`}
                         data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
@@ -144,32 +161,59 @@ const Header = () => {
               </AnimatePresence>
             </div>
             
-            {/* Contact Link */}
+            {/* Resources Link */}
+            <Link 
+              to="/wellness" 
+              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/wellness' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+              }`}
+              data-testid="nav-wellness-link"
+            >
+              Wellness
+            </Link>
+
+            {/* Get a Brochure Link */}
             <Link 
               to="/contact" 
-              className={`font-semibold uppercase tracking-wider text-xs hover:text-[#B91C1C] transition-colors ${
+              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/contact' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+              }`}
+              data-testid="nav-brochure-link"
+            >
+              Get a Brochure
+            </Link>
+
+            {/* Find a Dealer / Contact Link */}
+            <Link 
+              to="/contact" 
+              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
                 location.pathname === '/contact' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
               }`}
               data-testid="nav-contact-link"
             >
-              Contact
+              Contact Us
             </Link>
           </div>
           
-          <div className="hidden xl:flex items-center gap-3">
-            <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#0A1628] font-semibold hover:text-[#B91C1C] text-sm">
-              <Phone size={16} /> {CONTACT.phone}
-            </a>
-            <Link to="/contact" className="btn-primary text-sm px-4 py-2" data-testid="nav-get-quote-btn">Get a Quote</Link>
+          {/* Right Side - CTA Button */}
+          <div className="hidden xl:flex items-center gap-4">
+            <Link 
+              to="/contact" 
+              className="btn-primary text-base px-6 py-3" 
+              data-testid="nav-get-quote-btn"
+            >
+              Get a Quote
+            </Link>
           </div>
           
+          {/* Mobile Menu Button */}
           <button 
-            className="xl:hidden p-2" 
+            className="xl:hidden p-2 text-[#0A1628]" 
             onClick={() => setIsOpen(!isOpen)} 
             aria-label="Menu" 
             data-testid="mobile-menu-btn"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
         
@@ -183,18 +227,18 @@ const Header = () => {
               className="xl:hidden overflow-hidden bg-white"
             >
               <div className="py-4 space-y-1">
-                <Link to="/" className="block px-4 py-3 font-semibold text-[#0A1628] uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
+                <Link to="/" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
                   Home
                 </Link>
                 
                 {/* Shop Section */}
                 <div className="border-t border-slate-100 pt-2">
-                  <p className="px-4 py-2 text-xs font-bold uppercase text-slate-400">Shop</p>
+                  <p className="px-4 py-2 text-sm font-bold uppercase text-slate-400">Shop</p>
                   {shopLinks.map((link) => (
                     <Link 
                       key={link.name}
                       to={link.href} 
-                      className="block px-6 py-2 font-medium text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
+                      className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}
@@ -203,18 +247,18 @@ const Header = () => {
                 </div>
                 
                 {/* Wellness */}
-                <Link to="/wellness" className="block px-4 py-3 font-semibold text-[#0A1628] uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
+                <Link to="/wellness" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
                   Wellness
                 </Link>
                 
                 {/* Discover Section */}
                 <div className="border-t border-slate-100 pt-2">
-                  <p className="px-4 py-2 text-xs font-bold uppercase text-slate-400">Discover</p>
+                  <p className="px-4 py-2 text-sm font-bold uppercase text-slate-400">Discover</p>
                   {discoverLinks.map((link) => (
                     <Link 
                       key={link.name}
                       to={link.href} 
-                      className="block px-6 py-2 font-medium text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
+                      className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}
@@ -223,15 +267,15 @@ const Header = () => {
                 </div>
                 
                 {/* Contact */}
-                <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
-                  Contact
+                <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
+                  Contact Us
                 </Link>
                 
                 <div className="px-4 pt-4 border-t">
-                  <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#0A1628] font-semibold mb-4">
-                    <Phone size={18} /> {CONTACT.phone}
+                  <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#0A1628] font-semibold text-lg mb-4">
+                    <Phone size={20} /> {CONTACT.phone}
                   </a>
-                  <Link to="/contact" className="btn-primary block text-center" onClick={() => setIsOpen(false)}>Get a Quote</Link>
+                  <Link to="/contact" className="btn-primary block text-center text-lg" onClick={() => setIsOpen(false)}>Get a Quote</Link>
                 </div>
               </div>
             </motion.div>

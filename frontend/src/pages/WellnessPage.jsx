@@ -225,6 +225,60 @@ const WellnessPage = () => {
             );
           })}
         </div>
+
+        {/* Hot Tub & Sleep Video Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-center text-[#0A1628] mb-4">
+            Hot Tubs & Better Sleep
+          </h2>
+          <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-8">
+            Discover how a warm soak before bed can help you achieve deeper, more restful sleep.
+          </p>
+          <div className="max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls
+              className="w-full h-full object-cover"
+            >
+              <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/ru0cb4f1_HOT%20TUBBER%20SLEEP.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </motion.div>
+
+        {/* Upstate Hot Tubs Lifestyle Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-center text-[#0A1628] mb-4">
+            Experience the Upstate Hot Tubs Lifestyle
+          </h2>
+          <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-8">
+            See how our customers in Simpsonville and the Upstate enjoy their hot tubs, saunas, cold plunges, and swim spas.
+          </p>
+          <div className="max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls
+              className="w-full h-full object-cover"
+            >
+              <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/dbc4rbdp_Upstate%20Hot%20Tubs%20Simpsonville%2029680%2C%20upstater%20Hot%20Tubs%2029706%2C%20saunas%20simpsonville%2C%20cold%20plunges%20simpsonville%2C%20swim%20spas%20simpsonville%20.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </motion.div>
         
         {/* Stats Section */}
         <motion.section 

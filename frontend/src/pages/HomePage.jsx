@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ChevronRight, ChevronLeft, Flag, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun } from 'lucide-react';
 import { ASSETS, CONTACT } from '../data/constants';
-import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
+import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS, DYNASTY_SPAS_PRODUCTS } from '../data/products';
 
 // Sort products by price (least to most expensive)
 const sortByPrice = (products) => {

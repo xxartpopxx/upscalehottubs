@@ -81,10 +81,7 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
 
 // NEW Hero Section - Video without text overlay, text below
 const HeroSection = () => (
-  <section className="relative bg-[#0A1628]" data-testid="hero-section">
-    {/* Blue bar at top to push video down */}
-    <div className="h-6 md:h-8 bg-[#0A1628]"></div>
-    
+  <section className="relative bg-[#0A1628] pt-28 md:pt-32" data-testid="hero-section">
     {/* Video Section - Smaller to fit fully */}
     <div className="max-w-4xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">

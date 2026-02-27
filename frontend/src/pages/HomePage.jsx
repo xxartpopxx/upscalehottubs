@@ -187,11 +187,11 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Try Before You Buy - Wet Test Section with Video - Cleaner design
+// NEW Try Before You Buy - Wet Test Section with Video - Compact, no extra whitespace
 const WetTestSection = () => (
-  <section className="py-12 md:py-16 bg-slate-50">
+  <section className="py-8 md:py-10 bg-slate-50">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
         {/* Video Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -212,31 +212,31 @@ const WetTestSection = () => (
           className="order-1 md:order-2"
         >
           {/* Try Before You Buy - Wet Test Highlight - FIRST */}
-          <div className="bg-white rounded-lg p-6 mb-6 border-l-4 border-[#B91C1C] shadow-sm">
+          <div className="bg-white rounded-lg p-5 mb-4 border-l-4 border-[#B91C1C] shadow-sm">
             <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase mb-2 text-[#0A1628]">
               Try Before You Buy "Wet Test"
             </h3>
-            <p className="text-lg md:text-xl text-slate-600">
+            <p className="text-base md:text-lg text-slate-600">
               Bring your suits — we have <span className="font-bold text-[#0A1628]">robes, slippers, and towels</span>. Try today!
             </p>
           </div>
           
-          <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4 text-[#0A1628]">
+          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-3 text-[#0A1628]">
             Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
           </h2>
           
-          <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-4">
-            Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges with superior components and craftsmanship.
+          <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+            Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges.
           </p>
           
-          <ul className="space-y-3 mb-6 text-base md:text-lg">
+          <ul className="space-y-2 mb-4 text-sm md:text-base">
             {[
               'Free delivery & installation in SC',
               { text: 'Cover, cover lifter, steps & chemicals included', highlight: '$1,500 Value FREE!' },
               'Military, Veterans & First Responder discounts',
             ].map((item, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-slate-700">
-                <div className="w-2 h-2 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+              <li key={idx} className="flex items-start gap-2 text-slate-700">
+                <div className="w-2 h-2 bg-[#B91C1C] rounded-full flex-shrink-0 mt-1.5" />
                 {typeof item === 'string' ? (
                   <span>{item}</span>
                 ) : (
@@ -248,8 +248,8 @@ const WetTestSection = () => (
             ))}
           </ul>
           
-          <Link to="/about" className="btn-primary inline-flex items-center gap-2">
-            Learn About Us <ChevronRight size={20} />
+          <Link to="/about" className="btn-primary inline-flex items-center gap-2 text-sm py-3 px-5">
+            Learn About Us <ChevronRight size={18} />
           </Link>
         </motion.div>
       </div>

@@ -166,10 +166,19 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Try Before You Buy - Wet Test Section with Video (moved higher)
+// NEW Try Before You Buy - Wet Test Section with Video - Cleaner design
 const WetTestSection = () => (
-  <section className="py-16 md:py-20 bg-[#0A1628] text-white">
+  <section className="py-16 md:py-20 bg-slate-50">
     <div className="max-w-7xl mx-auto px-4">
+      {/* Subtle accent line */}
+      <div className="flex justify-center mb-8">
+        <div className="flex items-center gap-2">
+          <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+          <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
+          <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+        </div>
+      </div>
+      
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Video Side */}
         <motion.div
@@ -178,7 +187,7 @@ const WetTestSection = () => (
           viewport={{ once: true }}
           className="order-2 md:order-1"
         >
-          <video autoPlay muted loop playsInline className="w-full rounded-lg shadow-2xl">
+          <video autoPlay muted loop playsInline className="w-full rounded-lg shadow-xl">
             <source src={ASSETS.wetTestVideo} type="video/mp4" />
           </video>
         </motion.div>
@@ -190,21 +199,21 @@ const WetTestSection = () => (
           viewport={{ once: true }}
           className="order-1 md:order-2"
         >
-          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4">
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4 text-[#0A1628]">
             Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
           </h2>
           
-          <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-6">
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
             Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges with superior components and craftsmanship.
           </p>
           
-          {/* Try Before You Buy - Wet Test Highlight */}
-          <div className="bg-[#B91C1C] rounded-lg p-6 mb-6">
-            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase mb-2">
+          {/* Try Before You Buy - Wet Test Highlight - Cleaner with border accent */}
+          <div className="bg-white rounded-lg p-6 mb-6 border-l-4 border-[#B91C1C] shadow-sm">
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase mb-2 text-[#0A1628]">
               Try Before You Buy "Wet Test"
             </h3>
-            <p className="text-lg md:text-xl">
-              Bring your suits — we have <span className="font-bold">robes, slippers, and towels</span>. Try today!
+            <p className="text-lg md:text-xl text-slate-600">
+              Bring your suits — we have <span className="font-bold text-[#0A1628]">robes, slippers, and towels</span>. Try today!
             </p>
           </div>
           

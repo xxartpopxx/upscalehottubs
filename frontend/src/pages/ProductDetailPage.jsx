@@ -266,21 +266,21 @@ const ProductDetailPage = () => {
             </ol>
           </nav>
           
-          {/* Product Name Header */}
-          <div className="mb-4">
-            <p className="text-sm text-slate-500 uppercase tracking-wider">{product.brand}</p>
-            <p className="text-sm text-[#B91C1C] font-semibold uppercase tracking-wider">{product.series}</p>
-            <h1 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628]">
+          {/* Product Name Header - More compact on mobile */}
+          <div className="mb-2 md:mb-4">
+            <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider">{product.brand}</p>
+            <p className="text-xs md:text-sm text-[#B91C1C] font-semibold uppercase tracking-wider">{product.series}</p>
+            <h1 className="font-['Barlow_Condensed'] text-2xl md:text-5xl font-bold uppercase text-[#0A1628]">
               {product.name}
             </h1>
-            <p className="text-2xl font-bold text-[#B91C1C] mt-1">{product.price}</p>
+            <p className="text-xl md:text-2xl font-bold text-[#B91C1C] mt-1">{product.price}</p>
           </div>
           
           {/* Main Product Section - Image + Color Selector Side by Side */}
-          <div className="grid lg:grid-cols-12 gap-6 mb-8">
-            {/* Image Gallery */}
+          <div className="grid lg:grid-cols-12 gap-2 md:gap-6 mb-4 md:mb-8">
+            {/* Image Gallery - Smaller on mobile */}
             <div className={isSaunaOrColdPlunge ? 'lg:col-span-12' : 'lg:col-span-7'}>
-              <div className="bg-slate-50 relative aspect-[4/3] overflow-hidden">
+              <div className="bg-slate-50 relative aspect-square md:aspect-[4/3] overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={`${currentImage}-${selectedShell}-${selectedCabinet}-${selectedCorner}`}

@@ -454,9 +454,9 @@ const ProductCollectionSection = () => {
   );
 };
 
-// NEW The Collection - Location Based Section
+// NEW The Collection - Location Based Section - Cleaner design
 const LocationCollectionSection = () => (
-  <section className="py-16 md:py-20 bg-[#0A1628] text-white">
+  <section className="py-16 md:py-20 bg-white">
     <div className="max-w-7xl mx-auto px-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -464,10 +464,18 @@ const LocationCollectionSection = () => (
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4">
+        {/* Subtle accent line */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+            <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
+            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+          </div>
+        </div>
+        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4 text-[#0A1628]">
           The <span className="text-[#B91C1C]">Collection</span>
         </h2>
-        <p className="text-lg md:text-xl text-slate-300">Shop by your location for the best selection</p>
+        <p className="text-lg md:text-xl text-slate-600">Shop by your location for the best selection</p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-8">
@@ -476,22 +484,22 @@ const LocationCollectionSection = () => (
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-[#B91C1C] transition-all"
+          className="bg-slate-50 rounded-xl p-8 border-l-4 border-[#1E40AF] hover:shadow-lg transition-all"
         >
           <div className="flex items-center gap-3 mb-4">
-            <MapPin className="text-[#B91C1C]" size={32} />
-            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase">
+            <MapPin className="text-[#1E40AF]" size={28} />
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628]">
               Greenville SC & The Upstate
             </h3>
           </div>
-          <p className="text-lg md:text-xl text-slate-300 mb-6">
-            Click for <span className="text-white font-bold">Grand River and Dynasty Spas</span> — American Made
+          <p className="text-lg md:text-xl text-slate-600 mb-6">
+            Click for <span className="text-[#0A1628] font-bold">Grand River and Dynasty Spas</span> — American Made
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/grand-river-spas" className="btn-primary flex items-center justify-center gap-2 text-lg">
+            <Link to="/grand-river-spas" className="btn-primary flex items-center justify-center gap-2">
               Grand River Spas <ChevronRight size={20} />
             </Link>
-            <Link to="/dynasty-spas" className="btn-secondary border-white text-white hover:bg-white hover:text-[#0A1628] flex items-center justify-center gap-2 text-lg">
+            <Link to="/dynasty-spas" className="btn-secondary flex items-center justify-center gap-2">
               Dynasty Spas <ChevronRight size={20} />
             </Link>
           </div>
@@ -502,24 +510,30 @@ const LocationCollectionSection = () => (
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-[#B91C1C] transition-all"
+          className="bg-slate-50 rounded-xl p-8 border-l-4 border-[#B91C1C] hover:shadow-lg transition-all"
         >
           <div className="flex items-center gap-3 mb-4">
-            <MapPin className="text-[#D4AF37]" size={32} />
-            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase">
+            <MapPin className="text-[#B91C1C]" size={28} />
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628]">
               Naples & Southwest FL
             </h3>
           </div>
-          <p className="text-lg md:text-xl text-slate-300 mb-6">
-            Click for <span className="text-white font-bold">Viking, Grand River and Dynasty Spas</span>
+          <p className="text-lg md:text-xl text-slate-600 mb-6">
+            Click for <span className="text-[#0A1628] font-bold">Viking, Grand River and Dynasty Spas</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/viking-spas" className="btn-primary flex items-center justify-center gap-2 text-lg">
+            <Link to="/viking-spas" className="btn-primary flex items-center justify-center gap-2">
               Viking Spas <ChevronRight size={20} />
             </Link>
-            <Link to="/grand-river-spas" className="btn-secondary border-white text-white hover:bg-white hover:text-[#0A1628] flex items-center justify-center gap-2 text-lg">
+            <Link to="/grand-river-spas" className="btn-secondary flex items-center justify-center gap-2">
               More Options <ChevronRight size={20} />
             </Link>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
           </div>
         </motion.div>
       </div>

@@ -379,9 +379,24 @@ const ProductDetailPage = () => {
             
             {/* Color Selector Panel - 5 columns */}
             {!isSaunaOrColdPlunge && (
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
               {product.shellColors && product.cabinetColors && !isDynasty && !isSwimSpa ? (
                 <div className="bg-slate-50 p-5 h-full">
+                  {/* Mobile: Show mini preview of selected colors at top */}
+                  <div className="lg:hidden mb-4 p-3 bg-white rounded-lg border border-slate-200 sticky top-20 z-20">
+                    <p className="text-xs font-semibold text-slate-500 mb-2">Selected Colors:</p>
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded border border-slate-300" style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }} />
+                        <span className="text-xs font-medium">{SHELL_COLORS[selectedShell]?.name}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded border border-slate-300" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
+                        <span className="text-xs font-medium">{CABINET_COLORS[selectedCabinet]?.name}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-4">
                     Customize Your Spa Colors
                   </h3>

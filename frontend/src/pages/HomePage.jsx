@@ -180,7 +180,7 @@ const TrustBadgesSection = () => (
         <div className="flex flex-col items-center gap-2 p-4">
           <Truck className="w-8 h-8 text-[#1E40AF]" />
           <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">Free Delivery</span>
-          <span className="text-sm text-slate-500">FL & SC</span>
+          <span className="text-sm text-slate-500">South Carolina</span>
         </div>
       </div>
     </div>

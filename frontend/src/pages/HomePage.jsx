@@ -964,9 +964,9 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Upstate Hot Tubs | American Made Hot Tubs & Swim Spas | Naples FL & SC</title>
-        <meta name="description" content="Live your healthiest life while enjoying a vacation everyday at home. American made hot tubs, swim spas, saunas & cold plunges from Grand River Spas and Viking Spas. Serving Naples FL, Greenville, Simpsonville SC." />
-        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, American made, Grand River Spas, Viking Spas, Naples FL, Greenville SC, Simpsonville SC" />
+        <title>Upstate Hot Tubs | American Made Hot Tubs & Swim Spas | South Carolina</title>
+        <meta name="description" content="Live your healthiest life while enjoying a vacation everyday at home. American made hot tubs, swim spas, saunas & cold plunges from Grand River Spas, Viking Spas, and Dynasty Spas. Serving Greenville, Simpsonville SC and the Upstate." />
+        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, American made, Grand River Spas, Viking Spas, Dynasty Spas, Greenville SC, Simpsonville SC, Upstate" />
         <meta property="og:title" content="Upstate Hot Tubs | American Made Hot Tubs & Swim Spas" />
         <meta property="og:description" content="Live your healthiest life while enjoying a vacation everyday at home. American made and proud of it!" />
         <meta property="og:type" content="website" />

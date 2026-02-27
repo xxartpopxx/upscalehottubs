@@ -1,7 +1,7 @@
 // Site-wide Constants
 
-// New Logo
-export const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/agdsrdka_8b31198f-97d1-4e1d-a0ef-9424fb640c06.png';
+// New Logo - Made in USA with SC State Flag
+export const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/i1rhdpk6_fa32f0be-a50b-4ed0-a5d0-5eac34659b49-1.png';
 
 // About Page Image (Grand Opening)
 export const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/iri86zu2_549423966_122190087680361664_6940928450155468082_n.jpg';

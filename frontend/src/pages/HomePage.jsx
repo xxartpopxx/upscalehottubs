@@ -82,8 +82,8 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
 // NEW Hero Section - Video without text overlay, text below
 const HeroSection = () => (
   <section className="relative bg-[#0A1628]" data-testid="hero-section">
-    {/* Video Section - Contained, not full width */}
-    <div className="max-w-5xl mx-auto px-4 pt-4 md:pt-8">
+    {/* Video Section - Contained, positioned lower */}
+    <div className="max-w-5xl mx-auto px-4 pt-6 md:pt-10">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
         <video autoPlay muted loop playsInline className="w-full h-full object-contain bg-black">
           <source src={ASSETS.heroVideo} type="video/mp4" />
@@ -92,29 +92,29 @@ const HeroSection = () => (
     </div>
     
     {/* Text Content Below Video - Red White Blue Theme */}
-    <div className="bg-[#0A1628] text-white py-8 md:py-12">
+    <div className="bg-[#0A1628] text-white py-6 md:py-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           {/* Animated American Flags */}
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <motion.span 
-              animate={{ rotate: [0, 5, 0, -5, 0] }}
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <motion.img 
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+              alt="American Flag"
+              className="w-12 h-8 md:w-16 md:h-10 object-cover rounded shadow-md"
+              animate={{ rotate: [0, 3, 0, -3, 0], y: [0, -2, 0, -2, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="text-4xl md:text-5xl"
-            >
-              🇺🇸
-            </motion.span>
-            <span className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white">American Made & Proud of It</span>
-            <motion.span 
-              animate={{ rotate: [0, -5, 0, 5, 0] }}
+            />
+            <span className="text-lg md:text-2xl font-bold tracking-widest uppercase text-white">American Made & Proud of It</span>
+            <motion.img 
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+              alt="American Flag"
+              className="w-12 h-8 md:w-16 md:h-10 object-cover rounded shadow-md"
+              animate={{ rotate: [0, -3, 0, 3, 0], y: [0, -2, 0, -2, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="text-4xl md:text-5xl"
-            >
-              🇺🇸
-            </motion.span>
+            />
           </div>
           
-          <h1 className="font-['Barlow_Condensed'] text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6">
+          <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">
             Live Your{' '}
             <span 
               className="text-[#B91C1C]"
@@ -130,17 +130,17 @@ const HeroSection = () => (
             <span className="text-white">Everyday at Home</span>
           </h1>
           
-          <p className="text-xl md:text-2xl lg:text-3xl font-medium mb-8 max-w-4xl mx-auto text-slate-200">
+          <p className="text-lg md:text-xl lg:text-2xl font-medium mb-6 max-w-4xl mx-auto text-slate-200">
             The Best Hot Tubs & Swim Spas Store in Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link to="/hot-tubs" className="btn-primary inline-flex items-center justify-center gap-2 text-xl px-10 py-5">
-              Explore All Models <ChevronRight size={24} />
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+            <Link to="/hot-tubs" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4">
+              Explore All Models <ChevronRight size={22} />
             </Link>
           </div>
           
-          <p className="text-xl md:text-2xl font-bold text-[#D4AF37]">
+          <p className="text-lg md:text-xl font-bold text-[#D4AF37]">
             Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in SC
           </p>
         </motion.div>

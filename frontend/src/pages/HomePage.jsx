@@ -81,7 +81,7 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
 
 // NEW Hero Section - Video without text overlay, text below
 const HeroSection = () => (
-  <section className="relative bg-[#0A1628] pt-28 md:pt-32" data-testid="hero-section">
+  <section className="relative bg-[#0A1628] pt-24 md:pt-32 lg:pt-40" data-testid="hero-section">
     {/* Video Section - Smaller to fit fully */}
     <div className="max-w-4xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
@@ -193,12 +193,12 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Try Before You Buy - Wet Test Section - Horizontal layout, minimal white space
+// NEW Try Before You Buy - Wet Test Section - Zero whitespace, compact
 const WetTestSection = () => (
-  <section className="py-4 bg-white">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="flex flex-col md:flex-row gap-4 items-stretch">
-        {/* Video Side - Smaller */}
+  <section className="bg-white" data-testid="wet-test-section">
+    <div className="max-w-7xl mx-auto px-4 py-2">
+      <div className="flex flex-col md:flex-row gap-3 items-stretch">
+        {/* Video Side */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -217,9 +217,8 @@ const WetTestSection = () => (
           viewport={{ once: true }}
           className="md:w-3/5 flex flex-col justify-center"
         >
-          {/* Try Before You Buy - Wet Test */}
-          <div className="bg-slate-50 rounded-lg p-4 mb-3 border-l-4 border-[#B91C1C]">
-            <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-black uppercase mb-1 text-[#0A1628]">
+          <div className="bg-slate-50 rounded-lg p-3 mb-2 border-l-4 border-[#B91C1C]">
+            <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-black uppercase mb-0.5 text-[#0A1628]">
               Try Before You Buy "Wet Test"
             </h3>
             <p className="text-sm md:text-base text-slate-600">
@@ -227,25 +226,25 @@ const WetTestSection = () => (
             </p>
           </div>
           
-          <h2 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-black uppercase mb-2 text-[#0A1628]">
+          <h2 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-black uppercase mb-1 text-[#0A1628]">
             Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
           </h2>
           
-          <p className="text-xs md:text-sm text-slate-600 mb-2">
+          <p className="text-xs md:text-sm text-slate-600 mb-1">
             Family owned and American proud! High-quality American-made hot tubs, swim spas, saunas, and cold plunges.
           </p>
           
-          <ul className="space-y-1 mb-3 text-xs md:text-sm">
+          <ul className="space-y-0.5 mb-2 text-xs md:text-sm">
             <li className="flex items-center gap-2 text-slate-700">
-              <div className="w-1.5 h-1.5 bg-[#B91C1C] rounded-full" />
+              <div className="w-1.5 h-1.5 bg-[#B91C1C] rounded-full flex-shrink-0" />
               Free delivery & installation in SC
             </li>
             <li className="flex items-center gap-2 text-slate-700">
-              <div className="w-1.5 h-1.5 bg-[#B91C1C] rounded-full" />
+              <div className="w-1.5 h-1.5 bg-[#B91C1C] rounded-full flex-shrink-0" />
               Cover, cover lifter, steps & chemicals included <span className="font-bold text-[#B91C1C]">— $1,500 Value FREE!</span>
             </li>
             <li className="flex items-center gap-2 text-slate-700">
-              <div className="w-1.5 h-1.5 bg-[#B91C1C] rounded-full" />
+              <div className="w-1.5 h-1.5 bg-[#B91C1C] rounded-full flex-shrink-0" />
               Military, Veterans & First Responder discounts
             </li>
           </ul>

@@ -166,38 +166,30 @@ const HeroSection = () => (
   </section>
 );
 
-// Trust Badges Section - Navy blue to match hero
+// Trust Badges Section - White background, compact
 const TrustBadgesSection = () => (
-  <section className="py-4 bg-[#0A1628] border-t border-slate-700">
+  <section className="py-3 bg-white border-b border-slate-200">
     <div className="max-w-7xl mx-auto px-4">
-      {/* Subtle accent line */}
-      <div className="flex justify-center mb-3">
-        <div className="flex items-center gap-2">
-          <div className="w-12 h-0.5 bg-[#1E40AF]"></div>
-          <div className="w-4 h-0.5 bg-[#B91C1C]"></div>
-          <div className="w-12 h-0.5 bg-[#1E40AF]"></div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
+        <div className="flex flex-col items-center gap-0.5 p-2">
+          <Shield className="w-5 h-5 text-[#B91C1C]" />
+          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">5% Discount</span>
+          <span className="text-[10px] text-slate-500">Military & Veterans</span>
         </div>
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-        <div className="flex flex-col items-center gap-1 p-2">
-          <Shield className="w-6 h-6 text-[#B91C1C]" />
-          <span className="font-['Barlow_Condensed'] text-sm md:text-base font-bold uppercase text-white">5% Discount</span>
-          <span className="text-xs text-slate-400">Military, Veterans, First Responders</span>
+        <div className="flex flex-col items-center gap-0.5 p-2">
+          <Flag className="w-5 h-5 text-[#1E40AF]" />
+          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">American Made</span>
+          <span className="text-[10px] text-slate-500">Made in USA</span>
         </div>
-        <div className="flex flex-col items-center gap-1 p-2">
-          <Flag className="w-6 h-6 text-[#1E40AF]" />
-          <span className="font-['Barlow_Condensed'] text-sm md:text-base font-bold uppercase text-white">American Made</span>
-          <span className="text-xs text-slate-400">Made in the USA</span>
+        <div className="flex flex-col items-center gap-0.5 p-2">
+          <Heart className="w-5 h-5 text-[#B91C1C]" />
+          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Family Owned</span>
+          <span className="text-[10px] text-slate-500">American & Proud</span>
         </div>
-        <div className="flex flex-col items-center gap-1 p-2">
-          <Heart className="w-6 h-6 text-[#B91C1C]" />
-          <span className="font-['Barlow_Condensed'] text-sm md:text-base font-bold uppercase text-white">Family Owned</span>
-          <span className="text-xs text-slate-400">American & Proud</span>
-        </div>
-        <div className="flex flex-col items-center gap-1 p-2">
-          <Truck className="w-6 h-6 text-[#1E40AF]" />
-          <span className="font-['Barlow_Condensed'] text-sm md:text-base font-bold uppercase text-white">Free Delivery</span>
-          <span className="text-xs text-slate-400">South Carolina</span>
+        <div className="flex flex-col items-center gap-0.5 p-2">
+          <Truck className="w-5 h-5 text-[#1E40AF]" />
+          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Free Delivery</span>
+          <span className="text-[10px] text-slate-500">South Carolina</span>
         </div>
       </div>
     </div>

@@ -223,8 +223,8 @@ const WetTestSection = () => (
               'Cover, cover lifter, steps & chemicals included',
               'Military, Veterans & First Responder discounts',
             ].map((item, idx) => (
-              <li key={idx} className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-[#D4AF37] rounded-full flex-shrink-0" />
+              <li key={idx} className="flex items-center gap-3 text-slate-700">
+                <div className="w-2 h-2 bg-[#B91C1C] rounded-full flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}

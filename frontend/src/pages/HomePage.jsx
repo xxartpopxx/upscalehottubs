@@ -204,9 +204,9 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Try Before You Buy - Wet Test Section with Video - Compact, no extra whitespace
+// NEW Try Before You Buy - Wet Test Section with Video - Navy background, no white space
 const WetTestSection = () => (
-  <section className="py-8 md:py-10 bg-slate-50">
+  <section className="py-6 md:py-8 bg-[#0A1628]">
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
         {/* Video Side */}
@@ -238,11 +238,11 @@ const WetTestSection = () => (
             </p>
           </div>
           
-          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-3 text-[#0A1628]">
+          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-3 text-white">
             Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
           </h2>
           
-          <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-3">
             Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges.
           </p>
           
@@ -252,13 +252,13 @@ const WetTestSection = () => (
               { text: 'Cover, cover lifter, steps & chemicals included', highlight: '$1,500 Value FREE!' },
               'Military, Veterans & First Responder discounts',
             ].map((item, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-slate-700">
+              <li key={idx} className="flex items-start gap-2 text-slate-200">
                 <div className="w-2 h-2 bg-[#B91C1C] rounded-full flex-shrink-0 mt-1.5" />
                 {typeof item === 'string' ? (
                   <span>{item}</span>
                 ) : (
                   <span>
-                    {item.text} <span className="font-bold text-[#B91C1C]">— {item.highlight}</span>
+                    {item.text} <span className="font-bold text-[#D4AF37]">— {item.highlight}</span>
                   </span>
                 )}
               </li>

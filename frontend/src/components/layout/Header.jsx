@@ -58,8 +58,8 @@ const Header = () => {
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo - Viking Style with Text */}
-          <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
+          {/* Logo only - no text */}
+          <Link to="/" className="flex items-center" data-testid="logo-link">
             <motion.img 
               src={ASSETS.logo} 
               alt="Upstate Hot Tubs" 
@@ -67,14 +67,6 @@ const Header = () => {
               loading="eager" 
               whileHover={{ scale: 1.02 }} 
             />
-            <div className="hidden sm:block">
-              <span className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase text-[#0A1628] tracking-tight block leading-tight">
-                UPSTATE
-              </span>
-              <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-semibold uppercase text-slate-500 tracking-wider block leading-tight">
-                HOT TUBS
-              </span>
-            </div>
           </Link>
           
           {/* Desktop Navigation - Viking Clean Style */}

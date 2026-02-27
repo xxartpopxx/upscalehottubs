@@ -193,67 +193,80 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Try Before You Buy - Wet Test Section - Big text, no whitespace
+// NEW Try Before You Buy - Wet Test Section - Filled with logo, images, big text
 const WetTestSection = () => (
   <section className="bg-white" data-testid="wet-test-section">
-    <div className="max-w-7xl mx-auto px-4 py-2">
-      <div className="flex flex-col md:flex-row gap-0 items-stretch">
-        {/* Video Side */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="md:w-1/2"
-        >
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-            <source src={ASSETS.wetTestVideo} type="video/mp4" />
-          </video>
-        </motion.div>
-        
-        {/* Content Side - Big text */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="md:w-1/2 flex flex-col justify-center bg-slate-50 p-6 md:p-10"
-        >
-          <div className="border-l-4 border-[#B91C1C] pl-4 mb-4">
-            <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-1 text-[#0A1628]">
-              Try Before You Buy
-            </h3>
-            <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#B91C1C]">
-              "Wet Test"
-            </h3>
+    <div className="flex flex-col md:flex-row items-stretch">
+      {/* Video Side - Full bleed */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="md:w-1/2"
+      >
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+          <source src={ASSETS.wetTestVideo} type="video/mp4" />
+        </video>
+      </motion.div>
+      
+      {/* Content Side - Packed with logo, big text, images */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="md:w-1/2 bg-[#0A1628] text-white p-6 md:p-8 lg:p-10 flex flex-col justify-between"
+      >
+        {/* Logo at top */}
+        <div className="flex items-center gap-4 mb-4">
+          <img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-16 md:h-20 lg:h-24 object-contain" />
+          <div>
+            <p className="font-['Barlow_Condensed'] text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wider text-white/80">Family Owned</p>
+            <p className="font-['Barlow_Condensed'] text-base md:text-lg text-[#D4AF37] font-semibold">American Made & Proud</p>
           </div>
-          
-          <p className="text-lg md:text-xl lg:text-2xl text-slate-600 mb-4">
-            Bring your suits — we have <span className="font-bold text-[#0A1628]">robes, slippers, and towels</span>. Try today!
-          </p>
-          
-          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-2 text-[#0A1628]">
-            Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
-          </h2>
-          
-          <ul className="space-y-2 mb-4 text-base md:text-lg lg:text-xl">
-            <li className="flex items-start gap-3 text-slate-700">
-              <div className="w-2.5 h-2.5 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-              Free delivery & installation in SC
-            </li>
-            <li className="flex items-start gap-3 text-slate-700">
-              <div className="w-2.5 h-2.5 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-              Cover, cover lifter, steps & chemicals included <span className="font-bold text-[#B91C1C]">— $1,500 Value FREE!</span>
-            </li>
-            <li className="flex items-start gap-3 text-slate-700">
-              <div className="w-2.5 h-2.5 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-              Military, Veterans & First Responder discounts
-            </li>
-          </ul>
-          
-          <Link to="/about" className="btn-primary inline-flex items-center gap-2 text-lg py-3 px-6 self-start">
-            Learn About Us <ChevronRight size={20} />
+        </div>
+
+        {/* Main heading */}
+        <div className="border-l-4 border-[#B91C1C] pl-5 mb-4">
+          <h3 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none mb-1 text-white">
+            Try Before You Buy
+          </h3>
+          <h3 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none text-[#B91C1C]">
+            "Wet Test"
+          </h3>
+        </div>
+        
+        <p className="text-xl md:text-2xl lg:text-3xl mb-4 text-white/90">
+          Bring your suits — we have <span className="font-bold text-white">robes, slippers, and towels</span>. Try today!
+        </p>
+        
+        <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-3 text-white">
+          Why <span className="text-[#B91C1C]">Upstate</span>?
+        </h2>
+        
+        <ul className="space-y-2 mb-5 text-lg md:text-xl lg:text-2xl">
+          <li className="flex items-start gap-3 text-white/90">
+            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+            Free delivery & installation in SC
+          </li>
+          <li className="flex items-start gap-3 text-white/90">
+            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+            Accessories included <span className="font-bold text-[#D4AF37]">— $1,500 Value FREE!</span>
+          </li>
+          <li className="flex items-start gap-3 text-white/90">
+            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+            Military & First Responder discounts
+          </li>
+        </ul>
+        
+        <div className="flex flex-wrap gap-3">
+          <Link to="/contact" className="bg-[#B91C1C] hover:bg-[#991B1B] text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
+            Schedule Wet Test <ChevronRight size={22} />
           </Link>
-        </motion.div>
-      </div>
+          <Link to="/about" className="border-2 border-white/50 hover:border-white text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
+            Learn More <ChevronRight size={22} />
+          </Link>
+        </div>
+      </motion.div>
     </div>
   </section>
 );

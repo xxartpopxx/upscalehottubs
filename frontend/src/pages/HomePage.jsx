@@ -151,17 +151,17 @@ const HeroSection = () => (
 
 // Trust Badges Section - Clean with subtle accent line
 const TrustBadgesSection = () => (
-  <section className="py-8 bg-white border-t border-b border-slate-200">
+  <section className="py-6 bg-white border-t border-b border-slate-200">
     <div className="max-w-7xl mx-auto px-4">
       {/* Subtle accent line */}
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-4">
         <div className="flex items-center gap-2">
           <div className="w-12 h-0.5 bg-[#1E40AF]"></div>
           <div className="w-4 h-0.5 bg-[#B91C1C]"></div>
           <div className="w-12 h-0.5 bg-[#1E40AF]"></div>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <div className="flex flex-col items-center gap-2 p-4">
           <Shield className="w-8 h-8 text-[#B91C1C]" />
           <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">5% Discount</span>

@@ -162,25 +162,25 @@ const TrustBadgesSection = () => (
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-        <div className="flex flex-col items-center gap-2 p-4">
-          <Shield className="w-8 h-8 text-[#B91C1C]" />
-          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">5% Discount</span>
-          <span className="text-sm text-slate-500">Military, Veterans, First Responders</span>
+        <div className="flex flex-col items-center gap-1 p-3">
+          <Shield className="w-7 h-7 text-[#B91C1C]" />
+          <span className="font-['Barlow_Condensed'] text-base md:text-lg font-bold uppercase text-[#0A1628]">5% Discount</span>
+          <span className="text-xs text-slate-500">Military, Veterans, First Responders</span>
         </div>
-        <div className="flex flex-col items-center gap-2 p-4">
-          <Flag className="w-8 h-8 text-[#1E40AF]" />
-          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">American Made</span>
-          <span className="text-sm text-slate-500">Made in the USA</span>
+        <div className="flex flex-col items-center gap-1 p-3">
+          <Flag className="w-7 h-7 text-[#1E40AF]" />
+          <span className="font-['Barlow_Condensed'] text-base md:text-lg font-bold uppercase text-[#0A1628]">American Made</span>
+          <span className="text-xs text-slate-500">Made in the USA</span>
         </div>
-        <div className="flex flex-col items-center gap-2 p-4">
-          <Heart className="w-8 h-8 text-[#B91C1C]" />
-          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">Family Owned</span>
-          <span className="text-sm text-slate-500">American & Proud</span>
+        <div className="flex flex-col items-center gap-1 p-3">
+          <Heart className="w-7 h-7 text-[#B91C1C]" />
+          <span className="font-['Barlow_Condensed'] text-base md:text-lg font-bold uppercase text-[#0A1628]">Family Owned</span>
+          <span className="text-xs text-slate-500">American & Proud</span>
         </div>
-        <div className="flex flex-col items-center gap-2 p-4">
-          <Truck className="w-8 h-8 text-[#1E40AF]" />
-          <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628]">Free Delivery</span>
-          <span className="text-sm text-slate-500">South Carolina</span>
+        <div className="flex flex-col items-center gap-1 p-3">
+          <Truck className="w-7 h-7 text-[#1E40AF]" />
+          <span className="font-['Barlow_Condensed'] text-base md:text-lg font-bold uppercase text-[#0A1628]">Free Delivery</span>
+          <span className="text-xs text-slate-500">South Carolina</span>
         </div>
       </div>
     </div>

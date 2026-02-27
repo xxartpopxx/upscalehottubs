@@ -472,7 +472,7 @@ const ProductCollectionSection = () => {
   );
 };
 
-// NEW The Collection - Location Based Section - Cleaner design
+// NEW The Collection - Location Based Section - Cleaner design (SC Only)
 const LocationCollectionSection = () => (
   <section className="py-16 md:py-20 bg-white">
     <div className="max-w-7xl mx-auto px-4">
@@ -493,60 +493,58 @@ const LocationCollectionSection = () => (
         <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4 text-[#0A1628]">
           The <span className="text-[#B91C1C]">Collection</span>
         </h2>
-        <p className="text-lg md:text-xl text-slate-600">Shop by your location for the best selection</p>
+        <p className="text-lg md:text-xl text-slate-600">Shop our premium American-made hot tubs and spas</p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Greenville SC & The Upstate */}
+      <div className="grid md:grid-cols-3 gap-6">
+        {/* Grand River Spas */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-slate-50 rounded-xl p-8 border-l-4 border-[#1E40AF] hover:shadow-lg transition-all"
+          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#1E40AF] hover:shadow-lg transition-all text-center"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <MapPin className="text-[#1E40AF]" size={28} />
-            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628]">
-              Greenville SC & The Upstate
-            </h3>
-          </div>
-          <p className="text-lg md:text-xl text-slate-600 mb-6">
-            Click for <span className="text-[#0A1628] font-bold">Grand River and Dynasty Spas</span> — American Made
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/grand-river-spas" className="btn-primary flex items-center justify-center gap-2">
-              Grand River Spas <ChevronRight size={20} />
-            </Link>
-            <Link to="/dynasty-spas" className="btn-secondary flex items-center justify-center gap-2">
-              Dynasty Spas <ChevronRight size={20} />
-            </Link>
-          </div>
+          <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-2">
+            Grand River Spas
+          </h3>
+          <p className="text-slate-600 mb-4">American Made Premium Quality</p>
+          <Link to="/grand-river-spas" className="btn-primary inline-flex items-center gap-2">
+            Shop Now <ChevronRight size={18} />
+          </Link>
         </motion.div>
 
-        {/* Naples & Southwest FL */}
+        {/* Dynasty Spas */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-slate-50 rounded-xl p-8 border-l-4 border-[#B91C1C] hover:shadow-lg transition-all"
+          transition={{ delay: 0.1 }}
+          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#B91C1C] hover:shadow-lg transition-all text-center"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <MapPin className="text-[#B91C1C]" size={28} />
-            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628]">
-              Naples & Southwest FL
-            </h3>
-          </div>
-          <p className="text-lg md:text-xl text-slate-600 mb-6">
-            Click for <span className="text-[#0A1628] font-bold">Viking, Grand River and Dynasty Spas</span>
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/viking-spas" className="btn-primary flex items-center justify-center gap-2">
-              Viking Spas <ChevronRight size={20} />
-            </Link>
-            <Link to="/grand-river-spas" className="btn-secondary flex items-center justify-center gap-2">
-              More Options <ChevronRight size={20} />
-            </Link>
-          </div>
+          <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-2">
+            Dynasty Spas
+          </h3>
+          <p className="text-slate-600 mb-4">4 Seasons of Relaxation</p>
+          <Link to="/dynasty-spas" className="btn-primary inline-flex items-center gap-2">
+            Shop Now <ChevronRight size={18} />
+          </Link>
+        </motion.div>
+
+        {/* Viking Spas */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#1E40AF] hover:shadow-lg transition-all text-center"
+        >
+          <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-2">
+            Viking Spas
+          </h3>
+          <p className="text-slate-600 mb-4">Elite Series Excellence</p>
+          <Link to="/viking-spas" className="btn-primary inline-flex items-center gap-2">
+            Shop Now <ChevronRight size={18} />
+          </Link>
         </motion.div>
       </div>
     </div>

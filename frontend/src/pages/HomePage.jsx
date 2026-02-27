@@ -534,14 +534,7 @@ const LocationCollectionSection = () => (
     </div>
   </section>
 );
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  </section>
-);
-
-// NEW Why Hot Tubs Section - Reinforced
+// Removed duplicate closing tags
 const WhyHotTubsSection = () => (
   <section className="py-16 md:py-20 bg-white">
     <div className="max-w-7xl mx-auto px-4">

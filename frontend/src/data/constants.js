@@ -21,7 +21,7 @@ export const CONTACT = {
   email: 'info@upstatehottubs.com',
   address: '1004 West Georgia Rd, Simpsonville, SC 29680',
   hours: 'Always Open',
-  serviceAreas: ['Fountain Inn, SC', 'Mauldin, SC', 'Spartanburg, SC', 'Anderson, SC', 'Greenville, SC', 'Greer, SC', 'Five Forks, SC', 'Naples, FL'],
+  serviceAreas: ['Fountain Inn, SC', 'Mauldin, SC', 'Spartanburg, SC', 'Anderson, SC', 'Greenville, SC', 'Greer, SC', 'Five Forks, SC', 'Simpsonville, SC'],
 };
 
 export const SOCIAL_LINKS = {

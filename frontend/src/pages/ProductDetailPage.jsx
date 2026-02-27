@@ -394,7 +394,7 @@ const ProductDetailPage = () => {
                         const color = getShellColorData(colorKey);
                         if (!color) return null;
                         const isSelected = selectedShell === colorKey;
-                        const swatchSize = isDynasty ? 'w-20 h-20' : 'w-14 h-14';
+                        const swatchSize = isDynasty ? 'w-16 h-16 md:w-20 md:h-20' : 'w-10 h-10 md:w-14 md:h-14';
                         
                         return (
                           <motion.button
@@ -418,11 +418,11 @@ const ProductDetailPage = () => {
                               )}
                               {isSelected && (
                                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
-                                  <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
+                                  <Check className="text-[#B91C1C]" size={14} strokeWidth={3} />
                                 </motion.div>
                               )}
                             </div>
-                            <p className={`text-[10px] mt-1 text-center font-medium ${isDynasty ? 'max-w-20' : 'max-w-14'} ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
+                            <p className={`text-[9px] md:text-[10px] mt-0.5 md:mt-1 text-center font-medium ${isDynasty ? 'max-w-16 md:max-w-20' : 'max-w-10 md:max-w-14'} ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
                               {isDynasty ? color.name : color.name.split(' ')[0]}
                             </p>
                           </motion.button>
@@ -431,10 +431,10 @@ const ProductDetailPage = () => {
                     </div>
                   </div>
                   
-                  {/* Cabinet Colors */}
-                  <div className="mb-5">
-                    <p className="text-sm font-semibold text-slate-600 mb-2">{isDynasty ? 'Skirt Color' : 'Cabinet Color'}</p>
-                    <div className="flex gap-2 flex-wrap">
+                  {/* Cabinet Colors - Compact on mobile */}
+                  <div className="mb-3 md:mb-5">
+                    <p className="text-xs md:text-sm font-semibold text-slate-600 mb-1 md:mb-2">{isDynasty ? 'Skirt Color' : 'Cabinet Color'}</p>
+                    <div className="flex gap-1.5 md:gap-2 flex-wrap">
                       {product.cabinetColors.map((colorKey) => {
                         const color = getCabinetColorData(colorKey);
                         if (!color) return null;

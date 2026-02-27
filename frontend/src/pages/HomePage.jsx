@@ -189,18 +189,9 @@ const TrustBadgesSection = () => (
 
 // NEW Try Before You Buy - Wet Test Section with Video - Cleaner design
 const WetTestSection = () => (
-  <section className="py-16 md:py-20 bg-slate-50">
+  <section className="py-12 md:py-16 bg-slate-50">
     <div className="max-w-7xl mx-auto px-4">
-      {/* Subtle accent line */}
-      <div className="flex justify-center mb-8">
-        <div className="flex items-center gap-2">
-          <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
-          <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
-          <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
-        </div>
-      </div>
-      
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Video Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -213,22 +204,14 @@ const WetTestSection = () => (
           </video>
         </motion.div>
         
-        {/* Content Side - With Wet Test Info */}
+        {/* Content Side - Wet Test FIRST */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="order-1 md:order-2"
         >
-          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4 text-[#0A1628]">
-            Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
-          </h2>
-          
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
-            Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges with superior components and craftsmanship.
-          </p>
-          
-          {/* Try Before You Buy - Wet Test Highlight - Cleaner with border accent */}
+          {/* Try Before You Buy - Wet Test Highlight - FIRST */}
           <div className="bg-white rounded-lg p-6 mb-6 border-l-4 border-[#B91C1C] shadow-sm">
             <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase mb-2 text-[#0A1628]">
               Try Before You Buy "Wet Test"
@@ -238,20 +221,34 @@ const WetTestSection = () => (
             </p>
           </div>
           
-          <ul className="space-y-4 mb-8 text-lg md:text-xl">
+          <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4 text-[#0A1628]">
+            Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
+          </h2>
+          
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-4">
+            Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges with superior components and craftsmanship.
+          </p>
+          
+          <ul className="space-y-3 mb-6 text-base md:text-lg">
             {[
-              'Free delivery & installation in FL & SC',
-              'Cover, cover lifter, steps & chemicals included',
+              'Free delivery & installation in SC',
+              { text: 'Cover, cover lifter, steps & chemicals included', highlight: '$1,500 Value FREE!' },
               'Military, Veterans & First Responder discounts',
             ].map((item, idx) => (
-              <li key={idx} className="flex items-center gap-3 text-slate-700">
-                <div className="w-2 h-2 bg-[#B91C1C] rounded-full flex-shrink-0" />
-                <span>{item}</span>
+              <li key={idx} className="flex items-start gap-3 text-slate-700">
+                <div className="w-2 h-2 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+                {typeof item === 'string' ? (
+                  <span>{item}</span>
+                ) : (
+                  <span>
+                    {item.text} <span className="font-bold text-[#B91C1C]">— {item.highlight}</span>
+                  </span>
+                )}
               </li>
             ))}
           </ul>
           
-          <Link to="/about" className="btn-primary inline-flex items-center gap-2 text-lg">
+          <Link to="/about" className="btn-primary inline-flex items-center gap-2">
             Learn About Us <ChevronRight size={20} />
           </Link>
         </motion.div>

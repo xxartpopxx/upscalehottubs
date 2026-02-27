@@ -92,17 +92,38 @@ const HeroSection = () => (
     </div>
     
     {/* Text Content Below Video - Red White Blue Theme */}
-    <div className="bg-[#0A1628] text-white py-12 md:py-16">
+    <div className="bg-[#0A1628] text-white py-8 md:py-12">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Flag className="text-[#B91C1C]" size={32} />
+          {/* Animated American Flags */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <motion.span 
+              animate={{ rotate: [0, 5, 0, -5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="text-4xl md:text-5xl"
+            >
+              🇺🇸
+            </motion.span>
             <span className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white">American Made & Proud of It</span>
-            <Flag className="text-[#B91C1C]" size={32} />
+            <motion.span 
+              animate={{ rotate: [0, -5, 0, 5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="text-4xl md:text-5xl"
+            >
+              🇺🇸
+            </motion.span>
           </div>
           
           <h1 className="font-['Barlow_Condensed'] text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6">
-            Live Your <span className="text-[#B91C1C]">Healthiest Life</span>
+            Live Your{' '}
+            <span 
+              className="text-[#B91C1C]"
+              style={{ 
+                textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
+              }}
+            >
+              Healthiest Life
+            </span>
             <br />
             <span className="text-white">While Enjoying a Vacation</span>
             <br />
@@ -110,7 +131,7 @@ const HeroSection = () => (
           </h1>
           
           <p className="text-xl md:text-2xl lg:text-3xl font-medium mb-8 max-w-4xl mx-auto text-slate-200">
-            The Best Hot Tubs & Swim Spas Store in Naples Florida, Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
+            The Best Hot Tubs & Swim Spas Store in Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -120,7 +141,7 @@ const HeroSection = () => (
           </div>
           
           <p className="text-xl md:text-2xl font-bold text-[#D4AF37]">
-            Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in Florida and SC
+            Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in SC
           </p>
         </motion.div>
       </div>

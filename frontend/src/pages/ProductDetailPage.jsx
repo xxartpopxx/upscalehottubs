@@ -253,10 +253,10 @@ const ProductDetailPage = () => {
           <meta name="keywords" content={seoKeywords} />
         </Helmet>
       )}
-      <div className="pt-36 pb-20" data-testid="product-detail-page">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          {/* Breadcrumb */}
-          <nav className="mb-6">
+      <div className="pt-24 md:pt-36 pb-10 md:pb-20" data-testid="product-detail-page">
+        <div className="max-w-7xl mx-auto px-2 md:px-8">
+          {/* Breadcrumb - Hidden on mobile */}
+          <nav className="mb-2 md:mb-6 hidden md:block">
             <ol className="flex items-center gap-2 text-sm">
               <li><Link to="/" className="text-slate-500 hover:text-[#B91C1C]">Home</Link></li>
               <ChevronRight size={14} className="text-slate-400" />

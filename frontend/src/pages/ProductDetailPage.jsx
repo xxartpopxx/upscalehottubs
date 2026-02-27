@@ -381,30 +381,15 @@ const ProductDetailPage = () => {
             {!isSaunaOrColdPlunge && (
             <div className="lg:col-span-5 lg:sticky lg:top-32">
               {product.shellColors && product.cabinetColors && !isDynasty && !isSwimSpa ? (
-                <div className="bg-slate-50 p-5 h-full">
-                  {/* Mobile: Show mini preview of selected colors at top */}
-                  <div className="lg:hidden mb-4 p-3 bg-white rounded-lg border border-slate-200 sticky top-20 z-20">
-                    <p className="text-xs font-semibold text-slate-500 mb-2">Selected Colors:</p>
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded border border-slate-300" style={{ backgroundColor: SHELL_COLORS[selectedShell]?.hex }} />
-                        <span className="text-xs font-medium">{SHELL_COLORS[selectedShell]?.name}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded border border-slate-300" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
-                        <span className="text-xs font-medium">{CABINET_COLORS[selectedCabinet]?.name}</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-4">
-                    Customize Your Spa Colors
+                <div className="bg-slate-50 p-3 md:p-5 h-full">
+                  <h3 className="font-['Barlow_Condensed'] text-base md:text-xl font-bold uppercase text-[#0A1628] mb-2 md:mb-4">
+                    Customize Colors
                   </h3>
                   
-                  {/* Shell Colors */}
-                  <div className="mb-5">
-                    <p className="text-sm font-semibold text-slate-600 mb-2">Shell Color</p>
-                    <div className="flex gap-2 flex-wrap">
+                  {/* Shell Colors - Compact on mobile */}
+                  <div className="mb-3 md:mb-5">
+                    <p className="text-xs md:text-sm font-semibold text-slate-600 mb-1 md:mb-2">Shell Color</p>
+                    <div className="flex gap-1.5 md:gap-2 flex-wrap">
                       {product.shellColors.map((colorKey) => {
                         const color = getShellColorData(colorKey);
                         if (!color) return null;

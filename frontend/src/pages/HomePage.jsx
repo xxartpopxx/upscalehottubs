@@ -82,8 +82,11 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
 // NEW Hero Section - Video without text overlay, text below
 const HeroSection = () => (
   <section className="relative bg-[#0A1628]" data-testid="hero-section">
+    {/* Blue space at top to push video down */}
+    <div className="h-4 md:h-6 bg-[#0A1628]"></div>
+    
     {/* Video Section - Contained, positioned lower */}
-    <div className="max-w-5xl mx-auto px-4 pt-6 md:pt-10">
+    <div className="max-w-5xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
         <video autoPlay muted loop playsInline className="w-full h-full object-contain bg-black">
           <source src={ASSETS.heroVideo} type="video/mp4" />
@@ -95,23 +98,37 @@ const HeroSection = () => (
     <div className="bg-[#0A1628] text-white py-6 md:py-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          {/* Animated American Flags */}
+          {/* Animated American Flags - More realistic waving effect */}
           <div className="flex items-center justify-center gap-4 mb-4">
-            <motion.img 
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
-              alt="American Flag"
-              className="w-12 h-8 md:w-16 md:h-10 object-cover rounded shadow-md"
-              animate={{ rotate: [0, 3, 0, -3, 0], y: [0, -2, 0, -2, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
+            <motion.div
+              animate={{ 
+                rotateY: [0, 10, 0, -10, 0],
+                skewX: [0, 2, 0, -2, 0]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
+              <img 
+                src="https://flagcdn.com/w160/us.png"
+                alt="American Flag"
+                className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
+              />
+            </motion.div>
             <span className="text-lg md:text-2xl font-bold tracking-widest uppercase text-white">American Made & Proud of It</span>
-            <motion.img 
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
-              alt="American Flag"
-              className="w-12 h-8 md:w-16 md:h-10 object-cover rounded shadow-md"
-              animate={{ rotate: [0, -3, 0, 3, 0], y: [0, -2, 0, -2, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
+            <motion.div
+              animate={{ 
+                rotateY: [0, -10, 0, 10, 0],
+                skewX: [0, -2, 0, 2, 0]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
+              <img 
+                src="https://flagcdn.com/w160/us.png"
+                alt="American Flag"
+                className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
+              />
+            </motion.div>
           </div>
           
           <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">

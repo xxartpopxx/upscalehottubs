@@ -204,17 +204,16 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Try Before You Buy - Wet Test Section with Video - Navy background, no white space
+// NEW Try Before You Buy - Wet Test Section with Video - White background, compact
 const WetTestSection = () => (
-  <section className="py-6 md:py-8 bg-[#0A1628]">
+  <section className="py-6 md:py-8 bg-white">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+      <div className="grid md:grid-cols-2 gap-6 items-center">
         {/* Video Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="order-2 md:order-1"
         >
           <video autoPlay muted loop playsInline className="w-full rounded-lg shadow-xl">
             <source src={ASSETS.wetTestVideo} type="video/mp4" />
@@ -226,10 +225,9 @@ const WetTestSection = () => (
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="order-1 md:order-2"
         >
           {/* Try Before You Buy - Wet Test Highlight - FIRST */}
-          <div className="bg-white rounded-lg p-5 mb-4 border-l-4 border-[#B91C1C] shadow-sm">
+          <div className="bg-slate-50 rounded-lg p-5 mb-4 border-l-4 border-[#B91C1C] shadow-sm">
             <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase mb-2 text-[#0A1628]">
               Try Before You Buy "Wet Test"
             </h3>
@@ -238,11 +236,11 @@ const WetTestSection = () => (
             </p>
           </div>
           
-          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-3 text-white">
+          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-3 text-[#0A1628]">
             Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
           </h2>
           
-          <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-3">
+          <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
             Family owned and American proud! We offer high-quality American-made hot tubs, swim spas, saunas, and cold plunges.
           </p>
           
@@ -252,13 +250,13 @@ const WetTestSection = () => (
               { text: 'Cover, cover lifter, steps & chemicals included', highlight: '$1,500 Value FREE!' },
               'Military, Veterans & First Responder discounts',
             ].map((item, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-slate-200">
+              <li key={idx} className="flex items-start gap-2 text-slate-700">
                 <div className="w-2 h-2 bg-[#B91C1C] rounded-full flex-shrink-0 mt-1.5" />
                 {typeof item === 'string' ? (
                   <span>{item}</span>
                 ) : (
                   <span>
-                    {item.text} <span className="font-bold text-[#D4AF37]">— {item.highlight}</span>
+                    {item.text} <span className="font-bold text-[#B91C1C]">— {item.highlight}</span>
                   </span>
                 )}
               </li>

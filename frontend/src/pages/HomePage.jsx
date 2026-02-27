@@ -83,9 +83,9 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
 const HeroSection = () => (
   <section className="relative bg-[#0A1628]" data-testid="hero-section">
     {/* Video Section - Contained, not full width */}
-    <div className="max-w-5xl mx-auto px-4 pt-8">
+    <div className="max-w-5xl mx-auto px-4 pt-4 md:pt-8">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+        <video autoPlay muted loop playsInline className="w-full h-full object-contain bg-black">
           <source src={ASSETS.heroVideo} type="video/mp4" />
         </video>
       </div>

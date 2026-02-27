@@ -82,10 +82,10 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
 // NEW Hero Section - Video without text overlay, text below
 const HeroSection = () => (
   <section className="relative bg-[#0A1628]" data-testid="hero-section">
-    {/* Blue space at top to push video down */}
-    <div className="h-4 md:h-6 bg-[#0A1628]"></div>
+    {/* Blue bar at top to push video down */}
+    <div className="h-8 md:h-12 bg-[#0A1628]"></div>
     
-    {/* Video Section - Contained, positioned lower */}
+    {/* Video Section - Contained */}
     <div className="max-w-5xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
         <video autoPlay muted loop playsInline className="w-full h-full object-contain bg-black">

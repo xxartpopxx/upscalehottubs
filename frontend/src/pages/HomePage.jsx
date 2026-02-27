@@ -535,6 +535,8 @@ const LocationCollectionSection = () => (
   </section>
 );
 // Removed duplicate closing tags
+
+// NEW Why Hot Tubs Section - Cleaner design
 const WhyHotTubsSection = () => (
   <section className="py-16 md:py-20 bg-white">
     <div className="max-w-7xl mx-auto px-4">

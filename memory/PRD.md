@@ -1,57 +1,45 @@
-# Upstate Hot Tubs Website - Product Requirements Document
+# Upstate Hot Tubs - Product Requirements Document
 
 ## Original Problem Statement
-Build and maintain an e-commerce website for Upstate Hot Tubs featuring products from multiple brands: Grand River Spas, Viking Spas, Dynasty Spas, plus saunas and cold plunges. Data is scraped from manufacturer websites.
+Overhaul the "Upstate Hot Tubs" website with visual and functional changes including header redesign, hero video positioning, new content sections, mobile UX improvements, and a clean red/white/blue theme.
+
+## Core Requirements
+1. Header with "upstatehottubs" branding, updated logo
+2. Hero video fully visible below nav, text below video (not overlaid)
+3. "LIVE YOUR HEALTHIEST LIFE" headline with white outline
+4. Animated American flags replacing "AMERICAN MADE" text
+5. "Try Before You Buy Wet Test" section (compact, minimal whitespace)
+6. "$1,500 value free" note on accessories line
+7. Clean red/white/blue theme with subtle accents
+8. "The Collection", "Why Upstate Hot Tubs?", "Why a Hot Tub?" sections
+9. Shop All Models sorted lowest to highest price, mixed brands
+10. Remove all Florida/Naples references
+11. Videos on Wellness, Spa Butler, Balneotherapy, About pages
+12. Dynasty Spas product corrections (Luxury->Oasis, Hideaway->Vacation)
+13. Mobile: sticky color preview on product pages, compact layout
 
 ## Architecture
-- **Frontend**: React + Tailwind CSS + Framer Motion
-- **Data**: All products hardcoded in `frontend/src/data/products.js`
-- **No Backend**: Pure frontend application
+- Frontend: React + Tailwind CSS + Vite
+- Backend: FastAPI (untouched)
+- Database: MongoDB (untouched)
+- Product data: Hardcoded in frontend constants
 
-## Key Files
-- `frontend/src/data/products.js` - ALL product data
-- `frontend/src/pages/ProductDetailPage.jsx` - Product detail, color selector, comparison
-- `frontend/src/pages/DynastySpasPage.jsx` - Dynasty listing with large color panel
-- `frontend/src/pages/SwimSpasPage.jsx` - Swim spas (Grand River + Dynasty)
-- `frontend/src/pages/ColdPlungesPage.jsx` - Cold plunges with 4 informational content sections
-- `frontend/src/components/layout/Header.jsx` - Navigation with Discover dropdown
-- `frontend/src/pages/HomePage.jsx` - Homepage with categories, product grids
+## What's Been Implemented
+- Homepage redesign with all new sections
+- Hero section: repositioned video, outlined text, animated flags
+- Wet Test section with compact layout
+- Trust badges, Resource cards, Product collections
+- Shop All Models carousel with mixed brands
+- Clean white theme with subtle red/blue accents
+- Multiple video integrations on content pages
+- Dynasty Spas product data corrections
+- Mobile UX: sticky color preview, compact product page
+- All Florida/Naples references removed
+- Logo updated across site
 
-## Completed Features
+## Resolved Issues (Feb 2026)
+- Hero video cut off by nav bar: Fixed by adjusting responsive top padding (pt-24 md:pt-32 lg:pt-40)
+- Wet Test section whitespace: Removed excessive padding, made section compact (py-2 container)
 
-### Feb 25, 2026 (Current Session)
-- [x] Cold Plunges page: Added 4 new informational content sections from scraped source URLs
-  - Recovery Guide (ice bath timing before/after workout)
-  - Skin Benefits (cold therapy for beauty)
-  - Chiller Guide (HP vs cooling capacity comparison table)
-  - Water Maintenance Guide (testing, chemicals, filtration, schedule)
-- [x] Each long section uses ExpandableSection component with expand/collapse toggle
-- [x] Homepage: Updated "Shop By Categories" thumbnails for Swim Spas and Cold Plunges to use actual product images
-
-### Feb 24, 2026 (Previous Session)
-- [x] Grand River swim spas added (Valhalla, Asgard, Odin, Thor)
-- [x] Dynasty color selector REMOVED; static color reference section added
-- [x] Fixed all broken le-cdn image URLs
-- [x] Added new Dynasty hot tub and swim spa models
-- [x] Created 4 new content pages: Covers, Anatomy of a Spa, Balneotherapy, Jets
-- [x] Added "Discover" dropdown menu to Header
-- [x] Added Features & Benefits to Dynasty Spas page
-- [x] Added Health Benefits YouTube video to Wellness page
-- [x] Fixed header overlap CSS issue
-- [x] Removed duplicate slogan from page templates
-
-### Prior Session
-- [x] Grand River Spas products with color visualizer
-- [x] Viking Spas products with 3-part color selector
-- [x] Dynasty Spas hot tubs (19 models)
-- [x] Compare Models feature
-- [x] Swim Spas, Saunas, Cold Plunges, Wellness pages
-- [x] About page with YouTube video
-
-## Backlog / Future Tasks
-- [ ] Full product data audit vs source sites (price verification)
-- [ ] Refactor ProductDetailPage.jsx into brand-specific sub-components
-- [ ] Migrate product data to backend API + database
-- [ ] SEO structured data (Schema.org JSON-LD)
-- [ ] Performance optimization
-- [ ] Testimonials/Reviews section
+## Backlog
+- P2: Migrate product data from frontend constants to backend API

@@ -538,7 +538,7 @@ const LocationCollectionSection = () => (
 
 // NEW Why Hot Tubs Section - Cleaner design
 const WhyHotTubsSection = () => (
-  <section className="py-16 md:py-20 bg-white">
+  <section className="py-16 md:py-20 bg-slate-50">
     <div className="max-w-7xl mx-auto px-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -546,20 +546,28 @@ const WhyHotTubsSection = () => (
         viewport={{ once: true }}
         className="text-center mb-12"
       >
+        {/* Subtle accent line */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+            <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
+            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+          </div>
+        </div>
         <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
           Why a <span className="text-[#B91C1C]">Hot Tub</span>?
         </h2>
         <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-          For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress. Experience the therapeutic benefits of hydrotherapy from the comfort of your backyard.
+          For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress.
         </p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { icon: Droplets, title: 'Hydrotherapy', desc: 'Improve circulation, muscle recovery, and reduce anxiety with the power of water.' },
-          { icon: Moon, title: 'Better Sleep', desc: 'Warm water and jets melt away stress, helping you sleep soundly.' },
-          { icon: Heart, title: 'Stress Relief', desc: 'Release endorphins and unwind from the day in soothing warm water.' },
-          { icon: Activity, title: 'Pain Relief', desc: 'Ease joint stiffness, reduce inflammation, and increase flexibility naturally.' },
+          { icon: Droplets, title: 'Hydrotherapy', desc: 'Improve circulation, muscle recovery, and reduce anxiety.' },
+          { icon: Moon, title: 'Better Sleep', desc: 'Warm water and jets melt away stress for better rest.' },
+          { icon: Heart, title: 'Stress Relief', desc: 'Release endorphins and unwind in soothing warm water.' },
+          { icon: Activity, title: 'Pain Relief', desc: 'Ease joint stiffness and increase flexibility naturally.' },
         ].map((item, idx) => (
           <motion.div
             key={item.title}
@@ -567,17 +575,17 @@ const WhyHotTubsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition-all border-2 border-transparent hover:border-[#B91C1C]"
+            className="bg-white rounded-lg p-6 text-center hover:shadow-md transition-all border-t-2 border-[#B91C1C]"
           >
-            <item.icon className="w-12 h-12 mx-auto text-[#B91C1C] mb-4" />
-            <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-bold uppercase text-[#0A1628] mb-2">{item.title}</h3>
-            <p className="text-base md:text-lg text-slate-600">{item.desc}</p>
+            <item.icon className="w-10 h-10 mx-auto text-[#1E40AF] mb-4" />
+            <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-2">{item.title}</h3>
+            <p className="text-sm text-slate-600">{item.desc}</p>
           </motion.div>
         ))}
       </div>
 
       <div className="text-center mt-10">
-        <Link to="/wellness" className="btn-primary inline-flex items-center gap-2 text-lg">
+        <Link to="/wellness" className="btn-primary inline-flex items-center gap-2">
           Discover All Benefits <ChevronRight size={20} />
         </Link>
       </div>

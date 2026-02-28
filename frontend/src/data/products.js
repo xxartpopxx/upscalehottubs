@@ -1789,6 +1789,15 @@ export const DYNASTY_SWIM_SPAS = [
 export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...VIKING_SWIM_SPAS, ...DYNASTY_SWIM_SPAS];
 
 // Saunas and Cold Plunges
+// White Glove Installation available for all saunas: $1,500.00
+export const SAUNA_INSTALLATION_OPTION = {
+  id: 'sauna-white-glove',
+  name: 'White Glove Installation',
+  price: '$1,500.00',
+  priceValue: 1500,
+  description: 'Professional white glove installation service. Our team handles delivery, setup, and ensures your sauna is ready to use.'
+};
+
 export const SAUNAS = [
   {
     id: 'sauna-ee8g',
@@ -1803,7 +1812,8 @@ export const SAUNAS = [
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg',
       overhead: 'https://static.wixstatic.com/media/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_3cbf8456e11243cf847d41383384f44c~mv2.jpg'
-    }
+    },
+    whiteGloveInstallation: true
   },
   {
     id: 'sauna-ee6g',
@@ -1818,7 +1828,8 @@ export const SAUNAS = [
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg',
       overhead: 'https://static.wixstatic.com/media/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_eb36eec4d8c14ba196a52637182a7f38~mv2.jpg'
-    }
+    },
+    whiteGloveInstallation: true
   },
   {
     id: 'sauna-gl4',
@@ -1833,7 +1844,8 @@ export const SAUNAS = [
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg',
       overhead: 'https://static.wixstatic.com/media/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_cbf022aa5e2c4eb692e22b73625b0ada~mv2.jpg'
-    }
+    },
+    whiteGloveInstallation: true
   },
   {
     id: 'sauna-cl3g',
@@ -1848,7 +1860,8 @@ export const SAUNAS = [
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg',
       overhead: 'https://static.wixstatic.com/media/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_a277699db78c4e0ba8d2195e1414dad4~mv2.jpg'
-    }
+    },
+    whiteGloveInstallation: true
   },
   {
     id: 'sauna-g6',
@@ -1863,7 +1876,8 @@ export const SAUNAS = [
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg',
       overhead: 'https://static.wixstatic.com/media/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_e56fe49cbb29452ea58188006e11a6b1~mv2.jpg'
-    }
+    },
+    whiteGloveInstallation: true
   },
   {
     id: 'sauna-cl7g',
@@ -1878,7 +1892,8 @@ export const SAUNAS = [
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg',
       overhead: 'https://static.wixstatic.com/media/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_c91840fd49044fd690b7277b44cf25fc~mv2.jpg'
-    }
+    },
+    whiteGloveInstallation: true
   }
 ];
 

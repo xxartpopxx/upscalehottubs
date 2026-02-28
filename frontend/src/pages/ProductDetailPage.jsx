@@ -685,6 +685,66 @@ const ProductDetailPage = () => {
             </div>
           </div>
           
+          {/* Grand River Spas - Available Extras/Upgrades Section */}
+          {isGrandRiver && !isSwimSpa && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="grand-river-extras"
+            >
+              <div className="bg-gradient-to-r from-[#0A1628] to-[#1a2d4a] p-6 lg:p-8">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-6 text-center">
+                  Available Upgrades & Extras
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                  {GRAND_RIVER_EXTRAS.map((extra) => (
+                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
+                      <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
+                      <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
+                      <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-slate-400 text-sm text-center mt-4">
+                  Ask your sales representative about adding these upgrades to your order.
+                </p>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Sauna - White Glove Installation Option */}
+          {product?.brand === 'SaunaLife' && product?.whiteGloveInstallation && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="sauna-installation"
+            >
+              <div className="bg-gradient-to-r from-amber-700 to-amber-900 p-6 lg:p-8 rounded-lg">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="text-center md:text-left">
+                    <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-2">
+                      White Glove Installation Available
+                    </h3>
+                    <p className="text-amber-100">
+                      {SAUNA_INSTALLATION_OPTION.description}
+                    </p>
+                  </div>
+                  <div className="bg-white/20 backdrop-blur-sm px-8 py-4 rounded-lg border border-white/30 text-center">
+                    <span className="text-white text-sm block mb-1">Add Professional Installation</span>
+                    <span className="text-white font-bold text-3xl">{SAUNA_INSTALLATION_OPTION.price}</span>
+                  </div>
+                </div>
+                <p className="text-amber-200 text-sm text-center md:text-left mt-4">
+                  Contact us to add white glove installation to your sauna order.
+                </p>
+              </div>
+            </motion.div>
+          )}
+
           {/* Dynasty Spas - Color Reference Section */}
           {isDynasty && product.shellColors && (() => {
             const hideawayModels = ['ds-bay-bliss', 'ds-high-tide', 'ds-seaside'];

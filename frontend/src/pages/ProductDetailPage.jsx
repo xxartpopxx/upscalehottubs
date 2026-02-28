@@ -714,6 +714,62 @@ const ProductDetailPage = () => {
             </motion.div>
           )}
 
+          {/* Viking Spas - Free Items Banner */}
+          {isViking && !isSwimSpa && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="viking-free-items"
+            >
+              <div className="bg-gradient-to-r from-green-700 to-green-900 p-6 lg:p-8 rounded-lg">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-4 text-center">
+                  Included FREE With Your Spa
+                </h3>
+                <div className="flex flex-wrap justify-center gap-4">
+                  {VIKING_SPAS_FREE_ITEMS.items.map((item, idx) => (
+                    <span key={idx} className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white font-medium text-sm">
+                      ✓ {item}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-green-100 text-center mt-4 text-sm">
+                  {VIKING_SPAS_FREE_ITEMS.note}
+                </p>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Viking Spas - Available Extras/Upgrades Section */}
+          {isViking && !isSwimSpa && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="viking-extras"
+            >
+              <div className="bg-gradient-to-r from-[#0A1628] to-[#1a2d4a] p-6 lg:p-8">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-6 text-center">
+                  Available Upgrades & Add-Ons
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                  {VIKING_SPAS_EXTRAS.map((extra) => (
+                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
+                      <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
+                      <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
+                      <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-slate-400 text-sm text-center mt-4">
+                  Ask your sales representative about adding these upgrades to your order.
+                </p>
+              </div>
+            </motion.div>
+          )}
+
           {/* Sauna - White Glove Installation Option */}
           {product?.brand === 'SaunaLife' && product?.whiteGloveInstallation && (
             <motion.div

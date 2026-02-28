@@ -534,6 +534,92 @@ export const GRAND_RIVER_EXTRAS = [
 ];
 
 // ===========================================
+// DYNASTY SPAS EXTRAS/OPTIONS BY COLLECTION
+// ===========================================
+
+// Luxury Collection Add-ons
+export const DYNASTY_LUXURY_EXTRAS = [
+  {
+    id: 'ds-luxury-stereo',
+    name: 'In Stream Stereo',
+    price: '$995.99',
+    priceValue: 995.99,
+    description: 'Premium in.Stream audio system for your spa experience.'
+  },
+  {
+    id: 'ds-luxury-circ-pump',
+    name: 'Circulation Pump',
+    price: '$495.99',
+    priceValue: 495.99,
+    description: 'Energy-efficient circulation pump for improved water flow and filtration.'
+  }
+];
+
+// Oasis Collection Add-ons
+export const DYNASTY_OASIS_EXTRAS = [
+  {
+    id: 'ds-oasis-stereo',
+    name: 'In Stream Stereo',
+    price: '$995.99',
+    priceValue: 995.99,
+    description: 'Premium in.Stream audio system for your spa experience.'
+  },
+  {
+    id: 'ds-oasis-lighting',
+    name: 'In Mix Lighting',
+    price: '$995.99',
+    priceValue: 995.99,
+    description: 'Advanced in.Mix LED lighting system for ambient illumination.'
+  },
+  {
+    id: 'ds-oasis-circ-pump',
+    name: 'Circulation Pump',
+    price: '$499.99',
+    priceValue: 499.99,
+    description: 'Energy-efficient circulation pump for improved water flow and filtration.'
+  },
+  {
+    id: 'ds-oasis-intouch',
+    name: 'In Touch App',
+    price: '$399.99',
+    priceValue: 399.99,
+    description: 'Control your spa remotely with the in.Touch smartphone app.'
+  }
+];
+
+// Vacation Collection Add-ons
+export const DYNASTY_VACATION_EXTRAS = [
+  {
+    id: 'ds-vacation-touchscreen',
+    name: 'K1000 Touchscreen',
+    price: '$499.99',
+    priceValue: 499.99,
+    description: 'Upgrade to the K.1000 touchscreen control panel.'
+  },
+  {
+    id: 'ds-vacation-stereo',
+    name: 'In Stream Stereo',
+    price: '$995.99',
+    priceValue: 995.99,
+    description: 'Premium in.Stream audio system for your spa experience.'
+  },
+  {
+    id: 'ds-vacation-circ-pump',
+    name: 'Circulation Pump',
+    price: '$499.99',
+    priceValue: 499.99,
+    description: 'Energy-efficient circulation pump for improved water flow and filtration.'
+  },
+  {
+    id: 'ds-vacation-intouch',
+    name: 'In Touch App',
+    price: '$399.99',
+    priceValue: 399.99,
+    description: 'Control your spa remotely with the in.Touch smartphone app.'
+  }
+];
+
+// ===========================================
 // DYNASTY SPAS PRODUCTS
 // ===========================================
 export const DYNASTY_SPAS_PRODUCTS = [

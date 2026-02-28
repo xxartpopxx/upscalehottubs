@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, Flag, GitCompare } from 'lucide-react';
-import { getProductById, getRelatedModel, VIKING_SPAS_PRODUCTS, DYNASTY_SPAS_PRODUCTS, VS_SHELL_COLORS, VS_ELITE_CABINET_COLORS, VS_HEIRLOOM_CABINET_COLORS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS } from '../data/products';
+import { getProductById, getRelatedModel, VIKING_SPAS_PRODUCTS, DYNASTY_SPAS_PRODUCTS, VS_SHELL_COLORS, VS_ELITE_CABINET_COLORS, VS_HEIRLOOM_CABINET_COLORS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, VIKING_SPAS_EXTRAS, VIKING_SPAS_FREE_ITEMS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images

@@ -1169,6 +1169,12 @@ const HomePage = () => {
       {/* Trust Badges - Bigger */}
       <TrustBadgesSection />
       
+      {/* Best Warranty Section - NEW */}
+      <BestWarrantySection />
+      
+      {/* Free Items Section with Animated Graphics - NEW */}
+      <FreeItemsSection />
+      
       {/* Why Upstate / Wet Test Section - MOVED HIGHER with Wet Test info */}
       <WetTestSection />
       

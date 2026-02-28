@@ -1059,7 +1059,59 @@ export const DYNASTY_SPAS_PRODUCTS = [
     shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
   },
-  // HIDEAWAY COLLECTION - NEW MODELS
+  // HIDEAWAY COLLECTION
+  {
+    id: 'ds-seaside-110v',
+    name: 'Seaside 110v',
+    brand: 'Dynasty Spas',
+    series: 'Hideaway Collection',
+    modelFamily: 'Seaside',
+    persons: 4,
+    jets: 30,
+    price: '$7,995.99',
+    priceValue: 7995.99,
+    seatingLayout: 'Bench',
+    dimensions: '82" x 82" x 39"',
+    waterCapacity: '295 gallons',
+    electrical: '110v/20a',
+    pumps: '1 - 6.0bhp',
+    filtration: '50 ft²',
+    dryWeight: '350 lbs',
+    filledWeight: '2710 lbs',
+    description: 'Entry-level spa with plug-and-play convenience. Features K.362 digital topside, black scallop jets, and LED underwater lighting.',
+    features: ['K.362 Digital Topside', 'Black Scallop Jets', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer']
+  },
+  {
+    id: 'ds-seaside-220v',
+    name: 'Seaside 220v',
+    brand: 'Dynasty Spas',
+    series: 'Hideaway Collection',
+    modelFamily: 'Seaside',
+    persons: 4,
+    jets: 30,
+    price: '$7,995.99',
+    priceValue: 7995.99,
+    seatingLayout: 'Bench',
+    dimensions: '82" x 82" x 39"',
+    waterCapacity: '295 gallons',
+    electrical: '220v/60amp',
+    pumps: '2 - 6.0bhp',
+    filtration: '50 ft²',
+    dryWeight: '350 lbs',
+    filledWeight: '2710 lbs',
+    description: 'Entry-level spa with 220v power. Features K.362 digital topside, black scallop jets, and LED underwater lighting.',
+    features: ['K.362 Digital Topside', 'Black Scallop Jets', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    images: {
+      primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
+    },
+    shellColors: ['sterlingMarble'],
+    cabinetColors: ['blackConfer']
+  },
   {
     id: 'ds-bay-bliss',
     name: 'Bay Bliss',
@@ -1068,8 +1120,8 @@ export const DYNASTY_SPAS_PRODUCTS = [
     modelFamily: 'Bay Bliss',
     persons: 4,
     jets: 30,
-    price: '$7,500.00',
-    priceValue: 7500,
+    price: '$8,995.99',
+    priceValue: 8995.99,
     seatingLayout: 'Lounger',
     dimensions: '82" x 82" x 39"',
     waterCapacity: '295 gallons',

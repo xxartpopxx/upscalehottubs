@@ -1902,8 +1902,8 @@ export const DYNASTY_SWIM_SPAS = [
     brand: 'Dynasty Spas',
     series: 'Aquex Collection',
     length: '16 ft',
-    price: '$32,500.00',
-    priceValue: 32500,
+    price: '$33,995.99',
+    priceValue: 33995.99,
     dimensions: '92" x 192" x 60"',
     waterCapacity: '1,850 gallons',
     electrical: '220v/60amp',
@@ -1911,7 +1911,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '2700 lbs',
     filledWeight: '17500 lbs',
-    description: '16-foot trainer swim spa with swim coach multi-programmable workout, in.Mix lighting, and in.Stream audio.',
+    description: '16-foot trainer swim spa with swim coach multi-programmable workout, in.Mix lighting, and in.Stream audio. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Exercise/Rowing & Swim Tether', 'LED Illuminated Fountains', 'LED Corner Lighting'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
@@ -1920,13 +1920,13 @@ export const DYNASTY_SWIM_SPAS = [
     cabinetColors: ['blackConfer', 'grayConfer']
   },
   {
-    id: 'ds-ss-aquex-pro-plus-17',
-    name: "17' Aquex Pro Plus",
+    id: 'ds-ss-aquex-pro-17',
+    name: "17' Aquex Pro",
     brand: 'Dynasty Spas',
     series: 'Aquex Collection',
     length: '17 ft',
-    price: '$38,500.00',
-    priceValue: 38500,
+    price: '$34,995.99',
+    priceValue: 34995.99,
     dimensions: '92" x 204" x 60"',
     waterCapacity: '2,100 gallons',
     electrical: '220v/60amp',
@@ -1934,7 +1934,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '2800 lbs',
     filledWeight: '19600 lbs',
-    description: '17-foot professional swim spa with dual zone capability, swim coach, and premium in.Mix/in.Stream systems.',
+    description: '17-foot professional swim spa with dual zone capability, swim coach, and premium in.Mix/in.Stream systems. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Exercise/Rowing & Swim Tether', 'LED Illuminated Jets', 'LED Corner Lighting', 'Stainless Steel Grab Bars'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
@@ -1948,8 +1948,8 @@ export const DYNASTY_SWIM_SPAS = [
     brand: 'Dynasty Spas',
     series: 'Aquex Collection',
     length: '19 ft',
-    price: '$42,500.00',
-    priceValue: 42500,
+    price: '$38,995.99',
+    priceValue: 38995.99,
     dimensions: '92" x 228" x 60"',
     waterCapacity: '2,500 gallons',
     electrical: '220v/60amp',
@@ -1957,7 +1957,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '3200 lbs',
     filledWeight: '23200 lbs',
-    description: 'Our largest 19-foot dual-zone swim spa with separate hot tub section, swim coach, and premium features.',
+    description: 'Our largest 19-foot dual-zone swim spa with separate hot tub section, swim coach, and premium features. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'Dual Temperature Zones', 'Exercise/Rowing & Swim Tether', 'LED Corner Lighting', 'Bench Seating in Hot Tub'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'

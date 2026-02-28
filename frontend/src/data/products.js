@@ -1787,8 +1787,8 @@ export const DYNASTY_SWIM_SPAS = [
     brand: 'Dynasty Spas',
     series: 'Family Collection',
     length: '11 ft',
-    price: '$16,500.00',
-    priceValue: 16500,
+    price: '$15,995.99',
+    priceValue: 15995.99,
     dimensions: '92" x 132" x 38"',
     waterCapacity: '550 gallons',
     electrical: '220v/60amp',
@@ -1796,7 +1796,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '2127 lbs',
     filledWeight: '6527 lbs',
-    description: 'Family-size swim spa with single lounger, K.1000 topside control, and LED lighting throughout.',
+    description: 'Family-size swim spa with single lounger, K.1000 topside control, and LED lighting throughout. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Topside Control', 'Single Lounger', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Waterfalls', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
@@ -1806,12 +1806,12 @@ export const DYNASTY_SWIM_SPAS = [
   },
   {
     id: 'ds-ss-family-island-dual',
-    name: "11' Family Island Oasis",
+    name: "11' Family Island Oasis DL",
     brand: 'Dynasty Spas',
     series: 'Family Collection',
     length: '11 ft',
-    price: '$18,500.00',
-    priceValue: 18500,
+    price: '$15,995.99',
+    priceValue: 15995.99,
     dimensions: '92" x 132" x 38"',
     waterCapacity: '550 gallons',
     electrical: '220v/60amp',
@@ -1819,7 +1819,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '2127 lbs',
     filledWeight: '6527 lbs',
-    description: 'Family-size swim spa with dual loungers for maximum comfort and exercise.',
+    description: 'Family-size swim spa with dual loungers for maximum comfort and exercise. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Topside Control', 'Dual Loungers', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Waterfalls', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
@@ -1833,8 +1833,8 @@ export const DYNASTY_SWIM_SPAS = [
     brand: 'Dynasty Spas',
     series: 'Aquex Collection',
     length: '13 ft',
-    price: '$22,500.00',
-    priceValue: 22500,
+    price: '$24,995.99',
+    priceValue: 24995.99,
     dimensions: '92" x 160" x 51"',
     waterCapacity: '1,100 gallons',
     electrical: '220v/60amp',
@@ -1842,7 +1842,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '2200 lbs',
     filledWeight: '11000 lbs',
-    description: 'Party-ready 13-foot swim spa with bench seating, K.1000 digital controls, and LED illuminated fountain jets.',
+    description: 'Party-ready 13-foot swim spa with bench seating, K.1000 digital controls, and LED illuminated fountain jets. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Digital Topside Control', 'LED Top Rail Lighting', 'LED Illuminated Diverters', 'LED Illuminated Water Fountains', 'LED Underwater Light', 'LED Corner Skirt Lighting', 'Padded Headrests', 'Stainless Steel Grab Bar'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
@@ -1856,8 +1856,8 @@ export const DYNASTY_SWIM_SPAS = [
     brand: 'Dynasty Spas',
     series: 'Aquex Collection',
     length: '13 ft',
-    price: '$24,500.00',
-    priceValue: 24500,
+    price: '$23,995.99',
+    priceValue: 23995.99,
     dimensions: '92" x 160" x 55"',
     waterCapacity: '1,530 gallons',
     electrical: '220v/60amp',
@@ -1865,7 +1865,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '2100 lbs',
     filledWeight: '14500 lbs',
-    description: 'Professional 13-foot swim spa with exercise equipment and new swim current technology.',
+    description: 'Professional 13-foot swim spa with exercise equipment and new swim current technology. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Topside Control', 'LED Top Rail Lighting', 'LED Illuminated Fountains', 'LED Illuminated Diverters', 'New Exercise Equipment', 'Stainless Steel Grab Bars', 'Ozonator System', 'RMAX Insulation'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'
@@ -1879,8 +1879,8 @@ export const DYNASTY_SWIM_SPAS = [
     brand: 'Dynasty Spas',
     series: 'Aquex Collection',
     length: '13 ft',
-    price: '$26,500.00',
-    priceValue: 26500,
+    price: '$27,995.99',
+    priceValue: 27995.99,
     dimensions: '92" x 160" x 55"',
     waterCapacity: '1,530 gallons',
     electrical: '220v/60amp',
@@ -1888,7 +1888,7 @@ export const DYNASTY_SWIM_SPAS = [
     filtration: '100 ft²',
     dryWeight: '2100 lbs',
     filledWeight: '14500 lbs',
-    description: 'Premium 13-foot swim spa with in.Mix illuminated jets, in.Stream audio, and swim coach workout system.',
+    description: 'Premium 13-foot swim spa with in.Mix illuminated jets, in.Stream audio, and swim coach workout system. Note: Swim spas come in Sterling Marble only. Installation pricing depends on crane placement - this does not include install.',
     features: ['K.1000 Topside Control', 'in.Mix Illuminated Jet System', 'in.Stream Audio System', 'Swim Coach Multi-Programmable Workout', 'LED Illuminated Jets', 'LED Illuminated Waterfalls', 'New Exercise Equipment', 'Stainless Steel Grab Bars'],
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_928b791fb72d414cba37d3699a061c27~mv2.webp'

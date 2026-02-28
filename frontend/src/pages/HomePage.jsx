@@ -193,6 +193,180 @@ const TrustBadgesSection = () => (
   </section>
 );
 
+// NEW Best Warranty Section
+const BestWarrantySection = () => (
+  <section className="py-10 md:py-14 bg-gradient-to-r from-[#0A1628] via-[#1a2d4a] to-[#0A1628]">
+    <div className="max-w-6xl mx-auto px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center"
+      >
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <motion.div
+            animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Award className="w-12 h-12 md:w-16 md:h-16 text-[#D4AF37]" />
+          </motion.div>
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white">
+            Best <span className="text-[#D4AF37]">Warranty</span> in the Business
+          </h2>
+          <motion.div
+            animate={{ rotate: [0, -10, 10, 0], scale: [1, 1.1, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Award className="w-12 h-12 md:w-16 md:h-16 text-[#D4AF37]" />
+          </motion.div>
+        </div>
+        <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto">
+          We stand behind every hot tub, swim spa, sauna and cold plunge we sell. Our industry-leading warranty gives you peace of mind and confidence in your purchase.
+        </p>
+        <div className="flex flex-wrap justify-center gap-6 mt-8">
+          <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+            <span className="text-[#D4AF37] font-bold text-lg">✓ Comprehensive Coverage</span>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+            <span className="text-[#D4AF37] font-bold text-lg">✓ Local Service</span>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+            <span className="text-[#D4AF37] font-bold text-lg">✓ Fast Response</span>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+// NEW Free Items Section with Animated Product Images
+const FreeItemsSection = () => {
+  const freeItems = [
+    { name: 'Spa Cover', image: ASSETS.freeItems.cover },
+    { name: 'Cover Lifter', image: ASSETS.freeItems.coverLifter },
+    { name: 'Steps', image: ASSETS.freeItems.steps },
+    { name: 'Chemicals', image: ASSETS.freeItems.chemicals },
+  ];
+
+  return (
+    <section className="py-12 md:py-16 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Gift className="w-10 h-10 text-[#B91C1C]" />
+            <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#0A1628]">
+              <span className="text-[#B91C1C]">FREE</span> With Your Hot Tub Purchase
+            </h2>
+            <Gift className="w-10 h-10 text-[#B91C1C]" />
+          </div>
+          <p className="text-xl md:text-2xl font-bold text-[#D4AF37] mb-2">
+            Over $1,500 Value Included!
+          </p>
+          <p className="text-lg text-slate-600">
+            Delivery • Installation • Set Up • Cover • Cover Lifter • Steps • Chemicals
+          </p>
+        </motion.div>
+
+        {/* Animated Product Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {freeItems.map((item, idx) => (
+            <motion.div
+              key={item.name}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.15 }}
+              className="flex flex-col items-center"
+            >
+              {/* Floating Animation Container */}
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 2, -2, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: idx * 0.3
+                }}
+                className="relative mb-4"
+              >
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#B91C1C]/20 to-[#D4AF37]/20 rounded-full blur-xl scale-110" />
+                
+                {/* Product Image */}
+                <div className="relative bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-32 h-32 md:w-40 md:h-40 object-contain"
+                  />
+                </div>
+                
+                {/* FREE Badge */}
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="absolute -top-3 -right-3 bg-[#B91C1C] text-white font-bold text-sm px-3 py-1 rounded-full shadow-lg"
+                >
+                  FREE
+                </motion.div>
+              </motion.div>
+              
+              {/* Item Name */}
+              <h3 className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628] text-center">
+                {item.name}
+              </h3>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Additional Free Services */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <div className="flex flex-wrap justify-center gap-4">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
+            >
+              <Truck className="w-6 h-6 text-[#D4AF37]" />
+              <span className="font-bold">Free Delivery</span>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
+            >
+              <svg className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
+              </svg>
+              <span className="font-bold">Free Installation</span>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
+            >
+              <svg className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+              <span className="font-bold">Free Set Up</span>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // NEW Try Before You Buy - Wet Test Section - Filled with logo, images, big text
 const WetTestSection = () => (
   <section className="bg-white" data-testid="wet-test-section">

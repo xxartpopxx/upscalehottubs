@@ -1767,6 +1767,53 @@ export const VIKING_SPAS_PRODUCTS = [
 ];
 
 // ===========================================
+// VIKING SPAS EXTRAS/ADD-ONS
+// ===========================================
+export const VIKING_SPAS_EXTRAS = [
+  {
+    id: 'vs-extra-clearguard-uv',
+    name: 'Clear Guard UV',
+    price: '$495.99',
+    priceValue: 495.99,
+    description: 'Advanced UV water sanitation system for cleaner, clearer water.'
+  },
+  {
+    id: 'vs-extra-wifi',
+    name: 'WiFi Module',
+    price: '$399.99',
+    priceValue: 399.99,
+    description: 'Control your spa remotely with the WiFi module and smartphone app.'
+  },
+  {
+    id: 'vs-extra-airx',
+    name: 'Air X Therapy',
+    price: '$199.99',
+    priceValue: 199.99,
+    description: 'Enhanced air therapy system for a more luxurious massage experience.'
+  },
+  {
+    id: 'vs-extra-spatouch4',
+    name: 'Spa Touch 4',
+    price: '$499.99',
+    priceValue: 499.99,
+    description: 'Upgrade to the Spa Touch 4 touchscreen control panel for easier spa management.'
+  },
+  {
+    id: 'vs-extra-bba-stereo',
+    name: 'BBA Stereo with Subwoofer',
+    price: '$995.99',
+    priceValue: 995.99,
+    description: 'Premium Bluetooth audio system with subwoofer for immersive sound.'
+  }
+];
+
+// Viking Spas Free Items Note
+export const VIKING_SPAS_FREE_ITEMS = {
+  note: 'All Viking Spas come with at NO CHARGE: Free Installation, Delivery, Set Up, Cover, Cover Lifter, Steps, and Chemicals.',
+  items: ['Free Installation', 'Free Delivery', 'Free Set Up', 'Free Cover', 'Free Cover Lifter', 'Free Steps', 'Free Chemicals']
+};
+
+// ===========================================
 // SWIM SPAS - GRAND RIVER SPAS
 // ===========================================
 export const GRAND_RIVER_SWIM_SPAS = [

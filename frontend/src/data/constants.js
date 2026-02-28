@@ -1,18 +1,31 @@
 // Site-wide Constants
 
-// New Logo - Made in USA with SC State Flag
-export const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/i1rhdpk6_fa32f0be-a50b-4ed0-a5d0-5eac34659b49-1.png';
+// New Logo - Made in USA with SC State Flag (OLD)
+export const OLD_LOGO = 'https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/i1rhdpk6_fa32f0be-a50b-4ed0-a5d0-5eac34659b49-1.png';
+
+// New Updated Logo - Upstate Hot Tubs with Bubbles
+export const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_river-spa-catalog/artifacts/i0b05mh3_unnamed%205.50.10%E2%80%AFPM.jpg';
 
 // About Page Image (Grand Opening)
 export const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/iri86zu2_549423966_122190087680361664_6940928450155468082_n.jpg';
 
+// Free Items Images (Cover, Cover Lifter, Steps, Chemicals)
+export const FREE_ITEMS_IMAGES = {
+  cover: 'https://customer-assets.emergentagent.com/job_river-spa-catalog/artifacts/shtl8amd_SWIM%20SPAS%20SIMPSONVILLE%20SC%2C%20SWIM%20SPAS%20GRE.avif',
+  coverLifter: 'https://customer-assets.emergentagent.com/job_river-spa-catalog/artifacts/x4bjk1d4_SWIM%20SPAS%20SIMPSONVILLE%20SC%2C%20SWIM%20SPAS%20GREENVILLE%20SC%2C%20SWIM%20SPAS%2C%20SWIM%20SPAS%20IN%20GREENVILLE%20SC%2C.avif',
+  steps: 'https://customer-assets.emergentagent.com/job_river-spa-catalog/artifacts/jvkm6wp4_SWIM%20SPAS%20SIMPSONVILLE%20SC%2C%20SWIM%20SPAS%20GREENVILLE%20SC%2C%20SWIM%20SPAS%2C%20SWIM%20SPAS%20IN%20GREENVILLE%20SC%2C-1.avif',
+  chemicals: 'https://customer-assets.emergentagent.com/job_river-spa-catalog/artifacts/qcp7yp8w_SWIM%20SPAS%20SIMPSONVILLE%20SC%2C%20SWIM%20SPAS%20GREENVILLE%20SC%2C%20SWIM%20SPAS%2C%20SWIM%20SPAS%20IN%20GREENVILLE%20SC%2C-2.avif',
+};
+
 // Assets URLs
 export const ASSETS = {
   logo: NEW_LOGO,
+  oldLogo: OLD_LOGO,
   heroVideo: 'https://customer-assets.emergentagent.com/job_e23f927f-0a4b-43ea-96db-a0ca9339796e/artifacts/14akq3sp_SnapSave_App_1155304596774970_1080p.mp4',
   wetTestVideo: 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/atx9u9gd_SnapSave_App_1262194805786001_1080p.mp4',
   jingle: 'https://customer-assets.emergentagent.com/job_e23f927f-0a4b-43ea-96db-a0ca9339796e/artifacts/80qfrl8e_SnapSave_App_1155304596774970_1080p.mp3',
   aboutImage: ABOUT_IMAGE,
+  freeItems: FREE_ITEMS_IMAGES,
 };
 
 // Contact Information

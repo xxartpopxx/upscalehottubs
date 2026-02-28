@@ -390,9 +390,9 @@ const WetTestSection = () => (
         viewport={{ once: true }}
         className="md:w-1/2 bg-[#0A1628] text-white p-6 md:p-8 lg:p-10 flex flex-col justify-between"
       >
-        {/* Logo at top */}
+        {/* Logo at top - Use OLD logo for Family Owned section */}
         <div className="flex items-center gap-4 mb-4">
-          <img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-16 md:h-20 lg:h-24 object-contain" />
+          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs" className="h-16 md:h-20 lg:h-24 object-contain" />
           <div>
             <p className="font-['Barlow_Condensed'] text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wider text-white/80">Family Owned</p>
             <p className="font-['Barlow_Condensed'] text-base md:text-lg text-[#D4AF37] font-semibold">American Made & Proud</p>

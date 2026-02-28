@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-24 mb-6" loading="lazy" />
+            <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs" className="h-24 mb-6" loading="lazy" />
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Buy American and start living your best life today! Premium hot tubs, swim spas, saunas and cold plunges.
             </p>

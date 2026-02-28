@@ -493,6 +493,47 @@ export const GRAND_RIVER_PRODUCTS = [
 ];
 
 // ===========================================
+// GRAND RIVER SPAS EXTRAS/OPTIONS
+// ===========================================
+export const GRAND_RIVER_EXTRAS = [
+  {
+    id: 'gr-extra-ozone',
+    name: 'Ozone',
+    price: '$250.00',
+    priceValue: 250,
+    description: 'Advanced ozone sanitization system for cleaner, clearer water with fewer chemicals.'
+  },
+  {
+    id: 'gr-extra-touchscreen',
+    name: 'Spa Touch Screen',
+    price: '$700.00',
+    priceValue: 700,
+    description: 'Upgrade to a modern touch screen control panel for easier spa management.'
+  },
+  {
+    id: 'gr-extra-airx',
+    name: 'Air X Therapy System',
+    price: '$300.00',
+    priceValue: 300,
+    description: 'Enhanced air therapy system for a more luxurious massage experience.'
+  },
+  {
+    id: 'gr-extra-bluetooth',
+    name: 'Bluetooth Stereo',
+    price: '$950.00',
+    priceValue: 950,
+    description: 'Premium Bluetooth audio system for music while you relax.'
+  },
+  {
+    id: 'gr-extra-wifi',
+    name: 'WiFi Module',
+    price: '$400.00',
+    priceValue: 400,
+    description: 'Control your spa remotely with the WiFi module and smartphone app.'
+  }
+];
+
+// ===========================================
 // DYNASTY SPAS PRODUCTS
 // ===========================================
 export const DYNASTY_SPAS_PRODUCTS = [

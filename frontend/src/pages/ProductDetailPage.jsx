@@ -745,6 +745,37 @@ const ProductDetailPage = () => {
             </motion.div>
           )}
 
+          {/* Dynasty Spas - Available Extras/Upgrades Section */}
+          {isDynasty && !isSwimSpa && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="dynasty-extras"
+            >
+              <div className="bg-gradient-to-r from-[#0A1628] to-[#1a2d4a] p-6 lg:p-8">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-6 text-center">
+                  Available Upgrades & Extras for {product?.series}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {(product?.series === 'Luxury Collection' ? DYNASTY_LUXURY_EXTRAS :
+                    product?.series === 'Oasis Collection' ? DYNASTY_OASIS_EXTRAS :
+                    product?.series === 'Vacation Collection' ? DYNASTY_VACATION_EXTRAS : []).map((extra) => (
+                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
+                      <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
+                      <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
+                      <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-slate-400 text-sm text-center mt-4">
+                  Ask your sales representative about adding these upgrades to your order.
+                </p>
+              </div>
+            </motion.div>
+          )}
+
           {/* Dynasty Spas - Color Reference Section */}
           {isDynasty && product.shellColors && (() => {
             const hideawayModels = ['ds-bay-bliss', 'ds-high-tide', 'ds-seaside'];

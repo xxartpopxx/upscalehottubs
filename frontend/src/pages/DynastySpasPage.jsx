@@ -72,7 +72,9 @@ const DynastySpasPage = () => {
         <meta name="keywords" content="Dynasty Spas, American made hot tubs, hot tubs Simpsonville SC, Paradise Bay, Palm Island, Coconut Bay, Caribbean Breeze, luxury hot tubs" />
       </Helmet>
 
-      <div className="pt-36 pb-20" data-testid="dynasty-spas-page">
+      <div className="pt-36 pb-20" data-testid="dynasty-spas-page" style={{
+        background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
+      }}>
         {/* Hero Banner with Dynasty Logo */}
         <div className="relative bg-gradient-to-r from-[#0A1628] to-slate-800 text-white py-12 mb-8">
           <div className="max-w-7xl mx-auto px-4 md:px-8">

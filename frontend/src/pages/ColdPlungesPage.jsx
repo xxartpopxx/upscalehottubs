@@ -44,7 +44,7 @@ const ColdPlungesPage = () => {
         <meta name="keywords" content="cold plunge, ice bath, cold therapy, recovery, wellness, chiller, water maintenance, skin benefits, Upstate Hot Tubs, Simpsonville SC" />
       </Helmet>
       
-      <div className="pt-36 pb-20" data-testid="cold-plunges-page">
+      <div className="pt-36 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="cold-plunges-page">
         {/* Hero Banner */}
         <div className="relative bg-gradient-to-r from-[#0A1628] to-slate-800 text-white py-16 mb-12">
           <div className="max-w-7xl mx-auto px-4 md:px-8">

@@ -6,6 +6,15 @@ import { ChevronRight, ChevronLeft, Flag, Shield, Heart, Phone, Mail, X, Star, T
 import { ASSETS, CONTACT } from '../data/constants';
 import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS, DYNASTY_SPAS_PRODUCTS } from '../data/products';
 
+// Reusable gradient background style
+const gradientBg = {
+  background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
+};
+
+const lightGradientBg = {
+  background: 'linear-gradient(180deg, #ffffff 0%, #f0f8fc 30%, #e8f4fc 60%, #dcedf8 100%)'
+};
+
 // Sort products by price (least to most expensive)
 const sortByPrice = (products) => {
   return [...products].sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
@@ -170,7 +179,7 @@ const HeroSection = () => (
 
 // Trust Badges Section - White background, compact
 const TrustBadgesSection = () => (
-  <section className="py-3 bg-white border-b border-slate-200">
+  <section className="py-3 border-b border-slate-200" style={lightGradientBg}>
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
         <div className="flex flex-col items-center gap-0.5 p-2">
@@ -267,7 +276,7 @@ const FreeItemsSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section className="py-12 md:py-16 overflow-hidden" style={gradientBg}>
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -362,7 +371,7 @@ const FreeItemsSection = () => {
 
 // NEW Try Before You Buy - Wet Test Section - Filled with logo, images, big text
 const WetTestSection = () => (
-  <section className="bg-white" data-testid="wet-test-section">
+  <section style={lightGradientBg} data-testid="wet-test-section">
     <div className="flex flex-col md:flex-row items-stretch">
       {/* Video Side - Full bleed */}
       <motion.div
@@ -485,7 +494,7 @@ const ResourceCardsSection = () => {
   ];
 
   return (
-    <section className="py-12 bg-[#F8FAFC]">
+    <section className="py-12" style={lightGradientBg}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-6">
           {cards.map((card, idx) => (
@@ -627,7 +636,7 @@ const ProductCollectionSection = () => {
 
 // NEW The Collection - Location Based Section - Cleaner design (Without Viking)
 const LocationCollectionSection = () => (
-  <section className="py-16 md:py-20 bg-white">
+  <section className="py-16 md:py-20" style={gradientBg}>
     <div className="max-w-7xl mx-auto px-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -990,7 +999,7 @@ const ShopAllModelsSection = () => {
 
 // AR Visualizer Section - Small line blurb
 const ARVisualizerSection = () => (
-  <section className="py-8 bg-gradient-to-r from-slate-50 to-slate-100">
+  <section className="py-8" style={lightGradientBg}>
     <div className="max-w-7xl mx-auto px-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }} 

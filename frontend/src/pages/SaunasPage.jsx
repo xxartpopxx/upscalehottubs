@@ -18,7 +18,7 @@ const SaunasPage = () => {
         <link rel="canonical" href="https://upstatehottubs.com/saunas" />
       </Helmet>
       
-      <div className="pt-36 pb-20" data-testid="saunas-page">
+      <div className="pt-36 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="saunas-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 

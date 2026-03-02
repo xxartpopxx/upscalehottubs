@@ -42,7 +42,7 @@ const GALLERY_IMAGES = [
 
 const WellnessPage = () => {
   return (
-    <div className="pt-36 pb-20" data-testid="wellness-page">
+    <div className="pt-36 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="wellness-page">
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden mb-20">
         <div className="absolute inset-0">

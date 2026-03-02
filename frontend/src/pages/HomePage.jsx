@@ -79,9 +79,14 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
   );
 };
 
-// NEW Hero Section - Video without text overlay, text below
+// NEW Hero Section - Video without text overlay, text below - Gradient background
 const HeroSection = () => (
-  <section className="relative bg-[#0A1628] pt-24 md:pt-32 lg:pt-40" data-testid="hero-section">
+  <section className="relative pt-24 md:pt-32 lg:pt-40" style={{
+    background: 'linear-gradient(180deg, #e8f4fc 0%, #d0e8f7 30%, #b8dcf2 60%, #a0d0ed 100%)',
+    backgroundImage: `
+      linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(200,230,250,0.7) 50%, rgba(160,210,240,0.8) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.3' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")`
+  }} data-testid="hero-section">
     {/* Video Section - Smaller to fit fully */}
     <div className="max-w-4xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
@@ -92,7 +97,7 @@ const HeroSection = () => (
     </div>
     
     {/* Text Content Below Video - Red White Blue Theme */}
-    <div className="bg-[#0A1628] text-white py-6 md:py-10">
+    <div className="py-6 md:py-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           {/* Animated American Flags - More realistic waving effect */}
@@ -111,7 +116,7 @@ const HeroSection = () => (
                 className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
               />
             </motion.div>
-            <span className="text-lg md:text-2xl font-bold tracking-widest uppercase text-white">American Made & Proud of It</span>
+            <span className="text-lg md:text-2xl font-bold tracking-widest uppercase text-[#0A1628]">American Made & Proud of It</span>
             <motion.div
               animate={{ 
                 rotateY: [0, -10, 0, 10, 0],
@@ -130,21 +135,14 @@ const HeroSection = () => (
           
           <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">
             Live Your{' '}
-            <span 
-              className="text-[#B91C1C]"
-              style={{ 
-                textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
-              }}
-            >
-              Healthiest Life
-            </span>
+            <span className="text-[#B91C1C]">Healthiest Life</span>
             <br />
-            <span className="text-white">While Enjoying a Vacation</span>
+            <span className="text-[#0A1628]">While Enjoying a Vacation</span>
             <br />
-            <span className="text-white">Everyday at Home</span>
+            <span className="text-[#0A1628]">Everyday at Home</span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl font-medium mb-6 max-w-4xl mx-auto text-slate-200">
+          <p className="text-lg md:text-xl lg:text-2xl font-medium mb-6 max-w-4xl mx-auto text-[#0A1628]/80">
             The Best Hot Tubs & Swim Spas Store in Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
           </p>
           
@@ -154,7 +152,7 @@ const HeroSection = () => (
             </Link>
           </div>
           
-          <p className="text-lg md:text-xl font-bold text-[#D4AF37]">
+          <p className="text-lg md:text-xl font-bold text-[#B91C1C]">
             Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in SC
           </p>
         </motion.div>
@@ -193,9 +191,11 @@ const TrustBadgesSection = () => (
   </section>
 );
 
-// NEW Best Warranty Section
+// NEW Best Warranty Section with gradient and links
 const BestWarrantySection = () => (
-  <section className="py-10 md:py-14 bg-gradient-to-r from-[#0A1628] via-[#1a2d4a] to-[#0A1628]">
+  <section className="py-10 md:py-14" style={{
+    background: 'linear-gradient(135deg, #0A1628 0%, #1a3352 50%, #0A1628 100%)'
+  }}>
     <div className="max-w-6xl mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -220,10 +220,21 @@ const BestWarrantySection = () => (
             <Award className="w-12 h-12 md:w-16 md:h-16 text-[#D4AF37]" />
           </motion.div>
         </div>
-        <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto">
+        <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-6">
           We stand behind every hot tub, swim spa, sauna and cold plunge we sell. Our industry-leading warranty gives you peace of mind and confidence in your purchase.
         </p>
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
+        <p className="text-base md:text-lg text-[#D4AF37] font-semibold mb-8">
+          All warranties include parts and labor! We have our own in-house tech!
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <Link to="/dynasty-spas" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+            <span className="text-[#D4AF37] font-bold text-lg">Dynasty Spas Warranty →</span>
+          </Link>
+          <Link to="/grand-river-spas" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+            <span className="text-[#D4AF37] font-bold text-lg">Grand River Spas Warranty →</span>
+          </Link>
+        </div>
+        <div className="flex flex-wrap justify-center gap-6">
           <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
             <span className="text-[#D4AF37] font-bold text-lg">✓ Comprehensive Coverage</span>
           </div>
@@ -530,12 +541,12 @@ const ResourceCardsSection = () => {
   );
 };
 
-// NEW Product Collection Grid (like File 5)
+// NEW Product Collection Grid (like File 5) - Gradient background
 const ProductCollectionSection = () => {
   const collections = [
     {
       name: 'Hot Tubs',
-      subtitle: 'Viking, Grand River & Dynasty Spas',
+      subtitle: 'Grand River & Dynasty Spas',
       tagline: 'Premium American Craftsmanship',
       link: '/hot-tubs',
       image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
@@ -554,9 +565,6 @@ const ProductCollectionSection = () => {
       link: '/cold-plunges',
       image: COLD_PLUNGES[0]?.images?.primary || 'https://images.unsplash.com/photo-1574427386945-ae011838ee9a?w=600',
     },
-  ];
-
-  const bottomCollections = [
     {
       name: 'Swim Spas',
       subtitle: 'Exercise & Relaxation',
@@ -567,7 +575,12 @@ const ProductCollectionSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-16" style={{
+      background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a8d4ef 100%)',
+      backgroundImage: `
+        linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(220,240,250,0.8) 30%, rgba(180,220,245,0.7) 70%, rgba(160,210,240,0.8) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.4' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,218.7C672,203,768,149,864,128C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E")`
+    }}>
       <div className="max-w-7xl mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -581,8 +594,8 @@ const ProductCollectionSection = () => {
           <p className="text-lg md:text-xl text-slate-600">Find the perfect product for your lifestyle</p>
         </motion.div>
 
-        {/* Top Row - 3 Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        {/* 4 Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {collections.map((item, idx) => (
             <motion.div
               key={item.name}
@@ -617,50 +630,12 @@ const ProductCollectionSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Row - Centered Swim Spas */}
-        <div className="flex justify-center">
-          {bottomCollections.map((item, idx) => (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="w-full md:w-1/2 lg:w-1/3"
-            >
-              <Link 
-                to={item.link}
-                className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-slate-100">
-                  <img 
-                    src={item.image} 
-                    alt={item.name}
-                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => e.target.src = ASSETS.logo}
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
-                    {item.name}
-                  </h3>
-                  <p className="text-base md:text-lg text-[#B91C1C] font-semibold mt-1">{item.subtitle}</p>
-                  <p className="text-sm md:text-base text-slate-500 mt-2">{item.tagline}</p>
-                  <span className="inline-flex items-center gap-2 text-[#B91C1C] text-lg font-bold mt-4 group-hover:gap-3 transition-all">
-                    Learn More <ChevronRight size={20} />
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
 };
 
-// NEW The Collection - Location Based Section - Cleaner design (SC Only)
+// NEW The Collection - Location Based Section - Cleaner design (Without Viking)
 const LocationCollectionSection = () => (
   <section className="py-16 md:py-20 bg-white">
     <div className="max-w-7xl mx-auto px-4">
@@ -684,7 +659,7 @@ const LocationCollectionSection = () => (
         <p className="text-lg md:text-xl text-slate-600">Shop our premium American-made hot tubs and spas</p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {/* Grand River Spas */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -717,32 +692,17 @@ const LocationCollectionSection = () => (
             Shop Now <ChevronRight size={18} />
           </Link>
         </motion.div>
-
-        {/* Viking Spas */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#1E40AF] hover:shadow-lg transition-all text-center"
-        >
-          <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-2">
-            Viking Spas
-          </h3>
-          <p className="text-slate-600 mb-4">Elite Series Excellence</p>
-          <Link to="/viking-spas" className="btn-primary inline-flex items-center gap-2">
-            Shop Now <ChevronRight size={18} />
-          </Link>
-        </motion.div>
       </div>
     </div>
   </section>
 );
 // Removed duplicate closing tags
 
-// NEW Why Hot Tubs Section - Cleaner design
+// NEW Why Hot Tubs Section - Gradient design
 const WhyHotTubsSection = () => (
-  <section className="py-16 md:py-20 bg-slate-50">
+  <section className="py-16 md:py-20" style={{
+    background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 30%, #d0e8f7 70%, #c0e0f4 100%)'
+  }}>
     <div className="max-w-7xl mx-auto px-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -797,27 +757,25 @@ const WhyHotTubsSection = () => (
   </section>
 );
 
-// Shop All Models Carousel - Mixed brands from Dynasty, Viking, Grand River
+// Shop All Models Carousel - Mixed brands from Dynasty, Grand River (no Viking)
 const ShopAllModelsSection = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Mix products from different brands, sorted by lowest price first
+  // Mix products from different brands, sorted by lowest price first (excluding Viking)
   const allProducts = [...HOT_TUBS, ...SWIM_SPAS, ...DYNASTY_SPAS_PRODUCTS]
-    .filter(p => p.brand === 'Grand River Spas' || p.brand === 'Viking Spas' || p.brand === 'Dynasty Spas')
+    .filter(p => p.brand === 'Grand River Spas' || p.brand === 'Dynasty Spas')
     .sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
   
   // Get a mix of products from each brand
-  const grandRiver = allProducts.filter(p => p.brand === 'Grand River Spas').slice(0, 5);
-  const viking = allProducts.filter(p => p.brand === 'Viking Spas').slice(0, 5);
-  const dynasty = allProducts.filter(p => p.brand === 'Dynasty Spas').slice(0, 5);
+  const grandRiver = allProducts.filter(p => p.brand === 'Grand River Spas').slice(0, 8);
+  const dynasty = allProducts.filter(p => p.brand === 'Dynasty Spas').slice(0, 8);
   
   // Interleave the brands for variety
   const mixedProducts = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 8; i++) {
     if (grandRiver[i]) mixedProducts.push(grandRiver[i]);
-    if (viking[i]) mixedProducts.push(viking[i]);
     if (dynasty[i]) mixedProducts.push(dynasty[i]);
   }
 
@@ -851,7 +809,9 @@ const ShopAllModelsSection = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-[#F8FAFC]">
+    <section className="py-16" style={{
+      background: 'linear-gradient(180deg, #f8fafc 0%, #e8f4fc 50%, #d8ecf8 100%)'
+    }}>
       <div className="max-w-7xl mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -939,9 +899,11 @@ const ShopAllModelsSection = () => {
   );
 };
 
-// AR Visualizer Section
+// AR Visualizer Section - Teaser with blurb
 const ARVisualizerSection = () => (
-  <section className="py-16 bg-white">
+  <section className="py-16" style={{
+    background: 'linear-gradient(180deg, #f8fafc 0%, #e8f4fc 50%, #d0e8f7 100%)'
+  }}>
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <motion.div 
@@ -956,8 +918,11 @@ const ARVisualizerSection = () => (
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-6">
             See It In Your <span className="text-[#B91C1C]">Backyard</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-4">
             Not sure how it will look? Use our AR Visualizer to place a virtual hot tub, swim spa, or sauna in your space using your phone's camera.
+          </p>
+          <p className="text-base md:text-lg text-slate-500 leading-relaxed mb-6">
+            <strong>Try it out!</strong> Our augmented reality tool lets you visualize different models and sizes right in your backyard before you buy. No app download required — works directly in your mobile browser. Simply select a product, point your camera, and see how it fits!
           </p>
           <ul className="space-y-4 mb-8">
             <li className="flex items-center gap-3 text-lg text-slate-600">
@@ -1007,13 +972,14 @@ const ARVisualizerSection = () => (
   </section>
 );
 
-// Product Comparison Section
+// Product Comparison Section with gradient
 const ComparisonSection = () => {
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [showSelector, setShowSelector] = useState(false);
   
+  // Exclude Viking products from comparison
   const allProducts = [
-    ...HOT_TUBS.map(p => ({ ...p, category: 'Hot Tub' })),
+    ...HOT_TUBS.filter(p => p.brand !== 'Viking Spas').map(p => ({ ...p, category: 'Hot Tub' })),
     ...SWIM_SPAS.map(p => ({ ...p, category: 'Swim Spa' })),
     ...SAUNAS.map(p => ({ ...p, category: 'Sauna' })),
     ...COLD_PLUNGES.map(p => ({ ...p, category: 'Cold Plunge' })),
@@ -1134,7 +1100,7 @@ const ComparisonSection = () => {
   );
 };
 
-// Home Page Component
+// Home Page Component - Rearranged sections
 const HomePage = () => {
   const [showPopup, setShowPopup] = useState(false);
   
@@ -1153,8 +1119,8 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Upstate Hot Tubs | American Made Hot Tubs & Swim Spas | South Carolina</title>
-        <meta name="description" content="Live your healthiest life while enjoying a vacation everyday at home. American made hot tubs, swim spas, saunas & cold plunges from Grand River Spas, Viking Spas, and Dynasty Spas. Serving Greenville, Simpsonville SC and the Upstate." />
-        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, American made, Grand River Spas, Viking Spas, Dynasty Spas, Greenville SC, Simpsonville SC, Upstate" />
+        <meta name="description" content="Live your healthiest life while enjoying a vacation everyday at home. American made hot tubs, swim spas, saunas & cold plunges from Grand River Spas and Dynasty Spas. Serving Greenville, Simpsonville SC and the Upstate." />
+        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, American made, Grand River Spas, Dynasty Spas, Greenville SC, Simpsonville SC, Upstate" />
         <meta property="og:title" content="Upstate Hot Tubs | American Made Hot Tubs & Swim Spas" />
         <meta property="og:description" content="Live your healthiest life while enjoying a vacation everyday at home. American made and proud of it!" />
         <meta property="og:type" content="website" />
@@ -1163,40 +1129,40 @@ const HomePage = () => {
       
       <TaxSpecialPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
       
-      {/* Hero Section - Video without overlay text */}
+      {/* 1. Hero Section - Video */}
       <HeroSection />
       
-      {/* Trust Badges - Bigger */}
+      {/* 2. Trust Badges */}
       <TrustBadgesSection />
       
-      {/* Best Warranty Section - NEW */}
-      <BestWarrantySection />
-      
-      {/* Free Items Section with Animated Graphics - NEW */}
-      <FreeItemsSection />
-      
-      {/* Why Upstate / Wet Test Section - MOVED HIGHER with Wet Test info */}
-      <WetTestSection />
-      
-      {/* Comparison Section - MOVED HIGHER */}
-      <ComparisonSection />
-      
-      {/* Resource Cards - Large 3-card grid */}
-      <ResourceCardsSection />
-      
-      {/* Product Collection Grid */}
+      {/* 3. Expand Your Wellness Journey (Hot Tubs, Saunas, Cold Plunges, Swim Spas) */}
       <ProductCollectionSection />
       
-      {/* Shop All Models Carousel - Premium first */}
-      <ShopAllModelsSection />
-      
-      {/* Location-Based Collection */}
-      <LocationCollectionSection />
-      
-      {/* Why Hot Tubs Section */}
+      {/* 4. Why a Hot Tub? */}
       <WhyHotTubsSection />
       
-      {/* AR Visualizer Section */}
+      {/* 5. Why Upstate / Wet Test Section */}
+      <WetTestSection />
+      
+      {/* 6. Shop All Models Carousel */}
+      <ShopAllModelsSection />
+      
+      {/* 7. Best Warranty Section with links */}
+      <BestWarrantySection />
+      
+      {/* 8. Free Items Section */}
+      <FreeItemsSection />
+      
+      {/* 9. The Collection (Grand River & Dynasty) */}
+      <LocationCollectionSection />
+      
+      {/* 10. Product Comparison */}
+      <ComparisonSection />
+      
+      {/* 11. Resource Cards */}
+      <ResourceCardsSection />
+      
+      {/* 12. AR Visualizer Section */}
       <ARVisualizerSection />
     </>
   );

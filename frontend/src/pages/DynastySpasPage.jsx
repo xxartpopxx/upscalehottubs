@@ -326,23 +326,33 @@ const DynastySpasPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="bg-slate-100 p-8 md:p-12 mb-12"
+            id="warranty"
           >
             <div className="flex items-center gap-3 mb-6">
               <Shield className="text-[#B91C1C]" size={32} />
-              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628]">Industry-Leading Warranty</h2>
+              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628]">Dynasty Spa Warranty</h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-white">
+            <p className="text-lg text-slate-600 mb-6">
+              <strong>All warranties include parts and labor! We have our own in-house tech!</strong>
+            </p>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <p className="text-4xl font-bold text-[#B91C1C] mb-2">3</p>
+                <p className="text-lg font-semibold text-[#0A1628]">Year Surface Warranty</p>
+                <p className="text-sm text-slate-500 mt-1">(Acrylic)</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <p className="text-4xl font-bold text-[#B91C1C] mb-2">3</p>
+                <p className="text-lg font-semibold text-[#0A1628]">Year Cover Warranty</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <p className="text-4xl font-bold text-[#B91C1C] mb-2">5</p>
+                <p className="text-lg font-semibold text-[#0A1628]">Year Plumbing & Electrical</p>
+                <p className="text-sm text-slate-500 mt-1">Parts and Labor</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
                 <p className="text-4xl font-bold text-[#B91C1C] mb-2">20</p>
                 <p className="text-lg font-semibold text-[#0A1628]">Year Shell Structure</p>
-              </div>
-              <div className="text-center p-6 bg-white">
-                <p className="text-4xl font-bold text-[#B91C1C] mb-2">5</p>
-                <p className="text-lg font-semibold text-[#0A1628]">Year Electrical & Plumbing</p>
-              </div>
-              <div className="text-center p-6 bg-white">
-                <p className="text-4xl font-bold text-[#B91C1C] mb-2">3</p>
-                <p className="text-lg font-semibold text-[#0A1628]">Year Surface</p>
               </div>
             </div>
           </motion.div>

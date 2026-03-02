@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Filter, X, ChevronDown, Flag } from 'lucide-react';
+import { Filter, X, ChevronDown, Flag, Shield } from 'lucide-react';
 import { GRAND_RIVER_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 import { Helmet } from 'react-helmet-async';
@@ -227,6 +227,42 @@ const GrandRiverPage = () => {
           ) : (
             <ProductGrid products={filteredProducts} linkPrefix="/products" />
           )}
+
+          {/* Grand River Spas Warranty Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-slate-100 p-8 md:p-12 mt-16 rounded-lg"
+            id="warranty"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <Shield className="text-[#B91C1C]" size={32} />
+              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628]">Grand River Spas Warranty</h2>
+            </div>
+            <p className="text-lg text-slate-600 mb-6">
+              <strong>All warranties include parts and labor! We have our own in-house tech!</strong>
+            </p>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <p className="text-3xl font-bold text-[#B91C1C] mb-2">Lifetime</p>
+                <p className="text-lg font-semibold text-[#0A1628]">Surface Warranty</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <p className="text-4xl font-bold text-[#B91C1C] mb-2">3</p>
+                <p className="text-lg font-semibold text-[#0A1628]">Year Cover Warranty</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <p className="text-4xl font-bold text-[#B91C1C] mb-2">3</p>
+                <p className="text-lg font-semibold text-[#0A1628]">Year Plumbing & Electrical</p>
+                <p className="text-sm text-slate-500 mt-1">Parts and Labor</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <p className="text-4xl font-bold text-[#B91C1C] mb-2">10</p>
+                <p className="text-lg font-semibold text-[#0A1628]">Year Shell Structure</p>
+              </div>
+            </div>
+          </motion.div>
           
         </div>
       </div>

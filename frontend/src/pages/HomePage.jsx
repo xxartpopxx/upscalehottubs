@@ -674,6 +674,128 @@ const LocationCollectionSection = () => (
 // Removed duplicate closing tags
 
 // NEW Why Hot Tubs Section - Gradient design
+// Combined Why Hot Tub & Why Upstate Section - Side by Side with Images
+const WhyHotTubsAndUpstateSection = () => (
+  <section className="py-16 md:py-20" style={{
+    background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 30%, #d0e8f7 70%, #c0e0f4 100%)'
+  }}>
+    <div className="max-w-7xl mx-auto px-4">
+      {/* Section Header */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+            <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
+            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+          </div>
+        </div>
+        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
+          Discover the <span className="text-[#B91C1C]">Difference</span>
+        </h2>
+      </motion.div>
+
+      {/* Side by Side Cards */}
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Why a Hot Tub Card */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl overflow-hidden shadow-xl"
+        >
+          <div className="h-64 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1769989074037-9873b4c72dcf?w=800&h=400&fit=crop"
+              alt="Hot tub relaxation and wellness"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-8">
+            <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-black uppercase text-[#0A1628] mb-4">
+              Why a <span className="text-[#B91C1C]">Hot Tub</span>?
+            </h3>
+            <p className="text-slate-600 mb-6">
+              For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress.
+            </p>
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="flex items-center gap-3">
+                <Droplets className="w-6 h-6 text-[#1E40AF]" />
+                <span className="text-sm font-semibold text-[#0A1628]">Hydrotherapy</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Moon className="w-6 h-6 text-[#1E40AF]" />
+                <span className="text-sm font-semibold text-[#0A1628]">Better Sleep</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Heart className="w-6 h-6 text-[#1E40AF]" />
+                <span className="text-sm font-semibold text-[#0A1628]">Stress Relief</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Activity className="w-6 h-6 text-[#1E40AF]" />
+                <span className="text-sm font-semibold text-[#0A1628]">Pain Relief</span>
+              </div>
+            </div>
+            <Link to="/wellness" className="btn-primary inline-flex items-center gap-2">
+              Discover Benefits <ChevronRight size={20} />
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Why Upstate Hot Tubs Card */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl overflow-hidden shadow-xl"
+        >
+          <div className="h-64 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?w=800&h=400&fit=crop"
+              alt="Upstate Hot Tubs customer service"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-8">
+            <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-black uppercase text-[#0A1628] mb-4">
+              Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
+            </h3>
+            <p className="text-slate-600 mb-6">
+              Family-owned and dedicated to bringing you the best American-made hot tubs with exceptional service.
+            </p>
+            <ul className="space-y-3 mb-6">
+              <li className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-[#B91C1C] rounded-full"></div>
+                <span className="text-sm text-slate-700">Free delivery & installation in SC</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-[#B91C1C] rounded-full"></div>
+                <span className="text-sm text-slate-700">$1,500+ in FREE accessories included</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-[#B91C1C] rounded-full"></div>
+                <span className="text-sm text-slate-700">Military & First Responder discounts</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-[#B91C1C] rounded-full"></div>
+                <span className="text-sm text-slate-700">Try before you buy - "Wet Test"</span>
+              </li>
+            </ul>
+            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              Schedule Wet Test <ChevronRight size={20} />
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+// Keep the old sections for reference but we'll use the combined one
 const WhyHotTubsSection = () => (
   <section className="py-16 md:py-20" style={{
     background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 30%, #d0e8f7 70%, #c0e0f4 100%)'
@@ -1071,31 +1193,28 @@ const HomePage = () => {
       {/* 3. Expand Your Wellness Journey (Hot Tubs, Saunas, Cold Plunges, Swim Spas) */}
       <ProductCollectionSection />
       
-      {/* 4. Why a Hot Tub? */}
-      <WhyHotTubsSection />
+      {/* 4. Why a Hot Tub & Why Upstate - Side by Side with Images */}
+      <WhyHotTubsAndUpstateSection />
       
-      {/* 5. Why Upstate / Wet Test Section */}
-      <WetTestSection />
-      
-      {/* 6. Shop All Models Carousel */}
+      {/* 5. Shop All Models Carousel */}
       <ShopAllModelsSection />
       
-      {/* 7. Best Warranty Section with links */}
+      {/* 6. Best Warranty Section with links */}
       <BestWarrantySection />
       
-      {/* 8. Free Items Section */}
+      {/* 7. Free Items Section */}
       <FreeItemsSection />
       
-      {/* 9. The Collection (Grand River & Dynasty) */}
+      {/* 8. The Collection (Grand River & Dynasty) */}
       <LocationCollectionSection />
       
-      {/* 10. Product Comparison */}
+      {/* 9. Product Comparison */}
       <ComparisonSection />
       
-      {/* 11. Resource Cards */}
+      {/* 10. Resource Cards */}
       <ResourceCardsSection />
       
-      {/* 12. AR Visualizer Section */}
+      {/* 11. AR Visualizer Section */}
       <ARVisualizerSection />
     </>
   );

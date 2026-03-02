@@ -107,10 +107,10 @@ const Header = () => {
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo only - no text */}
+          {/* Logo only - using transparent logo */}
           <Link to="/" className="flex items-center" data-testid="logo-link">
             <motion.img 
-              src={ASSETS.logo} 
+              src={ASSETS.transparentLogo} 
               alt="Upstate Hot Tubs" 
               className={`object-contain transition-all duration-300 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'}`} 
               loading="eager" 

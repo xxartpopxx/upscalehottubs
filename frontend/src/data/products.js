@@ -2196,8 +2196,8 @@ export const DYNASTY_SWIM_SPAS = [
   }
 ];
 
-// Combined Swim Spas (for backward compatibility)
-export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...VIKING_SWIM_SPAS, ...DYNASTY_SWIM_SPAS];
+// Combined Swim Spas (for backward compatibility) - Viking removed
+export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...DYNASTY_SWIM_SPAS];
 
 // Saunas and Cold Plunges
 // White Glove Installation available for all saunas: $1,500.00

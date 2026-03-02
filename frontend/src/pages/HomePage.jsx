@@ -18,7 +18,7 @@ const ALL_PRODUCTS = [
   ...sortByPrice(COLD_PLUNGES),
 ];
 
-// Tax Special Popup Component - Uses transparent logo
+// Tax Special Popup Component - White background with transparent logo
 const TaxSpecialPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   
@@ -36,11 +36,11 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
           animate={{ scale: 1, opacity: 1, y: 0 }} 
           exit={{ scale: 0.8, opacity: 0 }} 
           transition={{ type: "spring", duration: 0.5 }} 
-          className="bg-[#0A1628] max-w-lg w-full shadow-2xl relative overflow-hidden" 
+          className="bg-white max-w-lg w-full shadow-2xl relative overflow-hidden rounded-lg" 
           onClick={e => e.stopPropagation()}
         >
           <div className="h-2 bg-[#B91C1C]" />
-          <button onClick={onClose} className="absolute top-4 right-4 text-white/70 hover:text-white p-2 z-10" aria-label="Close popup">
+          <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 z-10" aria-label="Close popup">
             <X size={24} />
           </button>
           <div className="p-8 text-center relative">
@@ -48,7 +48,7 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
               <img src={ASSETS.transparentLogo} alt="Upstate Hot Tubs" className="h-24 mx-auto mb-6" />
             </motion.div>
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-              <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-white mb-2">
+              <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-[#0A1628] mb-2">
                 <span className="text-[#B91C1C]">TAX</span> SPECIAL
               </h2>
               <div className="flex items-center justify-center gap-2 mb-6">
@@ -57,18 +57,18 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
                 <Star className="text-[#D4AF37] fill-[#D4AF37]" size={20} />
               </div>
             </motion.div>
-            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-white/90 text-lg mb-6">
+            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-slate-600 text-lg mb-6">
               Email us today or call us for exclusive tax season savings on hot tubs, swim spas, saunas & cold plunges!
             </motion.p>
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-4">
               <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary w-full flex items-center justify-center gap-2 text-lg">
                 <Phone size={20} /> Call {CONTACT.phone}
               </a>
-              <a href={`mailto:${CONTACT.email}`} className="btn-secondary w-full flex items-center justify-center gap-2 border-white text-white hover:bg-white hover:text-[#0A1628]">
+              <a href={`mailto:${CONTACT.email}`} className="btn-secondary w-full flex items-center justify-center gap-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white">
                 <Mail size={20} /> Email Us
               </a>
             </motion.div>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-white/50 text-sm mt-6">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-sm mt-6">
               Limited time offer. Contact us for details.
             </motion.p>
           </div>
@@ -135,7 +135,14 @@ const HeroSection = () => (
           
           <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">
             Live Your{' '}
-            <span className="text-[#B91C1C]">Healthiest Life</span>
+            <span 
+              className="text-[#B91C1C]"
+              style={{ 
+                textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
+              }}
+            >
+              Healthiest Life
+            </span>
             <br />
             <span className="text-[#0A1628]">While Enjoying a Vacation</span>
             <br />
@@ -564,7 +571,15 @@ const ProductCollectionSection = () => {
           className="text-center mb-12"
         >
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
-            Expand Your <span className="text-[#B91C1C]">Wellness Journey</span>
+            Expand Your{' '}
+            <span 
+              className="text-[#B91C1C]"
+              style={{ 
+                textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
+              }}
+            >
+              Wellness Journey
+            </span>
           </h2>
           <p className="text-lg md:text-xl text-slate-600">Find the perfect product for your lifestyle</p>
         </motion.div>

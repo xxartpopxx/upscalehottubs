@@ -18,7 +18,7 @@ const ALL_PRODUCTS = [
   ...sortByPrice(COLD_PLUNGES),
 ];
 
-// Tax Special Popup Component
+// Tax Special Popup Component - Uses transparent logo
 const TaxSpecialPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   
@@ -45,7 +45,7 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
           </button>
           <div className="p-8 text-center relative">
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring" }}>
-              <img src={ASSETS.logo} alt="Upstate Hot Tubs" className="h-24 mx-auto mb-6" />
+              <img src={ASSETS.transparentLogo} alt="Upstate Hot Tubs" className="h-24 mx-auto mb-6" />
             </motion.div>
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
               <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-white mb-2">
@@ -250,7 +250,7 @@ const BestWarrantySection = () => (
   </section>
 );
 
-// NEW Free Items Section with Animated Product Images
+// NEW Free Items Section - Static (no floating animation)
 const FreeItemsSection = () => {
   const freeItems = [
     { name: 'Spa Cover', image: ASSETS.freeItems.cover },
@@ -283,7 +283,7 @@ const FreeItemsSection = () => {
           </p>
         </motion.div>
 
-        {/* Animated Product Grid */}
+        {/* Static Product Grid - No floating animation */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {freeItems.map((item, idx) => (
             <motion.div
@@ -294,20 +294,8 @@ const FreeItemsSection = () => {
               transition={{ delay: idx * 0.15 }}
               className="flex flex-col items-center"
             >
-              {/* Floating Animation Container */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 2, -2, 0]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: idx * 0.3
-                }}
-                className="relative mb-4"
-              >
+              {/* Static Container - No animation */}
+              <div className="relative mb-4">
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#B91C1C]/20 to-[#D4AF37]/20 rounded-full blur-xl scale-110" />
                 
@@ -320,15 +308,11 @@ const FreeItemsSection = () => {
                   />
                 </div>
                 
-                {/* FREE Badge */}
-                <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="absolute -top-3 -right-3 bg-[#B91C1C] text-white font-bold text-sm px-3 py-1 rounded-full shadow-lg"
-                >
+                {/* FREE Badge - Static */}
+                <div className="absolute -top-3 -right-3 bg-[#B91C1C] text-white font-bold text-sm px-3 py-1 rounded-full shadow-lg">
                   FREE
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
               
               {/* Item Name */}
               <h3 className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628] text-center">
@@ -346,31 +330,22 @@ const FreeItemsSection = () => {
           className="mt-12 text-center"
         >
           <div className="flex flex-wrap justify-center gap-4">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
-            >
+            <div className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
               <Truck className="w-6 h-6 text-[#D4AF37]" />
               <span className="font-bold">Free Delivery</span>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
-            >
+            </div>
+            <div className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
               <svg className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
               </svg>
               <span className="font-bold">Free Installation</span>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
-            >
+            </div>
+            <div className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
               <svg className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
               </svg>
               <span className="font-bold">Free Set Up</span>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -899,75 +874,33 @@ const ShopAllModelsSection = () => {
   );
 };
 
-// AR Visualizer Section - Teaser with blurb
+// AR Visualizer Section - Small line blurb
 const ARVisualizerSection = () => (
-  <section className="py-16" style={{
-    background: 'linear-gradient(180deg, #f8fafc 0%, #e8f4fc 50%, #d0e8f7 100%)'
-  }}>
+  <section className="py-8 bg-gradient-to-r from-slate-50 to-slate-100">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ once: true }}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center md:text-left"
+      >
+        <div className="flex items-center gap-3">
+          <Camera className="text-[#D4AF37]" size={28} />
+          <span className="font-['Barlow_Condensed'] text-xl md:text-2xl font-bold uppercase text-[#0A1628]">
+            AR Technology
+          </span>
+        </div>
+        <p className="text-lg text-slate-600">
+          Want to see how a hot tub looks in your backyard? Try our AR Visualizer on your phone!
+        </p>
+        <Link 
+          to="/ar-visualizer" 
+          className="btn-primary inline-flex items-center gap-2 text-base whitespace-nowrap"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <Camera className="text-[#D4AF37]" size={36} />
-            <span className="text-[#D4AF37] font-bold uppercase tracking-wider text-lg">AR Technology</span>
-          </div>
-          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold uppercase text-[#0A1628] mb-6">
-            See It In Your <span className="text-[#B91C1C]">Backyard</span>
-          </h2>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-4">
-            Not sure how it will look? Use our AR Visualizer to place a virtual hot tub, swim spa, or sauna in your space using your phone's camera.
-          </p>
-          <p className="text-base md:text-lg text-slate-500 leading-relaxed mb-6">
-            <strong>Try it out!</strong> Our augmented reality tool lets you visualize different models and sizes right in your backyard before you buy. No app download required — works directly in your mobile browser. Simply select a product, point your camera, and see how it fits!
-          </p>
-          <ul className="space-y-4 mb-8">
-            <li className="flex items-center gap-3 text-lg text-slate-600">
-              <div className="w-3 h-3 bg-[#D4AF37] rounded-full"></div>
-              Works on most modern smartphones
-            </li>
-            <li className="flex items-center gap-3 text-lg text-slate-600">
-              <div className="w-3 h-3 bg-[#D4AF37] rounded-full"></div>
-              Visualize different models and sizes
-            </li>
-            <li className="flex items-center gap-3 text-lg text-slate-600">
-              <div className="w-3 h-3 bg-[#D4AF37] rounded-full"></div>
-              Share with family for input
-            </li>
-          </ul>
-          <Link 
-            to="/ar-visualizer" 
-            className="btn-primary inline-flex items-center gap-2 text-lg"
-          >
-            <Smartphone size={22} />
-            Launch AR Visualizer
-          </Link>
-        </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <div className="bg-gradient-to-br from-[#0A1628] to-[#1a3352] rounded-xl p-8 aspect-video flex items-center justify-center">
-            <div className="text-center">
-              <motion.div 
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-28 h-28 mx-auto mb-4 bg-[#B91C1C]/20 rounded-full flex items-center justify-center"
-              >
-                <Camera className="w-14 h-14 text-[#B91C1C]" />
-              </motion.div>
-              <p className="text-xl text-white/80 mb-2">Point your camera at your backyard</p>
-              <p className="text-base text-white/50">Available on mobile devices</p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+          <Smartphone size={18} />
+          Try It Now
+        </Link>
+      </motion.div>
     </div>
   </section>
 );

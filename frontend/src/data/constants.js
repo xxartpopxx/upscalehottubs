@@ -6,6 +6,9 @@ export const OLD_LOGO = 'https://customer-assets.emergentagent.com/job_wet-test-
 // New Updated Logo - Upstate Hot Tubs with Bubbles
 export const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_river-spa-catalog/artifacts/i0b05mh3_unnamed%205.50.10%E2%80%AFPM.jpg';
 
+// Transparent Logo - for dark backgrounds
+export const TRANSPARENT_LOGO = 'https://customer-assets.emergentagent.com/job_spa-layout-overhaul/artifacts/4nsu0y9o_Untitled%20design%20-%202026-03-02T161029.394.png';
+
 // About Page Image (Grand Opening)
 export const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/iri86zu2_549423966_122190087680361664_6940928450155468082_n.jpg';
 
@@ -21,6 +24,7 @@ export const FREE_ITEMS_IMAGES = {
 export const ASSETS = {
   logo: NEW_LOGO,
   oldLogo: OLD_LOGO,
+  transparentLogo: TRANSPARENT_LOGO,
   heroVideo: 'https://customer-assets.emergentagent.com/job_e23f927f-0a4b-43ea-96db-a0ca9339796e/artifacts/14akq3sp_SnapSave_App_1155304596774970_1080p.mp4',
   wetTestVideo: 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/atx9u9gd_SnapSave_App_1262194805786001_1080p.mp4',
   jingle: 'https://customer-assets.emergentagent.com/job_e23f927f-0a4b-43ea-96db-a0ca9339796e/artifacts/80qfrl8e_SnapSave_App_1155304596774970_1080p.mp3',

@@ -65,16 +65,16 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-3'}`}>
-      {/* Top Bar - Contact Info & Social Media */}
-      <div className="hidden lg:block bg-[#0A1628] text-white text-sm py-2">
+      {/* Top Bar - Contact Info & Social Media - No background bar, blue text */}
+      <div className="hidden lg:block py-2">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-6">
           {/* Social Media Icons */}
-          <div className="flex items-center gap-3 mr-4 border-r border-white/20 pr-6">
+          <div className="flex items-center gap-3 mr-4 border-r border-slate-200 pr-6">
             <a 
               href={SOCIAL_LINKS.facebook} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-[#D4AF37] transition-colors"
+              className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors"
               aria-label="Facebook"
             >
               <FacebookIcon size={18} />
@@ -83,7 +83,7 @@ const Header = () => {
               href={SOCIAL_LINKS.instagram} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-[#D4AF37] transition-colors"
+              className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors"
               aria-label="Instagram"
             >
               <InstagramIcon size={18} />
@@ -92,16 +92,16 @@ const Header = () => {
               href={SOCIAL_LINKS.youtube} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-[#D4AF37] transition-colors"
+              className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors"
               aria-label="YouTube"
             >
               <YouTubeIcon size={18} />
             </a>
           </div>
-          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
+          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">
             <Phone size={14} /> {CONTACT.phone}
           </a>
-          <Link to="/contact" className="hover:text-[#D4AF37] transition-colors">Contact</Link>
+          <Link to="/contact" className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">Contact</Link>
         </div>
       </div>
 

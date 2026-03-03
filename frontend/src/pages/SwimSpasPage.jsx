@@ -53,11 +53,13 @@ const SwimSpasPage = () => {
   const filteredGrandRiver = useMemo(() => {
     if (filters.brand === 'dynasty') return [];
     return sortProducts(filterProducts(GRAND_RIVER_SWIM_SPAS));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters, sortBy]);
 
   const filteredDynasty = useMemo(() => {
     if (filters.brand === 'grandriver') return [];
     return sortProducts(filterProducts(DYNASTY_SWIM_SPAS));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters, sortBy]);
 
   const totalProducts = filteredGrandRiver.length + filteredDynasty.length;

@@ -152,6 +152,7 @@ const ProductDetailPage = () => {
       setImageError(false);
       setSelectedCompareModel(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product?.id]);
   
   const isGrandRiver = product?.brand === 'Grand River Spas';

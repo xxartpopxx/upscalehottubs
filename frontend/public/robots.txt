@@ -1,0 +1,9 @@
+# Robots.txt for Upstate Hot Tubs
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://upstatehottubs.com/sitemap.xml
+
+# Disallow admin and api routes
+Disallow: /api/

@@ -50,8 +50,11 @@ const ProductCard = ({ product, linkPrefix = '/products' }) => {
               key={currentImage} 
               src={images[currentImage]} 
               alt={product.name} 
+              width="400"
+              height="400"
               className="w-full h-full object-contain p-4" 
-              loading="lazy" 
+              loading="lazy"
+              decoding="async"
               initial={{ opacity: 0, x: 50 }} 
               animate={{ opacity: 1, x: 0 }} 
               exit={{ opacity: 0, x: -50 }} 
@@ -65,26 +68,26 @@ const ProductCard = ({ product, linkPrefix = '/products' }) => {
             <>
               <button 
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImage((prev) => (prev - 1 + images.length) % images.length); }} 
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity" 
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity min-w-[40px] min-h-[40px] flex items-center justify-center" 
                 aria-label="Previous image"
               >
                 <ChevronLeft size={20} />
               </button>
               <button 
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImage((prev) => (prev + 1) % images.length); }} 
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity" 
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity min-w-[40px] min-h-[40px] flex items-center justify-center" 
                 aria-label="Next image"
               >
                 <ChevronRight size={20} />
               </button>
               
               {/* Image dots */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2" role="tablist" aria-label="Product images">
                 {images.map((_, idx) => (
                   <button 
                     key={idx} 
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImage(idx); }} 
-                    className={`w-2 h-2 rounded-full transition-all ${currentImage === idx ? 'bg-[#B91C1C] w-4' : 'bg-slate-300'}`} 
+                    className={`w-3 h-3 rounded-full transition-all min-w-[12px] min-h-[12px] ${currentImage === idx ? 'bg-[#B91C1C] w-4' : 'bg-slate-300'}`} 
                     aria-label={`View image ${idx + 1}`} 
                   />
                 ))}

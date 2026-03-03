@@ -49,7 +49,7 @@ const WetTestPopup = ({ isOpen, onClose }) => {
           onClick={e => e.stopPropagation()}
         >
           <div className="h-2 bg-[#B91C1C]" />
-          <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-slate-200 p-2 z-10 bg-black/30 rounded-full" aria-label="Close popup">
+          <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-slate-200 p-2 z-10 bg-black/30 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close popup">
             <X size={24} />
           </button>
           
@@ -58,6 +58,9 @@ const WetTestPopup = ({ isOpen, onClose }) => {
             <img 
               src="/images/popup-lady-relaxing.jpg" 
               alt="Woman relaxing in hot tub" 
+              width="512"
+              height="192"
+              loading="eager"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
@@ -107,8 +110,9 @@ const HeroSection = () => (
     {/* Video Section - Smaller to fit fully */}
     <div className="max-w-4xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-        <video autoPlay muted loop playsInline className="w-full h-full object-contain bg-black">
+        <video autoPlay muted loop playsInline className="w-full h-full object-contain bg-black" width="896" height="504">
           <source src={ASSETS.heroVideo} type="video/mp4" />
+          <track kind="captions" label="English captions" />
         </video>
       </div>
     </div>
@@ -117,7 +121,7 @@ const HeroSection = () => (
     <div className="py-6 md:py-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          {/* Animated American Flags - More realistic waving effect */}
+          {/* Animated American Flags - Using CSS transform for GPU acceleration */}
           <div className="flex items-center justify-center gap-4 mb-4">
             <motion.div
               animate={{ 
@@ -125,11 +129,15 @@ const HeroSection = () => (
                 skewX: [0, 2, 0, -2, 0]
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
+              className="relative will-change-transform"
+              style={{ transform: 'translateZ(0)' }}
             >
               <img 
                 src="https://flagcdn.com/w160/us.png"
                 alt="American Flag"
+                width="80"
+                height="48"
+                loading="eager"
                 className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
               />
             </motion.div>
@@ -140,11 +148,15 @@ const HeroSection = () => (
                 skewX: [0, -2, 0, 2, 0]
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
+              className="relative will-change-transform"
+              style={{ transform: 'translateZ(0)' }}
             >
               <img 
                 src="https://flagcdn.com/w160/us.png"
                 alt="American Flag"
+                width="80"
+                height="48"
+                loading="eager"
                 className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
               />
             </motion.div>
@@ -388,8 +400,9 @@ const WetTestSection = () => (
         viewport={{ once: true }}
         className="md:w-1/2"
       >
-        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover" width="640" height="480">
           <source src={ASSETS.wetTestVideo} type="video/mp4" />
+          <track kind="captions" label="English captions" />
         </video>
       </motion.div>
       
@@ -402,7 +415,7 @@ const WetTestSection = () => (
       >
         {/* Logo at top - Use OLD logo for Family Owned section */}
         <div className="flex items-center gap-4 mb-4">
-          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs" className="h-16 md:h-20 lg:h-24 object-contain" />
+          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs" width="96" height="96" loading="lazy" className="h-16 md:h-20 lg:h-24 object-contain" />
           <div>
             <p className="font-['Barlow_Condensed'] text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wider text-white/80">Family Owned</p>
             <p className="font-['Barlow_Condensed'] text-base md:text-lg text-[#D4AF37] font-semibold">American Made & Proud</p>
@@ -746,6 +759,10 @@ const WhyHotTubSection = () => {
                 key={currentImageIndex}
                 src={galleryImages[currentImageIndex].src}
                 alt={galleryImages[currentImageIndex].alt}
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -754,12 +771,15 @@ const WhyHotTubSection = () => {
               />
             </AnimatePresence>
             {/* Gallery indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" role="tablist" aria-label="Gallery navigation">
               {galleryImages.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentImageIndex(idx)}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  aria-label={`View image ${idx + 1} of ${galleryImages.length}`}
+                  aria-selected={idx === currentImageIndex}
+                  role="tab"
+                  className={`w-3 h-3 rounded-full transition-all min-w-[12px] min-h-[12px] ${
                     idx === currentImageIndex ? 'bg-white scale-110' : 'bg-white/50 hover:bg-white/70'
                   }`}
                 />
@@ -768,13 +788,15 @@ const WhyHotTubSection = () => {
             {/* Navigation arrows */}
             <button
               onClick={() => setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)}
-              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full text-white transition-colors"
+              aria-label="Previous image"
+              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full text-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full text-white transition-colors"
+              aria-label="Next image"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full text-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
               <ChevronRight size={24} />
             </button>

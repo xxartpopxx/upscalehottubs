@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font display swap for faster text rendering */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-display: swap;
+}
+
 :root {
   --primary: #0A1628;
   --primary-light: #1B2B45;
@@ -76,6 +92,37 @@ h1, h2, h3, h4, h5, h6 {
 *:focus-visible {
   outline: 2px solid var(--secondary);
   outline-offset: 2px;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.contain-layout {
+  contain: layout;
+}
+
+.contain-paint {
+  contain: paint;
+}
+
+/* GPU acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Animations */

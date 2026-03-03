@@ -111,9 +111,12 @@ const Header = () => {
           <Link to="/" className="flex items-center" data-testid="logo-link">
             <motion.img 
               src={ASSETS.transparentLogo} 
-              alt="Upstate Hot Tubs" 
+              alt="Upstate Hot Tubs - Home" 
+              width="200"
+              height="80"
               className={`object-contain transition-all duration-300 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'}`} 
-              loading="eager" 
+              loading="eager"
+              fetchPriority="high"
               whileHover={{ scale: 1.02 }} 
             />
           </Link>
@@ -127,9 +130,12 @@ const Header = () => {
               onMouseLeave={() => setShopDropdown(false)}
             >
               <button 
-                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 ${
+                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 min-h-[44px] ${
                   shopLinks.some(l => location.pathname === l.href) ? 'text-[#B91C1C]' : 'text-[#0A1628]'
                 }`}
+                aria-label="Shop menu"
+                aria-expanded={shopDropdown}
+                aria-haspopup="true"
                 data-testid="nav-shop-btn"
               >
                 Shop
@@ -168,9 +174,12 @@ const Header = () => {
               onMouseLeave={() => setDiscoverDropdown(false)}
             >
               <button 
-                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 ${
+                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 min-h-[44px] ${
                   discoverLinks.some(l => location.pathname === l.href) ? 'text-[#B91C1C]' : 'text-[#0A1628]'
                 }`}
+                aria-label="Discover menu"
+                aria-expanded={discoverDropdown}
+                aria-haspopup="true"
                 data-testid="nav-discover-btn"
               >
                 Discover
@@ -249,9 +258,10 @@ const Header = () => {
           
           {/* Mobile Menu Button */}
           <button 
-            className="xl:hidden p-2 text-[#0A1628]" 
+            className="xl:hidden p-2 text-[#0A1628] min-w-[44px] min-h-[44px] flex items-center justify-center" 
             onClick={() => setIsOpen(!isOpen)} 
-            aria-label="Menu" 
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
             data-testid="mobile-menu-btn"
           >
             {isOpen ? <X size={32} /> : <Menu size={32} />}

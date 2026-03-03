@@ -6,16 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0A1628" />
     
-    <!-- Google Analytics - Defer for better performance -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9V25T33X1"></script>
+    <!-- Preload critical assets for LCP -->
+    <link rel="preload" href="/images/popup-lady-relaxing-optimized.jpg" as="image" fetchpriority="high" />
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Critical CSS - Inline for faster initial render */
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff}
+      .skip-link{position:absolute;left:-9999px;z-index:999;padding:1rem;background:#B91C1C;color:#fff}
+      .skip-link:focus{left:50%;transform:translateX(-50%);top:0}
+      #root{min-height:100vh}
+      /* Loading state */
+      .initial-loader{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(180deg,#fff 0%,#e8f4fc 100%)}
+      .loader-spinner{width:40px;height:40px;border:3px solid #e8f4fc;border-top-color:#B91C1C;border-radius:50%;animation:spin 1s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+    </style>
+    
+    <!-- Defer Google Analytics completely -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-R9V25T33X1', { 'send_page_view': false });
-      // Defer page view until after load
+      // Load GA only after page is interactive
       window.addEventListener('load', function() {
-        gtag('event', 'page_view');
+        setTimeout(function() {
+          var s = document.createElement('script');
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-R9V25T33X1';
+          s.async = true;
+          document.head.appendChild(s);
+          s.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R9V25T33X1');
+          };
+        }, 2000); // Delay GA load by 2 seconds
       });
     </script>
     

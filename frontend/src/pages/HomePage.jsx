@@ -1,10 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ChevronRight, ChevronLeft, Flag, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun, Award, Gift } from 'lucide-react';
 import { ASSETS, CONTACT } from '../data/constants';
 import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
+
+// Check if mobile for performance optimizations
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+// Disable animations on mobile for better performance
+const mobileMotionProps = isMobile ? { initial: false, animate: false, whileInView: false } : {};
 
 // Reusable gradient background style
 const gradientBg = {
@@ -18,6 +24,78 @@ const lightGradientBg = {
 // Sort products by price (least to most expensive)
 const sortByPrice = (products) => {
   return [...products].sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
+};
+
+// Lazy Video Component - Only loads video when in viewport
+const LazyVideo = ({ src, poster, className, ...props }) => {
+  const [isInView, setIsInView] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const videoRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '100px' }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // On mobile, just show poster image instead of video for performance
+  if (isMobile) {
+    return (
+      <div ref={containerRef} className={className}>
+        <img 
+          src={poster} 
+          alt="Hot tub relaxation" 
+          className="w-full h-full object-cover"
+          width="400"
+          height="300"
+          loading="eager"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div ref={containerRef} className={className}>
+      {isInView ? (
+        <video 
+          ref={videoRef}
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          preload="metadata"
+          poster={poster}
+          onLoadedData={() => setHasLoaded(true)}
+          className="w-full h-full object-contain bg-black"
+          {...props}
+        >
+          <source src={src} type="video/mp4" />
+          <track kind="captions" label="English captions" />
+        </video>
+      ) : (
+        <img 
+          src={poster} 
+          alt="Loading video..." 
+          className="w-full h-full object-cover"
+          width="400"
+          height="300"
+        />
+      )}
+    </div>
+  );
 };
 
 const ALL_PRODUCTS = [
@@ -107,69 +185,84 @@ const HeroSection = () => (
       linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(200,230,250,0.7) 50%, rgba(160,210,240,0.8) 100%),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.3' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")`
   }} data-testid="hero-section">
-    {/* Video Section - Smaller to fit fully */}
+    {/* Video Section - Uses LazyVideo for performance */}
     <div className="max-w-4xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          preload="metadata"
+        <LazyVideo
+          src={ASSETS.heroVideo}
           poster="/images/popup-lady-relaxing-optimized.jpg"
-          className="w-full h-full object-contain bg-black" 
-          width="896" 
+          className="w-full h-full"
+          width="896"
           height="504"
-        >
-          <source src={ASSETS.heroVideo} type="video/mp4" />
-          <track kind="captions" label="English captions" />
-        </video>
+        />
       </div>
     </div>
     
     {/* Text Content Below Video - Red White Blue Theme */}
     <div className="py-6 md:py-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          {/* Animated American Flags - Using CSS transform for GPU acceleration */}
+        <motion.div initial={isMobile ? false : { opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} {...mobileMotionProps}>
+          {/* American Flags - Static on mobile, animated on desktop */}
           <div className="flex items-center justify-center gap-4 mb-4">
-            <motion.div
-              animate={{ 
-                rotateY: [0, 10, 0, -10, 0],
-                skewX: [0, 2, 0, -2, 0]
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="relative will-change-transform"
-              style={{ transform: 'translateZ(0)' }}
-            >
+            {isMobile ? (
               <img 
-                src="https://flagcdn.com/w160/us.png"
+                src="https://flagcdn.com/w80/us.png"
                 alt="American Flag"
-                width="80"
-                height="48"
+                width="56"
+                height="36"
                 loading="eager"
-                className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
+                className="w-14 h-9 object-cover rounded shadow-lg border border-slate-600"
               />
-            </motion.div>
+            ) : (
+              <motion.div
+                animate={{ 
+                  rotateY: [0, 10, 0, -10, 0],
+                  skewX: [0, 2, 0, -2, 0]
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="relative will-change-transform"
+                style={{ transform: 'translateZ(0)' }}
+              >
+                <img 
+                  src="https://flagcdn.com/w160/us.png"
+                  alt="American Flag"
+                  width="80"
+                  height="48"
+                  loading="eager"
+                  className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
+                />
+              </motion.div>
+            )}
             <span className="text-lg md:text-2xl font-bold tracking-widest uppercase text-[#0A1628]">American Made & Proud of It</span>
-            <motion.div
-              animate={{ 
-                rotateY: [0, -10, 0, 10, 0],
-                skewX: [0, -2, 0, 2, 0]
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="relative will-change-transform"
-              style={{ transform: 'translateZ(0)' }}
-            >
+            {isMobile ? (
               <img 
-                src="https://flagcdn.com/w160/us.png"
+                src="https://flagcdn.com/w80/us.png"
                 alt="American Flag"
-                width="80"
-                height="48"
+                width="56"
+                height="36"
                 loading="eager"
-                className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
+                className="w-14 h-9 object-cover rounded shadow-lg border border-slate-600"
               />
-            </motion.div>
+            ) : (
+              <motion.div
+                animate={{ 
+                  rotateY: [0, -10, 0, 10, 0],
+                  skewX: [0, -2, 0, 2, 0]
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="relative will-change-transform"
+                style={{ transform: 'translateZ(0)' }}
+              >
+                <img 
+                  src="https://flagcdn.com/w160/us.png"
+                  alt="American Flag"
+                  width="80"
+                  height="48"
+                  loading="eager"
+                  className="w-14 h-9 md:w-20 md:h-12 object-cover rounded shadow-lg border border-slate-600"
+                />
+              </motion.div>
+            )}
           </div>
           
           <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">
@@ -406,25 +499,30 @@ const FreeItemsSection = () => {
 const WetTestSection = () => (
   <section style={lightGradientBg} data-testid="wet-test-section">
     <div className="flex flex-col md:flex-row items-stretch">
-      {/* Video Side - Full bleed */}
+      {/* Video Side - Full bleed - Uses LazyVideo for performance */}
       <motion.div
-        initial={{ opacity: 0, x: -30 }}
+        initial={isMobile ? false : { opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         className="md:w-1/2"
+        {...mobileMotionProps}
       >
-        <video autoPlay muted loop playsInline className="w-full h-full object-cover" width="640" height="480">
-          <source src={ASSETS.wetTestVideo} type="video/mp4" />
-          <track kind="captions" label="English captions" />
-        </video>
+        <LazyVideo
+          src={ASSETS.wetTestVideo}
+          poster="/images/popup-lady-relaxing-optimized.jpg"
+          className="w-full h-full object-cover"
+          width="640"
+          height="480"
+        />
       </motion.div>
       
       {/* Content Side - Packed with logo, big text, images */}
       <motion.div
-        initial={{ opacity: 0, x: 30 }}
+        initial={isMobile ? false : { opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         className="md:w-1/2 bg-[#0A1628] text-white p-6 md:p-8 lg:p-10 flex flex-col justify-between"
+        {...mobileMotionProps}
       >
         {/* Logo at top - Use OLD logo for Family Owned section */}
         <div className="flex items-center gap-4 mb-4">
@@ -1045,14 +1143,15 @@ const ShopAllModelsSection = () => {
           className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {mixedProducts.map((product, idx) => (
+          {mixedProducts.slice(0, isMobile ? 6 : 12).map((product, idx) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={isMobile ? false : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: Math.min(idx * 0.05, 0.3) }}
-              className="flex-shrink-0 w-[320px]"
+              transition={{ delay: isMobile ? 0 : Math.min(idx * 0.05, 0.3) }}
+              className="flex-shrink-0 w-[280px] md:w-[320px]"
+              {...mobileMotionProps}
             >
               <Link 
                 to={`/products/${product.id}`}

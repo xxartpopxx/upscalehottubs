@@ -702,14 +702,14 @@ const LocationCollectionSection = () => (
 const WhyHotTubSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Romantic hot tub gallery images - no pool photos
+  // Hot tub gallery images
   const galleryImages = [
-    { src: '/images/unnamed.jpg', alt: 'Romantic couple in hot tub' },
-    { src: '/images/unnamed-1.jpg', alt: 'Couple enjoying hot tub evening' },
-    { src: '/images/unnamed-2.jpg', alt: 'Hot tub romance' },
-    { src: 'https://images.unsplash.com/photo-1769989074037-9873b4c72dcf?w=800&h=600&fit=crop', alt: 'Couple relaxing in hot tub at night' },
-    { src: 'https://images.unsplash.com/photo-1769989110688-fc630b3ec33c?w=800&h=600&fit=crop', alt: 'Romantic outdoor hot tub setting' },
-    { src: 'https://images.unsplash.com/photo-1734596438204-a968213446d6?w=800&h=600&fit=crop', alt: 'Hot tub in wooded setting' },
+    { src: '/images/gallery/Caldera-Paradise-Kauai-Hot-Tub-Sterling-Marble-Coastal-Gray-Lifestyle-Couple-007-scaled.jpg', alt: 'Couple enjoying hot tub together' },
+    { src: '/images/gallery/Lady-Relaxing_f84cdca3f3fd7df924a9ef2738140c50.jpg', alt: 'Lady relaxing in hot tub' },
+    { src: '/images/gallery/Screenshot 2026-02-28 at 1.36.19 PM.png', alt: 'Hot tub relaxation' },
+    { src: '/images/gallery/VS_EliteSeries_IN_T_W_2-scaled.jpg', alt: 'Viking Elite Series hot tub' },
+    { src: '/images/gallery/istockphoto-999140598-612x612.jpg', alt: 'Couple in hot tub' },
+    { src: '/images/gallery/pexels-ron-lach-8844607.jpg', alt: 'Hot tub experience' },
   ];
 
   // Auto-rotate images every 4 seconds

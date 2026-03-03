@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <img src={ASSETS.transparentLogo} alt="Upstate Hot Tubs" className="h-24 mb-6" loading="lazy" />
+            <img src={ASSETS.transparentLogo} alt="Upstate Hot Tubs" width="200" height="96" className="h-24 mb-6" loading="lazy" />
             <p className="text-slate-600 text-sm leading-relaxed mb-6">
               Buy American and start living your{' '}
               <span 
@@ -39,18 +39,18 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: SOCIAL_LINKS.instagram },
-                { icon: Facebook, href: SOCIAL_LINKS.facebook },
-                { icon: Youtube, href: SOCIAL_LINKS.youtube }
-              ].map(({ icon: Icon, href }) => (
+                { icon: Instagram, href: SOCIAL_LINKS.instagram, label: 'Instagram' },
+                { icon: Facebook, href: SOCIAL_LINKS.facebook, label: 'Facebook' },
+                { icon: Youtube, href: SOCIAL_LINKS.youtube, label: 'YouTube' }
+              ].map(({ icon: Icon, href, label }) => (
                 <motion.a 
                   key={href} 
                   href={href} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 bg-[#1E40AF] text-white flex items-center justify-center rounded-lg hover:bg-[#B91C1C] transition-colors" 
+                  className="w-10 h-10 min-w-[44px] min-h-[44px] bg-[#1E40AF] text-white flex items-center justify-center rounded-lg hover:bg-[#B91C1C] transition-colors" 
                   whileHover={{ scale: 1.1 }}
-                  aria-label={`Follow us on ${Icon.name}`}
+                  aria-label={`Follow us on ${label}`}
                 >
                   <Icon size={18} />
                 </motion.a>

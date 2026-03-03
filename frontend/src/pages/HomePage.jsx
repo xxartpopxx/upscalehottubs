@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ChevronRight, ChevronLeft, Flag, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun, Award, Gift } from 'lucide-react';
 import { ASSETS, CONTACT } from '../data/constants';
-import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS, DYNASTY_SPAS_PRODUCTS } from '../data/products';
+import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
 
 // Reusable gradient background style
 const gradientBg = {
@@ -56,11 +56,12 @@ const WetTestPopup = ({ isOpen, onClose }) => {
           {/* Hot Tub Image */}
           <div className="relative h-48 overflow-hidden">
             <img 
-              src="/images/popup-lady-relaxing.jpg" 
+              src="/images/popup-lady-relaxing-optimized.jpg" 
               alt="Woman relaxing in hot tub" 
-              width="512"
-              height="192"
+              width="600"
+              height="225"
               loading="eager"
+              fetchPriority="high"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
@@ -340,6 +341,9 @@ const FreeItemsSection = () => {
                   <img
                     src={item.image}
                     alt={item.name}
+                    width="160"
+                    height="160"
+                    loading="lazy"
                     className="w-32 h-32 md:w-40 md:h-40 object-contain"
                   />
                 </div>
@@ -541,7 +545,7 @@ const ResourceCardsSection = () => {
                     {card.title}
                   </h3>
                   <span className="inline-flex items-center gap-2 text-white font-semibold text-lg group-hover:gap-3 transition-all">
-                    LEARN MORE <ChevronRight size={20} />
+                    Learn more about {card.title.toLowerCase()} <ChevronRight size={20} />
                   </span>
                 </div>
               </Link>
@@ -632,6 +636,9 @@ const ProductCollectionSection = () => {
                   <img 
                     src={item.image} 
                     alt={item.name}
+                    width="400"
+                    height="300"
+                    loading="lazy"
                     className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => e.target.src = ASSETS.logo}
                   />
@@ -723,14 +730,14 @@ const LocationCollectionSection = () => (
 const WhyHotTubSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Hot tub gallery images
+  // Hot tub gallery images - optimized for web
   const galleryImages = [
-    { src: '/images/gallery/Caldera-Paradise-Kauai-Hot-Tub-Sterling-Marble-Coastal-Gray-Lifestyle-Couple-007-scaled.jpg', alt: 'Couple enjoying hot tub together' },
-    { src: '/images/gallery/Lady-Relaxing_f84cdca3f3fd7df924a9ef2738140c50.jpg', alt: 'Lady relaxing in hot tub' },
-    { src: '/images/gallery/Screenshot 2026-02-28 at 1.36.19 PM.png', alt: 'Hot tub relaxation' },
-    { src: '/images/gallery/VS_EliteSeries_IN_T_W_2-scaled.jpg', alt: 'Viking Elite Series hot tub' },
-    { src: '/images/gallery/istockphoto-999140598-612x612.jpg', alt: 'Couple in hot tub' },
-    { src: '/images/gallery/pexels-ron-lach-8844607.jpg', alt: 'Hot tub experience' },
+    { src: '/images/gallery/Caldera-Paradise-Kauai-Hot-Tub-Sterling-Marble-Coastal-Gray-Lifestyle-Couple-007-scaled-opt.jpg', alt: 'Couple enjoying hot tub together' },
+    { src: '/images/gallery/Lady-Relaxing_f84cdca3f3fd7df924a9ef2738140c50-opt.jpg', alt: 'Lady relaxing in hot tub' },
+    { src: '/images/gallery/Screenshot 2026-02-28 at 1.36.19 PM-opt.jpg', alt: 'Hot tub relaxation' },
+    { src: '/images/gallery/VS_EliteSeries_IN_T_W_2-scaled-opt.jpg', alt: 'Viking Elite Series hot tub' },
+    { src: '/images/gallery/istockphoto-999140598-612x612-opt.jpg', alt: 'Couple in hot tub' },
+    { src: '/images/gallery/pexels-ron-lach-8844607-opt.jpg', alt: 'Hot tub experience' },
   ];
 
   // Auto-rotate images every 4 seconds
@@ -946,7 +953,7 @@ const ShopAllModelsSection = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   // Mix products from different brands, sorted by lowest price first (excluding Viking)
-  const allProducts = [...HOT_TUBS, ...SWIM_SPAS, ...DYNASTY_SPAS_PRODUCTS]
+  const allProducts = [...HOT_TUBS, ...SWIM_SPAS]
     .filter(p => p.brand === 'Grand River Spas' || p.brand === 'Dynasty Spas')
     .sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
   
@@ -1047,6 +1054,9 @@ const ShopAllModelsSection = () => {
                   <img 
                     src={product.images?.primary}
                     alt={product.name}
+                    width="320"
+                    height="320"
+                    loading="lazy"
                     className="absolute inset-0 w-full h-full object-contain p-4"
                     onError={(e) => e.target.src = ASSETS.logo}
                   />

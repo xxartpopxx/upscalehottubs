@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Filter, X, ChevronDown, Flag, Shield } from 'lucide-react';
 import { GRAND_RIVER_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
@@ -6,6 +7,7 @@ import ProductGrid from '../components/products/ProductGrid';
 import { Helmet } from 'react-helmet-async';
 
 const GrandRiverPage = () => {
+  const location = useLocation();
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState({
     minPrice: '',
@@ -15,6 +17,18 @@ const GrandRiverPage = () => {
     seatingLayout: 'all'
   });
   const [sortBy, setSortBy] = useState('default');
+
+  // Scroll to warranty section if hash is present
+  useEffect(() => {
+    if (location.hash === '#warranty') {
+      setTimeout(() => {
+        const element = document.getElementById('warranty');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   // Get available series
   const availableSeries = useMemo(() => {

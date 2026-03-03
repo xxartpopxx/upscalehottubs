@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Flag, Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon } from 'lucide-react';
@@ -6,6 +7,7 @@ import { DYNASTY_SPAS_PRODUCTS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const DynastySpasPage = () => {
+  const location = useLocation();
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState({
     series: 'all',
@@ -15,6 +17,18 @@ const DynastySpasPage = () => {
     seatingLayout: 'all'
   });
   const [sortBy, setSortBy] = useState('default');
+
+  // Scroll to warranty section if hash is present
+  useEffect(() => {
+    if (location.hash === '#warranty') {
+      setTimeout(() => {
+        const element = document.getElementById('warranty');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   // Get unique series from products
   const allSeries = [...new Set(DYNASTY_SPAS_PRODUCTS.map(p => p.series))];

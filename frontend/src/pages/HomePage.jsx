@@ -27,8 +27,8 @@ const ALL_PRODUCTS = [
   ...sortByPrice(COLD_PLUNGES),
 ];
 
-// Tax Special Popup Component - White background with transparent logo
-const TaxSpecialPopup = ({ isOpen, onClose }) => {
+// Wet Test Popup Component - White background with transparent logo
+const WetTestPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   
   return (
@@ -58,7 +58,7 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
             </motion.div>
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
               <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-[#0A1628] mb-2">
-                <span className="text-[#B91C1C]">TAX</span> SPECIAL
+                Come in for a <span className="text-[#B91C1C]">Wet Test</span>
               </h2>
               <div className="flex items-center justify-center gap-2 mb-6">
                 <Star className="text-[#D4AF37] fill-[#D4AF37]" size={20} />
@@ -67,18 +67,18 @@ const TaxSpecialPopup = ({ isOpen, onClose }) => {
               </div>
             </motion.div>
             <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-slate-600 text-lg mb-6">
-              Email us today or call us for exclusive tax season savings on hot tubs, swim spas, saunas & cold plunges!
+              Try before you buy! Bring your suits — we have robes, slippers, and towels. Experience the relaxation today!
             </motion.p>
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-4">
               <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary w-full flex items-center justify-center gap-2 text-lg">
                 <Phone size={20} /> Call {CONTACT.phone}
               </a>
-              <a href={`mailto:${CONTACT.email}`} className="btn-secondary w-full flex items-center justify-center gap-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white">
-                <Mail size={20} /> Email Us
-              </a>
+              <Link to="/contact" className="btn-secondary w-full flex items-center justify-center gap-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white">
+                <Mail size={20} /> Schedule Your Visit
+              </Link>
             </motion.div>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-sm mt-6">
-              Limited time offer. Contact us for details.
+              Visit our showroom in Simpsonville, SC
             </motion.p>
           </div>
           <div className="h-2 bg-[#B91C1C]" />
@@ -243,10 +243,10 @@ const BestWarrantySection = () => (
           All warranties include parts and labor! We have our own in-house tech!
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <Link to="/dynasty-spas" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+          <Link to="/dynasty-spas#warranty" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
             <span className="text-[#D4AF37] font-bold text-lg">Dynasty Spas Warranty →</span>
           </Link>
-          <Link to="/grand-river-spas" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+          <Link to="/grand-river-spas#warranty" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
             <span className="text-[#D4AF37] font-bold text-lg">Grand River Spas Warranty →</span>
           </Link>
         </div>
@@ -416,7 +416,7 @@ const WetTestSection = () => (
         </p>
         
         <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-3 text-white">
-          Why <span className="text-[#B91C1C]">Upstate</span>?
+          Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
         </h2>
         
         <ul className="space-y-2 mb-5 text-lg md:text-xl lg:text-2xl">
@@ -697,104 +697,158 @@ const LocationCollectionSection = () => (
 );
 // Removed duplicate closing tags
 
-// NEW Why Hot Tubs Section - Gradient design
-// Why a Hot Tub - Side by Side with Image and Text
-const WhyHotTubSection = () => (
-  <section className="py-16 md:py-20" style={{
-    background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 30%, #d0e8f7 70%, #c0e0f4 100%)'
-  }}>
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-        {/* Image Side */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden shadow-xl"
-        >
-          <img 
-            src="https://images.unsplash.com/photo-1769989074037-9873b4c72dcf?w=800&h=600&fit=crop"
-            alt="Couple relaxing in hot tub enjoying hydrotherapy benefits"
-            className="w-full h-full object-cover aspect-[4/3]"
-          />
-        </motion.div>
+// NEW Why Hot Tubs Section - Rotating Photo Gallery
+// Why a Hot Tub - Side by Side with Rotating Gallery and Text
+const WhyHotTubSection = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Romantic hot tub gallery images - no pool photos
+  const galleryImages = [
+    { src: '/images/unnamed.jpg', alt: 'Romantic couple in hot tub' },
+    { src: '/images/unnamed-1.jpg', alt: 'Couple enjoying hot tub evening' },
+    { src: '/images/unnamed-2.jpg', alt: 'Hot tub romance' },
+    { src: 'https://images.unsplash.com/photo-1769989074037-9873b4c72dcf?w=800&h=600&fit=crop', alt: 'Couple relaxing in hot tub at night' },
+    { src: 'https://images.unsplash.com/photo-1769989110688-fc630b3ec33c?w=800&h=600&fit=crop', alt: 'Romantic outdoor hot tub setting' },
+    { src: 'https://images.unsplash.com/photo-1734596438204-a968213446d6?w=800&h=600&fit=crop', alt: 'Hot tub in wooded setting' },
+  ];
 
-        {/* Text Side */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex justify-start mb-6">
-            <div className="flex items-center gap-2">
-              <div className="w-12 h-0.5 bg-[#1E40AF]"></div>
-              <div className="w-4 h-0.5 bg-[#B91C1C]"></div>
+  // Auto-rotate images every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [galleryImages.length]);
+
+  return (
+    <section className="py-16 md:py-20" style={{
+      background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 30%, #d0e8f7 70%, #c0e0f4 100%)'
+    }}>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Rotating Gallery Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]"
+          >
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImageIndex}
+                src={galleryImages[currentImageIndex].src}
+                alt={galleryImages[currentImageIndex].alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-full object-cover absolute inset-0"
+              />
+            </AnimatePresence>
+            {/* Gallery indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              {galleryImages.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    idx === currentImageIndex ? 'bg-white scale-110' : 'bg-white/50 hover:bg-white/70'
+                  }`}
+                />
+              ))}
             </div>
-          </div>
-          
-          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
-            Why a{' '}
-            <span 
-              className="text-[#B91C1C]"
-              style={{ 
-                textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
-              }}
+            {/* Navigation arrows */}
+            <button
+              onClick={() => setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)}
+              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full text-white transition-colors"
             >
-              Hot Tub
-            </span>?
-          </h2>
-          
-          <p className="text-lg md:text-xl text-slate-600 mb-8">
-            For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress. A hot tub brings these benefits right to your backyard.
-          </p>
-          
-          <div className="grid grid-cols-2 gap-6 mb-8">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                <Droplets className="w-6 h-6 text-[#1E40AF]" />
-              </div>
-              <div>
-                <span className="font-bold text-[#0A1628]">Hydrotherapy</span>
-                <p className="text-sm text-slate-500">Muscle recovery</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                <Moon className="w-6 h-6 text-[#1E40AF]" />
-              </div>
-              <div>
-                <span className="font-bold text-[#0A1628]">Better Sleep</span>
-                <p className="text-sm text-slate-500">Deeper rest</p>
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={() => setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full text-white transition-colors"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </motion.div>
+
+          {/* Text Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex justify-start mb-6">
+              <div className="flex items-center gap-2">
+                <div className="w-12 h-0.5 bg-[#1E40AF]"></div>
+                <div className="w-4 h-0.5 bg-[#B91C1C]"></div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                <Heart className="w-6 h-6 text-[#1E40AF]" />
+            
+            <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
+              Why a{' '}
+              <span 
+                className="text-[#B91C1C]"
+                style={{ 
+                  textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
+                }}
+              >
+                Hot Tub
+              </span>?
+            </h2>
+            
+            <p className="text-lg md:text-xl text-slate-600 mb-8">
+              For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress. A hot tub brings these benefits right to your backyard.
+            </p>
+            
+            <div className="grid grid-cols-2 gap-6 mb-8">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
+                  <Droplets className="w-6 h-6 text-[#1E40AF]" />
+                </div>
+                <div>
+                  <span className="font-bold text-[#0A1628]">Hydrotherapy</span>
+                  <p className="text-sm text-slate-500">Muscle recovery</p>
+                </div>
               </div>
-              <div>
-                <span className="font-bold text-[#0A1628]">Stress Relief</span>
-                <p className="text-sm text-slate-500">Relaxation</p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
+                  <Moon className="w-6 h-6 text-[#1E40AF]" />
+                </div>
+                <div>
+                  <span className="font-bold text-[#0A1628]">Better Sleep</span>
+                  <p className="text-sm text-slate-500">Deeper rest</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-[#1E40AF]" />
+                </div>
+                <div>
+                  <span className="font-bold text-[#0A1628]">Stress Relief</span>
+                  <p className="text-sm text-slate-500">Relaxation</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
+                  <Activity className="w-6 h-6 text-[#1E40AF]" />
+                </div>
+                <div>
+                  <span className="font-bold text-[#0A1628]">Pain Relief</span>
+                  <p className="text-sm text-slate-500">Joint flexibility</p>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                <Activity className="w-6 h-6 text-[#1E40AF]" />
-              </div>
-              <div>
-                <span className="font-bold text-[#0A1628]">Pain Relief</span>
-                <p className="text-sm text-slate-500">Joint flexibility</p>
-              </div>
-            </div>
-          </div>
-          
-          <Link to="/wellness" className="btn-primary inline-flex items-center gap-2 text-lg">
-            Discover All Benefits <ChevronRight size={22} />
-          </Link>
-        </motion.div>
+            
+            <Link to="/wellness" className="btn-primary inline-flex items-center gap-2 text-lg">
+              Discover All Benefits <ChevronRight size={22} />
+            </Link>
+          </motion.div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // Keep the old sections for reference but we'll use the combined one
 const WhyHotTubsSection = () => (
@@ -1161,11 +1215,11 @@ const HomePage = () => {
   const [showPopup, setShowPopup] = useState(false);
   
   useEffect(() => {
-    const hasSeenPopup = sessionStorage.getItem('taxPopupSeen');
+    const hasSeenPopup = sessionStorage.getItem('wetTestPopupSeen');
     if (!hasSeenPopup) {
       const timer = setTimeout(() => { 
         setShowPopup(true); 
-        sessionStorage.setItem('taxPopupSeen', 'true'); 
+        sessionStorage.setItem('wetTestPopupSeen', 'true'); 
       }, 3000);
       return () => clearTimeout(timer);
     }
@@ -1183,7 +1237,7 @@ const HomePage = () => {
         <link rel="canonical" href="https://upstatehottubs.com" />
       </Helmet>
       
-      <TaxSpecialPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+      <WetTestPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
       
       {/* 1. Hero Section - Video */}
       <HeroSection />

@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0A1628" />
     
-    <!-- Google Analytics -->
+    <!-- Google Analytics - Defer for better performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9V25T33X1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-R9V25T33X1');
+      gtag('config', 'G-R9V25T33X1', { 'send_page_view': false });
+      // Defer page view until after load
+      window.addEventListener('load', function() {
+        gtag('event', 'page_view');
+      });
     </script>
     
     <!-- Primary Meta Tags -->

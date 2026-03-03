@@ -53,15 +53,14 @@ const WetTestPopup = ({ isOpen, onClose }) => {
             <X size={24} />
           </button>
           
-          {/* Hot Tub Image */}
+          {/* Hot Tub Image - Only load when popup is visible */}
           <div className="relative h-48 overflow-hidden">
             <img 
               src="/images/popup-lady-relaxing-optimized.jpg" 
               alt="Woman relaxing in hot tub" 
               width="600"
               height="225"
-              loading="eager"
-              fetchPriority="high"
+              loading="lazy"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
@@ -111,7 +110,17 @@ const HeroSection = () => (
     {/* Video Section - Smaller to fit fully */}
     <div className="max-w-4xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-        <video autoPlay muted loop playsInline className="w-full h-full object-contain bg-black" width="896" height="504">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          preload="metadata"
+          poster="/images/popup-lady-relaxing-optimized.jpg"
+          className="w-full h-full object-contain bg-black" 
+          width="896" 
+          height="504"
+        >
           <source src={ASSETS.heroVideo} type="video/mp4" />
           <track kind="captions" label="English captions" />
         </video>
@@ -464,7 +473,7 @@ const WetTestSection = () => (
             Schedule Wet Test <ChevronRight size={22} />
           </Link>
           <Link to="/about" className="border-2 border-white/50 hover:border-white text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
-            Learn More <ChevronRight size={22} />
+            Learn About Us <ChevronRight size={22} />
           </Link>
         </div>
       </motion.div>
@@ -650,7 +659,7 @@ const ProductCollectionSection = () => {
                   <p className="text-base md:text-lg text-[#B91C1C] font-semibold mt-1">{item.subtitle}</p>
                   <p className="text-sm md:text-base text-slate-500 mt-2">{item.tagline}</p>
                   <span className="inline-flex items-center gap-2 text-[#B91C1C] text-lg font-bold mt-4 group-hover:gap-3 transition-all">
-                    Learn More <ChevronRight size={20} />
+                    Shop {item.name} <ChevronRight size={20} />
                   </span>
                 </div>
               </Link>
@@ -1073,7 +1082,7 @@ const ShopAllModelsSection = () => {
                   <p className="text-base text-slate-500 mt-1">{product.persons} Person • {product.jets} Jets</p>
                   <p className="text-xl font-bold text-[#B91C1C] mt-2">{product.price}</p>
                   <span className="inline-flex items-center gap-1 text-[#0A1628] text-base font-semibold mt-3 group-hover:text-[#B91C1C] group-hover:gap-2 transition-all">
-                    Learn More <ChevronRight size={18} />
+                    View {product.name} Details <ChevronRight size={18} />
                   </span>
                 </div>
               </Link>

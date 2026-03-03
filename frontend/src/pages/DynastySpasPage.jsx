@@ -24,7 +24,10 @@ const DynastySpasPage = () => {
       setTimeout(() => {
         const element = document.getElementById('warranty');
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Get the element's position and scroll to show it at the top with some padding
+          const yOffset = -100; // Account for fixed header
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 100);
     }

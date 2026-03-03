@@ -27,7 +27,7 @@ const ALL_PRODUCTS = [
   ...sortByPrice(COLD_PLUNGES),
 ];
 
-// Wet Test Popup Component - White background with transparent logo
+// Wet Test Popup Component - White background with hot tub image
 const WetTestPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   
@@ -49,35 +49,43 @@ const WetTestPopup = ({ isOpen, onClose }) => {
           onClick={e => e.stopPropagation()}
         >
           <div className="h-2 bg-[#B91C1C]" />
-          <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 z-10" aria-label="Close popup">
+          <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-slate-200 p-2 z-10 bg-black/30 rounded-full" aria-label="Close popup">
             <X size={24} />
           </button>
-          <div className="p-8 text-center relative">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring" }}>
-              <img src={ASSETS.transparentLogo} alt="Upstate Hot Tubs" className="h-24 mx-auto mb-6" />
-            </motion.div>
+          
+          {/* Hot Tub Image */}
+          <div className="relative h-48 overflow-hidden">
+            <img 
+              src="/images/popup-lady-relaxing.jpg" 
+              alt="Woman relaxing in hot tub" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+          </div>
+          
+          <div className="p-6 pt-2 text-center relative">
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-              <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-[#0A1628] mb-2">
+              <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-black uppercase text-[#0A1628] mb-2">
                 Come in for a <span className="text-[#B91C1C]">Wet Test</span>
               </h2>
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={20} />
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={20} />
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={20} />
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
+                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
+                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
               </div>
             </motion.div>
-            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-slate-600 text-lg mb-6">
+            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-slate-600 text-base mb-5">
               Try before you buy! Bring your suits — we have robes, slippers, and towels. Experience the relaxation today!
             </motion.p>
-            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-4">
-              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary w-full flex items-center justify-center gap-2 text-lg">
-                <Phone size={20} /> Call {CONTACT.phone}
+            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-3">
+              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary w-full flex items-center justify-center gap-2 text-base">
+                <Phone size={18} /> Call {CONTACT.phone}
               </a>
               <Link to="/contact" className="btn-secondary w-full flex items-center justify-center gap-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white">
-                <Mail size={20} /> Schedule Your Visit
+                <Mail size={18} /> Schedule Your Visit
               </Link>
             </motion.div>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-sm mt-6">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-sm mt-4">
               Visit our showroom in Simpsonville, SC
             </motion.p>
           </div>

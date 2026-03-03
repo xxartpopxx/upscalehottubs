@@ -197,6 +197,32 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Hidden Netlify Forms for detection during build -->
+    <!-- Contact Form -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="interest">
+        <option value="">Select an option</option>
+        <option value="hot-tub">Hot Tub</option>
+        <option value="swim-spa">Swim Spa</option>
+        <option value="sauna">Sauna</option>
+        <option value="cold-plunge">Cold Plunge</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+    
+    <!-- Spa Butler Form -->
+    <form name="spa-butler" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+    
     <div id="root"></div>
   </body>
 </html>

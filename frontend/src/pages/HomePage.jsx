@@ -245,7 +245,7 @@ const BestWarrantySection = () => (
           </motion.div>
         </div>
         <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-6">
-          We stand behind every hot tub, swim spa, sauna and cold plunge we sell. Our industry-leading warranty gives you peace of mind and confidence in your purchase.
+          We stand behind every hot tub, swim spa, sauna and cold plunge we sell. Our industry-leading warranty gives you peace of mind and confidence.
         </p>
         <p className="text-base md:text-lg text-[#D4AF37] font-semibold mb-8">
           All warranties include parts and labor! We have our own in-house tech!

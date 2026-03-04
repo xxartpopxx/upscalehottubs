@@ -595,7 +595,7 @@ const ResourceCardsSection = () => {
   const cards = [
     {
       title: 'Owner Resources',
-      image: 'https://vikingspas.com/wp-content/uploads/2024/12/VS_2025_Heritage1_Opal_Stone_side_dropshadow-768x512.png',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=400&fit=crop',
       link: '/about',
     },
     {

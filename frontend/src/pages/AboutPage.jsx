@@ -1,16 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Award, Leaf, Shield, HeadphonesIcon } from 'lucide-react';
+import { Flag, Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign } from 'lucide-react';
 import { ASSETS } from '../data/constants';
 
 const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>Why Dynasty Spas | American Made Hot Tubs | Upstate Hot Tubs</title>
-        <meta name="description" content="Discover why Dynasty Spas are the best American made hot tubs. Quality manufacturing, environmental responsibility, and exceptional factory service. Simpsonville SC." />
-        <meta name="keywords" content="Dynasty Spas, American made hot tubs, Made in USA spas, hot tub quality, Upstate Hot Tubs, Simpsonville SC" />
+        <title>About Us | Family-Owned Wellness Company | Upstate Hot Tubs</title>
+        <meta name="description" content="We are a family-owned business built on honesty, education, and real customer care. No high-pressure sales, transparent pricing. American-made products." />
+        <meta name="keywords" content="Upstate Hot Tubs, family owned, American made hot tubs, hot tub dealer, Simpsonville SC, Naples FL" />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="about-page">
@@ -26,9 +26,49 @@ const AboutPage = () => {
           </motion.div>
           
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
-            Why Dynasty Spas?
+            About Us
           </motion.h1>
-          <p className="text-xl text-slate-600 mb-12">Our 4 Best Reasons to Buy "MADE IN AMERICA" Spas</p>
+          
+          {/* Main About Text */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white p-8 shadow-lg mb-12"
+          >
+            <p className="text-xl text-slate-700 leading-relaxed">
+              We are a family-owned business built on honesty, education, and real customer care. We don't sell to you—we help you find the right wellness package for your lifestyle and needs. There's never high-pressure sales, hidden fees, or surprises. Our all-inclusive pricing is transparent from the start, and we take the time to answer your questions so you can decide with confidence. We're proud to offer American-made products and even prouder of the long-term relationships we build with our customers. From your first visit to delivery—and long after—our team is always here to support you. Stop in, compare the difference, and experience a wellness company that listens, educates, and truly cares.
+            </p>
+          </motion.div>
+          
+          {/* Our Values */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-8 text-center">Our Values</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { icon: Heart, title: 'Real Customer Care', desc: 'We listen, educate, and truly care about helping you find the right wellness solution.' },
+                { icon: DollarSign, title: 'Transparent Pricing', desc: 'All-inclusive pricing with no hidden fees, surprises, or high-pressure sales tactics.' },
+                { icon: Users, title: 'Long-Term Relationships', desc: 'From your first visit to delivery and beyond, our team is always here to support you.' },
+              ].map((value, idx) => (
+                <motion.div 
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white p-6 shadow-lg text-center"
+                >
+                  <value.icon className="text-[#B91C1C] mx-auto mb-4" size={40} />
+                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">{value.title}</h3>
+                  <p className="text-slate-600">{value.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
           
           {/* Dynasty Spas Video */}
           <motion.div 
@@ -49,6 +89,8 @@ const AboutPage = () => {
               ></iframe>
             </div>
           </motion.div>
+          
+          <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-8 text-center">Why American Made?</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[

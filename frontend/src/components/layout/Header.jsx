@@ -52,15 +52,11 @@ const Header = () => {
   ];
 
   const discoverLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'See It In Your Backyard', href: '/ar-visualizer' },
-    { name: 'Covers', href: '/covers' },
-    { name: 'Anatomy of a Spa', href: '/anatomy-of-a-spa' },
-    { name: 'Balneotherapy', href: '/balneotherapy' },
-    { name: 'Jets', href: '/jets' },
+    { name: 'Wellness', href: '/wellness' },
+    { name: 'About', href: '/about' },
     { name: 'Events', href: '/events' },
     { name: 'Financing', href: '/financing' },
-    { name: 'Spa Butler Service', href: '/spa-butler' },
+    { name: 'Spa Butler', href: '/spa-butler' },
   ];
 
   return (
@@ -213,17 +209,6 @@ const Header = () => {
                 )}
               </AnimatePresence>
             </div>
-            
-            {/* Resources Link */}
-            <Link 
-              to="/wellness" 
-              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
-                location.pathname === '/wellness' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
-              }`}
-              data-testid="nav-wellness-link"
-            >
-              Wellness
-            </Link>
 
             {/* Get a Brochure Link */}
             <Link 
@@ -303,11 +288,6 @@ const Header = () => {
                 {/* Brochures */}
                 <Link to="/brochures" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
                   Get a Brochure
-                </Link>
-                
-                {/* Wellness */}
-                <Link to="/wellness" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
-                  Wellness
                 </Link>
                 
                 {/* Discover Section */}

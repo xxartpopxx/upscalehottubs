@@ -3,35 +3,26 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, Flag, GitCompare } from 'lucide-react';
-import { getProductById, getRelatedModel, VIKING_SPAS_PRODUCTS, DYNASTY_SPAS_PRODUCTS, VS_SHELL_COLORS, VS_ELITE_CABINET_COLORS, VS_HEIRLOOM_CABINET_COLORS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, VIKING_SPAS_EXTRAS, VIKING_SPAS_FREE_ITEMS } from '../data/products';
+import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
-// Base URL for Viking Spas visualizer images
-const VS_VISUALIZER_BASE = 'https://vikingspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
 
 // Shell and Cabinet colors for display
 const SHELL_COLORS = {
-  white: { name: 'White Satin', hex: '#F5F5F0', image: `${VS_VISUALIZER_BASE}/white.png` },
-  silver: { name: 'Silver Satin', hex: '#C0C0C0', image: `${VS_VISUALIZER_BASE}/silver.png` },
-  opal: { name: 'Opal Satin', hex: '#A8B5B8', image: `${VS_VISUALIZER_BASE}/opal.png` },
+  white: { name: 'White Satin', hex: '#F5F5F0' },
+  silver: { name: 'Silver Satin', hex: '#C0C0C0' },
+  opal: { name: 'Opal Satin', hex: '#A8B5B8' },
 };
 
 const CABINET_COLORS = {
   // Grand River
   coastalGray: { name: 'Coastal Gray', hex: '#6B7280', image: `${GR_VISUALIZER_BASE}/coastalgray.png` },
-  walnut: { name: 'Walnut', hex: '#5D4037', image: `${VS_VISUALIZER_BASE}/walnut.png` },
-  barnwood: { name: 'Barnwood', hex: '#8B7355', image: `${VS_VISUALIZER_BASE}/barnwood.png` },
-  black: { name: 'Black Slate', hex: '#1a1a1a', image: `${VS_VISUALIZER_BASE}/black.png` },
-  taupe: { name: 'Taupe', hex: '#8B7D6B', image: `${GR_VISUALIZER_BASE}/walnut.png` },
-  // Viking Elite Series
-  slate: { name: 'Slate', hex: '#708090', image: `${VS_VISUALIZER_BASE}/slate.png` },
-  chestnut: { name: 'Chestnut', hex: '#954535', image: `${VS_VISUALIZER_BASE}/chestnut.png` },
-  stone: { name: 'Stone', hex: '#8B8B83', image: `${VS_VISUALIZER_BASE}/stone.png` },
-  carbon: { name: 'Carbon', hex: '#333333', image: `${VS_VISUALIZER_BASE}/carbon.png` },
-  // Viking Heirloom Series
-  ashGray: { name: 'Ash Gray', hex: '#B2BEB5', image: `${VS_VISUALIZER_BASE}/ash.png` },
+  walnut: { name: 'Walnut', hex: '#5D4037' },
+  barnwood: { name: 'Barnwood', hex: '#8B7355' },
+  black: { name: 'Black Slate', hex: '#1a1a1a' },
+  taupe: { name: 'Taupe', hex: '#8B7D6B' },
   // Dynasty Spas Cabinet Colors
   blackConfer: { name: 'Black Confer', hex: '#1a1a1a' },
   grayConfer: { name: 'Gray Confer', hex: '#6B7280' },
@@ -42,14 +33,6 @@ const CABINET_COLORS = {
 // Unified color lookup - checks brand-specific colors first (with images), then generic
 const getShellColorData = (colorKey) => DYNASTY_SHELL_COLORS[colorKey] || SHELL_COLORS[colorKey] || null;
 const getCabinetColorData = (colorKey) => DYNASTY_CABINET_COLORS[colorKey] || CABINET_COLORS[colorKey] || null;
-
-// Corner color options for Viking Spas
-const CORNER_COLORS = {
-  // Elite Series corners
-  carbon: { name: 'Carbon', hex: '#333333', image: `${VS_VISUALIZER_BASE}/carbon.png` },
-  // Heirloom Series corners
-  black: { name: 'Black Slate', hex: '#1a1a1a', image: `${VS_VISUALIZER_BASE}/black.png` },
-};
 
 // Generate the actual color combination image URL for Grand River
 const getGRColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption) => {
@@ -67,39 +50,6 @@ const getGRColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption
   const corner = cornerOption === 'black' ? 'Black' : cabinet;
   
   return `${GR_VISUALIZER_BASE}/${modelName}_${shell}_${cabinet}_${corner}.jpg`;
-};
-
-// Generate the actual color combination image URL for Viking Spas
-const getVSColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption) => {
-  if (!product || product.brand !== 'Viking Spas') {
-    return null;
-  }
-  
-  // Use the colorVisualizerBase if available, otherwise derive from name
-  const modelBase = product.colorVisualizerBase || product.modelFamily || product.name;
-  
-  const shellMap = { white: 'White', silver: 'Silver', opal: 'Opal' };
-  
-  // Elite Series cabinet map
-  const eliteCabinetMap = { slate: 'Slate', chestnut: 'Chestnut', stone: 'Stone', carbon: 'Carbon' };
-  // Heirloom Series cabinet map  
-  const heirloomCabinetMap = { ashGray: 'Ash', walnut: 'Walnut', barnwood: 'Barnwood', black: 'Black' };
-  
-  const isElite = product.series === 'Elite Series';
-  const cabinetMap = isElite ? eliteCabinetMap : heirloomCabinetMap;
-  
-  const shell = shellMap[shellColor] || 'Opal';
-  const cabinet = cabinetMap[cabinetColor] || (isElite ? 'Carbon' : 'Ash');
-  
-  // Corner: 'match' means same as cabinet, otherwise use Carbon (Elite) or Black (Heirloom)
-  let corner;
-  if (cornerOption === 'match') {
-    corner = cabinet;
-  } else {
-    corner = isElite ? 'Carbon' : 'Black';
-  }
-  
-  return `${VS_VISUALIZER_BASE}/${modelBase}_${shell}_${cabinet}_${corner}.png`;
 };
 
 const ProductDetailPage = () => {
@@ -125,9 +75,6 @@ const ProductDetailPage = () => {
   const comparableModels = useMemo(() => {
     if (!product) return [];
     
-    if (product.brand === 'Viking Spas') {
-      return VIKING_SPAS_PRODUCTS.filter(p => p.id !== product.id);
-    }
     if (product.brand === 'Dynasty Spas') {
       return DYNASTY_SPAS_PRODUCTS.filter(p => p.id !== product.id);
     }
@@ -158,21 +105,14 @@ const ProductDetailPage = () => {
   }, [product?.id]);
   
   const isGrandRiver = product?.brand === 'Grand River Spas';
-  const isViking = product?.brand === 'Viking Spas';
   const isDynasty = product?.brand === 'Dynasty Spas';
   const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design';
   const isFinnmarkSauna = product?.brand === 'Finnmark Design';
   const isSwimSpa = !!product?.length;
-  const hasColorSelector = (isGrandRiver || isViking) && !isSwimSpa;
+  const hasColorSelector = isGrandRiver && !isSwimSpa;
   
-  // Determine corner color options based on series
-  const cornerOptions = useMemo(() => {
-    if (!isViking || isSwimSpa) return [];
-    const isElite = product?.series === 'Elite Series';
-    return isElite 
-      ? [{ key: 'match', name: 'Match Cabinet' }, { key: 'carbon', name: 'Carbon' }]
-      : [{ key: 'match', name: 'Match Cabinet' }, { key: 'black', name: 'Black Slate' }];
-  }, [isViking, isSwimSpa, product?.series]);
+  // No corner options without Viking
+  const cornerOptions = [];
   
   // Determine available views based on brand - must be before early returns
   const views = useMemo(() => {
@@ -209,16 +149,8 @@ const ProductDetailPage = () => {
       }
     }
     
-    // Color visualizer for Viking Spas
-    if (isViking && !imageError) {
-      const colorComboUrl = getVSColorComboImageUrl(product, selectedShell, selectedCabinet, selectedCorner);
-      if (colorComboUrl) {
-        return colorComboUrl;
-      }
-    }
-    
     return product.images.primary;
-  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, isViking, isDynasty, isFinnmarkSauna, imageError, galleryIndex]);
+  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, isDynasty, isFinnmarkSauna, imageError, galleryIndex]);
   
   if (!product) {
     return (
@@ -384,12 +316,6 @@ const ProductDetailPage = () => {
                       <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
                       <span>Cabinet: {CABINET_COLORS[selectedCabinet]?.name}</span>
                     </div>
-                    {isViking && selectedCorner !== 'match' && (
-                      <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-lg text-xs font-medium">
-                        <div className="w-3 h-3 rounded-full border border-slate-200" style={{ backgroundColor: CORNER_COLORS[selectedCorner]?.hex || '#333' }} />
-                        <span>Corner: {CORNER_COLORS[selectedCorner]?.name}</span>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
@@ -545,53 +471,6 @@ const ProductDetailPage = () => {
                       })}
                     </div>
                   </div>
-                  
-                  {/* Corner Colors - Viking Spas specific */}
-                  {isViking && (
-                    <div className="mb-3 md:mb-5">
-                      <p className="text-xs md:text-sm font-semibold text-slate-600 mb-1 md:mb-2">Corner Color</p>
-                      <div className="flex gap-2 md:gap-3 flex-wrap">
-                        {cornerOptions.map((option) => {
-                          const isSelected = selectedCorner === option.key;
-                          const cornerColor = option.key === 'match' 
-                            ? CABINET_COLORS[selectedCabinet] 
-                            : CORNER_COLORS[option.key];
-                          
-                          return (
-                            <motion.button
-                              key={option.key}
-                              onClick={() => {
-                                setSelectedCorner(option.key);
-                                if (currentView !== 'color') setCurrentView('color');
-                              }}
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="relative group"
-                              data-testid={`corner-color-${option.key}`}
-                            >
-                              <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                                isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
-                              }`}>
-                                {cornerColor?.image ? (
-                                  <img src={cornerColor.image} alt={option.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.backgroundColor = cornerColor?.hex; }} />
-                                ) : (
-                                  <div className="w-full h-full" style={{ backgroundColor: cornerColor?.hex }} />
-                                )}
-                                {isSelected && (
-                                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
-                                    <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
-                                  </motion.div>
-                                )}
-                              </div>
-                              <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
-                                {option.name}
-                              </p>
-                            </motion.button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
                   
                   {/* Corner Colors - Grand River (Match Cabinet or Black) */}
                   {isGrandRiver && (
@@ -805,62 +684,6 @@ const ProductDetailPage = () => {
             </motion.div>
           )}
 
-          {/* Viking Spas - Free Items Banner */}
-          {isViking && !isSwimSpa && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8"
-              data-testid="viking-free-items"
-            >
-              <div className="bg-gradient-to-r from-green-700 to-green-900 p-6 lg:p-8 rounded-lg">
-                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-4 text-center">
-                  Included FREE With Your Spa
-                </h3>
-                <div className="flex flex-wrap justify-center gap-4">
-                  {VIKING_SPAS_FREE_ITEMS.items.map((item, idx) => (
-                    <span key={idx} className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white font-medium text-sm">
-                      ✓ {item}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-green-100 text-center mt-4 text-sm">
-                  {VIKING_SPAS_FREE_ITEMS.note}
-                </p>
-              </div>
-            </motion.div>
-          )}
-
-          {/* Viking Spas - Available Extras/Upgrades Section */}
-          {isViking && !isSwimSpa && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8"
-              data-testid="viking-extras"
-            >
-              <div className="bg-gradient-to-r from-[#0A1628] to-[#1a2d4a] p-6 lg:p-8">
-                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-6 text-center">
-                  Available Upgrades & Add-Ons
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                  {VIKING_SPAS_EXTRAS.map((extra) => (
-                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-                      <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
-                      <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
-                      <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-slate-400 text-sm text-center mt-4">
-                  Ask your sales representative about adding these upgrades to your order.
-                </p>
-              </div>
-            </motion.div>
-          )}
-
           {/* Sauna - White Glove Installation Option */}
           {(product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design') && product?.whiteGloveInstallation && (
             <motion.div
@@ -1003,8 +826,8 @@ const ProductDetailPage = () => {
             </motion.div>
           )}
           
-          {/* Model Comparison for Viking Spas and Dynasty Spas */}
-          {(isViking || isDynasty) && comparableModels.length > 0 && (
+          {/* Model Comparison for Dynasty Spas */}
+          {isDynasty && comparableModels.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Filter, X, ChevronDown } from 'lucide-react';
-import { HOT_TUBS, GRAND_RIVER_PRODUCTS, VIKING_SPAS_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
+import { HOT_TUBS, GRAND_RIVER_PRODUCTS, DYNASTY_SPAS_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const HotTubsPage = () => {
@@ -14,14 +14,14 @@ const HotTubsPage = () => {
     series: 'all',
     seatingLayout: 'all'
   });
-  const [sortBy, setSortBy] = useState('default');
+  const [sortBy, setSortBy] = useState('price-low');
 
   // Get available series based on brand filter
   const availableSeries = useMemo(() => {
     const products = filters.brand === 'Grand River Spas' 
       ? GRAND_RIVER_PRODUCTS 
-      : filters.brand === 'Viking Spas' 
-        ? VIKING_SPAS_PRODUCTS 
+      : filters.brand === 'Dynasty Spas' 
+        ? DYNASTY_SPAS_PRODUCTS 
         : HOT_TUBS;
     return getUniqueSeries(products);
   }, [filters.brand]);
@@ -38,7 +38,7 @@ const HotTubsPage = () => {
 
   // Separate by brand for display
   const grandRiverProducts = filteredProducts.filter(p => p.brand === 'Grand River Spas');
-  const vikingProducts = filteredProducts.filter(p => p.brand === 'Viking Spas');
+  const dynastyProducts = filteredProducts.filter(p => p.brand === 'Dynasty Spas');
 
   const clearFilters = () => {
     setFilters({
@@ -67,7 +67,7 @@ const HotTubsPage = () => {
             Shop Our American Made Hot Tubs
           </h1>
           <p className="text-lg text-slate-600">
-            Premium quality hot tubs from Grand River Spas and Viking Spas. Click any product to see details and customize colors!
+            Premium quality hot tubs from Grand River Spas and Dynasty Spas. Click any product to see details and customize colors!
           </p>
         </motion.div>
 
@@ -140,7 +140,7 @@ const HotTubsPage = () => {
               >
                 <option value="all">All Brands</option>
                 <option value="Grand River Spas">Grand River Spas</option>
-                <option value="Viking Spas">Viking Spas</option>
+                <option value="Dynasty Spas">Dynasty Spas</option>
               </select>
             </div>
 
@@ -255,8 +255,8 @@ const HotTubsPage = () => {
               </section>
             )}
 
-            {/* Viking Spas Section */}
-            {vikingProducts.length > 0 && (
+            {/* Dynasty Spas Section */}
+            {dynastyProducts.length > 0 && (
               <section>
                 <motion.div 
                   initial={{ opacity: 0 }} 
@@ -266,11 +266,11 @@ const HotTubsPage = () => {
                 >
                   <div className="h-px bg-slate-200 flex-1" />
                   <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold uppercase text-[#0A1628]">
-                    Viking Spas
+                    Dynasty Spas
                   </h2>
                   <div className="h-px bg-slate-200 flex-1" />
                 </motion.div>
-                <ProductGrid products={vikingProducts} linkPrefix="/products" />
+                <ProductGrid products={dynastyProducts} linkPrefix="/products" />
               </section>
             )}
           </>

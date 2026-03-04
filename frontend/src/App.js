@@ -13,7 +13,6 @@ import HomePage from './pages/HomePage';
 // Lazy load all other pages for better initial load performance
 const HotTubsPage = lazy(() => import('./pages/HotTubsPage'));
 const GrandRiverPage = lazy(() => import('./pages/GrandRiverPage'));
-const VikingSpasPage = lazy(() => import('./pages/VikingSpasPage'));
 const DynastySpasPage = lazy(() => import('./pages/DynastySpasPage'));
 const SwimSpasPage = lazy(() => import('./pages/SwimSpasPage'));
 const SaunasPage = lazy(() => import('./pages/SaunasPage'));
@@ -72,7 +71,6 @@ function App() {
                 {/* Shop Pages - Individual Brand Pages */}
                 <Route path="/hot-tubs" element={<HotTubsPage />} />
                 <Route path="/grand-river-spas" element={<GrandRiverPage />} />
-                <Route path="/viking-spas" element={<VikingSpasPage />} />
                 <Route path="/dynasty-spas" element={<DynastySpasPage />} />
                 <Route path="/swim-spas" element={<SwimSpasPage />} />
                 <Route path="/saunas" element={<SaunasPage />} />

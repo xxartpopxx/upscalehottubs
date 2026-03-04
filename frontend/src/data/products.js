@@ -2845,7 +2845,7 @@ export const COLD_PLUNGES = [
 ];
 
 // Combined Hot Tubs (all brands)
-export const HOT_TUBS = [...GRAND_RIVER_PRODUCTS, ...VIKING_SPAS_PRODUCTS, ...DYNASTY_SPAS_PRODUCTS];
+export const HOT_TUBS = [...GRAND_RIVER_PRODUCTS, ...DYNASTY_SPAS_PRODUCTS];
 
 // Get product by ID
 export const getProductById = (id) => {

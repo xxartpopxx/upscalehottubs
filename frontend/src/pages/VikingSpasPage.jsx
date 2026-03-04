@@ -14,7 +14,7 @@ const VikingSpasPage = () => {
     series: 'all',
     seatingLayout: 'all'
   });
-  const [sortBy, setSortBy] = useState('default');
+  const [sortBy, setSortBy] = useState('price-low');
 
   // Get available series
   const availableSeries = useMemo(() => {

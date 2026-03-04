@@ -16,7 +16,7 @@ const GrandRiverPage = () => {
     series: 'all',
     seatingLayout: 'all'
   });
-  const [sortBy, setSortBy] = useState('default');
+  const [sortBy, setSortBy] = useState('price-low');
 
   // Scroll to warranty section if hash is present
   useEffect(() => {

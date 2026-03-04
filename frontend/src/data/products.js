@@ -644,6 +644,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4800 lbs',
     description: 'Premium 5-person lounger with 83 powerful jets and illuminated fountain features.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/PARADISE_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
     },
@@ -670,6 +671,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4800 lbs',
     description: '5-person lounger with 83 jets featuring illuminated fountain jets.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/PARADISE_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
     },
@@ -696,6 +698,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4300 lbs',
     description: 'Spacious 7-person bench spa with 76 jets and illuminated fountain features.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/PALM_ISLAND_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_bca37801d2234c42920ff45b5ef8b947~mv2.webp'
     },
@@ -722,6 +725,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4300 lbs',
     description: 'Spacious 7-person bench spa with 76 jets and illuminated fountain features.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/PALM_ISLAND_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_bca37801d2234c42920ff45b5ef8b947~mv2.webp'
     },
@@ -748,6 +752,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4300 lbs',
     description: '5-person dual lounger with 80 jets featuring illuminated waterfalls.',
     features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/PLEASURE_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_ee35b0a0b9df47e1911c752a6dc65d80~mv2.jpg'
     },
@@ -774,6 +779,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4300 lbs',
     description: '5-person dual lounger with 80 jets featuring illuminated waterfalls.',
     features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/PLEASURE_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_ee35b0a0b9df47e1911c752a6dc65d80~mv2.jpg'
     },
@@ -800,6 +806,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4300 lbs',
     description: '5-person lounger with 74 jets and beautiful illuminated waterfalls.',
     features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/COCONUT_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_7b87b150ef5a451db8a4599e9b9aa68f~mv2.jpg'
     },
@@ -826,6 +833,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4300 lbs',
     description: '5-person lounger with 74 jets and beautiful illuminated waterfalls.',
     features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/COCONUT_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_7b87b150ef5a451db8a4599e9b9aa68f~mv2.jpg'
     },
@@ -852,6 +860,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '3935 lbs',
     description: '7-person bench spa with 73 jets and illuminated fountain features.',
     features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/CARIBBEAN_BREEZE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_fbd8a68293fc44af9ba6616677d13e52~mv2.webp'
     },
@@ -905,6 +914,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4370 lbs',
     description: '5-person lounger with cascading waterfall and 42 jets.',
     features: ['Cascading Waterfall', 'Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    brochure: '/brochures/CABANA_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5513dfe4f07146e6b3769397e333b714~mv2.jpg'
     },
@@ -931,6 +941,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4570 lbs',
     description: '7-person bench spa with 4 water features and 42 jets.',
     features: ['4 Water Features', 'Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    brochure: '/brochures/OCEAN_BREEZE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_d99c32d0154b4d5784b516fb7f9cf64b~mv2.webp'
     },
@@ -957,6 +968,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '2175 lbs',
     description: 'Compact 3-person dual lounger perfect for couples.',
     features: ['LED Top Rail Lighting', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'K.1000 Digital Topside'],
+    brochure: '/brochures/TWIN_PALMS_PRODUCT_SHEET-5ab8b7c0.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_0eda11c7c2bd4659886b1569a18263e4~mv2.png'
     },
@@ -983,6 +995,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '1390 lbs',
     description: 'Intimate 2-person lounger perfect for couples and small spaces. Plug-and-play 110v convenience.',
     features: ['Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    brochure: '/brochures/BIMINI_2_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp'
     },
@@ -1009,6 +1022,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '1390 lbs',
     description: 'Intimate 2-person lounger perfect for couples and small spaces. 220v for faster heating.',
     features: ['Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    brochure: '/brochures/BIMINI_2_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp'
     },
@@ -1087,6 +1101,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '2150 lbs',
     description: 'Compact 3-person lounger ideal for patios and smaller spaces. Features LED fountain jets.',
     features: ['LED Fountain Jets', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    brochure: '/brochures/SUNSET_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
     },
@@ -1113,6 +1128,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '4700 lbs',
     description: 'Spacious 7-person bench spa with 48 jets for family enjoyment.',
     features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Family Size'],
+    brochure: '/brochures/TRANQUILITY_HARBOR_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_4f5108db76954c94977c8c470414a6df~mv2.jpg'
     },
@@ -1139,6 +1155,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '3400 lbs',
     description: '5-person lounger designed for relaxation and tranquility.',
     features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Relaxation Focused'],
+    brochure: '/brochures/SERENITY_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg'
     },
@@ -1166,6 +1183,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '2710 lbs',
     description: 'Entry-level spa with plug-and-play convenience. Features K.362 digital topside, black scallop jets, and LED underwater lighting.',
     features: ['K.362 Digital Topside', 'Black Scallop Jets', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    brochure: '/brochures/SEASIDE+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
     },
@@ -1192,6 +1210,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '2710 lbs',
     description: 'Entry-level spa with 220v power. Features K.362 digital topside, black scallop jets, and LED underwater lighting.',
     features: ['K.362 Digital Topside', 'Black Scallop Jets', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    brochure: '/brochures/SEASIDE+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
     },
@@ -1218,6 +1237,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '2710 lbs',
     description: 'Compact lounger spa perfect for intimate relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
     features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    brochure: '/brochures/BAY+BLISS+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
     },
@@ -1244,6 +1264,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '2710 lbs',
     description: 'Bench-style spa with ample seating for relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
     features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    brochure: '/brochures/HIGH+TIDE+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg'
     },
@@ -2584,6 +2605,93 @@ export const SAUNAS = [
     whiteGloveInstallation: true
   },
   {
+    id: 'sauna-finnmark-fd1',
+    name: 'Finnmark FD-1 Full-Spectrum Infrared Sauna 1-Person',
+    brand: 'Finnmark Design',
+    series: 'Full Spectrum Infrared Saunas',
+    price: '$5,995.95',
+    priceValue: 5995.95,
+    persons: 1,
+    dimensions: '38"W x 38"D x 78"H',
+    interiorDimensions: '32"W x 34"D x 70"H',
+    weight: '301 lbs (Product) / 390 lbs (Shipping)',
+    electrical: '120V / 15A',
+    plugType: 'NEMA 5-15P',
+    maxTemperature: '170°F',
+    description: 'Enjoy the benefits of Infrared Sauna Bathing at 170-degrees Fahrenheit! Transform any space in your home into a personal wellness escape with the compact Finnmark FD-1 Full Spectrum, 1-Person Infrared Sauna.',
+    longDescription: 'Transform any space in your home into a personal wellness escape with the compact Finnmark FD-1 Full Spectrum, 1-Person Infrared Sauna. The only infrasauna in the industry that combines UL Listed Spectrum Plus™ infrared heaters with Spectrum Carbon 360° which allows you to reach temperatures of 170° in less than 1 hour on a standard home outlet for a healthy sweat. While others try to compete, they can\'t compare to the quality and craftmanship of Finnmark Design\'s infrared saunas.\n\nAntimicrobial Western Canadian cedar interior resists mold, bacteria, and fungus to keep your sauna free from unpleasant odors. Thermal Plus™ Aspen exterior is organically treated with heat and steam so that it won\'t rot, warp, decay, or chip, making Finnmark Designs full spectrum IR saunas one of the most durable and longest-lasting saunas on the market.\n\nFinnmark Designs is the only infrared sauna manufacturer that combines long-wave carbon 360 infrared panels with UL listed short-wave Spectrum Plus™ infrared panels. This combination provides higher temperatures, full body coverage, deeper penetration, and a better sweating experience - better than any other IR sauna.',
+    features: [
+      'Antimicrobial Western Canadian cedar interior that protects against mold, bacteria and fungus',
+      'Thermal Plus™ Aspen exterior that will never rot, warp, decay or chip',
+      'Only infrared sauna manufacturer combining long-wave carbon 360 infrared panels with UL listed short-wave Spectrum Plus™ infrared panels',
+      'Higher temperatures, full body coverage, deeper penetration than any other sauna',
+      'Built-in LCD Wi-Fi touchscreen controller with bluetooth audio',
+      'Audio with 6" Hi-Fi speakers, 8mm tempered glass for ultimate thermal retention',
+      'Removable and adjustable sauna feet for uneven surfaces',
+      'Low EMF sauna tested by a NASA award winning testing facility',
+      'High Emissivity infrared heaters',
+      'High quality double walled construction with non-toxic wool insulation',
+      'Over 15,000 Sold',
+      'Perfect for small spaces - fits anywhere!'
+    ],
+    healthBenefits: [
+      'The Spectrum Plus incoloy heaters warm your core body temperature, producing a cleaner, healthier sweat while lowering blood pressure and maintaining heart health',
+      'Deeper penetration through sweating goes beyond the muscle and fat rather than a traditional or hot air sauna - work up the best possible sweat in the least amount of time',
+      'Spectrum Plus heaters remove 17% more toxins such as cholesterol, fat-soluble toxins, toxic heavy metals, sulfuric acid, sodium, ammonia and uric acid',
+      'Full Spectrum Sauna combination provides higher temperatures, full body coverage, deeper penetration, and better experience than any other sauna',
+      'Natural pain relief remedy with every infrared sauna session',
+      'Athletes appreciate faster muscle recovery with increased blood flow to the muscles, delivering more concentrated oxygen and creating more energy to heal'
+    ],
+    specifications: {
+      model: 'FD-1',
+      externalMaterials: 'Thermo-Aspen',
+      interiorMaterials: 'Western Canadian Cedar',
+      volts: '120',
+      watts: '1750',
+      amperage: '15',
+      phase: 'Single',
+      plugType: 'NEMA 5-15P',
+      outlet: 'Standard 120V 15A',
+      maxTemperature: '170°F',
+      interiorDimensions: '32"W x 34"D x 70"H',
+      exteriorDimensions: '38"W x 38"D x 78"H',
+      roomVolume: '44.1 cu. ft.',
+      doorDimensions: '23.625"W x 67.875"H',
+      doorHandleDimensions: '1.875"W x 11.625"H',
+      glassThickness: '8mm',
+      productWeight: '301 lbs',
+      shippingDimensions: '80"W x 40"D x 48"H',
+      shippingWeight: '390 lbs'
+    },
+    shipping: {
+      costUS: 'FREE to contiguous United States',
+      costCanada: '$490',
+      note: 'This exceptional indoor Infrared Sanctuary requires delivery by a special appointment, and on a wooden pallet. The driver is responsible for "curbside delivery only" and will lower the items to ground level.'
+    },
+    includedItems: [
+      'Bottom Panel', 'Top Panel', 'Back Panel', 'Front Panel', 'Left Panel', 'Right Panel',
+      'Glass Door', 'Bench Support', 'Bench Top', 'Heater Cable', 'Floor Cable', 'Screws',
+      'Power Supply Unit', 'Power Cable', 'Interior Heater Connections with Wood Cover',
+      'Door Handle (2 Screws)', 'Removable and Adjustable Sauna Feet for Uneven Surfaces',
+      'Infrared Sauna Heater Panels', 'Spectrum LED Near Infrared Ceiling Lights',
+      'Controller 2.0, Built-In LCD Wi-Fi Touchscreen Control Panel with Bluetooth Audio',
+      'Audio Upgrade with 6" Hi-Fi Speakers', '8mm Tempered Glass for Ultimate Thermal Retention',
+      'ETL Certification', 'Limited Warranty'
+    ],
+    images: {
+      primary: '/images/saunas/finnmark-fd1/image-1.png',
+      gallery: [
+        '/images/saunas/finnmark-fd1/image-1.png',
+        '/images/saunas/finnmark-fd1/image-2.png',
+        '/images/saunas/finnmark-fd1/image-3.png',
+        '/images/saunas/finnmark-fd1/image-4.png',
+        '/images/saunas/finnmark-fd1/image-5.png',
+        '/images/saunas/finnmark-fd1/image-6.png'
+      ]
+    },
+    whiteGloveInstallation: true
+  },
+  {
     id: 'sauna-ee8g',
     name: 'SaunaLife Model EE8G Sauna Barrel',
     brand: 'SaunaLife',
@@ -2783,7 +2891,8 @@ export const sortProducts = (products, sortBy) => {
     case 'name':
       return sorted.sort((a, b) => a.name.localeCompare(b.name));
     default:
-      return sorted;
+      // Default to price-low (lowest to highest)
+      return sorted.sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
   }
 };
 

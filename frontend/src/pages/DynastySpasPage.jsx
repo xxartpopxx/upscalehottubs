@@ -16,7 +16,7 @@ const DynastySpasPage = () => {
     persons: 'all',
     seatingLayout: 'all'
   });
-  const [sortBy, setSortBy] = useState('default');
+  const [sortBy, setSortBy] = useState('price-low');
 
   // Scroll to warranty section if hash is present
   useEffect(() => {
@@ -114,6 +114,33 @@ const DynastySpasPage = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+
+        {/* Lifestyle Banner */}
+        <div className="max-w-7xl mx-auto px-4 md:px-8 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative overflow-hidden rounded-xl shadow-xl"
+          >
+            <img 
+              src="/images/dynasty-lifestyle/DYNASTY+1-4539b219-1920w.jpg" 
+              alt="Dynasty Spas Lifestyle - Couple relaxing in hot tub"
+              className="w-full h-64 md:h-96 object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+              <div className="p-6 md:p-12 max-w-xl">
+                <h2 className="font-['Barlow_Condensed'] text-2xl md:text-4xl font-bold text-white uppercase mb-3">
+                  Experience the Dynasty Difference
+                </h2>
+                <p className="text-white/90 text-sm md:text-lg">
+                  American craftsmanship meets innovative design. Every Dynasty Spa is built to create lasting memories.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 md:px-8">

@@ -827,7 +827,7 @@ const WhyHotTubSection = () => {
     { src: '/images/gallery/Caldera-Paradise-Kauai-Hot-Tub-Sterling-Marble-Coastal-Gray-Lifestyle-Couple-007-scaled-opt.jpg', alt: 'Couple enjoying hot tub together' },
     { src: '/images/gallery/Lady-Relaxing_f84cdca3f3fd7df924a9ef2738140c50-opt.jpg', alt: 'Lady relaxing in hot tub' },
     { src: '/images/gallery/Screenshot 2026-02-28 at 1.36.19 PM-opt.jpg', alt: 'Hot tub relaxation' },
-    { src: '/images/gallery/VS_EliteSeries_IN_T_W_2-scaled-opt.jpg', alt: 'Viking Elite Series hot tub' },
+    { src: '/images/stress-match.jpg', alt: 'Woman relaxing in hot tub hydrotherapy' },
     { src: '/images/gallery/istockphoto-999140598-612x612-opt.jpg', alt: 'Couple in hot tub' },
     { src: '/images/gallery/pexels-ron-lach-8844607-opt.jpg', alt: 'Hot tub experience' },
   ];

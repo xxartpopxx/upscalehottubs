@@ -224,9 +224,9 @@ const Header = () => {
 
             {/* Get a Brochure Link */}
             <Link 
-              to="/contact" 
+              to="/brochures" 
               className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
-                location.pathname === '/contact' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+                location.pathname === '/brochures' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
               }`}
               data-testid="nav-brochure-link"
             >

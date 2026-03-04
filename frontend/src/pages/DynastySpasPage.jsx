@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Flag, Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon } from 'lucide-react';
 import { DYNASTY_SPAS_PRODUCTS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
@@ -352,33 +352,32 @@ const DynastySpasPage = () => {
             </div>
           </motion.div>
 
-          {/* Lifestyle Gallery */}
+          {/* Lifestyle Gallery - Horizontal Slider */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-6">Dynasty Spas Lifestyle Gallery</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {DYNASTY_GALLERY.map((img, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="aspect-video overflow-hidden cursor-pointer group"
-                  onClick={() => window.open(img, '_blank')}
-                >
-                  <img 
-                    src={img} 
-                    alt={`Dynasty Spas lifestyle ${idx + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </motion.div>
-              ))}
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-4">Dynasty Spas Lifestyle Gallery</h2>
+            <div className="relative">
+              <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {DYNASTY_GALLERY.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-shrink-0 w-72 md:w-80 aspect-video overflow-hidden cursor-pointer group snap-start"
+                    onClick={() => window.open(img, '_blank')}
+                  >
+                    <img 
+                      src={img} 
+                      alt={`Dynasty Spas lifestyle ${idx + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-lg shadow-md"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-slate-500 mt-2">← Swipe to see more →</p>
             </div>
           </motion.div>
 

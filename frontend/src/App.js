@@ -30,6 +30,7 @@ const AnatomyPage = lazy(() => import('./pages/AnatomyPage'));
 const BalneotherapyPage = lazy(() => import('./pages/BalneotherapyPage'));
 const JetsPage = lazy(() => import('./pages/JetsPage'));
 const ARVisualizerPage = lazy(() => import('./pages/ARVisualizerPage'));
+const BrochurePage = lazy(() => import('./pages/BrochurePage'));
 
 import './App.css';
 
@@ -92,6 +93,7 @@ function App() {
                 <Route path="/events" element={<EventsPage />} />
                 <Route path="/financing" element={<FinancingPage />} />
                 <Route path="/spa-butler" element={<SpaButlerPage />} />
+                <Route path="/brochures" element={<BrochurePage />} />
                 
                 {/* Contact */}
                 <Route path="/contact" element={<ContactPage />} />

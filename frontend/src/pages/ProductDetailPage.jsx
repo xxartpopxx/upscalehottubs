@@ -288,7 +288,7 @@ const ProductDetailPage = () => {
           <meta name="keywords" content={seoKeywords} />
         </Helmet>
       )}
-      <div className="pt-24 md:pt-36 pb-10 md:pb-20" data-testid="product-detail-page" style={{
+      <div className="pt-28 md:pt-40 pb-10 md:pb-20" data-testid="product-detail-page" style={{
         background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
       }}>
         <div className="max-w-7xl mx-auto px-2 md:px-8">

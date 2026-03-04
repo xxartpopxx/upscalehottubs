@@ -16,7 +16,7 @@ const iconMap = {
 const BENEFIT_IMAGES = {
   hydrotherapy: 'https://images.unsplash.com/photo-1544843776-7c98a52e08a4?w=800&q=80',
   sleep: 'https://images.pexels.com/photos/6941126/pexels-photo-6941126.jpeg?auto=compress&w=800',
-  stress: 'https://images.unsplash.com/photo-1570039399309-e7ad6f463b65?w=800&q=80',
+  stress: '/images/stress-match-lady.jpg',
   family: 'https://images.pexels.com/photos/3851263/pexels-photo-3851263.jpeg?auto=compress&w=800',
   arthritis: 'https://images.pexels.com/photos/7224672/pexels-photo-7224672.jpeg?auto=compress&w=800',
 };
@@ -42,7 +42,7 @@ const GALLERY_IMAGES = [
 
 const WellnessPage = () => {
   return (
-    <div className="pt-36 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="wellness-page">
+    <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="wellness-page">
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden mb-20">
         <div className="absolute inset-0">

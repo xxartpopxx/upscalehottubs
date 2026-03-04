@@ -13,7 +13,7 @@ const AboutPage = () => {
         <meta name="keywords" content="Dynasty Spas, American made hot tubs, Made in USA spas, hot tub quality, Upstate Hot Tubs, Simpsonville SC" />
       </Helmet>
       
-      <div className="pt-36 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="about-page">
+      <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="about-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Grand Opening Hero Image */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">

@@ -1,10 +1,26 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon } from 'lucide-react';
+import { Flag, Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { DYNASTY_SPAS_PRODUCTS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
+
+// Dynasty Lifestyle Gallery Images
+const DYNASTY_GALLERY = [
+  '/images/dynasty-lifestyle/DYNASTY+1-4539b219-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+2-c48b7242-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+3-4bdf4335-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+5-cdbfadfb-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+6-e6d90672-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+7-c8dd7e75-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+8-f7c9d653-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+9-d6928017-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+10-66ee5ae9-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+11-3a1efa5a-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+12-05d364a5-1920w.jpg',
+  '/images/dynasty-lifestyle/DYNASTY+13-76ad7d44-1920w.jpg',
+];
 
 const DynastySpasPage = () => {
   const location = useLocation();
@@ -89,7 +105,7 @@ const DynastySpasPage = () => {
         <meta name="keywords" content="Dynasty Spas, American made hot tubs, hot tubs Simpsonville SC, Paradise Bay, Palm Island, Coconut Bay, Caribbean Breeze, luxury hot tubs" />
       </Helmet>
 
-      <div className="pt-36 pb-20" data-testid="dynasty-spas-page" style={{
+      <div className="pt-40 pb-20" data-testid="dynasty-spas-page" style={{
         background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
       }}>
         {/* Hero Banner with Dynasty Logo */}
@@ -333,6 +349,36 @@ const DynastySpasPage = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+            </div>
+          </motion.div>
+
+          {/* Lifestyle Gallery */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-6">Dynasty Spas Lifestyle Gallery</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {DYNASTY_GALLERY.map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="aspect-video overflow-hidden cursor-pointer group"
+                  onClick={() => window.open(img, '_blank')}
+                >
+                  <img 
+                    src={img} 
+                    alt={`Dynasty Spas lifestyle ${idx + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 

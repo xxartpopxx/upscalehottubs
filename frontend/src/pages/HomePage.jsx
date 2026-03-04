@@ -601,7 +601,7 @@ const ResourceCardsSection = () => {
     {
       title: 'Get a Brochure',
       image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop',
-      link: '/contact',
+      link: '/brochures',
     },
     {
       title: 'Visit Our Showroom',

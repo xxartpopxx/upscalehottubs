@@ -2311,6 +2311,106 @@ export const SAUNAS = [
     whiteGloveInstallation: true
   },
   {
+    id: 'sauna-finnmark-fd4-trinity',
+    name: 'Finnmark FD-4 Trinity Infrared & Steam Sauna Combo',
+    brand: 'Finnmark Design',
+    series: '3-IN-ONE Combination Saunas',
+    price: '$9,995.95',
+    priceValue: 9995.95,
+    persons: 2,
+    dimensions: '48"W x 48"D x 83"H',
+    interiorDimensions: '44.25"W x 45.5"D x 75.5"H',
+    weight: '437 lbs (Product) / 618 lbs (Shipping)',
+    electrical: '120V / 15-20A',
+    plugType: 'NEMA 5-15P',
+    maxTemperature: 'IR 170°F | Traditional 190°F',
+    description: 'Enjoy the benefits of Infrared Sauna Bathing at 170-degrees Fahrenheit combined with a true Finnish sauna! Welcome to the ultimate sauna experience with the Trinity 3-IN-ONE. This sauna combines all the benefits of Finnmark\'s UL listed Spectrum Plus infrared heaters, traditional 120V sauna heater, and true medical grade Spectrum Red Light™ Therapy all in one beautiful sauna cabin.',
+    longDescription: 'The Trinity Combination Sauna is the only sauna available that combines Finnmark\'s UL listed Spectrum Plus infrared heaters combined with a traditional 120V sauna heater, plus true medical grade Spectrum Red Light™ Therapy.\n\nNo need to compromise. Finnmark\'s FD-4 Trinity is the only combination sauna with true UL listed infrared heaters together with a traditional sauna heater.\n\nGet hot fast! The only IR heaters that have passed the rigorous tests from Underwriter Laboratories used in tandem with a traditional steam sauna stove. Short wave far-infrared penetrates muscles, joints, and makes you sweat 25 times more than carbon panel heaters.\n\nThe traditional 1.9kW sauna heater lets you splash water onto the rocks for an authentic steam sauna experience. Enjoy the benefits and the intensity only offered by a steam sauna.\n\nRed light therapy is a type of phototherapy that uses low-level light wavelengths to penetrate the skin and stimulate the production of collagen and other proteins, which can lead to numerous potential health benefits. It\'s a perfect enhancement to your sauna wellness ritual.',
+    features: [
+      'Spectrum Plus™ UL Listed short wave infrared heaters for deep penetrating heat, up to 25x more than standard carbon panel heaters',
+      'Spectrum Red Light™ Therapy - 192 Diode medical grade LED panel capable of producing highly beneficial 650nm of red light therapy combined with chromotherapy',
+      'Antimicrobial Western Canadian cedar interior that protects against mold, bacteria and fungus',
+      'Thermal Plus™ Aspen exterior that will never rot, warp, decay or chip',
+      '3-IN-ONE Combination - UL listed infrared heaters combined with a traditional heater that produces high heat steam plus medical grade Red light therapy LED panel',
+      'Built-in LCD Wi-Fi touchscreen controller with bluetooth audio',
+      'Audio with 6" Hi-Fi speakers, 8mm tempered glass for ultimate thermal retention',
+      'Extra large two-tier bench system',
+      'Low EMF sauna tested by a NASA award winning testing facility',
+      'High Emissivity infrared heaters',
+      'Harvia Vega Compact 1900 Sauna Heater included',
+      'Works on standard 120V outlet - no special electrical required'
+    ],
+    healthBenefits: [
+      'The Spectrum Plus incoloy heaters warm your core body temperature, producing a cleaner, healthier sweat while lowering blood pressure and maintaining heart health',
+      'Deeper penetration through sweating goes beyond the muscle and fat rather than a traditional or hot air sauna - work up the best possible sweat in the least amount of time',
+      'Spectrum Plus heaters remove 17% more toxins such as cholesterol, fat-soluble toxins, toxic heavy metals, sulfuric acid, sodium, ammonia and uric acid',
+      'Full Spectrum Sauna combination provides higher temperatures, full body coverage, deeper penetration, and better experience than any other sauna',
+      'Natural pain relief remedy with every infrared sauna session',
+      'Athletes appreciate faster muscle recovery with increased blood flow to the muscles, delivering more concentrated oxygen and creating more energy to heal',
+      'Red light therapy stimulates production of collagen and other proteins for numerous potential health benefits'
+    ],
+    heaterSpecs: {
+      model: 'Harvia Vega Compact 1900',
+      kilowatts: '1.9kW',
+      voltage: '120V/1PH',
+      amperage: '15.9 Amps',
+      roomVolumeMin: '70 cu. ft.',
+      roomVolumeMax: '106 cu. ft.',
+      heaterDimensions: '11"W x 11"D x 21"H',
+      heaterWeight: '15.4 lbs',
+      warranty: '2-Year Warranty (Consumer Use)',
+      features: ['Wall-mounted design', 'Stainless steel construction', 'Built-in controls', 'Ergonomic operating switches', 'Switches can be installed on right or left side', 'Designed, engineered, and made in Finland']
+    },
+    specifications: {
+      model: 'FD-4',
+      externalMaterials: 'Thermo-Aspen',
+      interiorMaterials: 'Western Red Cedar',
+      volts: '120',
+      irWatts: '1750',
+      amperage: '15/20',
+      plugType: 'NEMA 5-15P',
+      outlet: 'Standard 120V 15A',
+      maxTempIR: '170°F',
+      maxTempTraditional: '190°F',
+      interiorDimensions: '44.25"W x 45.5"D x 75.5"H',
+      exteriorDimensions: '48"W x 48"D x 83"H',
+      roomVolume: '86 cu. ft.',
+      doorDimensions: '23.625"W x 68.875"H',
+      doorHandleDimensions: '1.5"W x 13.25"H',
+      glassThickness: '8mm W/Gasket',
+      productWeight: '437 lbs',
+      shippingDimensions: '80"W x 40"D x 58"H',
+      shippingWeight: '618 lbs'
+    },
+    shipping: {
+      costUS: 'FREE to contiguous United States',
+      costCanada: '$490',
+      note: 'This exceptional indoor Infrared Sanctuary requires delivery by a special appointment, and on a wooden pallet. The driver is responsible for "curbside delivery only" and will lower the items to ground level.'
+    },
+    includedItems: [
+      'Bottom Panel', 'Top Panel', 'Back Panel', 'Front Panel', 'Left Panel', 'Right Panel',
+      'Glass Door', 'Bench Support', 'Bench Top', 'Heater Cable', 'Floor Cable', 'Screws',
+      'Power Supply Unit', 'Power Cable', 'Interior Heater Connections with Wood Cover',
+      'Door Handle (2 Screws)', 'Infrared Sauna Heater Panels',
+      'Harvia Vega Compact 1900 Sauna Heater',
+      '1 Box of the Harvia AC3000 0-10cm Sauna Stones (29 lbs)',
+      'Spectrum LED Near Infrared Ceiling Lights Combined with Medical-Grade Spectrum Red Light Therapy',
+      'Controller 2.0, Built-In LCD Wi-Fi Touchscreen Control Panel with Bluetooth Audio',
+      'ETL Certification', 'Limited Warranty'
+    ],
+    images: {
+      primary: '/images/saunas/finnmark-fd5-trinity/image-1.png',
+      gallery: [
+        '/images/saunas/finnmark-fd5-trinity/image-1.png',
+        '/images/saunas/finnmark-fd5-trinity/image-2.png',
+        '/images/saunas/finnmark-fd5-trinity/image-3.png',
+        '/images/saunas/finnmark-fd5-trinity/image-4.png',
+        '/images/saunas/finnmark-fd5-trinity/image-5.png'
+      ]
+    },
+    whiteGloveInstallation: true
+  },
+  {
     id: 'sauna-finnmark-fd3',
     name: 'Finnmark FD-3 Full Spectrum Infrared Sauna',
     brand: 'Finnmark Design',

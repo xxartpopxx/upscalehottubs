@@ -251,7 +251,7 @@ const HeroSection = () => (
           </div>
           
           <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">
-            Live Your{' '}
+            <span className="whitespace-nowrap">Live Your{' '}
             <span 
               className="text-[#B91C1C]"
               style={{ 
@@ -259,7 +259,7 @@ const HeroSection = () => (
               }}
             >
               Healthiest Life
-            </span>
+            </span></span>
             <br />
             <span className="text-[#0A1628]">While Enjoying a Vacation</span>
             <br />

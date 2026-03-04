@@ -2392,6 +2392,98 @@ export const SAUNAS = [
     whiteGloveInstallation: true
   },
   {
+    id: 'sauna-finnmark-fd2',
+    name: 'Finnmark FD-2 Full-Spectrum Infrared Sauna 2-Person',
+    brand: 'Finnmark Design',
+    series: 'Full Spectrum Infrared Saunas',
+    price: '$6,995.95',
+    priceValue: 6995.95,
+    persons: 2,
+    dimensions: '48"W x 44"D x 78"H',
+    interiorDimensions: '43"W x 40"D x 70"H',
+    weight: '393 lbs (Product) / 475 lbs (Shipping)',
+    electrical: '120V / 15A',
+    plugType: 'NEMA 5-15P',
+    maxTemperature: '170°F',
+    description: 'Enjoy the benefits of Infrared Sauna Bathing at 170-degrees Fahrenheit! The Finnmark FD-2 Full Spectrum 2 person infrared home sauna is the only infrared sauna that combines long-wave carbon 360 infrared panels with UL listed short-wave Spectrum Plus™ infrared panels.',
+    longDescription: 'Finnmark\'s best-selling infrared sauna is the 2-person Model FD-2 Infrared Home Sauna. The only infrared saunas in the industry that combine UL Listed Spectrum Plus™ infrared heaters with Spectrum Carbon 360° panels, allowing you to reach temperatures of 170° in less than 1 hour on a standard home outlet – an engineering marvel.\n\nFinnmark Designs is the only infrared sauna manufacturer that combines long-wave carbon 360 infrared panels with UL listed short-wave Spectrum Plus™ infrared panels. This combination provides higher temperatures, full body coverage, deeper penetration, and an experience better than any other sauna. Each heater is strategically placed to offer the highest level of therapy possible.\n\nIts antimicrobial Western Canadian cedar interior protects you against mold, bacteria, and fungus, for a clean-smelling sauna. The naturally enhanced Thermal Plus™ Aspen exterior won\'t rot, warp, decay, or chip, making Finnmark Designs full spectrum infrared saunas incredibly durable.',
+    features: [
+      'Antimicrobial Western Canadian cedar interior that protects against mold, bacteria and fungus',
+      'Thermal Plus™ Aspen exterior that will never rot, warp, decay or chip',
+      'Only infrared sauna manufacturer combining long-wave carbon 360 infrared panels with UL listed short-wave Spectrum Plus™ infrared panels',
+      'Higher temperatures, full body coverage, deeper penetration than any other sauna',
+      'Built-in LCD Wi-Fi touchscreen controller with bluetooth audio',
+      'Audio with 6" Hi-Fi speakers, 8mm tempered glass for ultimate thermal retention',
+      'Removable and adjustable sauna feet for uneven surfaces',
+      'Low EMF sauna tested by a NASA award winning testing facility',
+      'High Emissivity infrared heaters',
+      'High quality double walled construction with non-toxic wool insulation',
+      'Over 15,000 Sold'
+    ],
+    healthBenefits: [
+      'The Spectrum Plus incoloy heaters warm your core body temperature, producing a cleaner, healthier sweat while lowering blood pressure and maintaining heart health',
+      'Deeper penetration through sweating goes beyond the muscle and fat rather than a traditional or hot air sauna - work up the best possible sweat in the least amount of time',
+      'Spectrum Plus heaters remove 17% more toxins such as cholesterol, fat-soluble toxins, toxic heavy metals, sulfuric acid, sodium, ammonia and uric acid',
+      'Full Spectrum Sauna combination provides higher temperatures, full body coverage, deeper penetration, and better experience than any other sauna',
+      'Natural pain relief remedy with every infrared sauna session',
+      'Athletes appreciate faster muscle recovery with increased blood flow to the muscles, delivering more concentrated oxygen and creating more energy to heal'
+    ],
+    specifications: {
+      model: 'FD-2',
+      externalMaterials: 'Thermo-Aspen',
+      interiorMaterials: 'Western Canadian Cedar',
+      volts: '120',
+      watts: '1750',
+      amperage: '15',
+      phase: 'Single',
+      plugType: 'NEMA 5-15P',
+      outlet: 'Standard 120V 15A',
+      maxTemperature: '170°F',
+      interiorDimensions: '43"W x 40"D x 70"H',
+      exteriorDimensions: '48"W x 44"D x 78"H',
+      roomVolume: '70 cu. ft.',
+      doorDimensions: '23.625"W x 67.875"H',
+      doorHandleDimensions: '1.875"W x 11.625"H',
+      glassThickness: '8mm',
+      productWeight: '393 lbs',
+      shippingDimensions: '80"W x 40"D x 58"H',
+      shippingWeight: '475 lbs'
+    },
+    shipping: {
+      costUS: 'FREE to contiguous United States',
+      costCanada: '$490',
+      note: 'This exceptional indoor Infrared Sanctuary requires delivery by a special appointment, and on a wooden pallet. The driver is responsible for "curbside delivery only" and will lower the items to ground level.'
+    },
+    includedItems: [
+      'Bottom Panel', 'Top Panel', 'Back Panel', 'Front Panel', 'Left Panel', 'Right Panel',
+      'Glass Door', 'Bench Support', 'Bench Top', 'Heater Cable', 'Floor Cable', 'Screws',
+      'Power Supply Unit', 'Power Cable', 'Interior Heater Connections with Wood Cover',
+      'Door Handle (2 Screws)', 'Removable and Adjustable Sauna Feet for Uneven Surfaces',
+      'Infrared Sauna Heater Panels', 'Spectrum LED Near Infrared Ceiling Lights',
+      'Controller 2.0, Built-In LCD Wi-Fi Touchscreen Control Panel with Bluetooth Audio',
+      'Audio Upgrade with 6" Hi-Fi Speakers', '8mm Tempered Glass for Ultimate Thermal Retention',
+      'ETL Certification', 'Limited Warranty'
+    ],
+    images: {
+      primary: '/images/saunas/finnmark-fd2/image-1.png',
+      gallery: [
+        '/images/saunas/finnmark-fd2/image-1.png',
+        '/images/saunas/finnmark-fd2/image-2.png',
+        '/images/saunas/finnmark-fd2/image-3.png',
+        '/images/saunas/finnmark-fd2/image-4.png',
+        '/images/saunas/finnmark-fd2/image-5.png',
+        '/images/saunas/finnmark-fd2/image-6.png',
+        '/images/saunas/finnmark-fd2/image-7.png',
+        '/images/saunas/finnmark-fd2/image-8.png',
+        '/images/saunas/finnmark-fd2/image-9.png',
+        '/images/saunas/finnmark-fd2/image-10.png',
+        '/images/saunas/finnmark-fd2/image-11.png',
+        '/images/saunas/finnmark-fd2/image-12.png'
+      ]
+    },
+    whiteGloveInstallation: true
+  },
+  {
     id: 'sauna-ee8g',
     name: 'SaunaLife Model EE8G Sauna Barrel',
     brand: 'SaunaLife',

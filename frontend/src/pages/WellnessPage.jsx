@@ -446,6 +446,65 @@ const WellnessPage = () => {
             </a>
           </div>
         </motion.section>
+        
+        {/* Educational Resources Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto px-4 md:px-8 py-16"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-[#0A1628] text-center mb-4">
+            Dive Deeper Into Wellness
+          </h2>
+          <p className="text-slate-600 text-center mb-10 max-w-2xl mx-auto">
+            Explore our educational resources to learn more about how hot tubs and hydrotherapy can transform your health.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link 
+              to="/anatomy-of-a-spa"
+              className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group"
+            >
+              <div className="w-12 h-12 bg-[#B91C1C]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#B91C1C] transition-colors">
+                <Activity className="text-[#B91C1C] group-hover:text-white transition-colors" size={24} />
+              </div>
+              <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">Anatomy of a Spa</h3>
+              <p className="text-slate-600 text-sm mb-4">Understand the components that make up a quality hot tub and how they work together.</p>
+              <span className="text-[#B91C1C] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                Learn More <ChevronRight size={16} />
+              </span>
+            </Link>
+            
+            <Link 
+              to="/balneotherapy"
+              className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group"
+            >
+              <div className="w-12 h-12 bg-[#B91C1C]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#B91C1C] transition-colors">
+                <Droplets className="text-[#B91C1C] group-hover:text-white transition-colors" size={24} />
+              </div>
+              <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">Balneotherapy</h3>
+              <p className="text-slate-600 text-sm mb-4">Discover the ancient science of water therapy and its modern health applications.</p>
+              <span className="text-[#B91C1C] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                Learn More <ChevronRight size={16} />
+              </span>
+            </Link>
+            
+            <Link 
+              to="/jets"
+              className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group"
+            >
+              <div className="w-12 h-12 bg-[#B91C1C]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#B91C1C] transition-colors">
+                <Sparkles className="text-[#B91C1C] group-hover:text-white transition-colors" size={24} />
+              </div>
+              <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">Jet Technology</h3>
+              <p className="text-slate-600 text-sm mb-4">Learn about the different types of jets and how they target specific muscle groups.</p>
+              <span className="text-[#B91C1C] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                Learn More <ChevronRight size={16} />
+              </span>
+            </Link>
+          </div>
+        </motion.section>
       </div>
     </div>
   );

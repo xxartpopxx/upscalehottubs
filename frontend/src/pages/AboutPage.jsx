@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Flag, Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign } from 'lucide-react';
@@ -273,6 +274,49 @@ const AboutPage = () => {
             <p className="text-[#D4AF37] font-semibold flex items-center justify-center gap-2">
               <Flag size={16} /> American Made & Proud of It
             </p>
+          </motion.div>
+          
+          {/* Helpful Tools Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] text-center mb-8">Helpful Tools & Resources</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Link 
+                to="/ar-visualizer"
+                className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center gap-4 group"
+              >
+                <div className="w-14 h-14 bg-[#B91C1C]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#B91C1C] group-hover:text-white transition-colors">
+                    <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/>
+                    <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/>
+                    <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/>
+                    <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/>
+                    <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-1">See It In Your Backyard</h3>
+                  <p className="text-slate-600 text-sm">Use our AR visualizer to see how a hot tub would look in your space.</p>
+                </div>
+              </Link>
+              
+              <Link 
+                to="/covers"
+                className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center gap-4 group"
+              >
+                <div className="w-14 h-14 bg-[#B91C1C]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors">
+                  <Shield className="text-[#B91C1C] group-hover:text-white transition-colors" size={28} />
+                </div>
+                <div>
+                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-1">Hot Tub Covers</h3>
+                  <p className="text-slate-600 text-sm">Explore our premium cover options to protect your investment.</p>
+                </div>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>

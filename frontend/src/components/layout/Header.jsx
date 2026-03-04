@@ -107,8 +107,8 @@ const Header = () => {
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo only - using transparent logo */}
-          <Link to="/" className="flex items-center" data-testid="logo-link">
+          {/* Logo - Centered on mobile, left-aligned on desktop */}
+          <Link to="/" className="flex items-center xl:flex-none flex-1 justify-center xl:justify-start" data-testid="logo-link">
             <motion.img 
               src={ASSETS.transparentLogo} 
               alt="Upstate Hot Tubs - Home" 

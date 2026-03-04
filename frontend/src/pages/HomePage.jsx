@@ -51,22 +51,7 @@ const LazyVideo = ({ src, poster, className, ...props }) => {
     return () => observer.disconnect();
   }, []);
 
-  // On mobile, just show poster image instead of video for performance
-  if (isMobile) {
-    return (
-      <div ref={containerRef} className={className}>
-        <img 
-          src={poster} 
-          alt="Hot tub relaxation" 
-          className="w-full h-full object-cover"
-          width="400"
-          height="300"
-          loading="eager"
-        />
-      </div>
-    );
-  }
-
+  // Video plays on all devices including mobile
   return (
     <div ref={containerRef} className={className}>
       {isInView ? (

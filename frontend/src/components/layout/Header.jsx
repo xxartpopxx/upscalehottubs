@@ -106,9 +106,12 @@ const Header = () => {
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
+          {/* Spacer for mobile to balance hamburger menu */}
+          <div className="w-12 xl:hidden"></div>
+          
           {/* Logo - Centered on mobile, left-aligned on desktop */}
-          <Link to="/" className="flex items-center xl:flex-none flex-1 justify-center xl:justify-start" data-testid="logo-link">
+          <Link to="/" className="flex items-center absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0" data-testid="logo-link">
             <motion.img 
               src={ASSETS.transparentLogo} 
               alt="Upstate Hot Tubs - Home" 
@@ -277,7 +280,7 @@ const Header = () => {
               exit={{ opacity: 0, height: 0 }} 
               className="xl:hidden overflow-hidden bg-white"
             >
-              <div className="py-4 space-y-1">
+              <div className="py-4 space-y-1 max-h-[70vh] overflow-y-auto">
                 <Link to="/" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
                   Home
                 </Link>
@@ -296,6 +299,11 @@ const Header = () => {
                     </Link>
                   ))}
                 </div>
+                
+                {/* Brochures */}
+                <Link to="/brochures" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
+                  Get a Brochure
+                </Link>
                 
                 {/* Wellness */}
                 <Link to="/wellness" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>

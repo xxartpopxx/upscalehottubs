@@ -119,6 +119,7 @@ const ProductDetailPage = () => {
   const [imageError, setImageError] = useState(false);
   const [selectedCompareModel, setSelectedCompareModel] = useState(null);
   const [showCompareModal, setShowCompareModal] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
   
   // Get comparable models from the same brand
   const comparableModels = useMemo(() => {
@@ -151,6 +152,7 @@ const ProductDetailPage = () => {
       setCurrentView('color'); // Reset to color view
       setImageError(false);
       setSelectedCompareModel(null);
+      setGalleryIndex(0); // Reset gallery index for new product
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product?.id]);
@@ -158,7 +160,8 @@ const ProductDetailPage = () => {
   const isGrandRiver = product?.brand === 'Grand River Spas';
   const isViking = product?.brand === 'Viking Spas';
   const isDynasty = product?.brand === 'Dynasty Spas';
-  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound';
+  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design';
+  const isFinnmarkSauna = product?.brand === 'Finnmark Design';
   const isSwimSpa = !!product?.length;
   const hasColorSelector = (isGrandRiver || isViking) && !isSwimSpa;
   
@@ -180,6 +183,11 @@ const ProductDetailPage = () => {
   
   const currentImage = useMemo(() => {
     if (!product) return ASSETS.logo;
+    
+    // For Finnmark saunas with gallery images
+    if (isFinnmarkSauna && product.images.gallery && product.images.gallery.length > 0) {
+      return product.images.gallery[galleryIndex] || product.images.primary;
+    }
     
     // For Dynasty Spas - only show primary image
     if (isDynasty) {
@@ -210,7 +218,7 @@ const ProductDetailPage = () => {
     }
     
     return product.images.primary;
-  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, isViking, isDynasty, imageError]);
+  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, isViking, isDynasty, isFinnmarkSauna, imageError, galleryIndex]);
   
   if (!product) {
     return (
@@ -225,7 +233,12 @@ const ProductDetailPage = () => {
     );
   }
 
-  const specs = [
+  // Different specs for saunas vs hot tubs
+  const specs = isSaunaOrColdPlunge ? [
+    { icon: Users, label: 'Capacity', value: product.persons ? `${product.persons} Persons` : 'N/A' },
+    { icon: Zap, label: 'Electrical', value: product.electrical || 'N/A' },
+    { icon: Ruler, label: 'Dimensions', value: product.dimensions || 'N/A' },
+  ] : [
     { icon: Users, label: 'Seats', value: `${product.persons} Adults` },
     { icon: Droplets, label: 'Jets', value: product.jets },
     { icon: Zap, label: 'Electrical', value: product.electrical },
@@ -234,19 +247,38 @@ const ProductDetailPage = () => {
   
   const currentViewIndex = views.indexOf(currentView);
   
+  // Gallery navigation for Finnmark saunas
+  const galleryLength = product?.images?.gallery?.length || 0;
+  
   const handlePrevView = () => {
-    const newIndex = currentViewIndex > 0 ? currentViewIndex - 1 : views.length - 1;
-    setCurrentView(views[newIndex]);
+    if (isFinnmarkSauna && galleryLength > 0) {
+      setGalleryIndex(prev => prev > 0 ? prev - 1 : galleryLength - 1);
+    } else {
+      const newIndex = currentViewIndex > 0 ? currentViewIndex - 1 : views.length - 1;
+      setCurrentView(views[newIndex]);
+    }
   };
   
   const handleNextView = () => {
-    const newIndex = currentViewIndex < views.length - 1 ? currentViewIndex + 1 : 0;
-    setCurrentView(views[newIndex]);
+    if (isFinnmarkSauna && galleryLength > 0) {
+      setGalleryIndex(prev => prev < galleryLength - 1 ? prev + 1 : 0);
+    } else {
+      const newIndex = currentViewIndex < views.length - 1 ? currentViewIndex + 1 : 0;
+      setCurrentView(views[newIndex]);
+    }
   };
 
   // SEO metadata
-  const seoDescription = product ? `${product.name} by ${product.brand}. ${product.description} Seats ${product.persons} adults with ${product.jets} jets. ${product.price}. American Made & Proud of It.` : '';
-  const seoKeywords = product ? `${product.name}, ${product.brand}, ${product.series}, hot tub, spa, ${product.persons} person hot tub, hydrotherapy` : '';
+  const seoDescription = product ? 
+    isSaunaOrColdPlunge 
+      ? `${product.name} by ${product.brand}. ${product.description} ${product.persons ? `Capacity: ${product.persons} persons.` : ''} ${product.price}. American Made & Proud of It.`
+      : `${product.name} by ${product.brand}. ${product.description} Seats ${product.persons} adults with ${product.jets} jets. ${product.price}. American Made & Proud of It.`
+    : '';
+  const seoKeywords = product ? 
+    isSaunaOrColdPlunge 
+      ? `${product.name}, ${product.brand}, ${product.series}, sauna, infrared sauna, wellness, hydrotherapy`
+      : `${product.name}, ${product.brand}, ${product.series}, hot tub, spa, ${product.persons} person hot tub, hydrotherapy`
+    : '';
 
   return (
     <>
@@ -305,8 +337,8 @@ const ProductDetailPage = () => {
                   />
                 </AnimatePresence>
                 
-                {/* Navigation Arrows - only show when multiple views */}
-                {views.length > 1 && (
+                {/* Navigation Arrows - only show when multiple views or Finnmark gallery */}
+                {(views.length > 1 || (isFinnmarkSauna && galleryLength > 1)) && (
                   <>
                     <button
                       onClick={handlePrevView}
@@ -323,6 +355,22 @@ const ProductDetailPage = () => {
                       <ChevronRight size={24} />
                     </button>
                   </>
+                )}
+                
+                {/* Finnmark gallery indicator */}
+                {isFinnmarkSauna && galleryLength > 1 && (
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {product.images.gallery.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setGalleryIndex(idx)}
+                        className={`w-2.5 h-2.5 rounded-full transition-all ${
+                          idx === galleryIndex ? 'bg-[#B91C1C] scale-125' : 'bg-white/70 hover:bg-white'
+                        }`}
+                        aria-label={`View image ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
                 )}
                 
                 {/* Color indicator badges */}
@@ -378,6 +426,23 @@ const ProductDetailPage = () => {
                   >
                     Overhead View
                   </button>
+                </div>
+              )}
+              
+              {/* Finnmark Gallery Thumbnails */}
+              {isFinnmarkSauna && galleryLength > 1 && (
+                <div className="mt-4 grid grid-cols-5 md:grid-cols-9 gap-2">
+                  {product.images.gallery.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setGalleryIndex(idx)}
+                      className={`aspect-square overflow-hidden border-2 transition-all ${
+                        idx === galleryIndex ? 'border-[#B91C1C] ring-2 ring-[#B91C1C]' : 'border-slate-200 hover:border-slate-400'
+                      }`}
+                    >
+                      <img src={img} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
@@ -776,7 +841,7 @@ const ProductDetailPage = () => {
           )}
 
           {/* Sauna - White Glove Installation Option */}
-          {product?.brand === 'SaunaLife' && product?.whiteGloveInstallation && (
+          {(product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design') && product?.whiteGloveInstallation && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

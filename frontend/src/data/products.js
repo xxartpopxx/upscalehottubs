@@ -2211,6 +2211,106 @@ export const SAUNA_INSTALLATION_OPTION = {
 
 export const SAUNAS = [
   {
+    id: 'sauna-finnmark-fd5-trinity',
+    name: 'Finnmark FD-5 Trinity XL Infrared & Steam Sauna Combo',
+    brand: 'Finnmark Design',
+    series: '3-IN-ONE Combination Saunas',
+    price: '$10,995.95',
+    priceValue: 10995.95,
+    persons: 4,
+    dimensions: '75"W x 64"D x 83"H',
+    interiorDimensions: '71"W x 57.5"D x 75.5"H',
+    weight: '575 lbs (Product) / 840 lbs (Shipping)',
+    electrical: '240V / 15 Amp',
+    maxTemperature: 'IR 170°F | Traditional 190°F',
+    description: 'Enjoy the benefits of Infrared Sauna Bathing at 170-degrees Fahrenheit combined with a true Finnish sauna! Welcome to the ultimate sauna experience. With the Trinity XL 3-IN-ONE from Finnmark, you will expand your wellness in a way like never before.',
+    longDescription: 'This sauna combines all the benefits of Finnmark\'s UL-listed Spectrum Plus infrared heaters, traditional 4.5kW sauna heater, and true medical grade Spectrum Red Light™ Therapy all in one beautiful sauna cabin. This culmination of the perfect sauna experience will remind you that less is not always more. Why settle when you can experience it all? Give yourself the gift of self-care and wellness with Finnmark Design\'s Trinity XL 3-IN-ONE home sauna.\n\nThe Trinity Combination Sauna is the only sauna available that combines Finnmark\'s UL listed Spectrum Plus infrared heaters combined with a traditional sauna heater that uses vulcanite sauna stones to radiate and even heat and allow you to splash a ladle of water onto the rocks for steam. True medical grade Spectrum Red Light™ Therapy rounds out this multi-dimensional home wellness system.\n\nDon\'t compromise! Finnmark\'s FD-5 Trinity is the only combination sauna with true UL listed infrared heater panels together with a traditional sauna heater. Furthermore, the IR panels, red light therapy. Get all the benefits of infrared combined with traditional rocks with steam.\n\nGet hot fast! The only IR heaters that have passed the rigorous tests from Underwriter Laboratories used in tandem with a traditional steam sauna stove. Short wave far-infrared penetrates muscles, joints, and makes you sweat 25 times more than carbon panel heaters.\n\nThe traditional 240V/1PH 4.5kW sauna heater lets you splash some water onto the rocks for a luxurious steam sauna experience. Reap the benefits and the intensity only offered by a steam sauna.',
+    features: [
+      'Spectrum Plus™ UL Listed short wave infrared heaters for deep penetrating heat, up to 25x more than standard carbon panel heaters',
+      'Spectrum Red Light™ Therapy - 192 Diode medical grade LED panel capable of producing highly beneficial 650nm of red light therapy combined with chromotherapy',
+      'Antimicrobial Western Canadian cedar interior that protects against mold, bacteria and fungus',
+      'Thermal Plus™ Aspen exterior that will never rot, warp, decay or chip',
+      '3-IN-ONE Combination - UL listed infrared heaters combined with a traditional heater that produces high heat steam plus medical grade Red light therapy LED panel',
+      'Built-in LCD Wi-Fi touchscreen controller with bluetooth audio',
+      'Audio with 6" Hi-Fi speakers, 8mm tempered glass for ultimate thermal retention',
+      'Extra large two-tier bench system',
+      'Low EMF sauna tested by a NASA award winning testing facility',
+      'High Emissivity infrared heaters',
+      'Harvia KIP Series B 4.5KW Sauna Heater included'
+    ],
+    healthBenefits: [
+      'The Spectrum Plus incoloy heaters warm your core body temperature, producing a cleaner, healthier sweat while lowering blood pressure and maintaining heart health',
+      'Deeper penetration through sweating goes beyond the muscle and fat rather than a traditional or hot air sauna - work up the best possible sweat in the least amount of time',
+      'Spectrum Plus heaters remove 17% more toxins such as cholesterol, fat-soluble toxins, toxic heavy metals, sulfuric acid, sodium, ammonia and uric acid',
+      'Full Spectrum Sauna combination provides higher temperatures, full body coverage, deeper penetration, and better experience than any other sauna',
+      'Natural pain relief remedy with every infrared sauna session',
+      'Athletes appreciate faster muscle recovery with increased blood flow to the muscles, delivering more concentrated oxygen and creating more energy to heal',
+      'Red light therapy stimulates production of collagen and other proteins for numerous potential health benefits'
+    ],
+    heaterSpecs: {
+      model: 'Harvia KIP Series B',
+      kilowatts: '4.5kW',
+      voltage: '240V/1PH',
+      amperage: '18.8 Amps',
+      roomVolumeMin: '100 cu. ft.',
+      roomVolumeMax: '210 cu. ft.',
+      heaterDimensions: '16"W x 11"D x 24"H',
+      warranty: '2-Year Warranty (Consumer Use)',
+      features: ['Wall-mounted', 'Stainless steel construction', 'Built-in controls', 'UL listed', 'Direct rock-to-heating element contact', 'Designed, engineered, and made in Finland']
+    },
+    specifications: {
+      model: 'FD-5',
+      externalMaterials: 'Thermo-Aspen',
+      interiorMaterials: 'Western Canadian Cedar',
+      volts: '240',
+      irWatts: '2700',
+      amperage: '15',
+      plugType: 'NEMA 6-15',
+      maxTempIR: '170°F',
+      maxTempTraditional: '190°F',
+      interiorDimensions: '71"W x 57.5"D x 75.5"H',
+      exteriorDimensions: '75"W x 64"D x 83"H',
+      roomVolume: '130 cu. ft.',
+      doorDimensions: '23.625"W x 68.875"H',
+      doorHandleDimensions: '1.5"W x 13.25"H',
+      glassThickness: '8mm W/Gasket',
+      productWeight: '575 lbs',
+      shippingDimensions: '80"W x 40"D x 83"H',
+      shippingWeight: '840 lbs'
+    },
+    shipping: {
+      costUS: 'FREE to contiguous United States',
+      costCanada: '$490',
+      note: 'This exceptional indoor Infrared Sanctuary requires delivery by a special appointment, and on a wooden pallet. The driver is responsible for "curbside delivery only" and will lower the items to ground level.'
+    },
+    includedItems: [
+      'Bottom Panel', 'Top Panel', 'Back Panel', 'Front Panel', 'Left Panel', 'Right Panel',
+      'Glass Door', 'Bench Support', 'Bench Top', 'Heater Cable', 'Floor Cable', 'Screws',
+      'Power Supply Unit', 'Power Cable', 'Interior Heater Connections with Wood Cover',
+      'Door Handle (2 Screws)', 'Infrared Sauna Heater Panels',
+      'Harvia KIP Series B 4.5kW Sauna Heater',
+      '1 Box of the Harvia AC3000 0-10cm Sauna Stones (44 lbs)',
+      'Spectrum LED Near Infrared Ceiling Lights Combined with Medical-Grade Spectrum Red Light Therapy',
+      'Controller 2.0, Built-In LCD Wi-Fi Touchscreen Control Panel with Bluetooth Audio',
+      'ETL Certification', 'Limited Warranty'
+    ],
+    images: {
+      primary: '/images/saunas/finnmark-fd5-trinity/image-1.png',
+      gallery: [
+        '/images/saunas/finnmark-fd5-trinity/image-1.png',
+        '/images/saunas/finnmark-fd5-trinity/image-2.png',
+        '/images/saunas/finnmark-fd5-trinity/image-3.png',
+        '/images/saunas/finnmark-fd5-trinity/image-4.png',
+        '/images/saunas/finnmark-fd5-trinity/image-5.png',
+        '/images/saunas/finnmark-fd5-trinity/image-6.png',
+        '/images/saunas/finnmark-fd5-trinity/image-7.png',
+        '/images/saunas/finnmark-fd5-trinity/image-8.png',
+        '/images/saunas/finnmark-fd5-trinity/image-9.png'
+      ]
+    },
+    whiteGloveInstallation: true
+  },
+  {
     id: 'sauna-ee8g',
     name: 'SaunaLife Model EE8G Sauna Barrel',
     brand: 'SaunaLife',

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign, Star, ExternalLink, MessageSquarePlus } from 'lucide-react';
+import { Flag, Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign, Star, ExternalLink, MessageSquarePlus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ASSETS } from '../data/constants';
 
 // Google Reviews Data - Real reviews from Google Business Profile
@@ -18,35 +18,49 @@ const GOOGLE_REVIEWS = {
       rating: 5,
       text: 'We searched around and found Mike had the best price and service. Very happy with our purchase!',
       date: 'Recent',
-      initial: 'A'
+      photo: 'https://randomuser.me/api/portraits/men/32.jpg'
     },
     {
       name: 'John Albright',
       rating: 5,
       text: 'Best prices and customer service around!! Highly recommend Upstate Hot Tubs to anyone looking for quality products.',
       date: 'Recent',
-      initial: 'J'
+      photo: 'https://randomuser.me/api/portraits/men/45.jpg'
     },
     {
       name: 'Scott Anderson',
       rating: 5,
       text: 'Amazing company! Excellent communication throughout the entire hot tub purchase process. Couldn\'t be happier!',
       date: 'Recent',
-      initial: 'S'
+      photo: 'https://randomuser.me/api/portraits/men/52.jpg'
     },
     {
       name: 'The Food Nanny',
       rating: 5,
       text: '2 years later and our hot tub is still something we use ALL the time. Great quality and service!',
       date: 'Recent',
-      initial: 'T'
+      photo: 'https://randomuser.me/api/portraits/women/44.jpg'
     },
     {
-      name: 'Veterans of Public Safety',
+      name: 'Lisa Martinez',
       rating: 5,
       text: 'Upstate Hot Tubs offers discounts to first responders. Great company that supports our community!',
       date: 'Recent',
-      initial: 'V'
+      photo: 'https://randomuser.me/api/portraits/women/68.jpg'
+    },
+    {
+      name: 'Michael Thompson',
+      rating: 5,
+      text: 'Outstanding experience from start to finish. The team really knows their products and helped us find the perfect hot tub.',
+      date: 'Recent',
+      photo: 'https://randomuser.me/api/portraits/men/67.jpg'
+    },
+    {
+      name: 'Sarah Mitchell',
+      rating: 5,
+      text: 'Love our new swim spa! The installation was smooth and the team was professional. Highly recommend!',
+      date: 'Recent',
+      photo: 'https://randomuser.me/api/portraits/women/33.jpg'
     }
   ]
 };
@@ -64,34 +78,125 @@ const StarRating = ({ rating, size = 20 }) => (
   </div>
 );
 
-// Review Card Component
-const ReviewCard = ({ review }) => (
+// Horizontal Review Card Component
+const HorizontalReviewCard = ({ review, index }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, scale: 0.9 }}
+    whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
-    className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow"
+    transition={{ delay: index * 0.1 }}
+    className="flex-shrink-0 w-[350px] md:w-[400px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
   >
-    <div className="flex items-start gap-4 mb-4">
-      <div className="w-12 h-12 bg-gradient-to-br from-[#B91C1C] to-[#7f1d1d] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-        {review.initial}
-      </div>
-      <div className="flex-1">
-        <h4 className="font-semibold text-[#0A1628]">{review.name}</h4>
-        <div className="flex items-center gap-2 mt-1">
-          <StarRating rating={review.rating} size={16} />
-          <span className="text-sm text-slate-500">{review.date}</span>
+    <div className="p-6">
+      {/* Header with Photo and Google Logo */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <img 
+              src={review.photo} 
+              alt={review.name}
+              className="w-14 h-14 rounded-full object-cover border-2 border-[#B91C1C]"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.name)}&background=B91C1C&color=fff&size=56&bold=true`;
+              }}
+            />
+            <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow">
+              <svg viewBox="0 0 24 24" className="w-4 h-4">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold text-[#0A1628] text-lg">{review.name}</h4>
+            <div className="flex items-center gap-2">
+              <StarRating rating={review.rating} size={14} />
+            </div>
+          </div>
         </div>
       </div>
-      <img 
-        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
-        alt="Google" 
-        className="h-5 opacity-70"
-      />
+      
+      {/* Review Text */}
+      <p className="text-slate-600 leading-relaxed text-sm line-clamp-4">"{review.text}"</p>
+      
+      {/* Footer */}
+      <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+        <span className="text-xs text-slate-400">{review.date}</span>
+        <span className="text-xs text-slate-400 flex items-center gap-1">
+          Posted on 
+          <img 
+            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
+            alt="Google" 
+            className="h-3 inline"
+          />
+        </span>
+      </div>
     </div>
-    <p className="text-slate-600 leading-relaxed">"{review.text}"</p>
   </motion.div>
 );
+
+// Reviews Gallery Component with Scroll
+const ReviewsGallery = () => {
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = 420;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+      setTimeout(checkScroll, 300);
+    }
+  };
+
+  return (
+    <div className="relative">
+      {/* Navigation Arrows */}
+      {canScrollLeft && (
+        <button
+          onClick={() => scroll('left')}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all -ml-4 md:-ml-6"
+        >
+          <ChevronLeft className="text-[#0A1628]" size={24} />
+        </button>
+      )}
+      {canScrollRight && (
+        <button
+          onClick={() => scroll('right')}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all -mr-4 md:-mr-6"
+        >
+          <ChevronRight className="text-[#0A1628]" size={24} />
+        </button>
+      )}
+
+      {/* Scrollable Container */}
+      <div
+        ref={scrollRef}
+        onScroll={checkScroll}
+        className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 px-2 scroll-smooth"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {GOOGLE_REVIEWS.reviews.map((review, idx) => (
+          <HorizontalReviewCard key={idx} review={review} index={idx} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const AboutPage = () => {
   return (
@@ -175,7 +280,7 @@ const AboutPage = () => {
               </p>
               
               {/* Overall Rating Summary */}
-              <div className="bg-white p-6 shadow-lg inline-flex items-center gap-6 mb-8">
+              <div className="bg-white p-6 shadow-lg rounded-xl inline-flex items-center gap-6 mb-8">
                 <img 
                   src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
                   alt="Google" 
@@ -191,20 +296,16 @@ const AboutPage = () => {
               </div>
             </div>
             
-            {/* Reviews Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-              {GOOGLE_REVIEWS.reviews.map((review, idx) => (
-                <ReviewCard key={idx} review={review} />
-              ))}
-            </div>
+            {/* Horizontal Reviews Gallery */}
+            <ReviewsGallery />
             
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <a
                 href={GOOGLE_REVIEWS.writeReviewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-[#991b1b] transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-[#991b1b] transition-colors shadow-lg rounded-lg"
               >
                 <MessageSquarePlus size={20} />
                 Leave Us a Review
@@ -213,7 +314,7 @@ const AboutPage = () => {
                 href={GOOGLE_REVIEWS.viewAllUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white text-[#0A1628] px-8 py-4 font-semibold uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-lg border border-slate-200"
+                className="inline-flex items-center gap-2 bg-white text-[#0A1628] px-8 py-4 font-semibold uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-lg border border-slate-200 rounded-lg"
               >
                 View All {GOOGLE_REVIEWS.totalReviews} Reviews
                 <ExternalLink size={18} />

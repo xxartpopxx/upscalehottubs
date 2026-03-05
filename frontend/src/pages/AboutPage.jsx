@@ -2,8 +2,96 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign } from 'lucide-react';
+import { Flag, Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign, Star, ExternalLink, MessageSquarePlus } from 'lucide-react';
 import { ASSETS } from '../data/constants';
+
+// Google Reviews Data - Real reviews from Google Business Profile
+const GOOGLE_REVIEWS = {
+  rating: 4.8,
+  totalReviews: 21,
+  googlePlaceId: '0x885825326c271a2d:0x1891ea6ec8837f87',
+  writeReviewUrl: 'https://www.google.com/search?q=upstate+hot+tubs&rlz=1C5CHFA_enUS1182US1182#lrd=0x885825326c271a2d:0x1891ea6ec8837f87,3,,,,',
+  viewAllUrl: 'https://www.google.com/search?q=upstate+hot+tubs&rlz=1C5CHFA_enUS1182US1182#lrd=0x885825326c271a2d:0x1891ea6ec8837f87,1,,,,',
+  reviews: [
+    {
+      name: 'Al Waters',
+      rating: 5,
+      text: 'We searched around and found Mike had the best price and service. Very happy with our purchase!',
+      date: 'Recent',
+      initial: 'A'
+    },
+    {
+      name: 'John Albright',
+      rating: 5,
+      text: 'Best prices and customer service around!! Highly recommend Upstate Hot Tubs to anyone looking for quality products.',
+      date: 'Recent',
+      initial: 'J'
+    },
+    {
+      name: 'Scott Anderson',
+      rating: 5,
+      text: 'Amazing company! Excellent communication throughout the entire hot tub purchase process. Couldn\'t be happier!',
+      date: 'Recent',
+      initial: 'S'
+    },
+    {
+      name: 'The Food Nanny',
+      rating: 5,
+      text: '2 years later and our hot tub is still something we use ALL the time. Great quality and service!',
+      date: 'Recent',
+      initial: 'T'
+    },
+    {
+      name: 'Veterans of Public Safety',
+      rating: 5,
+      text: 'Upstate Hot Tubs offers discounts to first responders. Great company that supports our community!',
+      date: 'Recent',
+      initial: 'V'
+    }
+  ]
+};
+
+// Star Rating Component
+const StarRating = ({ rating, size = 20 }) => (
+  <div className="flex gap-0.5">
+    {[1, 2, 3, 4, 5].map((star) => (
+      <Star
+        key={star}
+        size={size}
+        className={star <= rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}
+      />
+    ))}
+  </div>
+);
+
+// Review Card Component
+const ReviewCard = ({ review }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow"
+  >
+    <div className="flex items-start gap-4 mb-4">
+      <div className="w-12 h-12 bg-gradient-to-br from-[#B91C1C] to-[#7f1d1d] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+        {review.initial}
+      </div>
+      <div className="flex-1">
+        <h4 className="font-semibold text-[#0A1628]">{review.name}</h4>
+        <div className="flex items-center gap-2 mt-1">
+          <StarRating rating={review.rating} size={16} />
+          <span className="text-sm text-slate-500">{review.date}</span>
+        </div>
+      </div>
+      <img 
+        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
+        alt="Google" 
+        className="h-5 opacity-70"
+      />
+    </div>
+    <p className="text-slate-600 leading-relaxed">"{review.text}"</p>
+  </motion.div>
+);
 
 const AboutPage = () => {
   return (
@@ -68,6 +156,68 @@ const AboutPage = () => {
                   <p className="text-slate-600">{value.desc}</p>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+          
+          {/* Google Reviews Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="text-center mb-10">
+              <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-[#0A1628] mb-4">
+                What Our Customers Say
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
+                Don't just take our word for it - hear from our satisfied customers on Google
+              </p>
+              
+              {/* Overall Rating Summary */}
+              <div className="bg-white p-6 shadow-lg inline-flex items-center gap-6 mb-8">
+                <img 
+                  src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
+                  alt="Google" 
+                  className="h-8"
+                />
+                <div className="text-left">
+                  <div className="flex items-center gap-2">
+                    <span className="text-4xl font-bold text-[#0A1628]">{GOOGLE_REVIEWS.rating}</span>
+                    <StarRating rating={5} size={24} />
+                  </div>
+                  <p className="text-slate-500">Based on {GOOGLE_REVIEWS.totalReviews} reviews</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Reviews Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              {GOOGLE_REVIEWS.reviews.map((review, idx) => (
+                <ReviewCard key={idx} review={review} />
+              ))}
+            </div>
+            
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={GOOGLE_REVIEWS.writeReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-[#991b1b] transition-colors shadow-lg"
+              >
+                <MessageSquarePlus size={20} />
+                Leave Us a Review
+              </a>
+              <a
+                href={GOOGLE_REVIEWS.viewAllUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-[#0A1628] px-8 py-4 font-semibold uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-lg border border-slate-200"
+              >
+                View All {GOOGLE_REVIEWS.totalReviews} Reviews
+                <ExternalLink size={18} />
+              </a>
             </div>
           </motion.div>
           

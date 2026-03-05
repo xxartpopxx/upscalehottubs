@@ -19,10 +19,24 @@ const FinancingPage = () => {
   return (
     <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="financing-page">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
+        {/* Hero Banner Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-10 rounded-2xl overflow-hidden shadow-xl"
+        >
+          <img 
+            src="https://customer-assets.emergentagent.com/job_aqua-american/artifacts/8s7knl5c_unnamed.jpg" 
+            alt="Soak Now. Pay Later. Find Financing Now!" 
+            className="w-full h-auto object-cover"
+          />
+        </motion.div>
+
         {/* Main Heading with Relax styling */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
           className="text-center mb-12"
         >
           <h1 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
@@ -37,13 +51,16 @@ const FinancingPage = () => {
         </motion.div>
         
         {/* Financing Company Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {financingOptions.map((fin) => (
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+          {financingOptions.map((fin, index) => (
             <motion.a 
               key={fin.name} 
               href={fin.href} 
               target="_blank" 
               rel="noopener noreferrer" 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 + index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }} 
               className="bg-white border-2 border-slate-200 p-8 hover:border-[#B91C1C] hover:shadow-xl transition-all text-center block rounded-xl"
             >
@@ -55,6 +72,20 @@ const FinancingPage = () => {
             </motion.a>
           ))}
         </div>
+
+        {/* Second Image - Lifestyle */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="rounded-2xl overflow-hidden shadow-xl"
+        >
+          <img 
+            src="https://customer-assets.emergentagent.com/job_aqua-american/artifacts/k9xx8z28_unnamed-1.jpg" 
+            alt="Enjoy your hot tub with flexible financing" 
+            className="w-full h-auto object-cover"
+          />
+        </motion.div>
       </div>
     </div>
   );

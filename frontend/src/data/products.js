@@ -4,6 +4,18 @@
 // Base URL for Grand River Spas color visualizer images
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
 
+// Grand River Spas 2025 Brochure URLs (with page anchors)
+const GR_BROCHURE_BASE = 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf';
+const GR_BROCHURES = {
+  saginaw: `${GR_BROCHURE_BASE}#page=8`,
+  thornapple: `${GR_BROCHURE_BASE}#page=9`,
+  muskegon: `${GR_BROCHURE_BASE}#page=10`,
+  sturgeon: `${GR_BROCHURE_BASE}#page=11`,
+  manistee: `${GR_BROCHURE_BASE}#page=12`,
+  eco: `${GR_BROCHURE_BASE}#page=15`,
+  full: GR_BROCHURE_BASE,
+};
+
 // Generate color combo image URL for Grand River Spas
 const getGRColorImage = (model, shell, cabinet, corner = null) => {
   const shellName = shell.charAt(0).toUpperCase() + shell.slice(1);
@@ -195,6 +207,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/60amp',
     description: 'Premium 6-person hot tub with advanced jet system and LED lighting.',
     features: ['61 therapeutic jets', 'Advanced LED lighting', 'Open seating design', 'Premium insulation'],
+    brochure: GR_BROCHURES.saginaw,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_Coastal_Side-768x576.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_OH.png?lossy=2&strip=1&webp=1'
@@ -219,6 +232,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/50amp',
     description: 'Well-rounded 6-person spa with quality hydrotherapy.',
     features: ['35 jets', 'Lounge seating', 'LED lighting', 'Cascade water feature'],
+    brochure: GR_BROCHURES.saginaw,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_1_White_Walnut_Black_Side-768x542.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_1_Silver_OH_web-768x768.png?lossy=2&strip=1&webp=1'
@@ -243,6 +257,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/60amp',
     description: 'Thoughtfully designed lounger with unique knee and calf jets.',
     features: ['Unique knee and calf jets', 'Lounger seating', '56 jets', 'Cascade water feature'],
+    brochure: GR_BROCHURES.thornapple,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple2_White_OH.png?lossy=2&strip=1&webp=1'
@@ -267,6 +282,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/60amp',
     description: 'Comfortable lounger with excellent jet coverage.',
     features: ['Lounger seating', '46 jets', 'LED lighting', 'Value pricing'],
+    brochure: GR_BROCHURES.thornapple,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple1_White_OH.png?lossy=2&strip=1&webp=1'
@@ -291,6 +307,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/60amp',
     description: 'Spacious 7-person open-seating spa with powerful hydrotherapy.',
     features: ['7-person capacity', '56 jets', 'Open seating', 'LED lighting'],
+    brochure: GR_BROCHURES.muskegon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon2_White_CoastalGray_Side-768x499.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegeon_2_White_OH.png?lossy=2&strip=1&webp=1'
@@ -315,6 +332,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/50amp',
     description: 'Great value 6-person spa with Adirondack-style lounger.',
     features: ['6-person capacity', '28 jets', 'Lounge seating', 'Infinity Edge water feature'],
+    brochure: GR_BROCHURES.muskegon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon1_White_Black_Side-768x498.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegeon_1_White_OH-768x768.png?lossy=2&strip=1&webp=1'
@@ -339,6 +357,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/60amp',
     description: 'Value-packed 6-person spa with quality construction.',
     features: ['50 jets', 'Quality construction', 'LED lighting', 'Value pricing'],
+    brochure: GR_BROCHURES.sturgeon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
       overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%201-2_Silver_OH.png'
@@ -363,6 +382,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/60amp',
     description: 'Excellent entry-level Premier Series hot tub.',
     features: ['40 jets', 'Open seating', 'LED lighting', 'Entry-level Premier'],
+    brochure: GR_BROCHURES.sturgeon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
       overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%201-2_Silver_OH.png'
@@ -387,6 +407,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '220v convertible',
     description: 'Compact 3-person hot tub perfect for smaller spaces with 220v power.',
     features: ['Compact design', '220v power', '33 jets', 'Perfect for couples'],
+    brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_Swift_White_OH.png?lossy=2&strip=1&webp=1'
@@ -411,6 +432,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/40amp',
     description: 'Round 5-person hot tub with LED lights and therapeutic jets with 220v power.',
     features: ['Round design', '20 jets', 'Seating for 5', 'LED lighting', '220v power'],
+    brochure: GR_BROCHURES.manistee,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_White_Taupe_Side-768x672.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee-ManisteeEco_White_OH-768x768.png?lossy=2&strip=1&webp=1'
@@ -436,6 +458,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '240v/40amp',
     description: 'Eco-friendly 6-person hot tub with value pricing.',
     features: ['Eco-friendly design', '35 jets', '6-person capacity', 'Budget-friendly'],
+    brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
       overhead: 'https://grandriverspas.com/wp-content/uploads/2025/06/GR_Sturgeon%201-2_Silver_OH.png'
@@ -459,6 +482,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '120v/15amp',
     description: 'Budget-friendly compact 3-person hot tub with plug-and-play 120v.',
     features: ['Plug-and-play', 'Compact design', '25 jets', '120v power'],
+    brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_Swift_White_OH.png?lossy=2&strip=1&webp=1'
@@ -482,6 +506,7 @@ export const GRAND_RIVER_PRODUCTS = [
     electrical: '120v/15amp',
     description: 'Plug-and-play round 5-person Eco Series hot tub with 120v.',
     features: ['Plug-and-play 120v', '20 jets', '5-person capacity', 'Great value'],
+    brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_Eco_Opal_Walnut_Side-768x576.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee-ManisteeEco_Opal_OH-768x768.png?lossy=2&strip=1&webp=1'
@@ -887,6 +912,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '3975 lbs',
     description: '5-person lounger with 73 jets and illuminated waterfall.',
     features: ['Illuminated Waterfall', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    brochure: '/brochures/NASSAU_ROYALE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_cbdbc08c5de94874956a54d800585201~mv2.webp'
     },
@@ -1049,6 +1075,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '3200 lbs',
     description: '5-person lounger with comfortable seating and 45 jets. Plug-and-play 110v convenience.',
     features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    brochure: '/brochures/TREASURE_CAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_d5dd6e6b07c84184a58183333213387f~mv2.jpg'
     },
@@ -1075,6 +1102,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filledWeight: '3200 lbs',
     description: '5-person lounger with comfortable seating and 45 jets. 220v for faster heating.',
     features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    brochure: '/brochures/TREASURE_CAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_d5dd6e6b07c84184a58183333213387f~mv2.jpg'
     },

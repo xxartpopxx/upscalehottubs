@@ -480,6 +480,63 @@ const FreeItemsSection = () => {
   );
 };
 
+// NEW Financing Section - Flexible Payment Options
+const FinancingSection = () => (
+  <section className="py-12 md:py-16" style={{
+    background: 'linear-gradient(135deg, #1E40AF 0%, #0A1628 50%, #1E40AF 100%)'
+  }}>
+    <div className="max-w-6xl mx-auto px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center"
+      >
+        <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase text-white mb-4">
+          <span className="text-[#D4AF37]">Relax…</span> We Have Flexible Payment Options
+        </h2>
+        <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto mb-8">
+          Low monthly payment options on approved credit for our hot tubs, swim spas, cold plunges, and saunas!
+        </p>
+        <p className="text-xl md:text-2xl font-bold text-[#D4AF37] mb-8">
+          Choose Our Financial Lending Provider Below
+        </p>
+        
+        {/* Financing Company Cards */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <motion.a
+            href="https://www.lightstream.com/hot-tub-financing"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -5, scale: 1.02 }}
+            className="bg-white rounded-xl p-6 md:p-8 text-center shadow-xl hover:shadow-2xl transition-all"
+          >
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold text-[#0A1628] mb-3">LightStream</h3>
+            <p className="text-slate-600 mb-4">Hot Tub Financing made simple</p>
+            <span className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#991B1B] transition-colors">
+              Apply Now <ChevronRight size={20} />
+            </span>
+          </motion.a>
+          
+          <motion.a
+            href="https://www.hfsfinancial.net/promo/681a2e80e67418f6142e1b65/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -5, scale: 1.02 }}
+            className="bg-white rounded-xl p-6 md:p-8 text-center shadow-xl hover:shadow-2xl transition-all"
+          >
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold text-[#0A1628] mb-3">HFS Financial</h3>
+            <p className="text-slate-600 mb-4">Swimming Pool & Hot Tub Financing</p>
+            <span className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#991B1B] transition-colors">
+              Apply Now <ChevronRight size={20} />
+            </span>
+          </motion.a>
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
 // NEW Try Before You Buy - Wet Test Section - Filled with logo, images, big text
 const WetTestSection = () => (
   <section style={lightGradientBg} data-testid="wet-test-section">
@@ -509,12 +566,20 @@ const WetTestSection = () => (
         className="md:w-1/2 bg-[#0A1628] text-white p-6 md:p-8 lg:p-10 flex flex-col justify-between"
         {...mobileMotionProps}
       >
-        {/* Logo at top - Use OLD logo for Family Owned section */}
-        <div className="flex items-center gap-4 mb-4">
-          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs" width="96" height="96" loading="lazy" className="h-16 md:h-20 lg:h-24 object-contain" />
+        {/* BIGGER Family Owned Section with Red White Blue Theme */}
+        <div className="flex items-center gap-4 mb-6">
+          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs - Made in USA" width="120" height="120" loading="lazy" className="h-24 md:h-28 lg:h-32 object-contain" />
           <div>
-            <p className="font-['Barlow_Condensed'] text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wider text-white/80">Family Owned</p>
-            <p className="font-['Barlow_Condensed'] text-base md:text-lg text-[#D4AF37] font-semibold">American Made & Proud</p>
+            <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider">
+              <span className="text-white">Family Owned</span>
+            </h2>
+            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase">
+              <span className="text-[#B91C1C]">American</span>{' '}
+              <span className="text-white">Made</span>{' '}
+              <span className="text-[#1E40AF]">&</span>{' '}
+              <span className="text-[#B91C1C]">Proud</span>{' '}
+              <span className="text-white">Of It</span>
+            </h3>
           </div>
         </div>
 
@@ -539,15 +604,19 @@ const WetTestSection = () => (
         <ul className="space-y-2 mb-5 text-lg md:text-xl lg:text-2xl">
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            Free delivery & installation in SC
+            <span><span className="font-bold text-[#D4AF37]">FREE</span> Delivery, Installation & Set Up</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            Accessories included <span className="font-bold text-[#D4AF37]">— $1,500 Value FREE!</span>
+            <span><span className="font-bold text-[#D4AF37]">FREE</span> Cover, Cover Lifter, Steps & Chemicals</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            Military & First Responder discounts
+            <span className="font-bold text-white">In House Service Technicians</span>
+          </li>
+          <li className="flex items-start gap-3 text-white/90">
+            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+            <span>Military & First Responder Discounts — <span className="font-bold text-[#D4AF37]">Thank You For Your Service!</span></span>
           </li>
         </ul>
         
@@ -595,12 +664,12 @@ const ResourceCardsSection = () => {
   const cards = [
     {
       title: 'Owner Resources',
-      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=400&fit=crop',
+      image: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/x5g3fq2x_unnamed-1.jpg',
       link: '/about',
     },
     {
       title: 'Get a Brochure',
-      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop',
+      image: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/p1gdlokp_unnamed.jpg',
       link: '/brochures',
     },
     {
@@ -1396,16 +1465,19 @@ const HomePage = () => {
       {/* 8. Free Items Section */}
       <FreeItemsSection />
       
-      {/* 9. The Collection (Grand River & Dynasty) */}
+      {/* 9. Financing Section */}
+      <FinancingSection />
+      
+      {/* 10. The Collection (Grand River & Dynasty) */}
       <LocationCollectionSection />
       
-      {/* 10. Product Comparison */}
+      {/* 11. Product Comparison */}
       <ComparisonSection />
       
-      {/* 11. Resource Cards */}
+      {/* 12. Resource Cards */}
       <ResourceCardsSection />
       
-      {/* 12. AR Visualizer Section */}
+      {/* 13. AR Visualizer Section */}
       <ARVisualizerSection />
     </>
   );

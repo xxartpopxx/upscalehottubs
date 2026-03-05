@@ -37,7 +37,7 @@ export const CONTACT = {
   phone: '(864) 837-0155',
   email: 'info@upstatehottubs.com',
   address: '1004 West Georgia Rd, Simpsonville, SC 29680',
-  hours: 'Always Open',
+  hours: 'Call us and we will open when you can come. We will set up apt for you.',
   serviceAreas: ['Fountain Inn, SC', 'Mauldin, SC', 'Spartanburg, SC', 'Anderson, SC', 'Greenville, SC', 'Greer, SC', 'Five Forks, SC', 'Simpsonville, SC'],
 };
 

@@ -7,8 +7,7 @@ import { ASSETS } from '../data/constants';
 
 // Google Reviews Data - Real reviews from Google Business Profile
 const GOOGLE_REVIEWS = {
-  rating: 4.8,
-  totalReviews: 21,
+  rating: 5,
   googlePlaceId: '0x885825326c271a2d:0x1891ea6ec8837f87',
   writeReviewUrl: 'https://www.google.com/search?q=upstate+hot+tubs&rlz=1C5CHFA_enUS1182US1182#lrd=0x885825326c271a2d:0x1891ea6ec8837f87,3,,,,',
   viewAllUrl: 'https://www.google.com/search?q=upstate+hot+tubs&rlz=1C5CHFA_enUS1182US1182#lrd=0x885825326c271a2d:0x1891ea6ec8837f87,1,,,,',
@@ -288,10 +287,10 @@ const AboutPage = () => {
                 />
                 <div className="text-left">
                   <div className="flex items-center gap-2">
-                    <span className="text-4xl font-bold text-[#0A1628]">{GOOGLE_REVIEWS.rating}</span>
+                    <span className="text-4xl font-bold text-[#0A1628]">5</span>
                     <StarRating rating={5} size={24} />
                   </div>
-                  <p className="text-slate-500">Based on {GOOGLE_REVIEWS.totalReviews} reviews</p>
+                  <p className="text-slate-500">5 Star Reviews</p>
                 </div>
               </div>
             </div>
@@ -316,7 +315,7 @@ const AboutPage = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-[#0A1628] px-8 py-4 font-semibold uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-lg border border-slate-200 rounded-lg"
               >
-                View All {GOOGLE_REVIEWS.totalReviews} Reviews
+                View All Reviews
                 <ExternalLink size={18} />
               </a>
             </div>

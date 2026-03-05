@@ -102,6 +102,10 @@ const ContactForm = () => {
             <option value="swim-spa">Swim Spa</option>
             <option value="sauna">Sauna</option>
             <option value="cold-plunge">Cold Plunge</option>
+            <option value="wet-test">Wet Test</option>
+            <option value="service-call">Service Call</option>
+            <option value="chemicals">Chemicals</option>
+            <option value="accessories">Accessories</option>
             <option value="other">Other</option>
           </select>
         </div>

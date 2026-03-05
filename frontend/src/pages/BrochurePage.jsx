@@ -5,9 +5,20 @@ import { FileText, Download, Phone, Send, Flag } from 'lucide-react';
 import { CONTACT } from '../data/constants';
 
 const brochures = [
+  { name: '2025 Grand River Spas Full Brochure', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf', category: 'Full Catalog' },
   { name: '2025 Dynasty Full Brochure', file: '/brochures/2025_DYNASTY_FULL_BROCHURE.pdf', category: 'Full Catalog' },
   { name: 'Family Collection', file: '/brochures/FAMILY_COLLECTION_PRODUCT_SHEET.pdf', category: 'Collection' },
   { name: 'Swim Spa Collection', file: '/brochures/SWIM_SPA_COLLECTION_PRODUCT_SHEET.pdf', category: 'Collection' },
+  // Grand River Spas - Premier Series
+  { name: 'Saginaw (Premier)', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=8', category: 'Grand River Spas' },
+  { name: 'Thornapple (Premier)', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=9', category: 'Grand River Spas' },
+  { name: 'Muskegon (Premier)', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=10', category: 'Grand River Spas' },
+  { name: 'Sturgeon (Premier)', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=11', category: 'Grand River Spas' },
+  { name: 'Manistee (Premier)', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=12', category: 'Grand River Spas' },
+  // Grand River Spas - Eco Series
+  { name: 'Sturgeon Eco', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=15', category: 'Grand River Spas' },
+  { name: 'Manistee Eco', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=15', category: 'Grand River Spas' },
+  // Dynasty Spas
   { name: 'Paradise Bay', file: '/brochures/PARADISE_BAY_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
   { name: 'Palm Island', file: '/brochures/PALM_ISLAND_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
   { name: 'Pleasure Cove', file: '/brochures/PLEASURE_COVE_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
@@ -157,7 +168,7 @@ const ContactForm = () => {
 const BrochurePage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   
-  const categories = ['all', 'Full Catalog', 'Collection', 'Dynasty Spas'];
+  const categories = ['all', 'Full Catalog', 'Collection', 'Grand River Spas', 'Dynasty Spas'];
   
   const filteredBrochures = selectedCategory === 'all' 
     ? brochures 

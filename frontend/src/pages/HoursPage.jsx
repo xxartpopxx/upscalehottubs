@@ -27,9 +27,6 @@ const HoursPage = () => {
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           {/* Hero */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#B91C1C] rounded-full mb-6">
-              <Clock className="text-white" size={40} />
-            </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
               Store <span className="text-[#B91C1C]">Hours</span>
             </h1>

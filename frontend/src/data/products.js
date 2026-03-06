@@ -2818,56 +2818,231 @@ export const SAUNAS = [
 ];
 
 export const COLD_PLUNGES = [
+  // All-in-One Cold Plunge Systems
   {
-    id: 'cp-endurance',
-    name: 'Endurance Cold Plunge Bundle',
-    brand: 'Icebound',
-    series: 'Endurance',
-    price: '$2,999.00',
-    priceValue: 2999,
-    description: 'Transform your recovery routine with the Endurance Plunge Bundle – your personal polar paradise. This premium package combines a spacious inflatable tub with a powerful 1HP chiller.',
-    longDescription: 'Transform your recovery routine with the Endurance Plunge Bundle – your personal polar paradise. This premium package combines our spacious inflatable tub with a powerful 1HP chiller, delivering temperatures from 37°F to 107.6°F. With WiFi controls, Ozone sanitization, a 5-micron filter, and a self-priming pump, it\'s the ultimate portable solution for serious athletes.',
+    id: 'cp-endeavor-xl',
+    name: 'Endeavor XL Plunge + Chiller',
+    brand: 'Icebound Essentials',
+    series: 'Endeavor',
+    price: '$1,699.00',
+    originalPrice: '$2,399.00',
+    priceValue: 1699,
+    category: 'Cold Plunge',
+    description: 'The Endeavor XL is our longest tub, built for plungers taller than 6\'3". Classic oval inflatable design with insulated walls.',
+    longDescription: 'The Endeavor XL is our longest tub, built for plungers taller than 6\'3" (150 gal, fits 2). Features classic oval inflatable design with insulated walls, fast cooling to 37°F and heating up to 107°F, plus WiFi & app-enabled chiller control.',
     features: [
-      'Professional-Grade Temperature Control (37°F to 107.6°F)',
-      'WiFi-enabled app control',
-      '1HP Water Chiller + Heater',
+      'Longest tub - built for plungers taller than 6\'3"',
+      '150 gallon capacity, fits 2 comfortably',
+      'Classic oval inflatable design with insulated walls',
+      'Fast cooling to 37°F and heating up to 107°F',
+      'WiFi & app-enabled chiller control',
+      '1HP Pro Chiller included',
       'Ozone sanitization system',
       '5-micron filtration',
-      'Fits two adults comfortably',
-      'Dimensions: 63" × 38.5" × 26"',
-      'Max Capacity: 155 gallons',
-      'Indoor/outdoor versatility'
+      'UV-resistant, indoor & outdoor use'
+    ],
+    specs: {
+      dimensions: '71" x 31.5" x 26"',
+      capacity: '150 gallons',
+      tempRange: '37°F to 107°F',
+      power: '1HP Chiller',
+      seating: '2 Adults'
+    },
+    images: {
+      primary: 'https://iceboundessentials.com/cdn/shop/files/3-min.png?v=1763395067&width=800',
+      overhead: 'https://iceboundessentials.com/cdn/shop/files/3-min.png?v=1763395067&width=800'
+    }
+  },
+  {
+    id: 'cp-endurance-limited',
+    name: 'Endurance Limited Edition Plunge + Chiller',
+    brand: 'Icebound Essentials',
+    series: 'Endurance',
+    price: '$1,999.00',
+    originalPrice: '$2,799.00',
+    priceValue: 1999,
+    category: 'Cold Plunge',
+    description: 'Choose Big Tex burnt orange or Hot Pink limited edition tub. 155-gallon Endurance tub with double-slipper comfort design.',
+    longDescription: 'The Endurance Limited Edition features our signature double-slipper comfort design in Big Tex burnt orange or Hot Pink limited edition colors. Fast heating & cooling from 37–107°F with WiFi & app-enabled chiller control.',
+    features: [
+      'Limited edition Big Tex Burnt Orange or Hot Pink colors',
+      '155-gallon capacity with double-slipper comfort design',
+      'Fits 2 comfortably',
+      'Fast heating & cooling: 37°F to 107°F',
+      'WiFi & app-enabled chiller control',
+      '1HP Pro Chiller included',
+      'Ozone sanitization system',
+      'Ultra-durable, drop-stitch build',
+      'UV-resistant, indoor & outdoor use'
     ],
     specs: {
       dimensions: '63" × 38.5" × 26"',
       capacity: '155 gallons',
-      tempRange: '37°F to 107.6°F',
-      power: '1HP Chiller'
+      tempRange: '37°F to 107°F',
+      power: '1HP Chiller',
+      seating: '2 Adults'
     },
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_4888e9c65f014715a52d6f4282ea0929~mv2.png/v1/fill/w_487,h_487,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_4888e9c65f014715a52d6f4282ea0929~mv2.png',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_b188f0afaa784b1f9b2968c342fa437b~mv2.png/v1/fill/w_487,h_487,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_b188f0afaa784b1f9b2968c342fa437b~mv2.png'
+      primary: 'https://iceboundessentials.com/cdn/shop/files/orange_endurance_card.jpg?v=1765826555&width=800',
+      overhead: 'https://iceboundessentials.com/cdn/shop/files/orange_endurance_card.jpg?v=1765826555&width=800'
+    }
+  },
+  {
+    id: 'cp-endurance-classic',
+    name: 'Endurance Classic Plunge + Chiller',
+    brand: 'Icebound Essentials',
+    series: 'Endurance',
+    price: '$1,999.00',
+    originalPrice: '$2,799.00',
+    priceValue: 1999,
+    category: 'Cold Plunge',
+    description: 'Choose French Gray or Cool Gray Endurance tub. 155-gallon with double-slipper comfort design.',
+    longDescription: 'The Endurance Classic features our signature double-slipper comfort design in elegant French Gray or Cool Gray. Fast heating & cooling from 37–107°F with WiFi & app-enabled chiller control.',
+    features: [
+      'French Gray or Cool Gray color options',
+      '155-gallon capacity with double-slipper comfort design',
+      'Fits 2 comfortably',
+      'Fast heating & cooling: 37°F to 107°F',
+      'WiFi & app-enabled chiller control',
+      '1HP Pro Chiller included',
+      'Ozone sanitization system',
+      'Ultra-durable, drop-stitch build',
+      'UV-resistant, indoor & outdoor use'
+    ],
+    specs: {
+      dimensions: '63" × 38.5" × 26"',
+      capacity: '155 gallons',
+      tempRange: '37°F to 107°F',
+      power: '1HP Chiller',
+      seating: '2 Adults'
+    },
+    images: {
+      primary: 'https://iceboundessentials.com/cdn/shop/files/french_gray_endurance_card.jpg?v=1765826744&width=800',
+      overhead: 'https://iceboundessentials.com/cdn/shop/files/french_gray_endurance_card.jpg?v=1765826744&width=800'
     }
   },
   {
     id: 'cp-resolute-pro',
     name: 'The Resolute Pro',
-    brand: 'Icebound',
+    brand: 'Icebound Essentials',
     series: 'Resolute',
-    price: '$7,999.00',
-    priceValue: 7999,
-    description: 'Professional-grade cold plunge for serious recovery and wellness. The Resolute Pro offers premium construction and advanced temperature control for athletes and wellness enthusiasts.',
+    price: '$6,999.00',
+    originalPrice: '$8,999.00',
+    priceValue: 6999,
+    category: 'Cold Plunge',
+    description: 'Sleek acrylic tub with matte black details. Energy efficient heat pump with fast heating & cooling.',
+    longDescription: 'The Resolute Pro features a sleek acrylic tub with matte black details. Energy efficient heat pump with fast heating & cooling from 40–104°F. Wi-Fi & app-enabled scheduling included.',
     features: [
-      'Professional-grade construction',
-      'Advanced temperature control',
-      'Premium insulated design',
-      'Easy maintenance',
+      'Sleek acrylic tub with matte black details',
+      'Energy efficient heat pump',
+      'Fast heating & cooling: 40°F to 104°F',
+      'Wi-Fi & app-enabled scheduling',
+      'Premium construction',
       'Built for daily use',
-      'Commercial-grade durability'
+      'Commercial-grade durability',
+      'White glove delivery included'
     ],
+    specs: {
+      dimensions: 'Acrylic Tub',
+      capacity: 'Full Size',
+      tempRange: '40°F to 104°F',
+      power: 'Heat Pump',
+      seating: '1 Adult'
+    },
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_c8b890519518456695312043eb9b8256~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_c8b890519518456695312043eb9b8256~mv2.jpg',
-      overhead: 'https://static.wixstatic.com/media/5c7c78_d0866f32060c4474b537bab6b8a5f1ff~mv2.jpg/v1/fill/w_487,h_487,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c7c78_d0866f32060c4474b537bab6b8a5f1ff~mv2.jpg'
+      primary: 'https://iceboundessentials.com/cdn/shop/files/ResoluteProPremiumColdPlunge.png?v=1744325052&width=800',
+      overhead: 'https://iceboundessentials.com/cdn/shop/files/ResoluteProPremiumColdPlunge.png?v=1744325052&width=800'
+    }
+  },
+  // Cold Plunge Tubs Only (without chiller)
+  {
+    id: 'cp-endurance-classic-tub',
+    name: 'Endurance Classic Plunge Tub',
+    brand: 'Icebound Essentials',
+    series: 'Endurance',
+    price: '$1,999.00',
+    priceValue: 1999,
+    category: 'Cold Plunge Tub',
+    description: 'Our signature, double-slipper Endurance tub in French Gray and Cool Gray. Fits 2 comfortably, 155 gallon capacity.',
+    longDescription: 'Our signature, double-slipper Endurance tub available in French Gray and Cool Gray. Features ultra-durable, drop-stitch build with chiller-ready connections. UV-resistant for indoor & outdoor use.',
+    features: [
+      'French Gray or Cool Gray color options',
+      'Fits 2 comfortably, 155 gallon capacity',
+      'Ultra-durable, drop-stitch build',
+      'Chiller-ready connections',
+      'UV-resistant, indoor & outdoor use',
+      'Double-slipper comfort design',
+      'Ready for rafting the Colorado (balance required)'
+    ],
+    specs: {
+      dimensions: '63" × 38.5" × 26"',
+      capacity: '155 gallons',
+      seating: '2 Adults',
+      material: 'Drop-stitch inflatable'
+    },
+    images: {
+      primary: 'https://iceboundessentials.com/cdn/shop/files/french_gray_endurance_card.jpg?v=1765826744&width=800',
+      overhead: 'https://iceboundessentials.com/cdn/shop/files/french_gray_endurance_card.jpg?v=1765826744&width=800'
+    }
+  },
+  {
+    id: 'cp-endurance-limited-tub',
+    name: 'Endurance Limited Edition Plunge Tub',
+    brand: 'Icebound Essentials',
+    series: 'Endurance',
+    price: '$799.99',
+    originalPrice: '$899.99',
+    priceValue: 799.99,
+    category: 'Cold Plunge Tub',
+    description: 'Our signature Endurance tub in limited edition Big Tex Burnt Orange or Hot Pink colors. 155 gallon capacity.',
+    longDescription: 'Our signature Endurance tub available in limited edition Big Tex Burnt Orange or Hot Pink colors. Features ultra-durable, drop-stitch build with chiller-ready connections. UV-resistant for indoor & outdoor use.',
+    features: [
+      'Limited edition Big Tex Burnt Orange or Hot Pink colors',
+      'Fits 2 comfortably, 155 gallon capacity',
+      'Ultra-durable, drop-stitch build',
+      'Chiller-ready connections',
+      'UV-resistant, indoor & outdoor use',
+      'Double-slipper comfort design'
+    ],
+    specs: {
+      dimensions: '63" × 38.5" × 26"',
+      capacity: '155 gallons',
+      seating: '2 Adults',
+      material: 'Drop-stitch inflatable'
+    },
+    images: {
+      primary: 'https://iceboundessentials.com/cdn/shop/files/orange_endurance_card.jpg?v=1765826555&width=800',
+      overhead: 'https://iceboundessentials.com/cdn/shop/files/orange_endurance_card.jpg?v=1765826555&width=800'
+    }
+  },
+  {
+    id: 'cp-endeavor-xl-tub',
+    name: 'Endeavor XL Plunge Tub',
+    brand: 'Icebound Essentials',
+    series: 'Endeavor',
+    price: '$449.99',
+    originalPrice: '$599.99',
+    priceValue: 449.99,
+    category: 'Cold Plunge Tub',
+    description: 'Classic oval-design, all black for those who prefer a matte finish. 150 gallon capacity, fits 2 comfortably.',
+    longDescription: 'Classic oval-design, all black for our New Zealand rugby fans or those who prefer a matte finish. Fits 2 comfortably with 150 gallon capacity. Ultra-durable, drop-stitch build. Our top seller in the US military community.',
+    features: [
+      'Classic oval design, all black matte finish',
+      'Fits 2 comfortably, 150 gallon capacity',
+      'Ultra-durable, drop-stitch build',
+      'Top seller in US military community',
+      'Chiller-ready connections',
+      'UV-resistant, indoor & outdoor use'
+    ],
+    specs: {
+      dimensions: '71" x 31.5" x 26"',
+      capacity: '150 gallons',
+      seating: '2 Adults',
+      material: 'Drop-stitch inflatable'
+    },
+    images: {
+      primary: 'https://iceboundessentials.com/cdn/shop/files/endeavor_cold_plunge_tub_1.png?v=1729458216&width=800',
+      overhead: 'https://iceboundessentials.com/cdn/shop/files/endeavor_cold_plunge_tub_1.png?v=1729458216&width=800'
     }
   }
 ];

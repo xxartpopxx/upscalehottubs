@@ -10,6 +10,10 @@ const CoversPage = () => {
     email: '',
     phone: '',
     productInterest: '',
+    coverLength: '',
+    coverWidth: '',
+    manufacturer: '',
+    coverColor: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -56,7 +60,7 @@ const CoversPage = () => {
     // Reset form after 5 seconds
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', productInterest: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', productInterest: '', coverLength: '', coverWidth: '', manufacturer: '', coverColor: '', message: '' });
     }, 5000);
   };
 
@@ -228,6 +232,85 @@ const CoversPage = () => {
                       </select>
                     </div>
                   </div>
+                  
+                  {/* Spa Cover Specific Fields - Show when spa-cover is selected */}
+                  {formData.productInterest === 'spa-cover' && (
+                    <motion.div 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      className="bg-slate-50 p-6 rounded-lg border border-slate-200"
+                    >
+                      <h4 className="font-['Barlow_Condensed'] text-lg font-bold text-[#0A1628] mb-4">
+                        Spa Cover Specifications
+                      </h4>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-semibold text-[#0A1628] mb-2">
+                            Cover Length (inches) *
+                          </label>
+                          <input
+                            type="text"
+                            name="coverLength"
+                            value={formData.coverLength}
+                            onChange={handleChange}
+                            required={formData.productInterest === 'spa-cover'}
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                            placeholder="e.g., 84"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-[#0A1628] mb-2">
+                            Cover Width (inches) *
+                          </label>
+                          <input
+                            type="text"
+                            name="coverWidth"
+                            value={formData.coverWidth}
+                            onChange={handleChange}
+                            required={formData.productInterest === 'spa-cover'}
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                            placeholder="e.g., 84"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-[#0A1628] mb-2">
+                            Hot Tub Manufacturer *
+                          </label>
+                          <input
+                            type="text"
+                            name="manufacturer"
+                            value={formData.manufacturer}
+                            onChange={handleChange}
+                            required={formData.productInterest === 'spa-cover'}
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                            placeholder="e.g., Dynasty Spas, Grand River, etc."
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-[#0A1628] mb-2">
+                            Preferred Cover Color *
+                          </label>
+                          <select
+                            name="coverColor"
+                            value={formData.coverColor}
+                            onChange={handleChange}
+                            required={formData.productInterest === 'spa-cover'}
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                          >
+                            <option value="">Select a color...</option>
+                            <option value="charcoal">Charcoal Gray</option>
+                            <option value="black">Black</option>
+                            <option value="brown">Brown</option>
+                            <option value="taupe">Taupe</option>
+                            <option value="navy">Navy Blue</option>
+                            <option value="forest-green">Forest Green</option>
+                            <option value="burgundy">Burgundy</option>
+                            <option value="other">Other (specify in message)</option>
+                          </select>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
                   
                   <div>
                     <label className="block text-sm font-semibold text-[#0A1628] mb-2">

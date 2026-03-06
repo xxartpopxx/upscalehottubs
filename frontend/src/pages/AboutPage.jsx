@@ -233,6 +233,56 @@ const AboutPage = () => {
             </p>
           </motion.div>
           
+          {/* Showroom Gallery */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-8 text-center">Visit Our Showroom</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="overflow-hidden rounded-lg shadow-lg"
+              >
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_appointment-booking-7/artifacts/1rk1kbns_image-20-e1757132564348-1024x649.png" 
+                  alt="Showroom with couple testing hot tub" 
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="overflow-hidden rounded-lg shadow-lg"
+              >
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_appointment-booking-7/artifacts/9zr7dgsb_image-24-e1757132708159-1024x587.png" 
+                  alt="Store front desk with chemicals display" 
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="overflow-hidden rounded-lg shadow-lg"
+              >
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_appointment-booking-7/artifacts/8rg2a8ar_image-28-1024x559.png" 
+                  alt="Staff helping customers in showroom" 
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+
           {/* Our Values */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 

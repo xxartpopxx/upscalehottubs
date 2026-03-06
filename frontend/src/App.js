@@ -30,6 +30,8 @@ const BalneotherapyPage = lazy(() => import('./pages/BalneotherapyPage'));
 const JetsPage = lazy(() => import('./pages/JetsPage'));
 const ARVisualizerPage = lazy(() => import('./pages/ARVisualizerPage'));
 const BrochurePage = lazy(() => import('./pages/BrochurePage'));
+const HoursPage = lazy(() => import('./pages/HoursPage'));
+const ChemicalsPage = lazy(() => import('./pages/ChemicalsPage'));
 
 import './App.css';
 
@@ -75,6 +77,8 @@ function App() {
                 <Route path="/swim-spas" element={<SwimSpasPage />} />
                 <Route path="/saunas" element={<SaunasPage />} />
                 <Route path="/cold-plunges" element={<ColdPlungesPage />} />
+                <Route path="/covers" element={<CoversPage />} />
+                <Route path="/chemicals" element={<ChemicalsPage />} />
                 
                 {/* Product Detail */}
                 <Route path="/products/:id" element={<ProductDetailPage />} />
@@ -84,7 +88,6 @@ function App() {
                 
                 {/* Discover Pages */}
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/covers" element={<CoversPage />} />
                 <Route path="/anatomy-of-a-spa" element={<AnatomyPage />} />
                 <Route path="/balneotherapy" element={<BalneotherapyPage />} />
                 <Route path="/jets" element={<JetsPage />} />
@@ -95,6 +98,9 @@ function App() {
                 
                 {/* Contact */}
                 <Route path="/contact" element={<ContactPage />} />
+                
+                {/* Hours */}
+                <Route path="/hours" element={<HoursPage />} />
                 
                 {/* AR Visualizer */}
                 <Route path="/ar-visualizer" element={<ARVisualizerPage />} />

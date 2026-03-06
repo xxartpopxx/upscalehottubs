@@ -103,9 +103,32 @@ const Footer = () => {
               <div className="flex items-start gap-3 text-slate-700 text-sm">
                 <MapPin size={16} className="text-[#B91C1C] flex-shrink-0 mt-1" /> {CONTACT.address}
               </div>
-              <div className="flex items-center gap-3 text-slate-700 text-sm">
-                <Clock size={16} className="text-[#B91C1C]" /> {CONTACT.hours}
+            </div>
+            
+            {/* Store Hours */}
+            <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mt-6 mb-4 text-[#0A1628]">
+              <span className="flex items-center gap-2"><Clock size={18} className="text-[#B91C1C]" /> Hours</span>
+            </h3>
+            <div className="space-y-1 text-sm">
+              <div className="flex justify-between text-slate-700">
+                <span>Monday</span>
+                <span className="font-medium">Closed - By Appt only</span>
               </div>
+              <div className="flex justify-between text-slate-700">
+                <span>Tuesday-Friday</span>
+                <span className="font-medium">12pm-7pm</span>
+              </div>
+              <div className="flex justify-between text-slate-700">
+                <span>Saturday</span>
+                <span className="font-medium">10am-6pm</span>
+              </div>
+              <div className="flex justify-between text-slate-700">
+                <span>Sunday</span>
+                <span className="font-medium">12pm-4pm</span>
+              </div>
+              <p className="text-xs text-slate-500 mt-2 italic">
+                Call us and we will open when you can come. We will set up apt for you.
+              </p>
             </div>
           </div>
           

@@ -1,45 +1,38 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Shield, DollarSign, Zap, Send, Phone, CheckCircle } from 'lucide-react';
+import { Droplets, Shield, Sparkles, Send, Phone, CheckCircle } from 'lucide-react';
 import { CONTACT } from '../data/constants';
 
-const CoversPage = () => {
+const ChemicalsPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    productInterest: '',
+    chemicalType: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const products = [
+
+  const chemicalCategories = [
     {
-      name: 'Pivot Top Mount Cover Lifter',
-      description: 'Spa Cover Lifts - Pivot Top Mount Spa & Hot Tub Cover Lift Removal System. Reinforced Brackets with 3 Hook Towel Rack. Easy off and easy on!',
-      price: '$249.95',
-      images: [
-        'https://static.wixstatic.com/media/5c7c78_e3da0e551763403bba8eddb76d8df413~mv2.jpg/v1/fill/w_568,h_293,q_90,enc_avif,quality_auto/5c7c78_e3da0e551763403bba8eddb76d8df413~mv2.jpg',
-        'https://static.wixstatic.com/media/5c7c78_d4fdcd6b4fbb4a3daeb5ad227de043d7~mv2.jpg/v1/fill/w_568,h_293,q_90,enc_avif,quality_auto/5c7c78_d4fdcd6b4fbb4a3daeb5ad227de043d7~mv2.jpg'
-      ]
+      name: 'Sanitizers',
+      description: 'Chlorine, Bromine & Salt Systems',
+      icon: Shield,
+      products: ['Chlorine Tablets', 'Bromine Tablets', 'Chlorine Granules', 'Salt System Chemicals']
     },
     {
-      name: 'Heavy-Duty Cover Lifter',
-      description: 'Spa Cover Lifts - Heavy-Duty Hot Tub Cover Lifter, No-Drill Spa Cover Lift for 6\'-8\' Hot Tubs. Adjustable Height Arm for Swim Spa Covers, Extra Large Footplate for Stability.',
-      price: '$279.95',
-      images: [
-        'https://static.wixstatic.com/media/5c7c78_d6fbd76b73154fb19fd8064fb802083a~mv2.jpg/v1/fill/w_568,h_293,q_90,enc_avif,quality_auto/5c7c78_d6fbd76b73154fb19fd8064fb802083a~mv2.jpg',
-        'https://static.wixstatic.com/media/5c7c78_f203494deeee4f0d808ee73d60126309~mv2.jpg/v1/fill/w_568,h_293,q_90,enc_avif,quality_auto/5c7c78_f203494deeee4f0d808ee73d60126309~mv2.jpg'
-      ]
+      name: 'Balancers',
+      description: 'pH, Alkalinity & Calcium',
+      icon: Droplets,
+      products: ['pH Increaser', 'pH Decreaser', 'Alkalinity Increaser', 'Calcium Hardness']
     },
     {
-      name: 'Automatic ConvertALift "VacuSeal"',
-      description: 'The Ultimate Conversion System that transforms the VacuSeal Cover into an Automatic Hot Tub Cover Lifter System. Unparalleled convenience, privacy, and safety — making opening your cover the easiest part of enjoying your hot tub or swim spa.',
-      price: '$4,999.00 Installed',
-      images: [
-        'https://static.wixstatic.com/media/5c7c78_481bd0d152d74cca812ac25eb74edb70~mv2.png/v1/fill/w_600,h_640,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/SWIM%20SPAS%20SIMPSONVILLE%20SC%2C%20SWIM%20SPAS%20GREENVILLE%20SC%2C%20SWIM%20SPAS%2C%20SWIM%20SPAS%20IN%20GREENVILLE%20SC%2C.png'
-      ]
+      name: 'Shock Treatments',
+      description: 'Oxidizers & Clarifiers',
+      icon: Sparkles,
+      products: ['Non-Chlorine Shock', 'Chlorine Shock', 'Spa Clarifier', 'Enzyme Treatment']
     }
   ];
 
@@ -53,10 +46,10 @@ const CoversPage = () => {
     setIsSubmitting(false);
     setIsSubmitted(true);
     
-    // Reset form after 5 seconds
+    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', productInterest: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', chemicalType: '', message: '' });
     }, 5000);
   };
 
@@ -66,68 +59,78 @@ const CoversPage = () => {
 
   return (
     <>
-      <Helmet><title>Hot Tub Covers & Lifters | Upstate Hot Tubs</title></Helmet>
-      <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="covers-page">
-        <div className="max-w-6xl mx-auto px-4">
+      <Helmet>
+        <title>Hot Tub & Spa Chemicals | Upstate Hot Tubs</title>
+        <meta name="description" content="Shop premium hot tub and spa chemicals including sanitizers, pH balancers, shock treatments, and more at Upstate Hot Tubs in Simpsonville, SC." />
+      </Helmet>
+      
+      <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="chemicals-page">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           {/* Hero */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
-            <h1 className="font-['Barlow_Condensed'] text-5xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
-              Covers & <span className="text-[#B91C1C]">Cover Lifters</span>
+            <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
+              Hot Tub <span className="text-[#B91C1C]">Chemicals</span>
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">To protect your spa!</p>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Keep your spa water crystal clear and perfectly balanced with our premium chemical products.
+            </p>
           </motion.div>
 
-          {/* Hero Image */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mb-16">
-            <img
-              src="https://static.wixstatic.com/media/5c7c78_1299868b6e804ed5bc7775da81d32a83~mv2.jpg/v1/fill/w_851,h_1121,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dynasty%20Spas%2C%20a%20hot%20tub%20and%20swim%20spa%20man.jpg"
-              alt="Hot Tub Cover"
-              className="w-full max-w-lg mx-auto rounded-lg shadow-xl"
-            />
-          </motion.div>
-
-          {/* Products */}
-          <div className="space-y-16">
-            {products.map((product, idx) => (
+          {/* Chemical Categories */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {chemicalCategories.map((category, idx) => (
               <motion.div
-                key={idx}
+                key={category.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
-                data-testid={`cover-product-${idx}`}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="p-6 lg:p-8">
-                  <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="flex-1">
-                      <h2 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-3">{product.name}</h2>
-                      <p className="text-slate-600 mb-4">{product.description}</p>
-                      <p className="text-3xl font-bold text-[#B91C1C]">{product.price}</p>
-                    </div>
-                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {product.images.map((img, i) => (
-                        <img key={i} src={img} alt={product.name} className="w-full rounded-lg object-cover" />
-                      ))}
-                    </div>
-                  </div>
+                <div className="bg-[#0A1628] p-6 text-center">
+                  <category.icon className="text-white mx-auto mb-3" size={40} />
+                  <h2 className="font-['Barlow_Condensed'] text-2xl font-bold text-white uppercase">
+                    {category.name}
+                  </h2>
+                  <p className="text-slate-300 text-sm">{category.description}</p>
+                </div>
+                <div className="p-6">
+                  <ul className="space-y-3">
+                    {category.products.map((product, i) => (
+                      <li key={i} className="flex items-center gap-2 text-slate-600">
+                        <div className="w-2 h-2 bg-[#B91C1C] rounded-full"></div>
+                        {product}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Benefits */}
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-16 grid md:grid-cols-3 gap-8">
-            {[
-              { icon: Shield, title: 'Protection', desc: 'Keep your spa clean and protected from the elements year-round.' },
-              { icon: DollarSign, title: 'Energy Savings', desc: 'Insulated covers reduce heating costs and energy consumption.' },
-              { icon: Zap, title: 'Easy Access', desc: 'Cover lifters make it effortless to open and close your spa.' }
-            ].map((b, i) => (
-              <div key={i} className="text-center p-6">
-                <b.icon className="mx-auto text-[#B91C1C] mb-3" size={36} />
-                <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">{b.title}</h3>
-                <p className="text-slate-600 text-sm">{b.desc}</p>
+          {/* Info Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#B91C1C] text-white p-8 rounded-xl mb-16"
+          >
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase mb-2">
+                  Need Help Choosing the Right Chemicals?
+                </h3>
+                <p className="text-white/90">
+                  Our team can help you select the perfect chemical balance for your spa. Bring in a water sample for free testing!
+                </p>
               </div>
-            ))}
+              <a 
+                href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
+                className="bg-white text-[#B91C1C] px-8 py-4 font-bold uppercase tracking-wider hover:bg-slate-100 transition-colors flex items-center gap-2 whitespace-nowrap rounded-lg"
+              >
+                <Phone size={20} /> Call Us
+              </a>
+            </div>
           </motion.div>
 
           {/* Contact Form */}
@@ -135,14 +138,14 @@ const CoversPage = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-16 bg-white rounded-xl shadow-xl overflow-hidden"
+            className="bg-white rounded-xl shadow-xl overflow-hidden"
           >
             <div className="bg-[#0A1628] p-6">
               <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-white uppercase text-center">
-                Interested in a Cover or Cover Lifter?
+                Order Chemicals or Get a Quote
               </h2>
               <p className="text-slate-300 text-center mt-2">
-                Fill out the form below and we'll help you find the perfect solution
+                Fill out the form below and we'll get back to you promptly
               </p>
             </div>
             
@@ -210,20 +213,20 @@ const CoversPage = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-[#0A1628] mb-2">
-                        Product Interest *
+                        Chemical Type *
                       </label>
                       <select
-                        name="productInterest"
-                        value={formData.productInterest}
+                        name="chemicalType"
+                        value={formData.chemicalType}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
                       >
-                        <option value="">Select a product...</option>
-                        <option value="spa-cover">Spa Cover</option>
-                        <option value="pivot-cover-lifter">Pivot Top Mount Cover Lifter - $249.95</option>
-                        <option value="heavy-duty-lifter">Heavy-Duty Cover Lifter - $279.95</option>
-                        <option value="vacuseal">Automatic ConvertALift VacuSeal - $4,999</option>
+                        <option value="">Select a category...</option>
+                        <option value="sanitizers">Sanitizers (Chlorine/Bromine)</option>
+                        <option value="balancers">pH & Balancers</option>
+                        <option value="shock">Shock Treatments</option>
+                        <option value="starter-kit">Starter Chemical Kit</option>
                         <option value="not-sure">Not Sure - Need Advice</option>
                       </select>
                     </div>
@@ -239,7 +242,7 @@ const CoversPage = () => {
                       onChange={handleChange}
                       rows={4}
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all resize-none"
-                      placeholder="Tell us about your spa and what you're looking for..."
+                      placeholder="Tell us about your spa and what chemicals you need..."
                     ></textarea>
                   </div>
                   
@@ -265,26 +268,10 @@ const CoversPage = () => {
               )}
             </div>
           </motion.div>
-
-          {/* Call CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <p className="text-slate-600 mb-4">Prefer to talk? Give us a call!</p>
-            <a 
-              href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
-              className="inline-flex items-center gap-2 bg-[#0A1628] text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-slate-800 transition-colors rounded-lg"
-            >
-              <Phone size={20} /> Call: {CONTACT.phone}
-            </a>
-          </motion.div>
         </div>
       </div>
     </>
   );
 };
 
-export default CoversPage;
+export default ChemicalsPage;

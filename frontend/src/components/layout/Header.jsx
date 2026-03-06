@@ -49,6 +49,8 @@ const Header = () => {
     { name: 'Saunas', href: '/saunas' },
     { name: 'Swim Spas', href: '/swim-spas' },
     { name: 'Cold Plunges', href: '/cold-plunges' },
+    { name: 'Covers & Lifters', href: '/covers' },
+    { name: 'Chemicals', href: '/chemicals' },
   ];
 
   const discoverLinks = [
@@ -61,7 +63,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-3'}`}>
-      {/* Top Bar - Contact Info & Social Media - No background bar, blue text */}
+      {/* Top Bar - Contact Info & Social Media */}
       <div className="hidden lg:block py-2">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-6">
           {/* Social Media Icons */}
@@ -97,23 +99,21 @@ const Header = () => {
           <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">
             <Phone size={14} /> {CONTACT.phone}
           </a>
+          <Link to="/hours" className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">Hours</Link>
           <Link to="/contact" className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">Contact</Link>
         </div>
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between relative">
-          {/* Spacer for mobile to balance hamburger menu */}
-          <div className="w-12 xl:hidden"></div>
-          
-          {/* Logo - Centered on mobile, left-aligned on desktop */}
-          <Link to="/" className="flex items-center absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0" data-testid="logo-link">
+          {/* Logo - Centered on mobile, left-aligned on desktop with larger size */}
+          <Link to="/" className="flex items-center xl:mr-8 absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0" data-testid="logo-link">
             <motion.img 
               src={ASSETS.transparentLogo} 
               alt="Upstate Hot Tubs - Home" 
-              width="200"
-              height="80"
-              className={`object-contain transition-all duration-300 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'}`} 
+              width="280"
+              height="112"
+              className={`object-contain transition-all duration-300 ${scrolled ? 'h-20 md:h-24 xl:h-24' : 'h-24 md:h-28 xl:h-28'}`} 
               loading="eager"
               fetchPriority="high"
               whileHover={{ scale: 1.02 }} 
@@ -221,6 +221,17 @@ const Header = () => {
               Get a Brochure
             </Link>
 
+            {/* Hours Link */}
+            <Link 
+              to="/hours" 
+              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/hours' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
+              }`}
+              data-testid="nav-hours-link"
+            >
+              Hours
+            </Link>
+
             {/* Find a Dealer / Contact Link */}
             <Link 
               to="/contact" 
@@ -305,8 +316,11 @@ const Header = () => {
                   ))}
                 </div>
                 
-                {/* Contact */}
-                <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
+                {/* Contact & Hours */}
+                <Link to="/hours" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
+                  Hours
+                </Link>
+                <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
                   Contact Us
                 </Link>
                 

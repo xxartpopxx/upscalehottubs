@@ -14,8 +14,8 @@
       /* Critical CSS - Inline for faster initial render */
       *{box-sizing:border-box;margin:0;padding:0}
       body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff}
-      .skip-link{position:absolute;left:-9999px;z-index:999;padding:1rem;background:#B91C1C;color:#fff}
-      .skip-link:focus{left:50%;transform:translateX(-50%);top:0}
+      .skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:999;padding:0.5rem 1rem;background:#B91C1C;color:#fff;opacity:0;pointer-events:none}
+      .skip-link:focus{top:10px;opacity:1;pointer-events:auto}
       #root{min-height:100vh}
       /* Loading state */
       .initial-loader{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(180deg,#fff 0%,#e8f4fc 100%)}

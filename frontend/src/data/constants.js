@@ -10,7 +10,7 @@ export const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_river-spa
 export const TRANSPARENT_LOGO = 'https://customer-assets.emergentagent.com/job_spa-layout-overhaul/artifacts/4nsu0y9o_Untitled%20design%20-%202026-03-02T161029.394.png';
 
 // About Page Image (Grand Opening)
-export const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_american-spa-portal/artifacts/iri86zu2_549423966_122190087680361664_6940928450155468082_n.jpg';
+export const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_ad3b0cee-ca9b-4651-9bd8-5c276c5059bb/artifacts/in0ew7x2_Untitled%20design%20%285%29.png';
 
 // Free Items Images (Cover, Cover Lifter, Steps, Chemicals)
 export const FREE_ITEMS_IMAGES = {
@@ -38,6 +38,15 @@ export const CONTACT = {
   email: 'info@upstatehottubs.com',
   address: '1004 West Georgia Rd, Simpsonville, SC 29680',
   hours: 'Call us and we will open when you can come. We will set up apt for you.',
+  hoursDetailed: {
+    monday: 'Closed - By Appt only',
+    tuesday: '12pm-7pm',
+    wednesday: '12pm-7pm',
+    thursday: '12pm-7pm',
+    friday: '12pm-7pm',
+    saturday: '10am-6pm',
+    sunday: '12pm-4pm',
+  },
   serviceAreas: ['Fountain Inn, SC', 'Mauldin, SC', 'Spartanburg, SC', 'Anderson, SC', 'Greenville, SC', 'Greer, SC', 'Five Forks, SC', 'Simpsonville, SC'],
 };
 

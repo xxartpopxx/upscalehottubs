@@ -134,6 +134,14 @@ const ProductDetailPage = () => {
       return product.images.primary;
     }
     
+    // Color visualizer for Grand River - when 'color' view is selected
+    if (currentView === 'color' && isGrandRiver && !imageError) {
+      const colorComboUrl = getGRColorComboImageUrl(product, selectedShell, selectedCabinet, selectedCorner);
+      if (colorComboUrl) {
+        return colorComboUrl;
+      }
+    }
+    
     if (currentView === 'overhead') {
       return product.images.overhead;
     }
@@ -141,7 +149,7 @@ const ProductDetailPage = () => {
       return product.images.primary;
     }
     
-    // Color visualizer for Grand River
+    // Default fallback for Grand River color view or any other case
     if (isGrandRiver && !imageError) {
       const colorComboUrl = getGRColorComboImageUrl(product, selectedShell, selectedCabinet, selectedCorner);
       if (colorComboUrl) {

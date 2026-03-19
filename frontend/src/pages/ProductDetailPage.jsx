@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, Flag, GitCompare } from 'lucide-react';
-import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS } from '../data/products';
+import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, DYNASTY_GENERIC_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images
@@ -731,7 +731,7 @@ const ProductDetailPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {(product?.series === 'Luxury Collection' ? DYNASTY_LUXURY_EXTRAS :
                     product?.series === 'Oasis Collection' ? DYNASTY_OASIS_EXTRAS :
-                    product?.series === 'Vacation Collection' ? DYNASTY_VACATION_EXTRAS : []).map((extra) => (
+                    product?.series === 'Vacation Collection' ? DYNASTY_VACATION_EXTRAS : DYNASTY_GENERIC_EXTRAS).map((extra) => (
                     <div key={extra.id} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
                       <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
                       <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>

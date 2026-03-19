@@ -103,14 +103,32 @@
 #====================================================================================================
 
 user_problem_statement: |
-  Add features to Upstate Hot Tubs website:
-  1. Simple comparison estimator for hot tubs/saunas/swim spas on homepage
-  2. List products from least expensive to most expensive on homepage
-  3. AR visualizer using WebXR for viewing products in backyard
-  4. Update Trust Section with new wording about discounts and delivery
-  5. Replace logo banner with uploaded image (couple enjoying hot tub)
-  6. Add wellness journey section with links to wellness pages
-  7. Add Google Analytics (G-R9V25T33X1)
+  Update the existing hot tub/spa website using all provided brochures as the primary source of truth.
+  
+  DYNASTY SPA PRICING (UPDATE EXACTLY):
+  - Serenity Cove – $9,999.99
+  - Ocean Breeze – $9,999.99
+  - Cabana Bay – $9,999.99
+  - Twin Palms – $9,999.99
+  - Nassau Royal – $10,999.99
+  - Caribbean Breeze – $10,999.99
+  - Coconut Bay II – $12,999.99
+  - Coconut Bay III – $13,999.99
+  - Pleasure Cove II – $12,999.99
+  - Pleasure Cove III – $13,999.99
+  - Palm Island II – $12,999.99
+  - Palm Island III – $13,999.99
+  - Paradise Bay II – $12,999.99
+  - Paradise Bay III – $13,999.99
+  - Island Oasis SL – $16,999.99
+  - Island Oasis DL – $16,999.99
+  
+  GRAND RIVER + VIKING SPAS: Increase every spa price by $500, all prices must end in .99
+  
+  ADD-ONS:
+  - Dynasty Generic Add-ons (ALL Dynasty spas): Instream Stereo $995.99, Circulation Pump $495.99
+  - Oasis Collection Add-ons: Instream Stereo $995.99, In Mix Lighting $995.99, Circulation Pump $499.99, In Touch App $399.99
+  - Vacation Collection Add-ons: K1000 Touchscreen $499.99, Instream Stereo $995.99, Circulation Pump $499.99, In Touch App $399.99
 
 frontend:
   - task: "Product price sorting (least to most expensive)"
@@ -215,6 +233,51 @@ frontend:
         agent: "main"
         comment: "GA4 tracking code added with measurement ID G-R9V25T33X1"
 
+  - task: "Dynasty Spa Pricing Update"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Updated all Dynasty spa prices per requirements: Serenity Cove $9,999.99, Ocean Breeze $9,999.99, Cabana Bay $9,999.99, Twin Palms $9,999.99, Nassau Royal $10,999.99, Caribbean Breeze $10,999.99, Coconut Bay II/III $12,999.99/$13,999.99, Pleasure Cove II/III $12,999.99/$13,999.99, Palm Island II/III $12,999.99/$13,999.99, Paradise Bay II/III $12,999.99/$13,999.99, Island Oasis SL/DL $16,999.99"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Dynasty spa pricing verified in products.js. All key prices confirmed: Serenity Cove $9,999.99, Paradise Bay III $13,999.99, Island Oasis SL $16,999.99 (found as '11' Family Island Oasis SL'). Product pages accessible at correct URLs. Pricing data matches requirements exactly."
+
+  - task: "Grand River and Viking Price Update (+$500)"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Increased all Grand River and Viking spa prices by $500. All prices now end in .99. Examples: Chariton 2 $11,495.99, Heritage 2 $12,995.99, Valhalla swim spa $40,495.99"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Grand River and Viking price increases verified. Chariton 2 confirmed at $11,495.99, Heritage 2 confirmed at $12,995.99. Product pages accessible and pricing data correctly updated with +$500 increase ending in .99 format."
+
+  - task: "Dynasty Collection-Specific Add-ons"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/ProductDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Updated add-ons by collection: Oasis Collection shows 4 add-ons (Instream Stereo $995.99, In Mix Lighting $995.99, Circulation Pump $499.99, In Touch App $399.99), Vacation Collection shows 4 add-ons (K1000 Touchscreen $499.99, Instream Stereo $995.99, Circulation Pump $499.99, In Touch App $399.99), All other Dynasty spas show generic add-ons (Instream Stereo $995.99, Circulation Pump $495.99)"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Dynasty Collection add-ons verified in ProductDetailPage.jsx and data files. Oasis Collection (Paradise Bay III) shows 4 add-ons correctly. Vacation Collection (Serenity Cove) shows 4 add-ons with K1000 Touchscreen. Hideaway Collection (High Tide) shows 2 generic add-ons. Collection-specific logic working properly in component."
+
 metadata:
   created_by: "main_agent"
   version: "1.0"
@@ -222,9 +285,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "Product Comparison Estimator"
-    - "AR Visualizer Page"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -239,6 +300,10 @@ agent_communication:
   - agent: "main"
     message: "Added Finnmark FD-5 Trinity XL Infrared & Steam Sauna Combo to SAUNAS. Includes: comprehensive product data (specs, features, health benefits, shipping info), 9 gallery images with thumbnail navigation, updated ProductDetailPage to handle Finnmark brand with gallery carousel, proper specs display for saunas (no jets), white glove installation option, SEO metadata for sauna products."
   - agent: "main"
-    message: "Mobile improvements and FD-3 sauna: (1) Centered logo on mobile - uses flex-1 justify-center on mobile, left-aligned on desktop, (2) Enabled video playback on mobile - removed isMobile check that prevented video loading, (3) Added Finnmark FD-3 Full Spectrum Infrared Sauna ($7,995.95) with 7 gallery images, full specs, health benefits, shipping info."
+    message: "Mobile improvements and FD-3 sauna: (1) Centered logo on mobile - uses flex-1 justify-center on mobile, left-aligned on desktop, (2) Enabled video playbook on mobile - removed isMobile check that prevented video loading, (3) Added Finnmark FD-3 Full Spectrum Infrared Sauna ($7,995.95) with 7 gallery images, full specs, health benefits, shipping info."
   - agent: "main"
     message: "Homepage updates per user request: (1) Made 'Family Owned - American Made and Proud Of It' BIGGER with red/white/blue styling, (2) Added FREE Delivery, Installation & Set Up content, (3) Added FREE Cover, Cover Lifter, Steps & Chemicals, (4) Added In House Service Technicians, (5) Added Military & First Responder Discounts with 'Thank You For Your Service!', (6) Added Financing Section with LightStream and HFS Financial companies, (7) Updated Resource Cards - Owner Resources uses uploaded photo 4, Get a Brochure uses uploaded photo 3 ('Soak Now. Pay Later'), (8) Updated hours text to 'Call us and we will open when you can come. We will set up apt for you.'"
+  - agent: "main"
+    message: "PRICE AND ADD-ONS UPDATE: (1) Updated all Dynasty spa prices per user requirements, (2) Increased all Grand River and Viking spa prices by $500 (ending in .99), (3) Added DYNASTY_GENERIC_EXTRAS for generic Dynasty add-ons, (4) Updated ProductDetailPage to show collection-specific add-ons: Oasis shows 4 add-ons, Vacation shows 4 add-ons with K1000 Touchscreen, all others show generic 2 add-ons. Viking products now show in HOT_TUBS array."
+  - agent: "testing"
+    message: "COMPREHENSIVE PRICING & ADD-ONS TESTING COMPLETED: All 3 high-priority tasks tested and verified working. (1) Dynasty Spa Pricing: Serenity Cove $9,999.99, Paradise Bay III $13,999.99, Island Oasis SL $16,999.99 - all confirmed in products.js and accessible via URLs. (2) Grand River & Viking +$500 pricing: Chariton 2 $11,495.99, Heritage 2 $12,995.99 - verified and accessible. (3) Dynasty Collection Add-ons: Oasis Collection shows 4 add-ons, Vacation Collection shows 4 add-ons including K1000 Touchscreen, Hideaway Collection shows 2 generic add-ons - all working per requirements. Backend API healthy. All product pages accessible. Testing complete - ready for user acceptance."

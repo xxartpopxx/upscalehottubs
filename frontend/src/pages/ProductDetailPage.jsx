@@ -172,9 +172,15 @@ const ProductDetailPage = () => {
     { icon: Ruler, label: 'Dimensions', value: product.dimensions || 'N/A' },
   ] : [
     { icon: Users, label: 'Seats', value: `${product.persons} Adults` },
-    { icon: Droplets, label: 'Jets', value: product.jets },
-    { icon: Zap, label: 'Electrical', value: product.electrical },
-    { icon: Ruler, label: 'Dimensions', value: product.dimensions },
+    { icon: Droplets, label: 'Jets', value: product.jets || 'N/A' },
+    { icon: Zap, label: 'Electrical', value: product.electrical || 'N/A' },
+    { icon: Ruler, label: 'Dimensions', value: product.dimensions || 'N/A' },
+    ...(product.waterCapacity ? [{ icon: Droplets, label: 'Water Capacity', value: product.waterCapacity }] : []),
+    ...(product.pumps ? [{ icon: Zap, label: 'Pumps', value: product.pumps }] : []),
+    ...(product.filtration ? [{ icon: Info, label: 'Filtration', value: product.filtration }] : []),
+    ...(product.seatingLayout ? [{ icon: Users, label: 'Layout', value: product.seatingLayout }] : []),
+    ...(product.dryWeight ? [{ icon: Ruler, label: 'Dry Weight', value: product.dryWeight }] : []),
+    ...(product.filledWeight ? [{ icon: Ruler, label: 'Filled Weight', value: product.filledWeight }] : []),
   ];
   
   const currentViewIndex = views.indexOf(currentView);
@@ -565,14 +571,14 @@ const ProductDetailPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="bg-slate-50 p-5 h-full">
-                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-4">
+                <div className="bg-slate-50 p-5">
+                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-3">
                     Quick Specs
                   </h3>
-                  <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                     {specs.map((spec) => (
-                      <div key={spec.label} className="flex items-center gap-3">
-                        <spec.icon size={18} className="text-[#B91C1C]" />
+                      <div key={spec.label} className="flex items-center gap-2 text-sm">
+                        <spec.icon size={16} className="text-[#B91C1C] flex-shrink-0" />
                         <span className="text-slate-600">{spec.label}:</span>
                         <span className="font-semibold text-[#0A1628]">{spec.value}</span>
                       </div>

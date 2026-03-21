@@ -1,45 +1,61 @@
 # Upstate Hot Tubs - Product Requirements Document
 
 ## Original Problem Statement
-Overhaul the "Upstate Hot Tubs" website with visual and functional changes including header redesign, hero video positioning, new content sections, mobile UX improvements, and a clean red/white/blue theme.
+Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) from World Sauna Group and integrating them alongside existing hot tub products. Key requirements include adding saunas, cold plunges, heaters, fixing specs, model comparison features, color pickers, and removing Viking Spas brand.
 
-## Core Requirements
-1. Header with "upstatehottubs" branding, updated logo
-2. Hero video fully visible below nav, text below video (not overlaid)
-3. "LIVE YOUR HEALTHIEST LIFE" headline with white outline
-4. Animated American flags replacing "AMERICAN MADE" text
-5. "Try Before You Buy Wet Test" section (compact, minimal whitespace)
-6. "$1,500 value free" note on accessories line
-7. Clean red/white/blue theme with subtle accents
-8. "The Collection", "Why Upstate Hot Tubs?", "Why a Hot Tub?" sections
-9. Shop All Models sorted lowest to highest price, mixed brands
-10. Remove all Florida/Naples references
-11. Videos on Wellness, Spa Butler, Balneotherapy, About pages
-12. Dynasty Spas product corrections (Luxury->Oasis, Hideaway->Vacation)
-13. Mobile: sticky color preview on product pages, compact layout
-
-## Architecture
-- Frontend: React + Tailwind CSS + Vite
-- Backend: FastAPI (untouched)
-- Database: MongoDB (untouched)
-- Product data: Hardcoded in frontend constants
+## Tech Stack
+- **Frontend**: React, Tailwind CSS, Framer Motion, React Router
+- **Backend**: FastAPI (minimal usage - product data is client-side)
+- **Database**: MongoDB (not actively used for product data)
+- **Data**: All product data hardcoded in `frontend/src/data/products.js`
 
 ## What's Been Implemented
-- Homepage redesign with all new sections
-- Hero section: repositioned video, outlined text, animated flags
-- Wet Test section with compact layout
-- Trust badges, Resource cards, Product collections
-- Shop All Models carousel with mixed brands
-- Clean white theme with subtle red/blue accents
-- Multiple video integrations on content pages
-- Dynasty Spas product data corrections
-- Mobile UX: sticky color preview, compact product page
-- All Florida/Naples references removed
-- Logo updated across site
 
-## Resolved Issues (Feb 2026)
-- Hero video cut off by nav bar: Fixed by adjusting responsive top padding (pt-24 md:pt-32 lg:pt-40)
-- Wet Test section whitespace: Removed excessive padding, made section compact (py-2 container)
+### World Sauna Group Integration
+- Added Outdoor, Indoor, and Infrared Saunas from World Sauna Group
+- Added Tubs/Plunges on dedicated Cold Plunges page
+- Added 6 Sauna Heaters (Cozy, Finsauna, HUUM brands)
+
+### Page Structure
+- **SaunasPage.jsx**: Consolidated page with 5 filter categories (All Saunas, Outdoor, Indoor, Infrared, Heaters) + dedicated heaters section
+- **ColdPlungesPage.jsx**: All cold plunge products
+- **ProductDetailPage.jsx**: Full product details with color pickers, model comparison, extras/upgrades
+
+### Hot Tub Enhancements
+- Corrected Dynasty Spas specs from PDF brochures
+- Added add-on feature images for hot tubs
+- Updated key features for Dynasty Spa models
+- Fixed Grand River color picker thumbnails (dynamic key for re-rendering)
+- Model comparison dropdowns for both Grand River and Dynasty brands
+
+### Code Cleanup
+- Removed all Viking Spas products, data, and conditional logic
+
+## Completed Tasks (March 2026)
+- [x] World Sauna Group product integration (all categories)
+- [x] Saunas page with category filters + heaters section
+- [x] Cold Plunges page update
+- [x] Hot tub spec corrections from brochures
+- [x] Add-on images for hot tubs
+- [x] Grand River color picker fix
+- [x] Grand River model comparison dropdown
+- [x] Dynasty model comparison dropdown
+- [x] Viking Spas removal
+- [x] Heater filter tab on Saunas page
 
 ## Backlog
-- P2: Migrate product data from frontend constants to backend API
+
+### P1 - Upcoming
+- Update World Sauna Group product pricing when user provides official pricing
+
+### P2 - Future
+- Verify/correct Grand River Spas specs (similar to Dynasty correction)
+- Add installation/shipping cost display when info is provided
+- Refactor `products.js` (4000+ lines) into smaller files by brand/type
+- Refactor `ProductDetailPage.jsx` (1100+ lines) into brand-specific sub-components
+
+## Key Files
+- `/app/frontend/src/data/products.js` - Central product data (4000+ lines)
+- `/app/frontend/src/pages/ProductDetailPage.jsx` - Product detail with comparisons
+- `/app/frontend/src/pages/SaunasPage.jsx` - Saunas + heaters page with filters
+- `/app/frontend/src/pages/ColdPlungesPage.jsx` - Cold plunges page

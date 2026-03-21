@@ -21,27 +21,41 @@ Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) 
 - **ColdPlungesPage.jsx**: All cold plunge products
 - **ProductDetailPage.jsx**: Full product details with color pickers, model comparison, extras/upgrades
 
-### Hot Tub Enhancements
-- Corrected Dynasty Spas specs from PDF brochures
-- Added add-on feature images for hot tubs
-- Updated key features for Dynasty Spa models
-- Fixed Grand River color picker thumbnails (dynamic key for re-rendering)
-- Model comparison dropdowns for both Grand River and Dynasty brands
+### Hot Tub Spec Accuracy (March 2026)
+- **Grand River Spas**: All specs verified and corrected from official grandriverspas.com
+  - Chariton 2: 63 jets (was 61), added water capacity, pumps, filtration
+  - Chesapeake: Added water capacity (430gal), dry/filled weight, corrected layout
+  - Saginaw 2: Jets 53 (was 61), dimensions 86x86x37 (was 84x84x37.5)
+  - Thornapple: Persons 7 (was 6), jets corrected, layout Non-Lounge (was Lounge)
+  - Muskegon 2: Persons 6 (was 7), jets 41 (was 56), layout Lounge (was Open)
+  - Sturgeon: Jets 31 (was 50/40), dimensions 78x78x35 (was 84x84), electrical 240v/40amp
+  - Swift: Now Premier Series, dimensions 60x84x34 (was 78x60x33), electrical 240v/50amp
+  - Manistee: Corrected layout, added full specs
+  - All Eco models: Corrected to 120v/15amp plug-and-play specs
+- **Dynasty Spas**: Specs verified from PDF brochures
+  - Paradise Bay: Dimensions corrected to 92x102x39 (was 92x92)
+  - All other specs confirmed accurate
 
-### Code Cleanup
-- Removed all Viking Spas products, data, and conditional logic
+### Color Picker Fixes (March 2026)
+- Per-product shell/cabinet color restrictions:
+  - Sturgeon: Silver/Opal shells only, Walnut/Taupe cabinets only
+  - Manistee: White/Opal shells only, Walnut/Taupe cabinets only
+  - Swift: Full range (White/Silver/Opal + CoastalGray/Walnut/Barnwood/Black)
+- Corner color option: Conditionally shown via `hasCornerOption` field
+  - Hidden for: Sturgeon, Manistee, and all Eco models
+  - Visible for: Chariton, Chesapeake, Saginaw, Thornapple, Muskegon, Swift
+- Visualizer model prefixes corrected:
+  - Swift → `Premier_Swift`
+  - Sturgeon Eco → `SturgeonEco`
+  - Swift Eco → `SwiftECO`
+  - Manistee Eco → `ManisteeEco`
 
-## Completed Tasks (March 2026)
-- [x] World Sauna Group product integration (all categories)
-- [x] Saunas page with category filters + heaters section
-- [x] Cold Plunges page update
-- [x] Hot tub spec corrections from brochures
-- [x] Add-on images for hot tubs
-- [x] Grand River color picker fix
-- [x] Grand River model comparison dropdown
-- [x] Dynasty model comparison dropdown
-- [x] Viking Spas removal
-- [x] Heater filter tab on Saunas page
+### Other Completed Work
+- Grand River color picker thumbnails fixed (dynamic key re-rendering)
+- Model comparison dropdowns for Grand River and Dynasty brands
+- Viking Spas completely removed
+- Add-on feature images for hot tubs
+- Heater filter tab on Saunas page
 
 ## Backlog
 
@@ -49,13 +63,12 @@ Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) 
 - Update World Sauna Group product pricing when user provides official pricing
 
 ### P2 - Future
-- Verify/correct Grand River Spas specs (similar to Dynasty correction)
 - Add installation/shipping cost display when info is provided
 - Refactor `products.js` (4000+ lines) into smaller files by brand/type
 - Refactor `ProductDetailPage.jsx` (1100+ lines) into brand-specific sub-components
 
 ## Key Files
 - `/app/frontend/src/data/products.js` - Central product data (4000+ lines)
-- `/app/frontend/src/pages/ProductDetailPage.jsx` - Product detail with comparisons
+- `/app/frontend/src/pages/ProductDetailPage.jsx` - Product detail with color picker and comparisons
 - `/app/frontend/src/pages/SaunasPage.jsx` - Saunas + heaters page with filters
 - `/app/frontend/src/pages/ColdPlungesPage.jsx` - Cold plunges page

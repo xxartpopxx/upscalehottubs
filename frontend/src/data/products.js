@@ -1859,35 +1859,40 @@ export const VIKING_SPAS_EXTRAS = [
     name: 'Clear Guard UV',
     price: '$495.99',
     priceValue: 495.99,
-    description: 'Advanced UV water sanitation system for cleaner, clearer water.'
+    description: 'Advanced UV water sanitation system for cleaner, clearer water.',
+    image: 'https://images.pexels.com/photos/6620882/pexels-photo-6620882.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'vs-extra-wifi',
     name: 'WiFi Module',
     price: '$399.99',
     priceValue: 399.99,
-    description: 'Control your spa remotely with the WiFi module and smartphone app.'
+    description: 'Control your spa remotely with the WiFi module and smartphone app.',
+    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'vs-extra-airx',
     name: 'Air X Therapy',
     price: '$199.99',
     priceValue: 199.99,
-    description: 'Enhanced air therapy system for a more luxurious massage experience.'
+    description: 'Enhanced air therapy system for a more luxurious massage experience.',
+    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'vs-extra-spatouch4',
     name: 'Spa Touch 4',
     price: '$499.99',
     priceValue: 499.99,
-    description: 'Upgrade to the Spa Touch 4 touchscreen control panel for easier spa management.'
+    description: 'Upgrade to the Spa Touch 4 touchscreen control panel for easier spa management.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&fit=crop'
   },
   {
     id: 'vs-extra-bba-stereo',
     name: 'BBA Stereo with Subwoofer',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Premium Bluetooth audio system with subwoofer for immersive sound.'
+    description: 'Premium Bluetooth audio system with subwoofer for immersive sound.',
+    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
 

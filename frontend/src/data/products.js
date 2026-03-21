@@ -526,35 +526,40 @@ export const GRAND_RIVER_EXTRAS = [
     name: 'Ozone',
     price: '$250.00',
     priceValue: 250,
-    description: 'Advanced ozone sanitization system for cleaner, clearer water with fewer chemicals.'
+    description: 'Advanced ozone sanitization system for cleaner, clearer water with fewer chemicals.',
+    image: 'https://images.pexels.com/photos/6620882/pexels-photo-6620882.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'gr-extra-touchscreen',
     name: 'Spa Touch Screen',
     price: '$700.00',
     priceValue: 700,
-    description: 'Upgrade to a modern touch screen control panel for easier spa management.'
+    description: 'Upgrade to a modern touch screen control panel for easier spa management.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&fit=crop'
   },
   {
     id: 'gr-extra-airx',
     name: 'Air X Therapy System',
     price: '$300.00',
     priceValue: 300,
-    description: 'Enhanced air therapy system for a more luxurious massage experience.'
+    description: 'Enhanced air therapy system for a more luxurious massage experience.',
+    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'gr-extra-bluetooth',
     name: 'Bluetooth Stereo',
     price: '$950.00',
     priceValue: 950,
-    description: 'Premium Bluetooth audio system for music while you relax.'
+    description: 'Premium Bluetooth audio system for music while you relax.',
+    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'gr-extra-wifi',
     name: 'WiFi Module',
     price: '$400.00',
     priceValue: 400,
-    description: 'Control your spa remotely with the WiFi module and smartphone app.'
+    description: 'Control your spa remotely with the WiFi module and smartphone app.',
+    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
 
@@ -569,14 +574,16 @@ export const DYNASTY_GENERIC_EXTRAS = [
     name: 'Instream Stereo',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.'
+    description: 'Premium in.Stream audio system for your spa experience.',
+    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'ds-generic-circ-pump',
     name: 'Circulation Pump',
     price: '$495.99',
     priceValue: 495.99,
-    description: 'Energy-efficient circulation pump for improved water flow and filtration.'
+    description: 'Energy-efficient circulation pump for improved water flow and filtration.',
+    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
 
@@ -587,14 +594,16 @@ export const DYNASTY_LUXURY_EXTRAS = [
     name: 'Instream Stereo',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.'
+    description: 'Premium in.Stream audio system for your spa experience.',
+    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'ds-luxury-circ-pump',
     name: 'Circulation Pump',
     price: '$495.99',
     priceValue: 495.99,
-    description: 'Energy-efficient circulation pump for improved water flow and filtration.'
+    description: 'Energy-efficient circulation pump for improved water flow and filtration.',
+    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
 
@@ -605,28 +614,32 @@ export const DYNASTY_OASIS_EXTRAS = [
     name: 'Instream Stereo',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.'
+    description: 'Premium in.Stream audio system for your spa experience.',
+    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'ds-oasis-lighting',
     name: 'In Mix Lighting',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Advanced in.Mix LED lighting system for ambient illumination.'
+    description: 'Advanced in.Mix LED lighting system for ambient illumination.',
+    image: 'https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'ds-oasis-circ-pump',
     name: 'Circulation Pump',
     price: '$499.99',
     priceValue: 499.99,
-    description: 'Energy-efficient circulation pump for improved water flow and filtration.'
+    description: 'Energy-efficient circulation pump for improved water flow and filtration.',
+    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'ds-oasis-intouch',
     name: 'In Touch App',
     price: '$399.99',
     priceValue: 399.99,
-    description: 'Control your spa remotely with the in.Touch smartphone app.'
+    description: 'Control your spa remotely with the in.Touch smartphone app.',
+    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
 
@@ -637,28 +650,32 @@ export const DYNASTY_VACATION_EXTRAS = [
     name: 'K1000 Touchscreen',
     price: '$499.99',
     priceValue: 499.99,
-    description: 'Upgrade to the K.1000 touchscreen control panel.'
+    description: 'Upgrade to the K.1000 touchscreen control panel.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&fit=crop'
   },
   {
     id: 'ds-vacation-stereo',
     name: 'Instream Stereo',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.'
+    description: 'Premium in.Stream audio system for your spa experience.',
+    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'ds-vacation-circ-pump',
     name: 'Circulation Pump',
     price: '$499.99',
     priceValue: 499.99,
-    description: 'Energy-efficient circulation pump for improved water flow and filtration.'
+    description: 'Energy-efficient circulation pump for improved water flow and filtration.',
+    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 'ds-vacation-intouch',
     name: 'In Touch App',
     price: '$399.99',
     priceValue: 399.99,
-    description: 'Control your spa remotely with the in.Touch smartphone app.'
+    description: 'Control your spa remotely with the in.Touch smartphone app.',
+    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
 
@@ -1038,7 +1055,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '1390 lbs',
     description: 'Intimate 2-person lounger perfect for couples and small spaces. Plug-and-play 110v convenience.',
-    features: ['Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    features: ['K.506 Digital Topside', 'LED Underwater Light', 'Padded Headrests', 'RMAX Insulation', 'Maintenance Free Skirting', 'Energy Efficient Heater'],
     brochure: '/brochures/BIMINI_2_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp'
@@ -1065,7 +1082,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '1390 lbs',
     description: 'Intimate 2-person lounger perfect for couples and small spaces. 220v for faster heating.',
-    features: ['Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    features: ['K.506 Digital Topside', 'LED Underwater Light', 'Padded Headrests', 'RMAX Insulation', 'Maintenance Free Skirting', 'Energy Efficient Heater'],
     brochure: '/brochures/BIMINI_2_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp'
@@ -1276,13 +1293,13 @@ export const DYNASTY_SPAS_PRODUCTS = [
     seatingLayout: 'Lounger',
     dimensions: '82" x 82" x 39"',
     waterCapacity: '295 gallons',
-    electrical: '220v/60amp',
+    electrical: '220v/60a',
     pumps: '2 - 6.0bhp',
     filtration: '50 ft²',
     dryWeight: '350 lbs',
-    filledWeight: '2710 lbs',
-    description: 'Compact lounger spa perfect for intimate relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
-    features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    filledWeight: '2,710 lbs',
+    description: 'Compact lounger spa perfect for intimate relaxation. Features K.362 digital topside and LED underwater lighting.',
+    features: ['K.362 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
     brochure: '/brochures/BAY+BLISS+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
@@ -1303,13 +1320,13 @@ export const DYNASTY_SPAS_PRODUCTS = [
     seatingLayout: 'Bench',
     dimensions: '82" x 82" x 39"',
     waterCapacity: '295 gallons',
-    electrical: '220v/60amp',
+    electrical: '220v/60a',
     pumps: '2 - 6.0bhp',
     filtration: '50 ft²',
     dryWeight: '350 lbs',
-    filledWeight: '2710 lbs',
-    description: 'Bench-style spa with ample seating for relaxation. Features K.362 digital topside, waterfall, and LED underwater lighting.',
-    features: ['K.362 Digital Topside', 'Cascading Waterfall', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    filledWeight: '2,710 lbs',
+    description: 'Bench-style spa with ample seating for relaxation. Features K.362 digital topside and LED underwater lighting.',
+    features: ['K.362 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
     brochure: '/brochures/HIGH+TIDE+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg'

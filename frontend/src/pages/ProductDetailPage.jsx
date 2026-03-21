@@ -698,10 +698,22 @@ const ProductDetailPage = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                   {GRAND_RIVER_EXTRAS.map((extra) => (
-                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-                      <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
-                      <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
-                      <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
+                      {extra.image && (
+                        <div className="aspect-square overflow-hidden">
+                          <img 
+                            src={extra.image} 
+                            alt={extra.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => e.target.style.display = 'none'}
+                          />
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
+                        <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
+                        <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -760,10 +772,22 @@ const ProductDetailPage = () => {
                   {(product?.series === 'Luxury Collection' ? DYNASTY_LUXURY_EXTRAS :
                     product?.series === 'Oasis Collection' ? DYNASTY_OASIS_EXTRAS :
                     product?.series === 'Vacation Collection' ? DYNASTY_VACATION_EXTRAS : DYNASTY_GENERIC_EXTRAS).map((extra) => (
-                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-                      <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
-                      <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
-                      <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
+                      {extra.image && (
+                        <div className="aspect-square overflow-hidden">
+                          <img 
+                            src={extra.image} 
+                            alt={extra.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => e.target.style.display = 'none'}
+                          />
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
+                        <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
+                        <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

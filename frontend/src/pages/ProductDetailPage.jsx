@@ -383,6 +383,50 @@ const ProductDetailPage = () => {
                 </div>
               )}
               
+              {/* Grand River Color Combo Thumbnails - Dynamic based on selected colors */}
+              {hasColorSelector && isGrandRiver && (
+                <div className="mt-4">
+                  <p className="text-xs font-semibold text-slate-500 mb-2">Selected Configuration Preview:</p>
+                  <div className="grid grid-cols-3 gap-2">
+                    {['color', 'side', 'overhead'].map((viewType) => {
+                      const viewLabels = { color: 'Color', side: 'Side', overhead: 'Top' };
+                      const modelName = product.modelFamily || product.name.split(' ')[0];
+                      const shellMap = { white: 'White', silver: 'Silver', opal: 'Opal' };
+                      const cabinetMap = { coastalGray: 'CoastalGray', walnut: 'Walnut', barnwood: 'Barnwood', black: 'Black', taupe: 'Taupe' };
+                      const shell = shellMap[selectedShell] || 'White';
+                      const cabinet = cabinetMap[selectedCabinet] || 'CoastalGray';
+                      const corner = selectedCorner === 'black' ? 'Black' : cabinet;
+                      
+                      let thumbUrl;
+                      if (viewType === 'color') {
+                        thumbUrl = `https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img/${modelName}_${shell}_${cabinet}_${corner}.jpg`;
+                      } else if (viewType === 'side') {
+                        thumbUrl = product.images?.side || product.images?.primary;
+                      } else {
+                        thumbUrl = product.images?.overhead || product.images?.primary;
+                      }
+                      
+                      return (
+                        <button
+                          key={viewType}
+                          onClick={() => setCurrentView(viewType)}
+                          className={`aspect-square overflow-hidden border-2 transition-all rounded ${
+                            currentView === viewType ? 'border-[#B91C1C] ring-2 ring-[#B91C1C]' : 'border-slate-200 hover:border-slate-400'
+                          }`}
+                        >
+                          <img 
+                            src={thumbUrl} 
+                            alt={`${viewLabels[viewType]} view`} 
+                            className="w-full h-full object-cover"
+                            onError={(e) => { e.target.src = product.images?.primary; }}
+                          />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+              
               {/* Gallery Thumbnails for products with galleries */}
               {hasGallery && galleryLength > 1 && (
                 <div className="mt-4 grid grid-cols-5 md:grid-cols-9 gap-2">

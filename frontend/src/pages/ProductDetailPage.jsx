@@ -47,7 +47,8 @@ const getGRColorComboImageUrl = (product, shellColor, cabinetColor, cornerOption
   
   const shell = shellMap[shellColor] || 'White';
   const cabinet = cabinetMap[cabinetColor] || 'CoastalGray';
-  const corner = cornerOption === 'black' ? 'Black' : cabinet;
+  // Products without corner option always use matching cabinet as corner
+  const corner = (product.hasCornerOption !== false && cornerOption === 'black') ? 'Black' : cabinet;
   
   return `${GR_VISUALIZER_BASE}/${modelName}_${shell}_${cabinet}_${corner}.jpg`;
 };
@@ -117,8 +118,8 @@ const ProductDetailPage = () => {
   const isSwimSpa = !!product?.length;
   const hasColorSelector = isGrandRiver && !isSwimSpa;
   
-  // No corner options without Viking
-  const cornerOptions = [];
+  // No corner options unless product explicitly supports them
+  const hasCornerOption = isGrandRiver && product?.hasCornerOption !== false;
   
   // Determine available views based on brand - must be before early returns
   const views = useMemo(() => {
@@ -549,7 +550,7 @@ const ProductDetailPage = () => {
                   </div>
                   
                   {/* Corner Colors - Grand River (Match Cabinet or Black) */}
-                  {isGrandRiver && (
+                  {hasCornerOption && (
                     <div className="mb-5">
                       <p className="text-sm font-semibold text-slate-600 mb-2">Corner Color</p>
                       <div className="flex gap-3 flex-wrap">

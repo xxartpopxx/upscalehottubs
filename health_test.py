@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 
 # Configuration
-BACKEND_URL = "https://sauna-details-center.preview.emergentagent.com/api"
+BACKEND_URL = "https://spa-compare-2.preview.emergentagent.com/api"
 
 def test_health_endpoint():
     """Test the /api/health endpoint"""

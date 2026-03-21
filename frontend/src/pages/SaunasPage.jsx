@@ -8,12 +8,15 @@ import ProductGrid from '../components/products/ProductGrid';
 const SaunasPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
+  const isHeaterFilter = activeCategory === 'heaters';
+
   // Filter saunas by category
   const getFilteredSaunas = () => {
     if (activeCategory === 'all') return ALL_SAUNAS;
     if (activeCategory === 'outdoor') return ALL_SAUNAS.filter(s => s.category === 'outdoor' || s.series === 'Barrel Saunas' || s.series === 'Outdoor Saunas' || s.series === 'Premium Outdoor Saunas');
     if (activeCategory === 'indoor') return ALL_SAUNAS.filter(s => s.category === 'indoor' || s.series === 'Cabin Saunas' || s.series === 'Indoor Saunas');
     if (activeCategory === 'infrared') return ALL_SAUNAS.filter(s => s.category === 'infrared' || s.series === 'Full Spectrum Infrared Saunas' || s.series === '3-IN-ONE Combination Saunas' || s.series === 'Infrared Saunas');
+    if (activeCategory === 'heaters') return [];
     return ALL_SAUNAS;
   };
 
@@ -24,6 +27,7 @@ const SaunasPage = () => {
     { id: 'outdoor', label: 'Outdoor', icon: Sun, count: ALL_SAUNAS.filter(s => s.category === 'outdoor' || s.series === 'Barrel Saunas' || s.series === 'Outdoor Saunas' || s.series === 'Premium Outdoor Saunas').length },
     { id: 'indoor', label: 'Indoor', icon: Home, count: ALL_SAUNAS.filter(s => s.category === 'indoor' || s.series === 'Cabin Saunas' || s.series === 'Indoor Saunas').length },
     { id: 'infrared', label: 'Infrared', icon: Thermometer, count: ALL_SAUNAS.filter(s => s.category === 'infrared' || s.series === 'Full Spectrum Infrared Saunas' || s.series === '3-IN-ONE Combination Saunas' || s.series === 'Infrared Saunas').length },
+    { id: 'heaters', label: 'Heaters', icon: Flame, count: SAUNA_HEATERS.length },
   ];
 
   return (
@@ -72,6 +76,7 @@ const SaunasPage = () => {
                   <button
                     key={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
+                    data-testid={`filter-${cat.id}`}
                     className={`flex items-center gap-2 px-4 py-2.5 font-semibold text-sm uppercase tracking-wider transition-all ${
                       activeCategory === cat.id
                         ? 'bg-[#B91C1C] text-white shadow-lg'
@@ -91,15 +96,17 @@ const SaunasPage = () => {
             </div>
           </motion.div>
           
-          {/* Saunas Grid */}
-          <motion.div
-            key={activeCategory}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <ProductGrid products={filteredSaunas} linkPrefix="/products" />
-          </motion.div>
+          {/* Saunas Grid - hidden when heater filter is active */}
+          {!isHeaterFilter && (
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ProductGrid products={filteredSaunas} linkPrefix="/products" />
+            </motion.div>
+          )}
           
           {/* Heaters Section */}
           <motion.div

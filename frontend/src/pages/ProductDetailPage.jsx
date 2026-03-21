@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, Flag, GitCompare } from 'lucide-react';
-import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, DYNASTY_GENERIC_EXTRAS } from '../data/products';
+import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, DYNASTY_GENERIC_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images
@@ -77,6 +77,9 @@ const ProductDetailPage = () => {
     
     if (product.brand === 'Dynasty Spas') {
       return DYNASTY_SPAS_PRODUCTS.filter(p => p.id !== product.id);
+    }
+    if (product.brand === 'Grand River Spas') {
+      return GRAND_RIVER_PRODUCTS.filter(p => p.id !== product.id);
     }
     return [];
   }, [product]);
@@ -408,7 +411,7 @@ const ProductDetailPage = () => {
                       
                       return (
                         <button
-                          key={viewType}
+                          key={`${viewType}-${selectedShell}-${selectedCabinet}-${selectedCorner}`}
                           onClick={() => setCurrentView(viewType)}
                           className={`aspect-square overflow-hidden border-2 transition-all rounded ${
                             currentView === viewType ? 'border-[#B91C1C] ring-2 ring-[#B91C1C]' : 'border-slate-200 hover:border-slate-400'
@@ -418,6 +421,7 @@ const ProductDetailPage = () => {
                             src={thumbUrl} 
                             alt={`${viewLabels[viewType]} view`} 
                             className="w-full h-full object-cover"
+                            key={`img-${viewType}-${selectedShell}-${selectedCabinet}-${selectedCorner}`}
                             onError={(e) => { e.target.src = product.images?.primary; }}
                           />
                         </button>
@@ -872,53 +876,89 @@ const ProductDetailPage = () => {
             );
           })()}
 
-          {/* Model Comparison for Grand River (existing related model) */}
-          {relatedModel && isGrandRiver && (
+          {/* Model Comparison for Grand River */}
+          {isGrandRiver && comparableModels.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="bg-slate-50 p-6 mb-8"
             >
-              <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center">
-                Compare Models
-              </h3>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Current Model */}
-                <div className="bg-white p-4 border-2 border-[#B91C1C]">
-                  <div className="text-center mb-4">
-                    <span className="text-xs bg-[#B91C1C] text-white px-2 py-1 uppercase font-bold">Currently Viewing</span>
-                  </div>
-                  <img src={product.images.overhead || product.images.primary} alt={product.name} className="w-full h-40 object-contain mb-4" />
-                  <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{product.name}</h4>
-                  <p className="text-center text-[#B91C1C] font-bold text-lg">{product.price}</p>
-                  <div className="mt-4 space-y-2 text-sm">
-                    <div className="flex justify-between"><span className="text-slate-500">Dimensions:</span><span className="font-semibold">{product.dimensions}</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Seats:</span><span className="font-semibold">{product.persons} Adults</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#B91C1C]">{product.jets}</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Seating:</span><span className="font-semibold">{product.seatingLayout}</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Electrical:</span><span className="font-semibold">{product.electrical}</span></div>
-                  </div>
-                </div>
-                
-                {/* Related Model */}
-                <div className="bg-white p-4 border border-slate-200">
-                  <img src={relatedModel.images.overhead || relatedModel.images.primary} alt={relatedModel.name} className="w-full h-40 object-contain mb-4 mt-6" />
-                  <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{relatedModel.name}</h4>
-                  <p className="text-center text-[#B91C1C] font-bold text-lg">{relatedModel.price}</p>
-                  <div className="mt-4 space-y-2 text-sm">
-                    <div className="flex justify-between"><span className="text-slate-500">Dimensions:</span><span className="font-semibold">{relatedModel.dimensions}</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Seats:</span><span className="font-semibold">{relatedModel.persons} Adults</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#B91C1C]">{relatedModel.jets}</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Seating:</span><span className="font-semibold">{relatedModel.seatingLayout}</span></div>
-                    <div className="flex justify-between"><span className="text-slate-500">Electrical:</span><span className="font-semibold">{relatedModel.electrical}</span></div>
-                  </div>
-                  <Link to={`/products/${relatedModel.id}`} className="block mt-4 text-center bg-slate-100 hover:bg-slate-200 py-2 text-[#0A1628] font-semibold transition-colors">
-                    View {relatedModel.name} <ArrowRight size={14} className="inline ml-1" />
-                  </Link>
-                </div>
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] flex items-center gap-2">
+                  <GitCompare size={24} className="text-[#B91C1C]" />
+                  Compare Grand River Models
+                </h3>
+                <p className="text-sm text-slate-500">{comparableModels.length} other models available</p>
               </div>
+              
+              {/* Model Selector */}
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-slate-700 mb-2">Select a model to compare:</label>
+                <select
+                  data-testid="grand-river-compare-select"
+                  value={selectedCompareModel?.id || (relatedModel?.id || '')}
+                  onChange={(e) => {
+                    const model = comparableModels.find(m => m.id === e.target.value);
+                    setSelectedCompareModel(model || null);
+                  }}
+                  className="w-full md:w-1/2 border border-slate-300 px-4 py-3 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                >
+                  <option value="">-- Choose a model --</option>
+                  {comparableModels.map(model => (
+                    <option key={model.id} value={model.id}>
+                      {model.name} - {model.persons} Person - {model.jets} Jets - {model.price}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              
+              {/* Comparison Display */}
+              {(selectedCompareModel || relatedModel) && (
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Current Model */}
+                  <div className="bg-white p-4 border-2 border-[#B91C1C]">
+                    <div className="text-center mb-4">
+                      <span className="text-xs bg-[#B91C1C] text-white px-2 py-1 uppercase font-bold">Currently Viewing</span>
+                    </div>
+                    <img src={product.images.overhead || product.images.primary} alt={product.name} className="w-full h-40 object-contain mb-4" />
+                    <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{product.name}</h4>
+                    <p className="text-center text-[#B91C1C] font-bold text-lg">{product.price}</p>
+                    <div className="mt-4 space-y-2 text-sm">
+                      <div className="flex justify-between"><span className="text-slate-500">Dimensions:</span><span className="font-semibold">{product.dimensions}</span></div>
+                      <div className="flex justify-between"><span className="text-slate-500">Seats:</span><span className="font-semibold">{product.persons} Adults</span></div>
+                      <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#B91C1C]">{product.jets}</span></div>
+                      <div className="flex justify-between"><span className="text-slate-500">Seating:</span><span className="font-semibold">{product.seatingLayout}</span></div>
+                      <div className="flex justify-between"><span className="text-slate-500">Electrical:</span><span className="font-semibold">{product.electrical}</span></div>
+                    </div>
+                  </div>
+                  
+                  {/* Selected Compare Model */}
+                  {(() => {
+                    const compareModel = selectedCompareModel || relatedModel;
+                    return (
+                      <div className="bg-white p-4 border border-slate-200">
+                        <div className="text-center mb-4">
+                          <span className="text-xs bg-slate-600 text-white px-2 py-1 uppercase font-bold">Compare With</span>
+                        </div>
+                        <img src={compareModel.images.overhead || compareModel.images.primary} alt={compareModel.name} className="w-full h-40 object-contain mb-4" />
+                        <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{compareModel.name}</h4>
+                        <p className="text-center text-[#B91C1C] font-bold text-lg">{compareModel.price}</p>
+                        <div className="mt-4 space-y-2 text-sm">
+                          <div className="flex justify-between"><span className="text-slate-500">Dimensions:</span><span className="font-semibold">{compareModel.dimensions}</span></div>
+                          <div className="flex justify-between"><span className="text-slate-500">Seats:</span><span className="font-semibold">{compareModel.persons} Adults</span></div>
+                          <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#B91C1C]">{compareModel.jets}</span></div>
+                          <div className="flex justify-between"><span className="text-slate-500">Seating:</span><span className="font-semibold">{compareModel.seatingLayout}</span></div>
+                          <div className="flex justify-between"><span className="text-slate-500">Electrical:</span><span className="font-semibold">{compareModel.electrical}</span></div>
+                        </div>
+                        <Link to={`/products/${compareModel.id}`} className="block mt-4 text-center bg-[#B91C1C] hover:bg-red-700 py-2 text-white font-semibold transition-colors">
+                          View {compareModel.name} <ArrowRight size={14} className="inline ml-1" />
+                        </Link>
+                      </div>
+                    );
+                  })()}
+                </div>
+              )}
             </motion.div>
           )}
           
@@ -942,6 +982,7 @@ const ProductDetailPage = () => {
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Select a model to compare:</label>
                 <select
+                  data-testid="dynasty-compare-select"
                   value={selectedCompareModel?.id || ''}
                   onChange={(e) => {
                     const model = comparableModels.find(m => m.id === e.target.value);

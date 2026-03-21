@@ -11,8 +11,8 @@ import re
 from datetime import datetime
 
 # Configuration
-BACKEND_URL = "https://dynasty-oasis-revamp.preview.emergentagent.com/api"
-FRONTEND_URL = "https://dynasty-oasis-revamp.preview.emergentagent.com"
+BACKEND_URL = "https://sauna-details-center.preview.emergentagent.com/api"
+FRONTEND_URL = "https://sauna-details-center.preview.emergentagent.com"
 
 def test_backend_health():
     """Test backend API endpoints"""

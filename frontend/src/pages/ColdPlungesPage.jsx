@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Snowflake, Heart, Zap, Moon, Timer, Droplets, Thermometer, ChevronDown, ChevronUp, ShieldCheck, Sparkles, Activity } from 'lucide-react';
-import { COLD_PLUNGES } from '../data/products';
+import { ALL_PLUNGES } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const ExpandableSection = ({ title, children, testId }) => {
@@ -89,7 +89,7 @@ const ColdPlungesPage = () => {
           </motion.div>
           
           {/* Products */}
-          <ProductGrid products={COLD_PLUNGES} linkPrefix="/products" />
+          <ProductGrid products={ALL_PLUNGES} linkPrefix="/products" />
 
           <SectionDivider />
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Flag, Filter, Flame, Sun, Home, Thermometer } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { ALL_SAUNAS, SAUNA_HEATERS, ALL_PLUNGES } from '../data/products';
+import { ALL_SAUNAS, SAUNA_HEATERS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const SaunasPage = () => {
@@ -99,29 +99,6 @@ const SaunasPage = () => {
             transition={{ duration: 0.3 }}
           >
             <ProductGrid products={filteredSaunas} linkPrefix="/products" />
-          </motion.div>
-
-          {/* Cold Plunges / Tubs Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-20"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              </div>
-              <div>
-                <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold uppercase text-[#0A1628]">
-                  Cold Plunges & Tubs
-                </h2>
-                <p className="text-slate-600">Designed for recovery and wellness through cold immersion therapy</p>
-              </div>
-            </div>
-            <ProductGrid products={ALL_PLUNGES} linkPrefix="/products" />
           </motion.div>
           
           {/* Heaters Section */}

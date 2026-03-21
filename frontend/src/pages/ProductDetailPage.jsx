@@ -106,8 +106,11 @@ const ProductDetailPage = () => {
   
   const isGrandRiver = product?.brand === 'Grand River Spas';
   const isDynasty = product?.brand === 'Dynasty Spas';
-  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design';
+  const isWorldSaunaGroup = product?.brand === 'World Sauna Group';
+  const isHeater = product?.category === 'heater';
+  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isHeater;
   const isFinnmarkSauna = product?.brand === 'Finnmark Design';
+  const isWorldSaunaWithGallery = isWorldSaunaGroup && product?.images?.gallery && product?.images?.gallery.length > 0;
   const isSwimSpa = !!product?.length;
   const hasColorSelector = isGrandRiver && !isSwimSpa;
   
@@ -126,6 +129,11 @@ const ProductDetailPage = () => {
     
     // For Finnmark saunas with gallery images
     if (isFinnmarkSauna && product.images.gallery && product.images.gallery.length > 0) {
+      return product.images.gallery[galleryIndex] || product.images.primary;
+    }
+    
+    // For World Sauna Group products with gallery images
+    if (isWorldSaunaWithGallery) {
       return product.images.gallery[galleryIndex] || product.images.primary;
     }
     
@@ -158,7 +166,7 @@ const ProductDetailPage = () => {
     }
     
     return product.images.primary;
-  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, isDynasty, isFinnmarkSauna, imageError, galleryIndex]);
+  }, [product, currentView, selectedShell, selectedCabinet, selectedCorner, isGrandRiver, isDynasty, isFinnmarkSauna, isWorldSaunaWithGallery, imageError, galleryIndex]);
   
   if (!product) {
     return (
@@ -173,11 +181,16 @@ const ProductDetailPage = () => {
     );
   }
 
-  // Different specs for saunas vs hot tubs
-  const specs = isSaunaOrColdPlunge ? [
+  // Different specs for saunas/heaters vs hot tubs
+  const specs = isHeater ? [
+    { icon: Zap, label: 'Heater Type', value: product.heaterType || 'Electric' },
+    { icon: Info, label: 'Brand', value: product.brand || 'N/A' },
+  ] : isSaunaOrColdPlunge ? [
     { icon: Users, label: 'Capacity', value: product.persons ? `${product.persons} Persons` : 'N/A' },
     { icon: Zap, label: 'Electrical', value: product.electrical || 'N/A' },
     { icon: Ruler, label: 'Dimensions', value: product.dimensions || 'N/A' },
+    ...(product.maxTemperature ? [{ icon: Info, label: 'Max Temp', value: product.maxTemperature }] : []),
+    ...(product.collection ? [{ icon: Info, label: 'Collection', value: product.collection }] : []),
   ] : [
     { icon: Users, label: 'Seats', value: `${product.persons} Adults` },
     { icon: Droplets, label: 'Jets', value: product.jets || 'N/A' },
@@ -193,11 +206,12 @@ const ProductDetailPage = () => {
   
   const currentViewIndex = views.indexOf(currentView);
   
-  // Gallery navigation for Finnmark saunas
+  // Gallery navigation for Finnmark saunas and World Sauna Group products
   const galleryLength = product?.images?.gallery?.length || 0;
+  const hasGallery = (isFinnmarkSauna || isWorldSaunaWithGallery) && galleryLength > 0;
   
   const handlePrevView = () => {
-    if (isFinnmarkSauna && galleryLength > 0) {
+    if (hasGallery) {
       setGalleryIndex(prev => prev > 0 ? prev - 1 : galleryLength - 1);
     } else {
       const newIndex = currentViewIndex > 0 ? currentViewIndex - 1 : views.length - 1;
@@ -206,7 +220,7 @@ const ProductDetailPage = () => {
   };
   
   const handleNextView = () => {
-    if (isFinnmarkSauna && galleryLength > 0) {
+    if (hasGallery) {
       setGalleryIndex(prev => prev < galleryLength - 1 ? prev + 1 : 0);
     } else {
       const newIndex = currentViewIndex < views.length - 1 ? currentViewIndex + 1 : 0;
@@ -283,8 +297,8 @@ const ProductDetailPage = () => {
                   />
                 </AnimatePresence>
                 
-                {/* Navigation Arrows - only show when multiple views or Finnmark gallery */}
-                {(views.length > 1 || (isFinnmarkSauna && galleryLength > 1)) && (
+                {/* Navigation Arrows - only show when multiple views or has gallery */}
+                {(views.length > 1 || (hasGallery && galleryLength > 1)) && (
                   <>
                     <button
                       onClick={handlePrevView}
@@ -303,8 +317,8 @@ const ProductDetailPage = () => {
                   </>
                 )}
                 
-                {/* Finnmark gallery indicator */}
-                {isFinnmarkSauna && galleryLength > 1 && (
+                {/* Gallery indicator for products with image galleries */}
+                {hasGallery && galleryLength > 1 && (
                   <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                     {product.images.gallery.map((_, idx) => (
                       <button
@@ -369,8 +383,8 @@ const ProductDetailPage = () => {
                 </div>
               )}
               
-              {/* Finnmark Gallery Thumbnails */}
-              {isFinnmarkSauna && galleryLength > 1 && (
+              {/* Gallery Thumbnails for products with galleries */}
+              {hasGallery && galleryLength > 1 && (
                 <div className="mt-4 grid grid-cols-5 md:grid-cols-9 gap-2">
                   {product.images.gallery.map((img, idx) => (
                     <button
@@ -699,7 +713,7 @@ const ProductDetailPage = () => {
           )}
 
           {/* Sauna - White Glove Installation Option */}
-          {(product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design') && product?.whiteGloveInstallation && (
+          {(product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup) && !isHeater && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -714,12 +728,12 @@ const ProductDetailPage = () => {
                       White Glove Installation Available
                     </h3>
                     <p className="text-amber-100">
-                      {SAUNA_INSTALLATION_OPTION.description}
+                      {SAUNA_INSTALLATION_OPTION?.description || 'Professional installation by our expert team. We handle delivery, assembly, and setup so you can relax.'}
                     </p>
                   </div>
                   <div className="bg-white/20 backdrop-blur-sm px-8 py-4 rounded-lg border border-white/30 text-center">
                     <span className="text-white text-sm block mb-1">Add Professional Installation</span>
-                    <span className="text-white font-bold text-3xl">{SAUNA_INSTALLATION_OPTION.price}</span>
+                    <span className="text-white font-bold text-3xl">{SAUNA_INSTALLATION_OPTION?.price || 'Contact for Quote'}</span>
                   </div>
                 </div>
                 <p className="text-amber-200 text-sm text-center md:text-left mt-4">

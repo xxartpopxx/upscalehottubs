@@ -3065,12 +3065,657 @@ export const COLD_PLUNGES = [
   }
 ];
 
+// ===========================================
+// WORLD SAUNA GROUP - OUTDOOR SAUNAS
+// ===========================================
+export const WORLD_SAUNA_OUTDOOR = [
+  // FINSAUNA KEILA COLLECTION
+  {
+    id: 'wsg-keila-200',
+    name: 'Finsauna Keila 200',
+    brand: 'World Sauna Group',
+    series: 'Outdoor Saunas',
+    collection: 'Keila Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 2,
+    category: 'outdoor',
+    dimensions: 'W: 59" x D: 65" x H: 86"',
+    description: 'Discover the FINSAUNA Keila Collection - where sleek Nordic design meets rugged durability. Featuring rugged Thermo-Spruce walls with striking black trim, knotless Thermo-Aspen benches, and solid, thermally modified floors.',
+    longDescription: 'The FINSAUNA Keila Collection elevates outdoor sauna design with Nordic craftsmanship. Built from heavy-duty Thermo-Spruce walls with sophisticated black trim accents, Keilas are designed for longevity and easy maintenance. The wide, knotless Thermo-Aspen benches provide maximum comfort, while the solid thermally modified integral floor ensures easy placement. Enjoy an immersive experience with app-controlled dimmable LED lighting and a deluxe all-glass front.',
+    features: [
+      'Designed for longevity and easy maintenance',
+      'Thermo-Spruce exterior walls with sophisticated black trim accents',
+      'Lasts up to 3x longer than cedar',
+      'Wide, knotless Thermo-Aspen benches for maximum comfort',
+      'Solid thermally modified integral floor for easy placement',
+      'Deluxe all-glass fronts',
+      'App-controlled dimmable LED lighting in backrest and under benches'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_9011616cf8014e1dad88c9c04871dedd~mv2.jpg/v1/fill/w_482,h_612,al_c,q_80,enc_avif,quality_auto/Outdoor_Keila_72dpi.jpg',
+      gallery: [
+        'https://static.wixstatic.com/media/209f9f_6d27eaf6ceaf44e6b4b0815326a4140c~mv2.jpg/v1/fill/w_1440,h_629,al_c,q_85,enc_avif,quality_auto/Finsauna_Keila_00.jpg',
+        'https://static.wixstatic.com/media/209f9f_9c1681e591ac46338b8ae7bef8957db1~mv2.jpg'
+      ]
+    },
+    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_9bcdf2c967c94b4e8b2d92444637954c.pdf'
+  },
+  {
+    id: 'wsg-keila-400',
+    name: 'Finsauna Keila 400',
+    brand: 'World Sauna Group',
+    series: 'Outdoor Saunas',
+    collection: 'Keila Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: 'W: 76" x D: 76" x H: 94"',
+    description: 'Larger 4-person Keila model with sleek Nordic design and rugged durability. Features Thermo-Spruce walls with black trim and knotless Thermo-Aspen benches.',
+    longDescription: 'The FINSAUNA Keila 400 offers spacious seating for up to 4 people while maintaining the premium Nordic craftsmanship of the Keila Collection. Built from heavy-duty Thermo-Spruce walls with sophisticated black trim accents, designed for longevity and easy maintenance.',
+    features: [
+      'Designed for longevity and easy maintenance',
+      'Thermo-Spruce exterior walls with sophisticated black trim accents',
+      'Lasts up to 3x longer than cedar',
+      'Wide, knotless Thermo-Aspen benches for maximum comfort',
+      'Solid thermally modified integral floor for easy placement',
+      'Deluxe all-glass fronts',
+      'App-controlled dimmable LED lighting in backrest and under benches'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_9011616cf8014e1dad88c9c04871dedd~mv2.jpg/v1/fill/w_482,h_612,al_c,q_80,enc_avif,quality_auto/Outdoor_Keila_72dpi.jpg'
+    },
+    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_9bcdf2c967c94b4e8b2d92444637954c.pdf'
+  },
+  // FINSAUNA REVIVA COLLECTION (Barrel Saunas)
+  {
+    id: 'wsg-reviva-400p',
+    name: 'Finsauna Reviva 400P',
+    brand: 'World Sauna Group',
+    series: 'Outdoor Saunas',
+    collection: 'Reviva Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: 'D: 63" x DIA: 91"',
+    description: 'The FINSAUNA Reviva Collection elevates the timeless barrel sauna, blending innovation with sleek Scandinavian design. Built from heavy-duty Thermo-Spruce for longevity.',
+    longDescription: 'The FINSAUNA Reviva Collection elevates the timeless barrel sauna, blending innovation with sleek Scandinavian design. Built from heavy-duty Thermo-Spruce for longevity, Revivas feature the highest ceiling clearances on the market, ergonomic bench layouts, and luxurious, black-accented details. With app-controlled lighting, gorgeous full-glass fronts, and plenty of heater choices, Revivas bring tradition full circle.',
+    features: [
+      'Heavy-duty Thermo-Spruce walls and floor deliver exceptional durability',
+      'Best ceiling clearances for barrels on the market',
+      'Luxurious black accents',
+      'Five-board deluxe angled backrests with wide benches',
+      'Full front glass for an open, airy feel',
+      'Roof drip edges for effective rainwater management',
+      'Dimmable LED interior lighting with app-based remote control',
+      'Quick installation: Set up and use the same day'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_bc1337bba6934c28aff10fc168ff4111~mv2.jpg/v1/fill/w_482,h_612,fp_0.58_0.50,q_80,enc_avif,quality_auto/Outdoor_Reviva_72dpi.jpg',
+      gallery: [
+        'https://static.wixstatic.com/media/209f9f_2628d530c6af430ab64e28f039f6a035~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_7f890ca02e934106bd29754afef08dd6~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_c1cd2b86b3d14f9ca0ad60d62041d622~mv2.jpg'
+      ]
+    },
+    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_5ea979fc62004a95bb53a6cb2d3ecfff.pdf'
+  },
+  // FINSAUNA SOLARA COLLECTION
+  {
+    id: 'wsg-solara-400p',
+    name: 'Finsauna Solara 400P',
+    brand: 'World Sauna Group',
+    series: 'Outdoor Saunas',
+    collection: 'Solara Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'Premium outdoor sauna from the Solara Collection featuring Nordic craftsmanship and modern design elements.',
+    longDescription: 'The Finsauna Solara Collection represents the pinnacle of outdoor sauna design, combining traditional Nordic sauna culture with contemporary aesthetics. Built for durability and designed for the ultimate relaxation experience.',
+    features: [
+      'Premium Nordic craftsmanship',
+      'Weather-resistant construction',
+      'Modern design elements',
+      'High-quality materials',
+      'Easy assembly'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_bc2e7bf2079845eba4b6827efd59e423~mv2.jpg/v1/fill/w_482,h_612,fp_0.47_0.50,q_80,enc_avif,quality_auto/Outdoor_Solara_72dpi.jpg'
+    }
+  },
+  // HALJAS HELE COLLECTION
+  {
+    id: 'wsg-haljas-hele',
+    name: 'Haljas Hele',
+    brand: 'World Sauna Group',
+    series: 'Outdoor Saunas',
+    collection: 'Hele Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Haljas Hele Collection brings Estonian sauna tradition to your backyard with exceptional craftsmanship and modern convenience.',
+    longDescription: 'Haljas saunas are crafted in Estonia, where sauna culture runs deep. The Hele Collection embodies this tradition while incorporating modern features for today\'s wellness enthusiast.',
+    features: [
+      'Estonian craftsmanship',
+      'Traditional design with modern features',
+      'Premium wood construction',
+      'Weather-resistant',
+      'Easy maintenance'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_68fbac69f97b47dba13bf1e03c5216f9~mv2.jpg/v1/fill/w_482,h_612,al_c,q_80,enc_avif,quality_auto/Outdoor_Haljas_72dpi_v2.jpg'
+    }
+  },
+  // SAUNUM AIRCUBE COLLECTION
+  {
+    id: 'wsg-saunum-aircube',
+    name: 'Saunum Aircube',
+    brand: 'World Sauna Group',
+    series: 'Outdoor Saunas',
+    collection: 'Aircube Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Saunum Aircube Collection features innovative air circulation technology for an enhanced sauna experience.',
+    longDescription: 'Saunum\'s patented air circulation technology creates the perfect sauna climate by evenly distributing heat and fresh air throughout the cabin. The Aircube design maximizes this technology in a modern, outdoor-ready package.',
+    features: [
+      'Patented Saunum air circulation technology',
+      'Even heat distribution',
+      'Fresh air integration',
+      'Modern cubic design',
+      'Outdoor durability'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_b253be4fa0b04446b0001402a4c1ecba~mv2.jpg/v1/fill/w_482,h_612,fp_0.47_0.50,q_80,enc_avif,quality_auto/Outdoor_Aircube_72dpi.jpg'
+    }
+  },
+  // SAUNUM CLASSIC COLLECTION
+  {
+    id: 'wsg-saunum-classic',
+    name: 'Saunum Classic',
+    brand: 'World Sauna Group',
+    series: 'Outdoor Saunas',
+    collection: 'Classic Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Saunum Classic Collection combines traditional sauna design with Saunum\'s innovative air technology.',
+    longDescription: 'Experience the best of both worlds with the Saunum Classic - timeless sauna aesthetics paired with cutting-edge air circulation technology for the perfect sauna climate.',
+    features: [
+      'Classic sauna design',
+      'Saunum air circulation technology',
+      'Premium construction',
+      'Outdoor-ready',
+      'Traditional aesthetics'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_99ff50bb8dd2452aae0f11b6a9fdf156~mv2.jpg/v1/fill/w_482,h_612,fp_0.47_0.50,q_80,enc_avif,quality_auto/Outdoor_Saunum%20Classic_72dpi.jpg'
+    }
+  }
+];
+
+// ===========================================
+// WORLD SAUNA GROUP - INDOOR SAUNAS
+// ===========================================
+export const WORLD_SAUNA_INDOOR = [
+  // AUROOM EMMA
+  {
+    id: 'wsg-auroom-emma',
+    name: 'Auroom Emma',
+    brand: 'World Sauna Group',
+    series: 'Indoor Saunas',
+    collection: 'Emma Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 2,
+    category: 'indoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Auroom Emma brings elegant Finnish sauna design to your indoor space with premium materials and craftsmanship.',
+    longDescription: 'Auroom saunas are designed and crafted in Estonia with a focus on minimalist elegance and exceptional quality. The Emma model features clean lines and premium materials for a sophisticated indoor sauna experience.',
+    features: [
+      'Estonian craftsmanship',
+      'Minimalist design',
+      'Premium materials',
+      'Easy installation',
+      'Compact footprint'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_62dd2ecb905e42938befa0c56b5a22b8~mv2.jpg/v1/crop/x_644,y_496,w_1132,h_1434/fill/w_564,h_714,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Auroom-Emma_Glass_01.jpg'
+    }
+  },
+  // AUROOM RELAXIA
+  {
+    id: 'wsg-auroom-relaxia',
+    name: 'Auroom Relaxia',
+    brand: 'World Sauna Group',
+    series: 'Indoor Saunas',
+    collection: 'Relaxia Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 3,
+    category: 'indoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Auroom Relaxia offers a spacious indoor sauna experience with modern glass elements and premium construction.',
+    longDescription: 'Designed for relaxation and wellness, the Auroom Relaxia features generous interior space and elegant glass panels that create an open, inviting atmosphere. Premium Estonian craftsmanship ensures lasting quality.',
+    features: [
+      'Spacious interior',
+      'Modern glass elements',
+      'Premium Estonian craftsmanship',
+      'Elegant design',
+      'Quality materials'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_73e4907b98d94820b16dc276ac95659b~mv2.jpg/v1/crop/x_879,y_176,w_1705,h_2160/fill/w_564,h_714,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Auroom_Relaxia_Lifestyle.jpg'
+    }
+  },
+  // AUROOM NATIVA
+  {
+    id: 'wsg-auroom-nativa',
+    name: 'Auroom Nativa',
+    brand: 'World Sauna Group',
+    series: 'Indoor Saunas',
+    collection: 'Nativa Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'indoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Auroom Nativa brings natural beauty to indoor sauna design with its organic lines and premium wood construction.',
+    longDescription: 'Inspired by nature, the Auroom Nativa features flowing lines and natural materials that create a serene wellness sanctuary in your home. The design emphasizes connection with natural elements for a truly restorative experience.',
+    features: [
+      'Nature-inspired design',
+      'Premium wood construction',
+      'Organic flowing lines',
+      'Serene atmosphere',
+      'Estonian craftsmanship'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_6e04aea6f8794840864822d3fcd99fe4~mv2.jpg/v1/crop/x_1293,y_103,w_1055,h_1337/fill/w_564,h_714,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Auroom_Nativa_Left_Villa_1.jpg'
+    }
+  },
+  // FINSAUNA ISLA COLLECTION
+  {
+    id: 'wsg-finsauna-isla',
+    name: 'Finsauna Isla',
+    brand: 'World Sauna Group',
+    series: 'Indoor Saunas',
+    collection: 'Isla Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 3,
+    category: 'indoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Finsauna Isla Collection offers premium indoor saunas with Nordic design and exceptional craftsmanship.',
+    longDescription: 'The Isla Collection from Finsauna brings Finnish sauna tradition indoors with modern design sensibilities. Features premium materials and construction for a lasting wellness investment.',
+    features: [
+      'Nordic design',
+      'Premium materials',
+      'Indoor optimized',
+      'Easy maintenance',
+      'Quality construction'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_542b7bd1b5e1463b93a8c7b247c499dc~mv2.jpg/v1/fill/w_564,h_714,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC08190.jpg'
+    }
+  },
+  // FINSAUNA THERMA COLLECTION
+  {
+    id: 'wsg-finsauna-therma',
+    name: 'Finsauna Therma',
+    brand: 'World Sauna Group',
+    series: 'Indoor Saunas',
+    collection: 'Therma Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'indoor',
+    dimensions: 'Contact for Dimensions',
+    description: 'The Finsauna Therma Collection delivers exceptional heat performance with premium indoor sauna design.',
+    longDescription: 'Engineered for optimal thermal performance, the Therma Collection features advanced insulation and heating technology for an authentic Finnish sauna experience in the comfort of your home.',
+    features: [
+      'Advanced thermal performance',
+      'Premium insulation',
+      'Indoor optimized design',
+      'Authentic Finnish experience',
+      'Quality construction'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_97986c8ae80d45d18c8480e4964127b8~mv2.jpg/v1/fill/w_564,h_714,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Finsauna-therma_44_00.jpg'
+    }
+  }
+];
+
+// ===========================================
+// WORLD SAUNA GROUP - INFRARED SAUNAS
+// ===========================================
+export const WORLD_SAUNA_INFRARED = [
+  // FINSAUNA FIERA COLLECTION
+  {
+    id: 'wsg-finsauna-fiera',
+    name: 'Finsauna Fiera',
+    brand: 'World Sauna Group',
+    series: 'Infrared Saunas',
+    collection: 'Fiera Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 2,
+    category: 'infrared',
+    dimensions: 'Contact for Dimensions',
+    maxTemperature: '170°F',
+    description: 'The Finsauna Fiera Collection features powerful infrared heating technology that reaches 170°F in under an hour.',
+    longDescription: 'Experience the therapeutic benefits of infrared heat with the Fiera Collection. Powerful heating technology delivers exceptional performance, reaching 170°F in under an hour for an effective wellness session.',
+    features: [
+      'Powerful infrared heating technology',
+      'Reaches 170°F in under an hour',
+      'Therapeutic infrared wavelengths',
+      'Energy efficient',
+      'Premium construction'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_e22d86e33d0944079df16dfc5a0de899~mv2.jpg/v1/fill/w_482,h_612,al_c,q_80,enc_avif,quality_auto/IR_Fiera_72dpi.jpg'
+    }
+  },
+  // FINSAUNA RADIA IR COLLECTION
+  {
+    id: 'wsg-finsauna-radia-ir',
+    name: 'Finsauna Radia IR',
+    brand: 'World Sauna Group',
+    series: 'Infrared Saunas',
+    collection: 'Radia IR Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 3,
+    category: 'infrared',
+    dimensions: 'Contact for Dimensions',
+    maxTemperature: '170°F',
+    description: 'The Radia IR Collection offers full-spectrum infrared technology for deep, penetrating heat therapy.',
+    longDescription: 'The Radia IR Collection harnesses full-spectrum infrared technology to deliver deep, penetrating heat that promotes detoxification, relaxation, and overall wellness. Premium construction ensures lasting performance.',
+    features: [
+      'Full-spectrum infrared technology',
+      'Deep penetrating heat',
+      'Detoxification benefits',
+      'Premium construction',
+      'Efficient heating'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_f4e47444e9564626bc6928d750c934cd~mv2.jpg/v1/fill/w_482,h_612,al_c,q_80,enc_avif,quality_auto/IR_Radia%20IR_72dpi.jpg'
+    }
+  },
+  // FINSAUNA RADIA TIR COLLECTION
+  {
+    id: 'wsg-finsauna-radia-tir',
+    name: 'Finsauna Radia TIR',
+    brand: 'World Sauna Group',
+    series: 'Infrared Saunas',
+    collection: 'Radia TIR Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 4,
+    category: 'infrared',
+    dimensions: 'Contact for Dimensions',
+    maxTemperature: '170°F',
+    description: 'The Radia TIR Collection combines traditional and infrared heating for the ultimate sauna experience.',
+    longDescription: 'The Radia TIR (Traditional + Infrared) Collection offers the best of both worlds - combining the authentic experience of traditional sauna heat with the therapeutic benefits of infrared technology.',
+    features: [
+      'Combined traditional and infrared heating',
+      'Best of both sauna technologies',
+      'Versatile heating options',
+      'Maximum therapeutic benefits',
+      'Premium construction'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_798b02a145f940ffa091ddfc84bd2e31~mv2.jpg/v1/fill/w_482,h_612,fp_0.48_0.50,q_80,enc_avif,quality_auto/IR_TIR_72dpi.jpg'
+    }
+  }
+];
+
+// ===========================================
+// WORLD SAUNA GROUP - TUBS & PLUNGES
+// ===========================================
+export const WORLD_SAUNA_PLUNGES = [
+  // FINSAUNA AQUAFIN SINGLE
+  {
+    id: 'wsg-aquafin-single',
+    name: 'Finsauna AquaFin Single',
+    brand: 'World Sauna Group',
+    series: 'Tubs & Plunges',
+    collection: 'AquaFin Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 1,
+    category: 'plunge',
+    dimensions: 'W: 85" x D: 42" x H: 30"',
+    description: 'The AquaFin Single features a built-in chiller and compact design ideal for one person, delivering premium at-home hydrotherapy.',
+    longDescription: 'FINSAUNA\'s AquaFin immersion tubs deliver a premium at-home hydrotherapy experience, designed to boost recovery and relaxation through a wide range of temperatures. The AquaFin Single features a built-in chiller and a compact design ideal for one, with insulated construction, digital controls, and durable, lockable covers.',
+    features: [
+      'Hot or cold immersion with precise temperature control',
+      'Powerful hydrotherapy jets',
+      'Immersive LED lighting',
+      'Anti-spillover design for water retention',
+      'Solid, sturdy ABS bottom for easy placement',
+      'Outdoor ASTM safety-rated, tapered & lockable cover',
+      'Optional saltwater & ozone capability'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_f9f6bd133ef24eb59c29b7d744fe50ae~mv2.jpg/v1/fill/w_482,h_612,fp_0.48_0.50,q_80,enc_avif,quality_auto/Plunge_AquaFin_solo_72dpi.jpg',
+      gallery: [
+        'https://static.wixstatic.com/media/209f9f_2810d5dea1e54bc3bc7f3447495245df~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_4a8bd26a6f3a42e6b39b4b3555987ce5~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_422f735696f44b6b99261643d0499f1a~mv2.jpg'
+      ]
+    },
+    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_d25992ce7abc42e5a20104e6cd4d5ab4.pdf'
+  },
+  // FINSAUNA AQUAFIN DOUBLE
+  {
+    id: 'wsg-aquafin-double',
+    name: 'Finsauna AquaFin Double',
+    brand: 'World Sauna Group',
+    series: 'Tubs & Plunges',
+    collection: 'AquaFin Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    persons: 2,
+    category: 'plunge',
+    dimensions: 'W: 85" x D: 85" x H: 30"',
+    description: 'The AquaFin Double offers separate hot and cold tub system, perfect for contrast therapy with a partner.',
+    longDescription: 'The AquaFin Double offers a separate hot and cold tub system, perfect for contrast therapy with a partner. Both models include insulated construction, digital controls, and durable, lockable covers - making them a reliable and luxurious addition to any wellness routine.',
+    features: [
+      'Separate hot and cold tub system',
+      'Perfect for contrast therapy',
+      'Powerful hydrotherapy jets',
+      'Immersive LED lighting',
+      'Anti-spillover design for water retention',
+      'Outdoor ASTM safety-rated, tapered & lockable cover',
+      'Optional saltwater & ozone capability'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_0e48f6f4f5c04b19ad998f84fde4f64e~mv2.jpg/v1/fill/w_479,h_612,al_c,q_80,enc_avif,quality_auto/Plunge_Aquafin_72dpi.jpg'
+    },
+    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_d25992ce7abc42e5a20104e6cd4d5ab4.pdf'
+  }
+];
+
+// ===========================================
+// WORLD SAUNA GROUP - HEATERS
+// ===========================================
+export const SAUNA_HEATERS = [
+  // COZY HEATERS
+  {
+    id: 'heater-cozy',
+    name: 'Cozy Sauna Heater',
+    brand: 'Cozy',
+    series: 'Sauna Heaters',
+    collection: 'Cozy Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    category: 'heater',
+    heaterType: 'Electric',
+    description: 'Cozy sauna heaters deliver reliable performance with efficient heating for your home sauna.',
+    longDescription: 'Cozy heaters are designed for reliability and efficiency, providing consistent heat for an authentic sauna experience. Built with quality materials for long-lasting performance.',
+    features: [
+      'Reliable performance',
+      'Efficient heating',
+      'Quality construction',
+      'Easy installation',
+      'Long-lasting durability'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_82a85dadabc4462083cb76fffba8a7f1~mv2.jpg/v1/fill/w_483,h_612,fp_0.51_0.50,q_80,enc_avif,quality_auto/Heater_Cozy_72dpi.jpg'
+    }
+  },
+  // FINSAUNA HEATERS
+  {
+    id: 'heater-finsauna',
+    name: 'Finsauna Heater',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'Finsauna Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    category: 'heater',
+    heaterType: 'Electric',
+    description: 'Finsauna heaters offer premium Finnish heating technology for the authentic sauna experience.',
+    longDescription: 'Engineered in Finland, Finsauna heaters deliver the authentic heat and steam that define the traditional Finnish sauna experience. Premium construction ensures reliable performance for years to come.',
+    features: [
+      'Finnish engineering',
+      'Authentic sauna heat',
+      'Premium construction',
+      'Reliable performance',
+      'Easy to maintain'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_ae2d9a7176ba4a1482d5983b9a818698~mv2.jpg/v1/fill/w_483,h_612,al_c,q_80,enc_avif,quality_auto/Heater_Finsauna_72dpi.jpg'
+    }
+  },
+  // HUUM HEATERS
+  {
+    id: 'heater-huum',
+    name: 'HUUM Sauna Heater',
+    brand: 'HUUM',
+    series: 'Sauna Heaters',
+    collection: 'HUUM Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    category: 'heater',
+    heaterType: 'Electric',
+    description: 'HUUM sauna heaters combine award-winning Nordic design with advanced technology to deliver a superior sauna experience.',
+    longDescription: 'HUUM sauna heaters combine award-winning Nordic design with advanced technology to deliver a superior sauna experience. Crafted in Estonia, these heaters use large stone capacities and minimal metal surfaces to create soft, long-lasting steam. With smart controls and sleek aesthetics, HUUM heaters elevate performance and style in any sauna setting.',
+    features: [
+      'High stone capacity for gentle, consistent heat and steam',
+      'Mobile app for remote access',
+      'Eco-conscious Estonian craftsmanship',
+      'Minimal yet beautiful design',
+      'Award-winning Nordic design'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_a24ee283e30c4575a313162e7678884d~mv2.jpg/v1/fill/w_483,h_612,al_c,q_80,enc_avif,quality_auto/Heater_Huum_72dpi.jpg',
+      gallery: [
+        'https://static.wixstatic.com/media/209f9f_aaf2c460fea34cc998f76422b6417750~mv2.jpeg',
+        'https://static.wixstatic.com/media/209f9f_1fda2f557c09459d8b546fa918ca41f1~mv2.jpeg',
+        'https://static.wixstatic.com/media/209f9f_05b044328df94e6888ce7665c2b01d40~mv2.jpeg'
+      ]
+    }
+  },
+  // IKI HEATERS
+  {
+    id: 'heater-iki',
+    name: 'IKI Sauna Heater',
+    brand: 'IKI',
+    series: 'Sauna Heaters',
+    collection: 'IKI Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    category: 'heater',
+    heaterType: 'Electric/Wood',
+    description: 'IKI heaters are known for their exceptional stone capacity and ability to produce soft, luxurious steam.',
+    longDescription: 'IKI heaters from Finland are renowned for their exceptional stone capacity and superior steam quality. The innovative design allows for massive amounts of sauna stones, creating soft, enveloping steam that defines the ultimate sauna experience.',
+    features: [
+      'Exceptional stone capacity',
+      'Soft, luxurious steam',
+      'Finnish craftsmanship',
+      'Electric and wood-burning options',
+      'Commercial-grade quality'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_6ee23b650f644f7db9e8151e6c0956e1~mv2.jpg/v1/fill/w_483,h_612,al_c,q_80,enc_avif,quality_auto/Heater_Iki_72dpi.jpg'
+    }
+  },
+  // NARVI HEATERS
+  {
+    id: 'heater-narvi',
+    name: 'Narvi Sauna Heater',
+    brand: 'Narvi',
+    series: 'Sauna Heaters',
+    collection: 'Narvi Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    category: 'heater',
+    heaterType: 'Electric/Wood',
+    description: 'Narvi heaters bring Finnish sauna heritage to your home with both electric and wood-burning options.',
+    longDescription: 'With over 80 years of Finnish sauna heritage, Narvi heaters represent the pinnacle of traditional sauna heating. Available in both electric and wood-burning models, Narvi offers authentic Finnish sauna heat.',
+    features: [
+      'Over 80 years of Finnish heritage',
+      'Electric and wood-burning options',
+      'Traditional Finnish design',
+      'Durable construction',
+      'Authentic sauna experience'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_68d5250a308b463680d0ac51731a80cc~mv2.jpg/v1/fill/w_483,h_612,al_c,q_80,enc_avif,quality_auto/Heater_Narvi_72dpi.jpg'
+    }
+  },
+  // SAUNUM HEATERS
+  {
+    id: 'heater-saunum',
+    name: 'Saunum AirPerfect Heater',
+    brand: 'Saunum',
+    series: 'Sauna Heaters',
+    collection: 'Saunum Collection',
+    price: 'Contact for Pricing',
+    priceValue: null,
+    category: 'heater',
+    heaterType: 'Electric',
+    description: 'Saunum heaters feature patented air circulation technology for the perfect sauna climate.',
+    longDescription: 'Saunum\'s patented AirPerfect technology revolutionizes the sauna experience by circulating fresh air throughout the cabin while maintaining optimal heat. This creates a more comfortable, breathable environment that allows for longer, more enjoyable sauna sessions.',
+    features: [
+      'Patented AirPerfect technology',
+      'Fresh air circulation',
+      'Optimal heat distribution',
+      'Longer, more comfortable sessions',
+      'Smart controls available'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_02de3ff99723409fb7b8f1888e8991f9~mv2.jpg/v1/fill/w_483,h_612,fp_0.47_0.50,q_80,enc_avif,quality_auto/Heater_Saunum%20airperfect_72dpi.jpg'
+    }
+  }
+];
+
+// Combined all World Sauna Group Saunas
+export const WORLD_SAUNA_ALL = [...WORLD_SAUNA_OUTDOOR, ...WORLD_SAUNA_INDOOR, ...WORLD_SAUNA_INFRARED];
+
+// Combined all saunas (existing + World Sauna Group)
+export const ALL_SAUNAS = [...SAUNAS, ...WORLD_SAUNA_ALL];
+
+// Combined all plunges (existing + World Sauna Group)
+export const ALL_PLUNGES = [...COLD_PLUNGES, ...WORLD_SAUNA_PLUNGES];
+
 // Combined Hot Tubs (all brands)
 export const HOT_TUBS = [...GRAND_RIVER_PRODUCTS, ...DYNASTY_SPAS_PRODUCTS, ...VIKING_SPAS_PRODUCTS];
 
 // Get product by ID
 export const getProductById = (id) => {
-  return [...HOT_TUBS, ...SWIM_SPAS, ...SAUNAS, ...COLD_PLUNGES].find(p => p.id === id);
+  return [...HOT_TUBS, ...SWIM_SPAS, ...ALL_SAUNAS, ...ALL_PLUNGES, ...SAUNA_HEATERS].find(p => p.id === id);
 };
 
 // Get related model

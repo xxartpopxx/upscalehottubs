@@ -42,6 +42,27 @@ class StatusCheckCreate(BaseModel):
 async def root():
     return {"message": "Hello World"}
 
+@api_router.get("/health")
+async def health_check():
+    """Health check endpoint to verify server and MongoDB connection"""
+    try:
+        # Test MongoDB connection using the client's admin database
+        await client.admin.command('ping')
+        mongo_status = "connected"
+    except Exception as e:
+        logger.error(f"MongoDB connection failed: {e}")
+        mongo_status = "disconnected"
+    
+    return {
+        "status": "healthy" if mongo_status == "connected" else "unhealthy",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "database": {
+            "status": mongo_status,
+            "name": os.environ.get('DB_NAME', 'unknown')
+        },
+        "service": "hot-tub-spa-backend"
+    }
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()

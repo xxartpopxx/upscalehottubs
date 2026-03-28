@@ -348,6 +348,8 @@ agent_communication:
     message: "WORLD SAUNA GROUP PRODUCTS ADDED: Added all products from World Sauna Group website including: (1) Outdoor Saunas - Finsauna Keila 200/400, Reviva 400P, Solara 400P, Haljas Hele, Saunum Aircube, Saunum Classic; (2) Indoor Saunas - Auroom Emma/Relaxia/Nativa, Finsauna Isla/Therma; (3) Infrared Saunas - Finsauna Fiera, Radia IR, Radia TIR; (4) Tubs & Plunges - Finsauna AquaFin Single/Double; (5) Sauna Heaters - Cozy, Finsauna, HUUM, IKI, Narvi, Saunum AirPerfect. Updated SaunasPage with filter tabs (All/Outdoor/Indoor/Infrared), Cold Plunges section, and Sauna Heaters section. ProductDetailPage updated to handle new brands and gallery images. All products showing 'Contact for Pricing' as per World Sauna Group website."
   - agent: "testing"
     message: "BACKEND HEALTH CHECK TESTING COMPLETED: Successfully implemented and tested /api/health endpoint as requested. (1) Health Endpoint: Returns proper JSON response with status, timestamp, database connection status, and service identifier. MongoDB ping test working correctly. (2) MongoDB Connection: Verified through both ping test and CRUD operations. Database read/write operations confirmed functional with status check creation/retrieval. (3) Existing Backend APIs: All endpoints working correctly - root endpoint, status GET/POST operations. Server running properly on port 8001 and accessible via external URL. All backend functionality verified as healthy and operational."
+  - agent: "main"
+    message: "FINSAUNA USA PRODUCTS & MEMBERSHIP PAGE ADDED: (1) Added ALL Finsauna infrared saunas with MSRP pricing from PDF - 9 models including Fiera, Radia IR, and Radia TIR series ($2,390-$11,890), (2) Added 13 Finsauna indoor/outdoor/barrel saunas with MSRP pricing - Therma, Isla, Emma, Reviva, Solara, Keila series ($5,990-$12,990), (3) Added 10 Finsauna electric heaters - HomeHeat, ProHeat, ClubHeat series ($1,198-$3,798), (4) Added 6 Finsauna plunge tubs - AquaFin and Immersia series ($2,990-$12,990), (5) Added YouTube video to Finnmark FD-5 Trinity XL product with embedded player, (6) Created new Membership page with Fire & Ice Society logo, Red Light Therapy pricing (5 tiers from $34.95-$299.95), benefits section, Naples FL & Greenville SC locations, (7) Added Membership navigation link with gradient styling. Totals: 51 saunas (22 Finsauna), 15 plunges (6 Finsauna), 15 heaters (10 Finsauna)."
 
   - task: "World Sauna Group Outdoor Saunas"
     implemented: true
@@ -420,3 +422,75 @@ agent_communication:
       - working: true
         agent: "main"
         comment: "Added filter tabs for All Saunas (26), Outdoor (11), Indoor (7), Infrared (8). Products filter correctly when tabs are clicked"
+
+  - task: "Finsauna Infrared Saunas with MSRP Pricing"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 9 Finsauna infrared saunas with MSRP pricing from PDF: Fiera 100 ($2,390), Fiera 200 ($2,990), Radia IR 100 ($4,990), Radia IR 200 ($5,990), Radia IR 300 ($7,490), Radia IR 300C ($6,990), Radia IR 400U ($7,790), Radia TIR 200 ($8,490), Radia TIR 400 ($11,890). All include images from finsaunausa.com"
+
+  - task: "Finsauna Indoor/Outdoor Saunas with MSRP Pricing"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 13 Finsauna indoor/outdoor saunas with MSRP pricing: Therma 44/46/57/78 ($5,990-$10,190), Isla 55/57/Lounge ($10,490-$12,890), Emma 79x59 ($11,990), Reviva 400P ($10,900), Solara 400P/600 ($11,900), Keila 200/400 ($10,550-$12,990). All include images from finsaunausa.com"
+
+  - task: "Finsauna Electric Heaters with MSRP Pricing"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 10 Finsauna heaters with MSRP pricing: HomeHeat 4.5/6/8kW ($1,198-$1,298), ProHeat 4.5/6/8kW ($2,098-$2,348), ClubHeat 10/12.5/15kW ($3,498-$3,798). All include images from finsaunausa.com"
+
+  - task: "Finsauna Plunge Tubs with MSRP Pricing"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 6 Finsauna plunge tubs with MSRP pricing: AquaFin Single ($6,999), AquaFin Double ($12,990), Immersia 100 Natural ($2,990), Immersia 100 Black ($3,290), Immersia 200 Natural ($4,490), Immersia 200 Black ($4,790). All include images from finsaunausa.com"
+
+  - task: "Finnmark FD-5 Trinity XL YouTube Video"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js, frontend/src/pages/ProductDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added YouTube video (https://www.youtube.com/watch?v=ZGXV0JPvUS4) to FD-5 Trinity XL product. Updated ProductDetailPage to display video section with embedded YouTube player for products that have video property"
+
+  - task: "Red Light Therapy Membership Page"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/MembershipPage.jsx, frontend/src/App.js, frontend/src/components/layout/Header.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Created new Membership page with Fire & Ice Society logo, Red Light Therapy pricing (Drop-in $34.95, 5 Sessions $99.95, 10 Sessions $174.95, 20 Sessions $220.95, 30 Sessions $299.95), benefits section, Naples FL & Greenville SC locations. Added route and navigation link with gradient styling"

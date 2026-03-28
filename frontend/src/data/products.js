@@ -2500,6 +2500,7 @@ export const SAUNAS = [
         '/images/saunas/finnmark-fd5-trinity/image-9.png'
       ]
     },
+    video: 'https://www.youtube.com/watch?v=ZGXV0JPvUS4',
     whiteGloveInstallation: true
   },
   {
@@ -4047,21 +4048,1068 @@ export const SAUNA_HEATERS = [
   }
 ];
 
+// ===========================================
+// FINSAUNA USA - INFRARED SAUNAS (from finsaunausa.com)
+// ===========================================
+export const FINSAUNA_INFRARED = [
+  // FIERA SERIES - Entry-Level Infrared
+  {
+    id: 'finsauna-fiera-100',
+    name: 'Finsauna Fiera IR 100',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Fiera Collection',
+    price: '$2,390.00',
+    priceValue: 2390,
+    persons: 1,
+    category: 'infrared',
+    dimensions: 'W: 36" x D: 36" x H: 75"',
+    maxTemperature: '170°F',
+    description: 'FINSAUNA\'s Fiera infrared saunas blend modern design with therapeutic comfort, featuring sleek full-glass fronts and premium Canadian hemlock construction.',
+    longDescription: 'FINSAUNA\'s Fiera infrared saunas blend modern design with therapeutic comfort, featuring sleek full-glass fronts and premium Canadian hemlock construction. With seven low-EMF carbon fiber heaters, heated slatted floors, and soft ambient LED lighting, Fieras deliver full-body warmth and a deeply relaxing atmosphere.',
+    features: [
+      'Full front glass provides a sleek, open look',
+      'Crafted from beautiful, durable Canadian hemlock',
+      'Heated slatted floors add soothing warmth',
+      'Soft, soothing LED lighting creates the perfect atmosphere',
+      '7 wall-to-wall, low-EMF far-infrared heaters provide full coverage',
+      'Quick, efficient preheating process',
+      'Immersive Bluetooth audio for music/podcasts'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_9fda763ce5664b8b8b1165d9b3ee745b~mv2.png/v1/fill/w_452,h_452,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/fiera-ir-100-infrared-sauna-main-1.png',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-fiera-200',
+    name: 'Finsauna Fiera IR 200',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Fiera Collection',
+    price: '$2,990.00',
+    priceValue: 2990,
+    persons: 2,
+    category: 'infrared',
+    dimensions: 'W: 47" x D: 40" x H: 75"',
+    maxTemperature: '170°F',
+    description: '2-person Fiera infrared sauna with modern design, therapeutic comfort, and premium Canadian hemlock construction.',
+    longDescription: 'The Fiera IR 200 offers space for two while maintaining the premium features of the Fiera Collection. Features low-EMF carbon fiber heaters, heated slatted floors, and ambient LED lighting for a deeply relaxing experience.',
+    features: [
+      'Full front glass provides a sleek, open look',
+      'Crafted from beautiful, durable Canadian hemlock',
+      'Heated slatted floors add soothing warmth',
+      'Soft, soothing LED lighting creates the perfect atmosphere',
+      'Low-EMF far-infrared heaters provide full coverage',
+      'Quick, efficient preheating process',
+      'Immersive Bluetooth audio'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_4e7d11b7596b49f19205013d3c4d50c5~mv2.png/v1/fill/w_452,h_452,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/finsauna-fiera-200-infrared-sauna-main-1_PNG.png',
+      gallery: []
+    }
+  },
+  // RADIA IR SERIES - Premium Infrared Only
+  {
+    id: 'finsauna-radia-ir-100',
+    name: 'Finsauna Radia IR 100',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Radia Collection',
+    price: '$4,990.00',
+    priceValue: 4990,
+    persons: 1,
+    category: 'infrared',
+    dimensions: 'W: 36" x D: 36" x H: 79"',
+    maxTemperature: '170°F',
+    description: 'Premium 1-person infrared sauna featuring FINSAUNA\'s state-of-the-art IR technology for quick, safe, and efficient heat generation.',
+    longDescription: 'FINSAUNA Radia infrared saunas are precision-engineered to provide higher temperatures and a therapeutic, full-body heat. Their modern design complements any home interior beautifully. The Radia IR 100 delivers premium infrared therapy in a compact, single-person design.',
+    features: [
+      'State-of-the-art IR technology',
+      'Higher temperatures for therapeutic full-body heat',
+      'Modern design complements any interior',
+      'Premium construction materials',
+      'Low-EMF infrared heaters',
+      'Digital controls with easy operation',
+      'Quick heat-up time'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_e521ed978e9148d683fb103426936d2f~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Radia-IR-100-2-Red.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-radia-ir-200',
+    name: 'Finsauna Radia IR 200',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Radia Collection',
+    price: '$5,990.00',
+    priceValue: 5990,
+    persons: 2,
+    category: 'infrared',
+    dimensions: 'W: 47" x D: 40" x H: 79"',
+    maxTemperature: '170°F',
+    description: 'Premium 2-person infrared sauna with precision-engineered IR technology for therapeutic, full-body heat.',
+    longDescription: 'The Radia IR 200 offers space for two people while delivering the premium infrared experience FINSAUNA is known for. Features state-of-the-art IR technology for therapeutic, full-body heat with modern design.',
+    features: [
+      'State-of-the-art IR technology',
+      'Higher temperatures for therapeutic full-body heat',
+      'Modern design complements any interior',
+      'Premium construction materials',
+      'Low-EMF infrared heaters',
+      'Digital controls with easy operation',
+      'Comfortable 2-person seating'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_ccc3deeb9ea341dd852e413bef8fedd4~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Radia-IR-200-1-Red.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-radia-ir-300',
+    name: 'Finsauna Radia IR 300',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Radia Collection',
+    price: '$7,490.00',
+    priceValue: 7490,
+    persons: 4,
+    category: 'infrared',
+    dimensions: 'W: 59" x D: 47" x H: 79"',
+    maxTemperature: '170°F',
+    description: 'Spacious 4-person infrared sauna with premium FINSAUNA IR technology for the ultimate therapeutic experience.',
+    longDescription: 'The Radia IR 300 provides generous space for up to 4 people while delivering FINSAUNA\'s premium infrared technology. Perfect for families or those who want extra room to stretch out and relax.',
+    features: [
+      'State-of-the-art IR technology',
+      'Spacious 4-person capacity',
+      'Higher temperatures for therapeutic full-body heat',
+      'Modern design complements any interior',
+      'Premium construction materials',
+      'Low-EMF infrared heaters',
+      'Multiple heating zones'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_73078d60183d49e3b60b18a1f13f6675~mv2.webp/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/finsauna-radia-ir-300-infrared-sauna-main-1.webp',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-radia-ir-300c',
+    name: 'Finsauna Radia IR 300C',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Radia Collection',
+    price: '$6,990.00',
+    priceValue: 6990,
+    persons: 2,
+    category: 'infrared',
+    dimensions: 'W: 59" x D: 47" x H: 79"',
+    maxTemperature: '170°F',
+    description: 'Corner-design 2-person infrared sauna, perfect for maximizing space while enjoying premium IR therapy.',
+    longDescription: 'The Radia IR 300C features a unique corner design that maximizes your available space while delivering the same premium infrared experience. Perfect for corners or tight spaces.',
+    features: [
+      'Unique corner design saves space',
+      'State-of-the-art IR technology',
+      'Higher temperatures for therapeutic full-body heat',
+      'Modern design complements any interior',
+      'Premium construction materials',
+      'Low-EMF infrared heaters',
+      'Digital controls'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_1d093e2b5e7649a192e07d3f652ef725~mv2.png/v1/fill/w_452,h_452,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/radia-ir-300c-infrared-sauna-hero-2.png',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-radia-ir-400u',
+    name: 'Finsauna Radia IR 400U',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Radia Collection',
+    price: '$7,790.00',
+    priceValue: 7790,
+    persons: 4,
+    category: 'infrared',
+    dimensions: 'W: 69" x D: 47" x H: 79"',
+    maxTemperature: '170°F',
+    description: 'Large 4-person infrared sauna with U-shaped bench design for maximum comfort and social interaction.',
+    longDescription: 'The Radia IR 400U features a unique U-shaped bench design that allows for comfortable seating of up to 4 people facing each other. Perfect for families or social sauna sessions.',
+    features: [
+      'U-shaped bench design for social sessions',
+      'State-of-the-art IR technology',
+      '4-person capacity',
+      'Higher temperatures for therapeutic heat',
+      'Modern design complements any interior',
+      'Low-EMF infrared heaters',
+      'Premium materials'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_f64500f694074258ad8268a87b390953~mv2.png/v1/fill/w_452,h_452,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Radia-IR-400U-sauna-01.png',
+      gallery: []
+    }
+  },
+  // RADIA TIR SERIES - Traditional + Infrared Combination
+  {
+    id: 'finsauna-radia-tir-200',
+    name: 'Finsauna Radia TIR 200',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Radia TIR Collection',
+    price: '$8,490.00',
+    priceValue: 8490,
+    persons: 2,
+    category: 'infrared',
+    dimensions: 'W: 47" x D: 40" x H: 79"',
+    maxTemperature: '170°F (IR) / 190°F (Traditional)',
+    description: '2-person combination sauna featuring both traditional and infrared heating for the ultimate versatility.',
+    longDescription: 'The Radia TIR 200 combines the best of both worlds - traditional Finnish sauna heat with modern infrared technology. Switch between modes or use both for the ultimate sauna experience.',
+    features: [
+      'Dual heating: Traditional + Infrared',
+      'Switch between modes or use both',
+      'Traditional Finnish sauna experience',
+      'Modern infrared therapy benefits',
+      '2-person capacity',
+      'Premium construction',
+      'Digital controls'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_746be68fb1f54528a3d3730e5c0b8416~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Radia-TI-200-2-Red.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-radia-tir-400',
+    name: 'Finsauna Radia TIR 400',
+    brand: 'Finsauna',
+    series: 'Infrared Saunas',
+    collection: 'Radia TIR Collection',
+    price: '$11,890.00',
+    priceValue: 11890,
+    persons: 4,
+    category: 'infrared',
+    dimensions: 'W: 69" x D: 47" x H: 79"',
+    maxTemperature: '170°F (IR) / 190°F (Traditional)',
+    description: '4-person combination sauna with both traditional and infrared heating for versatile wellness therapy.',
+    longDescription: 'The Radia TIR 400 is the ultimate combination sauna, offering both traditional Finnish heat and modern infrared therapy in a spacious 4-person cabin. Perfect for families who want the best of both worlds.',
+    features: [
+      'Dual heating: Traditional + Infrared',
+      'Spacious 4-person capacity',
+      'Traditional Finnish sauna experience',
+      'Modern infrared therapy benefits',
+      'Premium materials',
+      'Digital controls',
+      'Switch between modes or use both'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_cb03b864990f490396f6a0f9a0e48ca0~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Radia-TI-400-1-Red.jpg',
+      gallery: []
+    }
+  }
+];
+
+// ===========================================
+// FINSAUNA USA - INDOOR TRADITIONAL SAUNAS
+// ===========================================
+export const FINSAUNA_INDOOR = [
+  // THERMA SERIES
+  {
+    id: 'finsauna-therma-44',
+    name: 'Finsauna Therma 44',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Therma Collection',
+    price: '$5,990.00',
+    priceValue: 5990,
+    persons: 2,
+    category: 'indoor',
+    dimensions: 'W: 53" x D: 51" x H: 79"',
+    description: 'Therma indoor saunas blend authentic Finnish design with luxurious materials at an exceptional value.',
+    longDescription: 'Therma indoor saunas blend authentic Finnish design with luxurious materials, delivering exceptional quality at an affordable price. Handcrafted using solid Nordic white spruce and accented with rich two-tone Thermo-Aspen.',
+    features: [
+      'Solid Nordic white spruce walls',
+      'Stylish two-tone Thermo-Aspen accents',
+      'Floor-to-ceiling front glass',
+      'Ergonomic benches with arched backrests',
+      'Premium turned-wood door handles',
+      'Low-voltage backrest lighting',
+      'Exterior perimeter lighting'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_3876f1c5537845de87779b2b16bbcb6e~mv2.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-therma-46',
+    name: 'Finsauna Therma 46',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Therma Collection',
+    price: '$7,290.00',
+    priceValue: 7290,
+    persons: 3,
+    category: 'indoor',
+    dimensions: 'W: 78" x D: 54" x H: 80"',
+    description: 'Mid-size Therma model with capacity for up to 3 people and authentic Finnish design.',
+    longDescription: 'The Therma 46 offers comfortable seating for up to 3 people while maintaining premium Therma Collection features. Handcrafted using solid Nordic white spruce with two-tone Thermo-Aspen accents.',
+    features: [
+      'Solid Nordic white spruce walls',
+      'Stylish two-tone Thermo-Aspen accents',
+      'Floor-to-ceiling front glass',
+      'Ergonomic benches with arched backrests',
+      'Premium turned-wood door handles',
+      'Low-voltage backrest lighting',
+      '3-person capacity'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_303f75f1fcc64a95bb4a55a5e9a33433~mv2.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-therma-57',
+    name: 'Finsauna Therma 57',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Therma Collection',
+    price: '$8,250.00',
+    priceValue: 8250,
+    persons: 4,
+    category: 'indoor',
+    dimensions: 'W: 72" x D: 59" x H: 80"',
+    description: 'Larger Therma model with capacity for up to 4 people. Ideal for families.',
+    longDescription: 'The Therma 57 provides generous seating for up to 4 people with authentic Finnish design and luxurious two-tone Thermo-Aspen accents.',
+    features: [
+      'Solid Nordic white spruce walls',
+      'Stylish two-tone Thermo-Aspen accents',
+      'Floor-to-ceiling front glass',
+      'Ergonomic benches',
+      '4-person capacity',
+      'Low-voltage lighting',
+      'Premium materials'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_34ebfb312898440c9063f7db35b09d54~mv2.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-therma-78',
+    name: 'Finsauna Therma 78',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Therma Collection',
+    price: '$10,190.00',
+    priceValue: 10190,
+    persons: 6,
+    category: 'indoor',
+    dimensions: 'W: 90" x D: 72" x H: 80"',
+    description: 'Largest Therma model with capacity for up to 6 people. Perfect for large families or commercial use.',
+    longDescription: 'The Therma 78 is the largest in the Therma Collection, offering spacious seating for up to 6 people while maintaining the premium Finnish craftsmanship and materials.',
+    features: [
+      'Solid Nordic white spruce walls',
+      'Spacious 6-person capacity',
+      'Floor-to-ceiling front glass',
+      'Two-tone Thermo-Aspen accents',
+      'Multiple bench levels',
+      'Premium lighting package',
+      'Commercial-grade quality'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_3876f1c5537845de87779b2b16bbcb6e~mv2.jpg',
+      gallery: []
+    }
+  },
+  // ISLA SERIES
+  {
+    id: 'finsauna-isla-55',
+    name: 'Finsauna Isla 55',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Isla Collection',
+    price: '$10,490.00',
+    priceValue: 10490,
+    persons: 2,
+    category: 'indoor',
+    dimensions: 'W: 62" x D: 54" x H: 80"',
+    description: 'Luxury indoor sauna with full glass front walls and premium Nordic craftsmanship.',
+    longDescription: 'The Isla Collection represents the pinnacle of indoor sauna luxury. Handcrafted from European white spruce and clear aspen with full glass front walls for an open, airy feel.',
+    features: [
+      'Premium Nordic white spruce and clear aspen',
+      'Industry-leading design and fit-and-finish',
+      'Full glass front walls',
+      'Dimmable in-backrest lighting',
+      'Remote control operation',
+      'Versatile design',
+      'Handcrafted excellence'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_94870d87bd5143999ac20a44dc607e65~mv2.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-isla-57',
+    name: 'Finsauna Isla 57',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Isla Collection',
+    price: '$12,890.00',
+    priceValue: 12890,
+    persons: 4,
+    category: 'indoor',
+    dimensions: 'W: 72" x D: 59" x H: 80"',
+    description: 'Larger Isla model with capacity for up to 4 people and premium Nordic craftsmanship.',
+    longDescription: 'The Isla 57 offers more space while maintaining the premium features of the Isla Collection. Handcrafted from European white spruce and clear aspen.',
+    features: [
+      'Premium Nordic white spruce and clear aspen',
+      'Industry-leading design',
+      'Full glass front walls',
+      'Dimmable in-backrest lighting',
+      '4-person capacity',
+      'Remote control',
+      'Handcrafted in Estonia'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_6d8e87525cb04555b522388333b3c951~mv2.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-isla-lounge',
+    name: 'Finsauna Isla Lounge',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Isla Collection',
+    price: '$12,390.00',
+    priceValue: 12390,
+    persons: 2,
+    category: 'indoor',
+    dimensions: 'W: 78" x D: 54" x H: 80"',
+    description: 'Luxurious lounge-style sauna with reclining bench for ultimate relaxation.',
+    longDescription: 'The Isla Lounge features a unique reclining bench design for ultimate relaxation. Handcrafted with the same premium materials as the rest of the Isla Collection.',
+    features: [
+      'Unique lounge/reclining design',
+      'Premium Nordic materials',
+      'Full glass front walls',
+      'Dimmable lighting',
+      'Remote control',
+      'Perfect for relaxation',
+      'Handcrafted excellence'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_94870d87bd5143999ac20a44dc607e65~mv2.jpg',
+      gallery: []
+    }
+  },
+  // EMMA/AUROOM SERIES
+  {
+    id: 'finsauna-emma-79x59',
+    name: 'Finsauna Emma 79" x 59"',
+    brand: 'Finsauna',
+    series: 'Indoor Saunas',
+    collection: 'Emma Collection',
+    price: '$11,990.00',
+    priceValue: 11990,
+    persons: 3,
+    category: 'indoor',
+    dimensions: 'W: 79" x D: 59" x H: 84"',
+    description: 'Premium Emma indoor sauna with elegant design and superior craftsmanship.',
+    longDescription: 'The Emma Collection represents Finnish sauna tradition with modern elegance. Crafted with premium materials for lasting beauty and exceptional sauna experience.',
+    features: [
+      'Premium Finnish design',
+      'Elegant styling',
+      'Superior craftsmanship',
+      'High-quality materials',
+      '3-person capacity',
+      'Digital controls',
+      'Easy assembly'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/209f9f_3876f1c5537845de87779b2b16bbcb6e~mv2.jpg',
+      gallery: []
+    }
+  }
+];
+
+// ===========================================
+// FINSAUNA USA - OUTDOOR/BARREL SAUNAS
+// ===========================================
+export const FINSAUNA_OUTDOOR = [
+  // REVIVA BARREL SERIES
+  {
+    id: 'finsauna-reviva-400p',
+    name: 'Finsauna Reviva 400 P',
+    brand: 'Finsauna',
+    series: 'Barrel Saunas',
+    collection: 'Reviva Collection',
+    price: '$10,900.00',
+    priceValue: 10900,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: '4-person barrel',
+    description: 'Premium solid log-walled barrel-style outdoor sauna with authentic Finnish construction.',
+    longDescription: 'The Reviva 400 P brings authentic Finnish barrel sauna experience to your backyard. Solid log-walled construction provides excellent heat retention and durability.',
+    features: [
+      'Solid log-walled construction',
+      'Authentic barrel-style design',
+      '4-person capacity',
+      'Premium materials',
+      'Outdoor-ready',
+      'Excellent heat retention',
+      'Traditional Finnish experience'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_64460facbd014b8baa22a2a436ee290d~mv2.jpg/v1/fill/w_125,h_125,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Reviva-300-Sauna-916-2.jpg',
+      gallery: []
+    }
+  },
+  // SOLARA CUBE SERIES
+  {
+    id: 'finsauna-solara-400p',
+    name: 'Finsauna Solara 400 P',
+    brand: 'Finsauna',
+    series: 'Outdoor Saunas',
+    collection: 'Solara Collection',
+    price: '$11,900.00',
+    priceValue: 11900,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: '4-person cube',
+    description: 'Premium solid log-walled cube-style outdoor sauna with modern aesthetics.',
+    longDescription: 'The Solara 400 P combines traditional Finnish sauna construction with modern cube-style aesthetics. Perfect for contemporary outdoor spaces.',
+    features: [
+      'Solid log-walled construction',
+      'Modern cube-style design',
+      '4-person capacity',
+      'Premium materials',
+      'Outdoor-ready',
+      'Contemporary aesthetics',
+      'Traditional heat quality'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_9e912d66c6c84a1786d82e856d32d51e~mv2.jpg/v1/fill/w_147,h_83,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Vivida-400-Sauna-916.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-solara-600',
+    name: 'Finsauna Solara 600',
+    brand: 'Finsauna',
+    series: 'Outdoor Saunas',
+    collection: 'Solara Collection',
+    price: '$11,900.00',
+    priceValue: 11900,
+    persons: 6,
+    category: 'outdoor',
+    dimensions: '6-person cube',
+    description: 'Larger cube-style outdoor sauna with 6-person capacity and modern design.',
+    longDescription: 'The Solara 600 offers spacious seating for up to 6 people in a modern cube-style design. Perfect for families or social sauna sessions.',
+    features: [
+      'Spacious 6-person capacity',
+      'Modern cube-style design',
+      'Solid log-walled construction',
+      'Premium materials',
+      'Outdoor-ready',
+      'Social seating layout',
+      'Traditional heat quality'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_9e912d66c6c84a1786d82e856d32d51e~mv2.jpg',
+      gallery: []
+    }
+  },
+  // KEILA SERIES
+  {
+    id: 'finsauna-keila-200',
+    name: 'Finsauna Keila 200',
+    brand: 'Finsauna',
+    series: 'Outdoor Saunas',
+    collection: 'Keila Collection',
+    price: '$10,550.00',
+    priceValue: 10550,
+    persons: 2,
+    category: 'outdoor',
+    dimensions: '2-person panel-built',
+    description: 'Thermo-Spruce panel-built outdoor sauna with modern design and easy assembly.',
+    longDescription: 'The Keila Collection features Thermo-Spruce panel-built construction for durability and easy assembly. Perfect for smaller outdoor spaces.',
+    features: [
+      'Thermo-Spruce construction',
+      'Panel-built for easy assembly',
+      '2-person capacity',
+      'Modern design',
+      'Outdoor-ready',
+      'Durable materials',
+      'Weather-resistant'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_9e912d66c6c84a1786d82e856d32d51e~mv2.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-keila-400',
+    name: 'Finsauna Keila 400',
+    brand: 'Finsauna',
+    series: 'Outdoor Saunas',
+    collection: 'Keila Collection',
+    price: '$12,990.00',
+    priceValue: 12990,
+    persons: 4,
+    category: 'outdoor',
+    dimensions: '4-person panel-built',
+    description: 'Larger Thermo-Spruce panel-built outdoor sauna with 4-person capacity.',
+    longDescription: 'The Keila 400 offers more space while maintaining the easy assembly and durability of the Keila Collection. Perfect for families.',
+    features: [
+      'Thermo-Spruce construction',
+      'Panel-built for easy assembly',
+      '4-person capacity',
+      'Modern design',
+      'Outdoor-ready',
+      'Durable materials',
+      'Family-friendly size'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_9e912d66c6c84a1786d82e856d32d51e~mv2.jpg',
+      gallery: []
+    }
+  }
+];
+
+// ===========================================
+// FINSAUNA USA - ELECTRIC HEATERS
+// ===========================================
+export const FINSAUNA_HEATERS = [
+  // HOMEHEAT SERIES
+  {
+    id: 'finsauna-heater-homeheat-45',
+    name: 'Finsauna HomeHeat 4.5kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'HomeHeat Series',
+    price: '$1,198.00',
+    priceValue: 1198,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '4.5kW',
+    description: 'Wall-mounted sauna heater with built-in control panel. Stainless-steel construction with stones included.',
+    longDescription: 'The HomeHeat Series combines beautiful stainless-steel design with innovative built-in control panel. Designed for saunas from 85 to 250 cubic feet. Stones included.',
+    features: [
+      'Built-in control panel',
+      'Stainless-steel construction',
+      'Stones included',
+      'Wall-mounted design',
+      'For saunas 85-250 cu. ft.',
+      'Made in Finland',
+      'Easy installation'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_1f0a37540b5e42a9bc0ed4f69038a952~mv2.jpg/v1/fill/w_103,h_103,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Finsauna-HomeHeat%20(1).jpg'
+    }
+  },
+  {
+    id: 'finsauna-heater-homeheat-6',
+    name: 'Finsauna HomeHeat 6kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'HomeHeat Series',
+    price: '$1,248.00',
+    priceValue: 1248,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '6kW',
+    description: 'Mid-size wall-mounted sauna heater with built-in controls. Perfect for medium home saunas.',
+    longDescription: 'The HomeHeat 6kW offers more power for medium-sized home saunas while maintaining the built-in control convenience.',
+    features: [
+      'Built-in control panel',
+      'Stainless-steel construction',
+      'Stones included',
+      '6kW power output',
+      'Wall-mounted design',
+      'Made in Finland',
+      'Easy installation'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_1f0a37540b5e42a9bc0ed4f69038a952~mv2.jpg'
+    }
+  },
+  {
+    id: 'finsauna-heater-homeheat-8',
+    name: 'Finsauna HomeHeat 8kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'HomeHeat Series',
+    price: '$1,298.00',
+    priceValue: 1298,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '8kW',
+    description: 'Powerful wall-mounted heater with built-in controls for larger home saunas.',
+    longDescription: 'The HomeHeat 8kW provides maximum power for larger home saunas up to 425 cubic feet while maintaining easy built-in control operation.',
+    features: [
+      'Built-in control panel',
+      'Stainless-steel construction',
+      'Stones included',
+      '8kW power output',
+      'For saunas up to 425 cu. ft.',
+      'Made in Finland',
+      'Wall-mounted design'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_1f0a37540b5e42a9bc0ed4f69038a952~mv2.jpg'
+    }
+  },
+  // PROHEAT SERIES
+  {
+    id: 'finsauna-heater-proheat-45',
+    name: 'Finsauna ProHeat 4.5kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'ProHeat Series',
+    price: '$2,098.00',
+    priceValue: 2098,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '4.5kW',
+    description: 'Professional-grade heater with SaunaLink Wi-Fi control. Stainless-steel construction with stones included.',
+    longDescription: 'The ProHeat Series features durable stainless-steel construction, sleek modern design, and SaunaLink Wi-Fi technology for remote control.',
+    features: [
+      'SaunaLink Wi-Fi control',
+      'Stainless-steel construction',
+      'Stones included',
+      'Professional-grade',
+      'Modern design',
+      'Made in Finland',
+      'Remote operation'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_dc24e76c4bbd4763a47d8c1a9125ec12~mv2.jpg/v1/fill/w_105,h_103,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Finsauna-ProHeat-Heater.jpg'
+    }
+  },
+  {
+    id: 'finsauna-heater-proheat-6',
+    name: 'Finsauna ProHeat 6kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'ProHeat Series',
+    price: '$2,298.00',
+    priceValue: 2298,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '6kW',
+    description: 'Mid-power professional heater with Wi-Fi control for medium saunas.',
+    longDescription: 'The ProHeat 6kW offers professional-grade heating with SaunaLink Wi-Fi control for medium-sized saunas.',
+    features: [
+      'SaunaLink Wi-Fi control',
+      'Stainless-steel construction',
+      'Stones included',
+      '6kW power output',
+      'Professional-grade',
+      'Made in Finland',
+      'Remote operation'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_dc24e76c4bbd4763a47d8c1a9125ec12~mv2.jpg'
+    }
+  },
+  {
+    id: 'finsauna-heater-proheat-8',
+    name: 'Finsauna ProHeat 8kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'ProHeat Series',
+    price: '$2,348.00',
+    priceValue: 2348,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '8kW',
+    description: 'High-power professional heater with Wi-Fi control for larger saunas.',
+    longDescription: 'The ProHeat 8kW delivers maximum heating performance with SaunaLink Wi-Fi control for larger saunas.',
+    features: [
+      'SaunaLink Wi-Fi control',
+      'Stainless-steel construction',
+      'Stones included',
+      '8kW power output',
+      'Professional-grade',
+      'Made in Finland',
+      'For larger saunas'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_dc24e76c4bbd4763a47d8c1a9125ec12~mv2.jpg'
+    }
+  },
+  // CLUBHEAT SERIES
+  {
+    id: 'finsauna-heater-clubheat-10',
+    name: 'Finsauna ClubHeat 10kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'ClubHeat Series',
+    price: '$3,498.00',
+    priceValue: 3498,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '10kW',
+    description: 'Commercial-grade floor-standing heater for health clubs, day spas, and larger home saunas.',
+    longDescription: 'The ClubHeat Series is engineered for daily commercial use. Designed for saunas from 388 to 600 cubic feet with Wi-Fi control.',
+    features: [
+      'Commercial-grade construction',
+      'Floor-standing design',
+      'SaunaLink Wi-Fi control',
+      'Stones included',
+      '10kW power output',
+      'For saunas 388-600 cu. ft.',
+      'Made in Finland'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_7a72d74616864ec2a5cb028042312774~mv2.jpg/v1/crop/x_3,y_0,w_396,h_413/fill/w_307,h_320,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Finsauna-ClubHeat-Heater.jpg'
+    }
+  },
+  {
+    id: 'finsauna-heater-clubheat-125',
+    name: 'Finsauna ClubHeat 12.5kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'ClubHeat Series',
+    price: '$3,598.00',
+    priceValue: 3598,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '12.5kW',
+    description: 'High-capacity commercial heater for larger commercial saunas.',
+    longDescription: 'The ClubHeat 12.5kW offers more power for larger commercial saunas while maintaining the professional-grade quality and Wi-Fi control.',
+    features: [
+      'Commercial-grade construction',
+      'Floor-standing design',
+      'SaunaLink Wi-Fi control',
+      'Stones included',
+      '12.5kW power output',
+      'For larger commercial saunas',
+      'Made in Finland'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_7a72d74616864ec2a5cb028042312774~mv2.jpg'
+    }
+  },
+  {
+    id: 'finsauna-heater-clubheat-15',
+    name: 'Finsauna ClubHeat 15kW',
+    brand: 'Finsauna',
+    series: 'Sauna Heaters',
+    collection: 'ClubHeat Series',
+    price: '$3,798.00',
+    priceValue: 3798,
+    category: 'heater',
+    heaterType: 'Electric',
+    power: '15kW',
+    description: 'Maximum power commercial heater for the largest commercial saunas up to 990 cubic feet.',
+    longDescription: 'The ClubHeat 15kW delivers maximum heating capacity for the largest commercial saunas up to 990 cubic feet.',
+    features: [
+      'Maximum commercial power',
+      'Floor-standing design',
+      'SaunaLink Wi-Fi control',
+      'Stones included',
+      '15kW power output',
+      'For saunas up to 990 cu. ft.',
+      'Made in Finland'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_7a72d74616864ec2a5cb028042312774~mv2.jpg'
+    }
+  }
+];
+
+// ===========================================
+// FINSAUNA USA - PLUNGE TUBS
+// ===========================================
+export const FINSAUNA_PLUNGES = [
+  // AQUAFIN SERIES
+  {
+    id: 'finsauna-aquafin-single',
+    name: 'Finsauna AquaFin Single',
+    brand: 'Finsauna',
+    series: 'Tubs & Plunges',
+    collection: 'AquaFin Collection',
+    price: '$6,999.00',
+    priceValue: 6999,
+    persons: 1,
+    category: 'plunge',
+    dimensions: 'W: 85" x D: 42" x H: 30"',
+    description: 'Premium at-home hydrotherapy tub with built-in chiller for hot or cold immersion.',
+    longDescription: 'FINSAUNA\'s AquaFin immersion tubs deliver a premium at-home hydrotherapy experience, designed to boost recovery and relaxation through a wide range of temperatures. Built-in chiller and heater allow temperatures from 37°F to 104°F.',
+    features: [
+      'Hot or cold immersion',
+      'Built-in chiller and heater',
+      'Temperature range: 37°F to 104°F',
+      'Powerful hydrotherapy jets',
+      'Immersive LED lighting',
+      'Anti-spillover design',
+      'Lockable safety cover'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_f944dfd86f3b41b8bd8bb6225ded6dc6~mv2.png/v1/crop/x_121,y_0,w_1024,h_1024/fill/w_452,h_452,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/aquafin-single-cold-hot-plunge-tub-1.png',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-aquafin-double',
+    name: 'Finsauna AquaFin Double',
+    brand: 'Finsauna',
+    series: 'Tubs & Plunges',
+    collection: 'AquaFin Collection',
+    price: '$12,990.00',
+    priceValue: 12990,
+    persons: 2,
+    category: 'plunge',
+    dimensions: 'W: 85" x D: 85" x H: 30"',
+    description: 'Dual hot and cold tub system perfect for contrast therapy with a partner.',
+    longDescription: 'The AquaFin Double offers separate hot and cold tub system, perfect for contrast therapy with a partner. Features insulated construction, digital controls, and durable lockable covers.',
+    features: [
+      'Separate hot and cold tubs',
+      'Perfect for contrast therapy',
+      '2-person capacity',
+      'Temperature range: 37°F to 104°F',
+      'Hydrotherapy jets',
+      'LED lighting',
+      'Lockable safety covers'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_e340f7c32e7a4824a351b81c42907efe~mv2.jpg/v1/fill/w_452,h_452,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/aquafin-duo-plunge-cold-hot-1.jpg',
+      gallery: []
+    }
+  },
+  // IMMERSIA SERIES
+  {
+    id: 'finsauna-immersia-100-natural',
+    name: 'Finsauna Immersia 100 Natural',
+    brand: 'Finsauna',
+    series: 'Tubs & Plunges',
+    collection: 'Immersia Collection',
+    price: '$2,990.00',
+    priceValue: 2990,
+    persons: 1,
+    category: 'plunge',
+    dimensions: '1-person tub',
+    description: 'Affordable cold plunge tub in natural wood finish.',
+    longDescription: 'The Immersia 100 provides an affordable entry into cold plunge therapy with a beautiful natural wood finish.',
+    features: [
+      'Natural wood finish',
+      'Affordable cold plunge',
+      '1-person capacity',
+      'Quality construction',
+      'Easy maintenance',
+      'Portable design'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_84f761651fcd4941a58d795f13733bac~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FINSAUNA-Immersia-100-Tub-3.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-immersia-100-black',
+    name: 'Finsauna Immersia 100 Black',
+    brand: 'Finsauna',
+    series: 'Tubs & Plunges',
+    collection: 'Immersia Collection',
+    price: '$3,290.00',
+    priceValue: 3290,
+    persons: 1,
+    category: 'plunge',
+    dimensions: '1-person tub',
+    description: 'Affordable cold plunge tub in sleek black finish.',
+    longDescription: 'The Immersia 100 Black offers the same quality cold plunge experience with a modern black finish.',
+    features: [
+      'Sleek black finish',
+      'Affordable cold plunge',
+      '1-person capacity',
+      'Quality construction',
+      'Easy maintenance',
+      'Modern aesthetics'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_84f761651fcd4941a58d795f13733bac~mv2.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-immersia-200-natural',
+    name: 'Finsauna Immersia 200 Natural',
+    brand: 'Finsauna',
+    series: 'Tubs & Plunges',
+    collection: 'Immersia Collection',
+    price: '$4,490.00',
+    priceValue: 4490,
+    persons: 2,
+    category: 'plunge',
+    dimensions: '2-person tub',
+    description: '2-person cold plunge tub in natural wood finish.',
+    longDescription: 'The Immersia 200 offers space for two in a beautiful natural wood cold plunge tub.',
+    features: [
+      'Natural wood finish',
+      '2-person capacity',
+      'Quality construction',
+      'Easy maintenance',
+      'Social plunging',
+      'Durable design'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_fe98cfd61f0e44c5803c6953bdea50f6~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FINSAUNA-Immersia-200-Cold-Tub-3.jpg',
+      gallery: []
+    }
+  },
+  {
+    id: 'finsauna-immersia-200-black',
+    name: 'Finsauna Immersia 200 Black',
+    brand: 'Finsauna',
+    series: 'Tubs & Plunges',
+    collection: 'Immersia Collection',
+    price: '$4,790.00',
+    priceValue: 4790,
+    persons: 2,
+    category: 'plunge',
+    dimensions: '2-person tub',
+    description: '2-person cold plunge tub in sleek black finish.',
+    longDescription: 'The Immersia 200 Black offers space for two with a modern black finish.',
+    features: [
+      'Sleek black finish',
+      '2-person capacity',
+      'Quality construction',
+      'Easy maintenance',
+      'Modern aesthetics',
+      'Durable design'
+    ],
+    images: {
+      primary: 'https://static.wixstatic.com/media/f50d5c_fe98cfd61f0e44c5803c6953bdea50f6~mv2.jpg',
+      gallery: []
+    }
+  }
+];
+
+// Combined all Finsauna products
+export const FINSAUNA_ALL_SAUNAS = [...FINSAUNA_INFRARED, ...FINSAUNA_INDOOR, ...FINSAUNA_OUTDOOR];
+export const FINSAUNA_ALL_HEATERS = [...FINSAUNA_HEATERS];
+export const FINSAUNA_ALL_PLUNGES = [...FINSAUNA_PLUNGES];
+
 // Combined all World Sauna Group Saunas
 export const WORLD_SAUNA_ALL = [...WORLD_SAUNA_OUTDOOR, ...WORLD_SAUNA_INDOOR, ...WORLD_SAUNA_INFRARED];
 
-// Combined all saunas (existing + World Sauna Group)
-export const ALL_SAUNAS = [...SAUNAS, ...WORLD_SAUNA_ALL];
+// Combined all saunas (existing + World Sauna Group + Finsauna)
+export const ALL_SAUNAS = [...SAUNAS, ...WORLD_SAUNA_ALL, ...FINSAUNA_ALL_SAUNAS];
 
-// Combined all plunges (existing + World Sauna Group)
-export const ALL_PLUNGES = [...COLD_PLUNGES, ...WORLD_SAUNA_PLUNGES];
+// Combined all plunges (existing + World Sauna Group + Finsauna)
+export const ALL_PLUNGES = [...COLD_PLUNGES, ...WORLD_SAUNA_PLUNGES, ...FINSAUNA_ALL_PLUNGES];
+
+// Combined all heaters (existing + Finsauna)
+export const ALL_HEATERS = [...SAUNA_HEATERS, ...FINSAUNA_ALL_HEATERS];
 
 // Combined Hot Tubs (all brands)
 export const HOT_TUBS = [...GRAND_RIVER_PRODUCTS, ...DYNASTY_SPAS_PRODUCTS, ...VIKING_SPAS_PRODUCTS];
 
 // Get product by ID
 export const getProductById = (id) => {
-  return [...HOT_TUBS, ...SWIM_SPAS, ...ALL_SAUNAS, ...ALL_PLUNGES, ...SAUNA_HEATERS].find(p => p.id === id);
+  return [...HOT_TUBS, ...SWIM_SPAS, ...ALL_SAUNAS, ...ALL_PLUNGES, ...ALL_HEATERS].find(p => p.id === id);
 };
 
 // Get related model

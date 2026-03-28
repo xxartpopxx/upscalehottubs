@@ -32,6 +32,7 @@ const ARVisualizerPage = lazy(() => import('./pages/ARVisualizerPage'));
 const BrochurePage = lazy(() => import('./pages/BrochurePage'));
 const HoursPage = lazy(() => import('./pages/HoursPage'));
 const ChemicalsPage = lazy(() => import('./pages/ChemicalsPage'));
+const MembershipPage = lazy(() => import('./pages/MembershipPage'));
 
 import './App.css';
 
@@ -104,6 +105,9 @@ function App() {
                 
                 {/* AR Visualizer */}
                 <Route path="/ar-visualizer" element={<ARVisualizerPage />} />
+                
+                {/* Membership */}
+                <Route path="/membership" element={<MembershipPage />} />
               </Routes>
             </Suspense>
           </main>

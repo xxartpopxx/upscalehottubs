@@ -232,6 +232,17 @@ const Header = () => {
               Hours
             </Link>
 
+            {/* Membership Link - Fire & Ice Society */}
+            <Link 
+              to="/membership" 
+              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm transition-colors flex items-center gap-1 ${
+                location.pathname === '/membership' ? 'text-[#B91C1C]' : 'text-[#0A1628] hover:text-[#B91C1C]'
+              }`}
+              data-testid="nav-membership-link"
+            >
+              <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent font-bold">Membership</span>
+            </Link>
+
             {/* Find a Dealer / Contact Link */}
             <Link 
               to="/contact" 
@@ -319,6 +330,9 @@ const Header = () => {
                 {/* Contact & Hours */}
                 <Link to="/hours" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
                   Hours
+                </Link>
+                <Link to="/membership" className="block px-4 py-3 font-semibold text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
+                  <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">Membership</span>
                 </Link>
                 <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
                   Contact Us

@@ -705,6 +705,27 @@ const ProductDetailPage = () => {
                 </div>
               )}
               
+              {/* Product Video */}
+              {product.video && (
+                <div className="mt-6">
+                  <h4 className="font-semibold text-[#0A1628] mb-3 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#B91C1C]">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    Watch Product Video
+                  </h4>
+                  <div className="aspect-video bg-slate-100 overflow-hidden rounded-lg">
+                    <iframe
+                      src={product.video.replace('watch?v=', 'embed/')}
+                      title={`${product.name} Video`}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              )}
+              
               {/* American Made Badge */}
               <div className="flex items-center gap-2 text-sm text-slate-600">
                 <Flag size={16} className="text-[#B91C1C]" />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Flag, Filter, Flame, Sun, Home, Thermometer } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { ALL_SAUNAS, SAUNA_HEATERS } from '../data/products';
+import { ALL_SAUNAS, ALL_HEATERS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const SaunasPage = () => {
@@ -27,7 +27,7 @@ const SaunasPage = () => {
     { id: 'outdoor', label: 'Outdoor', icon: Sun, count: ALL_SAUNAS.filter(s => s.category === 'outdoor' || s.series === 'Barrel Saunas' || s.series === 'Outdoor Saunas' || s.series === 'Premium Outdoor Saunas').length },
     { id: 'indoor', label: 'Indoor', icon: Home, count: ALL_SAUNAS.filter(s => s.category === 'indoor' || s.series === 'Cabin Saunas' || s.series === 'Indoor Saunas').length },
     { id: 'infrared', label: 'Infrared', icon: Thermometer, count: ALL_SAUNAS.filter(s => s.category === 'infrared' || s.series === 'Full Spectrum Infrared Saunas' || s.series === '3-IN-ONE Combination Saunas' || s.series === 'Infrared Saunas').length },
-    { id: 'heaters', label: 'Heaters', icon: Flame, count: SAUNA_HEATERS.length },
+    { id: 'heaters', label: 'Heaters', icon: Flame, count: ALL_HEATERS.length },
   ];
 
   return (
@@ -128,7 +128,7 @@ const SaunasPage = () => {
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {SAUNA_HEATERS.map((heater) => (
+              {ALL_HEATERS.map((heater) => (
                 <motion.div
                   key={heater.id}
                   whileHover={{ y: -5 }}

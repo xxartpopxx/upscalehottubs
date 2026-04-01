@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Sparkles, Check, MapPin, Phone, Star, Zap, Heart, Shield, Thermometer, Snowflake, Droplets, Sun, Brain, Activity, Moon, Smile } from 'lucide-react';
+import { Sparkles, Check, MapPin, Phone, Star, Zap, Heart, Shield, Thermometer, Snowflake, Brain, Activity, Moon, Smile } from 'lucide-react';
 import { CONTACT } from '../data/constants';
 
 const MembershipPage = () => {
@@ -330,29 +330,6 @@ const MembershipPage = () => {
               Our private suites feature customizable lighting, sound, and entertainment options to help you create the perfect ambiance. 
               Stream your favorite shows, listen to relaxing music, or simply enjoy the tranquility.
             </p>
-
-            {/* In Mix Lighting Feature Image */}
-            <div className="mb-12">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="relative max-w-4xl mx-auto overflow-hidden rounded-lg"
-              >
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_20912cd5-e4d2-47d7-9769-8eb43a585a3f/artifacts/pgmz73bt_3d81fc3ac1b5a1f4e91a179afbba6328-d1c69ebe-640w.jpg.webp"
-                  alt="In Mix Lighting - Customizable LED lighting in cold plunge"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                  <div className="flex items-center gap-3">
-                    <Sun className="text-blue-400" size={24} />
-                    <span className="text-white font-bold uppercase tracking-wider">In Mix Lighting</span>
-                  </div>
-                  <p className="text-slate-300 text-sm mt-2">Customizable LED lighting creates the perfect atmosphere for your wellness journey</p>
-                </div>
-              </motion.div>
-            </div>
 
             {/* Experience Steps */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

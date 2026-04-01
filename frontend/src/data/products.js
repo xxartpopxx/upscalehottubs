@@ -726,7 +726,7 @@ export const DYNASTY_OASIS_EXTRAS = [
     price: '$995.99',
     priceValue: 995.99,
     description: 'Advanced in.Mix LED lighting system for ambient illumination.',
-    image: 'https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: 'https://customer-assets.emergentagent.com/job_20912cd5-e4d2-47d7-9769-8eb43a585a3f/artifacts/pgmz73bt_3d81fc3ac1b5a1f4e91a179afbba6328-d1c69ebe-640w.jpg.webp'
   },
   {
     id: 'ds-oasis-circ-pump',

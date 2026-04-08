@@ -11,7 +11,7 @@ import re
 from datetime import datetime
 
 # Configuration 
-FRONTEND_URL = "https://plunge-pass.preview.emergentagent.com"
+FRONTEND_URL = "https://tub-hours-update.preview.emergentagent.com"
 
 def test_product_page_pricing(product_id, expected_name, expected_price, expected_collection=None):
     """Test individual product page for correct pricing and add-ons"""

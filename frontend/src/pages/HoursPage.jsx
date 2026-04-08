@@ -7,20 +7,20 @@ import { CONTACT } from '../data/constants';
 
 const HoursPage = () => {
   const hours = [
-    { day: 'Monday', time: 'Closed - By Appt only', isSpecial: true },
-    { day: 'Tuesday', time: '12pm - 7pm', isSpecial: false },
-    { day: 'Wednesday', time: '12pm - 7pm', isSpecial: false },
-    { day: 'Thursday', time: '12pm - 7pm', isSpecial: false },
-    { day: 'Friday', time: '12pm - 7pm', isSpecial: false },
+    { day: 'Monday', time: '10am - 6pm', isSpecial: false },
+    { day: 'Tuesday', time: '10am - 6pm', isSpecial: false },
+    { day: 'Wednesday', time: '10am - 8pm', isSpecial: true },
+    { day: 'Thursday', time: '10am - 6pm', isSpecial: false },
+    { day: 'Friday', time: '10am - 6pm', isSpecial: false },
     { day: 'Saturday', time: '10am - 6pm', isSpecial: false },
-    { day: 'Sunday', time: '12pm - 4pm', isSpecial: false },
+    { day: 'Sunday', time: '10am - 6pm', isSpecial: false },
   ];
 
   return (
     <>
       <Helmet>
         <title>Store Hours | Upstate Hot Tubs | Simpsonville, SC</title>
-        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Open Tuesday-Friday 12pm-7pm, Saturday 10am-6pm, Sunday 12pm-4pm. Call us for appointments!" />
+        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Open Monday-Sunday 10am-6pm, Wednesday 10am-8pm. Call us for appointments!" />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="hours-page">

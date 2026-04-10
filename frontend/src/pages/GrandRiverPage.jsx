@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Filter, X, ChevronDown, Flag, Shield } from 'lucide-react';
+import { Filter, X, ChevronDown, Shield } from 'lucide-react';
 import { GRAND_RIVER_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 import { Helmet } from 'react-helmet-async';
@@ -85,7 +85,7 @@ const GrandRiverPage = () => {
             className="mb-8"
           >
             <div className="flex items-center gap-2 mb-2">
-              <Flag className="text-[#B91C1C]" size={20} />
+              <span className="text-2xl">🇺🇸</span>
               <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
             </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">

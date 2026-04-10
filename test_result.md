@@ -318,12 +318,11 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 3
+  test_sequence: 4
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "Grand River Full Specifications Display"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -353,6 +352,8 @@ agent_communication:
     message: "FINSAUNA USA PRODUCTS & MEMBERSHIP PAGE ADDED: (1) Added ALL Finsauna infrared saunas with MSRP pricing from PDF - 9 models including Fiera, Radia IR, and Radia TIR series ($2,390-$11,890), (2) Added 13 Finsauna indoor/outdoor/barrel saunas with MSRP pricing - Therma, Isla, Emma, Reviva, Solara, Keila series ($5,990-$12,990), (3) Added 10 Finsauna electric heaters - HomeHeat, ProHeat, ClubHeat series ($1,198-$3,798), (4) Added 6 Finsauna plunge tubs - AquaFin and Immersia series ($2,990-$12,990), (5) Added YouTube video to Finnmark FD-5 Trinity XL product with embedded player, (6) Created new Membership page with Fire & Ice Society logo, Red Light Therapy pricing (5 tiers from $34.95-$299.95), benefits section, Naples FL & Greenville SC locations, (7) Added Membership navigation link with gradient styling. Totals: 51 saunas (22 Finsauna), 15 plunges (6 Finsauna), 15 heaters (10 Finsauna)."
   - agent: "testing"
     message: "CRITICAL ROUTING BUG FOUND: Product detail pages are not loading due to route mismatch. App.js defines route as '/products/:id' (plural) but all product links use '/product/:id' (singular). This causes ProductDetailPage component to never render - only header and footer display. Tested /product/gr-chariton-2 and /product/gr-manistee - both show empty page with no product content. Full Specifications section cannot be tested until routing is fixed. Main agent must change route in App.js from '/products/:id' to '/product/:id' to match existing product URLs."
+  - agent: "testing"
+    message: "GRAND RIVER FULL SPECIFICATIONS TESTING COMPLETED: Routing issue successfully fixed by main agent. Product detail page now loads correctly at /products/gr-chariton-2 (plural route). All requested verifications PASSED: (1) Page title 'Chariton 2' displays correctly, (2) Brand 'Grand River Spas' displays correctly, (3) Full Specifications section found and fully functional with all required elements including Basic specs table, Jets Breakdown, Technical specs, Energy Efficiency, Color Options, and Model Options & Accessories. All specification data rendering correctly with proper formatting and structure. Product page fully operational with color customizer, view toggles, and complete product information. Task verified as working - ready for user acceptance."
 
   - task: "World Sauna Group Outdoor Saunas"
     implemented: true
@@ -500,12 +501,15 @@ agent_communication:
 
   - task: "Grand River Full Specifications Display"
     implemented: true
-    working: false
+    working: true
     file: "frontend/src/pages/ProductDetailPage.jsx, frontend/src/App.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: false
         agent: "testing"
         comment: "CRITICAL BUG: Product detail pages not loading due to routing mismatch. App.js line 85 defines route as '/products/:id' (plural) but all product URLs use '/product/:id' (singular). Tested /product/gr-chariton-2 and /product/gr-manistee - both show only header and footer with no product content. ProductDetailPage component never renders. Full Specifications section exists in code (lines 757-1008 of ProductDetailPage.jsx) with all required elements (Basic specs table, Jets Breakdown, Auxiliary Jets, Technical specs, Energy Efficiency, Spa Cover, Color Options, Model Options & Accessories) but cannot be displayed until route is fixed. FIX REQUIRED: Change App.js line 85 from '<Route path=\"/products/:id\"' to '<Route path=\"/product/:id\"' to match existing product links."
+      - working: true
+        agent: "testing"
+        comment: "TESTED & VERIFIED: Routing issue FIXED by main agent. Product detail page now loads correctly at /products/gr-chariton-2 (plural route). All requested verifications PASSED: (1) Page title 'Chariton 2' displays correctly, (2) Brand 'Grand River Spas' displays correctly, (3) Full Specifications section found and fully functional with data-testid='grand-river-full-specs'. Section contains all required elements: Basic specs table (Seats: 6 Adults, Lounge/Non-Lounge, Dimensions: 92\" x 92\" x 37.5\", Water Capacity: 370 gallons, Dry Weight: 650 lbs, Filled Weight: 3,738 lbs, Total Jets: 63), Jets Breakdown section, Technical specs (Lighting System, Water Feature, Control System, Heater, Jet Pumps, Performance Rating: GRHS 12, Filtration, Water Care), Color Options section, and Model Options & Accessories. All specification elements rendering correctly. Product page fully functional with color customizer, view toggles, and complete product information."

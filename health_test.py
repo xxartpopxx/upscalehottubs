@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 
 # Configuration
-BACKEND_URL = "https://cold-plunge-verify.preview.emergentagent.com/api"
+BACKEND_URL = "https://celebrate-mom-4.preview.emergentagent.com/api"
 
 def test_health_endpoint():
     """Test the /api/health endpoint"""

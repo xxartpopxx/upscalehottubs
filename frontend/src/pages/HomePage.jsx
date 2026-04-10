@@ -108,16 +108,16 @@ const WetTestPopup = ({ isOpen, onClose }) => {
           animate={{ scale: 1, opacity: 1, y: 0 }} 
           exit={{ scale: 0.8, opacity: 0 }} 
           transition={{ type: "spring", duration: 0.5 }} 
-          className="bg-white max-w-lg w-full shadow-2xl relative overflow-hidden rounded-lg" 
+          className="bg-white max-w-lg w-full shadow-2xl relative overflow-hidden rounded-lg max-h-[90vh] overflow-y-auto" 
           onClick={e => e.stopPropagation()}
         >
           {/* Pink/Rose gradient top bar for Mother's Day */}
           <div className="h-2 bg-gradient-to-r from-pink-400 via-rose-500 to-pink-400" />
-          <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-slate-200 p-2 z-10 bg-black/40 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close popup">
-            <X size={24} />
+          <button onClick={onClose} className="absolute top-3 right-3 text-white hover:text-slate-200 p-1.5 z-10 bg-black/40 rounded-full min-w-[36px] min-h-[36px] flex items-center justify-center" aria-label="Close popup">
+            <X size={20} />
           </button>
           
-          {/* Mother's Day Promotion Image */}
+          {/* Mother's Day Promotion Image - smaller on mobile */}
           <div className="relative overflow-hidden">
             <img 
               src="https://customer-assets.emergentagent.com/job_spa-specs-hub/artifacts/6l7go5za_unnamed.png" 
@@ -125,34 +125,34 @@ const WetTestPopup = ({ isOpen, onClose }) => {
               width="600"
               height="600"
               loading="lazy"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover max-h-[200px] sm:max-h-[280px] md:max-h-none object-top"
             />
           </div>
           
-          <div className="p-6 text-center relative bg-gradient-to-b from-pink-50 to-white">
+          <div className="p-4 sm:p-6 text-center relative bg-gradient-to-b from-pink-50 to-white">
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-              <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase text-[#0A1628] mb-2">
-                Mother's Day is <span className="text-pink-600">May 11th!</span>
+              <h2 className="font-['Barlow_Condensed'] text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#0A1628] mb-2">
+                Mother's Day is <span className="text-pink-600">May 10th!</span>
               </h2>
-              <p className="text-lg text-slate-700 mb-2">
+              <p className="text-base sm:text-lg text-slate-700 mb-2">
                 Get Mom the <span className="font-bold text-pink-600">"Relaxation"</span> she needs with a new Hot Tub!
               </p>
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <span className="text-2xl">💐</span>
-                <span className="text-lg font-bold text-pink-600">FREE Flowers for Mom</span>
-                <span className="text-2xl">💐</span>
+              <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
+                <span className="text-xl sm:text-2xl">💐</span>
+                <span className="text-base sm:text-lg font-bold text-pink-600">FREE Flowers for Mom</span>
+                <span className="text-xl sm:text-2xl">💐</span>
               </div>
-              <p className="text-slate-500 text-sm mb-4">with your purchase!</p>
+              <p className="text-slate-500 text-xs sm:text-sm mb-3 sm:mb-4">with your purchase!</p>
             </motion.div>
-            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-3">
-              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="bg-pink-600 hover:bg-pink-700 text-white w-full flex items-center justify-center gap-2 text-base py-3 px-6 font-semibold uppercase tracking-wider transition-colors">
-                <Phone size={18} /> Call {CONTACT.phone}
+            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-2 sm:space-y-3">
+              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="bg-pink-600 hover:bg-pink-700 text-white w-full flex items-center justify-center gap-2 text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 font-semibold uppercase tracking-wider transition-colors">
+                <Phone size={16} className="sm:w-[18px] sm:h-[18px]" /> Call {CONTACT.phone}
               </a>
-              <Link to="/contact" className="btn-secondary w-full flex items-center justify-center gap-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white">
-                <Mail size={18} /> Schedule a Visit
+              <Link to="/contact" className="btn-secondary w-full flex items-center justify-center gap-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white text-sm sm:text-base py-2.5 sm:py-3">
+                <Mail size={16} className="sm:w-[18px] sm:h-[18px]" /> Schedule a Visit
               </Link>
             </motion.div>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-sm mt-4">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-xs sm:text-sm mt-3 sm:mt-4">
               Visit our showrooms in Simpsonville, SC & Naples, FL
             </motion.p>
           </div>

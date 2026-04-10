@@ -3798,8 +3798,8 @@ export const COLD_PLUNGES = [
       insulation: 'RMAX®'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA-WITH-PADDING-1920w.png'
+      primary: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
     }
   },
   {
@@ -3840,8 +3840,8 @@ export const COLD_PLUNGES = [
       insulation: 'RMAX®'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA-WITH-PADDING-1920w.png'
+      primary: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
     }
   },
   {
@@ -3877,8 +3877,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/plunge+outdoorl+5+no+blackpng-1920w.jpg'
+      primary: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
     }
   },
   {
@@ -3915,8 +3915,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/plunge+outdoorl+5+no+blackpng-1920w.jpg'
+      primary: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
     }
   },
   {
@@ -3950,8 +3950,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+FILTERING-1920w.png'
+      primary: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
     }
   },
   {
@@ -3986,8 +3986,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+FILTERING-1920w.png'
+      primary: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
     }
   },
   {
@@ -4016,8 +4016,8 @@ export const COLD_PLUNGES = [
       acrylic: 'Pearl Gray'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+CONTRACTOR+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+WOMANS+FEET-1920w.png'
+      primary: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
     }
   },
   {
@@ -4047,8 +4047,8 @@ export const COLD_PLUNGES = [
       acrylic: 'Pearl Gray'
     },
     images: {
-      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+CONTRACTOR+PLUNGE+PIC-1920w.png',
-      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+WOMANS+FEET-1920w.png'
+      primary: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&fit=crop',
+      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
     }
   }
 ];

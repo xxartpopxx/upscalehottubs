@@ -354,6 +354,23 @@ agent_communication:
     message: "CRITICAL ROUTING BUG FOUND: Product detail pages are not loading due to route mismatch. App.js defines route as '/products/:id' (plural) but all product links use '/product/:id' (singular). This causes ProductDetailPage component to never render - only header and footer display. Tested /product/gr-chariton-2 and /product/gr-manistee - both show empty page with no product content. Full Specifications section cannot be tested until routing is fixed. Main agent must change route in App.js from '/products/:id' to '/product/:id' to match existing product URLs."
   - agent: "testing"
     message: "GRAND RIVER FULL SPECIFICATIONS TESTING COMPLETED: Routing issue successfully fixed by main agent. Product detail page now loads correctly at /products/gr-chariton-2 (plural route). All requested verifications PASSED: (1) Page title 'Chariton 2' displays correctly, (2) Brand 'Grand River Spas' displays correctly, (3) Full Specifications section found and fully functional with all required elements including Basic specs table, Jets Breakdown, Technical specs, Energy Efficiency, Color Options, and Model Options & Accessories. All specification data rendering correctly with proper formatting and structure. Product page fully operational with color customizer, view toggles, and complete product information. Task verified as working - ready for user acceptance."
+  - agent: "main"
+    message: "GRAND RIVER FULL SPECIFICATIONS ADDED: Added comprehensive fullSpecs data to all 17 Grand River products (Premier Series and Eco Series) based on official grandriverspas.com specifications. Each product now includes: (1) Detailed jets breakdown with individual jet types (Volcano, directional, multi-port, neck, rotating, stationary), (2) Auxiliary jets info, (3) Lighting system specs, (4) Water feature type, (5) Control system details, (6) Heater specifications, (7) Energy efficiency (CEC certified), (8) Performance Rating (GRHS), (9) Water care info, (10) Spa cover details, (11) Shell/cabinet/corner color options, (12) Model accessories. Created new 'Full Specifications' section in ProductDetailPage.jsx to display this data in a professional table format similar to Grand River's website."
+
+  - task: "Grand River Full Specifications Display"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js, frontend/src/pages/ProductDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added fullSpecs object to all 17 Grand River products with detailed specifications from grandriverspas.com. Created comprehensive Full Specifications section in ProductDetailPage to display jets breakdown, technical specs, performance rating, energy efficiency, color options, and accessories."
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Full Specifications section displays correctly on Grand River product pages. Verified Chariton 2 page shows all spec tables, jets breakdown, GRHS 12 performance rating, color options, and accessories. Section is responsive and matches Grand River website format."
 
   - task: "World Sauna Group Outdoor Saunas"
     implemented: true

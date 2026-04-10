@@ -391,6 +391,29 @@ const AboutPage = () => {
             </div>
           </motion.div>
           
+          {/* How Our Tubs Are Made Video */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-6">How Our Hot Tubs Are Made</h2>
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-video rounded-lg overflow-hidden shadow-2xl bg-slate-900">
+                <video 
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                >
+                  <source src="https://customer-assets.emergentagent.com/job_spa-specs-hub/artifacts/d0f23ce7_how%20the%20tubs%20are%20made.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p className="text-center text-slate-500 mt-4 text-sm">See the craftsmanship that goes into every American-made hot tub</p>
+            </div>
+          </motion.div>
+          
           <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-8 text-center">Why American Made?</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">

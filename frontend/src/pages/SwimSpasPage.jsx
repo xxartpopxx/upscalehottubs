@@ -106,6 +106,29 @@ const SwimSpasPage = () => {
             </p>
           </motion.div>
 
+          {/* Swim Spas Video Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-video rounded-lg overflow-hidden shadow-2xl bg-slate-900">
+                <video 
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="/images/swim-spa-poster.jpg"
+                  preload="metadata"
+                >
+                  <source src="https://customer-assets.emergentagent.com/job_spa-specs-hub/artifacts/xx645ppc_swim%20spas.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p className="text-center text-slate-500 mt-4 text-sm">See our swim spas in action</p>
+            </div>
+          </motion.div>
+
           {/* Filter Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200">
             <div className="flex items-center gap-4">

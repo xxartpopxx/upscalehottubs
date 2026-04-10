@@ -167,7 +167,7 @@ const SpaButlerPage = () => {
               controls
               className="w-full h-full object-cover"
             >
-              <source src="https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/v0qvpa8s_SPA%20BUTLER.mp4" type="video/mp4" />
+              <source src="https://customer-assets.emergentagent.com/job_spa-specs-hub/artifacts/7dyy0pr2_SPA%20BUTLER.mp4" type="video/mp4" />
             </video>
           </div>
         </motion.div>

@@ -1151,7 +1151,7 @@ export const GRAND_RIVER_EXTRAS = [
     price: '$250.00',
     priceValue: 250,
     description: 'Advanced ozone sanitization system for cleaner, clearer water with fewer chemicals.',
-    image: 'https://images.pexels.com/photos/6620882/pexels-photo-6620882.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/ozone.jpg'
   },
   {
     id: 'gr-extra-touchscreen',
@@ -1159,7 +1159,7 @@ export const GRAND_RIVER_EXTRAS = [
     price: '$700.00',
     priceValue: 700,
     description: 'Upgrade to a modern touch screen control panel for easier spa management.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&fit=crop'
+    image: '/images/addons/touchscreen control.png'
   },
   {
     id: 'gr-extra-airx',
@@ -1167,7 +1167,7 @@ export const GRAND_RIVER_EXTRAS = [
     price: '$300.00',
     priceValue: 300,
     description: 'Enhanced air therapy system for a more luxurious massage experience.',
-    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/airxtherapy.jpg'
   },
   {
     id: 'gr-extra-bluetooth',
@@ -1175,7 +1175,7 @@ export const GRAND_RIVER_EXTRAS = [
     price: '$950.00',
     priceValue: 950,
     description: 'Premium Bluetooth audio system for music while you relax.',
-    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/bluetooth speakers.png'
   },
   {
     id: 'gr-extra-wifi',
@@ -1183,7 +1183,31 @@ export const GRAND_RIVER_EXTRAS = [
     price: '$400.00',
     priceValue: 400,
     description: 'Control your spa remotely with the WiFi module and smartphone app.',
-    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in touch wifi.png'
+  },
+  {
+    id: 'gr-extra-led',
+    name: 'LED Controls',
+    price: '$350.00',
+    priceValue: 350,
+    description: 'Premium LED lighting control system for customizable ambiance.',
+    image: '/images/addons/led controls.png'
+  },
+  {
+    id: 'gr-extra-controlmyspa',
+    name: 'ControlMySpa App',
+    price: '$299.00',
+    priceValue: 299,
+    description: 'Control your spa from anywhere with the ControlMySpa smartphone app.',
+    image: '/images/addons/controlmyspa.png'
+  },
+  {
+    id: 'gr-extra-instream',
+    name: 'In.Stream Bluetooth',
+    price: '$895.00',
+    priceValue: 895,
+    description: 'Premium in.Stream Bluetooth audio system with waterproof speakers.',
+    image: '/images/addons/in stream bluetooth.png'
   }
 ];
 
@@ -1199,7 +1223,7 @@ export const DYNASTY_GENERIC_EXTRAS = [
     price: '$995.99',
     priceValue: 995.99,
     description: 'Premium in.Stream audio system for your spa experience.',
-    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in stream bluetooth.png'
   },
   {
     id: 'ds-generic-circ-pump',
@@ -1207,7 +1231,7 @@ export const DYNASTY_GENERIC_EXTRAS = [
     price: '$495.99',
     priceValue: 495.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/ozone.jpg'
   }
 ];
 
@@ -1219,7 +1243,7 @@ export const DYNASTY_LUXURY_EXTRAS = [
     price: '$995.99',
     priceValue: 995.99,
     description: 'Premium in.Stream audio system for your spa experience.',
-    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in stream bluetooth.png'
   },
   {
     id: 'ds-luxury-circ-pump',
@@ -1227,7 +1251,7 @@ export const DYNASTY_LUXURY_EXTRAS = [
     price: '$495.99',
     priceValue: 495.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/ozone.jpg'
   }
 ];
 
@@ -1239,7 +1263,7 @@ export const DYNASTY_OASIS_EXTRAS = [
     price: '$995.99',
     priceValue: 995.99,
     description: 'Premium in.Stream audio system for your spa experience.',
-    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in stream bluetooth.png'
   },
   {
     id: 'ds-oasis-lighting',
@@ -1247,7 +1271,7 @@ export const DYNASTY_OASIS_EXTRAS = [
     price: '$995.99',
     priceValue: 995.99,
     description: 'Advanced in.Mix LED lighting system for ambient illumination.',
-    image: 'https://customer-assets.emergentagent.com/job_20912cd5-e4d2-47d7-9769-8eb43a585a3f/artifacts/pgmz73bt_3d81fc3ac1b5a1f4e91a179afbba6328-d1c69ebe-640w.jpg.webp'
+    image: '/images/addons/led controls.png'
   },
   {
     id: 'ds-oasis-circ-pump',
@@ -1255,7 +1279,7 @@ export const DYNASTY_OASIS_EXTRAS = [
     price: '$499.99',
     priceValue: 499.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/ozone.jpg'
   },
   {
     id: 'ds-oasis-intouch',
@@ -1263,7 +1287,7 @@ export const DYNASTY_OASIS_EXTRAS = [
     price: '$399.99',
     priceValue: 399.99,
     description: 'Control your spa remotely with the in.Touch smartphone app.',
-    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in touch wifi.png'
   }
 ];
 
@@ -1275,7 +1299,7 @@ export const DYNASTY_VACATION_EXTRAS = [
     price: '$499.99',
     priceValue: 499.99,
     description: 'Upgrade to the K.1000 touchscreen control panel.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&fit=crop'
+    image: '/images/addons/touchscreen control.png'
   },
   {
     id: 'ds-vacation-stereo',
@@ -1283,7 +1307,7 @@ export const DYNASTY_VACATION_EXTRAS = [
     price: '$995.99',
     priceValue: 995.99,
     description: 'Premium in.Stream audio system for your spa experience.',
-    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in stream bluetooth.png'
   },
   {
     id: 'ds-vacation-circ-pump',
@@ -1291,7 +1315,7 @@ export const DYNASTY_VACATION_EXTRAS = [
     price: '$499.99',
     priceValue: 499.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/ozone.jpg'
   },
   {
     id: 'ds-vacation-intouch',
@@ -1299,7 +1323,7 @@ export const DYNASTY_VACATION_EXTRAS = [
     price: '$399.99',
     priceValue: 399.99,
     description: 'Control your spa remotely with the in.Touch smartphone app.',
-    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in touch wifi.png'
   }
 ];
 
@@ -2484,7 +2508,7 @@ export const VIKING_SPAS_EXTRAS = [
     price: '$495.99',
     priceValue: 495.99,
     description: 'Advanced UV water sanitation system for cleaner, clearer water.',
-    image: 'https://images.pexels.com/photos/6620882/pexels-photo-6620882.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/ozone.jpg'
   },
   {
     id: 'vs-extra-wifi',
@@ -2492,7 +2516,7 @@ export const VIKING_SPAS_EXTRAS = [
     price: '$399.99',
     priceValue: 399.99,
     description: 'Control your spa remotely with the WiFi module and smartphone app.',
-    image: 'https://images.pexels.com/photos/5703426/pexels-photo-5703426.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/in touch wifi.png'
   },
   {
     id: 'vs-extra-airx',
@@ -2500,7 +2524,7 @@ export const VIKING_SPAS_EXTRAS = [
     price: '$199.99',
     priceValue: 199.99,
     description: 'Enhanced air therapy system for a more luxurious massage experience.',
-    image: 'https://images.pexels.com/photos/7365466/pexels-photo-7365466.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/airxtherapy.jpg'
   },
   {
     id: 'vs-extra-spatouch4',
@@ -2508,7 +2532,7 @@ export const VIKING_SPAS_EXTRAS = [
     price: '$499.99',
     priceValue: 499.99,
     description: 'Upgrade to the Spa Touch 4 touchscreen control panel for easier spa management.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&fit=crop'
+    image: '/images/addons/touchscreen control.png'
   },
   {
     id: 'vs-extra-bba-stereo',
@@ -2516,7 +2540,31 @@ export const VIKING_SPAS_EXTRAS = [
     price: '$995.99',
     priceValue: 995.99,
     description: 'Premium Bluetooth audio system with subwoofer for immersive sound.',
-    image: 'https://images.pexels.com/photos/374606/pexels-photo-374606.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/images/addons/bluetooth speakers.png'
+  },
+  {
+    id: 'vs-extra-led-controls',
+    name: 'LED Controls',
+    price: '$350.00',
+    priceValue: 350,
+    description: 'Premium LED lighting control system for customizable ambiance.',
+    image: '/images/addons/led controls.png'
+  },
+  {
+    id: 'vs-extra-controlmyspa',
+    name: 'ControlMySpa App',
+    price: '$299.00',
+    priceValue: 299,
+    description: 'Control your spa from anywhere with the ControlMySpa smartphone app.',
+    image: '/images/addons/controlmyspa.png'
+  },
+  {
+    id: 'vs-extra-instream',
+    name: 'In.Stream Bluetooth',
+    price: '$895.00',
+    priceValue: 895,
+    description: 'Premium in.Stream Bluetooth audio system with waterproof speakers.',
+    image: '/images/addons/in stream bluetooth.png'
   }
 ];
 

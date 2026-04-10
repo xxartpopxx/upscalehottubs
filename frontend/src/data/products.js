@@ -5891,7 +5891,7 @@ export const FINSAUNA_PLUNGES = [
       'Modern aesthetics'
     ],
     images: {
-      primary: 'https://static.wixstatic.com/media/f50d5c_84f761651fcd4941a58d795f13733bac~mv2.jpg',
+      primary: 'https://static.wixstatic.com/media/f50d5c_84f761651fcd4941a58d795f13733bac~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FINSAUNA-Immersia-100-Tub-3.jpg',
       gallery: []
     }
   },
@@ -5943,7 +5943,7 @@ export const FINSAUNA_PLUNGES = [
       'Durable design'
     ],
     images: {
-      primary: 'https://static.wixstatic.com/media/f50d5c_fe98cfd61f0e44c5803c6953bdea50f6~mv2.jpg',
+      primary: 'https://static.wixstatic.com/media/f50d5c_fe98cfd61f0e44c5803c6953bdea50f6~mv2.jpg/v1/fill/w_452,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FINSAUNA-Immersia-200-Cold-Tub-3.jpg',
       gallery: []
     }
   }

@@ -3798,8 +3798,8 @@ export const COLD_PLUNGES = [
       insulation: 'RMAX®'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
+      primary: '/images/aquora/plunge-15-19.png',
+      overhead: '/images/aquora/pearl-gray-acrylic.png'
     }
   },
   {
@@ -3840,8 +3840,8 @@ export const COLD_PLUNGES = [
       insulation: 'RMAX®'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
+      primary: '/images/aquora/plunge-15-19.png',
+      overhead: '/images/aquora/aquora-deck-side.png'
     }
   },
   {
@@ -3877,8 +3877,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
+      primary: '/images/aquora/plunge-15-19.png',
+      overhead: '/images/aquora/heat-outdoor.jpg'
     }
   },
   {
@@ -3915,8 +3915,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
+      primary: '/images/aquora/plunge-15-19.png',
+      overhead: '/images/aquora/heat-outdoor.jpg'
     }
   },
   {
@@ -3950,8 +3950,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
+      primary: '/images/aquora/plunge-15-19.png',
+      overhead: '/images/aquora/plunge-no-water.png'
     }
   },
   {
@@ -3986,8 +3986,8 @@ export const COLD_PLUNGES = [
       skirting: 'Black Confer'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&fit=crop'
+      primary: '/images/aquora/plunge-15-19.png',
+      overhead: '/images/aquora/plunge-no-water.png'
     }
   },
   {
@@ -4016,8 +4016,8 @@ export const COLD_PLUNGES = [
       acrylic: 'Pearl Gray'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
+      primary: '/images/aquora/contractor-plunge.png',
+      overhead: '/images/aquora/aquora-lifestyle.png'
     }
   },
   {
@@ -4047,8 +4047,8 @@ export const COLD_PLUNGES = [
       acrylic: 'Pearl Gray'
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&fit=crop',
-      overhead: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&fit=crop'
+      primary: '/images/aquora/contractor-plunge.png',
+      overhead: '/images/aquora/aquora-lifestyle.png'
     }
   }
 ];

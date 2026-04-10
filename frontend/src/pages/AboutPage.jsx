@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign, Star, ExternalLink, MessageSquarePlus, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign, Star, ExternalLink, MessageSquarePlus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ASSETS } from '../data/constants';
 
 // Google Reviews Data - Real reviews from Google Business Profile
@@ -214,7 +214,7 @@ const AboutPage = () => {
           </motion.div>
           
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 mb-4">
-            <Flag className="text-[#B91C1C]" size={24} />
+            <span className="text-2xl">🇺🇸</span>
             <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
           </motion.div>
           
@@ -420,7 +420,7 @@ const AboutPage = () => {
             {[
               { 
                 title: 'American Jobs', 
-                icon: Flag,
+                icon: () => <span className="text-2xl">🇺🇸</span>,
                 text: 'The loss of American family owned manufacturing jobs over the past 15 years has had a staggering effect on the United States economy and job market. Our American made spas and swim spas products further ensure that Dynasty Spas will keep their manufacturing efforts in the United States and employ American workers.' 
               },
               { 
@@ -595,7 +595,7 @@ const AboutPage = () => {
               Dynasty Spas is Proud to Make Our Innovative Spas and Swim Spas Right Here in the United States
             </p>
             <p className="text-[#D4AF37] font-semibold flex items-center justify-center gap-2">
-              <Flag size={16} /> American Made & Proud of It
+              <span className="text-base">🇺🇸</span> American Made & Proud of It
             </p>
           </motion.div>
           

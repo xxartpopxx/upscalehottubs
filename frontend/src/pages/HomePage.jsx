@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ChevronRight, ChevronLeft, Flag, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun, Award, Gift } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun, Award, Gift } from 'lucide-react';
 import { ASSETS, CONTACT } from '../data/constants';
 import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
 
@@ -297,7 +297,7 @@ const TrustBadgesSection = () => (
           <span className="text-[10px] text-slate-500">Military & Veterans</span>
         </div>
         <div className="flex flex-col items-center gap-0.5 p-2">
-          <Flag className="w-5 h-5 text-[#1E40AF]" />
+          <span className="text-xl">🇺🇸</span>
           <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">American Made</span>
           <span className="text-[10px] text-slate-500">Made in USA</span>
         </div>

@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon } from 'lucide-react';
+import { Filter, X, ChevronDown, Award, Shield, Leaf, HeadphonesIcon } from 'lucide-react';
 import { DYNASTY_SPAS_PRODUCTS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
@@ -168,7 +168,7 @@ const DynastySpasPage = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
           >
             {[
-              { icon: Flag, title: 'American Jobs', desc: 'Made in Athens, TN' },
+              { icon: () => <span className="text-2xl">🇺🇸</span>, title: 'American Jobs', desc: 'Made in Athens, TN' },
               { icon: Shield, title: '20-Year Warranty', desc: 'Shell structure warranty' },
               { icon: Award, title: 'M.A.E. Certified', desc: 'Energy efficiency tested' },
               { icon: Leaf, title: 'RMAX Insulation', desc: '7x R-Value of competitors' },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube, Flag } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube } from 'lucide-react';
 import { ASSETS, CONTACT, SOCIAL_LINKS } from '../../data/constants';
 
 const Footer = () => {
@@ -16,7 +16,7 @@ const Footer = () => {
             Live Your Healthiest Life While Enjoying a Vacation Everyday at Home
           </p>
           <p className="text-[#B91C1C] font-semibold flex items-center justify-center gap-2">
-            <Flag size={14} className="text-[#B91C1C]" /> American Made & Proud of It
+            <span className="text-base">🇺🇸</span> American Made & Proud of It
           </p>
         </div>
       </div>
@@ -138,7 +138,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-[#1E40AF]/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Upstate Hot Tubs. All Rights Reserved.</p>
           <p className="text-slate-500 text-sm flex items-center gap-2">
-            <Flag size={14} className="text-[#B91C1C]" /> Proudly Made in America
+            <span className="text-base">🇺🇸</span> Proudly Made in America
           </p>
         </div>
       </div>

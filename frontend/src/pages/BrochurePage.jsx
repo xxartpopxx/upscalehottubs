@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { FileText, Download, Phone, Send, Flag } from 'lucide-react';
+import { FileText, Download, Phone, Send } from 'lucide-react';
 import { CONTACT } from '../data/constants';
 
 const brochures = [
@@ -192,7 +192,7 @@ const BrochurePage = () => {
               animate={{ opacity: 1, y: 0 }}
             >
               <div className="flex items-center gap-2 mb-4">
-                <Flag className="text-[#B91C1C]" size={24} />
+                <span className="text-2xl">🇺🇸</span>
                 <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
               </div>
               <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase mb-4">

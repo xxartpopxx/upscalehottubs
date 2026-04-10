@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, Flag, GitCompare } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, GitCompare } from 'lucide-react';
 import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, DYNASTY_GENERIC_EXTRAS, VIKING_SPAS_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
@@ -729,7 +729,7 @@ const ProductDetailPage = () => {
               
               {/* American Made Badge */}
               <div className="flex items-center gap-2 text-sm text-slate-600">
-                <Flag size={16} className="text-[#B91C1C]" />
+                <span className="text-base">🇺🇸</span>
                 <span className="font-semibold">American Made & Proud of It</span>
               </div>
             </div>

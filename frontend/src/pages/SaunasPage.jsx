@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Flag, Filter, Flame, Sun, Home, Thermometer } from 'lucide-react';
+import { Filter, Flame, Sun, Home, Thermometer } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { ALL_SAUNAS, ALL_HEATERS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
@@ -51,7 +51,7 @@ const SaunasPage = () => {
             className="mb-8"
           >
             <div className="flex items-center gap-2 mb-2">
-              <Flag className="text-[#B91C1C]" size={20} />
+              <span className="text-2xl">🇺🇸</span>
               <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">Nordic Craftsmanship • American Service</span>
             </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">

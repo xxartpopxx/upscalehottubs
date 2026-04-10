@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Flag, Filter, X, ChevronDown } from 'lucide-react';
+import { Filter, X, ChevronDown } from 'lucide-react';
 import { GRAND_RIVER_SWIM_SPAS, DYNASTY_SWIM_SPAS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
@@ -95,7 +95,7 @@ const SwimSpasPage = () => {
             className="mb-8"
           >
             <div className="flex items-center gap-2 mb-2">
-              <Flag className="text-[#B91C1C]" size={20} />
+              <span className="text-2xl">🇺🇸</span>
               <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
             </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">

@@ -118,6 +118,7 @@ const DynastySpasPage = () => {
             >
               <div>
                 <div className="flex items-center gap-2 mb-4">
+                  <span className="text-2xl">🇺🇸</span>
                   <Flag className="text-[#B91C1C]" size={24} />
                   <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
                 </div>

@@ -318,7 +318,7 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 5
+  test_sequence: 6
   run_ui: false
 
 test_plan:
@@ -360,6 +360,8 @@ agent_communication:
     message: "ADD-ON IMAGES AND VIDEOS TESTING COMPLETED: All requested items verified and working correctly. (1) Grand River Product Add-ons at /products/gr-chariton-2: Found 8 add-on images all loading correctly from /images/addons/ folder (ozone.jpg, touchscreen control.png, airxtherapy.jpg, bluetooth speakers.png, in touch wifi.png, led controls.png, controlmyspa.png, in stream bluetooth.png). (2) Swim Spas Page Video at /swim-spas: Video element displaying correctly with source xx645ppc_swim spas.mp4. (3) About Page Videos at /about: Dynasty Spas YouTube video (aRDW_vz1bUw) and How Our Hot Tubs Are Made video (d0f23ce7_how the tubs are made.mp4) both displaying correctly. (4) Spa Butler Page Video at /spa-butler: Video displaying correctly with source 7dyy0pr2_SPA BUTLER.mp4. (5) Balneotherapy Page Video at /balneotherapy: Video displaying correctly with source izgchd84_hydrotheraphy video.mp4. All videos and add-on images are properly implemented and rendering as expected. Screenshots captured for all sections."
   - agent: "testing"
     message: "MOTHER'S DAY POPUP TESTING COMPLETED: Comprehensive testing of Mother's Day promotional popup on homepage. ALL 12 VERIFICATION CHECKS PASSED: (1) Pink/rose gradient bars at top and bottom of popup, (2) 'Mom Deserves to Relax' promotional image displays correctly, (3) 'Mother's Day is May 11th!' heading with pink accent, (4) 'FREE Flowers for Mom' offer visible, (5) Two flower emojis (💐) flanking the offer, (6) Call button with phone number in pink background, (7) Schedule a Visit button, (8) Pink gradient background theme, (9) Close button (X) functional, (10) Showroom locations text, (11) Close functionality works correctly, (12) Session storage prevents popup from showing again. Popup appears after 3 seconds (3000ms) when sessionStorage 'wetTestPopupSeen' is not set. All design elements match Mother's Day theme with pink/rose colors. Feature fully functional and ready for production."
+  - agent: "testing"
+    message: "LATEST UPDATES TESTING COMPLETED: Tested 3 new features requested by user. ALL FEATURES WORKING CORRECTLY: (1) Logo Size Fix - Logo dimensions are 200px x 80px, appropriate size, not overlapping content, properly contained within header. (2) Dynasty Spas American Flag - American flag emoji (🇺🇸) displays correctly next to 'AMERICAN MADE & PROUD OF IT' text in red on Dynasty Spas page hero banner. (3) Aquora Cold Plunge Products - All 7 Aquora products from Dynasty Spas display correctly on /cold-plunges page with 'Call for Pricing' text. Products include: Aquora All Season 15'/19', Aquora Heat 15'/19', Aquora Complete 15'/19', and Aquora Core 15'. All products properly categorized and styled. Screenshots captured for all verifications. No issues found - all features ready for production."
 
   - task: "Grand River Full Specifications Display"
     implemented: true
@@ -546,3 +548,39 @@ agent_communication:
       - working: true
         agent: "testing"
         comment: "TESTED & VERIFIED: Mother's Day promotional popup fully functional. All 12 verification checks PASSED: (1) Pink/rose gradient bars at top and bottom, (2) 'Mom Deserves to Relax' promotional image displays correctly from customer-assets URL, (3) 'Mother's Day is May 11th!' heading with pink accent on 'May 11th!', (4) 'FREE Flowers for Mom' offer text visible, (5) Two flower emojis (💐) flanking the offer, (6) Call button with phone number (864) 837-0155 in pink background, (7) 'Schedule a Visit' button linking to /contact, (8) Pink gradient background (from-pink-50 to-white), (9) Close button (X) in top right corner, (10) Showroom locations text (Simpsonville, SC & Naples, FL), (11) Close functionality works correctly. Popup appears after 3 seconds (3000ms timeout in code) when sessionStorage 'wetTestPopupSeen' is not set. Session storage correctly prevents popup from showing again after first view. All design elements match Mother's Day theme with pink/rose colors throughout."
+
+  - task: "Header Logo Size Fix"
+    implemented: true
+    working: true
+    file: "frontend/src/components/layout/Header.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "TESTED & VERIFIED: Logo size fix working correctly. Logo dimensions are 200px width x 80px height, which is appropriate and not overlapping content. Logo is properly contained within header with responsive sizing: h-16 md:h-20 xl:h-20 when not scrolled, and h-14 md:h-16 xl:h-18 when scrolled. Logo displays correctly on all pages tested."
+
+  - task: "Dynasty Spas American Flag Emoji"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/DynastySpasPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "TESTED & VERIFIED: American flag emoji and text display correctly on Dynasty Spas page (/dynasty-spas). Hero banner shows American flag emoji (🇺🇸) next to red text 'AMERICAN MADE & PROUD OF IT' (uppercase). Both elements are prominently displayed in the hero section as intended. Visual verification confirms proper styling and placement."
+
+  - task: "Aquora Cold Plunge Products Display"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js, frontend/src/pages/ColdPlungesPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "TESTED & VERIFIED: All Aquora cold plunge products from Dynasty Spas display correctly on /cold-plunges page. Found 5 Aquora products: (1) Aquora All Season 15', (2) Aquora All Season 19', (3) Aquora Heat 15', (4) Aquora Heat 19', (5) Aquora Complete 15', (6) Aquora Complete 19', (7) Aquora Core 15'. All products correctly show 'Call for Pricing' in red text. Products are properly categorized under 'AQUORA' series label and display Dynasty Spas branding. Product grid layout and styling working as expected."

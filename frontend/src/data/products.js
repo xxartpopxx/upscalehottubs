@@ -3757,6 +3757,299 @@ export const COLD_PLUNGES = [
       primary: 'https://iceboundessentials.com/cdn/shop/files/endeavor_cold_plunge_tub_1.png?v=1729458216&width=800',
       overhead: 'https://iceboundessentials.com/cdn/shop/files/endeavor_cold_plunge_tub_1.png?v=1729458216&width=800'
     }
+  },
+  // ===========================================
+  // DYNASTY SPAS AQUORA COLD PLUNGE COLLECTION
+  // ===========================================
+  {
+    id: 'aquora-all-season-15',
+    name: 'Aquora All Season 15\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'All Season',
+    size: '15\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Cold-climate, four-season plunge pool with high-performance insulation and integrated heating system.',
+    longDescription: 'Step into luxurious comfort with the Aquora All Season—our largest lounger model, designed for full-body relaxation. Crafted from acrylic and fiberglass, the All-Season features high-performance insulation, including an air chamber and RMAX® insulation, to help retain heat and support all-season use.',
+    features: [
+      'Cold-climate, four-season design',
+      'Underwater LED light',
+      'Digital Display (K300)',
+      'Cushioned foam step mats',
+      'Filtration pump (220V/60A)',
+      '100 Sq. Ft. filtration',
+      'Energy efficient heater (5.5kW)',
+      'Water returns - Easy flow drain',
+      'RMAX® insulation',
+      'Pearl Gray acrylic',
+      'Black Confer skirting',
+      'Black cover included'
+    ],
+    specs: {
+      electrical: '220V/60A',
+      heater: '5.5kW',
+      filtration: '100 Sq. Ft.',
+      control: 'K300 Digital Display',
+      lighting: 'Underwater LED',
+      acrylic: 'Pearl Gray',
+      skirting: 'Black Confer',
+      insulation: 'RMAX®'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA-WITH-PADDING-1920w.png'
+    }
+  },
+  {
+    id: 'aquora-all-season-19',
+    name: 'Aquora All Season 19\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'All Season',
+    size: '19\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Extra-large cold-climate, four-season plunge pool with premium insulation and heating for year-round use.',
+    longDescription: 'The 19\' Aquora All Season provides ample space for multiple users while maintaining all the premium features of the All Season line. RMAX® insulation and 5.5kW heater ensure year-round comfort in any climate.',
+    features: [
+      'Cold-climate, four-season design',
+      'Extra-large 19\' size',
+      'Underwater LED light',
+      'Digital Display (K300)',
+      'Cushioned foam step mats',
+      'Filtration pump (220V/60A)',
+      '100 Sq. Ft. filtration',
+      'Energy efficient heater (5.5kW)',
+      'Water returns - Easy flow drain',
+      'RMAX® insulation',
+      'Pearl Gray acrylic',
+      'Black Confer skirting',
+      'Black cover included'
+    ],
+    specs: {
+      electrical: '220V/60A',
+      heater: '5.5kW',
+      filtration: '100 Sq. Ft.',
+      control: 'K300 Digital Display',
+      lighting: 'Underwater LED',
+      acrylic: 'Pearl Gray',
+      skirting: 'Black Confer',
+      insulation: 'RMAX®'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA-WITH-PADDING-1920w.png'
+    }
+  },
+  {
+    id: 'aquora-heat-15',
+    name: 'Aquora Heat 15\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'Heat',
+    size: '15\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Year-round plunge pool with superior filtration and vibrant LED lighting for entertaining.',
+    longDescription: 'Discover total-body relaxation with the Aquora Heat — designed for effortless entertaining with friends and family. Enjoy the ambiance of vibrant underwater LED lighting while a superior filtration system keeps your water clean, clear, and continuously flowing.',
+    features: [
+      'Year-round use design',
+      'Underwater LED light',
+      'Digital Display (K300)',
+      'Cushioned foam step mats',
+      'Filtration pump (220V/60A)',
+      '100 Sq. Ft. filtration',
+      'Energy efficient heater',
+      'Water returns - Easy flow drain',
+      'Pearl Gray acrylic',
+      'Black Confer skirting'
+    ],
+    specs: {
+      electrical: '220V/60A',
+      filtration: '100 Sq. Ft.',
+      control: 'K300 Digital Display',
+      lighting: 'Underwater LED',
+      acrylic: 'Pearl Gray',
+      skirting: 'Black Confer'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/plunge+outdoorl+5+no+blackpng-1920w.jpg'
+    }
+  },
+  {
+    id: 'aquora-heat-19',
+    name: 'Aquora Heat 19\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'Heat',
+    size: '19\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Extra-large year-round plunge pool with superior filtration and entertaining features.',
+    longDescription: 'The 19\' Aquora Heat provides extra space for gatherings while maintaining all the features that make the Heat model perfect for entertaining. Vibrant LED lighting and superior filtration create the ideal atmosphere.',
+    features: [
+      'Year-round use design',
+      'Extra-large 19\' size',
+      'Underwater LED light',
+      'Digital Display (K300)',
+      'Cushioned foam step mats',
+      'Filtration pump (220V/60A)',
+      '100 Sq. Ft. filtration',
+      'Energy efficient heater',
+      'Water returns - Easy flow drain',
+      'Pearl Gray acrylic',
+      'Black Confer skirting'
+    ],
+    specs: {
+      electrical: '220V/60A',
+      filtration: '100 Sq. Ft.',
+      control: 'K300 Digital Display',
+      lighting: 'Underwater LED',
+      acrylic: 'Pearl Gray',
+      skirting: 'Black Confer'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/plunge+outdoorl+5+no+blackpng-1920w.jpg'
+    }
+  },
+  {
+    id: 'aquora-complete-15',
+    name: 'Aquora Complete 15\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'Complete',
+    size: '15\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Plug & Play plunge pool - fully equipped and ready to use with 110V/15A convenience.',
+    longDescription: 'The Complete Aquora features a convenient 110V/15A electrical system, allowing for quick and easy installation so you can start enjoying it right away. Designed for maximum efficiency, this is our most energy-conscious Aquora model.',
+    features: [
+      'Plug & Play 110V/15A',
+      'Fully equipped - ready to use',
+      'Underwater LED light',
+      'Cushioned foam step mats',
+      'Filtration pump',
+      '100 Sq. Ft. filtration',
+      'Water returns - Easy flow drain',
+      'Pearl Gray acrylic',
+      'Black Confer skirting'
+    ],
+    specs: {
+      electrical: '110V/15A',
+      filtration: '100 Sq. Ft.',
+      lighting: 'Underwater LED',
+      acrylic: 'Pearl Gray',
+      skirting: 'Black Confer'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+FILTERING-1920w.png'
+    }
+  },
+  {
+    id: 'aquora-complete-19',
+    name: 'Aquora Complete 19\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'Complete',
+    size: '19\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Extra-large Plug & Play plunge pool - maximum efficiency in a bigger package.',
+    longDescription: 'The 19\' Complete Aquora offers the same plug-and-play convenience in a larger format. Maximum efficiency and energy-conscious design make this the perfect choice for easy installation and enjoyment.',
+    features: [
+      'Plug & Play 110V/15A',
+      'Extra-large 19\' size',
+      'Fully equipped - ready to use',
+      'Underwater LED light',
+      'Cushioned foam step mats',
+      'Filtration pump',
+      '100 Sq. Ft. filtration',
+      'Water returns - Easy flow drain',
+      'Pearl Gray acrylic',
+      'Black Confer skirting'
+    ],
+    specs: {
+      electrical: '110V/15A',
+      filtration: '100 Sq. Ft.',
+      lighting: 'Underwater LED',
+      acrylic: 'Pearl Gray',
+      skirting: 'Black Confer'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+FILTERING-1920w.png'
+    }
+  },
+  {
+    id: 'aquora-core-15',
+    name: 'Aquora Core 15\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'Core',
+    size: '15\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Contractor-ready plunge pool shell for custom installations and deck integration.',
+    longDescription: 'The Core is crafted for contractors looking to deliver a high-end upgrade to a discerning homeowner\'s backyard. Its versatile design makes it ideal for remodeling or new construction, seamlessly integrating into beautifully landscaped spaces and custom-built decks.',
+    features: [
+      'Contractor build - shell only',
+      'Perfect for custom installations',
+      'Deck and landscape integration',
+      'Cushioned foam step mats',
+      '100 Sq. Ft. filtration compatible',
+      'Water returns - Easy flow drain',
+      'Pearl Gray acrylic'
+    ],
+    specs: {
+      filtration: '100 Sq. Ft. compatible',
+      acrylic: 'Pearl Gray'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+CONTRACTOR+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+WOMANS+FEET-1920w.png'
+    }
+  },
+  {
+    id: 'aquora-core-19',
+    name: 'Aquora Core 19\'',
+    brand: 'Dynasty Spas',
+    series: 'Aquora',
+    model: 'Core',
+    size: '19\'',
+    price: 'Call for Pricing',
+    priceValue: null,
+    category: 'Cold Plunge',
+    description: 'Extra-large contractor-ready plunge pool shell for impressive custom installations.',
+    longDescription: 'The 19\' Core provides a larger canvas for contractors and homeowners seeking an impressive custom installation. Perfect for remodeling or new construction projects where a premium plunge pool is desired.',
+    features: [
+      'Contractor build - shell only',
+      'Extra-large 19\' size',
+      'Perfect for custom installations',
+      'Deck and landscape integration',
+      'Cushioned foam step mats',
+      '100 Sq. Ft. filtration compatible',
+      'Water returns - Easy flow drain',
+      'Pearl Gray acrylic'
+    ],
+    specs: {
+      filtration: '100 Sq. Ft. compatible',
+      acrylic: 'Pearl Gray'
+    },
+    images: {
+      primary: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/15+AND+19+CONTRACTOR+PLUNGE+PIC-1920w.png',
+      overhead: 'https://le-cdn.website-editor.net/s/62e342c5f7fc425e96af9bbbd9fbc3f4/dms3rep/multi/opt/AQUORA+WOMANS+FEET-1920w.png'
+    }
   }
 ];
 

@@ -62,7 +62,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-3'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-3'}`}>
       {/* Top Bar - Contact Info & Social Media */}
       <div className="hidden lg:block py-2">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-6">
@@ -106,14 +106,14 @@ const Header = () => {
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between relative">
-          {/* Logo - Centered on mobile, left-aligned on desktop with larger size */}
-          <Link to="/" className="flex items-center xl:mr-8 absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0" data-testid="logo-link">
+          {/* Logo - Centered on mobile, left-aligned on desktop with controlled size */}
+          <Link to="/" className="flex items-center xl:mr-8 absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0 z-10" data-testid="logo-link">
             <motion.img 
               src={ASSETS.transparentLogo} 
               alt="Upstate Hot Tubs - Home" 
-              width="280"
-              height="112"
-              className={`object-contain transition-all duration-300 ${scrolled ? 'h-20 md:h-24 xl:h-24' : 'h-24 md:h-28 xl:h-28'}`} 
+              width="200"
+              height="80"
+              className={`object-contain transition-all duration-300 ${scrolled ? 'h-14 md:h-16 xl:h-18' : 'h-16 md:h-20 xl:h-20'}`} 
               loading="eager"
               fetchPriority="high"
               whileHover={{ scale: 1.02 }} 

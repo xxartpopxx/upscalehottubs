@@ -1231,7 +1231,7 @@ export const DYNASTY_GENERIC_EXTRAS = [
     price: '$495.99',
     priceValue: 495.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: '/images/addons/ozone.jpg'
+    image: '/images/addons/circulation-pump.jpg'
   }
 ];
 
@@ -1251,7 +1251,7 @@ export const DYNASTY_LUXURY_EXTRAS = [
     price: '$495.99',
     priceValue: 495.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: '/images/addons/ozone.jpg'
+    image: '/images/addons/circulation-pump.jpg'
   }
 ];
 
@@ -1279,7 +1279,7 @@ export const DYNASTY_OASIS_EXTRAS = [
     price: '$499.99',
     priceValue: 499.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: '/images/addons/ozone.jpg'
+    image: '/images/addons/circulation-pump.jpg'
   },
   {
     id: 'ds-oasis-intouch',
@@ -1315,7 +1315,7 @@ export const DYNASTY_VACATION_EXTRAS = [
     price: '$499.99',
     priceValue: 499.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: '/images/addons/ozone.jpg'
+    image: '/images/addons/circulation-pump.jpg'
   },
   {
     id: 'ds-vacation-intouch',

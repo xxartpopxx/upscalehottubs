@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, Flag, GitCompare } from 'lucide-react';
-import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, DYNASTY_GENERIC_EXTRAS } from '../data/products';
+import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, DYNASTY_GENERIC_EXTRAS, VIKING_SPAS_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images
@@ -110,6 +110,7 @@ const ProductDetailPage = () => {
   
   const isGrandRiver = product?.brand === 'Grand River Spas';
   const isDynasty = product?.brand === 'Dynasty Spas';
+  const isViking = product?.brand === 'Viking Spas';
   const isWorldSaunaGroup = product?.brand === 'World Sauna Group';
   const isHeater = product?.category === 'heater';
   const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isHeater;
@@ -1096,6 +1097,47 @@ const ProductDetailPage = () => {
                   {(product?.series === 'Luxury Collection' ? DYNASTY_LUXURY_EXTRAS :
                     product?.series === 'Oasis Collection' ? DYNASTY_OASIS_EXTRAS :
                     product?.series === 'Vacation Collection' ? DYNASTY_VACATION_EXTRAS : DYNASTY_GENERIC_EXTRAS).map((extra) => (
+                    <div key={extra.id} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
+                      {extra.image && (
+                        <div className="aspect-square overflow-hidden">
+                          <img 
+                            src={extra.image} 
+                            alt={extra.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => e.target.style.display = 'none'}
+                          />
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
+                        <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
+                        <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-slate-400 text-sm text-center mt-4">
+                  Ask your sales representative about adding these upgrades to your order.
+                </p>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Viking Spas - Available Extras/Upgrades Section */}
+          {isViking && !isSwimSpa && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="viking-extras"
+            >
+              <div className="bg-gradient-to-r from-[#0A1628] to-[#1a2d4a] p-6 lg:p-8">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-6 text-center">
+                  Available Upgrades & Extras
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {VIKING_SPAS_EXTRAS.map((extra) => (
                     <div key={extra.id} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
                       {extra.image && (
                         <div className="aspect-square overflow-hidden">

@@ -90,7 +90,7 @@ const ALL_PRODUCTS = [
   ...sortByPrice(COLD_PLUNGES),
 ];
 
-// Wet Test Popup Component - White background with hot tub image
+// Mother's Day Popup Component - Promotional popup with image
 const WetTestPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   
@@ -111,51 +111,52 @@ const WetTestPopup = ({ isOpen, onClose }) => {
           className="bg-white max-w-lg w-full shadow-2xl relative overflow-hidden rounded-lg" 
           onClick={e => e.stopPropagation()}
         >
-          <div className="h-2 bg-[#B91C1C]" />
-          <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-slate-200 p-2 z-10 bg-black/30 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close popup">
+          {/* Pink/Rose gradient top bar for Mother's Day */}
+          <div className="h-2 bg-gradient-to-r from-pink-400 via-rose-500 to-pink-400" />
+          <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-slate-200 p-2 z-10 bg-black/40 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close popup">
             <X size={24} />
           </button>
           
-          {/* Hot Tub Image - Only load when popup is visible */}
-          <div className="relative h-48 overflow-hidden">
+          {/* Mother's Day Promotion Image */}
+          <div className="relative overflow-hidden">
             <img 
-              src="/images/popup-lady-relaxing-optimized.jpg" 
-              alt="Woman relaxing in hot tub" 
+              src="https://customer-assets.emergentagent.com/job_spa-specs-hub/artifacts/6l7go5za_unnamed.png" 
+              alt="Mom Deserves to Relax - Mother's Day Hot Tub Special" 
               width="600"
-              height="225"
+              height="600"
               loading="lazy"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
           </div>
           
-          <div className="p-6 pt-2 text-center relative">
+          <div className="p-6 text-center relative bg-gradient-to-b from-pink-50 to-white">
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-              <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-black uppercase text-[#0A1628] mb-2">
-                Come in for a <span className="text-[#B91C1C]">Wet Test</span>
+              <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-black uppercase text-[#0A1628] mb-2">
+                Mother's Day is <span className="text-pink-600">May 11th!</span>
               </h2>
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
+              <p className="text-lg text-slate-700 mb-2">
+                Get Mom the <span className="font-bold text-pink-600">"Relaxation"</span> she needs with a new Hot Tub!
+              </p>
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <span className="text-2xl">💐</span>
+                <span className="text-lg font-bold text-pink-600">FREE Flowers for Mom</span>
+                <span className="text-2xl">💐</span>
               </div>
+              <p className="text-slate-500 text-sm mb-4">with your purchase!</p>
             </motion.div>
-            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-slate-600 text-base mb-5">
-              Try before you buy! Bring your suits — we have robes, slippers, and towels. Experience the relaxation today!
-            </motion.p>
             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-3">
-              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary w-full flex items-center justify-center gap-2 text-base">
+              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="bg-pink-600 hover:bg-pink-700 text-white w-full flex items-center justify-center gap-2 text-base py-3 px-6 font-semibold uppercase tracking-wider transition-colors">
                 <Phone size={18} /> Call {CONTACT.phone}
               </a>
-              <Link to="/contact" className="btn-secondary w-full flex items-center justify-center gap-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white">
-                <Mail size={18} /> Schedule Your Visit
+              <Link to="/contact" className="btn-secondary w-full flex items-center justify-center gap-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white">
+                <Mail size={18} /> Schedule a Visit
               </Link>
             </motion.div>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-sm mt-4">
-              Visit our showroom in Simpsonville, SC
+              Visit our showrooms in Simpsonville, SC & Naples, FL
             </motion.p>
           </div>
-          <div className="h-2 bg-[#B91C1C]" />
+          <div className="h-2 bg-gradient-to-r from-pink-400 via-rose-500 to-pink-400" />
         </motion.div>
       </motion.div>
     </AnimatePresence>

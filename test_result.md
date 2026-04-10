@@ -318,7 +318,7 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 4
+  test_sequence: 5
   run_ui: false
 
 test_plan:
@@ -358,6 +358,8 @@ agent_communication:
     message: "GRAND RIVER FULL SPECIFICATIONS ADDED: Added comprehensive fullSpecs data to all 17 Grand River products (Premier Series and Eco Series) based on official grandriverspas.com specifications. Each product now includes: (1) Detailed jets breakdown with individual jet types (Volcano, directional, multi-port, neck, rotating, stationary), (2) Auxiliary jets info, (3) Lighting system specs, (4) Water feature type, (5) Control system details, (6) Heater specifications, (7) Energy efficiency (CEC certified), (8) Performance Rating (GRHS), (9) Water care info, (10) Spa cover details, (11) Shell/cabinet/corner color options, (12) Model accessories. Created new 'Full Specifications' section in ProductDetailPage.jsx to display this data in a professional table format similar to Grand River's website."
   - agent: "testing"
     message: "ADD-ON IMAGES AND VIDEOS TESTING COMPLETED: All requested items verified and working correctly. (1) Grand River Product Add-ons at /products/gr-chariton-2: Found 8 add-on images all loading correctly from /images/addons/ folder (ozone.jpg, touchscreen control.png, airxtherapy.jpg, bluetooth speakers.png, in touch wifi.png, led controls.png, controlmyspa.png, in stream bluetooth.png). (2) Swim Spas Page Video at /swim-spas: Video element displaying correctly with source xx645ppc_swim spas.mp4. (3) About Page Videos at /about: Dynasty Spas YouTube video (aRDW_vz1bUw) and How Our Hot Tubs Are Made video (d0f23ce7_how the tubs are made.mp4) both displaying correctly. (4) Spa Butler Page Video at /spa-butler: Video displaying correctly with source 7dyy0pr2_SPA BUTLER.mp4. (5) Balneotherapy Page Video at /balneotherapy: Video displaying correctly with source izgchd84_hydrotheraphy video.mp4. All videos and add-on images are properly implemented and rendering as expected. Screenshots captured for all sections."
+  - agent: "testing"
+    message: "MOTHER'S DAY POPUP TESTING COMPLETED: Comprehensive testing of Mother's Day promotional popup on homepage. ALL 12 VERIFICATION CHECKS PASSED: (1) Pink/rose gradient bars at top and bottom of popup, (2) 'Mom Deserves to Relax' promotional image displays correctly, (3) 'Mother's Day is May 11th!' heading with pink accent, (4) 'FREE Flowers for Mom' offer visible, (5) Two flower emojis (💐) flanking the offer, (6) Call button with phone number in pink background, (7) Schedule a Visit button, (8) Pink gradient background theme, (9) Close button (X) functional, (10) Showroom locations text, (11) Close functionality works correctly, (12) Session storage prevents popup from showing again. Popup appears after 3 seconds (3000ms) when sessionStorage 'wetTestPopupSeen' is not set. All design elements match Mother's Day theme with pink/rose colors. Feature fully functional and ready for production."
 
   - task: "Grand River Full Specifications Display"
     implemented: true
@@ -532,3 +534,15 @@ agent_communication:
       - working: true
         agent: "testing"
         comment: "TESTED & VERIFIED: Routing issue FIXED by main agent. Product detail page now loads correctly at /products/gr-chariton-2 (plural route). All requested verifications PASSED: (1) Page title 'Chariton 2' displays correctly, (2) Brand 'Grand River Spas' displays correctly, (3) Full Specifications section found and fully functional with data-testid='grand-river-full-specs'. Section contains all required elements: Basic specs table (Seats: 6 Adults, Lounge/Non-Lounge, Dimensions: 92\" x 92\" x 37.5\", Water Capacity: 370 gallons, Dry Weight: 650 lbs, Filled Weight: 3,738 lbs, Total Jets: 63), Jets Breakdown section, Technical specs (Lighting System, Water Feature, Control System, Heater, Jet Pumps, Performance Rating: GRHS 12, Filtration, Water Care), Color Options section, and Model Options & Accessories. All specification elements rendering correctly. Product page fully functional with color customizer, view toggles, and complete product information."
+
+  - task: "Mother's Day Popup Promotion"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "TESTED & VERIFIED: Mother's Day promotional popup fully functional. All 12 verification checks PASSED: (1) Pink/rose gradient bars at top and bottom, (2) 'Mom Deserves to Relax' promotional image displays correctly from customer-assets URL, (3) 'Mother's Day is May 11th!' heading with pink accent on 'May 11th!', (4) 'FREE Flowers for Mom' offer text visible, (5) Two flower emojis (💐) flanking the offer, (6) Call button with phone number (864) 837-0155 in pink background, (7) 'Schedule a Visit' button linking to /contact, (8) Pink gradient background (from-pink-50 to-white), (9) Close button (X) in top right corner, (10) Showroom locations text (Simpsonville, SC & Naples, FL), (11) Close functionality works correctly. Popup appears after 3 seconds (3000ms timeout in code) when sessionStorage 'wetTestPopupSeen' is not set. Session storage correctly prevents popup from showing again after first view. All design elements match Mother's Day theme with pink/rose colors throughout."

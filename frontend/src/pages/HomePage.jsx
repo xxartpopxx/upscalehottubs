@@ -117,15 +117,15 @@ const WetTestPopup = ({ isOpen, onClose }) => {
             <X size={20} />
           </button>
           
-          {/* Mother's Day Promotion Image - smaller on mobile */}
-          <div className="relative overflow-hidden">
+          {/* Mother's Day Promotion Image - full image visible */}
+          <div className="relative">
             <img 
               src="https://customer-assets.emergentagent.com/job_spa-specs-hub/artifacts/6l7go5za_unnamed.png" 
               alt="Mom Deserves to Relax - Mother's Day Hot Tub Special" 
               width="600"
               height="600"
               loading="lazy"
-              className="w-full h-auto object-cover max-h-[200px] sm:max-h-[280px] md:max-h-none object-top"
+              className="w-full h-auto object-contain"
             />
           </div>
           

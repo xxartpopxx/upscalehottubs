@@ -753,6 +753,260 @@ const ProductDetailPage = () => {
             </div>
           </div>
           
+          {/* Grand River Spas - Full Specifications Section */}
+          {isGrandRiver && !isSwimSpa && product.fullSpecs && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+              data-testid="grand-river-full-specs"
+            >
+              <div className="bg-white border border-slate-200 p-6 lg:p-8">
+                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center border-b border-slate-200 pb-4">
+                  Full Specifications
+                </h3>
+                
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {/* Left Column - Basic Specs */}
+                  <div className="space-y-4">
+                    {/* Basic Info Table */}
+                    <div className="overflow-hidden border border-slate-200">
+                      <table className="w-full">
+                        <tbody className="divide-y divide-slate-200">
+                          <tr className="bg-slate-50">
+                            <td className="px-4 py-3 font-semibold text-[#0A1628] w-1/2">Seats</td>
+                            <td className="px-4 py-3 text-slate-700">{product.persons} Adults</td>
+                          </tr>
+                          <tr>
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Lounge/Non-Lounge</td>
+                            <td className="px-4 py-3 text-slate-700">{product.seatingLayout}</td>
+                          </tr>
+                          <tr className="bg-slate-50">
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Dimensions</td>
+                            <td className="px-4 py-3 text-slate-700">
+                              {product.dimensions}
+                              {product.dimensionsMetric && <span className="block text-xs text-slate-500">{product.dimensionsMetric}</span>}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Water Capacity</td>
+                            <td className="px-4 py-3 text-slate-700">{product.waterCapacity}</td>
+                          </tr>
+                          <tr className="bg-slate-50">
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Dry Weight</td>
+                            <td className="px-4 py-3 text-slate-700">{product.dryWeight}</td>
+                          </tr>
+                          <tr>
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Filled Weight</td>
+                            <td className="px-4 py-3 text-slate-700">{product.filledWeight}</td>
+                          </tr>
+                          <tr className="bg-slate-50">
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Total Jets</td>
+                            <td className="px-4 py-3 text-slate-700 font-bold text-[#B91C1C]">{product.jets}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    {/* Jets Breakdown */}
+                    {product.fullSpecs.jetsBreakdown && (
+                      <div className="border border-slate-200">
+                        <div className="bg-[#0A1628] px-4 py-3">
+                          <h4 className="font-bold text-white uppercase text-sm">Jets Breakdown</h4>
+                        </div>
+                        <div className="p-4">
+                          <ul className="space-y-1.5">
+                            {product.fullSpecs.jetsBreakdown.map((jet, index) => (
+                              <li key={index} className="flex items-start gap-2 text-sm">
+                                <span className="text-[#B91C1C] font-bold">•</span>
+                                <span className="text-slate-700">{jet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          {product.fullSpecs.auxiliaryJets && (
+                            <div className="mt-3 pt-3 border-t border-slate-200">
+                              <span className="text-xs font-semibold text-slate-500 uppercase">Auxiliary Jets:</span>
+                              <p className="text-sm text-slate-700 mt-1">{product.fullSpecs.auxiliaryJets}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Right Column - Technical Specs */}
+                  <div className="space-y-4">
+                    {/* Technical Specs Table */}
+                    <div className="overflow-hidden border border-slate-200">
+                      <table className="w-full">
+                        <tbody className="divide-y divide-slate-200">
+                          {product.fullSpecs.lightingSystem && (
+                            <tr className="bg-slate-50">
+                              <td className="px-4 py-3 font-semibold text-[#0A1628] w-1/2">Lighting System</td>
+                              <td className="px-4 py-3 text-slate-700">{product.fullSpecs.lightingSystem}</td>
+                            </tr>
+                          )}
+                          {product.fullSpecs.waterFeature && product.fullSpecs.waterFeature !== 'N/A' && (
+                            <tr>
+                              <td className="px-4 py-3 font-semibold text-[#0A1628]">Water Feature</td>
+                              <td className="px-4 py-3 text-slate-700">{product.fullSpecs.waterFeature}</td>
+                            </tr>
+                          )}
+                          {product.fullSpecs.controlSystem && (
+                            <tr className="bg-slate-50">
+                              <td className="px-4 py-3 font-semibold text-[#0A1628]">Control System</td>
+                              <td className="px-4 py-3 text-slate-700">{product.fullSpecs.controlSystem}</td>
+                            </tr>
+                          )}
+                          {product.fullSpecs.heater && (
+                            <tr>
+                              <td className="px-4 py-3 font-semibold text-[#0A1628]">Heater</td>
+                              <td className="px-4 py-3 text-slate-700">{product.fullSpecs.heater}</td>
+                            </tr>
+                          )}
+                          <tr className="bg-slate-50">
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Jet Pumps</td>
+                            <td className="px-4 py-3 text-slate-700">{product.pumps}</td>
+                          </tr>
+                          {product.fullSpecs.performanceRating && (
+                            <tr>
+                              <td className="px-4 py-3 font-semibold text-[#0A1628]">Performance Rating</td>
+                              <td className="px-4 py-3 text-slate-700 font-bold text-[#B91C1C]">{product.fullSpecs.performanceRating}</td>
+                            </tr>
+                          )}
+                          <tr className="bg-slate-50">
+                            <td className="px-4 py-3 font-semibold text-[#0A1628]">Filtration</td>
+                            <td className="px-4 py-3 text-slate-700">{product.filtration}</td>
+                          </tr>
+                          {product.fullSpecs.waterCare && (
+                            <tr>
+                              <td className="px-4 py-3 font-semibold text-[#0A1628]">Water Care</td>
+                              <td className="px-4 py-3 text-slate-700">{product.fullSpecs.waterCare}</td>
+                            </tr>
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    {/* Energy Efficiency */}
+                    {product.fullSpecs.energyEfficiency && (
+                      <div className="border border-slate-200">
+                        <div className="bg-green-700 px-4 py-3">
+                          <h4 className="font-bold text-white uppercase text-sm">Energy Efficiency</h4>
+                        </div>
+                        <div className="p-4">
+                          <p className="text-sm text-slate-700">{product.fullSpecs.energyEfficiency}</p>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Spa Cover */}
+                    {product.fullSpecs.spaCover && (
+                      <div className="border border-slate-200">
+                        <div className="bg-slate-600 px-4 py-3">
+                          <h4 className="font-bold text-white uppercase text-sm">Spa Cover</h4>
+                        </div>
+                        <div className="p-4">
+                          <p className="text-sm text-slate-700">{product.fullSpecs.spaCover}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Color Options */}
+                <div className="mt-8 pt-6 border-t border-slate-200">
+                  <h4 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-[#0A1628] mb-4">Color Options</h4>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {product.fullSpecs.shellColorOptions && (
+                      <div className="bg-slate-50 p-4">
+                        <span className="text-xs font-semibold text-slate-500 uppercase">Shell Colors</span>
+                        <p className="text-sm text-[#0A1628] mt-1">{product.fullSpecs.shellColorOptions}</p>
+                      </div>
+                    )}
+                    {product.fullSpecs.cabinetColorOptions && (
+                      <div className="bg-slate-50 p-4">
+                        <span className="text-xs font-semibold text-slate-500 uppercase">Cabinet Colors</span>
+                        <p className="text-sm text-[#0A1628] mt-1">{product.fullSpecs.cabinetColorOptions}</p>
+                      </div>
+                    )}
+                    {product.fullSpecs.cornerColorOptions && product.fullSpecs.cornerColorOptions !== 'N/A' && (
+                      <div className="bg-slate-50 p-4">
+                        <span className="text-xs font-semibold text-slate-500 uppercase">Corner Colors</span>
+                        <p className="text-sm text-[#0A1628] mt-1">{product.fullSpecs.cornerColorOptions}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Accessories */}
+                {product.fullSpecs.accessories && (
+                  <div className="mt-6 pt-6 border-t border-slate-200">
+                    <h4 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-[#0A1628] mb-4">Model Options & Accessories</h4>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {product.fullSpecs.accessories.controls && (
+                        <div className="flex items-start gap-3 bg-slate-50 p-4">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
+                            <Info size={16} className="text-white" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-semibold text-slate-500 uppercase block">Controls</span>
+                            <p className="text-sm text-[#0A1628] font-medium">{product.fullSpecs.accessories.controls}</p>
+                          </div>
+                        </div>
+                      )}
+                      {product.fullSpecs.accessories.entertainment && product.fullSpecs.accessories.entertainment !== 'N/A' && (
+                        <div className="flex items-start gap-3 bg-slate-50 p-4">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
+                            <Info size={16} className="text-white" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-semibold text-slate-500 uppercase block">Entertainment</span>
+                            <p className="text-sm text-[#0A1628] font-medium">{product.fullSpecs.accessories.entertainment}</p>
+                          </div>
+                        </div>
+                      )}
+                      {product.fullSpecs.accessories.advancedJetting && product.fullSpecs.accessories.advancedJetting !== 'N/A' && (
+                        <div className="flex items-start gap-3 bg-slate-50 p-4">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
+                            <Droplets size={16} className="text-white" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-semibold text-slate-500 uppercase block">Advanced Jetting</span>
+                            <p className="text-sm text-[#0A1628] font-medium">{product.fullSpecs.accessories.advancedJetting}</p>
+                          </div>
+                        </div>
+                      )}
+                      {product.fullSpecs.accessories.coverLifter && (
+                        <div className="flex items-start gap-3 bg-slate-50 p-4">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
+                            <Info size={16} className="text-white" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-semibold text-slate-500 uppercase block">Cover Lifter</span>
+                            <p className="text-sm text-[#0A1628] font-medium">{product.fullSpecs.accessories.coverLifter}</p>
+                          </div>
+                        </div>
+                      )}
+                      {product.fullSpecs.accessories.steps && (
+                        <div className="flex items-start gap-3 bg-slate-50 p-4">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
+                            <Info size={16} className="text-white" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-semibold text-slate-500 uppercase block">Steps</span>
+                            <p className="text-sm text-[#0A1628] font-medium">{product.fullSpecs.accessories.steps}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          )}
+          
           {/* Grand River Spas - Available Extras/Upgrades Section */}
           {isGrandRiver && !isSwimSpa && (
             <motion.div

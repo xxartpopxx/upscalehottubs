@@ -113,6 +113,40 @@ export const GRAND_RIVER_PRODUCTS = [
     description: 'Our largest lounger model, designed for full-body relaxation with Volcano floor jet and focused neck jets.',
     longDescription: 'Step into luxurious comfort with the Chariton—our largest lounger model, designed for full-body relaxation. Every detail is crafted with purpose, from the powerful Volcano floor jet to the focused neck jets in the roomy captain\'s chairs.',
     features: ['Volcano floor jet for full-body massage', 'Captain\'s chairs with focused neck jets', 'Infinity Edge water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/60amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '1 Volcano jet',
+        '8 Two-inch directional jets',
+        '10 Two-inch multi-port jets',
+        '8 Two-inch neck jets',
+        '8 Three-inch directional jets',
+        '8 Three-inch rotating jets',
+        '4 Four-inch directional jets',
+        '6 Four-inch rotating jets',
+        '3 Five-inch directional jets',
+        '4 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Infinity Edge',
+      controlSystem: 'Balboa Control System 240v/60amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 12',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo, integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-OH_web.png?lossy=2&strip=1&webp=1'
@@ -143,6 +177,39 @@ export const GRAND_RIVER_PRODUCTS = [
     filtration: '50 sq ft filter',
     description: 'Luxurious lounger with powerful Volcano jet and captain\'s chairs for head-to-toe rejuvenation.',
     features: ['Volcano floor jet', 'Captain\'s chairs with neck jets', 'Infinity Edge water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/60amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '1 Volcano Jet',
+        '6 Two-inch directional jets',
+        '10 Two-inch multi-port jets',
+        '10 Two-inch neck jets',
+        '4 Three-inch directional jets',
+        '6 Three-inch rotating jets',
+        '4 Four-inch directional jets',
+        '4 Four-inch rotating jets',
+        '3 Five-inch directional jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Infinity Edge',
+      controlSystem: 'Balboa Control System 240v/60amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 12',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo, integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-1_White-Satin_CoastalGray_Side_web.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/GR_Chariton-1-Silver-OH_web.png?lossy=2&strip=1&webp=1'
@@ -172,7 +239,42 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '2 Jet Pumps',
     filtration: '50 sq ft filter',
     description: 'Spacious open-seating hot tub with exclusive three-direction swing seats.',
+    longDescription: 'Discover total-body relaxation with the Chesapeake — a spacious, open-seating hot tub designed for comfort and rejuvenation. It features two versions of our exclusive three-direction "swing" seat, allowing you to lounge across nearby seats or sink into captain\'s chairs with targeted jet therapy.',
     features: ['Three-direction "swing" seats', 'Captain\'s chairs with jet therapy', 'Cascade water feature', '63 powerful jets', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/60amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '1 Volcano jet',
+        '8 Two-inch directional jets',
+        '10 Two-inch multi-port jets',
+        '8 Two-inch neck jets',
+        '8 Three-inch directional jets',
+        '8 Three-inch rotating jets',
+        '4 Four-inch directional jets',
+        '6 Four-inch rotating jets',
+        '3 Five-inch directional jets',
+        '4 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Cascade',
+      controlSystem: 'Balboa Control System 240v/60amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 12',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo, integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White_CoastalGray_web.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-2_White-OH_web.png?lossy=2&strip=1&webp=1'
@@ -203,6 +305,39 @@ export const GRAND_RIVER_PRODUCTS = [
     filtration: '50 sq ft filter',
     description: 'Total-body relaxation with targeted jet therapy for neck, wrists, and feet.',
     features: ['Targeted neck, wrist, and foot therapy', 'Three-direction swing seats', 'Open seating for 7', 'Cascade water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/60amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '1 Volcano jet',
+        '4 Two-inch directional jets',
+        '10 Two-inch multi-port jets',
+        '8 Two-inch neck jets',
+        '6 Three-inch directional jets',
+        '8 Three-inch rotating jets',
+        '4 Four-inch directional jets',
+        '6 Four-inch rotating jets',
+        '3 Five-inch directional jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Cascade',
+      controlSystem: 'Balboa Control System 240v/60amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 12',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo, integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal_Black_Side_web-e1751040384296.png?lossy=2&strip=1&webp=1',
       overhead: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chesapeake-1_Opal-OH_web.png?lossy=2&strip=1&webp=1'
@@ -232,7 +367,41 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '2 Jet Pumps',
     filtration: '50 sq ft filter',
     description: 'Stretch out in the full-length lounger or settle into the corner swing seat for flexible comfort.',
+    longDescription: 'Stretch out in the Saginaw\'s full-length lounger or settle into the corner swing seat, designed for flexible comfort. Precision-placed jets target key areas for a customizable hydrotherapy experience.',
     features: ['Full-length lounger seat', 'Corner swing seat', 'Infinity Edge water feature', '53 therapeutic jets', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/60amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '8 Two-inch directional jets',
+        '12 Two-inch multi-port jets',
+        '6 Two-inch neck jets',
+        '7 Three-inch directional jets',
+        '6 Three-inch rotating jets',
+        '2 Four-inch directional jets',
+        '4 Four-inch rotating jets',
+        '3 Five-inch rotating jets',
+        '2 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Infinity Edge',
+      controlSystem: 'Balboa Control System 240v/60amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 12',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood or Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo and integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.saginaw,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_2_White_Coastal_Side-768x576.png?lossy=2&strip=1&webp=1',
@@ -264,6 +433,36 @@ export const GRAND_RIVER_PRODUCTS = [
     filtration: '50 sq ft filter',
     description: 'Well-rounded 6-person spa with quality hydrotherapy and lounge seating.',
     features: ['35 jets', 'Lounge seating', 'Cascade water feature', 'LED points-of-light, interior and exterior', 'Balboa BP500 240v/50amp', '5.5kW Heater', 'Mazzei ozone injection system', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '6 Two-inch directional jets',
+        '9 Two-inch multi-port jets',
+        '6 Two-inch neck jets',
+        '4 Three-inch directional jets',
+        '4 Three-inch rotating jets',
+        '3 Four-inch rotating jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Cascade',
+      controlSystem: 'Balboa BP500 240v/50 amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 5',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood or Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo and integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.saginaw,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Saginaw_1_White_Walnut_Black_Side-768x542.png?lossy=2&strip=1&webp=1',
@@ -294,7 +493,38 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '2 Jet Pumps',
     filtration: '50 sq ft filter',
     description: 'Barrier-free layout with roomy captain\'s chairs and calf jets in all four corners for balanced, full-body comfort.',
+    longDescription: 'With a barrier-free layout, the Thornapple makes it easy to move from one seat to the next. Two roomy captain\'s chairs offer focused relief, while calf jets in all four corners deliver balanced, full-body comfort.',
     features: ['Barrier-free layout', 'Captain\'s chairs with focused relief', 'Calf jets in all four corners', 'Cascade water feature', '54 jets', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/60amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '12 Two-inch directional jets',
+        '4 Two-inch multi-port jets',
+        '4 Two-inch neck jets',
+        '14 Three-inch directional jets',
+        '12 Three-inch rotating jets',
+        '5 Five-inch rotating jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Cascade',
+      controlSystem: 'Balboa Control System 240v/60amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 10',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo, integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.thornapple,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
@@ -326,6 +556,36 @@ export const GRAND_RIVER_PRODUCTS = [
     filtration: '50 sq ft filter',
     description: 'Comfortable non-lounge design with excellent jet coverage and barrier-free seating.',
     features: ['Barrier-free seating', '38 jets', 'Cascade water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/50amp', '5.5kW Heater', 'Mazzei ozone injection system', 'SpaTouch™ 4 Controls', 'Bluetooth® stereo with 5" speakers', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '13 Two-inch directional jets',
+        '7 Two-inch multi-port jets',
+        '4 Two-inch neck jets',
+        '2 Three-inch directional jets',
+        '6 Three-inch rotating jets',
+        '3 Four-inch rotating jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Cascade',
+      controlSystem: 'Balboa Control System 240v/50amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 5',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'Bluetooth® stereo, integrated 5" speakers',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.thornapple,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Thornapple_1_Opal_Barnwood_Black_Side-768x544.png?lossy=2&strip=1&webp=1',
@@ -356,7 +616,39 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '2 Jet Pumps',
     filtration: '50 sq ft filter',
     description: 'Deep Adirondack-style lounger or generous captain\'s chair with targeted jets to ease tension.',
+    longDescription: 'Choose your perfect fit with the Muskegon\'s deep Adirondack-style lounger or generous captain\'s chair. Targeted jets help ease tension and restore energy, whether you\'re winding down or starting fresh.',
     features: ['Adirondack-style lounger', 'Captain\'s chair with targeted jets', 'Aqua Arc water feature', '41 jets', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/50amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps', 'SpaTouch™ 4 Controls', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '10 Two-inch directional jets',
+        '10 Two-inch multi-port jets',
+        '2 Two-inch neck jets',
+        '1 Three-inch directional jets',
+        '7 Three-inch rotating jets',
+        '1 Four-inch rotating jets',
+        '1 Five-inch rotating jets',
+        '8 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Aqua Arc',
+      controlSystem: 'Balboa Control System 240v/50amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 10',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.muskegon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon2_White_CoastalGray_Side-768x499.png?lossy=2&strip=1&webp=1',
@@ -388,6 +680,35 @@ export const GRAND_RIVER_PRODUCTS = [
     filtration: '50 sq ft filter',
     description: 'Great value 6-person spa with Adirondack-style lounger.',
     features: ['6-person capacity', '28 jets', 'Lounge seating', 'Infinity Edge water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/50amp', '5.5kW Heater', 'Mazzei ozone injection system', 'SpaTouch™ 4 Controls', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '6 Two-inch directional jets',
+        '10 Two-inch multi-port jets',
+        '2 Two-inch neck jets',
+        '7 Three-inch rotating jets',
+        '1 Four-inch rotating jets',
+        '1 Five-inch rotating jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Infinity Edge',
+      controlSystem: 'Balboa Control System 240v/50amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 4',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Walnut, Barnwood, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.muskegon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Muskegon1_White_Black_Side-768x498.png?lossy=2&strip=1&webp=1',
@@ -418,7 +739,34 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '2 Jet Pumps',
     filtration: '50 sq ft filter',
     description: 'Relaxation redefined with a variety of seating and jet configurations, LED lighting and Aqua Arc water feature.',
+    longDescription: 'Relaxation is redeﬁned in the Sturgeon, with a variety of seating and jet conﬁgurations designed for your comfort. LED lighting and a soothing waterfall set the mood, whether you\'re soaking solo or sharing the experience with loved ones.',
     features: ['31 jets', 'Lounge seating', 'Aqua Arc water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/40amp', '5.5kW Heater', 'Mazzei ozone injection system', '2 Jet Pumps'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '18 Two-inch directional jets',
+        '2 Two-inch neck jets',
+        '6 Four-inch directional jets',
+        '2 Four-inch rotating jets',
+        '2 Five-inch rotating jets'
+      ],
+      auxiliaryJets: '1 Ozone jet',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Aqua Arc',
+      controlSystem: 'Balboa Control System 240v/40amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 6',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Taupe or Walnut',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.sturgeon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
@@ -451,6 +799,32 @@ export const GRAND_RIVER_PRODUCTS = [
     filtration: '50 sq ft filter',
     description: 'Excellent entry-level Premier Series hot tub with Aqua Arc water feature.',
     features: ['31 jets', 'Lounge seating', 'Aqua Arc water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/40amp', '5.5kW Heater', 'Mazzei ozone injection system'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '18 Two-inch directional jets',
+        '2 Two-inch neck jets',
+        '6 Four-inch directional jets',
+        '2 Four-inch rotating jets',
+        '2 Five-inch rotating jets'
+      ],
+      auxiliaryJets: '1 Ozone jet',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Aqua Arc',
+      controlSystem: 'Balboa Control System 240v/40amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 3',
+      waterCare: 'Mazzei ozone injection system',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Taupe or Walnut',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.sturgeon,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
@@ -482,7 +856,40 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '1 Jet Pump',
     filtration: '20 sq ft filter',
     description: 'Compact yet luxurious 3-person hot tub with spacious lounge seat and captain\'s chair for targeted relaxation.',
+    longDescription: 'Compact yet luxurious, the Swift is a two-person hot tub that fits perfectly in small outdoor spaces. Whether you prefer to stretch out in the spacious lounge seat or sink into the captain\'s chair for targeted relaxation, this hot tub delivers powerful hydrotherapy in a conveniently small package.',
     features: ['Compact design for small spaces', 'Spacious lounge seat', 'Captain\'s chair', 'Cascade water feature', '33 jets', 'LED points-of-light, interior and exterior', 'Balboa Control System 240v/50amp', '5.5kW Heater', 'PureCD Ozone System', 'SpaTouch™ 4 Controls', 'Air X® Therapy System'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '8 Two-inch directional jets',
+        '4 Two-inch multi-port jets',
+        '2 Two-inch neck jets',
+        '2 Three-inch directional jets',
+        '2 Three-inch rotating jets',
+        '2 Four-inch directional jets',
+        '4 Four-inch rotating jets',
+        '6 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Cascade',
+      controlSystem: 'Balboa Control System | 240v/50amp',
+      heater: '5.5kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 4',
+      waterCare: 'PureCD Ozone System',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin, Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Barnwood, Walnut, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'N/A',
+        advancedJetting: 'Air X® Therapy System',
+        coverLifter: 'Standard lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1',
@@ -513,7 +920,35 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '1 Jet Pump',
     filtration: '20 sq ft filter',
     description: 'Round 5-person hot tub with LED lights and therapeutic jets.',
+    longDescription: 'Spacious and versatile, the Manistee offers plenty of room to stretch out or gather with friends. The calming LED lights and expertly placed jets ensure a therapeutic soak that\'s perfect for unwinding after a long day.',
     features: ['Round design', '20 jets', 'Seating for 5', 'LED lighting', 'Balboa Control System 240v/40amp', '1.0kW Heater'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '1 Whirlpool jet',
+        '4 Three-inch directional jets',
+        '2 Three-inch rotating jets',
+        '2 Four-inch directional jets',
+        '2 Four-inch rotating jets',
+        '8 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet',
+      lightingSystem: 'LED Lighting System, Spa Light',
+      waterFeature: 'N/A',
+      controlSystem: 'Balboa Control System 240v/40amp',
+      heater: '1.0kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 4',
+      waterCare: 'Optional',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Taupe or Walnut',
+      cornerColorOptions: 'N/A',
+      accessories: {
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.manistee,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_White_Taupe_Side-768x672.png?lossy=2&strip=1&webp=1',
@@ -546,7 +981,33 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '1 Jet Pump',
     filtration: '50 sq ft filter',
     description: 'Plug-and-play 6-person Eco hot tub with lounger seat, captain\'s chairs, LED lighting, and Aqua Arc water feature.',
+    longDescription: 'Get ready to experience luxury like never before with the Sturgeon collection of hot tubs in the Eco series. This ideal configuration offers LED lighting and a Aqua Arc water feature to help you set the mood for your outdoor hot tub. Complete with a comfortable lounger seat and two spacious captain\'s chairs, this hot tub allows you to enjoy all the benefits of hydrotherapy. Experience true portability with our Eco series hot tubs, all of which can be easily plugged into any 120v outlet.',
     features: ['Plug-and-play 120v', 'Lounger seat', 'Captain\'s chairs', '21 jets', 'Aqua Arc water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 120v/15amp', '1.0kW Heater'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '10 Two-inch directional jets',
+        '2 Two-inch neck jets',
+        '8 Three-inch directional jets',
+        '2 Four-inch directional jets'
+      ],
+      auxiliaryJets: '1 Ozone jet',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Aqua Arc',
+      controlSystem: 'Balboa Control System 120v/15amp',
+      heater: '1.0kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 4',
+      waterCare: 'Optional',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Taupe or Walnut',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Sturgeon_1-2_Opal_Walnut_Side-768x538.png?lossy=2&strip=1&webp=1',
@@ -577,7 +1038,39 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '1 Jet Pump',
     filtration: '20 sq ft filter',
     description: 'Compact plug-and-play 3-person hot tub with lounge seat, captain\'s chair, and Cascade water feature.',
+    longDescription: 'Compact yet comfortable, the Swift Eco is two-person hot tub that fits perfectly in small outdoor spaces. Whether you prefer to stretch out in the spacious lounge seat or sink into the captain\'s chair for targeted relaxation, this hot tub delivers powerful hydrotherapy in a conveniently small package. Experience true portability with our Eco series hot tubs, all of which can be easily plugged into any 120v outlet.',
     features: ['Plug-and-play 120v', 'Compact design', 'Lounge seat', 'Captain\'s chair', '23 jets', 'Cascade water feature', 'LED points-of-light, interior and exterior', 'Balboa Control System 120v/15amp', '1.0kW Heater', 'SpaTouch™ 4 Controls'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '4 Two-inch directional jets',
+        '2 Two-inch neck jets',
+        '4 Three-inch directional jets',
+        '3 Three-inch rotating jets',
+        '2 Four-inch directional jets',
+        '1 Four-inch rotating jets',
+        '4 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet, 2 Water feature jets',
+      lightingSystem: 'LED points-of-light, interior and exterior',
+      waterFeature: 'Cascade',
+      controlSystem: 'Balboa Control System | 120v/15amp',
+      heater: '1.0kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 2',
+      waterCare: 'Optional - PureCD Ozone System',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'White Satin, Silver Satin, Opal Satin',
+      cabinetColorOptions: 'Coastal Gray, Barnwood, Walnut, Black',
+      cornerColorOptions: 'Matching or Black',
+      accessories: {
+        controls: 'SpaTouch™ 4',
+        entertainment: 'N/A',
+        advancedJetting: 'N/A',
+        coverLifter: 'Standard lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/11/GR_2025_Swift_White_Black_Side.png?lossy=2&strip=1&webp=1',
@@ -607,7 +1100,35 @@ export const GRAND_RIVER_PRODUCTS = [
     pumps: '1 Jet Pump',
     filtration: '20 sq ft filter',
     description: 'Plug-and-play round 5-person Eco Series hot tub with hydrotherapy jets in every seat.',
+    longDescription: 'The Manistee hot tub is a classic with more than enough space to unwind or spend quality time with loved ones. With hydrotherapy jets in every seat in this hot tub ensures a relaxing and healing experience. Experience true portability with our Eco series hot tubs, all of which can be easily plugged into any 120v outlet.',
     features: ['Plug-and-play 120v', '20 jets', '5-person capacity', 'Hydrotherapy jets in every seat', 'LED lighting', 'Balboa Control System 120v/15amp', '1.0kW Heater'],
+    // Full Specifications from Grand River Spas
+    fullSpecs: {
+      jetsBreakdown: [
+        '1 Whirlpool jet',
+        '4 Three-inch directional jets',
+        '2 Three-inch rotating jets',
+        '2 Four-inch directional jets',
+        '2 Four-inch rotating jets',
+        '8 Two-inch stationary jets'
+      ],
+      auxiliaryJets: '1 Ozone jet',
+      lightingSystem: 'LED Lighting System, Spa Light',
+      waterFeature: 'N/A',
+      controlSystem: 'Balboa Control System 120v/15amp',
+      heater: '1.0kW Heater',
+      energyEfficiency: '2.0 lb. density polyurethane foam; Polar Insulation; Certified to California Energy Commission (CEC) Standards',
+      performanceRating: 'GRHS 2',
+      waterCare: 'Optional',
+      spaCover: '1.5 lbs. density, 4" to 2.5" tapered foam core cover. Weather resistant material | Black',
+      shellColorOptions: 'Silver Satin or Opal Satin',
+      cabinetColorOptions: 'Taupe or Walnut',
+      cornerColorOptions: 'N/A',
+      accessories: {
+        coverLifter: 'Standard Grand River Spas lifter',
+        steps: 'Premium or Standard | Black'
+      }
+    },
     brochure: GR_BROCHURES.eco,
     images: {
       primary: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Manistee_Eco_Opal_Walnut_Side-768x576.png?lossy=2&strip=1&webp=1',

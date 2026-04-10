@@ -318,11 +318,12 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 2
+  test_sequence: 3
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Grand River Full Specifications Display"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -350,6 +351,8 @@ agent_communication:
     message: "BACKEND HEALTH CHECK TESTING COMPLETED: Successfully implemented and tested /api/health endpoint as requested. (1) Health Endpoint: Returns proper JSON response with status, timestamp, database connection status, and service identifier. MongoDB ping test working correctly. (2) MongoDB Connection: Verified through both ping test and CRUD operations. Database read/write operations confirmed functional with status check creation/retrieval. (3) Existing Backend APIs: All endpoints working correctly - root endpoint, status GET/POST operations. Server running properly on port 8001 and accessible via external URL. All backend functionality verified as healthy and operational."
   - agent: "main"
     message: "FINSAUNA USA PRODUCTS & MEMBERSHIP PAGE ADDED: (1) Added ALL Finsauna infrared saunas with MSRP pricing from PDF - 9 models including Fiera, Radia IR, and Radia TIR series ($2,390-$11,890), (2) Added 13 Finsauna indoor/outdoor/barrel saunas with MSRP pricing - Therma, Isla, Emma, Reviva, Solara, Keila series ($5,990-$12,990), (3) Added 10 Finsauna electric heaters - HomeHeat, ProHeat, ClubHeat series ($1,198-$3,798), (4) Added 6 Finsauna plunge tubs - AquaFin and Immersia series ($2,990-$12,990), (5) Added YouTube video to Finnmark FD-5 Trinity XL product with embedded player, (6) Created new Membership page with Fire & Ice Society logo, Red Light Therapy pricing (5 tiers from $34.95-$299.95), benefits section, Naples FL & Greenville SC locations, (7) Added Membership navigation link with gradient styling. Totals: 51 saunas (22 Finsauna), 15 plunges (6 Finsauna), 15 heaters (10 Finsauna)."
+  - agent: "testing"
+    message: "CRITICAL ROUTING BUG FOUND: Product detail pages are not loading due to route mismatch. App.js defines route as '/products/:id' (plural) but all product links use '/product/:id' (singular). This causes ProductDetailPage component to never render - only header and footer display. Tested /product/gr-chariton-2 and /product/gr-manistee - both show empty page with no product content. Full Specifications section cannot be tested until routing is fixed. Main agent must change route in App.js from '/products/:id' to '/product/:id' to match existing product URLs."
 
   - task: "World Sauna Group Outdoor Saunas"
     implemented: true
@@ -494,3 +497,15 @@ agent_communication:
       - working: true
         agent: "main"
         comment: "Created new Membership page with Fire & Ice Society logo, Red Light Therapy pricing (Drop-in $34.95, 5 Sessions $99.95, 10 Sessions $174.95, 20 Sessions $220.95, 30 Sessions $299.95), benefits section, Naples FL & Greenville SC locations. Added route and navigation link with gradient styling"
+
+  - task: "Grand River Full Specifications Display"
+    implemented: true
+    working: false
+    file: "frontend/src/pages/ProductDetailPage.jsx, frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "testing"
+        comment: "CRITICAL BUG: Product detail pages not loading due to routing mismatch. App.js line 85 defines route as '/products/:id' (plural) but all product URLs use '/product/:id' (singular). Tested /product/gr-chariton-2 and /product/gr-manistee - both show only header and footer with no product content. ProductDetailPage component never renders. Full Specifications section exists in code (lines 757-1008 of ProductDetailPage.jsx) with all required elements (Basic specs table, Jets Breakdown, Auxiliary Jets, Technical specs, Energy Efficiency, Spa Cover, Color Options, Model Options & Accessories) but cannot be displayed until route is fixed. FIX REQUIRED: Change App.js line 85 from '<Route path=\"/products/:id\"' to '<Route path=\"/product/:id\"' to match existing product links."

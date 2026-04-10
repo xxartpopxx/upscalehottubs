@@ -1,7 +1,7 @@
 # Upstate Hot Tubs - Product Requirements Document
 
 ## Original Problem Statement
-Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) from World Sauna Group and integrating them alongside existing hot tub products. Key requirements include adding saunas, cold plunges, heaters, fixing specs, model comparison features, color pickers, and removing Viking Spas brand.
+Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) from manufacturer sites and integrating them alongside existing hot tub products. Key requirements include adding saunas, cold plunges, heaters, fixing specs, model comparison features, color pickers, and removing Viking Spas brand.
 
 ## Tech Stack
 - **Frontend**: React, Tailwind CSS, Framer Motion, React Router
@@ -18,44 +18,38 @@ Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) 
 
 ### Page Structure
 - **SaunasPage.jsx**: Consolidated page with 5 filter categories (All Saunas, Outdoor, Indoor, Infrared, Heaters) + dedicated heaters section
-- **ColdPlungesPage.jsx**: All cold plunge products
+- **ColdPlungesPage.jsx**: All cold plunge products (22 total)
 - **ProductDetailPage.jsx**: Full product details with color pickers, model comparison, extras/upgrades
 
 ### Hot Tub Spec Accuracy (March 2026)
 - **Grand River Spas**: All specs verified and corrected from official grandriverspas.com
-  - Chariton 2: 63 jets (was 61), added water capacity, pumps, filtration
-  - Chesapeake: Added water capacity (430gal), dry/filled weight, corrected layout
-  - Saginaw 2: Jets 53 (was 61), dimensions 86x86x37 (was 84x84x37.5)
-  - Thornapple: Persons 7 (was 6), jets corrected, layout Non-Lounge (was Lounge)
-  - Muskegon 2: Persons 6 (was 7), jets 41 (was 56), layout Lounge (was Open)
-  - Sturgeon: Jets 31 (was 50/40), dimensions 78x78x35 (was 84x84), electrical 240v/40amp
-  - Swift: Now Premier Series, dimensions 60x84x34 (was 78x60x33), electrical 240v/50amp
-  - Manistee: Corrected layout, added full specs
-  - All Eco models: Corrected to 120v/15amp plug-and-play specs
 - **Dynasty Spas**: Specs verified from PDF brochures
-  - Paradise Bay: Dimensions corrected to 92x102x39 (was 92x92)
-  - All other specs confirmed accurate
 
 ### Color Picker Fixes (March 2026)
-- Per-product shell/cabinet color restrictions:
-  - Sturgeon: Silver/Opal shells only, Walnut/Taupe cabinets only
-  - Manistee: White/Opal shells only, Walnut/Taupe cabinets only
-  - Swift: Full range (White/Silver/Opal + CoastalGray/Walnut/Barnwood/Black)
-- Corner color option: Conditionally shown via `hasCornerOption` field
-  - Hidden for: Sturgeon, Manistee, and all Eco models
-  - Visible for: Chariton, Chesapeake, Saginaw, Thornapple, Muskegon, Swift
-- Visualizer model prefixes corrected:
-  - Swift → `Premier_Swift`
-  - Sturgeon Eco → `SturgeonEco`
-  - Swift Eco → `SwiftECO`
-  - Manistee Eco → `ManisteeEco`
+- Per-product shell/cabinet color restrictions implemented
+- Corner color option conditionally shown via `hasCornerOption` field
+- Visualizer model prefixes corrected
+
+### Cold Plunge Thumbnails (April 2026)
+- All cold plunge products verified with accurate thumbnails
+- Finsauna AquaFin Single/Double: wixstatic images from finsaunausa.com
+- Finsauna Immersia 100/200 (Natural + Black): wixstatic images from finsaunausa.com
+- Aquora models (8 total): local images downloaded to /public/images/aquora/
+- Icebound Essentials: Direct CDN images
+- Removed duplicate WSG AquaFin entries that showed placeholder logos
+- Gallery images from WSG preserved in Finsauna entries
 
 ### Other Completed Work
 - Grand River color picker thumbnails fixed (dynamic key re-rendering)
 - Model comparison dropdowns for Grand River and Dynasty brands
 - Viking Spas completely removed
-- Add-on feature images for hot tubs
+- Add-on feature images for hot tubs (corrected circulation pump vs ozone images)
 - Heater filter tab on Saunas page
+- Mother's Day popup on HomePage
+- Videos assigned to SwimSpasPage, AboutPage, BalneotherapyPage, SpaButlerPage
+- Header logo overlap fixed
+- American flag emoji on DynastySpasPage
+- Dynasty Spas Aquora Cold Plunges added (8 models, "Call for Pricing")
 
 ## Backlog
 
@@ -64,11 +58,13 @@ Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) 
 
 ### P2 - Future
 - Add installation/shipping cost display when info is provided
-- Refactor `products.js` (4000+ lines) into smaller files by brand/type
+- Refactor `products.js` (5900+ lines) into smaller files by brand/type
 - Refactor `ProductDetailPage.jsx` (1100+ lines) into brand-specific sub-components
 
 ## Key Files
-- `/app/frontend/src/data/products.js` - Central product data (4000+ lines)
+- `/app/frontend/src/data/products.js` - Central product data (5900+ lines)
 - `/app/frontend/src/pages/ProductDetailPage.jsx` - Product detail with color picker and comparisons
 - `/app/frontend/src/pages/SaunasPage.jsx` - Saunas + heaters page with filters
 - `/app/frontend/src/pages/ColdPlungesPage.jsx` - Cold plunges page
+- `/app/frontend/src/pages/HomePage.jsx` - Home with Mother's Day popup
+- `/app/frontend/src/components/layout/Header.jsx` - Fixed logo sizing

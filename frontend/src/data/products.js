@@ -4684,75 +4684,7 @@ export const WORLD_SAUNA_INFRARED = [
 // WORLD SAUNA GROUP - TUBS & PLUNGES
 // ===========================================
 export const WORLD_SAUNA_PLUNGES = [
-  // FINSAUNA AQUAFIN SINGLE
-  {
-    id: 'wsg-aquafin-single',
-    name: 'Finsauna AquaFin Single',
-    brand: 'World Sauna Group',
-    series: 'Tubs & Plunges',
-    collection: 'AquaFin Collection',
-    price: 'Contact for Pricing',
-    priceValue: null,
-    persons: 1,
-    category: 'plunge',
-    dimensions: 'W: 85" x D: 42" x H: 30"',
-    description: 'FINSAUNA\'s AquaFin immersion tubs deliver a premium at-home hydrotherapy experience, designed to boost recovery and relaxation through a wide range of temperatures.',
-    longDescription: 'FINSAUNA\'s AquaFin immersion tubs deliver a premium at-home hydrotherapy experience, designed to boost recovery and relaxation through a wide range of temperatures. The AquaFin Single features a built-in chiller and a compact design ideal for one, with insulated construction, digital controls, and durable, lockable covers.',
-    features: [
-      'Hot or cold immersion with precise temperature control',
-      'Powerful hydrotherapy jets',
-      'Immersive LED lighting',
-      'Anti-spillover design for water retention',
-      'Solid, sturdy ABS bottom for easy placement',
-      'Outdoor ASTM safety-rated, tapered & lockable cover',
-      'Optional saltwater & ozone capability'
-    ],
-    images: {
-      primary: 'https://static.wixstatic.com/media/209f9f_f6d0db54b8e34c70a9bf6e08fab8f1dc~mv2.jpg',
-      gallery: [
-        'https://static.wixstatic.com/media/209f9f_2810d5dea1e54bc3bc7f3447495245df~mv2.jpg',
-        'https://static.wixstatic.com/media/209f9f_4a8bd26a6f3a42e6b39b4b3555987ce5~mv2.jpg',
-        'https://static.wixstatic.com/media/209f9f_422f735696f44b6b99261643d0499f1a~mv2.jpg',
-        'https://static.wixstatic.com/media/209f9f_ea9a009f30394fadb0914e6ab7f5f85b~mv2.jpg',
-        'https://static.wixstatic.com/media/209f9f_37e0cfc94e3b4af8bb6e31ce5e0d6c4f~mv2.jpg'
-      ]
-    },
-    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_d25992ce7abc42e5a20104e6cd4d5ab4.pdf'
-  },
-  // FINSAUNA AQUAFIN DUO (Hot + Cold)
-  {
-    id: 'wsg-aquafin-duo',
-    name: 'Finsauna AquaFin Duo',
-    brand: 'World Sauna Group',
-    series: 'Tubs & Plunges',
-    collection: 'AquaFin Collection',
-    price: 'Contact for Pricing',
-    priceValue: null,
-    persons: 2,
-    category: 'plunge',
-    dimensions: 'W: 85" x D: 85" x H: 30"',
-    description: 'The AquaFin Duo offers separate hot and cold tub system, perfect for contrast therapy with a partner.',
-    longDescription: 'The AquaFin Duo offers a separate hot and cold tub system, perfect for contrast therapy with a partner. Both models include insulated construction, digital controls, and durable, lockable covers - making them a reliable and luxurious addition to any wellness routine.',
-    features: [
-      'Separate hot and cold tub system',
-      'Perfect for contrast therapy',
-      'Powerful hydrotherapy jets',
-      'Immersive LED lighting',
-      'Anti-spillover design for water retention',
-      'Outdoor ASTM safety-rated, tapered & lockable cover',
-      'Optional saltwater & ozone capability'
-    ],
-    images: {
-      primary: 'https://static.wixstatic.com/media/209f9f_7413db72e5fb4f8284e10e9dc340dfce~mv2.jpg',
-      gallery: [
-        'https://static.wixstatic.com/media/209f9f_f6d0db54b8e34c70a9bf6e08fab8f1dc~mv2.jpg',
-        'https://static.wixstatic.com/media/209f9f_6a99b0607e8c4afaff3ed57ef81f00ec~mv2.jpg',
-        'https://static.wixstatic.com/media/209f9f_b6f5b27d5a094728acb2ac63e6b4a1cd~mv2.jpg',
-        'https://static.wixstatic.com/media/209f9f_99a26ffcafac4ec2bf77468f494e5fce~mv2.jpg'
-      ]
-    },
-    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_d25992ce7abc42e5a20104e6cd4d5ab4.pdf'
-  }
+  // AquaFin products moved to FINSAUNA_PLUNGES to avoid duplicates
 ];
 
 // ===========================================
@@ -5812,8 +5744,14 @@ export const FINSAUNA_PLUNGES = [
     ],
     images: {
       primary: 'https://static.wixstatic.com/media/f50d5c_f944dfd86f3b41b8bd8bb6225ded6dc6~mv2.png/v1/crop/x_121,y_0,w_1024,h_1024/fill/w_452,h_452,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/aquafin-single-cold-hot-plunge-tub-1.png',
-      gallery: []
-    }
+      gallery: [
+        'https://static.wixstatic.com/media/209f9f_2810d5dea1e54bc3bc7f3447495245df~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_4a8bd26a6f3a42e6b39b4b3555987ce5~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_422f735696f44b6b99261643d0499f1a~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_ea9a009f30394fadb0914e6ab7f5f85b~mv2.jpg'
+      ]
+    },
+    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_d25992ce7abc42e5a20104e6cd4d5ab4.pdf'
   },
   {
     id: 'finsauna-aquafin-double',
@@ -5839,8 +5777,13 @@ export const FINSAUNA_PLUNGES = [
     ],
     images: {
       primary: 'https://static.wixstatic.com/media/f50d5c_e340f7c32e7a4824a351b81c42907efe~mv2.jpg/v1/fill/w_452,h_452,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/aquafin-duo-plunge-cold-hot-1.jpg',
-      gallery: []
-    }
+      gallery: [
+        'https://static.wixstatic.com/media/209f9f_6a99b0607e8c4afaff3ed57ef81f00ec~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_b6f5b27d5a094728acb2ac63e6b4a1cd~mv2.jpg',
+        'https://static.wixstatic.com/media/209f9f_99a26ffcafac4ec2bf77468f494e5fce~mv2.jpg'
+      ]
+    },
+    brochure: 'https://www.worldsaunagroup.com/_files/ugd/209f9f_d25992ce7abc42e5a20104e6cd4d5ab4.pdf'
   },
   // IMMERSIA SERIES
   {

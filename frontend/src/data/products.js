@@ -1148,182 +1148,80 @@ export const GRAND_RIVER_EXTRAS = [
   {
     id: 'gr-extra-ozone',
     name: 'Ozone',
-    price: '$250.00',
-    priceValue: 250,
+    price: '$295.99',
+    priceValue: 295.99,
     description: 'Advanced ozone sanitization system for cleaner, clearer water with fewer chemicals.',
     image: '/images/addons/ozone.jpg'
   },
   {
     id: 'gr-extra-touchscreen',
-    name: 'Spa Touch Screen',
-    price: '$700.00',
-    priceValue: 700,
-    description: 'Upgrade to a modern touch screen control panel for easier spa management.',
+    name: 'Spa Touch 4 Touchscreen',
+    price: '$695.99',
+    priceValue: 695.99,
+    description: 'Upgrade to the Spa Touch 4 touchscreen control panel for easier spa management.',
     image: '/images/addons/touchscreen control.png'
   },
   {
     id: 'gr-extra-airx',
-    name: 'Air X Therapy System',
-    price: '$300.00',
-    priceValue: 300,
+    name: 'Air X Therapy',
+    price: '$299.99',
+    priceValue: 299.99,
     description: 'Enhanced air therapy system for a more luxurious massage experience.',
     image: '/images/addons/airxtherapy.jpg'
   },
   {
     id: 'gr-extra-bluetooth',
     name: 'Bluetooth Stereo',
-    price: '$950.00',
-    priceValue: 950,
+    price: '$995.99',
+    priceValue: 995.99,
     description: 'Premium Bluetooth audio system for music while you relax.',
     image: '/images/addons/bluetooth speakers.png'
   },
   {
     id: 'gr-extra-wifi',
     name: 'WiFi Module',
-    price: '$400.00',
-    priceValue: 400,
+    price: '$395.99',
+    priceValue: 395.99,
     description: 'Control your spa remotely with the WiFi module and smartphone app.',
     image: '/images/addons/in touch wifi.png'
-  },
-  {
-    id: 'gr-extra-led',
-    name: 'LED Controls',
-    price: '$350.00',
-    priceValue: 350,
-    description: 'Premium LED lighting control system for customizable ambiance.',
-    image: '/images/addons/led controls.png'
-  },
-  {
-    id: 'gr-extra-controlmyspa',
-    name: 'ControlMySpa App',
-    price: '$299.00',
-    priceValue: 299,
-    description: 'Control your spa from anywhere with the ControlMySpa smartphone app.',
-    image: '/images/addons/controlmyspa.png'
-  },
-  {
-    id: 'gr-extra-instream',
-    name: 'In.Stream Bluetooth',
-    price: '$895.00',
-    priceValue: 895,
-    description: 'Premium in.Stream Bluetooth audio system with waterproof speakers.',
-    image: '/images/addons/in stream bluetooth.png'
   }
 ];
 
 // ===========================================
-// DYNASTY SPAS EXTRAS/OPTIONS BY COLLECTION
+// DYNASTY SPAS EXTRAS/OPTIONS (ALL Dynasty Spas)
 // ===========================================
-
-// Generic Dynasty Add-ons (applies to ALL Dynasty spas)
-export const DYNASTY_GENERIC_EXTRAS = [
+export const DYNASTY_EXTRAS = [
   {
-    id: 'ds-generic-stereo',
-    name: 'Instream Stereo',
-    price: '$995.99',
-    priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.',
-    image: '/images/addons/in stream bluetooth.png'
-  },
-  {
-    id: 'ds-generic-circ-pump',
+    id: 'ds-extra-circ-pump',
     name: 'Circulation Pump',
     price: '$495.99',
     priceValue: 495.99,
     description: 'Energy-efficient circulation pump for improved water flow and filtration.',
     image: '/images/addons/circulation-pump.jpg'
-  }
-];
-
-// Luxury Collection Add-ons
-export const DYNASTY_LUXURY_EXTRAS = [
-  {
-    id: 'ds-luxury-stereo',
-    name: 'Instream Stereo',
-    price: '$995.99',
-    priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.',
-    image: '/images/addons/in stream bluetooth.png'
   },
   {
-    id: 'ds-luxury-circ-pump',
-    name: 'Circulation Pump',
-    price: '$495.99',
-    priceValue: 495.99,
-    description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: '/images/addons/circulation-pump.jpg'
-  }
-];
-
-// Oasis Collection Add-ons
-export const DYNASTY_OASIS_EXTRAS = [
-  {
-    id: 'ds-oasis-stereo',
-    name: 'Instream Stereo',
-    price: '$995.99',
-    priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.',
-    image: '/images/addons/in stream bluetooth.png'
+    id: 'ds-extra-intouch-wifi',
+    name: 'InTouch WiFi Remote',
+    price: '$395.99',
+    priceValue: 395.99,
+    description: 'Control your spa remotely with the in.Touch WiFi remote and smartphone app.',
+    image: '/images/addons/in touch wifi.png'
   },
   {
-    id: 'ds-oasis-lighting',
-    name: 'In Mix Lighting',
+    id: 'ds-extra-inmix-jets',
+    name: 'In.Mix Illuminated Jet System',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Advanced in.Mix LED lighting system for ambient illumination.',
+    description: 'Advanced in.Mix illuminated jet system with color-changing LED lights built into the jets.',
     image: '/images/addons/led controls.png'
   },
   {
-    id: 'ds-oasis-circ-pump',
-    name: 'Circulation Pump',
-    price: '$499.99',
-    priceValue: 499.99,
-    description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: '/images/addons/circulation-pump.jpg'
-  },
-  {
-    id: 'ds-oasis-intouch',
-    name: 'In Touch App',
-    price: '$399.99',
-    priceValue: 399.99,
-    description: 'Control your spa remotely with the in.Touch smartphone app.',
-    image: '/images/addons/in touch wifi.png'
-  }
-];
-
-// Vacation Collection Add-ons
-export const DYNASTY_VACATION_EXTRAS = [
-  {
-    id: 'ds-vacation-touchscreen',
-    name: 'K1000 Touchscreen',
-    price: '$499.99',
-    priceValue: 499.99,
-    description: 'Upgrade to the K.1000 touchscreen control panel.',
-    image: '/images/addons/touchscreen control.png'
-  },
-  {
-    id: 'ds-vacation-stereo',
-    name: 'Instream Stereo',
+    id: 'ds-extra-instream-audio',
+    name: 'In.Stream Audio',
     price: '$995.99',
     priceValue: 995.99,
-    description: 'Premium in.Stream audio system for your spa experience.',
+    description: 'Premium in.Stream audio system with waterproof speakers for your spa experience.',
     image: '/images/addons/in stream bluetooth.png'
-  },
-  {
-    id: 'ds-vacation-circ-pump',
-    name: 'Circulation Pump',
-    price: '$499.99',
-    priceValue: 499.99,
-    description: 'Energy-efficient circulation pump for improved water flow and filtration.',
-    image: '/images/addons/circulation-pump.jpg'
-  },
-  {
-    id: 'ds-vacation-intouch',
-    name: 'In Touch App',
-    price: '$399.99',
-    priceValue: 399.99,
-    description: 'Control your spa remotely with the in.Touch smartphone app.',
-    image: '/images/addons/in touch wifi.png'
   }
 ];
 
@@ -1346,12 +1244,24 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dimensions: '92" x 102" x 39"',
     waterCapacity: '550 gallons',
     electrical: '220v/60amp',
-    pumps: '3 - 56 frame 6.0',
+    pumps: '3 - 56 frame 6.0 BHP',
     filtration: '100 ft²',
     dryWeight: '1000 lbs',
     filledWeight: '4800 lbs',
     description: 'Premium 5-person lounger with 83 powerful jets and illuminated fountain features.',
-    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['83 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated fountain jets', 'Adjustable and massage jets', 'Air jets'],
+      lightingSystem: 'LED top rail, fountain, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Fountain Jets',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft² filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/PARADISE_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
@@ -1373,12 +1283,24 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dimensions: '92" x 102" x 39"',
     waterCapacity: '550 gallons',
     electrical: '220v/60amp',
-    pumps: '2 - 56 frame 7.0',
+    pumps: '2 - 56 frame 7.0 BHP',
     filtration: '100 ft²',
     dryWeight: '1000 lbs',
     filledWeight: '4800 lbs',
     description: '5-person lounger with 83 jets featuring illuminated fountain jets.',
-    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['83 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated fountain jets', 'Adjustable and massage jets', 'Air jets'],
+      lightingSystem: 'LED top rail, fountain, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Fountain Jets',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft² filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/PARADISE_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
@@ -1400,12 +1322,24 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dimensions: '92" x 92" x 39"',
     waterCapacity: '425 gallons',
     electrical: '220v/60amp',
-    pumps: '2 - 56 frame pumps',
+    pumps: '2 - 56 frame 7.0 BHP',
     filtration: '100 ft²',
     dryWeight: '900 lbs',
     filledWeight: '4300 lbs',
     description: 'Spacious 7-person bench spa with 76 jets and illuminated fountain features.',
-    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['76 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated fountain jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, fountain, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Fountain Jets',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft² filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/PALM_ISLAND_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_bca37801d2234c42920ff45b5ef8b947~mv2.webp'
@@ -1427,12 +1361,24 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dimensions: '92" x 92" x 39"',
     waterCapacity: '425 gallons',
     electrical: '220v/60amp',
-    pumps: '3 - 56 frame pumps',
+    pumps: '3 - 56 frame 6.0 BHP',
     filtration: '100 ft²',
     dryWeight: '900 lbs',
     filledWeight: '4300 lbs',
     description: 'Spacious 7-person bench spa with 76 jets and illuminated fountain features.',
-    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['76 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated fountain jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, fountain, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Fountain Jets',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft² filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/PALM_ISLAND_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_bca37801d2234c42920ff45b5ef8b947~mv2.webp'
@@ -1459,7 +1405,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '900 lbs',
     filledWeight: '4300 lbs',
     description: '5-person dual lounger with 80 jets featuring illuminated waterfalls.',
-    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['80 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated waterfall jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, waterfall, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Waterfalls',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/PLEASURE_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_ee35b0a0b9df47e1911c752a6dc65d80~mv2.jpg'
@@ -1486,7 +1444,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '900 lbs',
     filledWeight: '4300 lbs',
     description: '5-person dual lounger with 80 jets featuring illuminated waterfalls.',
-    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['80 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated waterfall jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, waterfall, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Waterfalls',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/PLEASURE_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_ee35b0a0b9df47e1911c752a6dc65d80~mv2.jpg'
@@ -1513,7 +1483,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '900 lbs',
     filledWeight: '4300 lbs',
     description: '5-person lounger with 74 jets and beautiful illuminated waterfalls.',
-    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['74 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated waterfall jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, waterfall, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Waterfalls',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/COCONUT_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_7b87b150ef5a451db8a4599e9b9aa68f~mv2.jpg'
@@ -1540,7 +1522,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '900 lbs',
     filledWeight: '4300 lbs',
     description: '5-person lounger with 74 jets and beautiful illuminated waterfalls.',
-    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Waterfalls', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['74 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated waterfall jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, waterfall, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Waterfalls',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/COCONUT_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_7b87b150ef5a451db8a4599e9b9aa68f~mv2.jpg'
@@ -1567,7 +1561,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '750 lbs',
     filledWeight: '3935 lbs',
     description: '7-person bench spa with 73 jets and illuminated fountain features.',
-    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Fountain Jets', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['73 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated fountain jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, fountain, waterfall, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Fountain Jets & Waterfalls',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/CARIBBEAN_BREEZE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_fbd8a68293fc44af9ba6616677d13e52~mv2.webp'
@@ -1594,7 +1600,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '750 lbs',
     filledWeight: '3975 lbs',
     description: '5-person lounger with 73 jets and illuminated waterfall.',
-    features: ['Illuminated Waterfall', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'Digital Controls', 'LED Lights'],
+    features: ['Illuminated Waterfall', 'Illuminated Diverters', 'Reverse Pull Neck Jets', 'Illuminated Weir Door', 'K.1000 Topside Control', 'LED Lights', 'Padded Headrests', 'Ozonator', 'RMAX Insulation', 'Lucite Acrylic', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['73 stainless steel hydrotherapy jets', 'Reverse-pull neck jets', 'Illuminated waterfall jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail, fountain, waterfall, diverter, underwater, corner, and weir door lighting',
+      waterFeature: 'Illuminated Waterfall',
+      controlSystem: 'K.1000 Touchscreen Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/NASSAU_ROYALE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_cbdbc08c5de94874956a54d800585201~mv2.webp'
@@ -1622,7 +1640,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '900 lbs',
     filledWeight: '4370 lbs',
     description: '5-person lounger with cascading waterfall and 42 jets.',
-    features: ['Cascading Waterfall', 'Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    features: ['Cascading Waterfall', 'K.506 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'RMAX Insulation', 'Maintenance Free Skirting', 'Air/Water Multi Jets'],
+    fullSpecs: {
+      jetsBreakdown: ['42 stainless steel hydrotherapy jets', 'Air/water multi jets', 'Orion and SS jets'],
+      lightingSystem: 'LED underwater lighting',
+      waterFeature: 'Cascading Waterfall',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 50 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/CABANA_BAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5513dfe4f07146e6b3769397e333b714~mv2.jpg'
@@ -1649,7 +1679,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '900 lbs',
     filledWeight: '4570 lbs',
     description: '7-person bench spa with 4 water features and 42 jets.',
-    features: ['4 Water Features', 'Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    features: ['4 Water Features', 'K.506 Digital Topside', 'LED Fountain Jets', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'RMAX Insulation', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['42 stainless steel hydrotherapy jets', 'Air/water multi jets', 'Orion and SS jets', 'LED fountain jets'],
+      lightingSystem: 'LED fountain jets and underwater lighting',
+      waterFeature: '4 Water Features',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 50 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/OCEAN_BREEZE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_d99c32d0154b4d5784b516fb7f9cf64b~mv2.webp'
@@ -1676,7 +1718,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '375 lbs',
     filledWeight: '2175 lbs',
     description: 'Compact 3-person dual lounger perfect for couples.',
-    features: ['LED Top Rail Lighting', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'K.1000 Digital Topside'],
+    features: ['LED Top Rail Lighting', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'K.1000 Digital Topside', 'RMAX Insulation', '100 ft\u00b2 Filtration', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['50 stainless steel hydrotherapy jets', 'Adjustable and massage jets'],
+      lightingSystem: 'LED top rail and underwater lighting',
+      controlSystem: 'K.1000 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/TWIN_PALMS_PRODUCT_SHEET-5ab8b7c0.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_0eda11c7c2bd4659886b1569a18263e4~mv2.png'
@@ -1703,7 +1756,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '1390 lbs',
     description: 'Intimate 2-person lounger perfect for couples and small spaces. Plug-and-play 110v convenience.',
-    features: ['K.506 Digital Topside', 'LED Underwater Light', 'Padded Headrests', 'RMAX Insulation', 'Maintenance Free Skirting', 'Energy Efficient Heater'],
+    features: ['K.506 Digital Topside', 'LED Underwater Light', 'Padded Headrests', 'RMAX Insulation', 'Maintenance Free Skirting', 'Energy Efficient Heater', 'Ozonator', 'Insulated Cover'],
+    fullSpecs: {
+      jetsBreakdown: ['21 stainless steel hydrotherapy jets', 'Diverter controls', 'Pillowfall'],
+      lightingSystem: 'LED underwater light',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer'
+    },
     brochure: '/brochures/BIMINI_2_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp'
@@ -1730,7 +1794,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '1390 lbs',
     description: 'Intimate 2-person lounger perfect for couples and small spaces. 220v for faster heating.',
-    features: ['K.506 Digital Topside', 'LED Underwater Light', 'Padded Headrests', 'RMAX Insulation', 'Maintenance Free Skirting', 'Energy Efficient Heater'],
+    features: ['K.506 Digital Topside', 'LED Underwater Light', 'Padded Headrests', 'RMAX Insulation', 'Maintenance Free Skirting', 'Energy Efficient Heater', 'Ozonator', 'Insulated Cover'],
+    fullSpecs: {
+      jetsBreakdown: ['21 stainless steel hydrotherapy jets', 'Diverter controls', 'Pillowfall'],
+      lightingSystem: 'LED underwater light',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer'
+    },
     brochure: '/brochures/BIMINI_2_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_34462486d3164fcfb82328783db9ab3d~mv2.webp'
@@ -1757,7 +1832,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '700 lbs',
     filledWeight: '3200 lbs',
     description: '5-person lounger with comfortable seating and 45 jets. Plug-and-play 110v convenience.',
-    features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    features: ['K.506 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    fullSpecs: {
+      jetsBreakdown: ['45 stainless steel hydrotherapy jets', 'Adjustable and massage jets', 'Air/water multi jets'],
+      lightingSystem: 'LED underwater lighting',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration, VGB-compliant suctions',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/TREASURE_CAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_d5dd6e6b07c84184a58183333213387f~mv2.jpg'
@@ -1784,7 +1870,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '700 lbs',
     filledWeight: '3200 lbs',
     description: '5-person lounger with comfortable seating and 45 jets. 220v for faster heating.',
-    features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Ozone Sanitation'],
+    features: ['K.506 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    fullSpecs: {
+      jetsBreakdown: ['45 stainless steel hydrotherapy jets', 'Adjustable and massage jets', 'Air/water multi jets'],
+      lightingSystem: 'LED underwater lighting',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration, VGB-compliant suctions',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/TREASURE_CAY_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_d5dd6e6b07c84184a58183333213387f~mv2.jpg'
@@ -1811,7 +1908,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '2,150 lbs',
     description: 'Compact 5-person lounger ideal for patios and smaller spaces. Features LED fountain jets.',
-    features: ['LED Fountain Jets', 'LED Underwater Lighting', 'Padded Headrests', 'Easy Grip Built-in Handles', 'Maintenance Free Skirting'],
+    features: ['LED Fountain Jets', 'LED Underwater Lighting', 'K.506 Digital Topside', 'Padded Headrests', 'Easy Grip Built-in Handles', 'Ozonator', 'RMAX Insulation', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['33 stainless steel hydrotherapy jets', 'LED fountain jets'],
+      lightingSystem: 'LED fountain jets and underwater lighting',
+      waterFeature: 'LED Fountain Jets',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/SUNSET_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
@@ -1838,7 +1947,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '950 lbs',
     filledWeight: '4700 lbs',
     description: 'Spacious 7-person bench spa with 48 jets for family enjoyment.',
-    features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Family Size'],
+    features: ['K.506 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'RMAX Insulation', 'Maintenance Free Skirting', 'Air/Water Multi Jets'],
+    fullSpecs: {
+      jetsBreakdown: ['48 stainless steel hydrotherapy jets', 'Air/water multi jets', 'Adjustable jets'],
+      lightingSystem: 'LED underwater lighting',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/TRANQUILITY_HARBOR_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_4f5108db76954c94977c8c470414a6df~mv2.jpg'
@@ -1865,7 +1985,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '675 lbs',
     filledWeight: '3,475 lbs',
     description: '5-person lounger designed for relaxation and tranquility.',
-    features: ['Digital Controls', 'LED Lights', 'Air/Water Multi Jets', 'Relaxation Focused'],
+    features: ['Cascading Waterfall', 'K.506 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'RMAX Insulation', 'Maintenance Free Skirting'],
+    fullSpecs: {
+      jetsBreakdown: ['42 stainless steel hydrotherapy jets', 'Air/water multi jets', 'Orion and SS jets'],
+      lightingSystem: 'LED underwater lighting',
+      waterFeature: 'Cascading Waterfall',
+      controlSystem: 'K.506 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration, VGB-compliant suctions',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+    },
     brochure: '/brochures/SERENITY_COVE_PRODUCT_SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg'
@@ -1893,7 +2025,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '2,350 lbs',
     description: 'Entry-level spa with plug-and-play convenience. Features K.362 digital topside, black scallop jets, and LED underwater lighting.',
-    features: ['K.362 Digital Topside', 'Euro Fountains', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    features: ['K.362 Digital Topside', 'Euro Fountains', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover', 'Black Scallop Jets'],
+    fullSpecs: {
+      jetsBreakdown: ['20 black scallop jets'],
+      lightingSystem: 'LED underwater lighting',
+      waterFeature: 'Euro Fountains',
+      controlSystem: 'K.362 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble',
+      cabinetColorOptions: 'Black Confer'
+    },
     brochure: '/brochures/SEASIDE+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
@@ -1920,7 +2064,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '2,350 lbs',
     description: 'Entry-level spa with 220v power. Features K.362 digital topside, black scallop jets, and LED underwater lighting.',
-    features: ['K.362 Digital Topside', 'Euro Fountains', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover'],
+    features: ['K.362 Digital Topside', 'Euro Fountains', 'LED Underwater Lighting', 'Padded Headrests', 'Ozonator System', 'Energy Efficient Heater', 'RMAX Insulation', 'Insulated Cover', 'Black Scallop Jets'],
+    fullSpecs: {
+      jetsBreakdown: ['20 black scallop jets'],
+      lightingSystem: 'LED underwater lighting',
+      waterFeature: 'Euro Fountains',
+      controlSystem: 'K.362 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble',
+      cabinetColorOptions: 'Black Confer'
+    },
     brochure: '/brochures/SEASIDE+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
@@ -1947,7 +2103,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '2,710 lbs',
     description: 'Compact lounger spa perfect for intimate relaxation. Features K.362 digital topside and LED underwater lighting.',
-    features: ['K.362 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    features: ['K.362 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover', 'Ozonator'],
+    fullSpecs: {
+      jetsBreakdown: ['30 hydrotherapy jets'],
+      lightingSystem: 'LED underwater lighting',
+      controlSystem: 'K.362 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble',
+      cabinetColorOptions: 'Black Confer'
+    },
     brochure: '/brochures/BAY+BLISS+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
@@ -1974,7 +2141,18 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '350 lbs',
     filledWeight: '2,710 lbs',
     description: 'Bench-style spa with ample seating for relaxation. Features K.362 digital topside and LED underwater lighting.',
-    features: ['K.362 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover'],
+    features: ['K.362 Digital Topside', 'LED Underwater Lighting', 'Padded Headrests', 'Energy Efficient Heater', 'RMAX Insulation', 'Maintenance Free Skirting', 'Insulated Cover', 'Ozonator'],
+    fullSpecs: {
+      jetsBreakdown: ['30 hydrotherapy jets'],
+      lightingSystem: 'LED underwater lighting',
+      controlSystem: 'K.362 Digital Topside',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
+      waterCare: 'Ozonator system',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble',
+      cabinetColorOptions: 'Black Confer'
+    },
     brochure: '/brochures/HIGH+TIDE+PRODUCT+SHEET.pdf',
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_20ede20bacfc496e90c2dce3d07818f3~mv2.jpg'
@@ -2002,7 +2180,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '1000 lbs',
     filledWeight: '4400 lbs',
     description: 'Premium 30th Anniversary lounger spa with deep oversized seating, K.1000 topside control, in.Touch app, and full LED in.Mix lighting throughout.',
-    features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting'],
+    features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting', 'Ozonator', 'RMAX Insulation'],
+    fullSpecs: {
+      jetsBreakdown: ['83 stainless steel hydrotherapy jets', 'LED illuminated jets', 'Adjustable and massage jets'],
+      lightingSystem: 'Full LED In.Mix lighting - illuminated jets, pillows, waterfall, diverters, corner, and underwater',
+      waterFeature: 'LED Illuminated Waterfall',
+      controlSystem: 'K.1000 Topside Control with In.Touch App',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Coastal Gray Elite, Ash Elite'
+    },
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
     },
@@ -2028,7 +2218,19 @@ export const DYNASTY_SPAS_PRODUCTS = [
     dryWeight: '1000 lbs',
     filledWeight: '4400 lbs',
     description: 'Premium 30th Anniversary bench spa seating 7, with deep oversized seating, K.1000 topside control, in.Touch app, and full LED in.Mix lighting.',
-    features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting'],
+    features: ['K.1000 Topside Control', 'In.Touch App', 'LED In.Mix Lighting', 'LED Illuminated Jets', 'LED Illuminated Pillows', 'LED Illuminated Waterfall', 'LED Illuminated Diverters', 'LED Corner Lighting', 'Deep Oversized Seating', 'Lucite Acrylic', '2-Toned Elite Skirting', 'Ozonator', 'RMAX Insulation'],
+    fullSpecs: {
+      jetsBreakdown: ['83 stainless steel hydrotherapy jets', 'LED illuminated jets', 'Adjustable and massage jets'],
+      lightingSystem: 'Full LED In.Mix lighting - illuminated jets, pillows, waterfall, diverters, corner, and underwater',
+      waterFeature: 'LED Illuminated Waterfall',
+      controlSystem: 'K.1000 Topside Control with In.Touch App',
+      heater: 'Energy-efficient heater',
+      energyEfficiency: 'RMAX insulation, full wrap-around ABS bottom, VGB-compliant suctions',
+      waterCare: 'Ozonator system, 100 ft\u00b2 filtration',
+      spaCover: 'Insulated cover included',
+      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
+      cabinetColorOptions: 'Coastal Gray Elite, Ash Elite'
+    },
     images: {
       primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
     },

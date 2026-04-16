@@ -41,11 +41,11 @@ export const CONTACT = {
   hoursDetailed: {
     monday: '10am-6pm',
     tuesday: '10am-6pm',
-    wednesday: '10am-8pm',
+    wednesday: '10am-8pm (Late Night)',
     thursday: '10am-6pm',
     friday: '10am-6pm',
-    saturday: '10am-6pm',
-    sunday: '10am-6pm',
+    saturday: '10am-5pm',
+    sunday: '12pm-4pm',
   },
   serviceAreas: ['Fountain Inn, SC', 'Mauldin, SC', 'Spartanburg, SC', 'Anderson, SC', 'Greenville, SC', 'Greer, SC', 'Five Forks, SC', 'Simpsonville, SC'],
 };

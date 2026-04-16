@@ -111,12 +111,20 @@ const Footer = () => {
             </h3>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between text-slate-700">
-                <span>Mon-Tue, Thu-Sun</span>
+                <span>Mon, Tue, Thu-Fri</span>
                 <span className="font-medium">10am-6pm</span>
               </div>
               <div className="flex justify-between text-slate-700">
                 <span>Wednesday</span>
-                <span className="font-medium text-[#B91C1C]">10am-8pm</span>
+                <span className="font-medium text-[#B91C1C]">10am-8pm (Late Night)</span>
+              </div>
+              <div className="flex justify-between text-slate-700">
+                <span>Saturday</span>
+                <span className="font-medium">10am-5pm</span>
+              </div>
+              <div className="flex justify-between text-slate-700">
+                <span>Sunday</span>
+                <span className="font-medium">12pm-4pm</span>
               </div>
               <p className="text-xs text-slate-500 mt-2 italic">
                 Call us and we will open when you can come. We will set up apt for you.

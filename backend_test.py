@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 
 # Configuration
-BACKEND_URL = "https://celebrate-mom-4.preview.emergentagent.com/api"
+BACKEND_URL = "https://grand-relax-spa.preview.emergentagent.com/api"
 
 def test_backend_health():
     """Test if backend API endpoints are working"""
@@ -134,11 +134,11 @@ def test_product_urls():
     
     # Product URLs from review request
     test_urls = {
-        "Dynasty Oasis (Paradise Bay III)": "https://celebrate-mom-4.preview.emergentagent.com/products/ds-paradise-bay-iii",
-        "Dynasty Vacation (Serenity Cove)": "https://celebrate-mom-4.preview.emergentagent.com/products/ds-serenity-cove", 
-        "Dynasty Hideaway (High Tide)": "https://celebrate-mom-4.preview.emergentagent.com/products/ds-high-tide",
-        "Grand River (Chariton 2)": "https://celebrate-mom-4.preview.emergentagent.com/products/gr-chariton-2",
-        "Viking (Heritage 2)": "https://celebrate-mom-4.preview.emergentagent.com/products/vs-heritage-2"
+        "Dynasty Oasis (Paradise Bay III)": "https://grand-relax-spa.preview.emergentagent.com/products/ds-paradise-bay-iii",
+        "Dynasty Vacation (Serenity Cove)": "https://grand-relax-spa.preview.emergentagent.com/products/ds-serenity-cove", 
+        "Dynasty Hideaway (High Tide)": "https://grand-relax-spa.preview.emergentagent.com/products/ds-high-tide",
+        "Grand River (Chariton 2)": "https://grand-relax-spa.preview.emergentagent.com/products/gr-chariton-2",
+        "Viking (Heritage 2)": "https://grand-relax-spa.preview.emergentagent.com/products/vs-heritage-2"
     }
     
     all_accessible = True

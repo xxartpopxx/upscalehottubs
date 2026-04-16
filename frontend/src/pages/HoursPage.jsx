@@ -9,18 +9,18 @@ const HoursPage = () => {
   const hours = [
     { day: 'Monday', time: '10am - 6pm', isSpecial: false },
     { day: 'Tuesday', time: '10am - 6pm', isSpecial: false },
-    { day: 'Wednesday', time: '10am - 8pm', isSpecial: true },
+    { day: 'Wednesday', time: '10am - 8pm', isSpecial: true, note: 'Late Night' },
     { day: 'Thursday', time: '10am - 6pm', isSpecial: false },
     { day: 'Friday', time: '10am - 6pm', isSpecial: false },
-    { day: 'Saturday', time: '10am - 6pm', isSpecial: false },
-    { day: 'Sunday', time: '10am - 6pm', isSpecial: false },
+    { day: 'Saturday', time: '10am - 5pm', isSpecial: false },
+    { day: 'Sunday', time: '12pm - 4pm', isSpecial: false },
   ];
 
   return (
     <>
       <Helmet>
         <title>Store Hours | Upstate Hot Tubs | Simpsonville, SC</title>
-        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Open Monday-Sunday 10am-6pm, Wednesday 10am-8pm. Call us for appointments!" />
+        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Mon, Tue, Thu-Fri 10am-6pm, Wednesday 10am-8pm Late Night, Saturday 10am-5pm, Sunday 12-4pm. Call us for appointments!" />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="hours-page">
@@ -59,7 +59,7 @@ const HoursPage = () => {
                       {item.day}
                     </span>
                     <span className={`text-lg ${item.isSpecial ? 'text-[#B91C1C] font-medium' : 'text-slate-600'}`}>
-                      {item.time}
+                      {item.time}{item.note && <span className="ml-2 text-sm font-bold uppercase">({item.note})</span>}
                     </span>
                   </motion.div>
                 ))}

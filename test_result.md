@@ -322,7 +322,11 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Grand River Add-ons Update (5 items only)"
+    - "Dynasty Universal Add-ons (4 items for all)"
+    - "Dynasty Full Specifications for All Tubs"
+    - "Business Hours Update"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -357,7 +361,55 @@ agent_communication:
   - agent: "testing"
     message: "GRAND RIVER FULL SPECIFICATIONS TESTING COMPLETED: Routing issue successfully fixed by main agent. Product detail page now loads correctly at /products/gr-chariton-2 (plural route). All requested verifications PASSED: (1) Page title 'Chariton 2' displays correctly, (2) Brand 'Grand River Spas' displays correctly, (3) Full Specifications section found and fully functional with all required elements including Basic specs table, Jets Breakdown, Technical specs, Energy Efficiency, Color Options, and Model Options & Accessories. All specification data rendering correctly with proper formatting and structure. Product page fully operational with color customizer, view toggles, and complete product information. Task verified as working - ready for user acceptance."
   - agent: "main"
-    message: "GRAND RIVER FULL SPECIFICATIONS ADDED: Added comprehensive fullSpecs data to all 17 Grand River products (Premier Series and Eco Series) based on official grandriverspas.com specifications. Each product now includes: (1) Detailed jets breakdown with individual jet types (Volcano, directional, multi-port, neck, rotating, stationary), (2) Auxiliary jets info, (3) Lighting system specs, (4) Water feature type, (5) Control system details, (6) Heater specifications, (7) Energy efficiency (CEC certified), (8) Performance Rating (GRHS), (9) Water care info, (10) Spa cover details, (11) Shell/cabinet/corner color options, (12) Model accessories. Created new 'Full Specifications' section in ProductDetailPage.jsx to display this data in a professional table format similar to Grand River's website."
+    message: "GRAND RIVER & DYNASTY ADD-ONS + SPECS + HOURS UPDATE: (1) Updated Grand River add-ons to exactly 5 items: Ozone $295.99, Spa Touch 4 Touchscreen $695.99, Air X Therapy $299.99, Bluetooth Stereo $995.99, WiFi Module $395.99. Removed LED Controls, ControlMySpa App, In.Stream Bluetooth. (2) Replaced ALL Dynasty collection-specific extras (Oasis/Vacation/Luxury/Generic) with one universal set of 4 add-ons: Circulation Pump $495.99, InTouch WiFi Remote $395.99, In.Mix Illuminated Jet System $995.99, In.Stream Audio $995.99. (3) Added fullSpecs to ALL 22 Dynasty spa products with detailed specs from dynastyspas.com including jets breakdown, lighting system, water features, control system, heater, energy efficiency, water care, spa cover, and color options. (4) Made Full Specifications section work for Dynasty products (not just Grand River). (5) Updated business hours: Mon/Tue/Thu-Fri 10am-6pm, Wed 10am-8pm Late Night, Sat 10am-5pm, Sun 12pm-4pm. Updated HoursPage, Footer, and constants.js."
+
+  - task: "Grand River Add-ons Update (5 items only)"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Updated GRAND_RIVER_EXTRAS to exactly 5 items with new prices: Ozone $295.99, Spa Touch 4 Touchscreen $695.99, Air X Therapy $299.99, Bluetooth Stereo $995.99, WiFi Module $395.99. Removed LED Controls, ControlMySpa App, In.Stream Bluetooth."
+
+  - task: "Dynasty Universal Add-ons (4 items for all)"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js, frontend/src/pages/ProductDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Replaced 4 collection-specific extras (Generic/Luxury/Oasis/Vacation) with single DYNASTY_EXTRAS containing 4 items: Circulation Pump $495.99, InTouch WiFi Remote $395.99, In.Mix Illuminated Jet System $995.99, In.Stream Audio $995.99. Updated ProductDetailPage to use universal DYNASTY_EXTRAS for all Dynasty products."
+
+  - task: "Dynasty Full Specifications for All Tubs"
+    implemented: true
+    working: true
+    file: "frontend/src/data/products.js, frontend/src/pages/ProductDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added fullSpecs to all 22 Dynasty spa products with detailed specs from dynastyspas.com. Updated ProductDetailPage to show Full Specifications for Dynasty products (was only Grand River before). Specs include jets breakdown, lighting, water features, control system, heater, energy efficiency, water care, spa cover, and color options."
+
+  - task: "Business Hours Update"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HoursPage.jsx, frontend/src/components/layout/Footer.jsx, frontend/src/data/constants.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Updated hours: Mon/Tue/Thu-Fri 10am-6pm, Wed 10am-8pm Late Night, Sat 10am-5pm, Sun 12pm-4pm. Updated HoursPage (with Late Night label), Footer (4 separate rows), and constants.js hoursDetailed."
   - agent: "testing"
     message: "ADD-ON IMAGES AND VIDEOS TESTING COMPLETED: All requested items verified and working correctly. (1) Grand River Product Add-ons at /products/gr-chariton-2: Found 8 add-on images all loading correctly from /images/addons/ folder (ozone.jpg, touchscreen control.png, airxtherapy.jpg, bluetooth speakers.png, in touch wifi.png, led controls.png, controlmyspa.png, in stream bluetooth.png). (2) Swim Spas Page Video at /swim-spas: Video element displaying correctly with source xx645ppc_swim spas.mp4. (3) About Page Videos at /about: Dynasty Spas YouTube video (aRDW_vz1bUw) and How Our Hot Tubs Are Made video (d0f23ce7_how the tubs are made.mp4) both displaying correctly. (4) Spa Butler Page Video at /spa-butler: Video displaying correctly with source 7dyy0pr2_SPA BUTLER.mp4. (5) Balneotherapy Page Video at /balneotherapy: Video displaying correctly with source izgchd84_hydrotheraphy video.mp4. All videos and add-on images are properly implemented and rendering as expected. Screenshots captured for all sections."
   - agent: "testing"

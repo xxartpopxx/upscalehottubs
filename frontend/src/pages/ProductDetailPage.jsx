@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, GitCompare } from 'lucide-react';
-import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_LUXURY_EXTRAS, DYNASTY_OASIS_EXTRAS, DYNASTY_VACATION_EXTRAS, DYNASTY_GENERIC_EXTRAS, VIKING_SPAS_EXTRAS } from '../data/products';
+import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_EXTRAS, VIKING_SPAS_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
 // Base URL for Grand River Spas visualizer images
@@ -754,8 +754,8 @@ const ProductDetailPage = () => {
             </div>
           </div>
           
-          {/* Grand River Spas - Full Specifications Section */}
-          {isGrandRiver && !isSwimSpa && product.fullSpecs && (
+          {/* Full Specifications Section (Grand River & Dynasty) */}
+          {(isGrandRiver || isDynasty) && !isSwimSpa && product.fullSpecs && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1091,12 +1091,10 @@ const ProductDetailPage = () => {
             >
               <div className="bg-gradient-to-r from-[#0A1628] to-[#1a2d4a] p-6 lg:p-8">
                 <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white mb-6 text-center">
-                  Available Upgrades & Extras for {product?.series}
+                  Available Upgrades & Extras
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {(product?.series === 'Luxury Collection' ? DYNASTY_LUXURY_EXTRAS :
-                    product?.series === 'Oasis Collection' ? DYNASTY_OASIS_EXTRAS :
-                    product?.series === 'Vacation Collection' ? DYNASTY_VACATION_EXTRAS : DYNASTY_GENERIC_EXTRAS).map((extra) => (
+                  {DYNASTY_EXTRAS.map((extra) => (
                     <div key={extra.id} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
                       {extra.image && (
                         <div className="aspect-square overflow-hidden">

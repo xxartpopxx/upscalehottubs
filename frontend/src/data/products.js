@@ -2232,7 +2232,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
       cabinetColorOptions: 'Coastal Gray Elite, Ash Elite'
     },
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_a461af4de3624cb18c573904c199c7fb~mv2.webp'
+      primary: '/images/imperial-royale.png'
     },
     shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
     cabinetColors: ['coastalGrayElite', 'ashElite']

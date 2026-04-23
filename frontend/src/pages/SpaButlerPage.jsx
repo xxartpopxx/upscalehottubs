@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Send } from 'lucide-react';
+import { Phone, Send, Download } from 'lucide-react';
 import { CONTACT } from '../data/constants';
 
 const ContactForm = () => {
@@ -115,19 +115,26 @@ const ContactForm = () => {
 const SpaButlerPage = () => {
   const packages = [
     { 
-      name: 'Basic', 
-      price: '$75/visit', 
-      features: ['Water testing', 'Chemical balancing', 'Filter cleaning', 'Surface wipe down'] 
+      name: 'Weekly', 
+      drains: '3 Drains Per Year',
+      yearly: '$2,940 per year',
+      monthly: '$245 per month',
+      featured: true,
+      features: ['3 drains per year', 'Weekly service visits', '32-Point inspection every visit', 'Includes chemicals'] 
     },
     { 
-      name: 'Standard', 
-      price: '$125/visit', 
-      features: ['Everything in Basic', 'Jet inspection', 'Cover conditioning', 'Equipment check'] 
+      name: 'Bi-Weekly', 
+      drains: '2 Drains Per Year',
+      yearly: '$2,200 per year',
+      monthly: '$185 per month',
+      features: ['2 drains per year', 'Bi-weekly service visits', '32-Point inspection every visit', 'Includes chemicals'] 
     },
     { 
-      name: 'Premium', 
-      price: '$175/visit', 
-      features: ['Everything in Standard', 'Deep cleaning', 'Full diagnostic', 'Priority scheduling'] 
+      name: 'Monthly', 
+      drains: '1 Drain Per Year',
+      yearly: '$1,620 per year',
+      monthly: '$135 per month',
+      features: ['1 drain per year', 'Monthly service visits', '32-Point inspection every visit', 'Includes chemicals'] 
     },
   ];
 
@@ -220,7 +227,20 @@ const SpaButlerPage = () => {
         
         {/* Maintenance Packages */}
         <div className="mb-12">
-          <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-8 text-center">Our Maintenance Packages</h2>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628]">Maintenance Membership Packages</h2>
+            <a
+              href="/brochures/spa-butler-brochure.png"
+              download="Spa-Butler-Brochure.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#991818] text-white font-semibold px-5 py-3 transition-colors"
+              data-testid="download-brochure-btn"
+            >
+              <Download size={18} /> Download Brochure
+            </a>
+          </div>
+          <p className="text-center text-sm text-slate-600 mb-6 italic">*Includes chemicals. Prices based on 25 mile radius.</p>
           <div className="grid md:grid-cols-3 gap-6">
             {packages.map((pkg, idx) => (
               <motion.div 
@@ -229,14 +249,23 @@ const SpaButlerPage = () => {
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ delay: idx * 0.1 }} 
-                className="bg-white border-2 border-slate-200 p-6 hover:border-[#B91C1C] transition-colors"
+                className={`relative bg-white border-2 p-6 transition-colors ${pkg.featured ? 'border-[#B91C1C] shadow-xl' : 'border-slate-200 hover:border-[#B91C1C]'}`}
               >
-                <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-2">{pkg.name}</h3>
-                <p className="text-[#B91C1C] font-bold text-xl mb-4">{pkg.price}</p>
+                {pkg.featured && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#B91C1C] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider">
+                    Most Popular
+                  </div>
+                )}
+                <h3 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-1">{pkg.name}</h3>
+                <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">{pkg.drains}</p>
+                <div className="mb-4 pb-4 border-b border-slate-200">
+                  <p className="text-[#B91C1C] font-bold text-2xl">{pkg.yearly}</p>
+                  <p className="text-slate-600 text-lg">or <span className="font-semibold">{pkg.monthly}</span></p>
+                </div>
                 <ul className="space-y-2">
                   {pkg.features.map(f => (
-                    <li key={f} className="text-slate-600 text-sm flex items-center gap-2">
-                      <span className="text-[#B91C1C]">✓</span> {f}
+                    <li key={f} className="text-slate-600 text-sm flex items-start gap-2">
+                      <span className="text-[#B91C1C] font-bold mt-0.5">✓</span> {f}
                     </li>
                   ))}
                 </ul>

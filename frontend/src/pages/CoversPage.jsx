@@ -38,6 +38,14 @@ const CoversPage = () => {
       ]
     },
     {
+      name: 'General Cover Lifter Mount',
+      description: 'General mount cover lifter option for hot tubs and spas. Reliable, easy-to-use cover lift mount that works with most standard spa configurations. Professional installation available.',
+      price: '$299.95 + $100 Install Fee',
+      images: [
+        'https://static.wixstatic.com/media/5c7c78_e3da0e551763403bba8eddb76d8df413~mv2.jpg/v1/fill/w_568,h_293,q_90,enc_avif,quality_auto/5c7c78_e3da0e551763403bba8eddb76d8df413~mv2.jpg'
+      ]
+    },
+    {
       name: 'Automatic ConvertALift "VacuSeal"',
       description: 'The Ultimate Conversion System that transforms the VacuSeal Cover into an Automatic Hot Tub Cover Lifter System. Unparalleled convenience, privacy, and safety — making opening your cover the easiest part of enjoying your hot tub or swim spa.',
       price: '$4,999.00 Installed',
@@ -227,6 +235,7 @@ const CoversPage = () => {
                         <option value="spa-cover">Spa Cover</option>
                         <option value="pivot-cover-lifter">Pivot Top Mount Cover Lifter - $249.95</option>
                         <option value="heavy-duty-lifter">Heavy-Duty Cover Lifter - $279.95</option>
+                        <option value="general-mount-lifter">General Cover Lifter Mount - $299.95 + $100 Install</option>
                         <option value="vacuseal">Automatic ConvertALift VacuSeal - $4,999</option>
                         <option value="not-sure">Not Sure - Need Advice</option>
                       </select>

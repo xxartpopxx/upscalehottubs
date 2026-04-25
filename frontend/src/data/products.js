@@ -1550,8 +1550,8 @@ export const DYNASTY_SPAS_PRODUCTS = [
     modelFamily: 'Caribbean Breeze',
     persons: 7,
     jets: 73,
-    price: '$10,999.99',
-    priceValue: 10999.99,
+    price: '$11,995.99',
+    priceValue: 11995.99,
     seatingLayout: 'Bench',
     dimensions: '82" x 82" x 39"',
     waterCapacity: '295 gallons',
@@ -1895,8 +1895,8 @@ export const DYNASTY_SPAS_PRODUCTS = [
     brand: 'Dynasty Spas',
     series: 'Vacation Collection',
     modelFamily: 'Sunset Cove',
-    persons: 5,
-    jets: 33,
+    persons: 3,
+    jets: 36,
     price: '$9,195.99',
     priceValue: 9195.99,
     seatingLayout: 'Lounger',
@@ -1907,23 +1907,23 @@ export const DYNASTY_SPAS_PRODUCTS = [
     filtration: '50 ft²',
     dryWeight: '350 lbs',
     filledWeight: '2,150 lbs',
-    description: 'Compact 5-person lounger ideal for patios and smaller spaces. Features LED fountain jets.',
-    features: ['LED Fountain Jets', 'LED Underwater Lighting', 'K.506 Digital Topside', 'Padded Headrests', 'Easy Grip Built-in Handles', 'Ozonator', 'RMAX Insulation', 'Maintenance Free Skirting'],
+    description: 'Compact 3-person lounger ideal for patios and smaller spaces. Features 36 jets with LED fountain jets and underwater lighting.',
+    features: ['LED Fountain Jets', 'LED Underwater Lighting', 'Padded Headrests', 'Easy Grip Built-in Handles', 'IN.TOUCH2® Wi-Fi Remote (Optional)', 'RMAX Insulation (Optional)', 'Maintenance Free Skirting'],
     fullSpecs: {
-      jetsBreakdown: ['33 stainless steel hydrotherapy jets', 'LED fountain jets'],
+      jetsBreakdown: ['36 stainless steel hydrotherapy jets', 'LED fountain jets'],
       lightingSystem: 'LED fountain jets and underwater lighting',
       waterFeature: 'LED Fountain Jets',
-      controlSystem: 'K.506 Digital Topside',
+      controlSystem: 'Digital Topside (IN.TOUCH2® Wi-Fi Remote optional)',
       heater: 'Energy-efficient heater',
-      energyEfficiency: 'RMAX insulation, 50 ft\u00b2 filtration',
-      waterCare: 'Ozonator system',
+      energyEfficiency: 'RMAX insulation (optional), 50 ft\u00b2 filtration',
+      waterCare: 'Filtration system with 50 sq ft filter',
       spaCover: 'Insulated cover included',
-      shellColorOptions: 'Sterling Marble, Storm Clouds, Tuscan Sun, Smoky Mountain',
-      cabinetColorOptions: 'Black Confer, Gray Confer, Ash Elite, Coastal Gray Elite'
+      shellColorOptions: 'Sterling Marble, Tuscan Sun, Storm Clouds, Smoky Mountain',
+      cabinetColorOptions: 'Gray Confer (Standard), Black Confer (Standard), Coastal Gray Elite (Upgrade), Ash Elite (Upgrade)'
     },
     brochure: '/brochures/SUNSET_COVE_PRODUCT_SHEET.pdf',
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
+      primary: 'https://customer-assets.emergentagent.com/job_f4771ac0-b542-40be-b612-f9358ffe67d0/artifacts/hjsnchg3_unnamed-1.png'
     },
     shellColors: ['sterlingMarble', 'stormClouds', 'tuscanSun', 'smokyMountain'],
     cabinetColors: ['blackConfer', 'grayConfer', 'ashElite', 'coastalGrayElite']
@@ -2117,7 +2117,7 @@ export const DYNASTY_SPAS_PRODUCTS = [
     },
     brochure: '/brochures/BAY+BLISS+PRODUCT+SHEET.pdf',
     images: {
-      primary: 'https://static.wixstatic.com/media/5c7c78_5cdf2136d8a84cb499f0c63569ebe365~mv2.webp'
+      primary: 'https://customer-assets.emergentagent.com/job_f4771ac0-b542-40be-b612-f9358ffe67d0/artifacts/22j87hh4_unnamed.png'
     },
     shellColors: ['sterlingMarble'],
     cabinetColors: ['blackConfer']

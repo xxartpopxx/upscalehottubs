@@ -7,20 +7,20 @@ import { CONTACT } from '../data/constants';
 
 const HoursPage = () => {
   const hours = [
-    { day: 'Monday', time: '10am - 6pm', isSpecial: false },
+    { day: 'Sunday', time: 'CLOSED', isClosed: true },
+    { day: 'Monday', time: 'CLOSED', isClosed: true },
     { day: 'Tuesday', time: '10am - 6pm', isSpecial: false },
     { day: 'Wednesday', time: '10am - 8pm', isSpecial: true, note: 'Late Night' },
     { day: 'Thursday', time: '10am - 6pm', isSpecial: false },
     { day: 'Friday', time: '10am - 6pm', isSpecial: false },
     { day: 'Saturday', time: '10am - 5pm', isSpecial: false },
-    { day: 'Sunday', time: '12pm - 4pm', isSpecial: false },
   ];
 
   return (
     <>
       <Helmet>
         <title>Store Hours | Upstate Hot Tubs | Simpsonville, SC</title>
-        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Mon, Tue, Thu-Fri 10am-6pm, Wednesday 10am-8pm Late Night, Saturday 10am-5pm, Sunday 12-4pm. Call us for appointments!" />
+        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Tue, Thu-Fri 10am-6pm, Wednesday 10am-8pm Late Night, Saturday 10am-5pm. Closed Sun & Mon — call (864) 837-0155 anytime and we'll open by appointment!" />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="hours-page">
@@ -53,12 +53,13 @@ const HoursPage = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + idx * 0.05 }}
-                    className={`flex justify-between items-center py-3 border-b border-slate-100 last:border-0 ${item.isSpecial ? 'bg-slate-50 -mx-6 md:-mx-8 px-6 md:px-8' : ''}`}
+                    className={`flex justify-between items-center py-3 border-b border-slate-100 last:border-0 ${item.isSpecial ? 'bg-slate-50 -mx-6 md:-mx-8 px-6 md:px-8' : ''} ${item.isClosed ? 'bg-red-50 -mx-6 md:-mx-8 px-6 md:px-8' : ''}`}
+                    data-testid={`hours-row-${item.day.toLowerCase()}`}
                   >
-                    <span className={`font-semibold text-lg ${item.isSpecial ? 'text-[#B91C1C]' : 'text-[#0A1628]'}`}>
+                    <span className={`font-semibold text-lg ${item.isSpecial ? 'text-[#B91C1C]' : item.isClosed ? 'text-[#B91C1C]' : 'text-[#0A1628]'}`}>
                       {item.day}
                     </span>
-                    <span className={`text-lg ${item.isSpecial ? 'text-[#B91C1C] font-medium' : 'text-slate-600'}`}>
+                    <span className={`text-lg ${item.isSpecial ? 'text-[#B91C1C] font-medium' : item.isClosed ? 'text-[#B91C1C] font-bold tracking-wider' : 'text-slate-600'}`}>
                       {item.time}{item.note && <span className="ml-2 text-sm font-bold uppercase">({item.note})</span>}
                     </span>
                   </motion.div>
@@ -76,10 +77,10 @@ const HoursPage = () => {
           >
             <Calendar className="mx-auto mb-4" size={36} />
             <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase mb-3">
-              Need a Different Time?
+              Closed Sunday &amp; Monday? We'll Still Open for You.
             </h3>
             <p className="text-xl mb-4">
-              Call us and we will open when you can come. We will set up an appointment for you.
+              Call <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="underline hover:no-underline font-bold">(864) 837-0155</a> anytime &mdash; we'll open by appointment for you!
             </p>
             <a 
               href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}

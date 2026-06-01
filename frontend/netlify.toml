@@ -1,6 +1,13 @@
 [build]
   publish = "build"
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "npm install --legacy-peer-deps && npx puppeteer browsers install chrome && npm run build"
+
+[build.environment]
+  # Cache Puppeteer's Chromium download inside the build dir so Netlify's
+  # cache picks it up between deploys (faster builds, no re-download).
+  PUPPETEER_CACHE_DIR = "/opt/buildhome/.cache/puppeteer"
+  # Don't let CRA treat ESLint warnings as build-breaking errors on Netlify
+  CI = "false"
 
 [[headers]]
   for = "/*"

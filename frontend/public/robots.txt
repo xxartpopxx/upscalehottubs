@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://upstatehottubs.com/sitemap.xml
+Sitemap: https://www.upstatehottubs.com/sitemap.xml
 
 # Disallow admin and api routes
 Disallow: /api/

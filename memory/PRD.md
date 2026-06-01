@@ -1,70 +1,59 @@
-# Upstate Hot Tubs - Product Requirements Document
+# Upstate Hot Tubs — Product Requirements & Changelog
 
-## Original Problem Statement
-Overhaul the "Upstate Hot Tubs" website by pulling product data (specs, images) from manufacturer sites and integrating them alongside existing hot tub products. Key requirements include adding saunas, cold plunges, heaters, fixing specs, model comparison features, color pickers, and removing Viking Spas brand.
+## Original Problem Statement (from latest session)
+1. **SEO Fix**: The React SPA serves an empty `<div id="root"></div>` shell to crawlers, so Google sees only the `noscript` fallback. Site content is not indexed.
+2. **Business Hours Update**: Sunday and Monday should be marked **CLOSED**, with the note: *"Call (864) 837-0155 anytime — we'll open by appointment for you!"*
 
 ## Tech Stack
-- **Frontend**: React, Tailwind CSS, Framer Motion, React Router
-- **Backend**: FastAPI (minimal usage - product data is client-side)
-- **Database**: MongoDB (not actively used for product data)
-- **Data**: All product data hardcoded in `frontend/src/data/products.js`
+- Frontend: React 19 + React Router v7 + CRA + Tailwind + framer-motion + react-helmet-async
+- Hosting: **Netlify** (publish dir `build`, Forms enabled)
+- Backend: FastAPI + MongoDB (not touched in this session)
 
-## What's Been Implemented
+## Solution Architecture (this session)
 
-### World Sauna Group Integration
-- Added Outdoor, Indoor, and Infrared Saunas from World Sauna Group
-- Added Tubs/Plunges on dedicated Cold Plunges page
-- Added 6 Sauna Heaters (Cozy, Finsauna, HUUM brands)
+### SEO via Build-time Prerendering (Puppeteer)
+- `frontend/scripts/prerender.js` starts a local static server over the `build/` folder, launches headless Chromium, crawls all 22 static routes, and writes the fully-rendered HTML to `build/<route>/index.html`.
+- Netlify automatically serves `build/hours/index.html` when a user / crawler requests `/hours`, so each route now ships with crawler-visible, SEO-rich HTML.
+- `sitemap.xml` is regenerated at build time with all 22 URLs and the current `<lastmod>` date.
+- Existing `_redirects` (`/*  /index.html  200`) remains as the SPA fallback for unknown deep links — static files take precedence.
 
-### Page Structure
-- **SaunasPage.jsx**: Consolidated page with 5 filter categories (All Saunas, Outdoor, Indoor, Infrared, Heaters) + dedicated heaters section
-- **ColdPlungesPage.jsx**: All cold plunge products (22 total)
-- **ProductDetailPage.jsx**: Full product details with color pickers, model comparison, extras/upgrades
+### Netlify Compatibility
+- `frontend/netlify.toml`:
+  - Build command runs `npx puppeteer browsers install chrome` before `npm run build`, ensuring Chromium is present in the build container.
+  - `PUPPETEER_CACHE_DIR=/opt/buildhome/.cache/puppeteer` keeps Chromium cached across deploys.
+  - `CI=false` so CRA does not treat warnings as errors during deploy.
+- Puppeteer launched with `--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --disable-gpu` (Docker-safe).
 
-### Hot Tub Spec Accuracy (March 2026)
-- **Grand River Spas**: All specs verified and corrected from official grandriverspas.com
-- **Dynasty Spas**: Specs verified from PDF brochures
+### Business Hours Update
+- New schedule:
+  - Sunday & Monday → **CLOSED**
+  - Tue, Thu, Fri → 10am–6pm
+  - Wed → 10am–8pm (Late Night)
+  - Sat → 10am–5pm
+- Files updated: `frontend/src/pages/HoursPage.jsx`, `frontend/src/components/layout/Footer.jsx`, `frontend/public/index.html` (JSON-LD `openingHoursSpecification` rewritten + added `specialOpeningHoursSpecification` for the appointment note).
 
-### Color Picker Fixes (March 2026)
-- Per-product shell/cabinet color restrictions implemented
-- Corner color option conditionally shown via `hasCornerOption` field
-- Visualizer model prefixes corrected
+## Changelog
 
-### Cold Plunge Thumbnails (April 2026)
-- All cold plunge products verified with accurate thumbnails
-- Finsauna AquaFin Single/Double: wixstatic images from finsaunausa.com
-- Finsauna Immersia 100/200 (Natural + Black): wixstatic images from finsaunausa.com
-- Aquora models (8 total): local images downloaded to /public/images/aquora/
-- Icebound Essentials: Direct CDN images
-- Removed duplicate WSG AquaFin entries that showed placeholder logos
-- Gallery images from WSG preserved in Finsauna entries
+### 2026-06-01 — SEO Prerender + Hours Update
+- Added `puppeteer` and `serve-handler` as devDependencies.
+- Created `frontend/scripts/prerender.js`.
+- Updated `frontend/package.json` scripts: `build` now runs `craco build && node scripts/prerender.js`; `build:spa` keeps the old SPA-only build; new `prerender` script runs prerender alone.
+- Updated `frontend/netlify.toml` for Netlify-compatible Puppeteer install + caching.
+- Rewrote hours in `HoursPage.jsx` (added `data-testid="hours-row-*"`), Footer hours block (added `data-testid="footer-hours"`), and JSON-LD schema in `public/index.html`.
+- Updated `public/robots.txt` to reference `https://www.upstatehottubs.com/sitemap.xml`.
+- Verified: 22/22 routes prerendered. Static HTML contains crawler-visible content ("CLOSED", "by appointment for you", "Premium Hot Tubs", etc.).
 
-### Other Completed Work
-- Grand River color picker thumbnails fixed (dynamic key re-rendering)
-- Model comparison dropdowns for Grand River and Dynasty brands
-- Viking Spas completely removed
-- Add-on feature images for hot tubs (corrected circulation pump vs ozone images)
-- Heater filter tab on Saunas page
-- Mother's Day popup on HomePage
-- Videos assigned to SwimSpasPage, AboutPage, BalneotherapyPage, SpaButlerPage
-- Header logo overlap fixed
-- American flag emoji on DynastySpasPage
-- Dynasty Spas Aquora Cold Plunges added (8 models, "Call for Pricing")
+## Roadmap / Backlog
+- P2: Prerender dynamic `/products/:id` routes — would require enumerating product IDs from constants or backend at build time.
+- P2: Hook `react-helmet-async` to render OG/Twitter tags into the static HTML per route (currently only `<title>`/`<description>` make it because Helmet writes to `document.head` after mount; some tags may not appear in the static HTML for non-default routes).
+- P3: Add `<link rel="alternate">` and per-route canonical tags for stronger SEO.
+- P3: Compress prerendered HTML further by stripping inline React-only attributes.
 
-## Backlog
-
-### P1 - Upcoming
-- Update World Sauna Group product pricing when user provides official pricing
-
-### P2 - Future
-- Add installation/shipping cost display when info is provided
-- Refactor `products.js` (5900+ lines) into smaller files by brand/type
-- Refactor `ProductDetailPage.jsx` (1100+ lines) into brand-specific sub-components
-
-## Key Files
-- `/app/frontend/src/data/products.js` - Central product data (5900+ lines)
-- `/app/frontend/src/pages/ProductDetailPage.jsx` - Product detail with color picker and comparisons
-- `/app/frontend/src/pages/SaunasPage.jsx` - Saunas + heaters page with filters
-- `/app/frontend/src/pages/ColdPlungesPage.jsx` - Cold plunges page
-- `/app/frontend/src/pages/HomePage.jsx` - Home with Mother's Day popup
-- `/app/frontend/src/components/layout/Header.jsx` - Fixed logo sizing
+## Files of Reference
+- `/app/frontend/scripts/prerender.js` — Puppeteer crawler + sitemap generator
+- `/app/frontend/netlify.toml` — Netlify build config (Puppeteer install hook, cache dir)
+- `/app/frontend/package.json` — `build` script
+- `/app/frontend/src/pages/HoursPage.jsx` — Hours page (CLOSED days, appointment note)
+- `/app/frontend/src/components/layout/Footer.jsx` — Footer hours block
+- `/app/frontend/public/index.html` — JSON-LD LocalBusiness schema (`openingHoursSpecification`)
+- `/app/frontend/public/robots.txt` — sitemap pointer

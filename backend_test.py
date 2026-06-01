@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 
 # Configuration
-BACKEND_URL = "https://popup-rollback.preview.emergentagent.com/api"
+BACKEND_URL = "https://crawl-ready-1.preview.emergentagent.com/api"
 
 def test_backend_health():
     """Test if backend API endpoints are working"""
@@ -134,11 +134,11 @@ def test_product_urls():
     
     # Product URLs from review request
     test_urls = {
-        "Dynasty Oasis (Paradise Bay III)": "https://popup-rollback.preview.emergentagent.com/products/ds-paradise-bay-iii",
-        "Dynasty Vacation (Serenity Cove)": "https://popup-rollback.preview.emergentagent.com/products/ds-serenity-cove", 
-        "Dynasty Hideaway (High Tide)": "https://popup-rollback.preview.emergentagent.com/products/ds-high-tide",
-        "Grand River (Chariton 2)": "https://popup-rollback.preview.emergentagent.com/products/gr-chariton-2",
-        "Viking (Heritage 2)": "https://popup-rollback.preview.emergentagent.com/products/vs-heritage-2"
+        "Dynasty Oasis (Paradise Bay III)": "https://crawl-ready-1.preview.emergentagent.com/products/ds-paradise-bay-iii",
+        "Dynasty Vacation (Serenity Cove)": "https://crawl-ready-1.preview.emergentagent.com/products/ds-serenity-cove", 
+        "Dynasty Hideaway (High Tide)": "https://crawl-ready-1.preview.emergentagent.com/products/ds-high-tide",
+        "Grand River (Chariton 2)": "https://crawl-ready-1.preview.emergentagent.com/products/gr-chariton-2",
+        "Viking (Heritage 2)": "https://crawl-ready-1.preview.emergentagent.com/products/vs-heritage-2"
     }
     
     all_accessible = True

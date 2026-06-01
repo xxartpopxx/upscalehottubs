@@ -1,13 +1,21 @@
 [build]
   publish = "build"
+  # Install dependencies, then ensure Puppeteer's Chromium is downloaded
+  # (idempotent: skips if cache already contains it), then build + prerender.
   command = "npm install --legacy-peer-deps && npx puppeteer browsers install chrome && npm run build"
 
 [build.environment]
-  # Cache Puppeteer's Chromium download inside the build dir so Netlify's
-  # cache picks it up between deploys (faster builds, no re-download).
+  # Pin Node to a version supported by react-scripts 5 and Puppeteer 23.
+  NODE_VERSION = "20"
+  # Cache Puppeteer's Chromium download in Netlify's persistent build cache
+  # so it does not re-download (~150 MB) on every deploy.
   PUPPETEER_CACHE_DIR = "/opt/buildhome/.cache/puppeteer"
-  # Don't let CRA treat ESLint warnings as build-breaking errors on Netlify
+  # Don't treat ESLint warnings as build-breaking errors on CI.
   CI = "false"
+  # Suppress CRA browserslist update prompt during build.
+  BROWSERSLIST_IGNORE_OLD_DATA = "1"
+
+# Netlify Forms detection picks up the hidden <form> tags inside public/index.html.
 
 [[headers]]
   for = "/*"
@@ -17,15 +25,11 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Aggressive caching for hashed CRA assets
 [[headers]]
   for = "/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
 
 [[headers]]
   for = "/*.js"
@@ -36,3 +40,53 @@
   for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Make sure prerendered HTML is revalidated (so Google sees fresh content
+# whenever you redeploy) but still cached for short bursts.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Long cache for robots.txt and sitemap (changes infrequently)
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/xml; charset=UTF-8"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/plain; charset=UTF-8"
+
+# 308 redirects to enforce a single canonical host (www) and HTTPS.
+# These complement the JSON-LD/canonical tags - duplicate-content kill switch.
+[[redirects]]
+  from = "https://upstatehottubs.com/*"
+  to = "https://www.upstatehottubs.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://upstatehottubs.com/*"
+  to = "https://www.upstatehottubs.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.upstatehottubs.com/*"
+  to = "https://www.upstatehottubs.com/:splat"
+  status = 301
+  force = true

@@ -71,7 +71,7 @@ const GrandRiverPage = () => {
         <meta property="og:title" content="Grand River Spas Hot Tubs | American Made | Upstate Hot Tubs" />
         <meta property="og:description" content="Premium American made hot tubs from Grand River Spas. Live your healthiest life while enjoying a vacation everyday at home." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://upstatehottubs.com/grand-river-spas" />
+        <link rel="canonical" href="https://www.upstatehottubs.com/grand-river-spas" />
       </Helmet>
       
       <div className="pt-40 pb-20" data-testid="grand-river-page" style={{

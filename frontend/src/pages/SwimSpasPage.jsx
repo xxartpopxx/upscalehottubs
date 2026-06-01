@@ -84,7 +84,7 @@ const SwimSpasPage = () => {
         <meta name="keywords" content="swim spas, American made swim spas, Grand River swim spa, Dynasty swim spa, exercise pool, lap pool, hot tub swim spa, Greenville SC, Simpsonville SC" />
         <meta property="og:title" content="American Made Swim Spas | Upstate Hot Tubs" />
         <meta property="og:description" content="Live your healthiest life with our premium American made swim spas. Exercise, swim, and relax at home." />
-        <link rel="canonical" href="https://upstatehottubs.com/swim-spas" />
+        <link rel="canonical" href="https://www.upstatehottubs.com/swim-spas" />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="swim-spas-page">

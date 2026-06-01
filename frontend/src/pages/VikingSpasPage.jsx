@@ -54,7 +54,7 @@ const VikingSpasPage = () => {
         <meta property="og:title" content="Viking Spas Hot Tubs | American Made | Upstate Hot Tubs" />
         <meta property="og:description" content="Quality American made hot tubs from Viking Spas. Elite, Heirloom, and Element series available." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://upstatehottubs.com/viking-spas" />
+        <link rel="canonical" href="https://www.upstatehottubs.com/viking-spas" />
       </Helmet>
       
       <div className="pt-40 pb-20" data-testid="viking-spas-page">

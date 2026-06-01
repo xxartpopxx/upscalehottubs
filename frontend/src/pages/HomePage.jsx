@@ -1379,7 +1379,7 @@ const HomePage = () => {
         <meta property="og:title" content="Upstate Hot Tubs | American Made Hot Tubs & Swim Spas" />
         <meta property="og:description" content="Live your healthiest life while enjoying a vacation everyday at home. American made and proud of it!" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://upstatehottubs.com" />
+        <link rel="canonical" href="https://www.upstatehottubs.com/" />
       </Helmet>
       
       <WetTestPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />

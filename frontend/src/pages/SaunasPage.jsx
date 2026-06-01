@@ -39,7 +39,7 @@ const SaunasPage = () => {
         <meta property="og:title" content="Premium Saunas & Heaters | Upstate Hot Tubs" />
         <meta property="og:description" content="RELAX-RENEW-REPEAT. Premium saunas for your backyard oasis or indoor sanctuary." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://upstatehottubs.com/saunas" />
+        <link rel="canonical" href="https://www.upstatehottubs.com/saunas" />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="saunas-page">

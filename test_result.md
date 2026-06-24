@@ -323,15 +323,18 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Grand River Add-ons Update (5 items only)"
-    - "Dynasty Universal Add-ons (4 items for all)"
-    - "Dynasty Full Specifications for All Tubs"
-    - "Business Hours Update"
+    - "Buyer's Guides PDFs (Hot Tub + Sauna)"
+    - "Wellness Experts Banner & Messaging"
+    - "Google Reviews Section (curated)"
+    - "Sauna Full Specifications Display"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
 agent_communication:
+  - agent: "main"
+    message: "WELLNESS EXPERTS / BUYERS GUIDES / REVIEWS / SAUNA SPECS UPDATE: (1) Added downloadable buyer's guides — Hot Tub Buying Guide & Sauna Buying Guide — at /brochures (prominent top section) and on the About page. PDFs hosted at /brochures/Leisure-Wellness-Naples-Hot-Tub-Buying-Guide.pdf and Leisure-Wellness-Naples-Sauna-Buying-Guide.pdf. (2) Created reusable WellnessExpertsBanner component with full and compact variants. Full variant placed on HomePage (after Trust Badges) and AboutPage. Compact variant placed at top of Hot Tubs page and Saunas page. Messaging: 'We Are Your Wellness Experts — Call Us For Your Wellness Appointment' with big phone CTA. (3) Added GoogleReviewsSection component with curated 5-star reviews from Upstate Hot Tubs Google Business page (rating 4.9/28 reviews). Displays on HomePage with slider, links to Google Business URL. (4) Added Google Business URL to constants. (5) Added comprehensive Sauna Full Specifications section to ProductDetailPage that displays for ALL sauna brands (SaunaLife, Finnmark Design, World Sauna Group, Finsauna). Uses collection-based defaults (materials, heater type, voltage, lighting, etc.) to enrich saunas with limited spec data. Existing Finnmark detailed specs continue to render with shipping info & heater breakdown."
+
   - agent: "main"
     message: "Implemented all requested features: comparison estimator, AR visualizer, price sorting, updated trust section, featured image, wellness section, Google Analytics. All features visually verified via screenshots."
   - agent: "testing"

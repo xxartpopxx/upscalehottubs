@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import { ChevronRight, ChevronLeft, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun, Award, Gift } from 'lucide-react';
 import { ASSETS, CONTACT } from '../data/constants';
 import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
+import GoogleReviewsSection from '../components/GoogleReviewsSection';
+import WellnessExpertsBanner from '../components/WellnessExpertsBanner';
 
 // Check if mobile for performance optimizations
 const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -1390,6 +1392,9 @@ const HomePage = () => {
       {/* 2. Trust Badges */}
       <TrustBadgesSection />
       
+      {/* 2b. Wellness Experts Banner - Health-Focused CTA */}
+      <WellnessExpertsBanner variant="full" />
+      
       {/* 3. Expand Your Wellness Journey (Hot Tubs, Saunas, Cold Plunges, Swim Spas) */}
       <ProductCollectionSection />
       
@@ -1416,6 +1421,9 @@ const HomePage = () => {
       
       {/* 11. Resource Cards */}
       <ResourceCardsSection />
+      
+      {/* 11b. Google Reviews */}
+      <GoogleReviewsSection />
       
       {/* 12. AR Visualizer Section */}
       <ARVisualizerSection />

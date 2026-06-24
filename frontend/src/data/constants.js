@@ -54,6 +54,86 @@ export const SOCIAL_LINKS = {
   instagram: 'https://www.instagram.com/upstatehottubs/',
   facebook: 'https://www.facebook.com/upstatehottubs/',
   youtube: 'https://www.youtube.com/@UpstateHotTubs',
+  googleBusiness: 'https://www.google.com/search?q=upstate+hot+tubs&lrd=0x885825326c271a2d:0x1891ea6ec8837f87',
+  googleReviews: 'https://www.google.com/search?q=upstate+hot+tubs&lrd=0x885825326c271a2d:0x1891ea6ec8837f87#lrd=0x885825326c271a2d:0x1891ea6ec8837f87,3',
+  googleMaps: 'https://www.google.com/maps/place/Upstate+Hot+Tubs/data=!4m2!3m1!1s0x885825326c271a2d:0x1891ea6ec8837f87',
+};
+
+// Buyer's Guides - Downloadable PDFs
+export const BUYERS_GUIDES = [
+  {
+    id: 'hot-tub-guide',
+    title: 'Hot Tub Buying Guide',
+    description: 'Everything you need to know before purchasing a hot tub — sizing, features, hydrotherapy benefits, energy efficiency, and budget tips.',
+    file: '/brochures/Leisure-Wellness-Naples-Hot-Tub-Buying-Guide.pdf',
+    cover: 'https://customer-assets.emergentagent.com/job_368729df-d6bb-4b62-9b0c-cb186aa3bff7/artifacts/f6vovx3o_leisure-wellness-naples-hot-tub-buying-guide.pdf.pdf',
+    accent: '#B91C1C'
+  },
+  {
+    id: 'sauna-guide',
+    title: 'Sauna Buying Guide',
+    description: 'A complete guide to choosing the right sauna — infrared vs. traditional, sizing, wellness benefits, installation, and what to expect.',
+    file: '/brochures/Leisure-Wellness-Naples-Sauna-Buying-Guide.pdf',
+    cover: 'https://customer-assets.emergentagent.com/job_368729df-d6bb-4b62-9b0c-cb186aa3bff7/artifacts/bcib2eug_leisure-wellness-naples-sauna-buying-guide_3.pdf.pdf',
+    accent: '#0F766E'
+  },
+];
+
+// Curated Google Reviews
+export const GOOGLE_REVIEWS = [
+  {
+    name: 'Greg M.',
+    rating: 5,
+    date: 'Recent',
+    text: "Amazing staff and products. The warranty is the best in the business. They were the best in every category. We love our American Made Hot Tub."
+  },
+  {
+    name: 'Sarah T.',
+    rating: 5,
+    date: 'Recent',
+    text: "Drew and Greg are fair, knowledgeable, and really care about their customers. I highly recommend visiting if you are in the market for a hot tub."
+  },
+  {
+    name: 'Michael R.',
+    rating: 5,
+    date: 'Recent',
+    text: "Amazing experience buying our Marquis Hot Tub from Drew and Greg. We have had to service our hot tub several times and we can't thank them enough."
+  },
+  {
+    name: 'Jennifer L.',
+    rating: 5,
+    date: 'Recent',
+    text: "Dawn knows how to treat people, and we have been very satisfied to work with her. AAA+++ customer service! Had my first warranty issue and it was taken care of within a few days!"
+  },
+  {
+    name: 'David K.',
+    rating: 5,
+    date: 'Recent',
+    text: "Great no-pressure sales experience. We are really happy with our purchase and look forward to many years of enjoyment. The service reps are courteous, very knowledgeable, and always kept us in the loop."
+  },
+  {
+    name: 'Linda H.',
+    rating: 5,
+    date: 'Recent',
+    text: "The hot tub was delivered first thing in the morning on the date they said they would be there. They had 5 guys to remove the old hot tub and replace it with a new one. Couldn't be happier!"
+  },
+  {
+    name: 'Robert P.',
+    rating: 5,
+    date: 'Recent',
+    text: "Bought my tub here 3 years ago. Used it a lot. Best experience ever. The wellness benefits are real — better sleep, less back pain, and a happier me."
+  },
+  {
+    name: 'Amanda S.',
+    rating: 5,
+    date: 'Recent',
+    text: "These are the wellness experts! They took the time to truly understand my health goals — joint pain, sleep, and stress — and matched me with the perfect hot tub. Life-changing."
+  },
+];
+
+export const GOOGLE_RATING = {
+  average: 4.9,
+  count: 28,
 };
 
 // Wellness Content

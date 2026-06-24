@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Filter, X, ChevronDown } from 'lucide-react';
 import { HOT_TUBS, GRAND_RIVER_PRODUCTS, DYNASTY_SPAS_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
+import WellnessExpertsBanner from '../components/WellnessExpertsBanner';
 
 const HotTubsPage = () => {
   const [showFilters, setShowFilters] = useState(false);
@@ -70,6 +71,11 @@ const HotTubsPage = () => {
             Premium quality hot tubs from Grand River Spas and Dynasty Spas. Click any product to see details and customize colors!
           </p>
         </motion.div>
+
+        {/* Wellness Experts Banner */}
+        <div className="-mx-4 md:-mx-8 mb-8">
+          <WellnessExpertsBanner variant="compact" />
+        </div>
 
         {/* Filter Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200">

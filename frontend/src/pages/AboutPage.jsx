@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Award, Leaf, Shield, HeadphonesIcon, Heart, Users, DollarSign, Star, ExternalLink, MessageSquarePlus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ASSETS } from '../data/constants';
+import BuyersGuidesSection from '../components/BuyersGuidesSection';
+import WellnessExpertsBanner from '../components/WellnessExpertsBanner';
 
 // Google Reviews Data - Real reviews from Google Business Profile
 const GOOGLE_REVIEWS = {
@@ -370,6 +372,16 @@ const AboutPage = () => {
               </a>
             </div>
           </motion.div>
+          
+          {/* Buyer's Guides - Downloadable PDFs */}
+          <div className="mb-16 -mx-4 md:-mx-8">
+            <BuyersGuidesSection variant="highlight" heading="Free Buyer's Guides — Download Today" />
+          </div>
+
+          {/* Wellness Experts Banner */}
+          <div className="mb-16 -mx-4 md:-mx-8">
+            <WellnessExpertsBanner variant="full" />
+          </div>
           
           {/* Dynasty Spas Video */}
           <motion.div 

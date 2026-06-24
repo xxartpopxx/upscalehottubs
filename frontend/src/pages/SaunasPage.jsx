@@ -4,6 +4,7 @@ import { Filter, Flame, Sun, Home, Thermometer } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { ALL_SAUNAS, ALL_HEATERS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
+import WellnessExpertsBanner from '../components/WellnessExpertsBanner';
 
 const SaunasPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -61,6 +62,11 @@ const SaunasPage = () => {
               RELAX-RENEW-REPEAT - Premium outdoor, indoor, and infrared saunas for your wellness journey. Featuring world-class brands from Finland, Estonia, and beyond.
             </p>
           </motion.div>
+
+          {/* Wellness Experts Banner */}
+          <div className="-mx-4 md:-mx-8 mb-8">
+            <WellnessExpertsBanner variant="compact" />
+          </div>
 
           {/* Category Filter Tabs */}
           <motion.div 

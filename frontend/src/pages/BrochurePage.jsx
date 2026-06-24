@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { FileText, Download, Phone, Send } from 'lucide-react';
 import { CONTACT } from '../data/constants';
+import BuyersGuidesSection from '../components/BuyersGuidesSection';
 
 const brochures = [
   { name: '2025 Grand River Spas Full Brochure', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf', category: 'Full Catalog' },
@@ -206,6 +207,11 @@ const BrochurePage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          {/* Buyer's Guides - prominent at top */}
+          <div className="mb-12">
+            <BuyersGuidesSection variant="highlight" heading="Free Buyer's Guides — Hot Tubs & Saunas" />
+          </div>
+
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Brochures Section */}
             <div className="lg:col-span-2">

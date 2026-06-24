@@ -112,10 +112,12 @@ const ProductDetailPage = () => {
   const isDynasty = product?.brand === 'Dynasty Spas';
   const isViking = product?.brand === 'Viking Spas';
   const isWorldSaunaGroup = product?.brand === 'World Sauna Group';
+  const isFinsauna = product?.brand === 'Finsauna';
   const isHeater = product?.category === 'heater';
-  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isHeater;
+  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna || isHeater;
   const isFinnmarkSauna = product?.brand === 'Finnmark Design';
-  const isWorldSaunaWithGallery = isWorldSaunaGroup && product?.images?.gallery && product?.images?.gallery.length > 0;
+  const isAnySauna = product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna;
+  const isWorldSaunaWithGallery = (isWorldSaunaGroup || isFinsauna) && product?.images?.gallery && product?.images?.gallery.length > 0;
   const isSwimSpa = !!product?.length;
   const hasColorSelector = isGrandRiver && !isSwimSpa;
   
@@ -1049,8 +1051,180 @@ const ProductDetailPage = () => {
             </motion.div>
           )}
 
+          {/* SAUNA FULL SPECIFICATIONS - For ALL sauna brands */}
+          {isAnySauna && !isHeater && (() => {
+            // Collection-based defaults (manufacturer common specs) — used to enrich saunas
+            // that don't yet have detailed `specifications` objects.
+            const SAUNA_COLLECTION_DEFAULTS = {
+              // Finsauna outdoor — thermally modified spruce
+              'Keila Collection':   { exterior: 'Thermo-Spruce w/ black trim', interior: 'Thermo-Aspen', heater: 'Electric (Various Options)', voltage: '240V', lighting: 'App-controlled dimmable LED', glass: 'Tempered full-front glass', origin: 'Estonia' },
+              'Reviva Collection':  { exterior: 'Thermo-Spruce (Barrel)', interior: 'Thermo-Spruce', heater: 'Electric (Various Options)', voltage: '240V', lighting: 'Dimmable LED w/ app control', glass: 'Full front glass', origin: 'Estonia' },
+              'Solara Collection':  { exterior: 'Thermo-Spruce', interior: 'Thermo-Spruce', heater: 'Electric (Various Options)', voltage: '240V', lighting: 'App-controlled LED', glass: 'Full front glass', origin: 'Estonia' },
+              'Haljas Collection':  { exterior: 'Glass + Steel', interior: 'Thermo-Aspen', heater: 'Electric', voltage: '240V', origin: 'Estonia' },
+              // Finsauna indoor
+              'Therma Collection':  { exterior: 'Nordic White Spruce', interior: 'Grade-A Aspen', accents: 'Two-tone Thermo-Aspen', heater: 'Electric (HUUM/Harvia options)', voltage: '240V', lighting: 'Backrest + perimeter LED', glass: 'Floor-to-ceiling front glass', origin: 'Estonia' },
+              'Isla Collection':    { exterior: 'Nordic White Spruce', interior: 'Clear Aspen', heater: 'Electric (Various Options)', voltage: '240V', lighting: 'Dimmable in-backrest LED w/ remote', glass: 'Full glass front wall', origin: 'Estonia' },
+              'Emma Collection':    { exterior: 'Nordic Spruce', interior: 'Clear Aspen', heater: 'Electric (Various Options)', voltage: '240V', origin: 'Estonia' },
+              'Relaxia Collection': { exterior: 'Nordic Spruce', interior: 'Clear Aspen', heater: 'Electric (Various Options)', voltage: '240V', origin: 'Estonia' },
+              'Nativa Collection':  { exterior: 'Nordic Spruce', interior: 'Clear Aspen', heater: 'Electric (Various Options)', voltage: '240V', origin: 'Estonia' },
+              // Finsauna infrared
+              'Fiera Collection':   { exterior: 'Canadian Hemlock', interior: 'Canadian Hemlock', heater: '7 Low-EMF Carbon Fiber Infrared Heaters', maxTemp: '170°F', voltage: '120V', lighting: 'Soft ambient LED', floor: 'Heated slatted floor', audio: 'Bluetooth audio' },
+              'Radia Collection':   { exterior: 'Canadian Hemlock', interior: 'Canadian Hemlock', heater: 'Full-Spectrum IR (Near/Mid/Far) + Red Light Therapy', maxTemp: '170°F', voltage: '120V/240V', lighting: 'Chromatherapy LED inside & out', audio: 'Bluetooth speakers', controls: 'Touch screen + Wi-Fi' },
+              'Radia IR Collection':{ exterior: 'Canadian Hemlock', interior: 'Canadian Hemlock', heater: 'Full-Spectrum IR + Red Light Therapy', maxTemp: '170°F', voltage: '120V/240V', lighting: 'Chromatherapy LED', audio: 'Bluetooth speakers', controls: 'Touch screen + Wi-Fi' },
+              'Radia TIR Collection': { exterior: 'Canadian Hemlock', interior: 'Canadian Hemlock', heater: 'Traditional + Full-Spectrum IR + Red Light Therapy', maxTemp: '170°F', voltage: '240V', lighting: 'Chromatherapy LED', audio: 'Bluetooth speakers', controls: 'Touch screen + Wi-Fi' },
+              // SaunaLife
+              'Barrel Saunas':      { exterior: 'Premium Thermowood', interior: 'Western Red Cedar', heater: 'Electric Sauna Heater Included', voltage: '240V', heatTime: '~30 min', origin: 'Premium hardwoods' },
+              'Outdoor Saunas':     { heater: 'Electric Sauna Heater Included', voltage: '240V' },
+              'Premium Outdoor Saunas': { heater: 'Electric Sauna Heater Included', voltage: '240V', delivery: 'Pre-assembled' },
+              'Cabin Saunas':       { exterior: 'Premium Thermowood', interior: 'Cedar', heater: 'Electric Sauna Heater Included', voltage: '240V' },
+            };
+
+            const defaults = SAUNA_COLLECTION_DEFAULTS[product.collection] || SAUNA_COLLECTION_DEFAULTS[product.series] || {};
+
+            // Build a unified spec list from whatever fields are available, augmented by defaults
+            const specRows = [];
+            const push = (label, value) => {
+              if (value !== undefined && value !== null && value !== '' && value !== 'N/A') {
+                specRows.push({ label, value });
+              }
+            };
+            push('Brand', product.brand);
+            push('Series', product.series);
+            push('Collection', product.collection);
+            push('Capacity', product.persons ? `${product.persons} ${product.persons === 1 ? 'Person' : 'Persons'}` : null);
+            push('Type', product.category ? product.category.charAt(0).toUpperCase() + product.category.slice(1) : null);
+            push('Exterior Dimensions', product.dimensions);
+            // Pull from specifications object if present (Finnmark-style)
+            const sp = product.specifications || {};
+            push('Model #', sp.model);
+            push('Interior Dimensions', product.interiorDimensions || sp.interiorDimensions);
+            push('Door Dimensions', sp.doorDimensions);
+            push('Glass', sp.glassThickness || defaults.glass);
+            push('Room Volume', sp.roomVolume);
+            push('Exterior Material', sp.externalMaterials || defaults.exterior);
+            push('Interior Material', sp.interiorMaterials || defaults.interior);
+            push('Wood/Accents', defaults.accents);
+            push('Voltage', sp.volts ? `${sp.volts}V` : (product.electrical || defaults.voltage));
+            push('Amperage', sp.amperage ? `${sp.amperage}A` : null);
+            push('Plug Type', product.plugType || sp.plugType);
+            push('IR Watts', sp.irWatts);
+            push('Heater Type', defaults.heater);
+            push('Max Temp (Infrared)', sp.maxTempIR || (product.maxTemperature && String(product.maxTemperature).includes('IR') ? product.maxTemperature : null));
+            push('Max Temp (Traditional)', sp.maxTempTraditional);
+            push('Max Temperature', !sp.maxTempIR && !sp.maxTempTraditional ? (product.maxTemperature || defaults.maxTemp) : null);
+            push('Lighting', defaults.lighting);
+            push('Audio', defaults.audio);
+            push('Controls', defaults.controls);
+            push('Floor', defaults.floor);
+            push('Heat-Up Time', defaults.heatTime);
+            push('Delivery', defaults.delivery);
+            push('Origin', defaults.origin);
+            push('Product Weight', product.weight || sp.productWeight);
+            push('Shipping Weight', sp.shippingWeight);
+            push('Shipping Dimensions', sp.shippingDimensions);
+
+            // Heater specs
+            const hs = product.heaterSpecs || {};
+            const heaterRows = [];
+            const pushH = (label, value) => {
+              if (value !== undefined && value !== null && value !== '' && value !== 'N/A') {
+                heaterRows.push({ label, value });
+              }
+            };
+            pushH('Heater Model', hs.model);
+            pushH('Heater Power', hs.kilowatts);
+            pushH('Heater Voltage', hs.voltage);
+            pushH('Heater Amperage', hs.amperage);
+            pushH('Heater Dimensions', hs.heaterDimensions);
+            pushH('Heater Weight', hs.heaterWeight);
+            pushH('Room Volume (Min)', hs.roomVolumeMin);
+            pushH('Room Volume (Max)', hs.roomVolumeMax);
+            pushH('Warranty', hs.warranty);
+
+            // Shipping
+            const ship = product.shipping || {};
+
+            if (specRows.length < 3 && heaterRows.length === 0) return null; // nothing meaningful to show
+
+            const mid = Math.ceil(specRows.length / 2);
+            const left = specRows.slice(0, mid);
+            const right = specRows.slice(mid);
+
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-8"
+                data-testid="sauna-full-specs"
+              >
+                <div className="bg-white border border-slate-200 p-6 lg:p-8">
+                  <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-6 text-center border-b border-slate-200 pb-4">
+                    Full Specifications
+                  </h3>
+
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    {[left, right].map((col, ci) => (
+                      <div key={ci} className="overflow-hidden border border-slate-200">
+                        <table className="w-full">
+                          <tbody className="divide-y divide-slate-200">
+                            {col.map((row, ri) => (
+                              <tr key={ri} className={ri % 2 === 0 ? 'bg-slate-50' : ''}>
+                                <td className="px-4 py-3 font-semibold text-[#0A1628] w-1/2 text-sm">{row.label}</td>
+                                <td className="px-4 py-3 text-slate-700 text-sm">{row.value}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Heater Specs */}
+                  {heaterRows.length > 0 && (
+                    <div className="mt-6 border border-slate-200">
+                      <div className="bg-[#B91C1C] px-4 py-3">
+                        <h4 className="font-bold text-white uppercase text-sm">Sauna Heater Specifications</h4>
+                      </div>
+                      <div className="p-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                        {heaterRows.map((row, i) => (
+                          <div key={i} className="flex justify-between text-sm border-b border-dashed border-slate-200 py-1.5">
+                            <span className="font-semibold text-[#0A1628]">{row.label}</span>
+                            <span className="text-slate-700 text-right">{row.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Shipping Info */}
+                  {(ship.costUS || ship.note) && (
+                    <div className="mt-6 border border-slate-200">
+                      <div className="bg-green-700 px-4 py-3">
+                        <h4 className="font-bold text-white uppercase text-sm">Shipping</h4>
+                      </div>
+                      <div className="p-4 text-sm">
+                        {ship.costUS && (
+                          <p className="text-slate-700">
+                            <span className="font-semibold">USA:</span> {ship.costUS}
+                          </p>
+                        )}
+                        {ship.costCanada && (
+                          <p className="text-slate-700 mt-1">
+                            <span className="font-semibold">Canada:</span> {ship.costCanada}
+                          </p>
+                        )}
+                        {ship.note && <p className="text-slate-600 mt-2 italic">{ship.note}</p>}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })()}
+
           {/* Sauna - White Glove Installation Option */}
-          {(product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup) && !isHeater && (
+          {(product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna) && !isHeater && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

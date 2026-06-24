@@ -35,7 +35,7 @@ const SaunasPage = () => {
     <>
       <Helmet>
         <title>Saunas & Heaters | Barrel Saunas, Infrared & Indoor Saunas | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop premium saunas including outdoor barrel saunas, indoor saunas, infrared saunas, and sauna heaters at Upstate Hot Tubs. Nordic craftsmanship, American made and proud of it. Free delivery in South Carolina." />
+        <meta name="description" content="Shop premium saunas including outdoor barrel saunas, indoor saunas, infrared saunas, and sauna heaters at Upstate Hot Tubs. Nordic craftsmanship, American made and proud of it. Free in-home setup in South Carolina (shipping paid by customer)." />
         <meta name="keywords" content="saunas, barrel saunas, infrared sauna, traditional sauna, outdoor sauna, indoor sauna, sauna heaters, HUUM, Finsauna, wellness, Upstate Hot Tubs, Greenville SC" />
         <meta property="og:title" content="Premium Saunas & Heaters | Upstate Hot Tubs" />
         <meta property="og:description" content="RELAX-RENEW-REPEAT. Premium saunas for your backyard oasis or indoor sanctuary." />

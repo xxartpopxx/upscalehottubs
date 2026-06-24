@@ -7,20 +7,20 @@ import { CONTACT } from '../data/constants';
 
 const HoursPage = () => {
   const hours = [
-    { day: 'Sunday', time: 'CLOSED', isClosed: true },
-    { day: 'Monday', time: 'CLOSED', isClosed: true },
-    { day: 'Tuesday', time: '10am - 6pm', isSpecial: false },
-    { day: 'Wednesday', time: '10am - 8pm', isSpecial: true, note: 'Late Night' },
+    { day: 'Monday', time: 'By Appointment', isByAppt: true },
+    { day: 'Tuesday', time: 'By Appointment', isByAppt: true },
+    { day: 'Wednesday', time: 'By Appointment', isByAppt: true },
     { day: 'Thursday', time: '10am - 6pm', isSpecial: false },
     { day: 'Friday', time: '10am - 6pm', isSpecial: false },
-    { day: 'Saturday', time: '10am - 5pm', isSpecial: false },
+    { day: 'Saturday', time: '10am - 6pm', isSpecial: false },
+    { day: 'Sunday', time: '12pm - 5pm', isSpecial: false },
   ];
 
   return (
     <>
       <Helmet>
         <title>Store Hours | Upstate Hot Tubs | Simpsonville, SC</title>
-        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Tue, Thu-Fri 10am-6pm, Wednesday 10am-8pm Late Night, Saturday 10am-5pm. Closed Sun & Mon — call (864) 837-0155 anytime and we'll open by appointment!" />
+        <meta name="description" content="Visit Upstate Hot Tubs in Simpsonville, SC. Mon-Wed by appointment (call 864-837-0155), Thu-Sat 10am-6pm, Sun 12pm-5pm." />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="hours-page">
@@ -31,7 +31,7 @@ const HoursPage = () => {
               Store <span className="text-[#B91C1C]">Hours</span>
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              We're here to help you find the perfect wellness solution. Visit our showroom or schedule an appointment!
+              We&apos;re here to help you find the perfect wellness solution. Visit our showroom or schedule an appointment!
             </p>
           </motion.div>
 
@@ -53,14 +53,14 @@ const HoursPage = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + idx * 0.05 }}
-                    className={`flex justify-between items-center py-3 border-b border-slate-100 last:border-0 ${item.isSpecial ? 'bg-slate-50 -mx-6 md:-mx-8 px-6 md:px-8' : ''} ${item.isClosed ? 'bg-red-50 -mx-6 md:-mx-8 px-6 md:px-8' : ''}`}
+                    className={`flex justify-between items-center py-3 border-b border-slate-100 last:border-0 ${item.isByAppt ? 'bg-amber-50 -mx-6 md:-mx-8 px-6 md:px-8' : ''}`}
                     data-testid={`hours-row-${item.day.toLowerCase()}`}
                   >
-                    <span className={`font-semibold text-lg ${item.isSpecial ? 'text-[#B91C1C]' : item.isClosed ? 'text-[#B91C1C]' : 'text-[#0A1628]'}`}>
+                    <span className={`font-semibold text-lg ${item.isByAppt ? 'text-amber-800' : 'text-[#0A1628]'}`}>
                       {item.day}
                     </span>
-                    <span className={`text-lg ${item.isSpecial ? 'text-[#B91C1C] font-medium' : item.isClosed ? 'text-[#B91C1C] font-bold tracking-wider' : 'text-slate-600'}`}>
-                      {item.time}{item.note && <span className="ml-2 text-sm font-bold uppercase">({item.note})</span>}
+                    <span className={`text-lg ${item.isByAppt ? 'text-amber-800 font-bold' : 'text-slate-600'}`}>
+                      {item.time}
                     </span>
                   </motion.div>
                 ))}
@@ -77,10 +77,10 @@ const HoursPage = () => {
           >
             <Calendar className="mx-auto mb-4" size={36} />
             <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase mb-3">
-              Closed Sunday &amp; Monday? We'll Still Open for You.
+              Monday–Wednesday by Appointment
             </h3>
             <p className="text-xl mb-4">
-              Call <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="underline hover:no-underline font-bold">(864) 837-0155</a> anytime &mdash; we'll open by appointment for you!
+              Call <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="underline hover:no-underline font-bold">(864) 837-0155</a> to set up an appointment!
             </p>
             <a 
               href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}

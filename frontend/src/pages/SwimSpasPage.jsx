@@ -80,7 +80,7 @@ const SwimSpasPage = () => {
     <>
       <Helmet>
         <title>Swim Spas | American Made Swim Spas | Grand River & Dynasty | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop American made swim spas from Grand River Spas and Dynasty Spas. Exercise, swim, and relax at home. Live your healthiest life while enjoying a vacation everyday at home. Free delivery in SC." />
+        <meta name="description" content="Shop American made swim spas from Grand River Spas and Dynasty Spas. Exercise, swim, and relax at home. Live your healthiest life while enjoying a vacation everyday at home. Free in-home setup &amp; installation in SC (shipping paid by customer)." />
         <meta name="keywords" content="swim spas, American made swim spas, Grand River swim spa, Dynasty swim spa, exercise pool, lap pool, hot tub swim spa, Greenville SC, Simpsonville SC" />
         <meta property="og:title" content="American Made Swim Spas | Upstate Hot Tubs" />
         <meta property="og:description" content="Live your healthiest life with our premium American made swim spas. Exercise, swim, and relax at home." />

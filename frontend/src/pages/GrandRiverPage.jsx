@@ -66,7 +66,7 @@ const GrandRiverPage = () => {
     <>
       <Helmet>
         <title>Grand River Spas Hot Tubs | American Made Premium Hot Tubs | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop Grand River Spas hot tubs at Upstate Hot Tubs. American made premium hot tubs with advanced hydrotherapy. Live your healthiest life while enjoying a vacation everyday at home. Free delivery in South Carolina." />
+        <meta name="description" content="Shop Grand River Spas hot tubs at Upstate Hot Tubs. American made premium hot tubs with advanced hydrotherapy. Live your healthiest life while enjoying a vacation everyday at home. Free setup &amp; installation in South Carolina (shipping paid by customer)." />
         <meta name="keywords" content="Grand River Spas, hot tubs, American made hot tubs, hydrotherapy, spa, Upstate Hot Tubs, Greenville SC, Simpsonville SC, Premier Series hot tubs, luxury hot tubs" />
         <meta property="og:title" content="Grand River Spas Hot Tubs | American Made | Upstate Hot Tubs" />
         <meta property="og:description" content="Premium American made hot tubs from Grand River Spas. Live your healthiest life while enjoying a vacation everyday at home." />

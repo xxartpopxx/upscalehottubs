@@ -279,7 +279,7 @@ const HeroSection = () => (
           </div>
           
           <p className="text-lg md:text-xl font-bold text-[#B91C1C]">
-            Ask about Free Hot Tub, Swim Spa, Sauna & Cold Plunge Delivery in SC
+            Setup & Installation Included · Shipping Paid Separately by Customer
           </p>
         </motion.div>
       </div>
@@ -309,8 +309,8 @@ const TrustBadgesSection = () => (
         </div>
         <div className="flex flex-col items-center gap-0.5 p-2">
           <Truck className="w-5 h-5 text-[#1E40AF]" />
-          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Free Delivery</span>
-          <span className="text-[10px] text-slate-500">South Carolina</span>
+          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Setup Included</span>
+          <span className="text-[10px] text-slate-500">Cover · Steps · Chemicals</span>
         </div>
       </div>
     </div>
@@ -405,7 +405,10 @@ const FreeItemsSection = () => {
             Over $1,500 Value Included!
           </p>
           <p className="text-lg text-slate-600">
-            Delivery • Installation • Set Up • Cover • Cover Lifter • Steps • Chemicals
+            Installation • Set Up • Cover • Cover Lifter • Steps • Chemicals
+          </p>
+          <p className="text-sm text-slate-500 mt-2 italic">
+            Shipping paid separately by customer · We install at your home once delivered
           </p>
         </motion.div>
 
@@ -460,10 +463,6 @@ const FreeItemsSection = () => {
         >
           <div className="flex flex-wrap justify-center gap-4">
             <div className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
-              <Truck className="w-6 h-6 text-[#D4AF37]" />
-              <span className="font-bold">Free Delivery</span>
-            </div>
-            <div className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
               <svg className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
               </svg>
@@ -474,6 +473,10 @@ const FreeItemsSection = () => {
                 <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
               </svg>
               <span className="font-bold">Free Set Up</span>
+            </div>
+            <div className="bg-amber-100 text-[#0A1628] border-2 border-amber-300 px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
+              <Truck className="w-6 h-6 text-amber-700" />
+              <span className="font-bold">Shipping Paid by Customer</span>
             </div>
           </div>
         </motion.div>
@@ -549,11 +552,11 @@ const WetTestSection = () => (
         <ul className="space-y-2 mb-5 text-lg md:text-xl lg:text-2xl">
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span><span className="font-bold text-[#D4AF37]">FREE</span> Delivery, Installation & Set Up</span>
+            <span><span className="font-bold text-[#D4AF37]">FREE</span> Installation & Set Up</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span><span className="font-bold text-[#D4AF37]">FREE</span> Cover, Cover Lifter, Steps & Chemicals</span>
+            <span><span className="font-bold text-[#D4AF37]">FREE</span> Cover, Cover Lifter, Steps & Chemicals · <span className="text-[#D4AF37] font-bold">$1,500 Value</span></span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
@@ -562,6 +565,10 @@ const WetTestSection = () => (
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
             <span>Military & First Responder Discounts — <span className="font-bold text-[#D4AF37]">Thank You For Your Service!</span></span>
+          </li>
+          <li className="flex items-start gap-3 text-white/90">
+            <div className="w-3 h-3 bg-amber-400 rounded-full flex-shrink-0 mt-2" />
+            <span className="text-white/80 text-base md:text-lg italic">Shipping paid by customer · We install at your home once delivered</span>
           </li>
         </ul>
         

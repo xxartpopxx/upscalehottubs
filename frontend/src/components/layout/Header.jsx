@@ -56,6 +56,7 @@ const Header = () => {
   const shopLinks = [
     { name: 'Grand River Spas', href: '/grand-river-spas' },
     { name: 'Dynasty Spas', href: '/dynasty-spas' },
+    { name: 'Natural Rock Spas', href: 'https://naturalrockspas.com/', external: true },
     { name: 'Saunas', href: '/saunas' },
     { name: 'Swim Spas', href: '/swim-spas' },
     { name: 'Cold Plunges', href: '/cold-plunges' },
@@ -170,16 +171,30 @@ const Header = () => {
                     className="absolute top-full left-0 mt-0 bg-white shadow-xl border border-slate-100 min-w-[220px] py-2"
                   >
                     {shopLinks.map((subLink) => (
-                      <Link
-                        key={subLink.name}
-                        to={subLink.href}
-                        className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
-                          location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
-                        }`}
-                        data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
-                      >
-                        {subLink.name}
-                      </Link>
+                      subLink.external ? (
+                        <a
+                          key={subLink.name}
+                          href={subLink.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors text-[#0A1628]"
+                          data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
+                        >
+                          <span>{subLink.name}</span>
+                          <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                      ) : (
+                        <Link
+                          key={subLink.name}
+                          to={subLink.href}
+                          className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
+                            location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
+                          }`}
+                          data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
+                        >
+                          {subLink.name}
+                        </Link>
+                      )
                     ))}
                   </motion.div>
                 )}
@@ -316,14 +331,28 @@ const Header = () => {
                 <div className="border-t border-slate-100 pt-2">
                   <p className="px-4 py-2 text-sm font-bold uppercase text-slate-400">Shop</p>
                   {shopLinks.map((link) => (
-                    <Link 
-                      key={link.name}
-                      to={link.href} 
-                      className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
+                    link.external ? (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <span>{link.name}</span>
+                        <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                      </a>
+                    ) : (
+                      <Link 
+                        key={link.name}
+                        to={link.href} 
+                        className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+                    )
                   ))}
                 </div>
                 

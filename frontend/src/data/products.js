@@ -2772,8 +2772,8 @@ export const VIKING_SPAS_EXTRAS = [
 
 // Viking Spas Free Items Note
 export const VIKING_SPAS_FREE_ITEMS = {
-  note: 'All Viking Spas come with at NO CHARGE: Free Installation, Delivery, Set Up, Cover, Cover Lifter, Steps, and Chemicals.',
-  items: ['Free Installation', 'Free Delivery', 'Free Set Up', 'Free Cover', 'Free Cover Lifter', 'Free Steps', 'Free Chemicals']
+  note: 'All Viking Spas come with at NO CHARGE: Free Installation, Set Up, Cover, Cover Lifter, Steps, and Chemicals. Shipping is paid separately by customer.',
+  items: ['Free Installation', 'Free Set Up', 'Free Cover', 'Free Cover Lifter', 'Free Steps', 'Free Chemicals']
 };
 
 // ===========================================

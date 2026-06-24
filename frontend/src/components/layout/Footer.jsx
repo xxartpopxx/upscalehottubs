@@ -73,19 +73,32 @@ const Footer = () => {
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mb-6 text-[#0A1628]">Shop</h3>
             <div className="space-y-2">
               {[
-                { name: 'Grand River Spas', href: '/grand-river-spas' },
-                { name: 'Dynasty Spas', href: '/dynasty-spas' },
-                { name: 'Saunas', href: '/saunas' },
-                { name: 'Swim Spas', href: '/swim-spas' },
-                { name: 'Cold Plunges', href: '/cold-plunges' }
+                { name: 'Grand River Spas', href: '/grand-river-spas', external: false },
+                { name: 'Dynasty Spas', href: '/dynasty-spas', external: false },
+                { name: 'Natural Rock Spas', href: 'https://naturalrockspas.com/', external: true },
+                { name: 'Saunas', href: '/saunas', external: false },
+                { name: 'Swim Spas', href: '/swim-spas', external: false },
+                { name: 'Cold Plunges', href: '/cold-plunges', external: false }
               ].map(link => (
-                <Link 
-                  key={link.name} 
-                  to={link.href}
-                  className="block text-slate-600 hover:text-[#B91C1C] text-sm transition-colors"
-                >
-                  {link.name}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-slate-600 hover:text-[#B91C1C] text-sm transition-colors"
+                  >
+                    {link.name} ↗
+                  </a>
+                ) : (
+                  <Link 
+                    key={link.name} 
+                    to={link.href}
+                    className="block text-slate-600 hover:text-[#B91C1C] text-sm transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </div>
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mt-6 mb-4 text-[#0A1628]">Discover</h3>
@@ -122,23 +135,19 @@ const Footer = () => {
             </h3>
             <div className="space-y-1 text-sm" data-testid="footer-hours">
               <div className="flex justify-between text-slate-700">
-                <span>Sun &amp; Mon</span>
-                <span className="font-bold text-[#B91C1C]">CLOSED</span>
+                <span>Mon-Wed</span>
+                <span className="font-bold text-amber-700">By Appointment</span>
               </div>
               <div className="flex justify-between text-slate-700">
-                <span>Tue, Thu-Fri</span>
+                <span>Thu-Sat</span>
                 <span className="font-medium">10am-6pm</span>
               </div>
               <div className="flex justify-between text-slate-700">
-                <span>Wednesday</span>
-                <span className="font-medium text-[#B91C1C]">10am-8pm (Late Night)</span>
-              </div>
-              <div className="flex justify-between text-slate-700">
-                <span>Saturday</span>
-                <span className="font-medium">10am-5pm</span>
+                <span>Sunday</span>
+                <span className="font-medium">12pm-5pm</span>
               </div>
               <p className="text-xs text-slate-600 mt-2 italic leading-snug">
-                Closed Sun &amp; Mon? Call <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">{CONTACT.phone}</a> anytime &mdash; we'll open by appointment for you!
+                Mon-Wed by appointment &mdash; call <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">{CONTACT.phone}</a> to set up an appointment!
               </p>
             </div>
           </div>

@@ -33,6 +33,7 @@ const BrochurePage = lazy(() => import('./pages/BrochurePage'));
 const HoursPage = lazy(() => import('./pages/HoursPage'));
 const ChemicalsPage = lazy(() => import('./pages/ChemicalsPage'));
 const MembershipPage = lazy(() => import('./pages/MembershipPage'));
+const NaturalRockSpasPage = lazy(() => import('./pages/NaturalRockSpasPage'));
 
 import './App.css';
 
@@ -75,6 +76,7 @@ function App() {
                 <Route path="/hot-tubs" element={<HotTubsPage />} />
                 <Route path="/grand-river-spas" element={<GrandRiverPage />} />
                 <Route path="/dynasty-spas" element={<DynastySpasPage />} />
+                <Route path="/natural-rock-spas" element={<NaturalRockSpasPage />} />
                 <Route path="/swim-spas" element={<SwimSpasPage />} />
                 <Route path="/saunas" element={<SaunasPage />} />
                 <Route path="/cold-plunges" element={<ColdPlungesPage />} />

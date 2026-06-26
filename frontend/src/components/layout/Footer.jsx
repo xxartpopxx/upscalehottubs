@@ -75,7 +75,7 @@ const Footer = () => {
               {[
                 { name: 'Grand River Spas', href: '/grand-river-spas', external: false },
                 { name: 'Dynasty Spas', href: '/dynasty-spas', external: false },
-                { name: 'Natural Rock Spas', href: 'https://naturalrockspas.com/', external: true },
+                { name: 'Natural Rock Spas', href: '/natural-rock-spas', external: false },
                 { name: 'Saunas', href: '/saunas', external: false },
                 { name: 'Swim Spas', href: '/swim-spas', external: false },
                 { name: 'Cold Plunges', href: '/cold-plunges', external: false }

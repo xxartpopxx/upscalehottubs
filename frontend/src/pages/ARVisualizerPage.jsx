@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Camera, RotateCcw, ChevronLeft, Smartphone, Info, ZoomIn, ZoomOut, Move, Check, X as CloseIcon, ImageIcon, Upload } from 'lucide-react';
@@ -15,6 +15,9 @@ const ALL_PRODUCTS = [
 ].sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
 
 const ARVisualizerPage = () => {
+  const [searchParams] = useSearchParams();
+  const preselectedProductId = searchParams.get('product');
+  
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isARActive, setIsARActive] = useState(false);
   const [arError, setArError] = useState(null);
@@ -29,6 +32,26 @@ const ARVisualizerPage = () => {
   const streamRef = useRef(null);
   const fileInputRef = useRef(null);
   const containerRef = useRef(null);
+  const productListRef = useRef(null);
+
+  // Preselect product from URL query param
+  useEffect(() => {
+    if (preselectedProductId) {
+      const found = ALL_PRODUCTS.find(p => p.id === preselectedProductId);
+      if (found) {
+        setSelectedProduct(found);
+        setShowInstructions(false);
+        // Scroll product into view in the list
+        setTimeout(() => {
+          const el = document.querySelector(`[data-ar-product-id="${found.id}"]`);
+          if (el && productListRef.current) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 300);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preselectedProductId]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -234,10 +257,11 @@ const ARVisualizerPage = () => {
                   1. Select a Product
                 </h2>
                 
-                <div className="space-y-2 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
-                  {ALL_PRODUCTS.slice(0, 20).map((product) => (
+                <div ref={productListRef} className="space-y-2 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+                  {ALL_PRODUCTS.map((product) => (
                     <button
                       key={product.id}
+                      data-ar-product-id={product.id}
                       onClick={() => handleProductSelect(product)}
                       className={`w-full text-left p-3 rounded-lg transition-all ${
                         selectedProduct?.id === product.id

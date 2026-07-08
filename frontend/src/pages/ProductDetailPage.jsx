@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, GitCompare } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, GitCompare, Camera, Move, Maximize2 } from 'lucide-react';
 import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_EXTRAS, VIKING_SPAS_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 
@@ -755,6 +755,75 @@ const ProductDetailPage = () => {
               )}
             </div>
           </div>
+          
+          {/* AR Visualizer CTA - See it in Your Space */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-6 md:mb-10"
+            data-testid="ar-visualizer-cta"
+          >
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-[#0A1628] via-[#122b4f] to-[#0A1628] border border-[#D4AF37]/30 shadow-xl">
+              {/* Decorative background */}
+              <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full bg-[#D4AF37] blur-3xl" />
+                <div className="absolute -bottom-10 -left-10 w-64 h-64 rounded-full bg-[#B91C1C] blur-3xl" />
+              </div>
+              
+              <div className="relative p-6 md:p-8 grid md:grid-cols-12 gap-6 items-center">
+                {/* Icon + Product Preview */}
+                <div className="md:col-span-3 flex justify-center md:justify-start">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-[#D4AF37]/20 rounded-full blur-2xl" />
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                      <img
+                        src={product.images?.primary}
+                        alt={product.name}
+                        className="w-24 h-24 md:w-32 md:h-32 object-contain"
+                        onError={(e) => { e.target.src = ASSETS.logo; }}
+                      />
+                      <div className="absolute -top-2 -right-2 bg-[#B91C1C] text-white p-2 rounded-full shadow-lg">
+                        <Camera size={18} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Text Content */}
+                <div className="md:col-span-6 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#D4AF37] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                    <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse" />
+                    New — AR Technology
+                  </div>
+                  <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-white mb-2">
+                    See This {isSwimSpa ? 'Swim Spa' : isAnySauna ? 'Sauna' : product.category === 'coldplunge' || product?.brand === 'Icebound' ? 'Cold Plunge' : 'Hot Tub'} in Your Space
+                  </h3>
+                  <p className="text-white/70 text-sm md:text-base mb-4">
+                    Use our Augmented Reality visualizer to place the <span className="text-white font-semibold">{product.name}</span> right in your backyard or patio. Upload a photo or use your camera — resize, reposition, and picture it perfectly before you buy.
+                  </p>
+                  <div className="flex flex-wrap gap-3 justify-center md:justify-start text-xs text-white/60">
+                    <span className="flex items-center gap-1.5"><Camera size={14} className="text-[#D4AF37]" /> Live Camera</span>
+                    <span className="flex items-center gap-1.5"><Move size={14} className="text-[#D4AF37]" /> Drag &amp; Drop</span>
+                    <span className="flex items-center gap-1.5"><Maximize2 size={14} className="text-[#D4AF37]" /> Resize to Scale</span>
+                  </div>
+                </div>
+                
+                {/* CTA Button */}
+                <div className="md:col-span-3 flex justify-center md:justify-end">
+                  <Link
+                    to={`/ar-visualizer?product=${product.id}`}
+                    className="group inline-flex items-center justify-center gap-2 bg-[#B91C1C] hover:bg-red-700 text-white font-bold uppercase tracking-wide px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-105 w-full md:w-auto"
+                    data-testid="ar-visualizer-button"
+                  >
+                    <Camera size={20} />
+                    <span>Visualize in AR</span>
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
           
           {/* Full Specifications Section (Grand River & Dynasty) */}
           {(isGrandRiver || isDynasty) && !isSwimSpa && product.fullSpecs && (

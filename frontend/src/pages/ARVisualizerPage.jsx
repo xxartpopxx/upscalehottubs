@@ -4,7 +4,19 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Camera, RotateCcw, ChevronLeft, Smartphone, Info, ZoomIn, ZoomOut, Move, Check, X as CloseIcon, ImageIcon, Upload } from 'lucide-react';
 import { HOT_TUBS, SWIM_SPAS, SAUNAS, COLD_PLUNGES } from '../data/products';
+import { NATURAL_ROCK_ALL } from '../data/naturalRockSpas';
 import { ASSETS } from '../data/constants';
+
+// Normalize Natural Rock Spa products so they match the shape used by AR page
+// (they only have `image`, not `images.primary`).
+const NATURAL_ROCK_FOR_AR = NATURAL_ROCK_ALL.map((p) => ({
+  ...p,
+  category: 'Natural Rock Spa',
+  images: {
+    primary: p.image,
+    gallery: p.gallery || [p.image],
+  },
+}));
 
 // Combine all products for selection
 const ALL_PRODUCTS = [
@@ -12,6 +24,7 @@ const ALL_PRODUCTS = [
   ...SWIM_SPAS.map(p => ({ ...p, category: 'Swim Spa' })),
   ...SAUNAS.map(p => ({ ...p, category: 'Sauna' })),
   ...COLD_PLUNGES.map(p => ({ ...p, category: 'Cold Plunge' })),
+  ...NATURAL_ROCK_FOR_AR,
 ].sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
 
 const ARVisualizerPage = () => {

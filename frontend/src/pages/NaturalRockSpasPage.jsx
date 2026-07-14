@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { X, Phone, ChevronLeft, ChevronRight, Mountain, Check } from 'lucide-react';
+import { X, Phone, ChevronLeft, ChevronRight, Mountain, Check, Camera, Move, Maximize2, ArrowRight } from 'lucide-react';
 import {
   NATURAL_ROCK_ALL,
   NATURAL_ROCK_CATEGORIES,
@@ -165,6 +165,37 @@ const ProductModal = ({ product, onClose }) => {
                 </div>
               )}
 
+              {/* AR Visualizer CTA — See This Natural Rock Spa in Your Space */}
+              <div className="mb-4 mt-2 overflow-hidden rounded-lg bg-gradient-to-r from-[#0A1628] via-[#122b4f] to-[#0A1628] border border-[#D4AF37]/30 shadow-lg" data-testid="nrs-ar-cta">
+                <div className="p-4 md:p-5">
+                  <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#D4AF37] px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-2">
+                    <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse" />
+                    New — AR Technology
+                  </div>
+                  <h4 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-white mb-1">
+                    See The {product.name} In Your Space
+                  </h4>
+                  <p className="text-white/70 text-xs md:text-sm mb-3">
+                    Use our AR visualizer to place the <span className="text-white font-semibold">{product.name}</span> right in your backyard or patio. Upload a photo or use your camera — resize, reposition, and picture it perfectly before you buy.
+                  </p>
+                  <div className="flex flex-wrap gap-3 text-[11px] text-white/60 mb-3">
+                    <span className="flex items-center gap-1"><Camera size={12} className="text-[#D4AF37]" /> Live Camera</span>
+                    <span className="flex items-center gap-1"><Move size={12} className="text-[#D4AF37]" /> Drag &amp; Drop</span>
+                    <span className="flex items-center gap-1"><Maximize2 size={12} className="text-[#D4AF37]" /> Resize to Scale</span>
+                  </div>
+                  <Link
+                    to={`/ar-visualizer?product=${product.id}`}
+                    onClick={onClose}
+                    className="group inline-flex items-center justify-center gap-2 bg-[#B91C1C] hover:bg-red-700 text-white font-bold uppercase tracking-wide text-sm px-5 py-2.5 rounded shadow transition-all hover:scale-[1.02]"
+                    data-testid={`nrs-ar-button-${product.id}`}
+                  >
+                    <Camera size={16} />
+                    <span>Visualize in AR</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+
               {/* CTA */}
               <div className="mt-6 pt-6 border-t border-slate-200 space-y-3">
                 <p className="text-xs text-slate-500 italic">
@@ -224,6 +255,16 @@ const ProductCard = ({ product, onClick }) => (
       >
         View Details
       </button>
+      <Link
+        to={`/ar-visualizer?product=${product.id}`}
+        onClick={(e) => e.stopPropagation()}
+        className="mt-2 w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0A1628] to-[#122b4f] border border-[#D4AF37]/40 text-white py-2 px-3 font-bold uppercase tracking-wider text-xs hover:from-[#B91C1C] hover:to-[#B91C1C] transition-colors"
+        data-testid={`nrs-card-ar-${product.id}`}
+        aria-label={`Visualize the ${product.name} in AR`}
+      >
+        <Camera size={14} className="text-[#D4AF37]" />
+        <span>Visualize in AR</span>
+      </Link>
     </div>
   </motion.div>
 );

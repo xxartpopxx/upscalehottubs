@@ -420,8 +420,7 @@ const WellnessPage = () => {
             Start Your Wellness Journey Today
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Visit our showroom and experience the benefits of hydrotherapy firsthand with a complimentary "Wet Test." 
-            We have robes, towels, and slippers ready for you!
+            Ready to experience the benefits of hydrotherapy at home? We&apos;re online-only with factory-direct pricing and our own team still delivers, installs, and services every unit. Call us with any questions — we&apos;re happy to help you pick the right model.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

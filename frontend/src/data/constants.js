@@ -36,18 +36,17 @@ export const ASSETS = {
 export const CONTACT = {
   phone: '(864) 837-0155',
   email: 'info@upstatehottubs.com',
-  address: '1004 West Georgia Rd, Simpsonville, SC 29680',
-  hours: 'Monday–Wednesday by appointment · Thursday–Saturday 10am-6pm · Sunday 12pm-5pm',
-  hoursDetailed: {
-    monday: 'By Appointment · Call (864) 837-0155',
-    tuesday: 'By Appointment · Call (864) 837-0155',
-    wednesday: 'By Appointment · Call (864) 837-0155',
-    thursday: '10am-6pm',
-    friday: '10am-6pm',
-    saturday: '10am-6pm',
-    sunday: '12pm-5pm',
-  },
+  // Online-only — no physical showroom right now while we find a new warehouse.
+  onlineOnly: true,
   serviceAreas: ['Fountain Inn, SC', 'Mauldin, SC', 'Spartanburg, SC', 'Anderson, SC', 'Greenville, SC', 'Greer, SC', 'Five Forks, SC', 'Simpsonville, SC'],
+};
+
+// Announcement messaging shown across the site while we transition to online-only
+export const ANNOUNCEMENT = {
+  short: "Now online only — factory-direct pricing. We still deliver, install & service.",
+  headline: "We've Moved Online — and You Save Because of It.",
+  paragraph:
+    "A heads-up for our customers: our showroom lease recently came to an end (a building issue on the property let us out early), and while we search for our new warehouse home, Upstate Hot Tubs is now 100% online. With no showroom and no retail overhead, we're passing those savings straight to you with factory-direct pricing. You order online or over the phone, and our own team still handles delivery, installation, and service — just like always. Same people, same service — better prices.",
 };
 
 export const SOCIAL_LINKS = {

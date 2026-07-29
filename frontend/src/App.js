@@ -30,7 +30,6 @@ const BalneotherapyPage = lazy(() => import('./pages/BalneotherapyPage'));
 const JetsPage = lazy(() => import('./pages/JetsPage'));
 const ARVisualizerPage = lazy(() => import('./pages/ARVisualizerPage'));
 const BrochurePage = lazy(() => import('./pages/BrochurePage'));
-const HoursPage = lazy(() => import('./pages/HoursPage'));
 const ChemicalsPage = lazy(() => import('./pages/ChemicalsPage'));
 const MembershipPage = lazy(() => import('./pages/MembershipPage'));
 const NaturalRockSpasPage = lazy(() => import('./pages/NaturalRockSpasPage'));
@@ -101,9 +100,6 @@ function App() {
                 
                 {/* Contact */}
                 <Route path="/contact" element={<ContactPage />} />
-                
-                {/* Hours */}
-                <Route path="/hours" element={<HoursPage />} />
                 
                 {/* AR Visualizer */}
                 <Route path="/ar-visualizer" element={<ARVisualizerPage />} />

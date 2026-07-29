@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ChevronRight, ChevronLeft, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun, Award, Gift } from 'lucide-react';
-import { ASSETS, CONTACT } from '../data/constants';
+import { ChevronRight, ChevronLeft, Shield, Heart, Phone, Mail, X, Star, Truck, Camera, Smartphone, Plus, Sparkles, BookOpen, MapPin, FileText, Users, Droplets, Moon, Activity, ThermometerSun, Award, Gift, Wrench, Tag, PackageCheck, ShoppingBag } from 'lucide-react';
+import { ASSETS, CONTACT, ANNOUNCEMENT } from '../data/constants';
 import { HOT_TUBS, SWIM_SPAS, COLD_PLUNGES, SAUNAS } from '../data/products';
 import GoogleReviewsSection from '../components/GoogleReviewsSection';
 import WellnessExpertsBanner from '../components/WellnessExpertsBanner';
@@ -92,81 +92,258 @@ const ALL_PRODUCTS = [
   ...sortByPrice(COLD_PLUNGES),
 ];
 
-// Wet Test Popup Component - White background with hot tub image
-const WetTestPopup = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-  
-  return (
-    <AnimatePresence>
-      <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        exit={{ opacity: 0 }} 
-        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70" 
-        onClick={onClose}
+// Full-width Online-Only Announcement Section
+const AnnouncementSection = () => (
+  <section className="py-10 md:py-14" style={{
+    background: 'linear-gradient(135deg, #B91C1C 0%, #7F1D1D 50%, #0A1628 100%)'
+  }} data-testid="announcement-section">
+    <div className="max-w-5xl mx-auto px-4 text-center text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
       >
-        <motion.div 
-          initial={{ scale: 0.8, opacity: 0, y: 50 }} 
-          animate={{ scale: 1, opacity: 1, y: 0 }} 
-          exit={{ scale: 0.8, opacity: 0 }} 
-          transition={{ type: "spring", duration: 0.5 }} 
-          className="bg-white max-w-lg w-full shadow-2xl relative overflow-hidden rounded-lg" 
-          onClick={e => e.stopPropagation()}
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full mb-4">
+          <MapPin size={16} className="text-[#D4AF37]" />
+          <span className="text-sm font-semibold uppercase tracking-wider text-[#D4AF37]">Announcement</span>
+        </div>
+        <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight mb-4">
+          {ANNOUNCEMENT.headline}
+        </h2>
+        <p className="text-base md:text-lg text-white/85 leading-relaxed mb-6 max-w-3xl mx-auto">
+          {ANNOUNCEMENT.paragraph}
+        </p>
+        <p className="text-lg md:text-xl font-semibold text-[#D4AF37] mb-6">
+          Questions or ready to order?
+        </p>
+        <a
+          href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
+          className="inline-flex items-center gap-2 bg-white text-[#B91C1C] px-8 py-4 font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-md shadow-lg"
         >
-          <div className="h-2 bg-[#B91C1C]" />
-          <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-slate-200 p-2 z-10 bg-black/30 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close popup">
-            <X size={24} />
-          </button>
-          
-          {/* Hot Tub Image - Only load when popup is visible */}
-          <div className="relative h-48 overflow-hidden">
-            <img 
-              src="/images/popup-lady-relaxing-optimized.jpg" 
-              alt="Woman relaxing in hot tub" 
-              width="600"
-              height="225"
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-          </div>
-          
-          <div className="p-6 pt-2 text-center relative">
-            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-              <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-black uppercase text-[#0A1628] mb-2">
-                Come in for a <span className="text-[#B91C1C]">Wet Test</span>
-              </h2>
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
-                <Star className="text-[#D4AF37] fill-[#D4AF37]" size={18} />
-              </div>
-            </motion.div>
-            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-slate-600 text-base mb-5">
-              Try before you buy! Bring your suits — we have robes, slippers, and towels. Experience the relaxation today!
-            </motion.p>
-            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-3">
-              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-primary w-full flex items-center justify-center gap-2 text-base">
-                <Phone size={18} /> Call {CONTACT.phone}
-              </a>
-              <Link to="/contact" className="btn-secondary w-full flex items-center justify-center gap-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white">
-                <Mail size={18} /> Schedule Your Visit
-              </Link>
-            </motion.div>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-slate-400 text-sm mt-4">
-              Visit our showrooms in Simpsonville, SC & Naples, FL
-            </motion.p>
-          </div>
-          <div className="h-2 bg-[#B91C1C]" />
-        </motion.div>
+          <Phone size={22} /> Call {CONTACT.phone}
+        </a>
       </motion.div>
-    </AnimatePresence>
+    </div>
+  </section>
+);
+
+// How It Works — 3 simple steps
+const HowItWorksSection = () => {
+  const steps = [
+    {
+      icon: ShoppingBag,
+      title: 'Pick Your Model',
+      desc: 'Browse online or call and we\'ll help you choose the right hot tub, swim spa, or sauna for your space and budget.',
+    },
+    {
+      icon: Truck,
+      title: 'We Deliver to Your Door',
+      desc: 'Your unit ships factory-direct, right to your property — no showroom markup along the way.',
+    },
+    {
+      icon: PackageCheck,
+      title: 'We Install &amp; Stand Behind It',
+      desc: 'Our own team sets it up, gets it running, walks you through it, and is here for service down the road.',
+    },
+  ];
+
+  return (
+    <section className="py-16 md:py-20" style={lightGradientBg} data-testid="how-it-works-section">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <div className="flex justify-center mb-6">
+            <div className="flex items-center gap-2">
+              <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+              <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
+              <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+            </div>
+          </div>
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-3">
+            Buying From Us is <span className="text-[#B91C1C]">Simple</span>
+          </h2>
+          <p className="text-lg md:text-xl text-slate-600">Same trusted team, now with online-only savings.</p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {steps.map((step, idx) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="relative bg-white rounded-2xl p-8 shadow-lg border-t-4 border-[#B91C1C]"
+            >
+              {/* Step number badge */}
+              <div className="absolute -top-5 left-8 bg-[#0A1628] text-white w-10 h-10 rounded-full flex items-center justify-center font-['Barlow_Condensed'] text-xl font-bold shadow-lg">
+                {idx + 1}
+              </div>
+              <div className="mb-4 mt-2">
+                <step.icon className="w-12 h-12 text-[#B91C1C]" />
+              </div>
+              <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] mb-3">
+                {step.title.includes('Install') ? (
+                  <>We Install &amp; Stand Behind It</>
+                ) : (
+                  step.title
+                )}
+              </h3>
+              <p className="text-slate-600 leading-relaxed">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
+// Short FAQ Section
+const FAQSection = () => {
+  const faqs = [
+    {
+      q: 'Do you still have a showroom?',
+      a: "Not right now — we're online-only while we set up a new warehouse. That's actually why our prices are lower: no showroom overhead. You can order online or by phone anytime.",
+    },
+    {
+      q: 'Do you really deliver and install, or just ship it?',
+      a: 'We deliver and install. Our own crew brings your unit, sets it in place, gets it running, and shows you how everything works.',
+    },
+    {
+      q: 'How is the price lower than before?',
+      a: 'No showroom means no retail overhead baked into the price — we pass that straight to you as factory-direct pricing.',
+    },
+    {
+      q: 'What about service and warranty?',
+      a: 'Same local team as always. Warranty support, maintenance, and repairs all go through us.',
+    },
+    {
+      q: 'How long does delivery take?',
+      a: 'Timing depends on the model you choose. Call us for current lead times on the unit you want.',
+    },
+  ];
+
+  const [openIdx, setOpenIdx] = useState(0);
+
+  return (
+    <section className="py-16 md:py-20" style={{
+      background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 40%, #d0e8f7 100%)'
+    }} data-testid="faq-section">
+      <div className="max-w-4xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-[#0A1628] mb-3">
+            Common <span className="text-[#B91C1C]">Questions</span>
+          </h2>
+          <p className="text-lg text-slate-600">Everything you need to know about ordering online.</p>
+        </motion.div>
+
+        <div className="space-y-3">
+          {faqs.map((faq, idx) => {
+            const isOpen = openIdx === idx;
+            return (
+              <motion.div
+                key={faq.q}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="bg-white rounded-lg shadow-md overflow-hidden border border-slate-100"
+              >
+                <button
+                  onClick={() => setOpenIdx(isOpen ? -1 : idx)}
+                  className="w-full text-left px-5 md:px-6 py-4 flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
+                  aria-expanded={isOpen}
+                  data-testid={`faq-toggle-${idx}`}
+                >
+                  <span className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold text-[#0A1628] uppercase">
+                    {faq.q}
+                  </span>
+                  <ChevronRight
+                    size={22}
+                    className={`text-[#B91C1C] flex-shrink-0 transition-transform ${isOpen ? 'rotate-90' : ''}`}
+                  />
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-5 md:px-6 pb-5 text-slate-700 leading-relaxed">{faq.a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <div className="text-center mt-10">
+          <p className="text-slate-600 mb-3">Have another question?</p>
+          <a
+            href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
+            className="btn-primary inline-flex items-center gap-2 text-lg"
+          >
+            <Phone size={20} /> Call {CONTACT.phone}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Final CTA Section
+const FinalCTASection = () => (
+  <section className="py-16 md:py-20 bg-gradient-to-r from-[#0A1628] via-[#1a3352] to-[#0A1628]" data-testid="final-cta-section">
+    <div className="max-w-5xl mx-auto px-4 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white mb-4">
+          Ready for <span className="text-[#D4AF37]">Factory-Direct Pricing</span>?
+        </h2>
+        <p className="text-lg md:text-xl text-white/85 mb-8 max-w-3xl mx-auto">
+          Same trusted Upstate Hot Tubs team, now with online-only savings. Get the unit you want — delivered, installed, and serviced by us.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            to="/hot-tubs"
+            className="bg-[#B91C1C] hover:bg-[#991B1B] text-white inline-flex items-center justify-center gap-2 text-lg font-bold py-4 px-10 uppercase tracking-wider transition-colors rounded-md"
+          >
+            Shop Now <ChevronRight size={22} />
+          </Link>
+          <a
+            href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
+            className="bg-white text-[#0A1628] inline-flex items-center justify-center gap-2 text-lg font-bold py-4 px-10 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-md"
+          >
+            <Phone size={20} /> Call {CONTACT.phone}
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+// Wet test popup removed — showroom closed while transitioning to online-only.
+const WetTestPopup = ({ isOpen, onClose }) => null;
+
 // NEW Hero Section - Video without text overlay, text below - Gradient background
 const HeroSection = () => (
-  <section className="relative pt-24 md:pt-32 lg:pt-40" style={{
+  <section className="relative pt-28 md:pt-36 lg:pt-44" style={{
     background: 'linear-gradient(180deg, #e8f4fc 0%, #d0e8f7 30%, #b8dcf2 60%, #a0d0ed 100%)',
     backgroundImage: `
       linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(200,230,250,0.7) 50%, rgba(160,210,240,0.8) 100%),
@@ -253,33 +430,34 @@ const HeroSection = () => (
           </div>
           
           <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">
-            <span className="whitespace-nowrap">Live Your{' '}
+            <span className="text-[#0A1628]">Factory-Direct Hot Tubs &amp; Saunas</span>
+            <br />
+            <span className="whitespace-nowrap">Delivered &amp; Installed by the{' '}
             <span 
               className="text-[#B91C1C]"
               style={{ 
                 textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
               }}
             >
-              Healthiest Life
+              Team You Trust
             </span></span>
-            <br />
-            <span className="text-[#0A1628]">While Enjoying a Vacation</span>
-            <br />
-            <span className="text-[#0A1628]">Everyday at Home</span>
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl font-medium mb-6 max-w-4xl mx-auto text-[#0A1628]/80">
-            The Best Hot Tubs & Swim Spas Store in Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC
+            Now online-only — factory-direct pricing with the same trusted delivery, install &amp; service crew you already know. Serving Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Link to="/hot-tubs" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4">
-              Explore All Models <ChevronRight size={22} />
+              Shop Hot Tubs &amp; Saunas <ChevronRight size={22} />
             </Link>
+            <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="btn-secondary inline-flex items-center justify-center gap-2 text-lg px-8 py-4 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white">
+              <Phone size={20} /> Call {CONTACT.phone}
+            </a>
           </div>
           
-          <p className="text-lg md:text-xl font-bold text-[#B91C1C]">
-            Setup & Installation Included · Shipping Paid Separately by Customer
+          <p className="text-base md:text-lg font-bold text-[#B91C1C]">
+            Locally owned · Online-only savings · Our own delivery &amp; service team
           </p>
         </motion.div>
       </div>
@@ -485,9 +663,9 @@ const FreeItemsSection = () => {
   );
 };
 
-// NEW Try Before You Buy - Wet Test Section - Filled with logo, images, big text
-const WetTestSection = () => (
-  <section style={lightGradientBg} data-testid="wet-test-section">
+// NEW No Showroom. Lower Prices. Same Service. Section (replaces the old Wet Test section)
+const NoShowroomSection = () => (
+  <section style={lightGradientBg} data-testid="no-showroom-section">
     <div className="flex flex-col md:flex-row items-stretch">
       {/* Video Side - Full bleed - Uses LazyVideo for performance */}
       <motion.div
@@ -505,8 +683,8 @@ const WetTestSection = () => (
           height="480"
         />
       </motion.div>
-      
-      {/* Content Side - Packed with logo, big text, images */}
+
+      {/* Content Side */}
       <motion.div
         initial={isMobile ? false : { opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -514,7 +692,7 @@ const WetTestSection = () => (
         className="md:w-1/2 bg-[#0A1628] text-white p-6 md:p-8 lg:p-10 flex flex-col justify-between"
         {...mobileMotionProps}
       >
-        {/* BIGGER Family Owned Section with Red White Blue Theme */}
+        {/* Family Owned + American Made */}
         <div className="flex items-center gap-4 mb-6">
           <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs - Made in USA" width="120" height="120" loading="lazy" className="h-24 md:h-28 lg:h-32 object-contain" />
           <div>
@@ -524,7 +702,7 @@ const WetTestSection = () => (
             <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase">
               <span className="text-[#B91C1C]">American</span>{' '}
               <span className="text-white">Made</span>{' '}
-              <span className="text-[#1E40AF]">&</span>{' '}
+              <span className="text-[#1E40AF]">&amp;</span>{' '}
               <span className="text-[#B91C1C]">Proud</span>{' '}
               <span className="text-white">Of It</span>
             </h3>
@@ -533,51 +711,50 @@ const WetTestSection = () => (
 
         {/* Main heading */}
         <div className="border-l-4 border-[#B91C1C] pl-5 mb-4">
-          <h3 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none mb-1 text-white">
-            Try Before You Buy
+          <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none mb-1 text-white">
+            No Showroom.
           </h3>
-          <h3 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none text-[#B91C1C]">
-            "Wet Test"
+          <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none mb-1 text-[#B91C1C]">
+            Lower Prices.
+          </h3>
+          <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none text-white">
+            Same Service.
           </h3>
         </div>
-        
-        <p className="text-xl md:text-2xl lg:text-3xl mb-4 text-white/90">
-          Bring your suits — we have <span className="font-bold text-white">robes, slippers, and towels</span>. Try today!
+
+        <p className="text-lg md:text-xl mb-4 text-white/90 leading-relaxed">
+          For years we ran a showroom — and like every showroom, the cost of that building was baked into every price. Now that we&apos;ve gone online-only, that overhead is gone, and we&apos;re handing the savings straight to you.
         </p>
-        
-        <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-3 text-white">
-          Why <span className="text-[#B91C1C]">Upstate Hot Tubs</span>?
-        </h2>
-        
-        <ul className="space-y-2 mb-5 text-lg md:text-xl lg:text-2xl">
+
+        <p className="text-lg md:text-xl mb-5 text-white/80 leading-relaxed">
+          You get true <span className="font-bold text-[#D4AF37]">factory-direct pricing</span> on hot tubs, swim spas, and saunas. But you don&apos;t lose the part that matters most: we still deliver, install, and service everything ourselves.
+        </p>
+
+        <ul className="space-y-2 mb-6 text-base md:text-lg lg:text-xl">
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span><span className="font-bold text-[#D4AF37]">FREE</span> Installation & Set Up</span>
+            <span><span className="font-bold text-[#D4AF37]">Factory-direct pricing</span> — no showroom, no retail markup.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span><span className="font-bold text-[#D4AF37]">FREE</span> Cover, Cover Lifter, Steps & Chemicals · <span className="text-[#D4AF37] font-bold">$1,500 Value</span></span>
+            <span><span className="font-bold text-[#D4AF37]">Our own install crew</span> — not a random third-party contractor.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span className="font-bold text-white">In House Service Technicians</span>
+            <span><span className="font-bold text-[#D4AF37]">Real service after the sale</span> — warranty help, maintenance, and repairs from us.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span>Military & First Responder Discounts — <span className="font-bold text-[#D4AF37]">Thank You For Your Service!</span></span>
-          </li>
-          <li className="flex items-start gap-3 text-white/90">
-            <div className="w-3 h-3 bg-amber-400 rounded-full flex-shrink-0 mt-2" />
-            <span className="text-white/80 text-base md:text-lg italic">Shipping paid by customer · We install at your home once delivered</span>
+            <span><span className="font-bold text-[#D4AF37]">Talk to a real person</span> — call and get straight answers.</span>
           </li>
         </ul>
-        
+
         <div className="flex flex-wrap gap-3">
-          <Link to="/contact" className="bg-[#B91C1C] hover:bg-[#991B1B] text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
-            Schedule Wet Test <ChevronRight size={22} />
-          </Link>
-          <Link to="/about" className="border-2 border-white/50 hover:border-white text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
-            Learn About Us <ChevronRight size={22} />
+          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="bg-[#B91C1C] hover:bg-[#991B1B] text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
+            <Phone size={20} /> Call {CONTACT.phone}
+          </a>
+          <Link to="/hot-tubs" className="border-2 border-white/50 hover:border-white text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
+            Shop Now <ChevronRight size={22} />
           </Link>
         </div>
       </motion.div>
@@ -585,31 +762,7 @@ const WetTestSection = () => (
   </section>
 );
 
-// NEW Prominent Wet Test Banner
-const WetTestBanner = () => (
-  <section className="py-16 md:py-20 bg-gradient-to-r from-[#B91C1C] to-[#991B1B] text-white">
-    <div className="max-w-6xl mx-auto px-4 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase mb-4">
-          Try Before You Buy
-        </h2>
-        <h3 className="font-['Barlow_Condensed'] text-3xl md:text-5xl font-bold uppercase mb-6 text-white/90">
-          "Wet Test"
-        </h3>
-        <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl mx-auto">
-          Bring your suits — we have <span className="font-bold">robes, slippers, and towels</span>. Try today!
-        </p>
-        <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-[#B91C1C] px-10 py-5 font-['Barlow_Condensed'] text-xl font-bold uppercase tracking-wider hover:bg-slate-100 transition-all">
-          Schedule Your Wet Test <ChevronRight size={24} />
-        </Link>
-      </motion.div>
-    </div>
-  </section>
-);
+// WetTestBanner removed — showroom currently unavailable while transitioning to online-only.
 
 // NEW Resource Cards Section (like File 4 - 3 large cards) - Updated with Hot Tub/Sauna Images
 const ResourceCardsSection = () => {
@@ -628,8 +781,14 @@ const ResourceCardsSection = () => {
       title: 'Visit Our Showroom',
       image: SAUNAS[0]?.images?.primary || 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2024/06/Valhalla-Overhead-square-1.jpg?lossy=2&strip=1&webp=1',
       link: '/contact',
+      hidden: true,
     },
-  ];
+    {
+      title: 'Call Our Team',
+      image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&h=400&fit=crop',
+      link: '/contact',
+    },
+  ].filter(c => !c.hidden);
 
   return (
     <section className="py-12" style={lightGradientBg}>
@@ -1366,73 +1525,70 @@ const ComparisonSection = () => {
 
 // Home Page Component - Rearranged sections
 const HomePage = () => {
-  const [showPopup, setShowPopup] = useState(false);
-  
-  useEffect(() => {
-    const hasSeenPopup = sessionStorage.getItem('wetTestPopupSeen');
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => { 
-        setShowPopup(true); 
-        sessionStorage.setItem('wetTestPopupSeen', 'true'); 
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
   return (
     <>
       <Helmet>
-        <title>Upstate Hot Tubs | American Made Hot Tubs & Swim Spas | South Carolina</title>
-        <meta name="description" content="Live your healthiest life while enjoying a vacation everyday at home. American made hot tubs, swim spas, saunas & cold plunges from Grand River Spas and Dynasty Spas. Serving Greenville, Simpsonville SC and the Upstate." />
-        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, American made, Grand River Spas, Dynasty Spas, Greenville SC, Simpsonville SC, Upstate" />
-        <meta property="og:title" content="Upstate Hot Tubs | American Made Hot Tubs & Swim Spas" />
-        <meta property="og:description" content="Live your healthiest life while enjoying a vacation everyday at home. American made and proud of it!" />
+        <title>Factory-Direct Hot Tubs &amp; Saunas in South Carolina | Delivered &amp; Installed | Upstate Hot Tubs</title>
+        <meta name="description" content={`Upstate Hot Tubs is now online-only with factory-direct pricing. Hot tubs, swim spas & saunas delivered, installed, and serviced by our own local team. Call ${CONTACT.phone}.`} />
+        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, factory direct, online only, American made, Grand River Spas, Dynasty Spas, Greenville SC, Simpsonville SC, Upstate" />
+        <meta property="og:title" content="Factory-Direct Hot Tubs &amp; Saunas | Upstate Hot Tubs" />
+        <meta property="og:description" content="Now online-only with factory-direct pricing. Same trusted team — we still deliver, install, and service every unit." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.upstatehottubs.com/" />
       </Helmet>
       
-      <WetTestPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
-      
       {/* 1. Hero Section - Video */}
       <HeroSection />
       
-      {/* 2. Trust Badges */}
+      {/* 2. Full Online-Only Announcement */}
+      <AnnouncementSection />
+      
+      {/* 3. Trust Badges */}
       <TrustBadgesSection />
       
-      {/* 2b. Wellness Experts Banner - Health-Focused CTA */}
+      {/* 4. Wellness Experts Banner - Health-Focused CTA */}
       <WellnessExpertsBanner variant="full" />
       
-      {/* 3. Expand Your Wellness Journey (Hot Tubs, Saunas, Cold Plunges, Swim Spas) */}
+      {/* 5. Expand Your Wellness Journey (Hot Tubs, Saunas, Cold Plunges, Swim Spas) */}
       <ProductCollectionSection />
       
-      {/* 4. Why a Hot Tub - Side by Side with Image */}
+      {/* 6. Why a Hot Tub - Side by Side with Image */}
       <WhyHotTubSection />
       
-      {/* 5. Why Upstate Hot Tubs - Wet Test Section with Video */}
-      <WetTestSection />
+      {/* 7. No Showroom. Lower Prices. Same Service. (replaces old Wet Test section) */}
+      <NoShowroomSection />
       
-      {/* 6. Shop All Models Carousel */}
+      {/* 8. How It Works - 3 simple steps */}
+      <HowItWorksSection />
+      
+      {/* 9. Shop All Models Carousel */}
       <ShopAllModelsSection />
       
-      {/* 7. Best Warranty Section with links */}
+      {/* 10. Best Warranty Section with links */}
       <BestWarrantySection />
       
-      {/* 8. Free Items Section */}
+      {/* 11. Free Items Section */}
       <FreeItemsSection />
       
-      {/* 9. The Collection (Grand River & Dynasty) */}
+      {/* 12. The Collection (Grand River & Dynasty) */}
       <LocationCollectionSection />
       
-      {/* 10. Product Comparison */}
+      {/* 13. Product Comparison */}
       <ComparisonSection />
       
-      {/* 11. Resource Cards */}
+      {/* 14. Resource Cards */}
       <ResourceCardsSection />
       
-      {/* 11b. Google Reviews */}
+      {/* 15. Google Reviews */}
       <GoogleReviewsSection />
       
-      {/* 12. AR Visualizer Section */}
+      {/* 16. FAQ */}
+      <FAQSection />
+      
+      {/* 17. Final CTA */}
+      <FinalCTASection />
+      
+      {/* 18. AR Visualizer Section */}
       <ARVisualizerSection />
     </>
   );

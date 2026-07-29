@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Menu, X, ChevronDown, Search } from 'lucide-react';
 import { ASSETS, CONTACT, SOCIAL_LINKS } from '../../data/constants';
+import AnnouncementBar from './AnnouncementBar';
 
 // Social Media Icons
 const FacebookIcon = ({ size = 16 }) => (
@@ -73,7 +74,10 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-3'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white'}`}>
+      {/* Site-wide announcement (online-only) */}
+      <AnnouncementBar />
+      <div className={`transition-all duration-300 ${scrolled ? 'py-2' : 'py-3'}`}>
       {/* Top Bar - Contact Info & Social Media */}
       <div className="hidden lg:block py-2">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-6">
@@ -120,7 +124,6 @@ const Header = () => {
           <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">
             <Phone size={14} /> {CONTACT.phone}
           </a>
-          <Link to="/hours" className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">Hours</Link>
           <Link to="/contact" className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">Contact</Link>
         </div>
       </div>
@@ -256,17 +259,6 @@ const Header = () => {
               Get a Brochure
             </Link>
 
-            {/* Hours Link */}
-            <Link 
-              to="/hours" 
-              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
-                location.pathname === '/hours' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
-              }`}
-              data-testid="nav-hours-link"
-            >
-              Hours
-            </Link>
-
             {/* Membership Link - Fire & Ice Society */}
             <Link 
               to="/membership" 
@@ -376,11 +368,8 @@ const Header = () => {
                   ))}
                 </div>
                 
-                {/* Contact & Hours */}
-                <Link to="/hours" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
-                  Hours
-                </Link>
-                <Link to="/membership" className="block px-4 py-3 font-semibold text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
+                {/* Contact & Membership */}
+                <Link to="/membership" className="block px-4 py-3 font-semibold text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
                   <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">Membership</span>
                 </Link>
                 <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
@@ -398,6 +387,7 @@ const Header = () => {
           )}
         </AnimatePresence>
       </nav>
+      </div>
     </header>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Phone, Mail, Instagram, Facebook, Youtube, Truck } from 'lucide-react';
 import { ASSETS, CONTACT, SOCIAL_LINKS } from '../../data/constants';
 
 const Footer = () => {
@@ -124,30 +124,21 @@ const Footer = () => {
               <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-slate-700 hover:text-[#B91C1C] text-sm">
                 <Mail size={16} className="text-[#B91C1C]" /> {CONTACT.email}
               </a>
-              <div className="flex items-start gap-3 text-slate-700 text-sm">
-                <MapPin size={16} className="text-[#B91C1C] flex-shrink-0 mt-1" /> {CONTACT.address}
-              </div>
             </div>
-            
-            {/* Store Hours */}
+
+            {/* Online-Only Note */}
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mt-6 mb-4 text-[#0A1628]">
-              <span className="flex items-center gap-2"><Clock size={18} className="text-[#B91C1C]" /> Hours</span>
+              <span className="flex items-center gap-2"><Truck size={18} className="text-[#B91C1C]" /> Now Online Only</span>
             </h3>
-            <div className="space-y-1 text-sm" data-testid="footer-hours">
-              <div className="flex justify-between text-slate-700">
-                <span>Mon-Wed</span>
-                <span className="font-bold text-amber-700">By Appointment</span>
-              </div>
-              <div className="flex justify-between text-slate-700">
-                <span>Thu-Sat</span>
-                <span className="font-medium">10am-6pm</span>
-              </div>
-              <div className="flex justify-between text-slate-700">
-                <span>Sunday</span>
-                <span className="font-medium">12pm-5pm</span>
-              </div>
-              <p className="text-xs text-slate-600 mt-2 italic leading-snug">
-                Mon-Wed by appointment &mdash; call <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">{CONTACT.phone}</a> to set up an appointment!
+            <div className="text-sm text-slate-700 leading-relaxed" data-testid="footer-online-only">
+              <p className="mb-2">
+                Our showroom lease has ended and we&apos;re searching for a new warehouse. For now, we&apos;re <span className="font-bold">100% online with factory-direct pricing</span>.
+              </p>
+              <p className="text-slate-600">
+                We still <span className="font-semibold text-[#0A1628]">deliver, install &amp; service</span> every unit ourselves. Questions?{' '}
+                <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">
+                  Call {CONTACT.phone}
+                </a>.
               </p>
             </div>
           </div>

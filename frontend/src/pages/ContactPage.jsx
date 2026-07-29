@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, Send, Truck, Wrench, Tag } from 'lucide-react';
 import { CONTACT } from '../data/constants';
 
 const ContactForm = () => {
@@ -148,7 +148,29 @@ const ContactPage = () => {
         >
           Contact Us
         </motion.h1>
-        <p className="text-xl text-slate-600 mb-12">We're here to help! Fill out the form below.</p>
+        <p className="text-xl text-slate-600 mb-4">We&apos;re here to help! Order online or over the phone — same trusted team.</p>
+
+        {/* Online-only banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="bg-white border-l-4 border-[#B91C1C] shadow-md p-6 mb-12"
+          data-testid="online-only-banner"
+        >
+          <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] mb-2">
+            We&apos;ve Moved <span className="text-[#B91C1C]">Online</span> — and You Save Because of It.
+          </h2>
+          <p className="text-slate-700 leading-relaxed">
+            Our showroom lease recently came to an end and while we search for our new warehouse home, Upstate Hot Tubs is now 100% online. With no showroom overhead, we&apos;re passing those savings straight to you with <span className="font-semibold">factory-direct pricing</span>. Our own team still handles <span className="font-semibold">delivery, installation, and service</span> — just like always.
+          </p>
+          <p className="text-slate-700 mt-3">
+            Questions or ready to order?{' '}
+            <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">
+              Call {CONTACT.phone}
+            </a>.
+          </p>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-12">
           <ContactForm />
@@ -163,58 +185,49 @@ const ContactPage = () => {
                 <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-slate-300 hover:text-white">
                   <Mail size={20} className="text-[#B91C1C]" /> {CONTACT.email}
                 </a>
-                <div className="flex items-start gap-3 text-slate-300">
-                  <MapPin size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" /> {CONTACT.address}
-                </div>
-                <div className="flex items-center gap-3 text-slate-300">
-                  <Clock size={20} className="text-[#B91C1C]" /> {CONTACT.hours}
-                </div>
+                <p className="text-slate-300 text-sm italic pt-2 border-t border-white/10">
+                  Call anytime with questions — we&apos;re happy to help you pick the right unit.
+                </p>
               </div>
             </div>
+
+            {/* What you still get */}
+            <div className="bg-white p-8 mb-8 shadow-md">
+              <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-4">Same Service. Better Prices.</h3>
+              <ul className="space-y-3 text-slate-700">
+                <li className="flex items-start gap-3">
+                  <Tag size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
+                  <span><span className="font-semibold">Factory-direct pricing</span> — no showroom, no retail markup.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Truck size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
+                  <span><span className="font-semibold">Our own install crew</span> — not a random third-party contractor.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Wrench size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
+                  <span><span className="font-semibold">Real service after the sale</span> — warranty help, maintenance, and repairs from us.</span>
+                </li>
+              </ul>
+            </div>
             
-            <div className="bg-slate-50 p-8 mb-8">
-              <h3 className="font-['Barlow_Condensed'] text-xl font-bold mb-4">Service Areas</h3>
+            <div className="bg-slate-50 p-8">
+              <h3 className="font-['Barlow_Condensed'] text-xl font-bold mb-4">Where We Deliver</h3>
+              <p className="text-sm text-slate-600 mb-4">We deliver and install throughout the Upstate and surrounding areas:</p>
               <div className="flex flex-wrap gap-2">
                 {CONTACT.serviceAreas.map(area => (
                   <span key={area} className="bg-white px-3 py-1 text-sm text-slate-600 border">{area}</span>
                 ))}
               </div>
+              <p className="text-sm text-slate-600 mt-4 italic">
+                Not sure if we reach you?{' '}
+                <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">
+                  Call {CONTACT.phone}
+                </a>{' '}
+                — if you&apos;re close, we&apos;ll make it work.
+              </p>
             </div>
           </div>
         </div>
-        
-        {/* Google Map */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true }} 
-          className="mt-12"
-        >
-          <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-6">Find Us</h2>
-          <div className="w-full h-[400px] bg-slate-100">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.5!2d-82.2573!3d34.7370!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88582b5c0a8b7f31%3A0x1234567890abcdef!2s1004%20W%20Georgia%20Rd%2C%20Simpsonville%2C%20SC%2029680!5e0!3m2!1sen!2sus!4v1234567890"
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Upstate Hot Tubs Location"
-              className="w-full h-full"
-            />
-          </div>
-          <div className="mt-4 text-center">
-            <a 
-              href="https://www.google.com/maps/dir/?api=1&destination=1004+W+Georgia+Rd+Simpsonville+SC+29680" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              <MapPin size={18} /> Get Directions
-            </a>
-          </div>
-        </motion.div>
       </div>
     </div>
   );

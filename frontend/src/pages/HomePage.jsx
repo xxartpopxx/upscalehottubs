@@ -142,7 +142,7 @@ const HowItWorksSection = () => {
     },
     {
       icon: PackageCheck,
-      title: 'We Install &amp; Stand Behind It',
+      title: 'We Install & Stand Behind It',
       desc: 'Our own team sets it up, gets it running, walks you through it, and is here for service down the road.',
     },
   ];
@@ -187,11 +187,7 @@ const HowItWorksSection = () => {
                 <step.icon className="w-12 h-12 text-[#B91C1C]" />
               </div>
               <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] mb-3">
-                {step.title.includes('Install') ? (
-                  <>We Install &amp; Stand Behind It</>
-                ) : (
-                  step.title
-                )}
+                {step.title}
               </h3>
               <p className="text-slate-600 leading-relaxed">{step.desc}</p>
             </motion.div>
@@ -429,10 +425,10 @@ const HeroSection = () => (
             )}
           </div>
           
-          <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4">
+          <h1 className="font-['Barlow_Condensed'] text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4 px-2">
             <span className="text-[#0A1628]">Factory-Direct Hot Tubs &amp; Saunas</span>
-            <br />
-            <span className="whitespace-nowrap">Delivered &amp; Installed by the{' '}
+            <br className="hidden sm:inline" />
+            <span className="block sm:inline"> Delivered &amp; Installed by the{' '}
             <span 
               className="text-[#B91C1C]"
               style={{ 
@@ -693,18 +689,16 @@ const NoShowroomSection = () => (
         {...mobileMotionProps}
       >
         {/* Family Owned + American Made */}
-        <div className="flex items-center gap-4 mb-6">
-          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs - Made in USA" width="120" height="120" loading="lazy" className="h-24 md:h-28 lg:h-32 object-contain" />
-          <div>
-            <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider">
+        <div className="flex items-center gap-3 md:gap-4 mb-6">
+          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs - Made in USA" width="120" height="120" loading="lazy" className="h-16 md:h-28 lg:h-32 object-contain flex-shrink-0" />
+          <div className="min-w-0 flex-1">
+            <h2 className="font-['Barlow_Condensed'] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider leading-tight">
               <span className="text-white">Family Owned</span>
             </h2>
-            <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl lg:text-4xl font-black uppercase">
-              <span className="text-[#B91C1C]">American</span>{' '}
-              <span className="text-white">Made</span>{' '}
+            <h3 className="font-['Barlow_Condensed'] text-base sm:text-lg md:text-3xl lg:text-4xl font-black uppercase leading-tight">
+              <span className="text-[#B91C1C]">American Made</span>{' '}
               <span className="text-[#1E40AF]">&amp;</span>{' '}
-              <span className="text-[#B91C1C]">Proud</span>{' '}
-              <span className="text-white">Of It</span>
+              <span className="text-[#B91C1C]">Proud Of It</span>
             </h3>
           </div>
         </div>

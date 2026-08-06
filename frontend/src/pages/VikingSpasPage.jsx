@@ -48,10 +48,10 @@ const VikingSpasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Viking Spas Hot Tubs | American Made Quality Spas | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop Viking Spas hot tubs at Upstate Hot Tubs. American made quality hot tubs featuring Elite, Heirloom, and Element series. Live your healthiest life while enjoying a vacation everyday at home. Free setup &amp; installation in South Carolina (shipping paid by customer)." />
-        <meta name="keywords" content="Viking Spas, hot tubs, American made hot tubs, spa, wellness, Upstate Hot Tubs, Elite Series, Heirloom Series, Element Series, Greenville SC, plug and play hot tubs" />
-        <meta property="og:title" content="Viking Spas Hot Tubs | American Made | Upstate Hot Tubs" />
+        <title>Viking Spas Hot Tubs | American Made Quality Spas | Leisure Wellness</title>
+        <meta name="description" content="Shop Viking Spas hot tubs at Leisure Wellness. American made quality hot tubs featuring Elite, Heirloom, and Element series. Live your healthiest life while enjoying a vacation everyday at home. Free setup &amp; installation in South Carolina (shipping paid by customer)." />
+        <meta name="keywords" content="Viking Spas, hot tubs, American made hot tubs, spa, wellness, Leisure Wellness, Elite Series, Heirloom Series, Element Series, ships nationwide, plug and play hot tubs" />
+        <meta property="og:title" content="Viking Spas Hot Tubs | American Made | Leisure Wellness" />
         <meta property="og:description" content="Quality American made hot tubs from Viking Spas. Elite, Heirloom, and Element series available." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.upstatehottubs.com/viking-spas" />
@@ -67,7 +67,7 @@ const VikingSpasPage = () => {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl">🇺🇸</span>
-              <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
+              <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">American Made & Proud of It</span>
             </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
               Viking Spas Hot Tubs
@@ -84,7 +84,7 @@ const VikingSpasPage = () => {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center gap-2 px-4 py-2 border-2 font-semibold transition-colors ${
                   showFilters || activeFilterCount > 0
-                    ? 'border-[#B91C1C] text-[#B91C1C] bg-red-50'
+                    ? 'border-[#EA6A1E] text-[#EA6A1E] bg-red-50'
                     : 'border-slate-300 text-slate-700 hover:border-slate-400'
                 }`}
                 data-testid="filter-toggle"
@@ -92,7 +92,7 @@ const VikingSpasPage = () => {
                 <Filter size={18} />
                 Filters
                 {activeFilterCount > 0 && (
-                  <span className="bg-[#B91C1C] text-white text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-[#EA6A1E] text-white text-xs px-2 py-0.5 rounded-full">
                     {activeFilterCount}
                   </span>
                 )}
@@ -101,7 +101,7 @@ const VikingSpasPage = () => {
               {activeFilterCount > 0 && (
                 <button
                   onClick={clearFilters}
-                  className="text-sm text-slate-500 hover:text-[#B91C1C] flex items-center gap-1"
+                  className="text-sm text-slate-500 hover:text-[#EA6A1E] flex items-center gap-1"
                 >
                   <X size={14} /> Clear all
                 </button>
@@ -114,7 +114,7 @@ const VikingSpasPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#B91C1C] focus:outline-none cursor-pointer"
+                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#EA6A1E] focus:outline-none cursor-pointer"
                   data-testid="sort-select"
                 >
                   <option value="default">Sort by: Featured</option>
@@ -141,7 +141,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.minPrice}
                   onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                   data-testid="filter-min-price"
                 >
                   <option value="">No Min</option>
@@ -157,7 +157,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.maxPrice}
                   onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                   data-testid="filter-max-price"
                 >
                   <option value="">No Max</option>
@@ -175,7 +175,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.persons}
                   onChange={(e) => setFilters({ ...filters, persons: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                   data-testid="filter-persons"
                 >
                   <option value="all">Any Size</option>
@@ -191,7 +191,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.series}
                   onChange={(e) => setFilters({ ...filters, series: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                   data-testid="filter-series"
                 >
                   <option value="all">All Series</option>
@@ -207,7 +207,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.seatingLayout}
                   onChange={(e) => setFilters({ ...filters, seatingLayout: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                   data-testid="filter-seating"
                 >
                   <option value="all">Any Layout</option>

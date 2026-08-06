@@ -16,12 +16,12 @@ const AnatomyPage = () => {
 
   return (
     <>
-      <Helmet><title>Anatomy of a Spa | Upstate Hot Tubs</title></Helmet>
+      <Helmet><title>Anatomy of a Spa | Leisure Wellness</title></Helmet>
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="anatomy-page">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
             <h1 className="font-['Barlow_Condensed'] text-5xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
-              Anatomy of a <span className="text-[#B91C1C]">Dynasty Spa</span>
+              Anatomy of a <span className="text-[#EA6A1E]">Dynasty Spa</span>
             </h1>
           </motion.div>
 
@@ -44,10 +44,10 @@ const AnatomyPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#B91C1C]"
+                className="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#EA6A1E]"
                 data-testid={`anatomy-feature-${i}`}
               >
-                <div className="text-3xl font-bold text-[#B91C1C] mb-2">{f.num}</div>
+                <div className="text-3xl font-bold text-[#EA6A1E] mb-2">{f.num}</div>
                 <h3 className="font-['Barlow_Condensed'] text-lg font-bold text-[#0A1628] mb-2">{f.title}</h3>
                 <p className="text-sm text-slate-600">{f.desc}</p>
               </motion.div>

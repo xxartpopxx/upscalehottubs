@@ -95,7 +95,7 @@ const ALL_PRODUCTS = [
 // Full-width Online-Only Announcement Section
 const AnnouncementSection = () => (
   <section className="py-10 md:py-14" style={{
-    background: 'linear-gradient(135deg, #B91C1C 0%, #7F1D1D 50%, #0A1628 100%)'
+    background: 'linear-gradient(135deg, #EA6A1E 0%, #A8481A 50%, #0A1628 100%)'
   }} data-testid="announcement-section">
     <div className="max-w-5xl mx-auto px-4 text-center text-white">
       <motion.div
@@ -118,7 +118,7 @@ const AnnouncementSection = () => (
         </p>
         <a
           href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
-          className="inline-flex items-center gap-2 bg-white text-[#B91C1C] px-8 py-4 font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-md shadow-lg"
+          className="inline-flex items-center gap-2 bg-white text-[#EA6A1E] px-8 py-4 font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-md shadow-lg"
         >
           <Phone size={22} /> Call {CONTACT.phone}
         </a>
@@ -142,8 +142,8 @@ const HowItWorksSection = () => {
     },
     {
       icon: PackageCheck,
-      title: 'We Install & Stand Behind It',
-      desc: 'Our own team sets it up, gets it running, walks you through it, and is here for service down the road.',
+      title: 'We Ship & Stand Behind It',
+      desc: 'Your order ships factory-direct, straight to your door. We walk you through setup and back it with full warranty support.',
     },
   ];
 
@@ -158,13 +158,13 @@ const HowItWorksSection = () => {
         >
           <div className="flex justify-center mb-6">
             <div className="flex items-center gap-2">
-              <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
-              <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
-              <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+              <div className="w-16 h-0.5 bg-[#1E6FB2]"></div>
+              <div className="w-6 h-0.5 bg-[#EA6A1E]"></div>
+              <div className="w-16 h-0.5 bg-[#1E6FB2]"></div>
             </div>
           </div>
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-3">
-            Buying From Us is <span className="text-[#B91C1C]">Simple</span>
+            Buying From Us is <span className="text-[#EA6A1E]">Simple</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-600">Same trusted team, now with online-only savings.</p>
         </motion.div>
@@ -177,14 +177,14 @@ const HowItWorksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative bg-white rounded-2xl p-8 shadow-lg border-t-4 border-[#B91C1C]"
+              className="relative bg-white rounded-2xl p-8 shadow-lg border-t-4 border-[#EA6A1E]"
             >
               {/* Step number badge */}
               <div className="absolute -top-5 left-8 bg-[#0A1628] text-white w-10 h-10 rounded-full flex items-center justify-center font-['Barlow_Condensed'] text-xl font-bold shadow-lg">
                 {idx + 1}
               </div>
               <div className="mb-4 mt-2">
-                <step.icon className="w-12 h-12 text-[#B91C1C]" />
+                <step.icon className="w-12 h-12 text-[#EA6A1E]" />
               </div>
               <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] mb-3">
                 {step.title}
@@ -203,11 +203,11 @@ const FAQSection = () => {
   const faqs = [
     {
       q: 'Do you still have a showroom?',
-      a: "Not right now — we're online-only while we set up a new warehouse. That's actually why our prices are lower: no showroom overhead. You can order online or by phone anytime.",
+      a: "No — we're online-only, and that's exactly why our prices are lower: no showroom overhead. Order online or by phone anytime and we ship nationwide.",
     },
     {
-      q: 'Do you really deliver and install, or just ship it?',
-      a: 'We deliver and install. Our own crew brings your unit, sets it in place, gets it running, and shows you how everything works.',
+      q: 'Do you deliver, or just ship it?',
+      a: 'We ship your unit factory-direct, straight to your door, anywhere in the country. Freight carriers handle delivery and we walk you through everything by phone.',
     },
     {
       q: 'How is the price lower than before?',
@@ -215,10 +215,10 @@ const FAQSection = () => {
     },
     {
       q: 'What about service and warranty?',
-      a: 'Same local team as always. Warranty support, maintenance, and repairs all go through us.',
+      a: 'Every unit is backed by a full manufacturer warranty. Our team handles warranty support and questions by phone — just give us a call.',
     },
     {
-      q: 'How long does delivery take?',
+      q: 'How long does shipping take?',
       a: 'Timing depends on the model you choose. Call us for current lead times on the unit you want.',
     },
   ];
@@ -237,7 +237,7 @@ const FAQSection = () => {
           className="text-center mb-10"
         >
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black uppercase text-[#0A1628] mb-3">
-            Common <span className="text-[#B91C1C]">Questions</span>
+            Common <span className="text-[#EA6A1E]">Questions</span>
           </h2>
           <p className="text-lg text-slate-600">Everything you need to know about ordering online.</p>
         </motion.div>
@@ -265,7 +265,7 @@ const FAQSection = () => {
                   </span>
                   <ChevronRight
                     size={22}
-                    className={`text-[#B91C1C] flex-shrink-0 transition-transform ${isOpen ? 'rotate-90' : ''}`}
+                    className={`text-[#EA6A1E] flex-shrink-0 transition-transform ${isOpen ? 'rotate-90' : ''}`}
                   />
                 </button>
                 <AnimatePresence initial={false}>
@@ -313,12 +313,12 @@ const FinalCTASection = () => (
           Ready for <span className="text-[#D4AF37]">Factory-Direct Pricing</span>?
         </h2>
         <p className="text-lg md:text-xl text-white/85 mb-8 max-w-3xl mx-auto">
-          Same trusted Upstate Hot Tubs team, now with online-only savings. Get the unit you want — delivered, installed, and serviced by us.
+          Same trusted Leisure Wellness team, now with online-only savings. Order the unit you want and we&apos;ll ship it factory-direct, straight to your door — anywhere in the country.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/hot-tubs"
-            className="bg-[#B91C1C] hover:bg-[#991B1B] text-white inline-flex items-center justify-center gap-2 text-lg font-bold py-4 px-10 uppercase tracking-wider transition-colors rounded-md"
+            className="bg-[#EA6A1E] hover:bg-[#C4551A] text-white inline-flex items-center justify-center gap-2 text-lg font-bold py-4 px-10 uppercase tracking-wider transition-colors rounded-md"
           >
             Shop Now <ChevronRight size={22} />
           </Link>
@@ -428,9 +428,9 @@ const HeroSection = () => (
           <h1 className="font-['Barlow_Condensed'] text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4 px-2">
             <span className="text-[#0A1628]">Factory-Direct Hot Tubs &amp; Saunas</span>
             <br className="hidden sm:inline" />
-            <span className="block sm:inline"> Delivered &amp; Installed by the{' '}
+            <span className="block sm:inline"> Shipped to Your Door by the{' '}
             <span 
-              className="text-[#B91C1C]"
+              className="text-[#EA6A1E]"
               style={{ 
                 textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
               }}
@@ -440,7 +440,7 @@ const HeroSection = () => (
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl font-medium mb-6 max-w-4xl mx-auto text-[#0A1628]/80">
-            Now online-only — factory-direct pricing with the same trusted delivery, install &amp; service crew you already know. Serving Simpsonville, Greenville, Mauldin, Five Forks, Greer, Spartanburg and Anderson SC.
+            Now online-only — factory-direct pricing shipped straight to your door. Order online or by phone and we&apos;ll ship your hot tub, swim spa, sauna or cold plunge anywhere in the country.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
@@ -452,8 +452,8 @@ const HeroSection = () => (
             </a>
           </div>
           
-          <p className="text-base md:text-lg font-bold text-[#B91C1C]">
-            Locally owned · Online-only savings · Our own delivery &amp; service team
+          <p className="text-base md:text-lg font-bold text-[#EA6A1E]">
+            Family owned · Online-only savings · Ships nationwide to your door
           </p>
         </motion.div>
       </div>
@@ -467,7 +467,7 @@ const TrustBadgesSection = () => (
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
         <div className="flex flex-col items-center gap-0.5 p-2">
-          <Shield className="w-5 h-5 text-[#B91C1C]" />
+          <Shield className="w-5 h-5 text-[#EA6A1E]" />
           <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">5% Discount</span>
           <span className="text-[10px] text-slate-500">Military & Veterans</span>
         </div>
@@ -477,12 +477,12 @@ const TrustBadgesSection = () => (
           <span className="text-[10px] text-slate-500">Made in USA</span>
         </div>
         <div className="flex flex-col items-center gap-0.5 p-2">
-          <Heart className="w-5 h-5 text-[#B91C1C]" />
+          <Heart className="w-5 h-5 text-[#EA6A1E]" />
           <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Family Owned</span>
           <span className="text-[10px] text-slate-500">American & Proud</span>
         </div>
         <div className="flex flex-col items-center gap-0.5 p-2">
-          <Truck className="w-5 h-5 text-[#1E40AF]" />
+          <Truck className="w-5 h-5 text-[#1E6FB2]" />
           <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Setup Included</span>
           <span className="text-[10px] text-slate-500">Cover · Steps · Chemicals</span>
         </div>
@@ -539,7 +539,7 @@ const BestWarrantySection = () => (
             <span className="text-[#D4AF37] font-bold text-lg">✓ Comprehensive Coverage</span>
           </div>
           <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-            <span className="text-[#D4AF37] font-bold text-lg">✓ Local Service</span>
+            <span className="text-[#D4AF37] font-bold text-lg">✓ Nationwide Support</span>
           </div>
           <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
             <span className="text-[#D4AF37] font-bold text-lg">✓ Fast Response</span>
@@ -569,11 +569,11 @@ const FreeItemsSection = () => {
           className="text-center mb-10"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Gift className="w-10 h-10 text-[#B91C1C]" />
+            <Gift className="w-10 h-10 text-[#EA6A1E]" />
             <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#0A1628]">
-              <span className="text-[#B91C1C]">FREE</span> With Your Hot Tub Purchase
+              <span className="text-[#EA6A1E]">FREE</span> With Your Hot Tub Purchase
             </h2>
-            <Gift className="w-10 h-10 text-[#B91C1C]" />
+            <Gift className="w-10 h-10 text-[#EA6A1E]" />
           </div>
           <p className="text-xl md:text-2xl font-bold text-[#D4AF37] mb-2">
             Over $1,500 Value Included!
@@ -600,7 +600,7 @@ const FreeItemsSection = () => {
               {/* Static Container - No animation */}
               <div className="relative mb-4">
                 {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#B91C1C]/20 to-[#D4AF37]/20 rounded-full blur-xl scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#EA6A1E]/20 to-[#D4AF37]/20 rounded-full blur-xl scale-110" />
                 
                 {/* Product Image */}
                 <div className="relative bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
@@ -615,7 +615,7 @@ const FreeItemsSection = () => {
                 </div>
                 
                 {/* FREE Badge - Static */}
-                <div className="absolute -top-3 -right-3 bg-[#B91C1C] text-white font-bold text-sm px-3 py-1 rounded-full shadow-lg">
+                <div className="absolute -top-3 -right-3 bg-[#EA6A1E] text-white font-bold text-sm px-3 py-1 rounded-full shadow-lg">
                   FREE
                 </div>
               </div>
@@ -690,25 +690,25 @@ const NoShowroomSection = () => (
       >
         {/* Family Owned + American Made */}
         <div className="flex items-center gap-3 md:gap-4 mb-6">
-          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs - Made in USA" width="120" height="120" loading="lazy" className="h-16 md:h-28 lg:h-32 object-contain flex-shrink-0" />
+          <img src={ASSETS.oldLogo} alt="Leisure Wellness - Made in USA" width="120" height="120" loading="lazy" className="h-16 md:h-28 lg:h-32 object-contain flex-shrink-0" />
           <div className="min-w-0 flex-1">
             <h2 className="font-['Barlow_Condensed'] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider leading-tight">
               <span className="text-white">Family Owned</span>
             </h2>
             <h3 className="font-['Barlow_Condensed'] text-base sm:text-lg md:text-3xl lg:text-4xl font-black uppercase leading-tight">
-              <span className="text-[#B91C1C]">American Made</span>{' '}
-              <span className="text-[#1E40AF]">&amp;</span>{' '}
-              <span className="text-[#B91C1C]">Proud Of It</span>
+              <span className="text-[#EA6A1E]">American Made</span>{' '}
+              <span className="text-[#1E6FB2]">&amp;</span>{' '}
+              <span className="text-[#EA6A1E]">Proud Of It</span>
             </h3>
           </div>
         </div>
 
         {/* Main heading */}
-        <div className="border-l-4 border-[#B91C1C] pl-5 mb-4">
+        <div className="border-l-4 border-[#EA6A1E] pl-5 mb-4">
           <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none mb-1 text-white">
             No Showroom.
           </h3>
-          <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none mb-1 text-[#B91C1C]">
+          <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none mb-1 text-[#EA6A1E]">
             Lower Prices.
           </h3>
           <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none text-white">
@@ -721,30 +721,30 @@ const NoShowroomSection = () => (
         </p>
 
         <p className="text-lg md:text-xl mb-5 text-white/80 leading-relaxed">
-          You get true <span className="font-bold text-[#D4AF37]">factory-direct pricing</span> on hot tubs, swim spas, and saunas. But you don&apos;t lose the part that matters most: we still deliver, install, and service everything ourselves.
+          You get true <span className="font-bold text-[#D4AF37]">factory-direct pricing</span> on hot tubs, swim spas, saunas and cold plunges — shipped straight to your door, anywhere in the country.
         </p>
 
         <ul className="space-y-2 mb-6 text-base md:text-lg lg:text-xl">
           <li className="flex items-start gap-3 text-white/90">
-            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+            <div className="w-3 h-3 bg-[#EA6A1E] rounded-full flex-shrink-0 mt-2" />
             <span><span className="font-bold text-[#D4AF37]">Factory-direct pricing</span> — no showroom, no retail markup.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
-            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span><span className="font-bold text-[#D4AF37]">Our own install crew</span> — not a random third-party contractor.</span>
+            <div className="w-3 h-3 bg-[#EA6A1E] rounded-full flex-shrink-0 mt-2" />
+            <span><span className="font-bold text-[#D4AF37]">Ships to your door</span> — fast, factory-direct freight nationwide.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
-            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+            <div className="w-3 h-3 bg-[#EA6A1E] rounded-full flex-shrink-0 mt-2" />
             <span><span className="font-bold text-[#D4AF37]">Real service after the sale</span> — warranty help, maintenance, and repairs from us.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
-            <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
+            <div className="w-3 h-3 bg-[#EA6A1E] rounded-full flex-shrink-0 mt-2" />
             <span><span className="font-bold text-[#D4AF37]">Talk to a real person</span> — call and get straight answers.</span>
           </li>
         </ul>
 
         <div className="flex flex-wrap gap-3">
-          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="bg-[#B91C1C] hover:bg-[#991B1B] text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
+          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="bg-[#EA6A1E] hover:bg-[#C4551A] text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
             <Phone size={20} /> Call {CONTACT.phone}
           </a>
           <Link to="/hot-tubs" className="border-2 border-white/50 hover:border-white text-white inline-flex items-center gap-2 text-lg md:text-xl font-bold py-3 px-8 uppercase tracking-wider transition-colors">
@@ -873,7 +873,7 @@ const ProductCollectionSection = () => {
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
             Expand Your{' '}
             <span 
-              className="text-[#B91C1C]"
+              className="text-[#EA6A1E]"
               style={{ 
                 textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
               }}
@@ -910,12 +910,12 @@ const ProductCollectionSection = () => {
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
+                  <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] group-hover:text-[#EA6A1E] transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-base md:text-lg text-[#B91C1C] font-semibold mt-1">{item.subtitle}</p>
+                  <p className="text-base md:text-lg text-[#EA6A1E] font-semibold mt-1">{item.subtitle}</p>
                   <p className="text-sm md:text-base text-slate-500 mt-2">{item.tagline}</p>
-                  <span className="inline-flex items-center gap-2 text-[#B91C1C] text-lg font-bold mt-4 group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-[#EA6A1E] text-lg font-bold mt-4 group-hover:gap-3 transition-all">
                     Shop {item.name} <ChevronRight size={20} />
                   </span>
                 </div>
@@ -941,13 +941,13 @@ const LocationCollectionSection = () => (
         {/* Subtle accent line */}
         <div className="flex justify-center mb-6">
           <div className="flex items-center gap-2">
-            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
-            <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
-            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+            <div className="w-16 h-0.5 bg-[#1E6FB2]"></div>
+            <div className="w-6 h-0.5 bg-[#EA6A1E]"></div>
+            <div className="w-16 h-0.5 bg-[#1E6FB2]"></div>
           </div>
         </div>
         <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4 text-[#0A1628]">
-          The <span className="text-[#B91C1C]">Collection</span>
+          The <span className="text-[#EA6A1E]">Collection</span>
         </h2>
         <p className="text-lg md:text-xl text-slate-600">Shop our premium American-made hot tubs and spas</p>
       </motion.div>
@@ -958,7 +958,7 @@ const LocationCollectionSection = () => (
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#1E40AF] hover:shadow-lg transition-all text-center"
+          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#1E6FB2] hover:shadow-lg transition-all text-center"
         >
           <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-2">
             Grand River Spas
@@ -975,7 +975,7 @@ const LocationCollectionSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#B91C1C] hover:shadow-lg transition-all text-center"
+          className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#EA6A1E] hover:shadow-lg transition-all text-center"
         >
           <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-2">
             Dynasty Spas
@@ -1083,15 +1083,15 @@ const WhyHotTubSection = () => {
           >
             <div className="flex justify-start mb-6">
               <div className="flex items-center gap-2">
-                <div className="w-12 h-0.5 bg-[#1E40AF]"></div>
-                <div className="w-4 h-0.5 bg-[#B91C1C]"></div>
+                <div className="w-12 h-0.5 bg-[#1E6FB2]"></div>
+                <div className="w-4 h-0.5 bg-[#EA6A1E]"></div>
               </div>
             </div>
             
             <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
               Why a{' '}
               <span 
-                className="text-[#B91C1C]"
+                className="text-[#EA6A1E]"
                 style={{ 
                   textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff'
                 }}
@@ -1106,8 +1106,8 @@ const WhyHotTubSection = () => {
             
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                  <Droplets className="w-6 h-6 text-[#1E40AF]" />
+                <div className="w-12 h-12 bg-[#1E6FB2]/10 rounded-full flex items-center justify-center">
+                  <Droplets className="w-6 h-6 text-[#1E6FB2]" />
                 </div>
                 <div>
                   <span className="font-bold text-[#0A1628]">Hydrotherapy</span>
@@ -1115,8 +1115,8 @@ const WhyHotTubSection = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                  <Moon className="w-6 h-6 text-[#1E40AF]" />
+                <div className="w-12 h-12 bg-[#1E6FB2]/10 rounded-full flex items-center justify-center">
+                  <Moon className="w-6 h-6 text-[#1E6FB2]" />
                 </div>
                 <div>
                   <span className="font-bold text-[#0A1628]">Better Sleep</span>
@@ -1124,8 +1124,8 @@ const WhyHotTubSection = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-[#1E40AF]" />
+                <div className="w-12 h-12 bg-[#1E6FB2]/10 rounded-full flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-[#1E6FB2]" />
                 </div>
                 <div>
                   <span className="font-bold text-[#0A1628]">Stress Relief</span>
@@ -1133,8 +1133,8 @@ const WhyHotTubSection = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#1E40AF]/10 rounded-full flex items-center justify-center">
-                  <Activity className="w-6 h-6 text-[#1E40AF]" />
+                <div className="w-12 h-12 bg-[#1E6FB2]/10 rounded-full flex items-center justify-center">
+                  <Activity className="w-6 h-6 text-[#1E6FB2]" />
                 </div>
                 <div>
                   <span className="font-bold text-[#0A1628]">Pain Relief</span>
@@ -1168,13 +1168,13 @@ const WhyHotTubsSection = () => (
         {/* Subtle accent line */}
         <div className="flex justify-center mb-6">
           <div className="flex items-center gap-2">
-            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
-            <div className="w-6 h-0.5 bg-[#B91C1C]"></div>
-            <div className="w-16 h-0.5 bg-[#1E40AF]"></div>
+            <div className="w-16 h-0.5 bg-[#1E6FB2]"></div>
+            <div className="w-6 h-0.5 bg-[#EA6A1E]"></div>
+            <div className="w-16 h-0.5 bg-[#1E6FB2]"></div>
           </div>
         </div>
         <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-4">
-          Why a <span className="text-[#B91C1C]">Hot Tub</span>?
+          Why a <span className="text-[#EA6A1E]">Hot Tub</span>?
         </h2>
         <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
           For centuries, people have celebrated the soothing properties of warm water to ease aches, pains, and stress.
@@ -1194,9 +1194,9 @@ const WhyHotTubsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="bg-white rounded-lg p-6 text-center hover:shadow-md transition-all border-t-2 border-[#B91C1C]"
+            className="bg-white rounded-lg p-6 text-center hover:shadow-md transition-all border-t-2 border-[#EA6A1E]"
           >
-            <item.icon className="w-10 h-10 mx-auto text-[#1E40AF] mb-4" />
+            <item.icon className="w-10 h-10 mx-auto text-[#1E6FB2] mb-4" />
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-2">{item.title}</h3>
             <p className="text-sm text-slate-600">{item.desc}</p>
           </motion.div>
@@ -1283,14 +1283,14 @@ const ShopAllModelsSection = () => {
             <button 
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
-              className={`p-3 rounded-full transition-all ${canScrollLeft ? 'bg-[#0A1628] text-white hover:bg-[#B91C1C]' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}
+              className={`p-3 rounded-full transition-all ${canScrollLeft ? 'bg-[#0A1628] text-white hover:bg-[#EA6A1E]' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}
             >
               <ChevronLeft size={28} />
             </button>
             <button 
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
-              className={`p-3 rounded-full transition-all ${canScrollRight ? 'bg-[#0A1628] text-white hover:bg-[#B91C1C]' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}
+              className={`p-3 rounded-full transition-all ${canScrollRight ? 'bg-[#0A1628] text-white hover:bg-[#EA6A1E]' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}
             >
               <ChevronRight size={28} />
             </button>
@@ -1334,12 +1334,12 @@ const ShopAllModelsSection = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-bold text-[#0A1628] group-hover:text-[#B91C1C] transition-colors">
+                  <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-bold text-[#0A1628] group-hover:text-[#EA6A1E] transition-colors">
                     {product.name}
                   </h3>
                   <p className="text-base text-slate-500 mt-1">{product.persons} Person • {product.jets} Jets</p>
-                  <p className="text-xl font-bold text-[#B91C1C] mt-2">{product.price}</p>
-                  <span className="inline-flex items-center gap-1 text-[#0A1628] text-base font-semibold mt-3 group-hover:text-[#B91C1C] group-hover:gap-2 transition-all">
+                  <p className="text-xl font-bold text-[#EA6A1E] mt-2">{product.price}</p>
+                  <span className="inline-flex items-center gap-1 text-[#0A1628] text-base font-semibold mt-3 group-hover:text-[#EA6A1E] group-hover:gap-2 transition-all">
                     View {product.name} Details <ChevronRight size={18} />
                   </span>
                 </div>
@@ -1459,24 +1459,24 @@ const ComparisonSection = () => {
                         <h4 className="font-['Barlow_Condensed'] font-bold text-base text-center">{product.name}</h4>
                       </div>
                       <div className="py-3 px-4 border-t text-center text-base"><span className="inline-block px-3 py-1 bg-[#0A1628] text-white text-sm rounded font-semibold">{product.category}</span></div>
-                      <div className="py-3 px-4 border-t text-center font-bold text-[#B91C1C] text-lg">{product.price || 'Call'}</div>
+                      <div className="py-3 px-4 border-t text-center font-bold text-[#EA6A1E] text-lg">{product.price || 'Call'}</div>
                       <div className="py-3 px-4 border-t text-center text-base">{product.persons ? `${product.persons} Person` : '-'}</div>
                       <div className="py-3 px-4 border-t text-center text-base">{product.jets || '-'}</div>
                       <div className="py-3 px-4 border-t text-center text-sm">{product.dimensions || '-'}</div>
                       <div className="py-3 px-4 border-t text-center">
-                        <Link to={`/products/${product.id}`} className="text-[#B91C1C] text-base font-semibold hover:underline">View Details</Link>
+                        <Link to={`/products/${product.id}`} className="text-[#EA6A1E] text-base font-semibold hover:underline">View Details</Link>
                       </div>
                     </>
                   ) : (
                     <div className="h-full min-h-[320px] flex items-center justify-center p-4">
                       <button 
                         onClick={() => setShowSelector(true)}
-                        className="flex flex-col items-center gap-3 p-6 border-2 border-dashed border-slate-300 rounded-xl hover:border-[#B91C1C] hover:bg-red-50 transition-all group"
+                        className="flex flex-col items-center gap-3 p-6 border-2 border-dashed border-slate-300 rounded-xl hover:border-[#EA6A1E] hover:bg-red-50 transition-all group"
                       >
-                        <div className="w-14 h-14 rounded-full bg-slate-100 group-hover:bg-[#B91C1C] flex items-center justify-center transition-colors">
+                        <div className="w-14 h-14 rounded-full bg-slate-100 group-hover:bg-[#EA6A1E] flex items-center justify-center transition-colors">
                           <Plus className="text-slate-400 group-hover:text-white" size={28} />
                         </div>
-                        <span className="font-['Barlow_Condensed'] font-bold text-lg text-slate-600 group-hover:text-[#B91C1C]">Add Product</span>
+                        <span className="font-['Barlow_Condensed'] font-bold text-lg text-slate-600 group-hover:text-[#EA6A1E]">Add Product</span>
                       </button>
                     </div>
                   )}
@@ -1496,13 +1496,13 @@ const ComparisonSection = () => {
               <div className="p-4 overflow-y-auto max-h-[60vh]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {allProducts.map(product => (
-                    <button key={product.id} onClick={() => addProduct(product)} disabled={selectedProducts.find(p => p.id === product.id)} className={`p-3 border rounded-lg text-left hover:border-[#B91C1C] hover:bg-red-50 transition-all ${selectedProducts.find(p => p.id === product.id) ? 'opacity-50' : ''}`}>
+                    <button key={product.id} onClick={() => addProduct(product)} disabled={selectedProducts.find(p => p.id === product.id)} className={`p-3 border rounded-lg text-left hover:border-[#EA6A1E] hover:bg-red-50 transition-all ${selectedProducts.find(p => p.id === product.id) ? 'opacity-50' : ''}`}>
                       <div className="flex items-center gap-3">
                         <img src={product.images?.primary} alt={product.name} className="w-14 h-14 object-contain" onError={(e) => e.target.src = ASSETS.logo} />
                         <div>
                           <h4 className="font-semibold text-base">{product.name}</h4>
                           <p className="text-sm text-slate-500">{product.category}</p>
-                          <p className="text-sm font-bold text-[#B91C1C]">{product.price || 'Call'}</p>
+                          <p className="text-sm font-bold text-[#EA6A1E]">{product.price || 'Call'}</p>
                         </div>
                       </div>
                     </button>
@@ -1522,11 +1522,11 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Factory-Direct Hot Tubs &amp; Saunas in South Carolina | Delivered &amp; Installed | Upstate Hot Tubs</title>
-        <meta name="description" content={`Upstate Hot Tubs is now online-only with factory-direct pricing. Hot tubs, swim spas & saunas delivered, installed, and serviced by our own local team. Call ${CONTACT.phone}.`} />
-        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, factory direct, online only, American made, Grand River Spas, Dynasty Spas, Greenville SC, Simpsonville SC, Upstate" />
-        <meta property="og:title" content="Factory-Direct Hot Tubs &amp; Saunas | Upstate Hot Tubs" />
-        <meta property="og:description" content="Now online-only with factory-direct pricing. Same trusted team — we still deliver, install, and service every unit." />
+        <title>Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Leisure Wellness</title>
+        <meta name="description" content={`Leisure Wellness is online-only with factory-direct pricing. Hot tubs, swim spas, saunas & cold plunges shipped straight to your door, nationwide. Order online or call ${CONTACT.phone}.`} />
+        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, factory direct, online only, buy online, ships nationwide, American made hot tubs, Grand River Spas, Dynasty Spas" />
+        <meta property="og:title" content="Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Leisure Wellness" />
+        <meta property="og:description" content="Online-only with factory-direct pricing. Order online or by phone — shipped straight to your door, anywhere in the country." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.upstatehottubs.com/" />
       </Helmet>

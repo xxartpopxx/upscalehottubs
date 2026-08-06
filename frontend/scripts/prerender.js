@@ -163,9 +163,9 @@ function injectSeo(html, route) {
 
   const descMatch = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["'][^>]*>/i);
   const renderedDesc = descMatch && descMatch[1].trim();
-  // The SPA shell description in index.html starts with "Hot tubs and Swim Spas in Naples Florida"
+  // The SPA shell description in index.html starts with this prefix
   // - if we see that we know no page-level Helmet description was set.
-  const SHELL_DESC_PREFIX = 'Hot tubs and Swim Spas in Naples Florida';
+  const SHELL_DESC_PREFIX = 'Leisure Wellness (formerly Upstate Hot Tubs) is now online only';
   const usingShellDesc = renderedDesc && renderedDesc.startsWith(SHELL_DESC_PREFIX);
   const description =
     !usingShellDesc && renderedDesc && renderedDesc.length > 20

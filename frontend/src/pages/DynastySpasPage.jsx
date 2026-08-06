@@ -100,9 +100,9 @@ const DynastySpasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dynasty Spas | American Made Hot Tubs | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop Dynasty Spas - American made hot tubs with 20-year shell warranty. Quality craftsmanship, RMAX insulation, and M.A.E. certified efficiency. Simpsonville SC." />
-        <meta name="keywords" content="Dynasty Spas, American made hot tubs, hot tubs Simpsonville SC, Paradise Bay, Palm Island, Coconut Bay, Caribbean Breeze, luxury hot tubs" />
+        <title>Dynasty Spas | American Made Hot Tubs | Leisure Wellness</title>
+        <meta name="description" content="Shop Dynasty Spas - American made hot tubs with 20-year shell warranty. Quality craftsmanship, RMAX insulation, and M.A.E. certified efficiency. Ships nationwide." />
+        <meta name="keywords" content="Dynasty Spas, American made hot tubs, Paradise Bay, Palm Island, Coconut Bay, Caribbean Breeze, luxury hot tubs" />
       </Helmet>
 
       <div className="pt-40 pb-20" data-testid="dynasty-spas-page" style={{
@@ -119,7 +119,7 @@ const DynastySpasPage = () => {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-2xl">🇺🇸</span>
-                  <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
+                  <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">American Made & Proud of It</span>
                 </div>
                 <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase mb-4">
                   Dynasty Spas
@@ -174,7 +174,7 @@ const DynastySpasPage = () => {
               { icon: Leaf, title: 'RMAX Insulation', desc: '7x R-Value of competitors' },
             ].map((item) => (
               <div key={item.title} className="bg-slate-50 p-4 text-center">
-                <item.icon className="mx-auto text-[#B91C1C] mb-2" size={28} />
+                <item.icon className="mx-auto text-[#EA6A1E] mb-2" size={28} />
                 <h3 className="font-semibold text-[#0A1628] text-sm">{item.title}</h3>
                 <p className="text-xs text-slate-500">{item.desc}</p>
               </div>
@@ -188,14 +188,14 @@ const DynastySpasPage = () => {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center gap-2 px-4 py-2 border-2 font-semibold transition-colors ${
                   showFilters || activeFilterCount > 0
-                    ? 'border-[#B91C1C] text-[#B91C1C] bg-red-50'
+                    ? 'border-[#EA6A1E] text-[#EA6A1E] bg-red-50'
                     : 'border-slate-300 text-slate-700 hover:border-slate-400'
                 }`}
               >
                 <Filter size={18} />
                 Filters
                 {activeFilterCount > 0 && (
-                  <span className="bg-[#B91C1C] text-white text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-[#EA6A1E] text-white text-xs px-2 py-0.5 rounded-full">
                     {activeFilterCount}
                   </span>
                 )}
@@ -204,7 +204,7 @@ const DynastySpasPage = () => {
               {activeFilterCount > 0 && (
                 <button
                   onClick={clearFilters}
-                  className="text-sm text-slate-500 hover:text-[#B91C1C] flex items-center gap-1"
+                  className="text-sm text-slate-500 hover:text-[#EA6A1E] flex items-center gap-1"
                 >
                   <X size={14} /> Clear all
                 </button>
@@ -217,7 +217,7 @@ const DynastySpasPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#B91C1C] focus:outline-none cursor-pointer"
+                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#EA6A1E] focus:outline-none cursor-pointer"
                 >
                   <option value="default">Sort by: Featured</option>
                   <option value="price-low">Price: Low to High</option>
@@ -245,7 +245,7 @@ const DynastySpasPage = () => {
                 <select
                   value={filters.series}
                   onChange={(e) => setFilters({ ...filters, series: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                 >
                   <option value="all">All Collections</option>
                   {allSeries.map(series => (
@@ -260,7 +260,7 @@ const DynastySpasPage = () => {
                 <select
                   value={filters.persons}
                   onChange={(e) => setFilters({ ...filters, persons: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                 >
                   <option value="all">Any Size</option>
                   <option value="2-3">2-3 Person</option>
@@ -275,7 +275,7 @@ const DynastySpasPage = () => {
                 <select
                   value={filters.seatingLayout}
                   onChange={(e) => setFilters({ ...filters, seatingLayout: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                 >
                   <option value="all">Any Layout</option>
                   <option value="Lounger">Lounger</option>
@@ -290,7 +290,7 @@ const DynastySpasPage = () => {
                 <select
                   value={filters.minPrice}
                   onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                 >
                   <option value="">No Min</option>
                   <option value="7000">$7,000</option>
@@ -307,7 +307,7 @@ const DynastySpasPage = () => {
                 <select
                   value={filters.maxPrice}
                   onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
                 >
                   <option value="">No Max</option>
                   <option value="9000">$9,000</option>
@@ -326,7 +326,7 @@ const DynastySpasPage = () => {
           ) : (
             <div className="text-center py-16">
               <p className="text-xl text-slate-500 mb-4">No spas match your filters</p>
-              <button onClick={clearFilters} className="bg-[#B91C1C] text-white px-6 py-3 font-semibold hover:bg-red-700 transition-colors">
+              <button onClick={clearFilters} className="bg-[#EA6A1E] text-white px-6 py-3 font-semibold hover:bg-red-700 transition-colors">
                 Clear Filters
               </button>
             </div>
@@ -420,7 +420,7 @@ const DynastySpasPage = () => {
             id="warranty"
           >
             <div className="flex items-center gap-3 mb-6">
-              <Shield className="text-[#B91C1C]" size={32} />
+              <Shield className="text-[#EA6A1E]" size={32} />
               <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628]">Dynasty Spa Warranty</h2>
             </div>
             <p className="text-lg text-slate-600 mb-6">
@@ -428,21 +428,21 @@ const DynastySpasPage = () => {
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <p className="text-4xl font-bold text-[#B91C1C] mb-2">3</p>
+                <p className="text-4xl font-bold text-[#EA6A1E] mb-2">3</p>
                 <p className="text-lg font-semibold text-[#0A1628]">Year Surface Warranty</p>
                 <p className="text-sm text-slate-500 mt-1">(Acrylic)</p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <p className="text-4xl font-bold text-[#B91C1C] mb-2">3</p>
+                <p className="text-4xl font-bold text-[#EA6A1E] mb-2">3</p>
                 <p className="text-lg font-semibold text-[#0A1628]">Year Cover Warranty</p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <p className="text-4xl font-bold text-[#B91C1C] mb-2">5</p>
+                <p className="text-4xl font-bold text-[#EA6A1E] mb-2">5</p>
                 <p className="text-lg font-semibold text-[#0A1628]">Year Plumbing & Electrical</p>
                 <p className="text-sm text-slate-500 mt-1">Parts and Labor</p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <p className="text-4xl font-bold text-[#B91C1C] mb-2">20</p>
+                <p className="text-4xl font-bold text-[#EA6A1E] mb-2">20</p>
                 <p className="text-lg font-semibold text-[#0A1628]">Year Shell Structure</p>
               </div>
             </div>
@@ -460,7 +460,7 @@ const DynastySpasPage = () => {
               <div className="grid md:grid-cols-3 gap-3">
                 {['Digital Controls', 'LED Lights', 'UV Treated Pillows', 'Air/Water Multi-Jets', 'Ozone Sanitation System', 'VGB Compliant Intake', 'Quick Temp Heater', 'Ecological RMAX Insulation', 'Lucite Acrylic Shell', 'Insulated & Soundproof Fiberglass Cabinet', 'Full Wrap Around ABS Bottom', '5"-3" Standard Taper Cover'].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 py-2 border-b border-slate-100">
-                    <div className="w-2 h-2 rounded-full bg-[#B91C1C] flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-[#EA6A1E] flex-shrink-0" />
                     <span className="text-slate-700">{item}</span>
                   </div>
                 ))}

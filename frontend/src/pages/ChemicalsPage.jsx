@@ -60,8 +60,8 @@ const ChemicalsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Hot Tub & Spa Chemicals | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop premium hot tub and spa chemicals including sanitizers, pH balancers, shock treatments, and more at Upstate Hot Tubs in Simpsonville, SC." />
+        <title>Hot Tub & Spa Chemicals | Leisure Wellness</title>
+        <meta name="description" content="Shop premium hot tub and spa chemicals including sanitizers, pH balancers, shock treatments, and more at Leisure Wellness, shipped nationwide across the USA." />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="chemicals-page">
@@ -69,7 +69,7 @@ const ChemicalsPage = () => {
           {/* Hero */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
-              Hot Tub <span className="text-[#B91C1C]">Chemicals</span>
+              Hot Tub <span className="text-[#EA6A1E]">Chemicals</span>
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Keep your spa water crystal clear and perfectly balanced with our premium chemical products.
@@ -98,7 +98,7 @@ const ChemicalsPage = () => {
                   <ul className="space-y-3">
                     {category.products.map((product, i) => (
                       <li key={i} className="flex items-center gap-2 text-slate-600">
-                        <div className="w-2 h-2 bg-[#B91C1C] rounded-full"></div>
+                        <div className="w-2 h-2 bg-[#EA6A1E] rounded-full"></div>
                         {product}
                       </li>
                     ))}
@@ -113,7 +113,7 @@ const ChemicalsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#B91C1C] text-white p-8 rounded-xl mb-16"
+            className="bg-[#EA6A1E] text-white p-8 rounded-xl mb-16"
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
@@ -126,7 +126,7 @@ const ChemicalsPage = () => {
               </div>
               <a 
                 href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
-                className="bg-white text-[#B91C1C] px-8 py-4 font-bold uppercase tracking-wider hover:bg-slate-100 transition-colors flex items-center gap-2 whitespace-nowrap rounded-lg"
+                className="bg-white text-[#EA6A1E] px-8 py-4 font-bold uppercase tracking-wider hover:bg-slate-100 transition-colors flex items-center gap-2 whitespace-nowrap rounded-lg"
               >
                 <Phone size={20} /> Call Us
               </a>
@@ -177,7 +177,7 @@ const ChemicalsPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                         placeholder="John Smith"
                       />
                     </div>
@@ -191,7 +191,7 @@ const ChemicalsPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -207,7 +207,7 @@ const ChemicalsPage = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                         placeholder="(864) 555-1234"
                       />
                     </div>
@@ -220,7 +220,7 @@ const ChemicalsPage = () => {
                         value={formData.chemicalType}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                       >
                         <option value="">Select a category...</option>
                         <option value="sanitizers">Sanitizers (Chlorine/Bromine)</option>
@@ -241,7 +241,7 @@ const ChemicalsPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all resize-none"
                       placeholder="Tell us about your spa and what chemicals you need..."
                     ></textarea>
                   </div>
@@ -250,7 +250,7 @@ const ChemicalsPage = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-[#B91C1C] text-white px-10 py-4 font-bold uppercase tracking-wider hover:bg-[#991b1b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2 rounded-lg"
+                      className="bg-[#EA6A1E] text-white px-10 py-4 font-bold uppercase tracking-wider hover:bg-[#991b1b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2 rounded-lg"
                     >
                       {isSubmitting ? (
                         <>

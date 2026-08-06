@@ -1,6 +1,6 @@
 // NATURAL ROCK SPAS - Authorized Dealer Catalog
 // All product names, prices, images, and descriptions are sourced directly
-// from naturalrockspas.com (Natural Spas) — Upstate Hot Tubs is an authorized dealer.
+// from naturalrockspas.com (Natural Spas) — Leisure Wellness is an authorized dealer.
 
 export const NATURAL_ROCK_COLOR_OPTIONS = [
   { name: 'Brown', image: 'https://media.cmsmax.com/wxcmonze33la8zu1udat9/classic-brown.png' },

@@ -5,16 +5,16 @@ import { Heart, Activity, Moon, Droplets, Brain } from 'lucide-react';
 
 const BalneotherapyPage = () => {
   const benefits = [
-    { icon: Brain, title: 'Relaxation & Stress Management', color: '#B91C1C' },
+    { icon: Brain, title: 'Relaxation & Stress Management', color: '#EA6A1E' },
     { icon: Activity, title: 'Relieves Backaches & Lumbar Pain', color: '#0A1628' },
-    { icon: Droplets, title: 'Soothes Joint & Muscle Pain', color: '#B91C1C' },
+    { icon: Droplets, title: 'Soothes Joint & Muscle Pain', color: '#EA6A1E' },
     { icon: Moon, title: 'Promotes Sleep', color: '#0A1628' },
-    { icon: Heart, title: 'Improves Cardiovascular Health', color: '#B91C1C' },
+    { icon: Heart, title: 'Improves Cardiovascular Health', color: '#EA6A1E' },
   ];
 
   return (
     <>
-      <Helmet><title>Balneotherapy | Upstate Hot Tubs</title></Helmet>
+      <Helmet><title>Balneotherapy | Leisure Wellness</title></Helmet>
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="balneotherapy-page">
         <div className="max-w-6xl mx-auto px-4">
           {/* Hero */}

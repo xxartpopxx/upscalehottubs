@@ -1,4 +1,4 @@
-// Product Data with Color Options for Upstate Hot Tubs
+// Product Data with Color Options for Leisure Wellness
 // Includes Grand River Spas and Viking Spas products
 
 // Base URL for Grand River Spas color visualizer images

@@ -236,7 +236,7 @@ const ARVisualizerPage = () => {
   return (
     <>
       <Helmet>
-        <title>AR Visualizer | See Hot Tubs in Your Space | Upstate Hot Tubs</title>
+        <title>AR Visualizer | See Hot Tubs in Your Space | Leisure Wellness</title>
         <meta name="description" content="Use our AR visualizer to see how a hot tub, swim spa, or sauna would look in your backyard. Virtual placement using your phone's camera." />
       </Helmet>
 
@@ -278,7 +278,7 @@ const ARVisualizerPage = () => {
                       onClick={() => handleProductSelect(product)}
                       className={`w-full text-left p-3 rounded-lg transition-all ${
                         selectedProduct?.id === product.id
-                          ? 'bg-[#B91C1C] text-white'
+                          ? 'bg-[#EA6A1E] text-white'
                           : 'bg-white/5 text-white/80 hover:bg-white/10'
                       }`}
                     >
@@ -398,7 +398,7 @@ const ARVisualizerPage = () => {
                       }}
                       draggable={false}
                     />
-                    <div className="bg-[#B91C1C] text-white text-center py-1 px-3 rounded mt-2 text-xs font-semibold pointer-events-none">
+                    <div className="bg-[#EA6A1E] text-white text-center py-1 px-3 rounded mt-2 text-xs font-semibold pointer-events-none">
                       {selectedProduct.name}
                     </div>
                   </div>
@@ -461,7 +461,7 @@ const ARVisualizerPage = () => {
                 {isARActive && (
                   <button 
                     onClick={handleClear}
-                    className="absolute top-4 right-4 bg-[#B91C1C] text-white p-2 rounded-full shadow-lg hover:bg-red-700 transition-colors z-20"
+                    className="absolute top-4 right-4 bg-[#EA6A1E] text-white p-2 rounded-full shadow-lg hover:bg-red-700 transition-colors z-20"
                   >
                     <CloseIcon size={20} />
                   </button>
@@ -515,7 +515,7 @@ const ARVisualizerPage = () => {
               className="bg-[#0A1628] max-w-lg w-full rounded-lg overflow-hidden"
               onClick={e => e.stopPropagation()}
             >
-              <div className="h-2 bg-[#B91C1C]" />
+              <div className="h-2 bg-[#EA6A1E]" />
               <div className="p-8">
                 <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-white mb-6">
                   How to Use AR Visualizer
@@ -523,19 +523,19 @@ const ARVisualizerPage = () => {
                 
                 <ol className="space-y-4 text-white/80 mb-8">
                   <li className="flex items-start gap-3">
-                    <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">1</span>
+                    <span className="bg-[#EA6A1E] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">1</span>
                     <span>Select a hot tub, swim spa, sauna, or cold plunge from the product list</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">2</span>
+                    <span className="bg-[#EA6A1E] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">2</span>
                     <span><strong>Upload a photo</strong> of your backyard/patio, or use your camera if available</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">3</span>
+                    <span className="bg-[#EA6A1E] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">3</span>
                     <span><strong>Drag the product</strong> to position it where you want in your space</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="bg-[#B91C1C] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">4</span>
+                    <span className="bg-[#EA6A1E] text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">4</span>
                     <span>Use the <strong>zoom controls</strong> to resize the product to scale</span>
                   </li>
                 </ol>

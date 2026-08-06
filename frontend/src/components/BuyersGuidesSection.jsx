@@ -15,14 +15,14 @@ const BuyersGuidesSection = ({ variant = 'highlight', heading = "Free Buyer's Gu
       className="py-12 md:py-16 px-4"
       style={{
         background: variant === 'highlight'
-          ? 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 60%, #B91C1C 100%)'
+          ? 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 60%, #EA6A1E 100%)'
           : 'transparent',
       }}
       data-testid="buyers-guides-section"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <div className={`inline-flex items-center gap-2 mb-3 ${variant === 'highlight' ? 'text-yellow-300' : 'text-[#B91C1C]'}`}>
+          <div className={`inline-flex items-center gap-2 mb-3 ${variant === 'highlight' ? 'text-yellow-300' : 'text-[#EA6A1E]'}`}>
             <BookOpen size={20} />
             <span className="text-sm font-bold uppercase tracking-wider">Free Download</span>
           </div>

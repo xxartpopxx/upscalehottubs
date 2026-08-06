@@ -19,7 +19,7 @@ const ReviewCard = ({ review }) => (
   <div className="bg-white p-6 shadow-md border border-slate-100 h-full flex flex-col">
     <div className="flex items-center justify-between mb-3">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#B91C1C] to-[#0A1628] text-white font-bold flex items-center justify-center">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#EA6A1E] to-[#0A1628] text-white font-bold flex items-center justify-center">
           {review.name.charAt(0)}
         </div>
         <div>
@@ -77,7 +77,7 @@ const GoogleReviewsSection = ({ compact = false, title = "What Our Customers Are
               href={SOCIAL_LINKS.googleBusiness}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#B91C1C] font-semibold hover:underline inline-flex items-center gap-1"
+              className="text-[#EA6A1E] font-semibold hover:underline inline-flex items-center gap-1"
             >
               See all reviews <ExternalLink size={14} />
             </a>
@@ -118,14 +118,14 @@ const GoogleReviewsSection = ({ compact = false, title = "What Our Customers Are
               <div className="flex justify-center gap-4 mt-6">
                 <button
                   onClick={handlePrev}
-                  className="w-10 h-10 bg-[#0A1628] text-white flex items-center justify-center hover:bg-[#B91C1C] transition-colors"
+                  className="w-10 h-10 bg-[#0A1628] text-white flex items-center justify-center hover:bg-[#EA6A1E] transition-colors"
                   aria-label="Previous reviews"
                 >
                   <ChevronLeft size={20} />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="w-10 h-10 bg-[#0A1628] text-white flex items-center justify-center hover:bg-[#B91C1C] transition-colors"
+                  className="w-10 h-10 bg-[#0A1628] text-white flex items-center justify-center hover:bg-[#EA6A1E] transition-colors"
                   aria-label="Next reviews"
                 >
                   <ChevronRight size={20} />
@@ -148,7 +148,7 @@ const GoogleReviewsSection = ({ compact = false, title = "What Our Customers Are
             href={SOCIAL_LINKS.googleBusiness}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#991B1B] text-white font-bold py-3 px-6 uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 bg-[#EA6A1E] hover:bg-[#C4551A] text-white font-bold py-3 px-6 uppercase tracking-wider transition-colors"
           >
             Read All Google Reviews <ExternalLink size={18} />
           </a>

@@ -1,13 +1,13 @@
 // Site-wide Constants
 
-// New Logo - Made in USA with SC State Flag (OLD)
-export const OLD_LOGO = 'https://customer-assets.emergentagent.com/job_wet-test-preview/artifacts/i1rhdpk6_fa32f0be-a50b-4ed0-a5d0-5eac34659b49-1.png';
+// Leisure Wellness logo (beach / wave / sunset watercolor)
+export const OLD_LOGO = '/leisure-wellness-logo.png';
 
-// New Updated Logo - Upstate Hot Tubs with Bubbles
-export const NEW_LOGO = 'https://customer-assets.emergentagent.com/job_river-spa-catalog/artifacts/i0b05mh3_unnamed%205.50.10%E2%80%AFPM.jpg';
+// Leisure Wellness logo
+export const NEW_LOGO = '/leisure-wellness-logo.png';
 
-// Transparent Logo - for dark backgrounds
-export const TRANSPARENT_LOGO = 'https://customer-assets.emergentagent.com/job_spa-layout-overhaul/artifacts/4nsu0y9o_Untitled%20design%20-%202026-03-02T161029.394.png';
+// Leisure Wellness logo (light backgrounds)
+export const TRANSPARENT_LOGO = '/leisure-wellness-logo.png';
 
 // About Page Image (Grand Opening)
 export const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_ad3b0cee-ca9b-4651-9bd8-5c276c5059bb/artifacts/in0ew7x2_Untitled%20design%20%285%29.png';
@@ -36,17 +36,17 @@ export const ASSETS = {
 export const CONTACT = {
   phone: '(864) 837-0155',
   email: 'info@upstatehottubs.com',
-  // Online-only — no physical showroom right now while we find a new warehouse.
+  // Online-only, ships nationwide direct from the factory.
   onlineOnly: true,
-  serviceAreas: ['Fountain Inn, SC', 'Mauldin, SC', 'Spartanburg, SC', 'Anderson, SC', 'Greenville, SC', 'Greer, SC', 'Five Forks, SC', 'Simpsonville, SC'],
+  serviceAreas: ['Ships to all 50 states', 'Factory-direct delivery', 'Fast nationwide shipping', 'Order online or by phone'],
 };
 
-// Announcement messaging shown across the site while we transition to online-only
+// Announcement messaging shown across the site (online-only / national)
 export const ANNOUNCEMENT = {
-  short: "Now online only — factory-direct pricing. We still deliver, install & service.",
-  headline: "We've Moved Online — and You Save Because of It.",
+  short: "Now online only — factory-direct pricing, shipped to your door nationwide.",
+  headline: "Now Online Only — and You Save Because of It.",
   paragraph:
-    "A heads-up for our customers: our showroom lease recently came to an end (a building issue on the property let us out early), and while we search for our new warehouse home, Upstate Hot Tubs is now 100% online. With no showroom and no retail overhead, we're passing those savings straight to you with factory-direct pricing. You order online or over the phone, and our own team still handles delivery, installation, and service — just like always. Same people, same service — better prices.",
+    "Leisure Wellness is now 100% online and shipping nationwide. With no showroom and no retail overhead, we pass those savings straight to you with factory-direct pricing. Order online or over the phone and we'll ship your hot tub, swim spa, sauna or cold plunge straight to your door — anywhere in the country. Same great products, better prices.",
 };
 
 export const SOCIAL_LINKS = {
@@ -66,7 +66,7 @@ export const BUYERS_GUIDES = [
     description: 'Everything you need to know before purchasing a hot tub — sizing, features, hydrotherapy benefits, energy efficiency, and budget tips.',
     file: '/brochures/Leisure-Wellness-Naples-Hot-Tub-Buying-Guide.pdf',
     cover: 'https://customer-assets.emergentagent.com/job_368729df-d6bb-4b62-9b0c-cb186aa3bff7/artifacts/f6vovx3o_leisure-wellness-naples-hot-tub-buying-guide.pdf.pdf',
-    accent: '#B91C1C'
+    accent: '#EA6A1E'
   },
   {
     id: 'sauna-guide',

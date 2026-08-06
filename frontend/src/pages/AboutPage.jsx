@@ -24,7 +24,7 @@ const GOOGLE_REVIEWS = {
     {
       name: 'John Albright',
       rating: 5,
-      text: 'Best prices and customer service around!! Highly recommend Upstate Hot Tubs to anyone looking for quality products.',
+      text: 'Best prices and customer service around!! Highly recommend Leisure Wellness to anyone looking for quality products.',
       date: 'Recent',
       photo: 'https://randomuser.me/api/portraits/men/45.jpg'
     },
@@ -45,7 +45,7 @@ const GOOGLE_REVIEWS = {
     {
       name: 'Lisa Martinez',
       rating: 5,
-      text: 'Upstate Hot Tubs offers discounts to first responders. Great company that supports our community!',
+      text: 'Leisure Wellness offers discounts to first responders. Great company that supports our community!',
       date: 'Recent',
       photo: 'https://randomuser.me/api/portraits/women/68.jpg'
     },
@@ -96,7 +96,7 @@ const HorizontalReviewCard = ({ review, index }) => (
             <img 
               src={review.photo} 
               alt={review.name}
-              className="w-14 h-14 rounded-full object-cover border-2 border-[#B91C1C]"
+              className="w-14 h-14 rounded-full object-cover border-2 border-[#EA6A1E]"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.name)}&background=B91C1C&color=fff&size=56&bold=true`;
@@ -203,21 +203,21 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Family-Owned Wellness Company | Upstate Hot Tubs</title>
+        <title>About Us | Family-Owned Wellness Company | Leisure Wellness</title>
         <meta name="description" content="We are a family-owned business built on honesty, education, and real customer care. No high-pressure sales, transparent pricing. American-made products." />
-        <meta name="keywords" content="Upstate Hot Tubs, family owned, American made hot tubs, hot tub dealer, Simpsonville SC, Naples FL" />
+        <meta name="keywords" content="Leisure Wellness, family owned, American made hot tubs, buy hot tubs online, ships nationwide" />
       </Helmet>
       
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="about-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Grand Opening Hero Image */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
-            <img src={ASSETS.aboutImage} alt="Upstate Hot Tubs Grand Opening" className="w-full h-auto object-contain shadow-xl" />
+            <img src={ASSETS.aboutImage} alt="Leisure Wellness Grand Opening" className="w-full h-auto object-contain shadow-xl" />
           </motion.div>
           
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 mb-4">
             <span className="text-2xl">🇺🇸</span>
-            <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
+            <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">American Made & Proud of It</span>
           </motion.div>
           
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
@@ -231,11 +231,11 @@ const AboutPage = () => {
             className="bg-white p-8 shadow-lg mb-12"
           >
             <p className="text-xl text-slate-700 leading-relaxed">
-              We are a family-owned business built on honesty, education, and real customer care. We don't sell to you—we help you find the right wellness package for your lifestyle and needs. There's never high-pressure sales, hidden fees, or surprises. Our all-inclusive pricing is transparent from the start, and we take the time to answer your questions so you can decide with confidence. We're proud to offer American-made products and even prouder of the long-term relationships we build with our customers. From your first visit to delivery—and long after—our team is always here to support you. Stop in, compare the difference, and experience a wellness company that listens, educates, and truly cares.
+              We are a family-owned business built on honesty, education, and real customer care. We don't sell to you—we help you find the right wellness package for your lifestyle and needs. There's never high-pressure sales, hidden fees, or surprises. Our all-inclusive pricing is transparent from the start, and we take the time to answer your questions so you can decide with confidence. We're proud to offer American-made products and even prouder of the long-term relationships we build with our customers. From your first order to delivery—and long after—our team is always here to support you. Shop online, compare the difference, and experience a wellness company that listens, educates, and truly cares.
             </p>
           </motion.div>
           
-          {/* Showroom Gallery removed — currently online only while searching for a new warehouse. */}
+          {/* Showroom Gallery removed — Leisure Wellness is online only, shipping nationwide. */}
 
           {/* Our Values */}
           <motion.div 
@@ -249,7 +249,7 @@ const AboutPage = () => {
               {[
                 { icon: Heart, title: 'Real Customer Care', desc: 'We listen, educate, and truly care about helping you find the right wellness solution.' },
                 { icon: DollarSign, title: 'Transparent Pricing', desc: 'All-inclusive pricing with no hidden fees, surprises, or high-pressure sales tactics.' },
-                { icon: Users, title: 'Long-Term Relationships', desc: 'From your first visit to delivery and beyond, our team is always here to support you.' },
+                { icon: Users, title: 'Long-Term Relationships', desc: 'From your first order to delivery and beyond, our team is always here to support you.' },
               ].map((value, idx) => (
                 <motion.div 
                   key={value.title}
@@ -259,7 +259,7 @@ const AboutPage = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="bg-white p-6 shadow-lg text-center"
                 >
-                  <value.icon className="text-[#B91C1C] mx-auto mb-4" size={40} />
+                  <value.icon className="text-[#EA6A1E] mx-auto mb-4" size={40} />
                   <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">{value.title}</h3>
                   <p className="text-slate-600">{value.desc}</p>
                 </motion.div>
@@ -308,7 +308,7 @@ const AboutPage = () => {
                 href={GOOGLE_REVIEWS.writeReviewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-[#991b1b] transition-colors shadow-lg rounded-lg"
+                className="inline-flex items-center gap-2 bg-[#EA6A1E] text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-[#991b1b] transition-colors shadow-lg rounded-lg"
               >
                 <MessageSquarePlus size={20} />
                 Leave Us a Review
@@ -412,7 +412,7 @@ const AboutPage = () => {
                 className="bg-slate-50 p-8"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <item.icon className="text-[#B91C1C]" size={28} />
+                  <item.icon className="text-[#EA6A1E]" size={28} />
                   <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628]">{item.title}</h3>
                 </div>
                 <p className="text-slate-600">{item.text}</p>
@@ -490,7 +490,7 @@ const AboutPage = () => {
               Hot Tub Benefits
             </h2>
             <p className="text-lg text-slate-600 mb-6">
-              Discover the many health and wellness benefits of owning a hot tub from Upstate Hot Tubs.
+              Discover the many health and wellness benefits of owning a hot tub from Leisure Wellness.
             </p>
             <div className="max-w-4xl aspect-video rounded-lg overflow-hidden shadow-2xl">
               <video 
@@ -576,8 +576,8 @@ const AboutPage = () => {
                 to="/ar-visualizer"
                 className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center gap-4 group"
               >
-                <div className="w-14 h-14 bg-[#B91C1C]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#B91C1C] group-hover:text-white transition-colors">
+                <div className="w-14 h-14 bg-[#EA6A1E]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#EA6A1E] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#EA6A1E] group-hover:text-white transition-colors">
                     <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/>
                     <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/>
                     <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/>
@@ -595,8 +595,8 @@ const AboutPage = () => {
                 to="/covers"
                 className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center gap-4 group"
               >
-                <div className="w-14 h-14 bg-[#B91C1C]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors">
-                  <Shield className="text-[#B91C1C] group-hover:text-white transition-colors" size={28} />
+                <div className="w-14 h-14 bg-[#EA6A1E]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#EA6A1E] transition-colors">
+                  <Shield className="text-[#EA6A1E] group-hover:text-white transition-colors" size={28} />
                 </div>
                 <div>
                   <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-1">Hot Tub Covers</h3>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Sparkles, Check, MapPin, Phone, Star, Zap, Heart, Shield, Thermometer, Snowflake, Brain, Activity, Moon, Smile } from 'lucide-react';
+import { Sparkles, Check, Phone, Star, Zap, Heart, Shield, Thermometer, Snowflake, Brain, Activity, Moon, Smile } from 'lucide-react';
 import { CONTACT } from '../data/constants';
 
 const MembershipPage = () => {
@@ -125,25 +125,12 @@ const MembershipPage = () => {
     }
   ];
 
-  const locations = [
-    {
-      name: 'Naples, FL',
-      address: 'Naples, Florida',
-      phone: CONTACT.phone
-    },
-    {
-      name: 'Greenville, SC',
-      address: 'Greenville, South Carolina',
-      phone: CONTACT.phone
-    }
-  ];
-
   return (
     <>
       <Helmet>
-        <title>Contrast Therapy Membership | Fire & Ice Society | Sauna & Cold Plunge | Naples FL & Greenville SC</title>
-        <meta name="description" content="Experience transformative wellness with Contrast Therapy at Fire & Ice Society. Infrared sauna, cold plunge, and red light therapy. Boost recovery, relaxation, and energy. Naples FL and Greenville SC." />
-        <meta name="keywords" content="contrast therapy, infrared sauna, cold plunge, red light therapy, membership, Naples FL, Greenville SC, wellness, recovery, detox" />
+        <title>Contrast Therapy Membership | Fire &amp; Ice Society | Sauna &amp; Cold Plunge</title>
+        <meta name="description" content="Experience transformative wellness with Contrast Therapy at Fire & Ice Society. Infrared sauna, cold plunge, and red light therapy. Boost recovery, relaxation, and energy." />
+        <meta name="keywords" content="contrast therapy, infrared sauna, cold plunge, red light therapy, membership, wellness, recovery, detox" />
       </Helmet>
 
       <div className="pt-32 pb-20 min-h-screen" style={{ background: 'linear-gradient(180deg, #0A1628 0%, #1a2d4a 50%, #0A1628 100%)' }}>
@@ -176,7 +163,7 @@ const MembershipPage = () => {
               <span className="text-purple-400 font-semibold">three experiences.</span>
             </p>
             <p className="text-lg text-slate-400 max-w-3xl mx-auto">
-              We've crafted a unique recovery journey that is a scientifically-backed approach to self-care, 
+              We&apos;ve crafted a unique recovery journey that is a scientifically-backed approach to self-care, 
               combining hot and cold temperatures for optimal mental and physical performance and wellness.
             </p>
           </motion.div>
@@ -191,7 +178,7 @@ const MembershipPage = () => {
             <div className="bg-gradient-to-r from-red-600/20 via-purple-600/20 to-blue-600/20 backdrop-blur-sm border border-white/20 p-8 md:p-12 max-w-4xl mx-auto">
               <p className="text-xl md:text-2xl text-slate-200 leading-relaxed">
                 Each <span className="text-white font-bold">private suite</span> is a luxurious haven where you can personalize your wellness routine in complete privacy. 
-                This isn't just about recovery—it's an <span className="text-white font-bold">immersive experience</span> designed for both relaxation and rejuvenation.
+                This isn&apos;t just about recovery—it&apos;s an <span className="text-white font-bold">immersive experience</span> designed for both relaxation and rejuvenation.
               </p>
             </div>
           </motion.div>
@@ -408,7 +395,7 @@ const MembershipPage = () => {
               Membership Packages
             </h2>
             <p className="text-slate-400 text-center mb-8 max-w-2xl mx-auto">
-              Choose the package that fits your wellness goals. All packages are valid at both Naples FL and Greenville SC locations.
+              Choose the package that fits your wellness goals — no expiration and easy online booking.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
@@ -432,7 +419,7 @@ const MembershipPage = () => {
                     <p className="text-sm text-slate-500 mb-4">{pkg.description}</p>
                     
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-[#B91C1C]">{pkg.price}</span>
+                      <span className="text-3xl font-bold text-[#EA6A1E]">{pkg.price}</span>
                       {pkg.sessions > 1 && (
                         <span className="text-sm text-slate-500 ml-1">/ {pkg.sessions} sessions</span>
                       )}
@@ -453,7 +440,7 @@ const MembershipPage = () => {
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-center text-sm text-slate-600">
                         <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                        Valid at both locations
+                        Flexible scheduling
                       </li>
                       <li className="flex items-center text-sm text-slate-600">
                         <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
@@ -470,45 +457,11 @@ const MembershipPage = () => {
                       className={`block w-full text-center py-3 font-bold uppercase tracking-wider transition-colors ${
                         pkg.popular
                           ? 'bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white'
-                          : 'bg-[#0A1628] hover:bg-[#B91C1C] text-white'
+                          : 'bg-[#0A1628] hover:bg-[#EA6A1E] text-white'
                       }`}
                     >
                       Get Started
                     </a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Locations Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-white text-center mb-8">
-              Our Locations
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {locations.map((location, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 text-center"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="text-white" size={32} />
-                  </div>
-                  <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-white mb-2">{location.name}</h3>
-                  <p className="text-slate-300 mb-4">{location.address}</p>
-                  <div className="flex items-center justify-center gap-2 text-slate-300">
-                    <Phone size={16} />
-                    <span>{location.phone}</span>
                   </div>
                 </motion.div>
               ))}

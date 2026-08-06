@@ -37,10 +37,10 @@ video {
 /* CTA Button pulse effect */
 @keyframes cta-pulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.4);
+    box-shadow: 0 0 0 0 rgba(234, 106, 30, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(185, 28, 28, 0);
+    box-shadow: 0 0 0 10px rgba(234, 106, 30, 0);
   }
 }
 

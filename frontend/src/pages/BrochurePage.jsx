@@ -92,7 +92,7 @@ const ContactForm = () => {
             id="name" 
             name="name" 
             required 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
             value={formData.name} 
             onChange={e => setFormData({...formData, name: e.target.value})} 
           />
@@ -104,7 +104,7 @@ const ContactForm = () => {
             id="email" 
             name="email" 
             required 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
             value={formData.email} 
             onChange={e => setFormData({...formData, email: e.target.value})} 
           />
@@ -117,7 +117,7 @@ const ContactForm = () => {
           type="tel" 
           id="phone" 
           name="phone" 
-          className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
+          className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
           value={formData.phone} 
           onChange={e => setFormData({...formData, phone: e.target.value})} 
         />
@@ -128,7 +128,7 @@ const ContactForm = () => {
         <select 
           id="interest" 
           name="interest" 
-          className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors"
+          className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors"
           value={formData.interest}
           onChange={e => setFormData({...formData, interest: e.target.value})}
         >
@@ -148,7 +148,7 @@ const ContactForm = () => {
           id="message" 
           name="message" 
           rows="3" 
-          className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors resize-none" 
+          className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors resize-none" 
           placeholder="Tell us about what you're looking for..."
           value={formData.message} 
           onChange={e => setFormData({...formData, message: e.target.value})}
@@ -178,7 +178,7 @@ const BrochurePage = () => {
   return (
     <>
       <Helmet>
-        <title>Product Brochures | Upstate Hot Tubs</title>
+        <title>Product Brochures | Leisure Wellness</title>
         <meta name="description" content="Download free product brochures for Dynasty Spas hot tubs, swim spas, and more. Get detailed specifications and features." />
       </Helmet>
 
@@ -194,7 +194,7 @@ const BrochurePage = () => {
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">🇺🇸</span>
-                <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
+                <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">American Made & Proud of It</span>
               </div>
               <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase mb-4">
                 Product Brochures
@@ -223,7 +223,7 @@ const BrochurePage = () => {
                     onClick={() => setSelectedCategory(cat)}
                     className={`px-4 py-2 font-semibold transition-colors ${
                       selectedCategory === cat 
-                        ? 'bg-[#B91C1C] text-white' 
+                        ? 'bg-[#EA6A1E] text-white' 
                         : 'bg-white text-slate-700 hover:bg-slate-100'
                     }`}
                   >
@@ -245,14 +245,14 @@ const BrochurePage = () => {
                     transition={{ delay: idx * 0.05 }}
                     className="bg-white p-4 flex items-center gap-4 hover:shadow-lg transition-shadow group"
                   >
-                    <div className="w-12 h-12 bg-[#B91C1C]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors">
-                      <FileText className="text-[#B91C1C] group-hover:text-white transition-colors" size={24} />
+                    <div className="w-12 h-12 bg-[#EA6A1E]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#EA6A1E] transition-colors">
+                      <FileText className="text-[#EA6A1E] group-hover:text-white transition-colors" size={24} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-[#0A1628] truncate">{brochure.name}</h3>
                       <p className="text-sm text-slate-500">{brochure.category}</p>
                     </div>
-                    <Download className="text-slate-400 group-hover:text-[#B91C1C] transition-colors flex-shrink-0" size={20} />
+                    <Download className="text-slate-400 group-hover:text-[#EA6A1E] transition-colors flex-shrink-0" size={20} />
                   </motion.a>
                 ))}
               </div>
@@ -275,7 +275,7 @@ const BrochurePage = () => {
                   <p className="text-sm text-slate-600 mb-2">Or call us directly:</p>
                   <a 
                     href={`tel:${CONTACT.phone}`}
-                    className="inline-flex items-center gap-2 text-[#B91C1C] font-bold text-lg hover:underline"
+                    className="inline-flex items-center gap-2 text-[#EA6A1E] font-bold text-lg hover:underline"
                   >
                     <Phone size={20} />
                     {CONTACT.phone}

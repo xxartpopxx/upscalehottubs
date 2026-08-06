@@ -57,7 +57,7 @@ const ContactForm = () => {
             id="name" 
             name="name" 
             required 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
             value={formData.name} 
             onChange={e => setFormData({...formData, name: e.target.value})} 
           />
@@ -69,7 +69,7 @@ const ContactForm = () => {
             id="email" 
             name="email" 
             required 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
             value={formData.email} 
             onChange={e => setFormData({...formData, email: e.target.value})} 
           />
@@ -83,7 +83,7 @@ const ContactForm = () => {
             type="tel" 
             id="phone" 
             name="phone" 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
             value={formData.phone} 
             onChange={e => setFormData({...formData, phone: e.target.value})} 
           />
@@ -93,7 +93,7 @@ const ContactForm = () => {
           <select 
             id="interest" 
             name="interest" 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] outline-none bg-white transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] outline-none bg-white transition-colors" 
             value={formData.interest} 
             onChange={e => setFormData({...formData, interest: e.target.value})}
           >
@@ -118,7 +118,7 @@ const ContactForm = () => {
           name="message" 
           rows="4" 
           required 
-          className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] outline-none resize-none transition-colors" 
+          className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] outline-none resize-none transition-colors" 
           value={formData.message} 
           onChange={e => setFormData({...formData, message: e.target.value})} 
         />
@@ -155,18 +155,18 @@ const ContactPage = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white border-l-4 border-[#B91C1C] shadow-md p-6 mb-12"
+          className="bg-white border-l-4 border-[#EA6A1E] shadow-md p-6 mb-12"
           data-testid="online-only-banner"
         >
           <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] mb-2">
-            We&apos;ve Moved <span className="text-[#B91C1C]">Online</span> — and You Save Because of It.
+            Now <span className="text-[#EA6A1E]">Online</span> — and You Save Because of It.
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            Our showroom lease recently came to an end and while we search for our new warehouse home, Upstate Hot Tubs is now 100% online. With no showroom overhead, we&apos;re passing those savings straight to you with <span className="font-semibold">factory-direct pricing</span>. Our own team still handles <span className="font-semibold">delivery, installation, and service</span> — just like always.
+            Leisure Wellness is now 100% online and shipping nationwide. With no showroom overhead, we&apos;re passing those savings straight to you with <span className="font-semibold">factory-direct pricing</span>. Order online or over the phone and we&apos;ll ship your unit <span className="font-semibold">straight to your door, anywhere in the country</span>.
           </p>
           <p className="text-slate-700 mt-3">
             Questions or ready to order?{' '}
-            <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">
+            <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#EA6A1E] hover:underline">
               Call {CONTACT.phone}
             </a>.
           </p>
@@ -180,10 +180,10 @@ const ContactPage = () => {
               <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase mb-6">Get In Touch</h3>
               <div className="space-y-4">
                 <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-3 text-slate-300 hover:text-white">
-                  <Phone size={20} className="text-[#B91C1C]" /> {CONTACT.phone}
+                  <Phone size={20} className="text-[#EA6A1E]" /> {CONTACT.phone}
                 </a>
                 <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-slate-300 hover:text-white">
-                  <Mail size={20} className="text-[#B91C1C]" /> {CONTACT.email}
+                  <Mail size={20} className="text-[#EA6A1E]" /> {CONTACT.email}
                 </a>
                 <p className="text-slate-300 text-sm italic pt-2 border-t border-white/10">
                   Call anytime with questions — we&apos;re happy to help you pick the right unit.
@@ -196,34 +196,34 @@ const ContactPage = () => {
               <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase text-[#0A1628] mb-4">Same Service. Better Prices.</h3>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <Tag size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
+                  <Tag size={20} className="text-[#EA6A1E] flex-shrink-0 mt-1" />
                   <span><span className="font-semibold">Factory-direct pricing</span> — no showroom, no retail markup.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Truck size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
-                  <span><span className="font-semibold">Our own install crew</span> — not a random third-party contractor.</span>
+                  <Truck size={20} className="text-[#EA6A1E] flex-shrink-0 mt-1" />
+                  <span><span className="font-semibold">Ships to your door</span> — fast, factory-direct freight nationwide.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Wrench size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
-                  <span><span className="font-semibold">Real service after the sale</span> — warranty help, maintenance, and repairs from us.</span>
+                  <Wrench size={20} className="text-[#EA6A1E] flex-shrink-0 mt-1" />
+                  <span><span className="font-semibold">Real support after the sale</span> — warranty help and questions handled by our team.</span>
                 </li>
               </ul>
             </div>
             
             <div className="bg-slate-50 p-8">
-              <h3 className="font-['Barlow_Condensed'] text-xl font-bold mb-4">Where We Deliver</h3>
-              <p className="text-sm text-slate-600 mb-4">We deliver and install throughout the Upstate and surrounding areas:</p>
+              <h3 className="font-['Barlow_Condensed'] text-xl font-bold mb-4">Ships Nationwide</h3>
+              <p className="text-sm text-slate-600 mb-4">Order online or by phone — we ship straight to your door, anywhere in the country:</p>
               <div className="flex flex-wrap gap-2">
                 {CONTACT.serviceAreas.map(area => (
                   <span key={area} className="bg-white px-3 py-1 text-sm text-slate-600 border">{area}</span>
                 ))}
               </div>
               <p className="text-sm text-slate-600 mt-4 italic">
-                Not sure if we reach you?{' '}
-                <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">
+                Questions about your order?{' '}
+                <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#EA6A1E] hover:underline">
                   Call {CONTACT.phone}
                 </a>{' '}
-                — if you&apos;re close, we&apos;ll make it work.
+                — we&apos;re happy to help.
               </p>
             </div>
           </div>

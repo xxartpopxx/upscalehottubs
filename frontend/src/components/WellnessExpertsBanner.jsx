@@ -15,7 +15,7 @@ const WellnessExpertsBanner = ({ variant = 'full' }) => {
         className="relative py-6 md:py-8 px-4 text-white overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #B91C1C 0%, #7F1D1D 40%, #0A1628 100%)',
+            'linear-gradient(135deg, #EA6A1E 0%, #A8481A 40%, #0A1628 100%)',
         }}
         data-testid="wellness-experts-banner-compact"
       >
@@ -30,7 +30,7 @@ const WellnessExpertsBanner = ({ variant = 'full' }) => {
           </div>
           <a
             href={`tel:${CONTACT.phone}`}
-            className="inline-flex items-center gap-3 bg-white text-[#B91C1C] hover:bg-yellow-300 hover:text-[#0A1628] font-bold text-lg md:text-xl py-3 px-6 uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-3 bg-white text-[#EA6A1E] hover:bg-yellow-300 hover:text-[#0A1628] font-bold text-lg md:text-xl py-3 px-6 uppercase tracking-wider transition-colors"
           >
             <Phone size={22} /> {CONTACT.phone}
           </a>
@@ -44,7 +44,7 @@ const WellnessExpertsBanner = ({ variant = 'full' }) => {
       className="relative py-14 md:py-20 px-4 text-white overflow-hidden"
       style={{
         background:
-          'radial-gradient(ellipse at top left, rgba(185,28,28,0.85), transparent 60%), radial-gradient(ellipse at bottom right, rgba(30,64,175,0.6), transparent 60%), linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)',
+          'radial-gradient(ellipse at top left, rgba(234, 106, 30,0.85), transparent 60%), radial-gradient(ellipse at bottom right, rgba(30,64,175,0.6), transparent 60%), linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)',
       }}
       data-testid="wellness-experts-banner"
     >
@@ -76,7 +76,7 @@ const WellnessExpertsBanner = ({ variant = 'full' }) => {
 
           <a
             href={`tel:${CONTACT.phone}`}
-            className="inline-flex items-center gap-3 bg-[#B91C1C] hover:bg-white hover:text-[#B91C1C] text-white font-black text-2xl md:text-4xl py-4 md:py-5 px-8 md:px-12 uppercase tracking-wider transition-colors shadow-2xl"
+            className="inline-flex items-center gap-3 bg-[#EA6A1E] hover:bg-white hover:text-[#EA6A1E] text-white font-black text-2xl md:text-4xl py-4 md:py-5 px-8 md:px-12 uppercase tracking-wider transition-colors shadow-2xl"
           >
             <Phone size={32} className="animate-pulse" /> {CONTACT.phone}
           </a>

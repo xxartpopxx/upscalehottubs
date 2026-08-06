@@ -96,3 +96,12 @@ Single source of truth for the title, description, breadcrumb chain, and (option
 - `/app/frontend/src/components/layout/Footer.jsx` — Footer hours block
 - `/app/frontend/public/index.html` — JSON-LD LocalBusiness schema, OG defaults
 - `/app/frontend/public/robots.txt` — sitemap pointer (www)
+
+
+## Changelog — 2025-07 Rebrand to "Leisure Wellness" (online-only, national)
+- **Brand**: Renamed all visible "Upstate Hot Tubs" → "Leisure Wellness". Kept external URLs/handles and email `info@upstatehottubs.com` unchanged (per owner). SEO domain/canonicals stay `www.upstatehottubs.com`.
+- **Logo**: New Leisure Wellness beach/wave/sunset logo saved at `frontend/public/leisure-wellness-logo.png`; wired via `ASSETS` logo constants, header, footer, favicon, apple-touch-icon and OG/Twitter images.
+- **Top banner**: `AnnouncementBar` now reads "Formerly Upstate Hot Tubs — Now Online Only." with a blue→orange (logo) gradient + phone link.
+- **Colors from logo**: Global remap of accent red `#B91C1C`→orange `#EA6A1E` (+ `#7F1D1D→#A8481A`, `#991B1B→#C4551A`, `#DC2626→#F5811F`) and blue `#1E40AF→#1E6FB2`; navy `#0A1628` kept as neutral. Updated CSS vars in `index.css`, inline critical CSS + theme-color in `index.html`.
+- **Stripped local (Naples/SC) pieces → national/online**: removed showroom address, geo, store hours, map pins, "visit us"/"stop in" and local-delivery ("we deliver & install") language. Footer "Service Areas" → "Nationwide Shipping". Membership "Our Locations" (Naples FL / Greenville SC) section removed. Home/Contact/Wellness/About copy reworded to "order online, ships to your door, nationwide, call us". Testimonials diversified off SC.
+- **SEO kept**: `public/index.html` JSON-LD changed LocalBusiness→`Store` (areaServed = United States, no address); `scripts/seo-meta.js` per-route titles/descriptions rewritten national/online; `prerender.js` shell-desc prefix updated.

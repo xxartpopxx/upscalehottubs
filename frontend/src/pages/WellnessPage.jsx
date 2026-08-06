@@ -70,7 +70,7 @@ const WellnessPage = () => {
             transition={{ delay: 0.2 }}
             className="font-['Barlow_Condensed'] text-5xl md:text-7xl font-bold uppercase mb-6"
           >
-            Live Your <span className="text-[#B91C1C]">Best Life</span>
+            Live Your <span className="text-[#EA6A1E]">Best Life</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -186,7 +186,7 @@ const WellnessPage = () => {
                   <div className="flex items-center gap-4 mb-6">
                     <motion.div 
                       whileHover={{ scale: 1.1, rotate: 10 }}
-                      className="w-16 h-16 bg-[#B91C1C] rounded-full flex items-center justify-center shadow-lg"
+                      className="w-16 h-16 bg-[#EA6A1E] rounded-full flex items-center justify-center shadow-lg"
                     >
                       <Icon className="text-white" size={28} />
                     </motion.div>
@@ -216,7 +216,7 @@ const WellnessPage = () => {
                     />
                   ) : (
                     <div className="w-full h-[400px] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                      <Icon className="text-[#B91C1C]/30" size={120} />
+                      <Icon className="text-[#EA6A1E]/30" size={120} />
                     </div>
                   )}
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0A1628]/50 to-transparent" />
@@ -253,7 +253,7 @@ const WellnessPage = () => {
           </div>
         </motion.div>
 
-        {/* Upstate Hot Tubs Lifestyle Video */}
+        {/* Leisure Wellness Lifestyle Video */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -261,10 +261,10 @@ const WellnessPage = () => {
           className="mb-24"
         >
           <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-center text-[#0A1628] mb-4">
-            Experience the Upstate Hot Tubs Lifestyle
+            Experience the Leisure Wellness Lifestyle
           </h2>
           <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-8">
-            See how our customers in Simpsonville and the Upstate enjoy their hot tubs, saunas, cold plunges, and swim spas.
+            See how customers across the country enjoy their hot tubs, saunas, cold plunges, and swim spas.
           </p>
           <div className="max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
             <video 
@@ -288,7 +288,7 @@ const WellnessPage = () => {
           className="bg-[#0A1628] text-white py-20 px-8 mb-24 -mx-4 md:-mx-8 relative overflow-hidden"
         >
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-[#B91C1C] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute top-0 left-0 w-96 h-96 bg-[#EA6A1E] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
           </div>
           
@@ -340,13 +340,13 @@ const WellnessPage = () => {
               {
                 quote: "Since getting our hot tub, my chronic back pain has improved significantly. The nightly soaks have become our family's favorite way to unwind together.",
                 author: "Sarah M.",
-                location: "Greenville, SC",
+                location: "Austin, TX",
                 rating: 5
               },
               {
                 quote: "I was skeptical at first, but the hydrotherapy jets have done wonders for my arthritis. I can't imagine life without our hot tub now!",
                 author: "Robert T.",
-                location: "Spartanburg, SC",
+                location: "Denver, CO",
                 rating: 5
               }
             ].map((testimonial, idx) => (
@@ -358,7 +358,7 @@ const WellnessPage = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-slate-50 p-8 relative"
               >
-                <div className="absolute top-6 left-6 text-6xl text-[#B91C1C]/10 font-serif">"</div>
+                <div className="absolute top-6 left-6 text-6xl text-[#EA6A1E]/10 font-serif">"</div>
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="text-[#D4AF37] fill-[#D4AF37]" size={20} />
@@ -399,9 +399,9 @@ const WellnessPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white border border-slate-200 p-6 text-center hover:border-[#B91C1C] hover:shadow-lg transition-all"
+                className="bg-white border border-slate-200 p-6 text-center hover:border-[#EA6A1E] hover:shadow-lg transition-all"
               >
-                <feature.icon className="text-[#B91C1C] mx-auto mb-4" size={40} />
+                <feature.icon className="text-[#EA6A1E] mx-auto mb-4" size={40} />
                 <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">{feature.title}</h3>
                 <p className="text-slate-600 text-sm">{feature.desc}</p>
               </motion.div>
@@ -414,18 +414,18 @@ const WellnessPage = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center bg-gradient-to-r from-[#B91C1C] to-[#7F1D1D] text-white p-12 -mx-4 md:-mx-8"
+          className="text-center bg-gradient-to-r from-[#EA6A1E] to-[#A8481A] text-white p-12 -mx-4 md:-mx-8"
         >
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold mb-4">
             Start Your Wellness Journey Today
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Ready to experience the benefits of hydrotherapy at home? We&apos;re online-only with factory-direct pricing and our own team still delivers, installs, and services every unit. Call us with any questions — we&apos;re happy to help you pick the right model.
+            Ready to experience the benefits of hydrotherapy at home? We&apos;re online-only with factory-direct pricing and we ship every unit straight to your door, anywhere in the country. Call us with any questions — we&apos;re happy to help you pick the right model.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/hot-tubs" 
-              className="bg-white text-[#B91C1C] font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 hover:bg-slate-100 transition-colors shadow-lg"
+              className="bg-white text-[#EA6A1E] font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 hover:bg-slate-100 transition-colors shadow-lg"
               data-testid="shop-hot-tubs-btn"
             >
               Shop Hot Tubs <ChevronRight size={18} />
@@ -435,7 +435,7 @@ const WellnessPage = () => {
               className="border-2 border-white text-white font-['Barlow_Condensed'] font-bold uppercase tracking-wider px-8 py-4 inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
               data-testid="schedule-visit-btn"
             >
-              Schedule a Visit
+              Get a Quote
             </Link>
             <a 
               href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
@@ -465,12 +465,12 @@ const WellnessPage = () => {
               to="/anatomy-of-a-spa"
               className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group"
             >
-              <div className="w-12 h-12 bg-[#B91C1C]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#B91C1C] transition-colors">
-                <Activity className="text-[#B91C1C] group-hover:text-white transition-colors" size={24} />
+              <div className="w-12 h-12 bg-[#EA6A1E]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#EA6A1E] transition-colors">
+                <Activity className="text-[#EA6A1E] group-hover:text-white transition-colors" size={24} />
               </div>
               <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">Anatomy of a Spa</h3>
               <p className="text-slate-600 text-sm mb-4">Understand the components that make up a quality hot tub and how they work together.</p>
-              <span className="text-[#B91C1C] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span className="text-[#EA6A1E] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                 Learn More <ChevronRight size={16} />
               </span>
             </Link>
@@ -479,12 +479,12 @@ const WellnessPage = () => {
               to="/balneotherapy"
               className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group"
             >
-              <div className="w-12 h-12 bg-[#B91C1C]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#B91C1C] transition-colors">
-                <Droplets className="text-[#B91C1C] group-hover:text-white transition-colors" size={24} />
+              <div className="w-12 h-12 bg-[#EA6A1E]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#EA6A1E] transition-colors">
+                <Droplets className="text-[#EA6A1E] group-hover:text-white transition-colors" size={24} />
               </div>
               <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">Balneotherapy</h3>
               <p className="text-slate-600 text-sm mb-4">Discover the ancient science of water therapy and its modern health applications.</p>
-              <span className="text-[#B91C1C] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span className="text-[#EA6A1E] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                 Learn More <ChevronRight size={16} />
               </span>
             </Link>
@@ -493,12 +493,12 @@ const WellnessPage = () => {
               to="/jets"
               className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group"
             >
-              <div className="w-12 h-12 bg-[#B91C1C]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#B91C1C] transition-colors">
-                <Sparkles className="text-[#B91C1C] group-hover:text-white transition-colors" size={24} />
+              <div className="w-12 h-12 bg-[#EA6A1E]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#EA6A1E] transition-colors">
+                <Sparkles className="text-[#EA6A1E] group-hover:text-white transition-colors" size={24} />
               </div>
               <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">Jet Technology</h3>
               <p className="text-slate-600 text-sm mb-4">Learn about the different types of jets and how they target specific muscle groups.</p>
-              <span className="text-[#B91C1C] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span className="text-[#EA6A1E] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                 Learn More <ChevronRight size={16} />
               </span>
             </Link>

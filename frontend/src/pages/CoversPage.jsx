@@ -78,13 +78,13 @@ const CoversPage = () => {
 
   return (
     <>
-      <Helmet><title>Hot Tub Covers & Lifters | Upstate Hot Tubs</title></Helmet>
+      <Helmet><title>Hot Tub Covers & Lifters | Leisure Wellness</title></Helmet>
       <div className="pt-40 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="covers-page">
         <div className="max-w-6xl mx-auto px-4">
           {/* Hero */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <h1 className="font-['Barlow_Condensed'] text-5xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
-              Covers & <span className="text-[#B91C1C]">Cover Lifters</span>
+              Covers & <span className="text-[#EA6A1E]">Cover Lifters</span>
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">To protect your spa!</p>
           </motion.div>
@@ -114,7 +114,7 @@ const CoversPage = () => {
                     <div className="flex-1">
                       <h2 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-3">{product.name}</h2>
                       <p className="text-slate-600 mb-4">{product.description}</p>
-                      <p className="text-3xl font-bold text-[#B91C1C]">{product.price}</p>
+                      <p className="text-3xl font-bold text-[#EA6A1E]">{product.price}</p>
                     </div>
                     <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {product.images.map((img, i) => (
@@ -135,7 +135,7 @@ const CoversPage = () => {
               { icon: Zap, title: 'Easy Access', desc: 'Cover lifters make it effortless to open and close your spa.' }
             ].map((b, i) => (
               <div key={i} className="text-center p-6">
-                <b.icon className="mx-auto text-[#B91C1C] mb-3" size={36} />
+                <b.icon className="mx-auto text-[#EA6A1E] mb-3" size={36} />
                 <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">{b.title}</h3>
                 <p className="text-slate-600 text-sm">{b.desc}</p>
               </div>
@@ -186,7 +186,7 @@ const CoversPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                         placeholder="John Smith"
                       />
                     </div>
@@ -200,7 +200,7 @@ const CoversPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -216,7 +216,7 @@ const CoversPage = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                         placeholder="(864) 555-1234"
                       />
                     </div>
@@ -229,7 +229,7 @@ const CoversPage = () => {
                         value={formData.productInterest}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                       >
                         <option value="">Select a product...</option>
                         <option value="spa-cover">Spa Cover</option>
@@ -263,7 +263,7 @@ const CoversPage = () => {
                             value={formData.coverLength}
                             onChange={handleChange}
                             required={formData.productInterest === 'spa-cover'}
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                             placeholder="e.g., 84"
                           />
                         </div>
@@ -277,7 +277,7 @@ const CoversPage = () => {
                             value={formData.coverWidth}
                             onChange={handleChange}
                             required={formData.productInterest === 'spa-cover'}
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                             placeholder="e.g., 84"
                           />
                         </div>
@@ -291,7 +291,7 @@ const CoversPage = () => {
                             value={formData.manufacturer}
                             onChange={handleChange}
                             required={formData.productInterest === 'spa-cover'}
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                             placeholder="e.g., Dynasty Spas, Grand River, etc."
                           />
                         </div>
@@ -304,7 +304,7 @@ const CoversPage = () => {
                             value={formData.coverColor}
                             onChange={handleChange}
                             required={formData.productInterest === 'spa-cover'}
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all"
                           >
                             <option value="">Select a color...</option>
                             <option value="charcoal">Charcoal Gray</option>
@@ -330,7 +330,7 @@ const CoversPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#EA6A1E] focus:border-transparent outline-none transition-all resize-none"
                       placeholder="Tell us about your spa and what you're looking for..."
                     ></textarea>
                   </div>
@@ -339,7 +339,7 @@ const CoversPage = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-[#B91C1C] text-white px-10 py-4 font-bold uppercase tracking-wider hover:bg-[#991b1b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2 rounded-lg"
+                      className="bg-[#EA6A1E] text-white px-10 py-4 font-bold uppercase tracking-wider hover:bg-[#991b1b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2 rounded-lg"
                     >
                       {isSubmitting ? (
                         <>

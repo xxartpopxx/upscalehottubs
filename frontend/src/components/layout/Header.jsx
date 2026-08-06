@@ -130,14 +130,15 @@ const Header = () => {
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between relative">
-          {/* Logo - Centered on mobile, left-aligned on desktop with controlled size */}
-          <Link to="/" className="flex items-center xl:mr-8 absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0 z-10" data-testid="logo-link">
+          {/* Logo - Centered on mobile, left-aligned on desktop. Enlarged & allowed to
+              overflow the bar vertically so it stays readable without widening the nav. */}
+          <Link to="/" className="flex items-center xl:mr-6 absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0 z-10" data-testid="logo-link">
             <motion.img 
               src={ASSETS.transparentLogo} 
               alt="Leisure Wellness - Home" 
-              width="200"
-              height="80"
-              className={`object-contain transition-all duration-300 ${scrolled ? 'h-14 md:h-16 xl:h-18' : 'h-16 md:h-20 xl:h-20'}`} 
+              width="256"
+              height="256"
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-16 md:h-20 xl:h-24' : 'h-20 md:h-28 xl:h-32'}`} 
               loading="eager"
               fetchPriority="high"
               whileHover={{ scale: 1.02 }} 

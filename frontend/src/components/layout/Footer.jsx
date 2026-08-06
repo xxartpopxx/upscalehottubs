@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <img src={ASSETS.transparentLogo} alt="Leisure Wellness" width="200" height="96" className="h-24 mb-6" loading="lazy" />
+            <img src={ASSETS.transparentLogo} alt="Leisure Wellness" width="176" height="176" className="h-40 w-auto object-contain mb-6" loading="lazy" />
             <p className="text-slate-600 text-sm leading-relaxed mb-6">
               Buy American and start living your{' '}
               <span 

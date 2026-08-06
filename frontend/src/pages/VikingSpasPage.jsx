@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Filter, X, ChevronDown } from 'lucide-react';
+import { Filter, X, ChevronDown, Shield, Clock, Wrench, Layers, Download } from 'lucide-react';
 import { VIKING_SPAS_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 import { Helmet } from 'react-helmet-async';
@@ -75,6 +75,65 @@ const VikingSpasPage = () => {
             <p className="text-lg text-slate-600 max-w-3xl">
               Quality crafted hot tubs for the ultimate relaxation experience. American made and proud of it.
             </p>
+          </motion.div>
+
+          {/* Industry-Leading Warranty */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 bg-[#0A1628] rounded-2xl p-8 md:p-12 text-white"
+            data-testid="viking-warranty-section"
+          >
+            <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold uppercase mb-3">
+              Industry-Leading <span className="text-[#EA6A1E]">Warranty</span>
+            </h2>
+            <p className="text-white/80 max-w-4xl mb-8 leading-relaxed">
+              Viking Spas stands behind their products with industry-leading warranty coverage. Your
+              investment is protected with comprehensive coverage including a Lifetime Shell Warranty,
+              5 Years Shell Structure, 3 Years Plumbing &amp; Electric, and a 3 Year Cover Warranty.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { icon: Shield, title: 'Lifetime Shell', desc: 'Your shell is covered for life - our commitment to lasting quality.' },
+                { icon: Layers, title: '5 Year Structure', desc: 'Shell structure warranty ensures long-lasting durability.' },
+                { icon: Wrench, title: '3 Year Plumbing & Electric', desc: 'Complete coverage for all plumbing and electrical components.' },
+                { icon: Clock, title: '3 Year Cover', desc: 'Your spa cover is protected for 3 full years.' },
+              ].map((w) => (
+                <div key={w.title} className="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <div className="w-12 h-12 rounded-full bg-[#EA6A1E]/15 flex items-center justify-center mb-3">
+                    <w.icon className="text-[#EA6A1E]" size={24} />
+                  </div>
+                  <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mb-1">{w.title}</h3>
+                  <p className="text-sm text-white/70 leading-relaxed">{w.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Viking Spas Brochure */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 flex flex-col md:flex-row items-center justify-between gap-6 bg-slate-50 border border-slate-200 rounded-2xl p-8"
+            data-testid="viking-brochure-section"
+          >
+            <div>
+              <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] mb-1">
+                Viking Spas Brochure
+              </h3>
+              <p className="text-slate-600">Download the complete 2025 Viking Spas catalog</p>
+            </div>
+            <a
+              href="https://customer-assets.emergentagent.com/job_family-spa-luxury/artifacts/vmpqiwb2_Viking-Spas-Brochure_Rev-C_web.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2 whitespace-nowrap"
+              data-testid="viking-brochure-download"
+            >
+              <Download size={18} /> Download Brochure (PDF)
+            </a>
           </motion.div>
 
           {/* Filter Bar */}

@@ -14,6 +14,7 @@ import HomePage from './pages/HomePage';
 const HotTubsPage = lazy(() => import('./pages/HotTubsPage'));
 const GrandRiverPage = lazy(() => import('./pages/GrandRiverPage'));
 const DynastySpasPage = lazy(() => import('./pages/DynastySpasPage'));
+const VikingSpasPage = lazy(() => import('./pages/VikingSpasPage'));
 const SwimSpasPage = lazy(() => import('./pages/SwimSpasPage'));
 const SaunasPage = lazy(() => import('./pages/SaunasPage'));
 const ColdPlungesPage = lazy(() => import('./pages/ColdPlungesPage'));
@@ -75,6 +76,7 @@ function App() {
                 <Route path="/hot-tubs" element={<HotTubsPage />} />
                 <Route path="/grand-river-spas" element={<GrandRiverPage />} />
                 <Route path="/dynasty-spas" element={<DynastySpasPage />} />
+                <Route path="/viking-spas" element={<VikingSpasPage />} />
                 <Route path="/natural-rock-spas" element={<NaturalRockSpasPage />} />
                 <Route path="/swim-spas" element={<SwimSpasPage />} />
                 <Route path="/saunas" element={<SaunasPage />} />

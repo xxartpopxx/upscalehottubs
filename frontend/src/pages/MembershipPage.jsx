@@ -133,7 +133,7 @@ const MembershipPage = () => {
         <meta name="keywords" content="contrast therapy, infrared sauna, cold plunge, red light therapy, membership, wellness, recovery, detox" />
       </Helmet>
 
-      <div className="pt-32 pb-20 min-h-screen" style={{ background: 'linear-gradient(180deg, #0A1628 0%, #1a2d4a 50%, #0A1628 100%)' }}>
+      <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20 min-h-screen" style={{ background: 'linear-gradient(180deg, #0A1628 0%, #1a2d4a 50%, #0A1628 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           
           {/* Hero Section - Contrast Therapy */}

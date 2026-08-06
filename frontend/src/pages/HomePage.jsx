@@ -339,7 +339,7 @@ const WetTestPopup = ({ isOpen, onClose }) => null;
 
 // NEW Hero Section - Video without text overlay, text below - Gradient background
 const HeroSection = () => (
-  <section className="relative pt-28 md:pt-36 lg:pt-44" style={{
+  <section className="relative pt-36 md:pt-44 lg:pt-56 xl:pt-64" style={{
     background: 'linear-gradient(180deg, #e8f4fc 0%, #d0e8f7 30%, #b8dcf2 60%, #a0d0ed 100%)',
     backgroundImage: `
       linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(200,230,250,0.7) 50%, rgba(160,210,240,0.8) 100%),

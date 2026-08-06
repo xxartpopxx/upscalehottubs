@@ -177,7 +177,7 @@ const ProductDetailPage = () => {
   
   if (!product) {
     return (
-      <div className="pt-36 pb-20 text-center" style={{
+      <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20 text-center" style={{
         background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
       }}>
         <h2 className="text-2xl font-bold text-[#0A1628]">Product not found</h2>
@@ -255,7 +255,7 @@ const ProductDetailPage = () => {
           <meta name="keywords" content={seoKeywords} />
         </Helmet>
       )}
-      <div className="pt-28 md:pt-40 pb-10 md:pb-20" data-testid="product-detail-page" style={{
+      <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-10 md:pb-20" data-testid="product-detail-page" style={{
         background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
       }}>
         <div className="max-w-7xl mx-auto px-2 md:px-8">

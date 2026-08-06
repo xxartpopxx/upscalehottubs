@@ -105,7 +105,7 @@ const DynastySpasPage = () => {
         <meta name="keywords" content="Dynasty Spas, American made hot tubs, Paradise Bay, Palm Island, Coconut Bay, Caribbean Breeze, luxury hot tubs" />
       </Helmet>
 
-      <div className="pt-40 pb-20" data-testid="dynasty-spas-page" style={{
+      <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20" data-testid="dynasty-spas-page" style={{
         background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
       }}>
         {/* Hero Banner with Dynasty Logo */}

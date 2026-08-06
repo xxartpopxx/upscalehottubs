@@ -289,7 +289,7 @@ const NaturalRockSpasPage = () => {
       </Helmet>
 
       <div
-        className="pt-40 pb-20"
+        className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20"
         style={{
           background:
             'linear-gradient(180deg, #ffffff 0%, #f5efe6 20%, #ede0cc 50%, #d6c4a5 80%, #c4ad84 100%)',

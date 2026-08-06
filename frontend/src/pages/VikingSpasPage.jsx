@@ -57,7 +57,7 @@ const VikingSpasPage = () => {
         <link rel="canonical" href="https://www.upstatehottubs.com/viking-spas" />
       </Helmet>
       
-      <div className="pt-40 pb-20" data-testid="viking-spas-page">
+      <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20" data-testid="viking-spas-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Header */}
           <motion.div 

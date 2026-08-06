@@ -240,7 +240,7 @@ const ARVisualizerPage = () => {
         <meta name="description" content="Use our AR visualizer to see how a hot tub, swim spa, or sauna would look in your backyard. Virtual placement using your phone's camera." />
       </Helmet>
 
-      <div className="min-h-screen bg-[#0A1628] pt-20">
+      <div className="min-h-screen bg-[#0A1628] pt-40 md:pt-48 lg:pt-56 xl:pt-64">
         {/* Header */}
         <div className="bg-[#0A1628] border-b border-white/10 py-4">
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">

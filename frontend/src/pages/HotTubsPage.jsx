@@ -1,9 +1,20 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Filter, X, ChevronDown } from 'lucide-react';
-import { HOT_TUBS, GRAND_RIVER_PRODUCTS, DYNASTY_SPAS_PRODUCTS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
+import { HOT_TUBS, filterProducts, sortProducts, getUniqueSeries } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 import WellnessExpertsBanner from '../components/WellnessExpertsBanner';
+
+// Preferred display order for hot tub brands
+const BRAND_ORDER = ['Grand River Spas', 'Dynasty Spas', 'Viking Spas', 'Wellis Spas', 'Arctic Spas'];
+
+// Unique brands actually present in the HOT_TUBS data, ordered by BRAND_ORDER
+const ALL_BRANDS = (() => {
+  const present = Array.from(new Set(HOT_TUBS.map((p) => p.brand)));
+  const ordered = BRAND_ORDER.filter((b) => present.includes(b));
+  const extras = present.filter((b) => !BRAND_ORDER.includes(b));
+  return [...ordered, ...extras];
+})();
 
 const HotTubsPage = () => {
   const [showFilters, setShowFilters] = useState(false);
@@ -19,11 +30,9 @@ const HotTubsPage = () => {
 
   // Get available series based on brand filter
   const availableSeries = useMemo(() => {
-    const products = filters.brand === 'Grand River Spas' 
-      ? GRAND_RIVER_PRODUCTS 
-      : filters.brand === 'Dynasty Spas' 
-        ? DYNASTY_SPAS_PRODUCTS 
-        : HOT_TUBS;
+    const products = filters.brand === 'all'
+      ? HOT_TUBS
+      : HOT_TUBS.filter((p) => p.brand === filters.brand);
     return getUniqueSeries(products);
   }, [filters.brand]);
 
@@ -37,9 +46,12 @@ const HotTubsPage = () => {
     return sortProducts(filtered, sortBy);
   }, [filters, sortBy]);
 
-  // Separate by brand for display
-  const grandRiverProducts = filteredProducts.filter(p => p.brand === 'Grand River Spas');
-  const dynastyProducts = filteredProducts.filter(p => p.brand === 'Dynasty Spas');
+  // Group filtered products by brand, following the preferred brand order
+  const brandsWithProducts = useMemo(() => {
+    return ALL_BRANDS
+      .map((brand) => ({ brand, products: filteredProducts.filter((p) => p.brand === brand) }))
+      .filter((group) => group.products.length > 0);
+  }, [filteredProducts]);
 
   const clearFilters = () => {
     setFilters({
@@ -68,7 +80,7 @@ const HotTubsPage = () => {
             Shop Our American Made Hot Tubs
           </h1>
           <p className="text-lg text-slate-600">
-            Premium quality hot tubs from Grand River Spas and Dynasty Spas. Click any product to see details and customize colors!
+            Premium quality American made hot tubs from Viking Spas, Wellis, Arctic, Grand River Spas and Dynasty Spas. Click any product to see details and customize colors!
           </p>
         </motion.div>
 
@@ -145,8 +157,9 @@ const HotTubsPage = () => {
                 data-testid="filter-brand"
               >
                 <option value="all">All Brands</option>
-                <option value="Grand River Spas">Grand River Spas</option>
-                <option value="Dynasty Spas">Dynasty Spas</option>
+                {ALL_BRANDS.map((brand) => (
+                  <option key={brand} value={brand}>{brand}</option>
+                ))}
               </select>
             </div>
 
@@ -240,45 +253,25 @@ const HotTubsPage = () => {
             <button onClick={clearFilters} className="btn-primary">Clear Filters</button>
           </div>
         ) : filters.brand === 'all' ? (
-          // Show separated by brand when no brand filter
+          // Show separated by brand when no brand filter, in preferred order
           <>
-            {/* Grand River Spas Section */}
-            {grandRiverProducts.length > 0 && (
-              <section className="mb-16">
-                <motion.div 
-                  initial={{ opacity: 0 }} 
-                  whileInView={{ opacity: 1 }} 
+            {brandsWithProducts.map((group) => (
+              <section className="mb-16 last:mb-0" key={group.brand}>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   className="flex items-center gap-4 mb-8"
                 >
                   <div className="h-px bg-slate-200 flex-1" />
                   <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold uppercase text-[#0A1628]">
-                    Grand River Spas
+                    {group.brand}
                   </h2>
                   <div className="h-px bg-slate-200 flex-1" />
                 </motion.div>
-                <ProductGrid products={grandRiverProducts} linkPrefix="/products" />
+                <ProductGrid products={group.products} linkPrefix="/products" />
               </section>
-            )}
-
-            {/* Dynasty Spas Section */}
-            {dynastyProducts.length > 0 && (
-              <section>
-                <motion.div 
-                  initial={{ opacity: 0 }} 
-                  whileInView={{ opacity: 1 }} 
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4 mb-8"
-                >
-                  <div className="h-px bg-slate-200 flex-1" />
-                  <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold uppercase text-[#0A1628]">
-                    Dynasty Spas
-                  </h2>
-                  <div className="h-px bg-slate-200 flex-1" />
-                </motion.div>
-                <ProductGrid products={dynastyProducts} linkPrefix="/products" />
-              </section>
-            )}
+            ))}
           </>
         ) : (
           // Show flat list when brand is filtered

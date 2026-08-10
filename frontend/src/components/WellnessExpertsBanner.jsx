@@ -5,7 +5,7 @@ import { CONTACT } from '../data/constants';
 
 /**
  * WellnessExpertsBanner — reusable banner section emphasizing the
- * "We are your Wellness Experts — call us for your wellness appointment" message.
+ * "We are your Wellness Experts — call us for a free wellness consultation" message.
  * Variants: 'full' (homepage hero-style), 'compact' (slim banner above page content).
  */
 const WellnessExpertsBanner = ({ variant = 'full' }) => {
@@ -25,7 +25,7 @@ const WellnessExpertsBanner = ({ variant = 'full' }) => {
               We Are Your <span className="text-yellow-300">Wellness Experts</span>
             </h3>
             <p className="text-base md:text-lg text-white/90 mt-1">
-              Call us to schedule your <span className="font-bold">wellness appointment</span> today.
+              Call us for a free <span className="font-bold">wellness consultation</span> today.
             </p>
           </div>
           <a
@@ -68,7 +68,7 @@ const WellnessExpertsBanner = ({ variant = 'full' }) => {
           </h2>
 
           <p className="text-xl md:text-3xl lg:text-4xl text-white/95 font-bold mb-2 uppercase">
-            Call Us For Your <span className="text-[#FCA5A5]">Wellness Appointment</span>
+            Call Us For Your Free <span className="text-[#FCA5A5]">Wellness Consultation</span>
           </p>
           <p className="text-base md:text-lg text-white/80 max-w-3xl mx-auto mb-8">
             {`Bad lab results? Poor sleep? Aches and pains? Discover what hydrotherapy can do for your blood pressure, inflammation, recovery, and stress. We'll match you to the right hot tub, swim spa, sauna, or cold plunge for your unique wellness goals.`}

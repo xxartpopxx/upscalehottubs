@@ -113,11 +113,12 @@ const ProductDetailPage = () => {
   const isViking = product?.brand === 'Viking Spas';
   const isWorldSaunaGroup = product?.brand === 'World Sauna Group';
   const isFinsauna = product?.brand === 'Finsauna';
+  const isHealthMate = product?.brand === 'Health Mate';
   const isHeater = product?.category === 'heater';
-  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna || isHeater;
+  const isSaunaOrColdPlunge = product?.brand === 'SaunaLife' || product?.brand === 'Icebound' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna || isHealthMate || isHeater;
   const isFinnmarkSauna = product?.brand === 'Finnmark Design';
-  const isAnySauna = product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna;
-  const isWorldSaunaWithGallery = (isWorldSaunaGroup || isFinsauna) && product?.images?.gallery && product?.images?.gallery.length > 0;
+  const isAnySauna = product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna || isHealthMate;
+  const isWorldSaunaWithGallery = (isWorldSaunaGroup || isFinsauna || isHealthMate) && product?.images?.gallery && product?.images?.gallery.length > 0;
   const isSwimSpa = !!product?.length;
   const hasColorSelector = isGrandRiver && !isSwimSpa;
   
@@ -1146,6 +1147,8 @@ const ProductDetailPage = () => {
               'Outdoor Saunas':     { heater: 'Electric Sauna Heater Included', voltage: '240V' },
               'Premium Outdoor Saunas': { heater: 'Electric Sauna Heater Included', voltage: '240V', delivery: 'Pre-assembled' },
               'Cabin Saunas':       { exterior: 'Premium Thermowood', interior: 'Cedar', heater: 'Electric Sauna Heater Included', voltage: '240V' },
+              // Health Mate — Serenity Smart Infrared
+              'Serenity Collection': { exterior: 'Mahogany', interior: 'Mahogany', heater: 'Tecoloy® Medical-Grade Near/Mid/Far Infrared', voltage: '120V', lighting: '96-diode Red Light Therapy (9-color chromotherapy)', audio: 'Built-in Bluetooth audio system', controls: 'Smart app-controlled + pro-grade controller', origin: 'Health Mate' },
             };
 
             const defaults = SAUNA_COLLECTION_DEFAULTS[product.collection] || SAUNA_COLLECTION_DEFAULTS[product.series] || {};

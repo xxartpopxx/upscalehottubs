@@ -3174,6 +3174,71 @@ export const SAUNA_INSTALLATION_OPTION = {
 
 export const SAUNAS = [
   {
+    id: 'sauna-serenity-1',
+    name: 'Health Mate Serenity 1 Smart Infrared Sauna',
+    brand: 'Health Mate',
+    series: 'Infrared Saunas',
+    collection: 'Serenity Collection',
+    category: 'infrared',
+    price: 'Call for Pricing',
+    priceValue: null,
+    persons: 1,
+    electrical: '120V / 15 Amp (NEMA 5-15P)',
+    description: 'The Serenity 1 is Health Mate\'s compact 1-person Smart Infrared Sauna. It packs the same patented Tecoloy® medical-grade heaters, red light therapy, app-controlled smart technology and Bluetooth audio into a space-saving mahogany cabin.',
+    longDescription: 'The Serenity 1 Smart Infrared Sauna is the perfect personal wellness retreat for any home. Health Mate\'s patented Tecoloy® medical-grade heaters deliver comprehensive near-, mid-, and far-infrared therapy for 360-degree body coverage, while a high-output 96-diode LED panel provides customizable 9-color near-infrared red light chromotherapy. Smart Sauna Technology lets you control every setting from your phone and preheat in advance, and the built-in Bluetooth audio system keeps you immersed in relaxation. All wrapped in a sleek mahogany exterior with see-through glass.',
+    features: [
+      'Tecoloy® medical-grade heaters delivering near-, mid-, and far-infrared therapy for 360-degree body coverage',
+      'Red Light Therapy — high-output 96-diode LED panel with customizable 9-color near-infrared chromotherapy',
+      'Ergonomic heated-seat bench for relaxed sitting or reclining',
+      'Smart Sauna Technology — control settings via app from anywhere and preheat in advance',
+      'Built-in high-performance Bluetooth audio system that pairs with your smartphone',
+      'Sleek mahogany wood exterior with see-through glass for comfort and heat retention',
+      'Low-EMF — heaters, electronics, and controllers tested for safe electromagnetic frequency levels'
+    ],
+    images: {
+      primary: '/images/saunas/serenity/serenity2-1.png',
+      overhead: '/images/saunas/serenity/serenity2-1.png',
+      gallery: [
+        '/images/saunas/serenity/serenity2-1.png',
+        '/images/saunas/serenity/serenity2-3.png',
+        '/images/saunas/serenity/serenity2-2.png'
+      ]
+    }
+  },
+  {
+    id: 'sauna-serenity-2',
+    name: 'Health Mate Serenity 2 Smart Infrared Sauna',
+    brand: 'Health Mate',
+    series: 'Infrared Saunas',
+    collection: 'Serenity Collection',
+    category: 'infrared',
+    price: 'Call for Pricing',
+    priceValue: null,
+    persons: 2,
+    dimensions: 'W: 48.11" x D: 40.47" x H: 75.67"',
+    electrical: '120V / 15 Amp / 1630W (NEMA 5-15P)',
+    description: 'The Serenity 2 Smart Infrared Sauna comfortably fits 1-2 people and pairs Health Mate\'s patented Tecoloy® medical-grade heaters with full-spectrum near-, mid-, and far-infrared therapy for 360-degree coverage.',
+    longDescription: 'The Serenity 2 Smart Infrared Sauna comfortably seats one to two people and delivers the full Health Mate wellness experience. Patented Tecoloy® medical-grade heaters provide comprehensive near-, mid-, and far-infrared therapy for 360-degree body coverage, while a high-output 96-diode LED panel adds customizable 9-color near-infrared red light chromotherapy. Smart Sauna Technology lets you control settings from anywhere via app and preheat in advance, and a built-in high-performance Bluetooth audio system keeps you immersed in relaxation. The sleek mahogany wood exterior and see-through glass provide modern elegance without compromising heat retention.',
+    features: [
+      'Tecoloy® medical-grade heaters delivering near-, mid-, and far-infrared therapy for 360-degree body coverage',
+      'Red Light Therapy — high-output 96-diode LED panel with customizable 9-color near-infrared chromotherapy',
+      'Ergonomic heated-seat bench for relaxed sitting or reclining',
+      'Smart Sauna Technology — control settings via app from anywhere and preheat in advance',
+      'Built-in high-performance Bluetooth audio system that pairs with your smartphone',
+      'Sleek mahogany wood exterior with see-through glass for comfort and heat retention',
+      'Low-EMF — heaters, electronics, and controllers tested for safe electromagnetic frequency levels'
+    ],
+    images: {
+      primary: '/images/saunas/serenity/serenity2-1.png',
+      overhead: '/images/saunas/serenity/serenity2-1.png',
+      gallery: [
+        '/images/saunas/serenity/serenity2-1.png',
+        '/images/saunas/serenity/serenity2-3.png',
+        '/images/saunas/serenity/serenity2-2.png'
+      ]
+    }
+  },
+  {
     id: 'sauna-finnmark-fd5-trinity',
     name: 'Finnmark FD-5 Trinity XL Infrared & Steam Sauna Combo',
     brand: 'Finnmark Design',

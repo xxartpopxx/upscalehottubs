@@ -5,11 +5,11 @@ import { Heart, Activity, Moon, Droplets, Brain } from 'lucide-react';
 
 const BalneotherapyPage = () => {
   const benefits = [
-    { icon: Brain, title: 'Relaxation & Stress Management', color: '#EA6A1E' },
+    { icon: Brain, title: 'Relaxation & Stress Management', color: '#B91C1C' },
     { icon: Activity, title: 'Relieves Backaches & Lumbar Pain', color: '#0A1628' },
-    { icon: Droplets, title: 'Soothes Joint & Muscle Pain', color: '#EA6A1E' },
+    { icon: Droplets, title: 'Soothes Joint & Muscle Pain', color: '#B91C1C' },
     { icon: Moon, title: 'Promotes Sleep', color: '#0A1628' },
-    { icon: Heart, title: 'Improves Cardiovascular Health', color: '#EA6A1E' },
+    { icon: Heart, title: 'Improves Cardiovascular Health', color: '#B91C1C' },
   ];
 
   return (

@@ -87,7 +87,7 @@ const ProductCard = ({ product, linkPrefix = '/products' }) => {
                   <button 
                     key={idx} 
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImage(idx); }} 
-                    className={`w-3 h-3 rounded-full transition-all min-w-[12px] min-h-[12px] ${currentImage === idx ? 'bg-[#EA6A1E] w-4' : 'bg-slate-300'}`} 
+                    className={`w-3 h-3 rounded-full transition-all min-w-[12px] min-h-[12px] ${currentImage === idx ? 'bg-[#B91C1C] w-4' : 'bg-slate-300'}`} 
                     aria-label={`View image ${idx + 1}`} 
                   />
                 ))}
@@ -98,16 +98,16 @@ const ProductCard = ({ product, linkPrefix = '/products' }) => {
         
         <div className="p-4">
           {product.series && (
-            <p className="text-xs text-[#EA6A1E] font-semibold uppercase tracking-wider mb-1">{product.series}</p>
+            <p className="text-xs text-[#B91C1C] font-semibold uppercase tracking-wider mb-1">{product.series}</p>
           )}
           <h3 className="font-['Barlow_Condensed'] text-lg font-bold uppercase text-[#0A1628] mb-1">{product.name}</h3>
           {product.persons && <p className="text-sm text-slate-500 mb-1">{product.persons} Person</p>}
           {product.jets && <p className="text-sm text-slate-400">{product.jets} Jets</p>}
           {product.length && <p className="text-sm text-slate-400">{product.length}</p>}
-          <p className="text-[#EA6A1E] font-bold text-lg mt-2">{product.price}</p>
+          <p className="text-[#B91C1C] font-bold text-lg mt-2">{product.price}</p>
           <motion.span 
             whileHover={{ x: 5 }} 
-            className="mt-3 text-sm font-semibold text-[#0A1628] group-hover:text-[#EA6A1E] flex items-center gap-1 inline-block"
+            className="mt-3 text-sm font-semibold text-[#0A1628] group-hover:text-[#B91C1C] flex items-center gap-1 inline-block"
           >
             View Details <ChevronRight size={14} />
           </motion.span>

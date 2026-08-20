@@ -11,7 +11,7 @@ const AnnouncementBar = () => {
     <div
       className="w-full text-white text-center text-xs md:text-sm px-3 py-1.5"
       style={{
-        background: 'linear-gradient(90deg, #1E6FB2 0%, #2E86C1 45%, #EA6A1E 100%)',
+        background: 'linear-gradient(90deg, #1E40AF 0%, #2E86C1 45%, #B91C1C 100%)',
       }}
       data-testid="announcement-bar"
       role="region"

@@ -10,12 +10,12 @@ const Footer = () => {
       background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
     }}>
       {/* Slogan Banner */}
-      <div className="border-b border-[#1E6FB2]/10 py-6">
+      <div className="border-b border-[#1E40AF]/10 py-6">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
           <p className="text-xl md:text-2xl font-['Barlow_Condensed'] uppercase tracking-wider text-[#0A1628] mb-1">
             Live Your Healthiest Life While Enjoying a Vacation Everyday at Home
           </p>
-          <p className="text-[#EA6A1E] font-semibold flex items-center justify-center gap-2">
+          <p className="text-[#B91C1C] font-semibold flex items-center justify-center gap-2">
             <span className="text-base">🇺🇸</span> American Made & Proud of It
           </p>
         </div>
@@ -28,7 +28,7 @@ const Footer = () => {
             <p className="text-slate-600 text-sm leading-relaxed mb-6">
               Buy American and start living your{' '}
               <span 
-                className="text-[#EA6A1E] font-bold"
+                className="text-[#B91C1C] font-bold"
                 style={{ 
                   textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff'
                 }}
@@ -49,7 +49,7 @@ const Footer = () => {
                   href={href} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className={`w-10 h-10 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg transition-colors ${isGoogle ? 'bg-white border border-slate-200 hover:bg-slate-50' : 'bg-[#1E6FB2] text-white hover:bg-[#EA6A1E]'}`}
+                  className={`w-10 h-10 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg transition-colors ${isGoogle ? 'bg-white border border-slate-200 hover:bg-slate-50' : 'bg-[#1E40AF] text-white hover:bg-[#B91C1C]'}`}
                   whileHover={{ scale: 1.1 }}
                   aria-label={isGoogle ? `See us on ${label}` : `Follow us on ${label}`}
                   title={isGoogle ? 'See us on Google · 4.9★' : undefined}
@@ -87,7 +87,7 @@ const Footer = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-slate-600 hover:text-[#EA6A1E] text-sm transition-colors"
+                    className="block text-slate-600 hover:text-[#B91C1C] text-sm transition-colors"
                   >
                     {link.name} ↗
                   </a>
@@ -95,7 +95,7 @@ const Footer = () => {
                   <Link 
                     key={link.name} 
                     to={link.href}
-                    className="block text-slate-600 hover:text-[#EA6A1E] text-sm transition-colors"
+                    className="block text-slate-600 hover:text-[#B91C1C] text-sm transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -108,7 +108,7 @@ const Footer = () => {
                 <Link 
                   key={link} 
                   to={`/${link.toLowerCase().replace(' ', '-')}`} 
-                  className="block text-slate-600 hover:text-[#EA6A1E] text-sm transition-colors"
+                  className="block text-slate-600 hover:text-[#B91C1C] text-sm transition-colors"
                 >
                   {link}
                 </Link>
@@ -119,17 +119,17 @@ const Footer = () => {
           <div>
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mb-6 text-[#0A1628]">Contact Us</h3>
             <div className="space-y-3">
-              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-3 text-slate-700 hover:text-[#EA6A1E] text-sm">
-                <Phone size={16} className="text-[#EA6A1E]" /> {CONTACT.phone}
+              <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-3 text-slate-700 hover:text-[#B91C1C] text-sm">
+                <Phone size={16} className="text-[#B91C1C]" /> {CONTACT.phone}
               </a>
-              <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-slate-700 hover:text-[#EA6A1E] text-sm">
-                <Mail size={16} className="text-[#EA6A1E]" /> {CONTACT.email}
+              <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-slate-700 hover:text-[#B91C1C] text-sm">
+                <Mail size={16} className="text-[#B91C1C]" /> {CONTACT.email}
               </a>
             </div>
 
             {/* Online-Only Note */}
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mt-6 mb-4 text-[#0A1628]">
-              <span className="flex items-center gap-2"><Truck size={18} className="text-[#EA6A1E]" /> Online Only · Ships Nationwide</span>
+              <span className="flex items-center gap-2"><Truck size={18} className="text-[#B91C1C]" /> Online Only · Ships Nationwide</span>
             </h3>
             <div className="text-sm text-slate-700 leading-relaxed" data-testid="footer-online-only">
               <p className="mb-2">
@@ -137,7 +137,7 @@ const Footer = () => {
               </p>
               <p className="text-slate-600">
                 Questions?{' '}
-                <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#EA6A1E] hover:underline">
+                <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="font-bold text-[#B91C1C] hover:underline">
                   Call {CONTACT.phone}
                 </a>.
               </p>
@@ -148,14 +148,14 @@ const Footer = () => {
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mb-6 text-[#0A1628]">Nationwide Shipping</h3>
             <div className="grid grid-cols-1 gap-2">
               {CONTACT.serviceAreas.map(area => (
-                <span key={area} className="text-slate-600 text-sm flex items-center gap-2"><Truck size={14} className="text-[#EA6A1E] flex-shrink-0" /> {area}</span>
+                <span key={area} className="text-slate-600 text-sm flex items-center gap-2"><Truck size={14} className="text-[#B91C1C] flex-shrink-0" /> {area}</span>
               ))}
             </div>
             <Link to="/contact" className="btn-primary inline-block mt-6 text-sm px-4 py-2">Get a Quote</Link>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-[#1E6FB2]/20 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-[#1E40AF]/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Upstate Hot Tubs. All Rights Reserved.</p>
           <p className="text-slate-500 text-sm flex items-center gap-2">
             <span className="text-base">🇺🇸</span> Proudly Made in America

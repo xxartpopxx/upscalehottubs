@@ -96,7 +96,7 @@ const SwimSpasPage = () => {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl">🇺🇸</span>
-              <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">American Made & Proud of It</span>
+              <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
             </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
               American Made Swim Spas
@@ -136,7 +136,7 @@ const SwimSpasPage = () => {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center gap-2 px-4 py-2 border-2 font-semibold transition-colors ${
                   showFilters || activeFilterCount > 0
-                    ? 'border-[#EA6A1E] text-[#EA6A1E] bg-red-50'
+                    ? 'border-[#B91C1C] text-[#B91C1C] bg-red-50'
                     : 'border-slate-300 text-slate-700 hover:border-slate-400'
                 }`}
                 data-testid="filter-toggle"
@@ -144,7 +144,7 @@ const SwimSpasPage = () => {
                 <Filter size={18} />
                 Filters
                 {activeFilterCount > 0 && (
-                  <span className="bg-[#EA6A1E] text-white text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-[#B91C1C] text-white text-xs px-2 py-0.5 rounded-full">
                     {activeFilterCount}
                   </span>
                 )}
@@ -153,7 +153,7 @@ const SwimSpasPage = () => {
               {activeFilterCount > 0 && (
                 <button
                   onClick={clearFilters}
-                  className="text-sm text-slate-500 hover:text-[#EA6A1E] flex items-center gap-1"
+                  className="text-sm text-slate-500 hover:text-[#B91C1C] flex items-center gap-1"
                 >
                   <X size={14} /> Clear all
                 </button>
@@ -166,7 +166,7 @@ const SwimSpasPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#EA6A1E] focus:outline-none cursor-pointer"
+                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#B91C1C] focus:outline-none cursor-pointer"
                   data-testid="sort-select"
                 >
                   <option value="default">Sort by: Featured</option>
@@ -195,7 +195,7 @@ const SwimSpasPage = () => {
                 <select
                   value={filters.brand}
                   onChange={(e) => setFilters({ ...filters, brand: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-brand"
                 >
                   <option value="all">All Brands</option>
@@ -210,7 +210,7 @@ const SwimSpasPage = () => {
                 <select
                   value={filters.minPrice}
                   onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-min-price"
                 >
                   <option value="">No Min</option>
@@ -227,7 +227,7 @@ const SwimSpasPage = () => {
                 <select
                   value={filters.maxPrice}
                   onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-max-price"
                 >
                   <option value="">No Max</option>
@@ -246,7 +246,7 @@ const SwimSpasPage = () => {
                 <select
                   value={filters.length}
                   onChange={(e) => setFilters({ ...filters, length: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-length"
                 >
                   <option value="all">Any Length</option>
@@ -266,7 +266,7 @@ const SwimSpasPage = () => {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-[#0A1628] mb-6 pb-2 border-b-2 border-[#EA6A1E]">
+              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-[#0A1628] mb-6 pb-2 border-b-2 border-[#B91C1C]">
                 Grand River Spas Swim Spas
               </h2>
               <ProductGrid products={filteredGrandRiver} linkPrefix="/products" />
@@ -281,7 +281,7 @@ const SwimSpasPage = () => {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-[#0A1628] mb-6 pb-2 border-b-2 border-[#EA6A1E]">
+              <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-[#0A1628] mb-6 pb-2 border-b-2 border-[#B91C1C]">
                 Dynasty Spas Swim Spas
               </h2>
               <ProductGrid products={filteredDynasty} linkPrefix="/products" />

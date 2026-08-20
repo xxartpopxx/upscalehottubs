@@ -182,7 +182,7 @@ const ProductDetailPage = () => {
         background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)'
       }}>
         <h2 className="text-2xl font-bold text-[#0A1628]">Product not found</h2>
-        <Link to="/hot-tubs" className="text-[#EA6A1E] hover:underline mt-4 inline-block">
+        <Link to="/hot-tubs" className="text-[#B91C1C] hover:underline mt-4 inline-block">
           Return to Hot Tubs
         </Link>
       </div>
@@ -263,9 +263,9 @@ const ProductDetailPage = () => {
           {/* Breadcrumb - Hidden on mobile */}
           <nav className="mb-2 md:mb-6 hidden md:block">
             <ol className="flex items-center gap-2 text-sm">
-              <li><Link to="/" className="text-slate-500 hover:text-[#EA6A1E]">Home</Link></li>
+              <li><Link to="/" className="text-slate-500 hover:text-[#B91C1C]">Home</Link></li>
               <ChevronRight size={14} className="text-slate-400" />
-              <li><Link to="/hot-tubs" className="text-slate-500 hover:text-[#EA6A1E]">Hot Tubs</Link></li>
+              <li><Link to="/hot-tubs" className="text-slate-500 hover:text-[#B91C1C]">Hot Tubs</Link></li>
               <ChevronRight size={14} className="text-slate-400" />
               <li className="text-[#0A1628] font-semibold">{product.name}</li>
             </ol>
@@ -274,11 +274,11 @@ const ProductDetailPage = () => {
           {/* Product Name Header - More compact on mobile */}
           <div className="mb-2 md:mb-4">
             <p className="text-xs md:text-sm text-slate-500 uppercase tracking-wider">{product.brand}</p>
-            <p className="text-xs md:text-sm text-[#EA6A1E] font-semibold uppercase tracking-wider">{product.series}</p>
+            <p className="text-xs md:text-sm text-[#B91C1C] font-semibold uppercase tracking-wider">{product.series}</p>
             <h1 className="font-['Barlow_Condensed'] text-2xl md:text-5xl font-bold uppercase text-[#0A1628]">
               {product.name}
             </h1>
-            <p className="text-xl md:text-2xl font-bold text-[#EA6A1E] mt-1">{product.price}</p>
+            <p className="text-xl md:text-2xl font-bold text-[#B91C1C] mt-1">{product.price}</p>
           </div>
           
           {/* Main Product Section - Image + Color Selector Side by Side */}
@@ -333,7 +333,7 @@ const ProductDetailPage = () => {
                         key={idx}
                         onClick={() => setGalleryIndex(idx)}
                         className={`w-2.5 h-2.5 rounded-full transition-all ${
-                          idx === galleryIndex ? 'bg-[#EA6A1E] scale-125' : 'bg-white/70 hover:bg-white'
+                          idx === galleryIndex ? 'bg-[#B91C1C] scale-125' : 'bg-white/70 hover:bg-white'
                         }`}
                         aria-label={`View image ${idx + 1}`}
                       />
@@ -363,7 +363,7 @@ const ProductDetailPage = () => {
                     <button
                       onClick={() => setCurrentView('color')}
                       className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
-                        currentView === 'color' ? 'bg-[#EA6A1E] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
+                        currentView === 'color' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
                       }`}
                       data-testid="view-color-btn"
                     >
@@ -373,7 +373,7 @@ const ProductDetailPage = () => {
                   <button
                     onClick={() => setCurrentView('side')}
                     className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
-                      currentView === 'side' ? 'bg-[#EA6A1E] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
+                      currentView === 'side' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
                     }`}
                     data-testid="view-side-btn"
                   >
@@ -382,7 +382,7 @@ const ProductDetailPage = () => {
                   <button
                     onClick={() => setCurrentView('overhead')}
                     className={`flex-1 py-2 font-semibold text-xs uppercase tracking-wider transition-colors ${
-                      currentView === 'overhead' ? 'bg-[#EA6A1E] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
+                      currentView === 'overhead' ? 'bg-[#B91C1C] text-white' : 'bg-white text-[#0A1628] hover:bg-slate-50'
                     }`}
                     data-testid="view-overhead-btn"
                   >
@@ -419,7 +419,7 @@ const ProductDetailPage = () => {
                           key={`${viewType}-${selectedShell}-${selectedCabinet}-${selectedCorner}`}
                           onClick={() => setCurrentView(viewType)}
                           className={`aspect-square overflow-hidden border-2 transition-all rounded ${
-                            currentView === viewType ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E]' : 'border-slate-200 hover:border-slate-400'
+                            currentView === viewType ? 'border-[#B91C1C] ring-2 ring-[#B91C1C]' : 'border-slate-200 hover:border-slate-400'
                           }`}
                         >
                           <img 
@@ -444,7 +444,7 @@ const ProductDetailPage = () => {
                       key={idx}
                       onClick={() => setGalleryIndex(idx)}
                       className={`aspect-square overflow-hidden border-2 transition-all ${
-                        idx === galleryIndex ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E]' : 'border-slate-200 hover:border-slate-400'
+                        idx === galleryIndex ? 'border-[#B91C1C] ring-2 ring-[#B91C1C]' : 'border-slate-200 hover:border-slate-400'
                       }`}
                     >
                       <img src={img} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
@@ -486,7 +486,7 @@ const ProductDetailPage = () => {
                             data-testid={`shell-color-${colorKey}`}
                           >
                             <div className={`${swatchSize} rounded-lg overflow-hidden border-2 transition-all ${
-                              isSelected ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                              isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
                             }`}>
                               {color.image ? (
                                 <img src={color.image} alt={color.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.backgroundColor = color.hex; }} />
@@ -494,12 +494,12 @@ const ProductDetailPage = () => {
                                 <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
                               )}
                               {isSelected && (
-                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#EA6A1E]/20 flex items-center justify-center rounded-lg">
-                                  <Check className="text-[#EA6A1E]" size={14} strokeWidth={3} />
+                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                  <Check className="text-[#B91C1C]" size={14} strokeWidth={3} />
                                 </motion.div>
                               )}
                             </div>
-                            <p className={`text-[9px] md:text-[10px] mt-0.5 md:mt-1 text-center font-medium ${isDynasty ? 'max-w-16 md:max-w-20' : 'max-w-10 md:max-w-14'} ${isSelected ? 'text-[#EA6A1E]' : 'text-slate-600'}`}>
+                            <p className={`text-[9px] md:text-[10px] mt-0.5 md:mt-1 text-center font-medium ${isDynasty ? 'max-w-16 md:max-w-20' : 'max-w-10 md:max-w-14'} ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
                               {isDynasty ? color.name : color.name.split(' ')[0]}
                             </p>
                           </motion.button>
@@ -531,7 +531,7 @@ const ProductDetailPage = () => {
                             data-testid={`cabinet-color-${colorKey}`}
                           >
                             <div className={`${swatchSize} rounded-lg overflow-hidden border-2 transition-all ${
-                              isSelected ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                              isSelected ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
                             }`}>
                               {color.image ? (
                                 <img src={color.image} alt={color.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.backgroundColor = color.hex; }} />
@@ -539,12 +539,12 @@ const ProductDetailPage = () => {
                                 <div className="w-full h-full" style={{ backgroundColor: color.hex }} />
                               )}
                               {isSelected && (
-                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#EA6A1E]/20 flex items-center justify-center rounded-lg">
-                                  <Check className="text-[#EA6A1E]" size={14} strokeWidth={3} />
+                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                  <Check className="text-[#B91C1C]" size={14} strokeWidth={3} />
                                 </motion.div>
                               )}
                             </div>
-                            <p className={`text-[9px] md:text-[10px] mt-0.5 md:mt-1 text-center font-medium ${isDynasty ? 'max-w-16 md:max-w-20' : 'max-w-10 md:max-w-14'} ${isSelected ? 'text-[#EA6A1E]' : 'text-slate-600'}`}>
+                            <p className={`text-[9px] md:text-[10px] mt-0.5 md:mt-1 text-center font-medium ${isDynasty ? 'max-w-16 md:max-w-20' : 'max-w-10 md:max-w-14'} ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
                               {isDynasty ? color.name : color.name.split(' ')[0]}
                             </p>
                           </motion.button>
@@ -570,16 +570,16 @@ const ProductDetailPage = () => {
                           data-testid="corner-color-match"
                         >
                           <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                            selectedCorner === 'match' ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                            selectedCorner === 'match' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
                           }`}>
                             <div className="w-full h-full" style={{ backgroundColor: CABINET_COLORS[selectedCabinet]?.hex }} />
                             {selectedCorner === 'match' && (
-                              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#EA6A1E]/20 flex items-center justify-center rounded-lg">
-                                <Check className="text-[#EA6A1E]" size={16} strokeWidth={3} />
+                              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
                               </motion.div>
                             )}
                           </div>
-                          <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'match' ? 'text-[#EA6A1E]' : 'text-slate-600'}`}>
+                          <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'match' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
                             Match Cabinet
                           </p>
                         </motion.button>
@@ -596,16 +596,16 @@ const ProductDetailPage = () => {
                           data-testid="corner-color-black"
                         >
                           <div className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                            selectedCorner === 'black' ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
+                            selectedCorner === 'black' ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-1' : 'border-slate-200 hover:border-slate-400'
                           }`}>
                             <div className="w-full h-full" style={{ backgroundColor: '#1a1a1a' }} />
                             {selectedCorner === 'black' && (
-                              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#EA6A1E]/20 flex items-center justify-center rounded-lg">
-                                <Check className="text-[#EA6A1E]" size={16} strokeWidth={3} />
+                              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg">
+                                <Check className="text-[#B91C1C]" size={16} strokeWidth={3} />
                               </motion.div>
                             )}
                           </div>
-                          <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'black' ? 'text-[#EA6A1E]' : 'text-slate-600'}`}>
+                          <p className={`text-[10px] mt-1 text-center font-medium max-w-14 ${selectedCorner === 'black' ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
                             Black Slate
                           </p>
                         </motion.button>
@@ -637,7 +637,7 @@ const ProductDetailPage = () => {
                     <div className="grid grid-cols-2 gap-2">
                       {specs.map((spec) => (
                         <div key={spec.label} className="flex items-center gap-2 text-sm">
-                          <spec.icon size={14} className="text-[#EA6A1E]" />
+                          <spec.icon size={14} className="text-[#B91C1C]" />
                           <span className="text-slate-600">{spec.label}:</span>
                           <span className="font-semibold text-[#0A1628]">{spec.value}</span>
                         </div>
@@ -653,7 +653,7 @@ const ProductDetailPage = () => {
                   <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                     {specs.map((spec) => (
                       <div key={spec.label} className="flex items-center gap-2 text-sm">
-                        <spec.icon size={16} className="text-[#EA6A1E] flex-shrink-0" />
+                        <spec.icon size={16} className="text-[#B91C1C] flex-shrink-0" />
                         <span className="text-slate-600">{spec.label}:</span>
                         <span className="font-semibold text-[#0A1628]">{spec.value}</span>
                       </div>
@@ -713,7 +713,7 @@ const ProductDetailPage = () => {
               {product.video && (
                 <div className="mt-6">
                   <h4 className="font-semibold text-[#0A1628] mb-3 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#EA6A1E]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#B91C1C]">
                       <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
                     Watch Product Video
@@ -747,7 +747,7 @@ const ProductDetailPage = () => {
                   <ul className="space-y-2">
                     {product.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <Check size={16} className="text-[#EA6A1E] mt-0.5 flex-shrink-0" />
+                        <Check size={16} className="text-[#B91C1C] mt-0.5 flex-shrink-0" />
                         <span className="text-slate-700">{feature}</span>
                       </li>
                     ))}
@@ -769,7 +769,7 @@ const ProductDetailPage = () => {
               {/* Decorative background */}
               <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full bg-[#D4AF37] blur-3xl" />
-                <div className="absolute -bottom-10 -left-10 w-64 h-64 rounded-full bg-[#EA6A1E] blur-3xl" />
+                <div className="absolute -bottom-10 -left-10 w-64 h-64 rounded-full bg-[#B91C1C] blur-3xl" />
               </div>
               
               <div className="relative p-6 md:p-8 grid md:grid-cols-12 gap-6 items-center">
@@ -784,7 +784,7 @@ const ProductDetailPage = () => {
                         className="w-24 h-24 md:w-32 md:h-32 object-contain"
                         onError={(e) => { e.target.src = ASSETS.logo; }}
                       />
-                      <div className="absolute -top-2 -right-2 bg-[#EA6A1E] text-white p-2 rounded-full shadow-lg">
+                      <div className="absolute -top-2 -right-2 bg-[#B91C1C] text-white p-2 rounded-full shadow-lg">
                         <Camera size={18} />
                       </div>
                     </div>
@@ -814,7 +814,7 @@ const ProductDetailPage = () => {
                 <div className="md:col-span-3 flex justify-center md:justify-end">
                   <Link
                     to={`/ar-visualizer?product=${product.id}`}
-                    className="group inline-flex items-center justify-center gap-2 bg-[#EA6A1E] hover:bg-red-700 text-white font-bold uppercase tracking-wide px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-105 w-full md:w-auto"
+                    className="group inline-flex items-center justify-center gap-2 bg-[#B91C1C] hover:bg-red-700 text-white font-bold uppercase tracking-wide px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-105 w-full md:w-auto"
                     data-testid="ar-visualizer-button"
                   >
                     <Camera size={20} />
@@ -876,7 +876,7 @@ const ProductDetailPage = () => {
                           </tr>
                           <tr className="bg-slate-50">
                             <td className="px-4 py-3 font-semibold text-[#0A1628]">Total Jets</td>
-                            <td className="px-4 py-3 text-slate-700 font-bold text-[#EA6A1E]">{product.jets}</td>
+                            <td className="px-4 py-3 text-slate-700 font-bold text-[#B91C1C]">{product.jets}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -892,7 +892,7 @@ const ProductDetailPage = () => {
                           <ul className="space-y-1.5">
                             {product.fullSpecs.jetsBreakdown.map((jet, index) => (
                               <li key={index} className="flex items-start gap-2 text-sm">
-                                <span className="text-[#EA6A1E] font-bold">•</span>
+                                <span className="text-[#B91C1C] font-bold">•</span>
                                 <span className="text-slate-700">{jet}</span>
                               </li>
                             ))}
@@ -945,7 +945,7 @@ const ProductDetailPage = () => {
                           {product.fullSpecs.performanceRating && (
                             <tr>
                               <td className="px-4 py-3 font-semibold text-[#0A1628]">Performance Rating</td>
-                              <td className="px-4 py-3 text-slate-700 font-bold text-[#EA6A1E]">{product.fullSpecs.performanceRating}</td>
+                              <td className="px-4 py-3 text-slate-700 font-bold text-[#B91C1C]">{product.fullSpecs.performanceRating}</td>
                             </tr>
                           )}
                           <tr className="bg-slate-50">
@@ -1020,7 +1020,7 @@ const ProductDetailPage = () => {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {product.fullSpecs.accessories.controls && (
                         <div className="flex items-start gap-3 bg-slate-50 p-4">
-                          <div className="w-8 h-8 bg-[#EA6A1E] rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
                             <Info size={16} className="text-white" />
                           </div>
                           <div>
@@ -1031,7 +1031,7 @@ const ProductDetailPage = () => {
                       )}
                       {product.fullSpecs.accessories.entertainment && product.fullSpecs.accessories.entertainment !== 'N/A' && (
                         <div className="flex items-start gap-3 bg-slate-50 p-4">
-                          <div className="w-8 h-8 bg-[#EA6A1E] rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
                             <Info size={16} className="text-white" />
                           </div>
                           <div>
@@ -1042,7 +1042,7 @@ const ProductDetailPage = () => {
                       )}
                       {product.fullSpecs.accessories.advancedJetting && product.fullSpecs.accessories.advancedJetting !== 'N/A' && (
                         <div className="flex items-start gap-3 bg-slate-50 p-4">
-                          <div className="w-8 h-8 bg-[#EA6A1E] rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
                             <Droplets size={16} className="text-white" />
                           </div>
                           <div>
@@ -1053,7 +1053,7 @@ const ProductDetailPage = () => {
                       )}
                       {product.fullSpecs.accessories.coverLifter && (
                         <div className="flex items-start gap-3 bg-slate-50 p-4">
-                          <div className="w-8 h-8 bg-[#EA6A1E] rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
                             <Info size={16} className="text-white" />
                           </div>
                           <div>
@@ -1064,7 +1064,7 @@ const ProductDetailPage = () => {
                       )}
                       {product.fullSpecs.accessories.steps && (
                         <div className="flex items-start gap-3 bg-slate-50 p-4">
-                          <div className="w-8 h-8 bg-[#EA6A1E] rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 bg-[#B91C1C] rounded-full flex items-center justify-center flex-shrink-0">
                             <Info size={16} className="text-white" />
                           </div>
                           <div>
@@ -1108,7 +1108,7 @@ const ProductDetailPage = () => {
                       )}
                       <div className="p-4">
                         <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
-                        <p className="text-[#EA6A1E] font-bold text-xl text-center">{extra.price}</p>
+                        <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
                         <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
                       </div>
                     </div>
@@ -1255,7 +1255,7 @@ const ProductDetailPage = () => {
                   {/* Heater Specs */}
                   {heaterRows.length > 0 && (
                     <div className="mt-6 border border-slate-200">
-                      <div className="bg-[#EA6A1E] px-4 py-3">
+                      <div className="bg-[#B91C1C] px-4 py-3">
                         <h4 className="font-bold text-white uppercase text-sm">Sauna Heater Specifications</h4>
                       </div>
                       <div className="p-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
@@ -1354,7 +1354,7 @@ const ProductDetailPage = () => {
                       )}
                       <div className="p-4">
                         <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
-                        <p className="text-[#EA6A1E] font-bold text-xl text-center">{extra.price}</p>
+                        <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
                         <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
                       </div>
                     </div>
@@ -1395,7 +1395,7 @@ const ProductDetailPage = () => {
                       )}
                       <div className="p-4">
                         <h4 className="text-white font-bold text-center mb-2">{extra.name}</h4>
-                        <p className="text-[#EA6A1E] font-bold text-xl text-center">{extra.price}</p>
+                        <p className="text-[#B91C1C] font-bold text-xl text-center">{extra.price}</p>
                         <p className="text-slate-300 text-xs text-center mt-2">{extra.description}</p>
                       </div>
                     </div>
@@ -1448,7 +1448,7 @@ const ProductDetailPage = () => {
             >
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] flex items-center gap-2">
-                  <GitCompare size={24} className="text-[#EA6A1E]" />
+                  <GitCompare size={24} className="text-[#B91C1C]" />
                   Compare Grand River Models
                 </h3>
                 <p className="text-sm text-slate-500">{comparableModels.length} other models available</p>
@@ -1464,7 +1464,7 @@ const ProductDetailPage = () => {
                     const model = comparableModels.find(m => m.id === e.target.value);
                     setSelectedCompareModel(model || null);
                   }}
-                  className="w-full md:w-1/2 border border-slate-300 px-4 py-3 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full md:w-1/2 border border-slate-300 px-4 py-3 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                 >
                   <option value="">-- Choose a model --</option>
                   {comparableModels.map(model => (
@@ -1479,17 +1479,17 @@ const ProductDetailPage = () => {
               {(selectedCompareModel || relatedModel) && (
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Current Model */}
-                  <div className="bg-white p-4 border-2 border-[#EA6A1E]">
+                  <div className="bg-white p-4 border-2 border-[#B91C1C]">
                     <div className="text-center mb-4">
-                      <span className="text-xs bg-[#EA6A1E] text-white px-2 py-1 uppercase font-bold">Currently Viewing</span>
+                      <span className="text-xs bg-[#B91C1C] text-white px-2 py-1 uppercase font-bold">Currently Viewing</span>
                     </div>
                     <img src={product.images.overhead || product.images.primary} alt={product.name} className="w-full h-40 object-contain mb-4" />
                     <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{product.name}</h4>
-                    <p className="text-center text-[#EA6A1E] font-bold text-lg">{product.price}</p>
+                    <p className="text-center text-[#B91C1C] font-bold text-lg">{product.price}</p>
                     <div className="mt-4 space-y-2 text-sm">
                       <div className="flex justify-between"><span className="text-slate-500">Dimensions:</span><span className="font-semibold">{product.dimensions}</span></div>
                       <div className="flex justify-between"><span className="text-slate-500">Seats:</span><span className="font-semibold">{product.persons} Adults</span></div>
-                      <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#EA6A1E]">{product.jets}</span></div>
+                      <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#B91C1C]">{product.jets}</span></div>
                       <div className="flex justify-between"><span className="text-slate-500">Seating:</span><span className="font-semibold">{product.seatingLayout}</span></div>
                       <div className="flex justify-between"><span className="text-slate-500">Electrical:</span><span className="font-semibold">{product.electrical}</span></div>
                     </div>
@@ -1505,15 +1505,15 @@ const ProductDetailPage = () => {
                         </div>
                         <img src={compareModel.images.overhead || compareModel.images.primary} alt={compareModel.name} className="w-full h-40 object-contain mb-4" />
                         <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{compareModel.name}</h4>
-                        <p className="text-center text-[#EA6A1E] font-bold text-lg">{compareModel.price}</p>
+                        <p className="text-center text-[#B91C1C] font-bold text-lg">{compareModel.price}</p>
                         <div className="mt-4 space-y-2 text-sm">
                           <div className="flex justify-between"><span className="text-slate-500">Dimensions:</span><span className="font-semibold">{compareModel.dimensions}</span></div>
                           <div className="flex justify-between"><span className="text-slate-500">Seats:</span><span className="font-semibold">{compareModel.persons} Adults</span></div>
-                          <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#EA6A1E]">{compareModel.jets}</span></div>
+                          <div className="flex justify-between"><span className="text-slate-500">Jets:</span><span className="font-semibold text-[#B91C1C]">{compareModel.jets}</span></div>
                           <div className="flex justify-between"><span className="text-slate-500">Seating:</span><span className="font-semibold">{compareModel.seatingLayout}</span></div>
                           <div className="flex justify-between"><span className="text-slate-500">Electrical:</span><span className="font-semibold">{compareModel.electrical}</span></div>
                         </div>
-                        <Link to={`/products/${compareModel.id}`} className="block mt-4 text-center bg-[#EA6A1E] hover:bg-red-700 py-2 text-white font-semibold transition-colors">
+                        <Link to={`/products/${compareModel.id}`} className="block mt-4 text-center bg-[#B91C1C] hover:bg-red-700 py-2 text-white font-semibold transition-colors">
                           View {compareModel.name} <ArrowRight size={14} className="inline ml-1" />
                         </Link>
                       </div>
@@ -1534,7 +1534,7 @@ const ProductDetailPage = () => {
             >
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] flex items-center gap-2">
-                  <GitCompare size={24} className="text-[#EA6A1E]" />
+                  <GitCompare size={24} className="text-[#B91C1C]" />
                   Compare Models
                 </h3>
                 <p className="text-sm text-slate-500">{comparableModels.length} other {product.brand} models available</p>
@@ -1550,7 +1550,7 @@ const ProductDetailPage = () => {
                     const model = comparableModels.find(m => m.id === e.target.value);
                     setSelectedCompareModel(model || null);
                   }}
-                  className="w-full md:w-1/2 border border-slate-300 px-4 py-3 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full md:w-1/2 border border-slate-300 px-4 py-3 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                 >
                   <option value="">-- Choose a model --</option>
                   {comparableModels.map(model => (
@@ -1565,14 +1565,14 @@ const ProductDetailPage = () => {
               {selectedCompareModel ? (
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Current Model */}
-                  <div className="bg-white p-4 border-2 border-[#EA6A1E]">
+                  <div className="bg-white p-4 border-2 border-[#B91C1C]">
                     <div className="text-center mb-4">
-                      <span className="text-xs bg-[#EA6A1E] text-white px-2 py-1 uppercase font-bold">Currently Viewing</span>
+                      <span className="text-xs bg-[#B91C1C] text-white px-2 py-1 uppercase font-bold">Currently Viewing</span>
                     </div>
                     <img src={product.images.primary} alt={product.name} className="w-full h-48 object-contain mb-4" />
                     <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{product.name}</h4>
                     <p className="text-center text-slate-500 text-sm mb-2">{product.series}</p>
-                    <p className="text-center text-[#EA6A1E] font-bold text-xl">{product.price}</p>
+                    <p className="text-center text-[#B91C1C] font-bold text-xl">{product.price}</p>
                     <div className="mt-4 space-y-2 text-sm">
                       <div className="flex justify-between border-b border-slate-100 pb-2">
                         <span className="text-slate-500">Dimensions:</span>
@@ -1584,7 +1584,7 @@ const ProductDetailPage = () => {
                       </div>
                       <div className="flex justify-between border-b border-slate-100 pb-2">
                         <span className="text-slate-500">Jets:</span>
-                        <span className="font-bold text-[#EA6A1E]">{product.jets}</span>
+                        <span className="font-bold text-[#B91C1C]">{product.jets}</span>
                       </div>
                       <div className="flex justify-between border-b border-slate-100 pb-2">
                         <span className="text-slate-500">Seating:</span>
@@ -1611,7 +1611,7 @@ const ProductDetailPage = () => {
                     <img src={selectedCompareModel.images.primary} alt={selectedCompareModel.name} className="w-full h-48 object-contain mb-4" />
                     <h4 className="font-['Barlow_Condensed'] text-xl font-bold text-center text-[#0A1628]">{selectedCompareModel.name}</h4>
                     <p className="text-center text-slate-500 text-sm mb-2">{selectedCompareModel.series}</p>
-                    <p className="text-center text-[#EA6A1E] font-bold text-xl">{selectedCompareModel.price}</p>
+                    <p className="text-center text-[#B91C1C] font-bold text-xl">{selectedCompareModel.price}</p>
                     <div className="mt-4 space-y-2 text-sm">
                       <div className="flex justify-between border-b border-slate-100 pb-2">
                         <span className="text-slate-500">Dimensions:</span>
@@ -1619,7 +1619,7 @@ const ProductDetailPage = () => {
                       </div>
                       <div className="flex justify-between border-b border-slate-100 pb-2">
                         <span className="text-slate-500">Seats:</span>
-                        <span className={`font-semibold ${selectedCompareModel.persons > product.persons ? 'text-green-600' : selectedCompareModel.persons < product.persons ? 'text-orange-500' : ''}`}>
+                        <span className={`font-semibold ${selectedCompareModel.persons > product.persons ? 'text-green-600' : selectedCompareModel.persons < product.persons ? 'text-red-500' : ''}`}>
                           {selectedCompareModel.persons} Adults
                           {selectedCompareModel.persons > product.persons && ' ↑'}
                           {selectedCompareModel.persons < product.persons && ' ↓'}
@@ -1627,7 +1627,7 @@ const ProductDetailPage = () => {
                       </div>
                       <div className="flex justify-between border-b border-slate-100 pb-2">
                         <span className="text-slate-500">Jets:</span>
-                        <span className={`font-bold ${selectedCompareModel.jets > product.jets ? 'text-green-600' : selectedCompareModel.jets < product.jets ? 'text-orange-500' : 'text-[#EA6A1E]'}`}>
+                        <span className={`font-bold ${selectedCompareModel.jets > product.jets ? 'text-green-600' : selectedCompareModel.jets < product.jets ? 'text-red-500' : 'text-[#B91C1C]'}`}>
                           {selectedCompareModel.jets}
                           {selectedCompareModel.jets > product.jets && ' ↑'}
                           {selectedCompareModel.jets < product.jets && ' ↓'}
@@ -1650,7 +1650,7 @@ const ProductDetailPage = () => {
                     </div>
                     <Link 
                       to={`/products/${selectedCompareModel.id}`} 
-                      className="block mt-4 text-center bg-[#EA6A1E] hover:bg-red-700 py-3 text-white font-semibold transition-colors"
+                      className="block mt-4 text-center bg-[#B91C1C] hover:bg-red-700 py-3 text-white font-semibold transition-colors"
                     >
                       View {selectedCompareModel.name} <ArrowRight size={14} className="inline ml-1" />
                     </Link>
@@ -1680,10 +1680,10 @@ const ProductDetailPage = () => {
                     </thead>
                     <tbody>
                       {/* Current model row */}
-                      <tr className="bg-red-50 border-l-4 border-[#EA6A1E]">
-                        <td className="px-4 py-3 font-semibold">{product.name} <span className="text-xs text-[#EA6A1E]">(current)</span></td>
+                      <tr className="bg-red-50 border-l-4 border-[#B91C1C]">
+                        <td className="px-4 py-3 font-semibold">{product.name} <span className="text-xs text-[#B91C1C]">(current)</span></td>
                         <td className="px-4 py-3 text-center">{product.persons}</td>
-                        <td className="px-4 py-3 text-center font-bold text-[#EA6A1E]">{product.jets}</td>
+                        <td className="px-4 py-3 text-center font-bold text-[#B91C1C]">{product.jets}</td>
                         <td className="px-4 py-3 text-center">{product.seatingLayout}</td>
                         <td className="px-4 py-3 text-right font-semibold">{product.price}</td>
                         <td className="px-4 py-3 text-center">-</td>
@@ -1697,7 +1697,7 @@ const ProductDetailPage = () => {
                           <td className="px-4 py-3 text-center">{model.seatingLayout}</td>
                           <td className="px-4 py-3 text-right">{model.price}</td>
                           <td className="px-4 py-3 text-center">
-                            <Link to={`/products/${model.id}`} className="text-[#EA6A1E] hover:underline text-xs font-semibold">
+                            <Link to={`/products/${model.id}`} className="text-[#B91C1C] hover:underline text-xs font-semibold">
                               View
                             </Link>
                           </td>

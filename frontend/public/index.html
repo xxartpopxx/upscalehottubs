@@ -5,7 +5,7 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="icon" type="image/png" href="%PUBLIC_URL%/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#1E6FB2" />
+    <meta name="theme-color" content="#1E40AF" />
     
     <!-- Preload critical assets for LCP -->
     <link rel="preload" href="/images/popup-lady-relaxing-optimized.jpg" as="image" fetchpriority="high" />
@@ -15,12 +15,12 @@
       /* Critical CSS - Inline for faster initial render */
       *{box-sizing:border-box;margin:0;padding:0}
       body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff}
-      .skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:999;padding:0.5rem 1rem;background:#EA6A1E;color:#fff;opacity:0;pointer-events:none}
+      .skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:999;padding:0.5rem 1rem;background:#B91C1C;color:#fff;opacity:0;pointer-events:none}
       .skip-link:focus{top:10px;opacity:1;pointer-events:auto}
       #root{min-height:100vh}
       /* Loading state */
       .initial-loader{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(180deg,#fff 0%,#e8f4fc 100%)}
-      .loader-spinner{width:40px;height:40px;border:3px solid #e8f4fc;border-top-color:#EA6A1E;border-radius:50%;animation:spin 1s linear infinite}
+      .loader-spinner{width:40px;height:40px;border:3px solid #e8f4fc;border-top-color:#B91C1C;border-radius:50%;animation:spin 1s linear infinite}
       @keyframes spin{to{transform:rotate(360deg)}}
     </style>
     

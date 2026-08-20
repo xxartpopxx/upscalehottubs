@@ -56,7 +56,7 @@ const ContactForm = () => {
             id="name" 
             name="name" 
             required 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
             value={formData.name} 
             onChange={e => setFormData({...formData, name: e.target.value})} 
           />
@@ -68,7 +68,7 @@ const ContactForm = () => {
             id="email" 
             name="email" 
             required 
-            className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
+            className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
             value={formData.email} 
             onChange={e => setFormData({...formData, email: e.target.value})} 
           />
@@ -81,7 +81,7 @@ const ContactForm = () => {
           type="tel" 
           id="phone" 
           name="phone" 
-          className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] focus:ring-1 focus:ring-[#EA6A1E] outline-none transition-colors" 
+          className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] focus:ring-1 focus:ring-[#B91C1C] outline-none transition-colors" 
           value={formData.phone} 
           onChange={e => setFormData({...formData, phone: e.target.value})} 
         />
@@ -94,7 +94,7 @@ const ContactForm = () => {
           name="message" 
           rows="4" 
           required 
-          className="w-full px-4 py-3 border border-slate-300 focus:border-[#EA6A1E] outline-none resize-none transition-colors" 
+          className="w-full px-4 py-3 border border-slate-300 focus:border-[#B91C1C] outline-none resize-none transition-colors" 
           value={formData.message} 
           onChange={e => setFormData({...formData, message: e.target.value})} 
         />
@@ -149,7 +149,7 @@ const SpaButlerPage = () => {
           Spa Butler
         </motion.h1>
         
-        <div className="bg-[#EA6A1E] text-white p-6 mb-8">
+        <div className="bg-[#B91C1C] text-white p-6 mb-8">
           <p className="text-xl font-semibold">
             Did you know that 85% of all hot tub service calls and repair bills are related to improper water chemistry?
           </p>
@@ -234,7 +234,7 @@ const SpaButlerPage = () => {
               download="Spa-Butler-Brochure.png"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#EA6A1E] hover:bg-[#991818] text-white font-semibold px-5 py-3 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#991818] text-white font-semibold px-5 py-3 transition-colors"
               data-testid="download-brochure-btn"
             >
               <Download size={18} /> Download Brochure
@@ -249,23 +249,23 @@ const SpaButlerPage = () => {
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ delay: idx * 0.1 }} 
-                className={`relative bg-white border-2 p-6 transition-colors ${pkg.featured ? 'border-[#EA6A1E] shadow-xl' : 'border-slate-200 hover:border-[#EA6A1E]'}`}
+                className={`relative bg-white border-2 p-6 transition-colors ${pkg.featured ? 'border-[#B91C1C] shadow-xl' : 'border-slate-200 hover:border-[#B91C1C]'}`}
               >
                 {pkg.featured && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#EA6A1E] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#B91C1C] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider">
                     Most Popular
                   </div>
                 )}
                 <h3 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-1">{pkg.name}</h3>
                 <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">{pkg.drains}</p>
                 <div className="mb-4 pb-4 border-b border-slate-200">
-                  <p className="text-[#EA6A1E] font-bold text-2xl">{pkg.yearly}</p>
+                  <p className="text-[#B91C1C] font-bold text-2xl">{pkg.yearly}</p>
                   <p className="text-slate-600 text-lg">or <span className="font-semibold">{pkg.monthly}</span></p>
                 </div>
                 <ul className="space-y-2">
                   {pkg.features.map(f => (
                     <li key={f} className="text-slate-600 text-sm flex items-start gap-2">
-                      <span className="text-[#EA6A1E] font-bold mt-0.5">✓</span> {f}
+                      <span className="text-[#B91C1C] font-bold mt-0.5">✓</span> {f}
                     </li>
                   ))}
                 </ul>

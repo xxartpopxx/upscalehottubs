@@ -25,7 +25,7 @@ const JinglePlayer = () => {
       <motion.button 
         data-testid="jingle-toggle-btn" 
         onClick={togglePlay} 
-        className="fixed bottom-6 right-6 z-50 bg-[#EA6A1E] text-white p-4 rounded-full shadow-2xl hover:bg-[#F5811F] transition-all" 
+        className="fixed bottom-6 right-6 z-50 bg-[#B91C1C] text-white p-4 rounded-full shadow-2xl hover:bg-[#DC2626] transition-all" 
         whileHover={{ scale: 1.1, rotate: 10 }} 
         whileTap={{ scale: 0.95 }} 
         aria-label={isPlaying ? 'Pause' : 'Play'}

@@ -96,7 +96,7 @@ const HorizontalReviewCard = ({ review, index }) => (
             <img 
               src={review.photo} 
               alt={review.name}
-              className="w-14 h-14 rounded-full object-cover border-2 border-[#EA6A1E]"
+              className="w-14 h-14 rounded-full object-cover border-2 border-[#B91C1C]"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.name)}&background=B91C1C&color=fff&size=56&bold=true`;
@@ -217,7 +217,7 @@ const AboutPage = () => {
           
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 mb-4">
             <span className="text-2xl">🇺🇸</span>
-            <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">American Made & Proud of It</span>
+            <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
           </motion.div>
           
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
@@ -259,7 +259,7 @@ const AboutPage = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="bg-white p-6 shadow-lg text-center"
                 >
-                  <value.icon className="text-[#EA6A1E] mx-auto mb-4" size={40} />
+                  <value.icon className="text-[#B91C1C] mx-auto mb-4" size={40} />
                   <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">{value.title}</h3>
                   <p className="text-slate-600">{value.desc}</p>
                 </motion.div>
@@ -308,7 +308,7 @@ const AboutPage = () => {
                 href={GOOGLE_REVIEWS.writeReviewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#EA6A1E] text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-[#991b1b] transition-colors shadow-lg rounded-lg"
+                className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-[#991b1b] transition-colors shadow-lg rounded-lg"
               >
                 <MessageSquarePlus size={20} />
                 Leave Us a Review
@@ -412,7 +412,7 @@ const AboutPage = () => {
                 className="bg-slate-50 p-8"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <item.icon className="text-[#EA6A1E]" size={28} />
+                  <item.icon className="text-[#B91C1C]" size={28} />
                   <h3 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628]">{item.title}</h3>
                 </div>
                 <p className="text-slate-600">{item.text}</p>
@@ -576,8 +576,8 @@ const AboutPage = () => {
                 to="/ar-visualizer"
                 className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center gap-4 group"
               >
-                <div className="w-14 h-14 bg-[#EA6A1E]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#EA6A1E] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#EA6A1E] group-hover:text-white transition-colors">
+                <div className="w-14 h-14 bg-[#B91C1C]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#B91C1C] group-hover:text-white transition-colors">
                     <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/>
                     <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/>
                     <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/>
@@ -595,8 +595,8 @@ const AboutPage = () => {
                 to="/covers"
                 className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center gap-4 group"
               >
-                <div className="w-14 h-14 bg-[#EA6A1E]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#EA6A1E] transition-colors">
-                  <Shield className="text-[#EA6A1E] group-hover:text-white transition-colors" size={28} />
+                <div className="w-14 h-14 bg-[#B91C1C]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors">
+                  <Shield className="text-[#B91C1C] group-hover:text-white transition-colors" size={28} />
                 </div>
                 <div>
                   <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-1">Hot Tub Covers</h3>

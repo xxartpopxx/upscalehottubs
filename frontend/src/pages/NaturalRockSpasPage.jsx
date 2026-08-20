@@ -99,7 +99,7 @@ const ProductModal = ({ product, onClose }) => {
                     <button
                       key={i}
                       onClick={() => setGalleryIndex(i)}
-                      className={`aspect-square overflow-hidden border-2 ${i === galleryIndex ? 'border-[#EA6A1E]' : 'border-transparent'}`}
+                      className={`aspect-square overflow-hidden border-2 ${i === galleryIndex ? 'border-[#B91C1C]' : 'border-transparent'}`}
                     >
                       <img src={g} alt="" className="w-full h-full object-cover" />
                     </button>
@@ -135,7 +135,7 @@ const ProductModal = ({ product, onClose }) => {
                   <ul className="space-y-1">
                     {product.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
-                        <Check size={16} className="text-[#EA6A1E] flex-shrink-0 mt-0.5" />
+                        <Check size={16} className="text-[#B91C1C] flex-shrink-0 mt-0.5" />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -186,7 +186,7 @@ const ProductModal = ({ product, onClose }) => {
                   <Link
                     to={`/ar-visualizer?product=${product.id}`}
                     onClick={onClose}
-                    className="group inline-flex items-center justify-center gap-2 bg-[#EA6A1E] hover:bg-red-700 text-white font-bold uppercase tracking-wide text-sm px-5 py-2.5 rounded shadow transition-all hover:scale-[1.02]"
+                    className="group inline-flex items-center justify-center gap-2 bg-[#B91C1C] hover:bg-red-700 text-white font-bold uppercase tracking-wide text-sm px-5 py-2.5 rounded shadow transition-all hover:scale-[1.02]"
                     data-testid={`nrs-ar-button-${product.id}`}
                   >
                     <Camera size={16} />
@@ -203,7 +203,7 @@ const ProductModal = ({ product, onClose }) => {
                 </p>
                 <a
                   href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}
-                  className="w-full bg-[#EA6A1E] hover:bg-[#C4551A] text-white font-bold py-3 px-6 uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-2"
+                  className="w-full bg-[#B91C1C] hover:bg-[#991B1B] text-white font-bold py-3 px-6 uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-2"
                 >
                   <Phone size={18} /> Call {CONTACT.phone}
                 </a>
@@ -248,17 +248,17 @@ const ProductCard = ({ product, onClick }) => (
       <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-1">
         {product.name}
       </h3>
-      <p className="text-xl font-bold text-[#EA6A1E] mb-3">{product.price}</p>
+      <p className="text-xl font-bold text-[#B91C1C] mb-3">{product.price}</p>
       <p className="text-sm text-slate-600 line-clamp-2 mb-4">{product.description}</p>
       <button
-        className="w-full bg-[#0A1628] text-white py-2 font-bold uppercase tracking-wider text-sm hover:bg-[#EA6A1E] transition-colors"
+        className="w-full bg-[#0A1628] text-white py-2 font-bold uppercase tracking-wider text-sm hover:bg-[#B91C1C] transition-colors"
       >
         View Details
       </button>
       <Link
         to={`/ar-visualizer?product=${product.id}`}
         onClick={(e) => e.stopPropagation()}
-        className="mt-2 w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0A1628] to-[#122b4f] border border-[#D4AF37]/40 text-white py-2 px-3 font-bold uppercase tracking-wider text-xs hover:from-[#EA6A1E] hover:to-[#EA6A1E] transition-colors"
+        className="mt-2 w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0A1628] to-[#122b4f] border border-[#D4AF37]/40 text-white py-2 px-3 font-bold uppercase tracking-wider text-xs hover:from-[#B91C1C] hover:to-[#B91C1C] transition-colors"
         data-testid={`nrs-card-ar-${product.id}`}
         aria-label={`Visualize the ${product.name} in AR`}
       >

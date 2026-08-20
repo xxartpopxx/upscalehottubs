@@ -132,7 +132,7 @@ const ColorSelector = ({
                 >
                   <div className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
                     isSelected
-                      ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E] ring-offset-2' 
+                      ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-2' 
                       : 'border-slate-200 hover:border-slate-400'
                   }`}>
                     {color.image ? (
@@ -152,13 +152,13 @@ const ColorSelector = ({
                       <motion.div 
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute inset-0 bg-[#EA6A1E]/20 flex items-center justify-center rounded-lg"
+                        className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg"
                       >
-                        <Check className="text-[#EA6A1E]" size={24} strokeWidth={3} />
+                        <Check className="text-[#B91C1C]" size={24} strokeWidth={3} />
                       </motion.div>
                     )}
                   </div>
-                  <p className={`text-xs mt-1 text-center font-medium ${isSelected ? 'text-[#EA6A1E]' : 'text-slate-600'}`}>
+                  <p className={`text-xs mt-1 text-center font-medium ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
                     {color.name.split(' ')[0]}
                   </p>
                 </motion.button>
@@ -188,7 +188,7 @@ const ColorSelector = ({
                 >
                   <div className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
                     isSelected
-                      ? 'border-[#EA6A1E] ring-2 ring-[#EA6A1E] ring-offset-2' 
+                      ? 'border-[#B91C1C] ring-2 ring-[#B91C1C] ring-offset-2' 
                       : 'border-slate-200 hover:border-slate-400'
                   }`}>
                     {color.image ? (
@@ -208,13 +208,13 @@ const ColorSelector = ({
                       <motion.div 
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute inset-0 bg-[#EA6A1E]/20 flex items-center justify-center rounded-lg"
+                        className="absolute inset-0 bg-[#B91C1C]/20 flex items-center justify-center rounded-lg"
                       >
-                        <Check className="text-[#EA6A1E]" size={24} strokeWidth={3} />
+                        <Check className="text-[#B91C1C]" size={24} strokeWidth={3} />
                       </motion.div>
                     )}
                   </div>
-                  <p className={`text-xs mt-1 text-center font-medium ${isSelected ? 'text-[#EA6A1E]' : 'text-slate-600'}`}>
+                  <p className={`text-xs mt-1 text-center font-medium ${isSelected ? 'text-[#B91C1C]' : 'text-slate-600'}`}>
                     {color.name.split(' ')[0]}
                   </p>
                 </motion.button>

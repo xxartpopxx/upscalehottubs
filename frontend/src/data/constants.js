@@ -66,7 +66,7 @@ export const BUYERS_GUIDES = [
     description: 'Everything you need to know before purchasing a hot tub — sizing, features, hydrotherapy benefits, energy efficiency, and budget tips.',
     file: '/brochures/Leisure-Wellness-Naples-Hot-Tub-Buying-Guide.pdf',
     cover: 'https://customer-assets.emergentagent.com/job_368729df-d6bb-4b62-9b0c-cb186aa3bff7/artifacts/f6vovx3o_leisure-wellness-naples-hot-tub-buying-guide.pdf.pdf',
-    accent: '#EA6A1E'
+    accent: '#B91C1C'
   },
   {
     id: 'sauna-guide',

@@ -62,11 +62,11 @@ const FinancingPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 + index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }} 
-              className="bg-white border-2 border-slate-200 p-8 hover:border-[#EA6A1E] hover:shadow-xl transition-all text-center block rounded-xl"
+              className="bg-white border-2 border-slate-200 p-8 hover:border-[#B91C1C] hover:shadow-xl transition-all text-center block rounded-xl"
             >
               <h3 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold text-[#0A1628] mb-4">{fin.name}</h3>
               <p className="text-slate-600 mb-6 text-lg">{fin.desc}</p>
-              <span className="inline-flex items-center gap-2 bg-[#EA6A1E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#C4551A] transition-colors">
+              <span className="inline-flex items-center gap-2 bg-[#B91C1C] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#991B1B] transition-colors">
                 Apply Now <ChevronRight size={22} />
               </span>
             </motion.a>

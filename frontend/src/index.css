@@ -24,11 +24,11 @@
   --primary: #0A1628;
   --primary-light: #1B2B45;
   --primary-dark: #050B14;
-  --secondary: #EA6A1E;
-  --secondary-light: #F5811F;
-  --secondary-dark: #C4551A;
-  --patriot-blue: #1E6FB2;
-  --patriot-red: #EA6A1E;
+  --secondary: #B91C1C;
+  --secondary-light: #DC2626;
+  --secondary-dark: #991B1B;
+  --patriot-blue: #1E40AF;
+  --patriot-red: #B91C1C;
   --background: #FFFFFF;
   --background-alt: #F8FAFC;
   --background-subtle: #F1F5F9;
@@ -229,7 +229,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary:hover {
   background-color: var(--secondary-light);
   transform: scale(1.02);
-  box-shadow: 0 10px 40px rgba(234, 106, 30, 0.3);
+  box-shadow: 0 10px 40px rgba(185, 28, 28, 0.3);
 }
 
 .btn-secondary {

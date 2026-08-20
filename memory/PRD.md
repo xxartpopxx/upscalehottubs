@@ -121,3 +121,15 @@ Single source of truth for the title, description, breadcrumb chain, and (option
 - **index.html**: fixed description (removed "(formerly Upstate Hot Tubs)"), removed JSON-LD `alternateName: "Formerly Upstate Hot Tubs"`, and pointed og:image / twitter:image / JSON-LD image+logo to `https://www.upstatehottubs.com/logo.png`.
 - Left untouched (intentional): hyphenated buyer's-guide file paths/asset URLs (`/brochures/Leisure-Wellness-Naples-*.pdf` and their emergent cover URLs) since those are real hosted files — renaming would 404.
 - Verified: zero "Leisure Wellness" strings remain in src/scripts/public; homepage header+footer show Upstate badge; announcement + footer copyright correct.
+
+## Changelog — 2025-07 Removed orange, restored original red/white/blue
+- Owner request: "no orange. original blue and original upstate logo on top nav and footer."
+- Reversed the entire Leisure-Wellness color remap back to the ORIGINAL patriotic palette across 35 files (src + public):
+  - #EA6A1E→#B91C1C, #A8481A→#7F1D1D, #C4551A→#991B1B, #F5811F→#DC2626 (all orange → original red)
+  - #1E6FB2→#1E40AF (rebrand blue → ORIGINAL blue)
+  - Also fixed non-hex orange: `rgba(234,106,30,*)`→`rgba(185,28,28,*)` in WellnessExpertsBanner.jsx, App.css, index.css; and index.html theme-color/critical CSS.
+  - Converted leftover Tailwind `orange-*` utility classes → `red-*` (MembershipPage "Fire & Ice" gradients, ProductDetailPage compare indicator, SaunasPage heater badges). Kept `amber-*` (gold/wood tones — not orange).
+- Logo: original Upstate "Made in the USA" badge (`/logo.png`) confirmed in top nav + footer.
+- Only remaining orange is inside the raster "Fire & Ice Society" logo image on /membership (literal fire artwork — not a CSS theme color).
+- Verified via screenshots: homepage, wellness banner (now red→navy), and membership page all render red/white/blue with the Upstate logo.
+- NOTE/open question: interpreted "original blue" as restoring the ORIGINAL red+blue patriotic scheme (matching the red/white/blue logo). If owner instead wants the accent to be all-blue (no red), swap `#B91C1C`→`#1E40AF` globally.

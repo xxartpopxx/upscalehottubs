@@ -67,7 +67,7 @@ const VikingSpasPage = () => {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl">🇺🇸</span>
-              <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">American Made & Proud of It</span>
+              <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">American Made & Proud of It</span>
             </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
               Viking Spas Hot Tubs
@@ -86,7 +86,7 @@ const VikingSpasPage = () => {
             data-testid="viking-warranty-section"
           >
             <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold uppercase mb-3">
-              Industry-Leading <span className="text-[#EA6A1E]">Warranty</span>
+              Industry-Leading <span className="text-[#B91C1C]">Warranty</span>
             </h2>
             <p className="text-white/80 max-w-4xl mb-8 leading-relaxed">
               Viking Spas stands behind their products with industry-leading warranty coverage. Your
@@ -101,8 +101,8 @@ const VikingSpasPage = () => {
                 { icon: Clock, title: '3 Year Cover', desc: 'Your spa cover is protected for 3 full years.' },
               ].map((w) => (
                 <div key={w.title} className="bg-white/5 border border-white/10 rounded-xl p-5">
-                  <div className="w-12 h-12 rounded-full bg-[#EA6A1E]/15 flex items-center justify-center mb-3">
-                    <w.icon className="text-[#EA6A1E]" size={24} />
+                  <div className="w-12 h-12 rounded-full bg-[#B91C1C]/15 flex items-center justify-center mb-3">
+                    <w.icon className="text-[#B91C1C]" size={24} />
                   </div>
                   <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mb-1">{w.title}</h3>
                   <p className="text-sm text-white/70 leading-relaxed">{w.desc}</p>
@@ -143,7 +143,7 @@ const VikingSpasPage = () => {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center gap-2 px-4 py-2 border-2 font-semibold transition-colors ${
                   showFilters || activeFilterCount > 0
-                    ? 'border-[#EA6A1E] text-[#EA6A1E] bg-red-50'
+                    ? 'border-[#B91C1C] text-[#B91C1C] bg-red-50'
                     : 'border-slate-300 text-slate-700 hover:border-slate-400'
                 }`}
                 data-testid="filter-toggle"
@@ -151,7 +151,7 @@ const VikingSpasPage = () => {
                 <Filter size={18} />
                 Filters
                 {activeFilterCount > 0 && (
-                  <span className="bg-[#EA6A1E] text-white text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-[#B91C1C] text-white text-xs px-2 py-0.5 rounded-full">
                     {activeFilterCount}
                   </span>
                 )}
@@ -160,7 +160,7 @@ const VikingSpasPage = () => {
               {activeFilterCount > 0 && (
                 <button
                   onClick={clearFilters}
-                  className="text-sm text-slate-500 hover:text-[#EA6A1E] flex items-center gap-1"
+                  className="text-sm text-slate-500 hover:text-[#B91C1C] flex items-center gap-1"
                 >
                   <X size={14} /> Clear all
                 </button>
@@ -173,7 +173,7 @@ const VikingSpasPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#EA6A1E] focus:outline-none cursor-pointer"
+                  className="appearance-none bg-white border border-slate-300 px-4 py-2 pr-10 font-medium text-sm focus:border-[#B91C1C] focus:outline-none cursor-pointer"
                   data-testid="sort-select"
                 >
                   <option value="default">Sort by: Featured</option>
@@ -200,7 +200,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.minPrice}
                   onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-min-price"
                 >
                   <option value="">No Min</option>
@@ -216,7 +216,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.maxPrice}
                   onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-max-price"
                 >
                   <option value="">No Max</option>
@@ -234,7 +234,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.persons}
                   onChange={(e) => setFilters({ ...filters, persons: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-persons"
                 >
                   <option value="all">Any Size</option>
@@ -250,7 +250,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.series}
                   onChange={(e) => setFilters({ ...filters, series: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-series"
                 >
                   <option value="all">All Series</option>
@@ -266,7 +266,7 @@ const VikingSpasPage = () => {
                 <select
                   value={filters.seatingLayout}
                   onChange={(e) => setFilters({ ...filters, seatingLayout: e.target.value })}
-                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#EA6A1E] focus:outline-none"
+                  className="w-full border border-slate-300 px-3 py-2 bg-white text-sm focus:border-[#B91C1C] focus:outline-none"
                   data-testid="filter-seating"
                 >
                   <option value="all">Any Layout</option>

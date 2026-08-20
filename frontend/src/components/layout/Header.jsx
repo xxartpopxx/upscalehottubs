@@ -88,7 +88,7 @@ const Header = () => {
               href={SOCIAL_LINKS.facebook} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-[#1E6FB2] hover:text-[#EA6A1E] transition-colors"
+              className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors"
               aria-label="Facebook"
             >
               <FacebookIcon size={18} />
@@ -97,7 +97,7 @@ const Header = () => {
               href={SOCIAL_LINKS.instagram} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-[#1E6FB2] hover:text-[#EA6A1E] transition-colors"
+              className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors"
               aria-label="Instagram"
             >
               <InstagramIcon size={18} />
@@ -106,7 +106,7 @@ const Header = () => {
               href={SOCIAL_LINKS.youtube} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-[#1E6FB2] hover:text-[#EA6A1E] transition-colors"
+              className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors"
               aria-label="YouTube"
             >
               <YouTubeIcon size={18} />
@@ -122,10 +122,10 @@ const Header = () => {
               <GoogleIcon size={18} />
             </a>
           </div>
-          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#1E6FB2] hover:text-[#EA6A1E] transition-colors font-medium">
+          <a href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">
             <Phone size={14} /> {CONTACT.phone}
           </a>
-          <Link to="/contact" className="text-[#1E6FB2] hover:text-[#EA6A1E] transition-colors font-medium">Contact</Link>
+          <Link to="/contact" className="text-[#1E40AF] hover:text-[#B91C1C] transition-colors font-medium">Contact</Link>
         </div>
       </div>
 
@@ -155,8 +155,8 @@ const Header = () => {
               onMouseLeave={() => setShopDropdown(false)}
             >
               <button 
-                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#EA6A1E] transition-colors flex items-center gap-1 min-h-[44px] ${
-                  shopLinks.some(l => location.pathname === l.href) ? 'text-[#EA6A1E]' : 'text-[#0A1628]'
+                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 min-h-[44px] ${
+                  shopLinks.some(l => location.pathname === l.href) ? 'text-[#B91C1C]' : 'text-[#0A1628]'
                 }`}
                 aria-label="Shop menu"
                 aria-expanded={shopDropdown}
@@ -182,7 +182,7 @@ const Header = () => {
                           href={subLink.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-between px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#EA6A1E] transition-colors text-[#0A1628]"
+                          className="flex items-center justify-between px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors text-[#0A1628]"
                           data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
                         >
                           <span>{subLink.name}</span>
@@ -192,8 +192,8 @@ const Header = () => {
                         <Link
                           key={subLink.name}
                           to={subLink.href}
-                          className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#EA6A1E] transition-colors ${
-                            location.pathname === subLink.href ? 'text-[#EA6A1E] bg-slate-50' : 'text-[#0A1628]'
+                          className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
+                            location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
                           }`}
                           data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
                         >
@@ -213,8 +213,8 @@ const Header = () => {
               onMouseLeave={() => setDiscoverDropdown(false)}
             >
               <button 
-                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#EA6A1E] transition-colors flex items-center gap-1 min-h-[44px] ${
-                  discoverLinks.some(l => location.pathname === l.href) ? 'text-[#EA6A1E]' : 'text-[#0A1628]'
+                className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors flex items-center gap-1 min-h-[44px] ${
+                  discoverLinks.some(l => location.pathname === l.href) ? 'text-[#B91C1C]' : 'text-[#0A1628]'
                 }`}
                 aria-label="Discover menu"
                 aria-expanded={discoverDropdown}
@@ -237,8 +237,8 @@ const Header = () => {
                       <Link
                         key={subLink.name}
                         to={subLink.href}
-                        className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#EA6A1E] transition-colors ${
-                          location.pathname === subLink.href ? 'text-[#EA6A1E] bg-slate-50' : 'text-[#0A1628]'
+                        className={`block px-5 py-3 text-base font-medium hover:bg-slate-50 hover:text-[#B91C1C] transition-colors ${
+                          location.pathname === subLink.href ? 'text-[#B91C1C] bg-slate-50' : 'text-[#0A1628]'
                         }`}
                         data-testid={`nav-${subLink.name.toLowerCase().replace(/\s+/g, '-')}-link`}
                       >
@@ -253,8 +253,8 @@ const Header = () => {
             {/* Get a Brochure Link */}
             <Link 
               to="/brochures" 
-              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#EA6A1E] transition-colors ${
-                location.pathname === '/brochures' ? 'text-[#EA6A1E]' : 'text-[#0A1628]'
+              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/brochures' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
               }`}
               data-testid="nav-brochure-link"
             >
@@ -265,7 +265,7 @@ const Header = () => {
             <Link 
               to="/membership" 
               className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm transition-colors flex items-center gap-1 ${
-                location.pathname === '/membership' ? 'text-[#EA6A1E]' : 'text-[#0A1628] hover:text-[#EA6A1E]'
+                location.pathname === '/membership' ? 'text-[#B91C1C]' : 'text-[#0A1628] hover:text-[#B91C1C]'
               }`}
               data-testid="nav-membership-link"
             >
@@ -275,8 +275,8 @@ const Header = () => {
             {/* Find a Dealer / Contact Link */}
             <Link 
               to="/contact" 
-              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#EA6A1E] transition-colors ${
-                location.pathname === '/contact' ? 'text-[#EA6A1E]' : 'text-[#0A1628]'
+              className={`px-4 py-3 font-semibold uppercase tracking-wider text-sm hover:text-[#B91C1C] transition-colors ${
+                location.pathname === '/contact' ? 'text-[#B91C1C]' : 'text-[#0A1628]'
               }`}
               data-testid="nav-contact-link"
             >
@@ -317,7 +317,7 @@ const Header = () => {
               className="xl:hidden overflow-hidden bg-white"
             >
               <div className="py-4 space-y-1 max-h-[70vh] overflow-y-auto">
-                <Link to="/" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#EA6A1E]" onClick={() => setIsOpen(false)}>
+                <Link to="/" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
                   Home
                 </Link>
                 
@@ -331,7 +331,7 @@ const Header = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#EA6A1E] hover:bg-slate-50"
+                        className="flex items-center justify-between px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50"
                         onClick={() => setIsOpen(false)}
                       >
                         <span>{link.name}</span>
@@ -341,7 +341,7 @@ const Header = () => {
                       <Link 
                         key={link.name}
                         to={link.href} 
-                        className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#EA6A1E] hover:bg-slate-50" 
+                        className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
                         onClick={() => setIsOpen(false)}
                       >
                         {link.name}
@@ -351,7 +351,7 @@ const Header = () => {
                 </div>
                 
                 {/* Brochures */}
-                <Link to="/brochures" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#EA6A1E] border-t border-slate-100" onClick={() => setIsOpen(false)}>
+                <Link to="/brochures" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
                   Get a Brochure
                 </Link>
                 
@@ -362,7 +362,7 @@ const Header = () => {
                     <Link 
                       key={link.name}
                       to={link.href} 
-                      className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#EA6A1E] hover:bg-slate-50" 
+                      className="block px-6 py-3 font-medium text-lg text-[#0A1628] hover:text-[#B91C1C] hover:bg-slate-50" 
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}
@@ -371,10 +371,10 @@ const Header = () => {
                 </div>
                 
                 {/* Contact & Membership */}
-                <Link to="/membership" className="block px-4 py-3 font-semibold text-lg uppercase tracking-wider hover:text-[#EA6A1E] border-t border-slate-100" onClick={() => setIsOpen(false)}>
+                <Link to="/membership" className="block px-4 py-3 font-semibold text-lg uppercase tracking-wider hover:text-[#B91C1C] border-t border-slate-100" onClick={() => setIsOpen(false)}>
                   <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">Membership</span>
                 </Link>
-                <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#EA6A1E]" onClick={() => setIsOpen(false)}>
+                <Link to="/contact" className="block px-4 py-3 font-semibold text-[#0A1628] text-lg uppercase tracking-wider hover:text-[#B91C1C]" onClick={() => setIsOpen(false)}>
                   Contact Us
                 </Link>
                 

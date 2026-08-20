@@ -53,7 +53,7 @@ const SaunasPage = () => {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl">🇺🇸</span>
-              <span className="text-sm font-semibold text-[#EA6A1E] uppercase tracking-wider">Nordic Craftsmanship • American Service</span>
+              <span className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider">Nordic Craftsmanship • American Service</span>
             </div>
             <h1 className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
               Shop Our Saunas
@@ -85,7 +85,7 @@ const SaunasPage = () => {
                     data-testid={`filter-${cat.id}`}
                     className={`flex items-center gap-2 px-4 py-2.5 font-semibold text-sm uppercase tracking-wider transition-all ${
                       activeCategory === cat.id
-                        ? 'bg-[#EA6A1E] text-white shadow-lg'
+                        ? 'bg-[#B91C1C] text-white shadow-lg'
                         : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
                     }`}
                   >
@@ -122,7 +122,7 @@ const SaunasPage = () => {
             className="mt-20"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
                 <Flame className="text-white" size={24} />
               </div>
               <div>
@@ -148,24 +148,24 @@ const SaunasPage = () => {
                     />
                   </div>
                   <div className="p-5">
-                    <p className="text-xs text-[#EA6A1E] font-semibold uppercase tracking-wider mb-1">{heater.brand}</p>
+                    <p className="text-xs text-[#B91C1C] font-semibold uppercase tracking-wider mb-1">{heater.brand}</p>
                     <h3 className="font-['Barlow_Condensed'] text-xl font-bold text-[#0A1628] mb-2">{heater.name}</h3>
                     <p className="text-sm text-slate-600 mb-3 line-clamp-2">{heater.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-lg font-bold text-[#EA6A1E]">{heater.price}</span>
-                      <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 font-semibold uppercase">{heater.heaterType}</span>
+                      <span className="text-lg font-bold text-[#B91C1C]">{heater.price}</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 font-semibold uppercase">{heater.heaterType}</span>
                     </div>
                     <ul className="mt-4 space-y-1">
                       {heater.features.slice(0, 3).map((feature, idx) => (
                         <li key={idx} className="text-xs text-slate-500 flex items-start gap-1">
-                          <span className="text-[#EA6A1E] mt-0.5">•</span>
+                          <span className="text-[#B91C1C] mt-0.5">•</span>
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <a 
                       href="/contact" 
-                      className="mt-4 block text-center bg-[#0A1628] hover:bg-[#EA6A1E] text-white py-2.5 font-semibold text-sm uppercase tracking-wider transition-colors"
+                      className="mt-4 block text-center bg-[#0A1628] hover:bg-[#B91C1C] text-white py-2.5 font-semibold text-sm uppercase tracking-wider transition-colors"
                     >
                       Request Quote
                     </a>
@@ -193,7 +193,7 @@ const SaunasPage = () => {
               </div>
               <a 
                 href="/contact"
-                className="bg-[#EA6A1E] hover:bg-red-700 text-white px-8 py-4 font-bold uppercase tracking-wider transition-colors whitespace-nowrap"
+                className="bg-[#B91C1C] hover:bg-red-700 text-white px-8 py-4 font-bold uppercase tracking-wider transition-colors whitespace-nowrap"
               >
                 Contact Us
               </a>

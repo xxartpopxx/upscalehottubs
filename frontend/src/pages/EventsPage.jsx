@@ -44,7 +44,7 @@ const EventsPage = () => {
             className="bg-slate-50 p-8 mb-6"
           >
             <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628] mb-2">{event.title}</h2>
-            <p className="text-lg font-semibold text-[#EA6A1E] mb-4">{event.date}</p>
+            <p className="text-lg font-semibold text-[#B91C1C] mb-4">{event.date}</p>
             <p className="text-slate-600">{event.desc}</p>
           </motion.div>
         ))}

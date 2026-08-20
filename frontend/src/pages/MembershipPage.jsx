@@ -201,9 +201,9 @@ const MembershipPage = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-red-900/40 to-orange-900/20 backdrop-blur-sm border border-red-500/30 overflow-hidden"
+                className="bg-gradient-to-br from-red-900/40 to-red-900/20 backdrop-blur-sm border border-red-500/30 overflow-hidden"
               >
-                <div className="bg-gradient-to-r from-red-600 to-orange-500 p-4">
+                <div className="bg-gradient-to-r from-red-600 to-red-500 p-4">
                   <div className="flex items-center gap-3">
                     <Thermometer className="text-white" size={28} />
                     <span className="text-white text-sm uppercase tracking-widest font-semibold">Heat for Relaxation</span>
@@ -330,8 +330,8 @@ const MembershipPage = () => {
                   className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 text-center relative"
                 >
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                    step.step === 1 ? 'bg-gradient-to-br from-red-500 to-orange-500' :
-                    step.step === 2 ? 'bg-gradient-to-br from-yellow-500 to-orange-400' :
+                    step.step === 1 ? 'bg-gradient-to-br from-red-500 to-red-500' :
+                    step.step === 2 ? 'bg-gradient-to-br from-yellow-500 to-red-400' :
                     step.step === 3 ? 'bg-gradient-to-br from-blue-500 to-cyan-500' :
                     'bg-gradient-to-br from-purple-500 to-pink-500'
                   }`}>
@@ -373,7 +373,7 @@ const MembershipPage = () => {
                     transition={{ delay: idx * 0.1 }}
                     className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 text-center hover:bg-white/15 transition-all"
                   >
-                    <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Icon className="text-white" size={28} />
                     </div>
                     <h3 className="font-bold text-white text-lg mb-2">{benefit.title}</h3>
@@ -409,7 +409,7 @@ const MembershipPage = () => {
                   className={`relative bg-white border-2 ${pkg.popular ? 'border-red-500 shadow-xl shadow-red-500/20' : 'border-slate-200'} overflow-hidden`}
                 >
                   {pkg.popular && (
-                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-orange-500 text-white text-center py-1 text-xs font-bold uppercase">
+                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-500 text-white text-center py-1 text-xs font-bold uppercase">
                       <Star className="inline-block w-3 h-3 mr-1" />
                       Most Popular
                     </div>
@@ -419,7 +419,7 @@ const MembershipPage = () => {
                     <p className="text-sm text-slate-500 mb-4">{pkg.description}</p>
                     
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-[#EA6A1E]">{pkg.price}</span>
+                      <span className="text-3xl font-bold text-[#B91C1C]">{pkg.price}</span>
                       {pkg.sessions > 1 && (
                         <span className="text-sm text-slate-500 ml-1">/ {pkg.sessions} sessions</span>
                       )}
@@ -456,8 +456,8 @@ const MembershipPage = () => {
                       href="/contact"
                       className={`block w-full text-center py-3 font-bold uppercase tracking-wider transition-colors ${
                         pkg.popular
-                          ? 'bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white'
-                          : 'bg-[#0A1628] hover:bg-[#EA6A1E] text-white'
+                          ? 'bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white'
+                          : 'bg-[#0A1628] hover:bg-[#B91C1C] text-white'
                       }`}
                     >
                       Get Started
@@ -484,7 +484,7 @@ const MembershipPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-8 py-4 font-bold uppercase tracking-wider transition-all"
+                className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 font-bold uppercase tracking-wider transition-all"
               >
                 Book a Session Today
               </a>

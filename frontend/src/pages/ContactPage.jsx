@@ -162,7 +162,7 @@ const ContactPage = () => {
             Now <span className="text-[#EA6A1E]">Online</span> — and You Save Because of It.
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            Leisure Wellness is now 100% online and shipping nationwide. With no showroom overhead, we&apos;re passing those savings straight to you with <span className="font-semibold">factory-direct pricing</span>. Order online or over the phone and we&apos;ll ship your unit <span className="font-semibold">straight to your door, anywhere in the country</span>.
+            Upstate Hot Tubs is now 100% online and shipping nationwide. With no showroom overhead, we&apos;re passing those savings straight to you with <span className="font-semibold">factory-direct pricing</span>. Order online or over the phone and we&apos;ll ship your unit <span className="font-semibold">straight to your door, anywhere in the country</span>.
           </p>
           <p className="text-slate-700 mt-3">
             Questions or ready to order?{' '}

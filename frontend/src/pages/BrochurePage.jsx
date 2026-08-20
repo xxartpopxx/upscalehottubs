@@ -178,7 +178,7 @@ const BrochurePage = () => {
   return (
     <>
       <Helmet>
-        <title>Product Brochures | Leisure Wellness</title>
+        <title>Product Brochures | Upstate Hot Tubs</title>
         <meta name="description" content="Download free product brochures for Dynasty Spas hot tubs, swim spas, and more. Get detailed specifications and features." />
       </Helmet>
 

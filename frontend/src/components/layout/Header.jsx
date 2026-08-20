@@ -136,7 +136,7 @@ const Header = () => {
           <Link to="/" className="flex items-center xl:mr-6 absolute left-1/2 -translate-x-1/2 xl:static xl:translate-x-0 z-10" data-testid="logo-link">
             <motion.img 
               src={ASSETS.transparentLogo} 
-              alt="Leisure Wellness - Home" 
+              alt="Upstate Hot Tubs - Home" 
               width="256"
               height="256"
               className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-16 md:h-20 xl:h-24' : 'h-20 md:h-28 xl:h-32'}`} 

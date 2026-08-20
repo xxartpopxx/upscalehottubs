@@ -34,10 +34,10 @@ const SaunasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Saunas & Heaters | Barrel Saunas, Infrared & Indoor Saunas | Leisure Wellness</title>
-        <meta name="description" content="Shop premium saunas including outdoor barrel saunas, indoor saunas, infrared saunas, and sauna heaters at Leisure Wellness. Nordic craftsmanship, American made and proud of it. Free in-home setup in South Carolina (shipping paid by customer)." />
-        <meta name="keywords" content="saunas, barrel saunas, infrared sauna, traditional sauna, outdoor sauna, indoor sauna, sauna heaters, HUUM, Finsauna, wellness, Leisure Wellness, ships nationwide" />
-        <meta property="og:title" content="Premium Saunas & Heaters | Leisure Wellness" />
+        <title>Saunas & Heaters | Barrel Saunas, Infrared & Indoor Saunas | Upstate Hot Tubs</title>
+        <meta name="description" content="Shop premium saunas including outdoor barrel saunas, indoor saunas, infrared saunas, and sauna heaters at Upstate Hot Tubs. Nordic craftsmanship, American made and proud of it. Free in-home setup in South Carolina (shipping paid by customer)." />
+        <meta name="keywords" content="saunas, barrel saunas, infrared sauna, traditional sauna, outdoor sauna, indoor sauna, sauna heaters, HUUM, Finsauna, wellness, Upstate Hot Tubs, ships nationwide" />
+        <meta property="og:title" content="Premium Saunas & Heaters | Upstate Hot Tubs" />
         <meta property="og:description" content="RELAX-RENEW-REPEAT. Premium saunas for your backyard oasis or indoor sanctuary." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.upstatehottubs.com/saunas" />

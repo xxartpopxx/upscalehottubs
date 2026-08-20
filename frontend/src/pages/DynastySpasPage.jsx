@@ -100,7 +100,7 @@ const DynastySpasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dynasty Spas | American Made Hot Tubs | Leisure Wellness</title>
+        <title>Dynasty Spas | American Made Hot Tubs | Upstate Hot Tubs</title>
         <meta name="description" content="Shop Dynasty Spas - American made hot tubs with 20-year shell warranty. Quality craftsmanship, RMAX insulation, and M.A.E. certified efficiency. Ships nationwide." />
         <meta name="keywords" content="Dynasty Spas, American made hot tubs, Paradise Bay, Palm Island, Coconut Bay, Caribbean Breeze, luxury hot tubs" />
       </Helmet>

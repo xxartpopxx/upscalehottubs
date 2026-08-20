@@ -1,13 +1,13 @@
 // Site-wide Constants
 
-// Leisure Wellness logo (beach / wave / sunset watercolor)
-export const OLD_LOGO = '/leisure-wellness-logo.png';
+// Upstate Hot Tubs logo (Made in the USA badge)
+export const OLD_LOGO = '/logo.png';
 
-// Leisure Wellness logo
-export const NEW_LOGO = '/leisure-wellness-logo.png';
+// Upstate Hot Tubs logo
+export const NEW_LOGO = '/logo.png';
 
-// Leisure Wellness logo (light backgrounds)
-export const TRANSPARENT_LOGO = '/leisure-wellness-logo.png';
+// Upstate Hot Tubs logo (light backgrounds)
+export const TRANSPARENT_LOGO = '/logo.png';
 
 // About Page Image (Grand Opening)
 export const ABOUT_IMAGE = 'https://customer-assets.emergentagent.com/job_ad3b0cee-ca9b-4651-9bd8-5c276c5059bb/artifacts/in0ew7x2_Untitled%20design%20%285%29.png';
@@ -46,7 +46,7 @@ export const ANNOUNCEMENT = {
   short: "Now online only — factory-direct pricing, shipped to your door nationwide.",
   headline: "Now Online Only — and You Save Because of It.",
   paragraph:
-    "Leisure Wellness is now 100% online and shipping nationwide. With no showroom and no retail overhead, we pass those savings straight to you with factory-direct pricing. Order online or over the phone and we'll ship your hot tub, swim spa, sauna or cold plunge straight to your door — anywhere in the country. Same great products, better prices.",
+    "Upstate Hot Tubs is now 100% online and shipping nationwide. With no showroom and no retail overhead, we pass those savings straight to you with factory-direct pricing. Order online or over the phone and we'll ship your hot tub, swim spa, sauna or cold plunge straight to your door — anywhere in the country. Same great products, better prices.",
 };
 
 export const SOCIAL_LINKS = {

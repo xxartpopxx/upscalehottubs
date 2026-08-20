@@ -165,7 +165,7 @@ function injectSeo(html, route) {
   const renderedDesc = descMatch && descMatch[1].trim();
   // The SPA shell description in index.html starts with this prefix
   // - if we see that we know no page-level Helmet description was set.
-  const SHELL_DESC_PREFIX = 'Leisure Wellness (formerly Upstate Hot Tubs) is now online only';
+  const SHELL_DESC_PREFIX = 'Upstate Hot Tubs (formerly Upstate Hot Tubs) is now online only';
   const usingShellDesc = renderedDesc && renderedDesc.startsWith(SHELL_DESC_PREFIX);
   const description =
     !usingShellDesc && renderedDesc && renderedDesc.length > 20

@@ -28,7 +28,7 @@ const EventsPage = () => {
           animate={{ opacity: 1, y: 0 }} 
           className="font-['Barlow_Condensed'] text-4xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4"
         >
-          Leisure Wellness Events
+          Upstate Hot Tubs Events
         </motion.h1>
         <p className="text-xl text-slate-600 mb-12">
           We believe in our community and giving back. 10% discount to First Responders, Law Enforcement, Military and Veterans.

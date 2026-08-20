@@ -253,7 +253,7 @@ const WellnessPage = () => {
           </div>
         </motion.div>
 
-        {/* Leisure Wellness Lifestyle Video */}
+        {/* Upstate Hot Tubs Lifestyle Video */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +261,7 @@ const WellnessPage = () => {
           className="mb-24"
         >
           <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl font-bold text-center text-[#0A1628] mb-4">
-            Experience the Leisure Wellness Lifestyle
+            Experience the Upstate Hot Tubs Lifestyle
           </h2>
           <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-8">
             See how customers across the country enjoy their hot tubs, saunas, cold plunges, and swim spas.

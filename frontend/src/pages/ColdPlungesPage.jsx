@@ -39,9 +39,9 @@ const ColdPlungesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Cold Plunges | Recovery & Wellness | Leisure Wellness</title>
-        <meta name="description" content="Shop professional-grade cold plunges for recovery and wellness at Leisure Wellness. Guides on recovery timing, chillers, water maintenance, and skin benefits. Ships nationwide." />
-        <meta name="keywords" content="cold plunge, ice bath, cold therapy, recovery, wellness, chiller, water maintenance, skin benefits, Leisure Wellness" />
+        <title>Cold Plunges | Recovery & Wellness | Upstate Hot Tubs</title>
+        <meta name="description" content="Shop professional-grade cold plunges for recovery and wellness at Upstate Hot Tubs. Guides on recovery timing, chillers, water maintenance, and skin benefits. Ships nationwide." />
+        <meta name="keywords" content="cold plunge, ice bath, cold therapy, recovery, wellness, chiller, water maintenance, skin benefits, Upstate Hot Tubs" />
       </Helmet>
       
       <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="cold-plunges-page">

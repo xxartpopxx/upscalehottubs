@@ -19,7 +19,7 @@ const AnnouncementBar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-x-3 leading-snug whitespace-nowrap overflow-hidden">
         <span className="font-semibold uppercase tracking-wide">
-          Formerly Upstate Hot Tubs — Now Online Only.
+          Upstate Hot Tubs — Now Online Only.
         </span>
         <a
           href={`tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`}

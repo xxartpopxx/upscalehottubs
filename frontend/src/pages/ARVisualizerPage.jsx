@@ -236,7 +236,7 @@ const ARVisualizerPage = () => {
   return (
     <>
       <Helmet>
-        <title>AR Visualizer | See Hot Tubs in Your Space | Leisure Wellness</title>
+        <title>AR Visualizer | See Hot Tubs in Your Space | Upstate Hot Tubs</title>
         <meta name="description" content="Use our AR visualizer to see how a hot tub, swim spa, or sauna would look in your backyard. Virtual placement using your phone's camera." />
       </Helmet>
 

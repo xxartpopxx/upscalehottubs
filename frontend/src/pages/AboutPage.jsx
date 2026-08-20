@@ -24,7 +24,7 @@ const GOOGLE_REVIEWS = {
     {
       name: 'John Albright',
       rating: 5,
-      text: 'Best prices and customer service around!! Highly recommend Leisure Wellness to anyone looking for quality products.',
+      text: 'Best prices and customer service around!! Highly recommend Upstate Hot Tubs to anyone looking for quality products.',
       date: 'Recent',
       photo: 'https://randomuser.me/api/portraits/men/45.jpg'
     },
@@ -45,7 +45,7 @@ const GOOGLE_REVIEWS = {
     {
       name: 'Lisa Martinez',
       rating: 5,
-      text: 'Leisure Wellness offers discounts to first responders. Great company that supports our community!',
+      text: 'Upstate Hot Tubs offers discounts to first responders. Great company that supports our community!',
       date: 'Recent',
       photo: 'https://randomuser.me/api/portraits/women/68.jpg'
     },
@@ -203,16 +203,16 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Family-Owned Wellness Company | Leisure Wellness</title>
+        <title>About Us | Family-Owned Wellness Company | Upstate Hot Tubs</title>
         <meta name="description" content="We are a family-owned business built on honesty, education, and real customer care. No high-pressure sales, transparent pricing. American-made products." />
-        <meta name="keywords" content="Leisure Wellness, family owned, American made hot tubs, buy hot tubs online, ships nationwide" />
+        <meta name="keywords" content="Upstate Hot Tubs, family owned, American made hot tubs, buy hot tubs online, ships nationwide" />
       </Helmet>
       
       <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #e8f4fc 20%, #d0e8f7 50%, #b8dcf2 80%, #a0d0ed 100%)' }} data-testid="about-page">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Grand Opening Hero Image */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
-            <img src={ASSETS.aboutImage} alt="Leisure Wellness Grand Opening" className="w-full h-auto object-contain shadow-xl" />
+            <img src={ASSETS.aboutImage} alt="Upstate Hot Tubs Grand Opening" className="w-full h-auto object-contain shadow-xl" />
           </motion.div>
           
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 mb-4">
@@ -235,7 +235,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
           
-          {/* Showroom Gallery removed — Leisure Wellness is online only, shipping nationwide. */}
+          {/* Showroom Gallery removed — Upstate Hot Tubs is online only, shipping nationwide. */}
 
           {/* Our Values */}
           <motion.div 
@@ -490,7 +490,7 @@ const AboutPage = () => {
               Hot Tub Benefits
             </h2>
             <p className="text-lg text-slate-600 mb-6">
-              Discover the many health and wellness benefits of owning a hot tub from Leisure Wellness.
+              Discover the many health and wellness benefits of owning a hot tub from Upstate Hot Tubs.
             </p>
             <div className="max-w-4xl aspect-video rounded-lg overflow-hidden shadow-2xl">
               <video 

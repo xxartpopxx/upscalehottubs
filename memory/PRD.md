@@ -112,3 +112,12 @@ Single source of truth for the title, description, breadcrumb chain, and (option
 - **Serenity saunas added** (`products.js` SAUNAS array, top): `Health Mate Serenity 1` (1-person) and `Health Mate Serenity 2` (1-2 person, from owner PDF: 48.11"W x 40.47"D x 75.67"H, 120V/15A/1630W, NEMA 5-15P, mahogany, Tecoloy heaters, 96-diode red light, smart app + Bluetooth). Brand `Health Mate`, series `Infrared Saunas`, collection `Serenity Collection`, category `infrared`, price `Call for Pricing`. Product images extracted from the Serenity 2 PDF → `/images/saunas/serenity/serenity2-{1,2,3}.png`. Serenity 1 currently reuses the S2 mahogany image as a placeholder (needs its own sheet/photo).
 - **ProductDetailPage.jsx**: Added `isHealthMate` and wired it into `isSaunaOrColdPlunge`, `isAnySauna`, and the gallery flag so Health Mate saunas render with the sauna layout + image gallery. Added a `Serenity Collection` entry to `SAUNA_COLLECTION_DEFAULTS` for the Full Specifications section.
 - **PENDING (awaiting owner PDFs)**: Wellis Spas + Arctic Spas hot tub product data (models/specs/prices/images); Serenity 1 dedicated info sheet + image; confirmed pricing for both Serenity saunas.
+
+## Changelog — 2025-07 Reverted branding back to "Upstate Hot Tubs"
+- Owner request: remove all "Leisure Wellness" branding, keep "Upstate Hot Tubs".
+- Replaced all visible "Leisure Wellness" text → "Upstate Hot Tubs" across src pages/components/data, `scripts/prerender.js`, `scripts/seo-meta.js`, `public/index.html`, `public/robots.txt` (29 files).
+- **Logo**: switched `OLD_LOGO/NEW_LOGO/TRANSPARENT_LOGO` and index.html favicon/apple-touch-icon from `/leisure-wellness-logo.png` → `/logo.png` (original Upstate "Made in the USA" circular badge, already present in `public/`).
+- **AnnouncementBar**: "Formerly Upstate Hot Tubs — Now Online Only." → "Upstate Hot Tubs — Now Online Only."
+- **index.html**: fixed description (removed "(formerly Upstate Hot Tubs)"), removed JSON-LD `alternateName: "Formerly Upstate Hot Tubs"`, and pointed og:image / twitter:image / JSON-LD image+logo to `https://www.upstatehottubs.com/logo.png`.
+- Left untouched (intentional): hyphenated buyer's-guide file paths/asset URLs (`/brochures/Leisure-Wellness-Naples-*.pdf` and their emergent cover URLs) since those are real hosted files — renaming would 404.
+- Verified: zero "Leisure Wellness" strings remain in src/scripts/public; homepage header+footer show Upstate badge; announcement + footer copyright correct.

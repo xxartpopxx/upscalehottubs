@@ -313,7 +313,7 @@ const FinalCTASection = () => (
           Ready for <span className="text-[#D4AF37]">Factory-Direct Pricing</span>?
         </h2>
         <p className="text-lg md:text-xl text-white/85 mb-8 max-w-3xl mx-auto">
-          Same trusted Leisure Wellness team, now with online-only savings. Order the unit you want and we&apos;ll ship it factory-direct, straight to your door — anywhere in the country.
+          Same trusted Upstate Hot Tubs team, now with online-only savings. Order the unit you want and we&apos;ll ship it factory-direct, straight to your door — anywhere in the country.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -690,7 +690,7 @@ const NoShowroomSection = () => (
       >
         {/* Family Owned + American Made */}
         <div className="flex items-center gap-3 md:gap-4 mb-6">
-          <img src={ASSETS.oldLogo} alt="Leisure Wellness - Made in USA" width="120" height="120" loading="lazy" className="h-16 md:h-28 lg:h-32 object-contain flex-shrink-0" />
+          <img src={ASSETS.oldLogo} alt="Upstate Hot Tubs - Made in USA" width="120" height="120" loading="lazy" className="h-16 md:h-28 lg:h-32 object-contain flex-shrink-0" />
           <div className="min-w-0 flex-1">
             <h2 className="font-['Barlow_Condensed'] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider leading-tight">
               <span className="text-white">Family Owned</span>
@@ -1522,10 +1522,10 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Leisure Wellness</title>
-        <meta name="description" content={`Leisure Wellness is online-only with factory-direct pricing. Hot tubs, swim spas, saunas & cold plunges shipped straight to your door, nationwide. Order online or call ${CONTACT.phone}.`} />
+        <title>Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs</title>
+        <meta name="description" content={`Upstate Hot Tubs is online-only with factory-direct pricing. Hot tubs, swim spas, saunas & cold plunges shipped straight to your door, nationwide. Order online or call ${CONTACT.phone}.`} />
         <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, factory direct, online only, buy online, ships nationwide, American made hot tubs, Grand River Spas, Dynasty Spas" />
-        <meta property="og:title" content="Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Leisure Wellness" />
+        <meta property="og:title" content="Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs" />
         <meta property="og:description" content="Online-only with factory-direct pricing. Order online or by phone — shipped straight to your door, anywhere in the country." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.upstatehottubs.com/" />

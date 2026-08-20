@@ -48,10 +48,10 @@ const VikingSpasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Viking Spas Hot Tubs | American Made Quality Spas | Leisure Wellness</title>
-        <meta name="description" content="Shop Viking Spas hot tubs at Leisure Wellness. American made quality hot tubs featuring Elite, Heirloom, and Element series. Live your healthiest life while enjoying a vacation everyday at home. Free setup &amp; installation in South Carolina (shipping paid by customer)." />
-        <meta name="keywords" content="Viking Spas, hot tubs, American made hot tubs, spa, wellness, Leisure Wellness, Elite Series, Heirloom Series, Element Series, ships nationwide, plug and play hot tubs" />
-        <meta property="og:title" content="Viking Spas Hot Tubs | American Made | Leisure Wellness" />
+        <title>Viking Spas Hot Tubs | American Made Quality Spas | Upstate Hot Tubs</title>
+        <meta name="description" content="Shop Viking Spas hot tubs at Upstate Hot Tubs. American made quality hot tubs featuring Elite, Heirloom, and Element series. Live your healthiest life while enjoying a vacation everyday at home. Free setup &amp; installation in South Carolina (shipping paid by customer)." />
+        <meta name="keywords" content="Viking Spas, hot tubs, American made hot tubs, spa, wellness, Upstate Hot Tubs, Elite Series, Heirloom Series, Element Series, ships nationwide, plug and play hot tubs" />
+        <meta property="og:title" content="Viking Spas Hot Tubs | American Made | Upstate Hot Tubs" />
         <meta property="og:description" content="Quality American made hot tubs from Viking Spas. Elite, Heirloom, and Element series available." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.upstatehottubs.com/viking-spas" />

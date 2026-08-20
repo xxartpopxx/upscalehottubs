@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <img src={ASSETS.transparentLogo} alt="Leisure Wellness" width="176" height="176" className="h-40 w-auto object-contain mb-6" loading="lazy" />
+            <img src={ASSETS.transparentLogo} alt="Upstate Hot Tubs" width="176" height="176" className="h-40 w-auto object-contain mb-6" loading="lazy" />
             <p className="text-slate-600 text-sm leading-relaxed mb-6">
               Buy American and start living your{' '}
               <span 
@@ -133,7 +133,7 @@ const Footer = () => {
             </h3>
             <div className="text-sm text-slate-700 leading-relaxed" data-testid="footer-online-only">
               <p className="mb-2">
-                Leisure Wellness is <span className="font-bold">100% online with factory-direct pricing</span>. Order online or by phone and we ship straight to your door — <span className="font-semibold text-[#0A1628]">anywhere in the country</span>.
+                Upstate Hot Tubs is <span className="font-bold">100% online with factory-direct pricing</span>. Order online or by phone and we ship straight to your door — <span className="font-semibold text-[#0A1628]">anywhere in the country</span>.
               </p>
               <p className="text-slate-600">
                 Questions?{' '}
@@ -156,7 +156,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-[#1E6FB2]/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Leisure Wellness. All Rights Reserved.</p>
+          <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Upstate Hot Tubs. All Rights Reserved.</p>
           <p className="text-slate-500 text-sm flex items-center gap-2">
             <span className="text-base">🇺🇸</span> Proudly Made in America
           </p>

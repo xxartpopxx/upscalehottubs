@@ -88,9 +88,9 @@ const ProductDetailPage = () => {
   // Set document title - must be before any early returns
   useEffect(() => {
     if (product) {
-      document.title = `${product.name} | ${product.brand} | Leisure Wellness`;
+      document.title = `${product.name} | ${product.brand} | Upstate Hot Tubs`;
     } else {
-      document.title = 'Product Not Found | Leisure Wellness';
+      document.title = 'Product Not Found | Upstate Hot Tubs';
     }
   }, [product]);
   

@@ -281,7 +281,7 @@ const NaturalRockSpasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Natural Rock Spas | American-Made Faux Rock Hot Tubs | Leisure Wellness</title>
+        <title>Natural Rock Spas | American-Made Faux Rock Hot Tubs | Upstate Hot Tubs</title>
         <meta
           name="description"
           content="Authorized dealer for Natural Rock Spas — American-made, lightweight, stunningly realistic faux-rock hot tubs and cocktail pools. Above-ground, in-ground, semi in-ground, and cocktail pool options."

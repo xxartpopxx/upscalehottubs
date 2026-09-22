@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, GitCompare, Camera, Move, Maximize2 } from 'lucide-react';
 import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_EXTRAS, VIKING_SPAS_EXTRAS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
+import PricingPolicyBox from '../components/products/PricingPolicyBox';
 
 // Base URL for Grand River Spas visualizer images
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
@@ -120,6 +121,7 @@ const ProductDetailPage = () => {
   const isAnySauna = product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna || isHealthMate;
   const isWorldSaunaWithGallery = (isWorldSaunaGroup || isFinsauna || isHealthMate) && product?.images?.gallery && product?.images?.gallery.length > 0;
   const isSwimSpa = !!product?.length;
+  const isSpaProduct = ['Grand River Spas', 'Dynasty Spas', 'Viking Spas'].includes(product?.brand) || isSwimSpa;
   const hasColorSelector = isGrandRiver && !isSwimSpa;
   
   // No corner options unless product explicitly supports them
@@ -757,6 +759,11 @@ const ProductDetailPage = () => {
             </div>
           </div>
           
+          {/* Pricing, Shipping & Add-Ons */}
+          <div className="mb-8 max-w-3xl">
+            <PricingPolicyBox variant={isSpaProduct ? 'spa' : 'basic'} />
+          </div>
+
           {/* AR Visualizer CTA - See it in Your Space */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

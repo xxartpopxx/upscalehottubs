@@ -2770,10 +2770,10 @@ export const VIKING_SPAS_EXTRAS = [
   }
 ];
 
-// Viking Spas Free Items Note
+// Viking Spas — What's Included Note
 export const VIKING_SPAS_FREE_ITEMS = {
-  note: 'All Viking Spas come with at NO CHARGE: Free Installation, Set Up, Cover, Cover Lifter, Steps, and Chemicals. Shipping is paid separately by customer.',
-  items: ['Free Installation', 'Free Set Up', 'Free Cover', 'Free Cover Lifter', 'Free Steps', 'Free Chemicals']
+  note: 'Every Viking Spa comes with a premium insulated cover. Steps ($125), a cover lifter ($225 + installation) and start-up chemicals are available as add-ons. Shipping is not included and is calculated by your shipping address.',
+  items: ['Insulated Cover (Included)', 'Steps — $125', 'Cover Lifter — $225 + install', 'Start-Up Chemicals — priced separately']
 };
 
 // ===========================================

@@ -41,6 +41,30 @@ export const CONTACT = {
   serviceAreas: ['Ships to all 50 states', 'Factory-direct delivery', 'Fast nationwide shipping', 'Order online or by phone'],
 };
 
+// Pricing & Shipping Policy (single source of truth)
+// Shipping is NOT included on any product and is quoted by the customer's shipping address.
+// Only the insulated spa cover comes standard with a hot tub. Everything else is an add-on.
+export const PRICING_POLICY = {
+  shippingNote:
+    'Shipping is not included and is calculated by your shipping address — including on hot tubs. Contact us for an exact delivery quote.',
+  shippingShort: 'Shipping not included — quoted by your address',
+  included: [
+    {
+      label: 'Premium Insulated Spa Cover',
+      note: 'Comes standard with every hot tub',
+    },
+  ],
+  addOns: [
+    { label: 'Steps', price: '$125', note: 'Optional add-on' },
+    { label: 'Cover Lifter', price: '$225', note: '+ installation' },
+    {
+      label: 'Start-Up Chemicals',
+      price: 'Priced separately',
+      note: 'Customer supplied — not included',
+    },
+  ],
+};
+
 // Announcement messaging shown across the site (online-only / national)
 export const ANNOUNCEMENT = {
   short: "Now online only — factory-direct pricing, shipped to your door nationwide.",

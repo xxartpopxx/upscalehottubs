@@ -483,8 +483,8 @@ const TrustBadgesSection = () => (
         </div>
         <div className="flex flex-col items-center gap-0.5 p-2">
           <Truck className="w-5 h-5 text-[#1E40AF]" />
-          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Setup Included</span>
-          <span className="text-[10px] text-slate-500">Cover · Steps · Chemicals</span>
+          <span className="font-['Barlow_Condensed'] text-xs md:text-sm font-bold uppercase text-[#0A1628]">Cover Included</span>
+          <span className="text-[10px] text-slate-500">Shipping quoted by address</span>
         </div>
       </div>
     </div>
@@ -550,13 +550,13 @@ const BestWarrantySection = () => (
   </section>
 );
 
-// NEW Free Items Section - Static (no floating animation)
+// What's Included & Add-Ons Section — cover included, everything else priced
 const FreeItemsSection = () => {
-  const freeItems = [
-    { name: 'Spa Cover', image: ASSETS.freeItems.cover },
-    { name: 'Cover Lifter', image: ASSETS.freeItems.coverLifter },
-    { name: 'Steps', image: ASSETS.freeItems.steps },
-    { name: 'Chemicals', image: ASSETS.freeItems.chemicals },
+  const items = [
+    { name: 'Spa Cover', image: ASSETS.freeItems.cover, badge: 'INCLUDED', included: true },
+    { name: 'Steps', image: ASSETS.freeItems.steps, badge: '$125', included: false },
+    { name: 'Cover Lifter', image: ASSETS.freeItems.coverLifter, badge: '$225 + install', included: false },
+    { name: 'Chemicals', image: ASSETS.freeItems.chemicals, badge: 'Priced Separately', included: false },
   ];
 
   return (
@@ -569,26 +569,23 @@ const FreeItemsSection = () => {
           className="text-center mb-10"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Gift className="w-10 h-10 text-[#B91C1C]" />
+            <PackageCheck className="w-10 h-10 text-[#B91C1C]" />
             <h2 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#0A1628]">
-              <span className="text-[#B91C1C]">FREE</span> With Your Hot Tub Purchase
+              What Comes With Your <span className="text-[#B91C1C]">Hot Tub</span>
             </h2>
-            <Gift className="w-10 h-10 text-[#B91C1C]" />
+            <PackageCheck className="w-10 h-10 text-[#B91C1C]" />
           </div>
-          <p className="text-xl md:text-2xl font-bold text-[#D4AF37] mb-2">
-            Over $1,500 Value Included!
+          <p className="text-xl md:text-2xl font-bold text-[#0A1628] mb-2">
+            Every hot tub includes a premium insulated cover.
           </p>
           <p className="text-lg text-slate-600">
-            Installation • Set Up • Cover • Cover Lifter • Steps • Chemicals
-          </p>
-          <p className="text-sm text-slate-500 mt-2 italic">
-            Shipping paid separately by customer · We install at your home once delivered
+            Complete your setup with affordable add-ons — steps, a cover lifter, and start-up chemicals.
           </p>
         </motion.div>
 
-        {/* Static Product Grid - No floating animation */}
+        {/* Product Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {freeItems.map((item, idx) => (
+          {items.map((item, idx) => (
             <motion.div
               key={item.name}
               initial={{ opacity: 0, y: 50 }}
@@ -597,11 +594,10 @@ const FreeItemsSection = () => {
               transition={{ delay: idx * 0.15 }}
               className="flex flex-col items-center"
             >
-              {/* Static Container - No animation */}
               <div className="relative mb-4">
                 {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#B91C1C]/20 to-[#D4AF37]/20 rounded-full blur-xl scale-110" />
-                
+                <div className={`absolute inset-0 rounded-full blur-xl scale-110 ${item.included ? 'bg-gradient-to-r from-emerald-400/25 to-emerald-200/25' : 'bg-gradient-to-r from-[#B91C1C]/15 to-[#D4AF37]/15'}`} />
+
                 {/* Product Image */}
                 <div className="relative bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
                   <img
@@ -613,13 +609,15 @@ const FreeItemsSection = () => {
                     className="w-32 h-32 md:w-40 md:h-40 object-contain"
                   />
                 </div>
-                
-                {/* FREE Badge - Static */}
-                <div className="absolute -top-3 -right-3 bg-[#B91C1C] text-white font-bold text-sm px-3 py-1 rounded-full shadow-lg">
-                  FREE
+
+                {/* Badge - INCLUDED (green) or price (navy) */}
+                <div
+                  className={`absolute -top-3 -right-3 text-white font-bold text-xs md:text-sm px-3 py-1 rounded-full shadow-lg whitespace-nowrap ${item.included ? 'bg-emerald-600' : 'bg-[#0A1628]'}`}
+                >
+                  {item.badge}
                 </div>
               </div>
-              
+
               {/* Item Name */}
               <h3 className="font-['Barlow_Condensed'] text-lg md:text-xl font-bold uppercase text-[#0A1628] text-center">
                 {item.name}
@@ -628,29 +626,26 @@ const FreeItemsSection = () => {
           ))}
         </div>
 
-        {/* Additional Free Services */}
+        {/* Shipping / policy banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-12"
         >
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
-              <svg className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
-              </svg>
-              <span className="font-bold">Free Installation</span>
-            </div>
-            <div className="bg-[#0A1628] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
-              <svg className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
-              </svg>
-              <span className="font-bold">Free Set Up</span>
-            </div>
-            <div className="bg-amber-100 text-[#0A1628] border-2 border-amber-300 px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
-              <Truck className="w-6 h-6 text-amber-700" />
-              <span className="font-bold">Shipping Paid by Customer</span>
+          <div className="max-w-3xl mx-auto bg-amber-100 border-2 border-amber-300 text-[#0A1628] px-6 py-4 rounded-lg shadow-lg flex items-start gap-3">
+            <Truck className="w-7 h-7 text-amber-700 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold uppercase font-['Barlow_Condensed'] text-lg tracking-wide">
+                Shipping Not Included
+              </p>
+              <p className="text-sm md:text-base">
+                Shipping is calculated by your shipping address — including on hot tubs. Call{' '}
+                <a href={`tel:${CONTACT.phone}`} className="font-bold text-[#B91C1C] hover:underline">
+                  {CONTACT.phone}
+                </a>{' '}
+                for an exact delivered quote.
+              </p>
             </div>
           </div>
         </motion.div>

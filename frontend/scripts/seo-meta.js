@@ -13,7 +13,7 @@
  *   - BreadcrumbList JSON-LD (for non-root routes)
  *   - FAQPage JSON-LD (where the route has known FAQs)
  *
- * Upstate Hot Tubs is online only and ships nationwide — no local geography.
+ * Upstate Hot Tubs ships nationwide — no local geography.
  */
 
 const SITE_URL = 'https://www.upstatehottubs.com';
@@ -23,27 +23,27 @@ const SITE_URL = 'https://www.upstatehottubs.com';
 const FALLBACK_META = {
   '/': {
     title: 'Upstate Hot Tubs | Hot Tubs, Swim Spas, Saunas & Cold Plunges — Online, Shipped Nationwide',
-    description: "Upstate Hot Tubs (formerly Upstate Hot Tubs) is now online only. Shop premium American-made hot tubs, swim spas, saunas and cold plunges at factory-direct prices — shipped straight to your door, nationwide. First Responders, Military and Veterans discounts.",
+    description: "Upstate Hot Tubs (formerly Upstate Hot Tubs) ships nationwide. Shop premium American-made hot tubs, swim spas, saunas and cold plunges at great prices — shipped straight to your door, nationwide. First Responders, Military and Veterans discounts.",
     breadcrumb: null,
   },
   '/hot-tubs': {
-    title: 'American-Made Hot Tubs Online | Factory-Direct, Ships Nationwide | Upstate Hot Tubs',
-    description: "Shop premium American-made hot tubs online. Grand River Spas, Dynasty Spas and Viking Spas at factory-direct prices with cover, cover lifter, steps and starter chemicals — shipped nationwide to your door.",
+    title: 'American-Made Hot Tubs Online | Ships Nationwide | Upstate Hot Tubs',
+    description: "Shop premium American-made hot tubs online. Grand River Spas, Dynasty Spas and Viking Spas at great prices with cover, cover lifter, steps and starter chemicals — shipped nationwide to your door.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }],
   },
   '/grand-river-spas': {
     title: 'Grand River Spas | American-Made Hot Tubs Online | Upstate Hot Tubs',
-    description: "Grand River Spas — premium American-built hot tubs at factory-direct prices from Upstate Hot Tubs. Order online, full warranty, financing available, shipped nationwide.",
+    description: "Grand River Spas — premium American-built hot tubs at great prices from Upstate Hot Tubs. Order online, full warranty, financing available, shipped nationwide.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }, { name: 'Grand River Spas', url: '/grand-river-spas' }],
   },
   '/dynasty-spas': {
     title: 'Dynasty Spas | American-Made Hot Tubs Online | Upstate Hot Tubs',
-    description: "Dynasty Spas — American-built hot tubs at factory-direct prices from Upstate Hot Tubs. Quality construction, deep hydrotherapy, ordered online and shipped nationwide.",
+    description: "Dynasty Spas — American-built hot tubs at great prices from Upstate Hot Tubs. Quality construction, deep hydrotherapy, ordered online and shipped nationwide.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }, { name: 'Dynasty Spas', url: '/dynasty-spas' }],
   },
   '/swim-spas': {
-    title: 'Swim Spas Online | Factory-Direct, Ships Nationwide | Upstate Hot Tubs',
-    description: "American-made swim spas for swimming, exercise, and hydrotherapy at home. Order online from Upstate Hot Tubs at factory-direct prices — shipped straight to your door, nationwide.",
+    title: 'Swim Spas Online | Ships Nationwide | Upstate Hot Tubs',
+    description: "American-made swim spas for swimming, exercise, and hydrotherapy at home. Order online from Upstate Hot Tubs at great prices — shipped straight to your door, nationwide.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Swim Spas', url: '/swim-spas' }],
   },
   '/saunas': {
@@ -73,7 +73,7 @@ const FALLBACK_META = {
   },
   '/about': {
     title: 'About Upstate Hot Tubs | American-Made Hot Tubs Online',
-    description: "Upstate Hot Tubs (formerly Upstate Hot Tubs) is a family-run, online-only retailer of premium American-made hot tubs, swim spas, saunas and cold plunges — shipped nationwide with lifetime support.",
+    description: "Upstate Hot Tubs (formerly Upstate Hot Tubs) is a family-run retailer of premium American-made hot tubs, swim spas, saunas and cold plunges — shipped nationwide with lifetime support.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }],
   },
   '/anatomy-of-a-spa': {
@@ -113,7 +113,7 @@ const FALLBACK_META = {
   },
   '/contact': {
     title: 'Contact Upstate Hot Tubs | Order Online | (864) 837-0155',
-    description: "Questions or ready to order? Call (864) 837-0155 or email info@upstatehottubs.com. Upstate Hot Tubs is online only — factory-direct hot tubs, swim spas, saunas and cold plunges shipped nationwide.",
+    description: "Questions or ready to order? Call (864) 837-0155 or email info@upstatehottubs.com. Upstate Hot Tubs — hot tubs, swim spas, saunas and cold plunges shipped nationwide.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }],
   },
   '/hours': {
@@ -130,8 +130,8 @@ const FALLBACK_META = {
         a: 'Call (864) 837-0155 or email info@upstatehottubs.com. We are happy to help you choose the right unit and answer any questions.',
       },
       {
-        q: 'Do you have a showroom to visit?',
-        a: 'No — Upstate Hot Tubs is online only, which is exactly why our prices are lower. Order online or by phone and we ship straight to your door.',
+        q: 'How do I place an order?',
+        a: 'Order online or by phone — we make it simple, and we ship straight to your door nationwide.',
       },
       {
         q: 'Where do you ship?',

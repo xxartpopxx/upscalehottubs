@@ -127,13 +127,13 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* Online-Only Note */}
+            {/* Shipping Note */}
             <h3 className="font-['Barlow_Condensed'] text-xl font-bold uppercase mt-6 mb-4 text-[#0A1628]">
-              <span className="flex items-center gap-2"><Truck size={18} className="text-[#B91C1C]" /> Online Only · Ships Nationwide</span>
+              <span className="flex items-center gap-2"><Truck size={18} className="text-[#B91C1C]" /> Ships Nationwide</span>
             </h3>
             <div className="text-sm text-slate-700 leading-relaxed" data-testid="footer-online-only">
               <p className="mb-2">
-                Upstate Hot Tubs is <span className="font-bold">100% online with factory-direct pricing</span>. Order online or by phone and we ship straight to your door — <span className="font-semibold text-[#0A1628]">anywhere in the country</span>.
+                Upstate Hot Tubs offers <span className="font-bold">great pricing on premium wellness products</span>. Order online or by phone and we ship straight to your door — <span className="font-semibold text-[#0A1628]">anywhere in the country</span>.
               </p>
               <p className="text-slate-600">
                 Questions?{' '}

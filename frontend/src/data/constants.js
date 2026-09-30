@@ -36,9 +36,9 @@ export const ASSETS = {
 export const CONTACT = {
   phone: '(864) 837-0155',
   email: 'info@upstatehottubs.com',
-  // Online-only, ships nationwide direct from the factory.
+  // Ships nationwide.
   onlineOnly: true,
-  serviceAreas: ['Ships to all 50 states', 'Factory-direct delivery', 'Fast nationwide shipping', 'Order online or by phone'],
+  serviceAreas: ['Ships to all 50 states', 'Nationwide delivery', 'Fast nationwide shipping', 'Order online or by phone'],
 };
 
 // Pricing & Shipping Policy (single source of truth)
@@ -65,12 +65,12 @@ export const PRICING_POLICY = {
   ],
 };
 
-// Announcement messaging shown across the site (online-only / national)
+// Announcement messaging shown across the site (nationwide shipping)
 export const ANNOUNCEMENT = {
-  short: "Now online only — factory-direct pricing, shipped to your door nationwide.",
-  headline: "Now Online Only — and You Save Because of It.",
+  short: "Great prices, shipped straight to your door nationwide.",
+  headline: "Great Prices — and You Save Because of It.",
   paragraph:
-    "Upstate Hot Tubs is now 100% online and shipping nationwide. With no showroom and no retail overhead, we pass those savings straight to you with factory-direct pricing. Order online or over the phone and we'll ship your hot tub, swim spa, sauna or cold plunge straight to your door — anywhere in the country. Same great products, better prices.",
+    "Upstate Hot Tubs ships nationwide. We keep our overhead low and pass the savings straight to you. Order online or over the phone and we'll ship your hot tub, swim spa, sauna or cold plunge straight to your door — anywhere in the country. Same great products, better prices.",
 };
 
 export const SOCIAL_LINKS = {

@@ -235,7 +235,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
           
-          {/* Showroom Gallery removed — Upstate Hot Tubs is online only, shipping nationwide. */}
+          {/* Showroom Gallery removed. */}
 
           {/* Our Values */}
           <motion.div 

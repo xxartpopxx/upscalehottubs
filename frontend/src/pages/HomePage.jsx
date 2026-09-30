@@ -92,7 +92,7 @@ const ALL_PRODUCTS = [
   ...sortByPrice(COLD_PLUNGES),
 ];
 
-// Full-width Online-Only Announcement Section
+// Full-width Announcement Section
 const AnnouncementSection = () => (
   <section className="py-10 md:py-14" style={{
     background: 'linear-gradient(135deg, #B91C1C 0%, #7F1D1D 50%, #0A1628 100%)'
@@ -138,12 +138,12 @@ const HowItWorksSection = () => {
     {
       icon: Truck,
       title: 'We Deliver to Your Door',
-      desc: 'Your unit ships factory-direct, right to your property — no showroom markup along the way.',
+      desc: 'Your unit ships right to your property — no extra markup along the way.',
     },
     {
       icon: PackageCheck,
       title: 'We Ship & Stand Behind It',
-      desc: 'Your order ships factory-direct, straight to your door. We walk you through setup and back it with full warranty support.',
+      desc: 'Your order ships straight to your door. We walk you through setup and back it with full warranty support.',
     },
   ];
 
@@ -166,7 +166,7 @@ const HowItWorksSection = () => {
           <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-[#0A1628] mb-3">
             Buying From Us is <span className="text-[#B91C1C]">Simple</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-600">Same trusted team, now with online-only savings.</p>
+          <p className="text-lg md:text-xl text-slate-600">Same trusted team, now with even better savings.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -202,16 +202,16 @@ const HowItWorksSection = () => {
 const FAQSection = () => {
   const faqs = [
     {
-      q: 'Do you still have a showroom?',
-      a: "No — we're online-only, and that's exactly why our prices are lower: no showroom overhead. Order online or by phone anytime and we ship nationwide.",
+      q: 'How do I place an order?',
+      a: "Order online or by phone anytime — we make it simple, and we ship nationwide straight to your door.",
     },
     {
       q: 'Do you deliver, or just ship it?',
-      a: 'We ship your unit factory-direct, straight to your door, anywhere in the country. Freight carriers handle delivery and we walk you through everything by phone.',
+      a: 'We ship your unit straight to your door, anywhere in the country. Freight carriers handle delivery and we walk you through everything by phone.',
     },
     {
       q: 'How is the price lower than before?',
-      a: 'No showroom means no retail overhead baked into the price — we pass that straight to you as factory-direct pricing.',
+      a: 'We keep our overhead low and pass the savings straight to you — great products at great prices.',
     },
     {
       q: 'What about service and warranty?',
@@ -310,10 +310,10 @@ const FinalCTASection = () => (
         viewport={{ once: true }}
       >
         <h2 className="font-['Barlow_Condensed'] text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white mb-4">
-          Ready for <span className="text-[#D4AF37]">Factory-Direct Pricing</span>?
+          Ready for <span className="text-[#D4AF37]">Great Pricing</span>?
         </h2>
         <p className="text-lg md:text-xl text-white/85 mb-8 max-w-3xl mx-auto">
-          Same trusted Upstate Hot Tubs team, now with online-only savings. Order the unit you want and we&apos;ll ship it factory-direct, straight to your door — anywhere in the country.
+          Same trusted Upstate Hot Tubs team, now with even better savings. Order the unit you want and we&apos;ll ship it straight to your door — anywhere in the country.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -334,7 +334,7 @@ const FinalCTASection = () => (
   </section>
 );
 
-// Wet test popup removed — showroom closed while transitioning to online-only.
+// Wet test popup removed.
 const WetTestPopup = ({ isOpen, onClose }) => null;
 
 // NEW Hero Section - Video without text overlay, text below - Gradient background
@@ -426,7 +426,7 @@ const HeroSection = () => (
           </div>
           
           <h1 className="font-['Barlow_Condensed'] text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4 px-2">
-            <span className="text-[#0A1628]">Factory-Direct Hot Tubs &amp; Saunas</span>
+            <span className="text-[#0A1628]">American-Made Hot Tubs &amp; Saunas</span>
             <br className="hidden sm:inline" />
             <span className="block sm:inline"> Shipped to Your Door by the{' '}
             <span 
@@ -440,7 +440,7 @@ const HeroSection = () => (
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl font-medium mb-6 max-w-4xl mx-auto text-[#0A1628]/80">
-            Now online-only — factory-direct pricing shipped straight to your door. Order online or by phone and we&apos;ll ship your hot tub, swim spa, sauna or cold plunge anywhere in the country.
+            Great pricing shipped straight to your door. Order online or by phone and we&apos;ll ship your hot tub, swim spa, sauna or cold plunge anywhere in the country.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
@@ -453,7 +453,7 @@ const HeroSection = () => (
           </div>
           
           <p className="text-base md:text-lg font-bold text-[#B91C1C]">
-            Family owned · Online-only savings · Ships nationwide to your door
+            Family owned · Great savings · Ships nationwide to your door
           </p>
         </motion.div>
       </div>
@@ -654,7 +654,7 @@ const FreeItemsSection = () => {
   );
 };
 
-// NEW No Showroom. Lower Prices. Same Service. Section (replaces the old Wet Test section)
+// NEW Great Value. Lower Prices. Same Service. Section (replaces the old Wet Test section)
 const NoShowroomSection = () => (
   <section style={lightGradientBg} data-testid="no-showroom-section">
     <div className="flex flex-col md:flex-row items-stretch">
@@ -701,7 +701,7 @@ const NoShowroomSection = () => (
         {/* Main heading */}
         <div className="border-l-4 border-[#B91C1C] pl-5 mb-4">
           <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none mb-1 text-white">
-            No Showroom.
+            Great Value.
           </h3>
           <h3 className="font-['Barlow_Condensed'] text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none mb-1 text-[#B91C1C]">
             Lower Prices.
@@ -712,21 +712,21 @@ const NoShowroomSection = () => (
         </div>
 
         <p className="text-lg md:text-xl mb-4 text-white/90 leading-relaxed">
-          For years we ran a showroom — and like every showroom, the cost of that building was baked into every price. Now that we&apos;ve gone online-only, that overhead is gone, and we&apos;re handing the savings straight to you.
+          We keep our overhead low and run lean — so instead of extra costs getting baked into every price, the savings go straight to you.
         </p>
 
         <p className="text-lg md:text-xl mb-5 text-white/80 leading-relaxed">
-          You get true <span className="font-bold text-[#D4AF37]">factory-direct pricing</span> on hot tubs, swim spas, saunas and cold plunges — shipped straight to your door, anywhere in the country.
+          You get <span className="font-bold text-[#D4AF37]">great pricing</span> on hot tubs, swim spas, saunas and cold plunges — shipped straight to your door, anywhere in the country.
         </p>
 
         <ul className="space-y-2 mb-6 text-base md:text-lg lg:text-xl">
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span><span className="font-bold text-[#D4AF37]">Factory-direct pricing</span> — no showroom, no retail markup.</span>
+            <span><span className="font-bold text-[#D4AF37]">Great pricing</span> — low overhead, real savings for you.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
-            <span><span className="font-bold text-[#D4AF37]">Ships to your door</span> — fast, factory-direct freight nationwide.</span>
+            <span><span className="font-bold text-[#D4AF37]">Ships to your door</span> — fast freight nationwide.</span>
           </li>
           <li className="flex items-start gap-3 text-white/90">
             <div className="w-3 h-3 bg-[#B91C1C] rounded-full flex-shrink-0 mt-2" />
@@ -751,7 +751,7 @@ const NoShowroomSection = () => (
   </section>
 );
 
-// WetTestBanner removed — showroom currently unavailable while transitioning to online-only.
+// WetTestBanner removed.
 
 // NEW Resource Cards Section (like File 4 - 3 large cards) - Updated with Hot Tub/Sauna Images
 const ResourceCardsSection = () => {
@@ -1517,11 +1517,11 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs</title>
-        <meta name="description" content={`Upstate Hot Tubs is online-only with factory-direct pricing. Hot tubs, swim spas, saunas & cold plunges shipped straight to your door, nationwide. Order online or call ${CONTACT.phone}.`} />
-        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, factory direct, online only, buy online, ships nationwide, American made hot tubs, Grand River Spas, Dynasty Spas" />
-        <meta property="og:title" content="Factory-Direct Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs" />
-        <meta property="og:description" content="Online-only with factory-direct pricing. Order online or by phone — shipped straight to your door, anywhere in the country." />
+        <title>American-Made Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs</title>
+        <meta name="description" content={`Upstate Hot Tubs offers great pricing on hot tubs, swim spas, saunas & cold plunges shipped straight to your door, nationwide. Order online or call ${CONTACT.phone}.`} />
+        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, buy online, ships nationwide, American made hot tubs, Grand River Spas, Dynasty Spas" />
+        <meta property="og:title" content="American-Made Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs" />
+        <meta property="og:description" content="Great pricing on premium wellness products. Order online or by phone — shipped straight to your door, anywhere in the country." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.upstatehottubs.com/" />
       </Helmet>
@@ -1529,7 +1529,7 @@ const HomePage = () => {
       {/* 1. Hero Section - Video */}
       <HeroSection />
       
-      {/* 2. Full Online-Only Announcement */}
+      {/* 2. Full Announcement */}
       <AnnouncementSection />
       
       {/* 3. Trust Badges */}
@@ -1544,7 +1544,7 @@ const HomePage = () => {
       {/* 6. Why a Hot Tub - Side by Side with Image */}
       <WhyHotTubSection />
       
-      {/* 7. No Showroom. Lower Prices. Same Service. (replaces old Wet Test section) */}
+      {/* 7. Great Value. Lower Prices. Same Service. (replaces old Wet Test section) */}
       <NoShowroomSection />
       
       {/* 8. How It Works - 3 simple steps */}

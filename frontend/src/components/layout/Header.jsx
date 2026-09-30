@@ -76,7 +76,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white'}`}>
-      {/* Site-wide announcement (online-only) */}
+      {/* Site-wide announcement */}
       <AnnouncementBar />
       <div className={`transition-all duration-300 ${scrolled ? 'py-2' : 'py-3'}`}>
       {/* Top Bar - Contact Info & Social Media */}

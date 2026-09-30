@@ -420,7 +420,7 @@ const WellnessPage = () => {
             Start Your Wellness Journey Today
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Ready to experience the benefits of hydrotherapy at home? We&apos;re online-only with factory-direct pricing and we ship every unit straight to your door, anywhere in the country. Call us with any questions — we&apos;re happy to help you pick the right model.
+            Ready to experience the benefits of hydrotherapy at home? We offer great pricing and we ship every unit straight to your door, anywhere in the country. Call us with any questions — we&apos;re happy to help you pick the right model.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

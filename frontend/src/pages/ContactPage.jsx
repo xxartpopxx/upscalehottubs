@@ -150,7 +150,7 @@ const ContactPage = () => {
         </motion.h1>
         <p className="text-xl text-slate-600 mb-4">We&apos;re here to help! Order online or over the phone — same trusted team.</p>
 
-        {/* Online-only banner */}
+        {/* Pricing banner */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,10 +159,10 @@ const ContactPage = () => {
           data-testid="online-only-banner"
         >
           <h2 className="font-['Barlow_Condensed'] text-2xl md:text-3xl font-bold uppercase text-[#0A1628] mb-2">
-            Now <span className="text-[#B91C1C]">Online</span> — and You Save Because of It.
+            Great <span className="text-[#B91C1C]">Prices</span> — and You Save Because of It.
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            Upstate Hot Tubs is now 100% online and shipping nationwide. With no showroom overhead, we&apos;re passing those savings straight to you with <span className="font-semibold">factory-direct pricing</span>. Order online or over the phone and we&apos;ll ship your unit <span className="font-semibold">straight to your door, anywhere in the country</span>.
+            Upstate Hot Tubs ships nationwide. We keep our overhead low and pass those savings straight to you with <span className="font-semibold">great pricing</span>. Order online or over the phone and we&apos;ll ship your unit <span className="font-semibold">straight to your door, anywhere in the country</span>.
           </p>
           <p className="text-slate-700 mt-3">
             Questions or ready to order?{' '}
@@ -197,11 +197,11 @@ const ContactPage = () => {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <Tag size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
-                  <span><span className="font-semibold">Factory-direct pricing</span> — no showroom, no retail markup.</span>
+                  <span><span className="font-semibold">Great pricing</span> — low overhead, real savings for you.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Truck size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />
-                  <span><span className="font-semibold">Ships to your door</span> — fast, factory-direct freight nationwide.</span>
+                  <span><span className="font-semibold">Ships to your door</span> — fast freight nationwide.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Wrench size={20} className="text-[#B91C1C] flex-shrink-0 mt-1" />

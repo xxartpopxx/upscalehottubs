@@ -28,7 +28,7 @@ const FALLBACK_META = {
   },
   '/hot-tubs': {
     title: 'American-Made Hot Tubs Online | Ships Nationwide | Upstate Hot Tubs',
-    description: "Shop premium American-made hot tubs online. Grand River Spas, Dynasty Spas and Viking Spas at great prices with cover, cover lifter, steps and starter chemicals — shipped nationwide to your door.",
+    description: "Shop premium American-made hot tubs online. Grand River Spas and Viking Spas at great prices with cover, cover lifter, steps and starter chemicals — shipped nationwide to your door.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }],
   },
   '/grand-river-spas': {

@@ -6,11 +6,14 @@ import ProductGrid from '../components/products/ProductGrid';
 import WellnessExpertsBanner from '../components/WellnessExpertsBanner';
 
 // Preferred display order for hot tub brands
-const BRAND_ORDER = ['Grand River Spas', 'Dynasty Spas', 'Viking Spas', 'Wellis Spas', 'Arctic Spas'];
+const BRAND_ORDER = ['Grand River Spas', 'Viking Spas', 'Wellis Spas', 'Arctic Spas'];
 
-// Unique brands actually present in the HOT_TUBS data, ordered by BRAND_ORDER
+// Dynasty Spas is intentionally excluded from the Hot Tubs listing page.
+const PAGE_HOT_TUBS = HOT_TUBS.filter((p) => p.brand !== 'Dynasty Spas');
+
+// Unique brands actually present in the Hot Tubs data, ordered by BRAND_ORDER
 const ALL_BRANDS = (() => {
-  const present = Array.from(new Set(HOT_TUBS.map((p) => p.brand)));
+  const present = Array.from(new Set(PAGE_HOT_TUBS.map((p) => p.brand)));
   const ordered = BRAND_ORDER.filter((b) => present.includes(b));
   const extras = present.filter((b) => !BRAND_ORDER.includes(b));
   return [...ordered, ...extras];
@@ -31,14 +34,14 @@ const HotTubsPage = () => {
   // Get available series based on brand filter
   const availableSeries = useMemo(() => {
     const products = filters.brand === 'all'
-      ? HOT_TUBS
-      : HOT_TUBS.filter((p) => p.brand === filters.brand);
+      ? PAGE_HOT_TUBS
+      : PAGE_HOT_TUBS.filter((p) => p.brand === filters.brand);
     return getUniqueSeries(products);
   }, [filters.brand]);
 
   // Apply filters and sorting
   const filteredProducts = useMemo(() => {
-    const filtered = filterProducts(HOT_TUBS, {
+    const filtered = filterProducts(PAGE_HOT_TUBS, {
       ...filters,
       minPrice: filters.minPrice ? parseInt(filters.minPrice) : null,
       maxPrice: filters.maxPrice ? parseInt(filters.maxPrice) : null
@@ -80,7 +83,7 @@ const HotTubsPage = () => {
             Shop Our American Made Hot Tubs
           </h1>
           <p className="text-lg text-slate-600">
-            Premium quality American made hot tubs from Viking Spas, Wellis, Arctic, Grand River Spas and Dynasty Spas. Click any product to see details and customize colors!
+            Premium quality American made hot tubs from Grand River Spas and Viking Spas. Click any product to see details and customize colors!
           </p>
         </motion.div>
 

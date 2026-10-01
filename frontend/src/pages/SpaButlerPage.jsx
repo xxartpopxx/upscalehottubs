@@ -217,7 +217,7 @@ const SpaButlerPage = () => {
               />
               <img 
                 src="https://static.wixstatic.com/media/5c7c78_9685abf36e9a47debc0a79fc8151d6f1~mv2.jpg/v1/fill/w_447,h_298,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dynasty%20Spas%2C%20a%20hot%20tub%20and%20swim%20spa%20manufacturer%2C%20is%20known%20for%20its%20_reverse%20pull%20neck%20jet.jpg" 
-                alt="Dynasty Spas Service" 
+                alt="PDC Spas Service" 
                 className="w-full h-auto shadow-lg"
                 loading="lazy"
               />

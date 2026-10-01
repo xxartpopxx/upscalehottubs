@@ -1,5 +1,7 @@
 // Product Data with Color Options for Upstate Hot Tubs
-// Includes Grand River Spas and Viking Spas products
+// Includes Grand River Spas, PDC Spas and Viking Spas products
+import { PDC_SPAS_PRODUCTS, PDC_SWIM_SPAS, PDC_COLD_PLUNGES } from './pdcSpas';
+export { PDC_SPAS_PRODUCTS, PDC_SWIM_SPAS, PDC_COLD_PLUNGES, PDC_SHELL_COLORS, PDC_CABINET_COLORS } from './pdcSpas';
 
 // Base URL for Grand River Spas color visualizer images
 const GR_VISUALIZER_BASE = 'https://grandriverspas.com/wp-content/plugins/spa-visualizer/assets/dist/img';
@@ -3160,7 +3162,7 @@ export const DYNASTY_SWIM_SPAS = [
 ];
 
 // Combined Swim Spas (for backward compatibility) - Viking removed
-export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...DYNASTY_SWIM_SPAS];
+export const SWIM_SPAS = [...GRAND_RIVER_SWIM_SPAS, ...PDC_SWIM_SPAS];
 
 // Saunas and Cold Plunges
 // White Glove Installation available for all saunas: $1,500.00
@@ -3797,7 +3799,7 @@ export const SAUNAS = [
   }
 ];
 
-export const COLD_PLUNGES = [
+const COLD_PLUNGES_BASE = [
   // All-in-One Cold Plunge Systems
   {
     id: 'cp-endeavor-xl',
@@ -4319,6 +4321,9 @@ export const COLD_PLUNGES = [
     }
   }
 ];
+
+// Cold plunges on the site: non-Dynasty base plunges + PDC X-Degree plunges
+export const COLD_PLUNGES = [...COLD_PLUNGES_BASE.filter(p => p.brand !== 'Dynasty Spas'), ...PDC_COLD_PLUNGES];
 
 // ===========================================
 // WORLD SAUNA GROUP - OUTDOOR SAUNAS
@@ -6177,7 +6182,7 @@ export const ALL_PLUNGES = [...COLD_PLUNGES, ...WORLD_SAUNA_PLUNGES, ...FINSAUNA
 export const ALL_HEATERS = [...SAUNA_HEATERS, ...FINSAUNA_ALL_HEATERS];
 
 // Combined Hot Tubs (all brands)
-export const HOT_TUBS = [...GRAND_RIVER_PRODUCTS, ...DYNASTY_SPAS_PRODUCTS, ...VIKING_SPAS_PRODUCTS];
+export const HOT_TUBS = [...GRAND_RIVER_PRODUCTS, ...PDC_SPAS_PRODUCTS, ...VIKING_SPAS_PRODUCTS];
 
 // Get product by ID
 export const getProductById = (id) => {

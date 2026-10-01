@@ -28,7 +28,7 @@ const FALLBACK_META = {
   },
   '/hot-tubs': {
     title: 'American-Made Hot Tubs Online | Ships Nationwide | Upstate Hot Tubs',
-    description: "Shop premium American-made hot tubs online. Grand River Spas and Viking Spas at great prices with cover, cover lifter, steps and starter chemicals — shipped nationwide to your door.",
+    description: "Shop premium American-made hot tubs online. Grand River Spas, PDC Spas and Viking Spas at great prices with cover, cover lifter, steps and starter chemicals — shipped nationwide to your door.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }],
   },
   '/grand-river-spas': {
@@ -36,10 +36,10 @@ const FALLBACK_META = {
     description: "Grand River Spas — premium American-built hot tubs at great prices from Upstate Hot Tubs. Order online, full warranty, financing available, shipped nationwide.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }, { name: 'Grand River Spas', url: '/grand-river-spas' }],
   },
-  '/dynasty-spas': {
-    title: 'Dynasty Spas | American-Made Hot Tubs Online | Upstate Hot Tubs',
-    description: "Dynasty Spas — American-built hot tubs at great prices from Upstate Hot Tubs. Quality construction, deep hydrotherapy, ordered online and shipped nationwide.",
-    breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }, { name: 'Dynasty Spas', url: '/dynasty-spas' }],
+  '/pdc-spas': {
+    title: 'PDC Spas | American-Made Hot Tubs Online | Upstate Hot Tubs',
+    description: "PDC Spas — American-built luxury hot tubs with up to a 35-year structural warranty from Upstate Hot Tubs. Luxury, Premium and LifeStyle Series, ordered online and shipped nationwide.",
+    breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Hot Tubs', url: '/hot-tubs' }, { name: 'PDC Spas', url: '/pdc-spas' }],
   },
   '/swim-spas': {
     title: 'Swim Spas Online | Ships Nationwide | Upstate Hot Tubs',
@@ -108,7 +108,7 @@ const FALLBACK_META = {
   },
   '/brochures': {
     title: 'Hot Tub & Swim Spa Brochures | Upstate Hot Tubs',
-    description: "Download brochures for Grand River Spas, Dynasty Spas, Viking Swim Spas, saunas and cold plunges. From Upstate Hot Tubs.",
+    description: "Download brochures for Grand River Spas, PDC Spas, Viking Swim Spas, saunas and cold plunges. From Upstate Hot Tubs.",
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Brochures', url: '/brochures' }],
   },
   '/contact': {

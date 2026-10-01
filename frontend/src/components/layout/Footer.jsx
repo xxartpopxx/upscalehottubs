@@ -74,7 +74,7 @@ const Footer = () => {
             <div className="space-y-2">
               {[
                 { name: 'Grand River Spas', href: '/grand-river-spas', external: false },
-                { name: 'Dynasty Spas', href: '/dynasty-spas', external: false },
+                { name: 'PDC Spas', href: '/pdc-spas', external: false },
                 { name: 'Viking Spas', href: '/viking-spas', external: false },
                 { name: 'Natural Rock Spas', href: '/natural-rock-spas', external: false },
                 { name: 'Saunas', href: '/saunas', external: false },

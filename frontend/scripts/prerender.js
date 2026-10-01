@@ -39,7 +39,7 @@ const SITEMAP_META = {
   '/saunas': { changefreq: 'weekly', priority: '0.9' },
   '/cold-plunges': { changefreq: 'weekly', priority: '0.9' },
   '/grand-river-spas': { changefreq: 'weekly', priority: '0.8' },
-  '/dynasty-spas': { changefreq: 'weekly', priority: '0.8' },
+  '/pdc-spas': { changefreq: 'weekly', priority: '0.8' },
   '/covers': { changefreq: 'monthly', priority: '0.7' },
   '/chemicals': { changefreq: 'monthly', priority: '0.7' },
   '/wellness': { changefreq: 'monthly', priority: '0.7' },

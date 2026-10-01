@@ -292,7 +292,7 @@ const CoversPage = () => {
                             onChange={handleChange}
                             required={formData.productInterest === 'spa-cover'}
                             className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#B91C1C] focus:border-transparent outline-none transition-all"
-                            placeholder="e.g., Dynasty Spas, Grand River, etc."
+                            placeholder="e.g., PDC Spas, Grand River, etc."
                           />
                         </div>
                         <div>

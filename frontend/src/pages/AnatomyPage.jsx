@@ -21,7 +21,7 @@ const AnatomyPage = () => {
         <div className="max-w-6xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
             <h1 className="font-['Barlow_Condensed'] text-5xl md:text-6xl font-bold uppercase text-[#0A1628] mb-4">
-              Anatomy of a <span className="text-[#B91C1C]">Dynasty Spa</span>
+              Anatomy of a <span className="text-[#B91C1C]">Hot Tub</span>
             </h1>
           </motion.div>
 
@@ -29,7 +29,7 @@ const AnatomyPage = () => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mb-16">
             <img
               src="https://static.wixstatic.com/media/5c7c78_f1a379c6e46b491889daadb7eee3f16e~mv2.gif"
-              alt="Anatomy of a Dynasty Spa"
+              alt="Anatomy of a Hot Tub"
               className="w-full max-w-4xl mx-auto rounded-lg shadow-xl"
               data-testid="anatomy-diagram"
             />

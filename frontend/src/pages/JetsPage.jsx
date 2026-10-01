@@ -57,7 +57,7 @@ const JetsPage = () => {
               <div className="flex-1">
                 <h2 className="font-['Barlow_Condensed'] text-3xl font-bold mb-4">Reverse Pull Neck Jets</h2>
                 <p className="text-white/80 text-lg">
-                  Dynasty Spas is known for its "reverse pull neck jets" technology. Found in select Dynasty spa models,
+                  PDC Spas is known for its "reverse pull neck jets" technology. Found in select PDC spa models,
                   this technology is designed to provide a deep, relaxing massage to the shoulders and neck, targeting those areas specifically.
                   The jets are engineered to pull water in, creating a powerful and targeted massage effect that can relieve tension and stress.
                 </p>

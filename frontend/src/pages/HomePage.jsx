@@ -527,8 +527,8 @@ const BestWarrantySection = () => (
           All warranties include parts and labor! We have our own in-house tech!
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <Link to="/dynasty-spas#warranty" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-            <span className="text-[#D4AF37] font-bold text-lg">Dynasty Spas Warranty →</span>
+          <Link to="/pdc-spas#warranty" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+            <span className="text-[#D4AF37] font-bold text-lg">PDC Spas Warranty →</span>
           </Link>
           <Link to="/grand-river-spas#warranty" className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
             <span className="text-[#D4AF37] font-bold text-lg">Grand River Spas Warranty →</span>
@@ -823,7 +823,7 @@ const ProductCollectionSection = () => {
   const collections = [
     {
       name: 'Hot Tubs',
-      subtitle: 'Grand River & Dynasty Spas',
+      subtitle: 'PDC, Grand River & Viking Spas',
       tagline: 'Premium American Craftsmanship',
       link: '/hot-tubs',
       image: 'https://b4087952.smushcdn.com/4087952/wp-content/uploads/2025/06/GR_Chariton-2_White-Satin_CoastalGray_Side_Web.png?lossy=2&strip=1&webp=1',
@@ -964,7 +964,7 @@ const LocationCollectionSection = () => (
           </Link>
         </motion.div>
 
-        {/* Dynasty Spas */}
+        {/* PDC Spas */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -973,10 +973,10 @@ const LocationCollectionSection = () => (
           className="bg-slate-50 rounded-xl p-6 border-t-4 border-[#B91C1C] hover:shadow-lg transition-all text-center"
         >
           <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-[#0A1628] mb-2">
-            Dynasty Spas
+            PDC Spas
           </h3>
-          <p className="text-slate-600 mb-4">4 Seasons of Relaxation</p>
-          <Link to="/dynasty-spas" className="btn-primary inline-flex items-center gap-2">
+          <p className="text-slate-600 mb-4">American Made Premium Quality</p>
+          <Link to="/pdc-spas" className="btn-primary inline-flex items-center gap-2">
             Shop Now <ChevronRight size={18} />
           </Link>
         </motion.div>
@@ -1207,7 +1207,7 @@ const WhyHotTubsSection = () => (
   </section>
 );
 
-// Shop All Models Carousel - Mixed brands from Dynasty, Grand River (no Viking)
+// Shop All Models Carousel - Mixed brands from PDC, Grand River (no Viking)
 const ShopAllModelsSection = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -1215,18 +1215,18 @@ const ShopAllModelsSection = () => {
 
   // Mix products from different brands, sorted by lowest price first (excluding Viking)
   const allProducts = [...HOT_TUBS, ...SWIM_SPAS]
-    .filter(p => p.brand === 'Grand River Spas' || p.brand === 'Dynasty Spas')
+    .filter(p => p.brand === 'Grand River Spas' || p.brand === 'PDC Spas')
     .sort((a, b) => (a.priceValue || 0) - (b.priceValue || 0));
   
   // Get a mix of products from each brand
   const grandRiver = allProducts.filter(p => p.brand === 'Grand River Spas').slice(0, 8);
-  const dynasty = allProducts.filter(p => p.brand === 'Dynasty Spas').slice(0, 8);
+  const pdc = allProducts.filter(p => p.brand === 'PDC Spas').slice(0, 8);
   
   // Interleave the brands for variety
   const mixedProducts = [];
   for (let i = 0; i < 8; i++) {
     if (grandRiver[i]) mixedProducts.push(grandRiver[i]);
-    if (dynasty[i]) mixedProducts.push(dynasty[i]);
+    if (pdc[i]) mixedProducts.push(pdc[i]);
   }
 
   const checkScroll = () => {
@@ -1519,7 +1519,7 @@ const HomePage = () => {
       <Helmet>
         <title>American-Made Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs</title>
         <meta name="description" content={`Upstate Hot Tubs offers great pricing on hot tubs, swim spas, saunas & cold plunges shipped straight to your door, nationwide. Order online or call ${CONTACT.phone}.`} />
-        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, buy online, ships nationwide, American made hot tubs, Grand River Spas, Dynasty Spas" />
+        <meta name="keywords" content="hot tubs, swim spas, saunas, cold plunges, buy online, ships nationwide, American made hot tubs, Grand River Spas, PDC Spas, Viking Spas" />
         <meta property="og:title" content="American-Made Hot Tubs &amp; Saunas Shipped Nationwide | Upstate Hot Tubs" />
         <meta property="og:description" content="Great pricing on premium wellness products. Order online or by phone — shipped straight to your door, anywhere in the country." />
         <meta property="og:type" content="website" />
@@ -1559,7 +1559,7 @@ const HomePage = () => {
       {/* 11. Free Items Section */}
       <FreeItemsSection />
       
-      {/* 12. The Collection (Grand River & Dynasty) */}
+      {/* 12. The Collection (Grand River & PDC) */}
       <LocationCollectionSection />
       
       {/* 13. Product Comparison */}

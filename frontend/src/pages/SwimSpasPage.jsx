@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Filter, X, ChevronDown } from 'lucide-react';
-import { GRAND_RIVER_SWIM_SPAS, DYNASTY_SWIM_SPAS } from '../data/products';
+import { GRAND_RIVER_SWIM_SPAS, PDC_SWIM_SPAS } from '../data/products';
 import ProductGrid from '../components/products/ProductGrid';
 
 const SwimSpasPage = () => {
@@ -51,18 +51,18 @@ const SwimSpasPage = () => {
 
   // Apply filters and sorting (Viking swim spas hidden)
   const filteredGrandRiver = useMemo(() => {
-    if (filters.brand === 'dynasty') return [];
+    if (filters.brand === 'pdc') return [];
     return sortProducts(filterProducts(GRAND_RIVER_SWIM_SPAS));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters, sortBy]);
 
-  const filteredDynasty = useMemo(() => {
+  const filteredPDC = useMemo(() => {
     if (filters.brand === 'grandriver') return [];
-    return sortProducts(filterProducts(DYNASTY_SWIM_SPAS));
+    return sortProducts(filterProducts(PDC_SWIM_SPAS));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters, sortBy]);
 
-  const totalProducts = filteredGrandRiver.length + filteredDynasty.length;
+  const totalProducts = filteredGrandRiver.length + filteredPDC.length;
 
   const clearFilters = () => {
     setFilters({
@@ -79,9 +79,9 @@ const SwimSpasPage = () => {
   return (
     <>
       <Helmet>
-        <title>Swim Spas | American Made Swim Spas | Grand River & Dynasty | Upstate Hot Tubs</title>
-        <meta name="description" content="Shop American made swim spas from Grand River Spas and Dynasty Spas. Exercise, swim, and relax at home. Live your healthiest life while enjoying a vacation everyday at home. Insulated cover included; shipping quoted by your address and add-ons available." />
-        <meta name="keywords" content="swim spas, American made swim spas, Grand River swim spa, Dynasty swim spa, exercise pool, lap pool, hot tub swim spa, ships nationwide" />
+        <title>Swim Spas | American Made Swim Spas | Grand River & PDC | Upstate Hot Tubs</title>
+        <meta name="description" content="Shop American made swim spas from Grand River Spas and PDC Spas. Exercise, swim, and relax at home. Live your healthiest life while enjoying a vacation everyday at home. Insulated cover included; shipping quoted by your address and add-ons available." />
+        <meta name="keywords" content="swim spas, American made swim spas, Grand River swim spa, PDC swim spa, TruSwim, exercise pool, lap pool, hot tub swim spa, ships nationwide" />
         <meta property="og:title" content="American Made Swim Spas | Upstate Hot Tubs" />
         <meta property="og:description" content="Live your healthiest life with our premium American made swim spas. Exercise, swim, and relax at home." />
         <link rel="canonical" href="https://www.upstatehottubs.com/swim-spas" />
@@ -200,7 +200,7 @@ const SwimSpasPage = () => {
                 >
                   <option value="all">All Brands</option>
                   <option value="grandriver">Grand River Spas</option>
-                  <option value="dynasty">Dynasty Spas</option>
+                  <option value="pdc">PDC Spas</option>
                 </select>
               </div>
 
@@ -273,8 +273,8 @@ const SwimSpasPage = () => {
             </motion.div>
           )}
 
-          {/* Dynasty Spas Swim Spas Section */}
-          {filteredDynasty.length > 0 && (
+          {/* PDC Spas Swim Spas Section */}
+          {filteredPDC.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -282,9 +282,9 @@ const SwimSpasPage = () => {
               className="mb-16"
             >
               <h2 className="font-['Barlow_Condensed'] text-3xl font-bold uppercase text-[#0A1628] mb-6 pb-2 border-b-2 border-[#B91C1C]">
-                Dynasty Spas Swim Spas
+                PDC Spas Swim Spas
               </h2>
-              <ProductGrid products={filteredDynasty} linkPrefix="/products" />
+              <ProductGrid products={filteredPDC} linkPrefix="/products" />
             </motion.div>
           )}
 

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Phone, Check, Users, Droplets, Zap, Ruler, ArrowRight, Info, X, GitCompare, Camera, Move, Maximize2 } from 'lucide-react';
-import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_EXTRAS, VIKING_SPAS_EXTRAS } from '../data/products';
+import { getProductById, getRelatedModel, DYNASTY_SPAS_PRODUCTS, DYNASTY_SHELL_COLORS, DYNASTY_CABINET_COLORS, GRAND_RIVER_EXTRAS, GRAND_RIVER_PRODUCTS, SAUNA_INSTALLATION_OPTION, DYNASTY_EXTRAS, VIKING_SPAS_EXTRAS, PDC_SPAS_PRODUCTS } from '../data/products';
 import { ASSETS, CONTACT } from '../data/constants';
 import PricingPolicyBox from '../components/products/PricingPolicyBox';
 
@@ -80,6 +80,9 @@ const ProductDetailPage = () => {
     if (product.brand === 'Dynasty Spas') {
       return DYNASTY_SPAS_PRODUCTS.filter(p => p.id !== product.id);
     }
+    if (product.brand === 'PDC Spas') {
+      return PDC_SPAS_PRODUCTS.filter(p => p.id !== product.id);
+    }
     if (product.brand === 'Grand River Spas') {
       return GRAND_RIVER_PRODUCTS.filter(p => p.id !== product.id);
     }
@@ -111,6 +114,7 @@ const ProductDetailPage = () => {
   
   const isGrandRiver = product?.brand === 'Grand River Spas';
   const isDynasty = product?.brand === 'Dynasty Spas';
+  const isPDC = product?.brand === 'PDC Spas';
   const isViking = product?.brand === 'Viking Spas';
   const isWorldSaunaGroup = product?.brand === 'World Sauna Group';
   const isFinsauna = product?.brand === 'Finsauna';
@@ -121,7 +125,7 @@ const ProductDetailPage = () => {
   const isAnySauna = product?.brand === 'SaunaLife' || product?.brand === 'Finnmark Design' || isWorldSaunaGroup || isFinsauna || isHealthMate;
   const isWorldSaunaWithGallery = (isWorldSaunaGroup || isFinsauna || isHealthMate) && product?.images?.gallery && product?.images?.gallery.length > 0;
   const isSwimSpa = !!product?.length;
-  const isSpaProduct = ['Grand River Spas', 'Dynasty Spas', 'Viking Spas'].includes(product?.brand) || isSwimSpa;
+  const isSpaProduct = ['Grand River Spas', 'Dynasty Spas', 'PDC Spas', 'Viking Spas'].includes(product?.brand) || isSwimSpa;
   const hasColorSelector = isGrandRiver && !isSwimSpa;
   
   // No corner options unless product explicitly supports them
@@ -129,10 +133,10 @@ const ProductDetailPage = () => {
   
   // Determine available views based on brand - must be before early returns
   const views = useMemo(() => {
-    if (isDynasty || isSaunaOrColdPlunge || isSwimSpa) return ['side'];
+    if (isDynasty || isPDC || isSaunaOrColdPlunge || isSwimSpa) return ['side'];
     if (hasColorSelector) return ['color', 'side', 'overhead'];
     return ['side', 'overhead'];
-  }, [isDynasty, isSaunaOrColdPlunge, isSwimSpa, hasColorSelector]);
+  }, [isDynasty, isPDC, isSaunaOrColdPlunge, isSwimSpa, hasColorSelector]);
   
   const currentImage = useMemo(() => {
     if (!product) return ASSETS.logo;
@@ -148,7 +152,7 @@ const ProductDetailPage = () => {
     }
     
     // For Dynasty Spas - only show primary image
-    if (isDynasty) {
+    if (isDynasty || isPDC) {
       return product.images.primary;
     }
     
@@ -359,7 +363,7 @@ const ProductDetailPage = () => {
               </div>
               
               {/* View Tabs & Thumbnails - Only show for hot tubs with multiple views */}
-              {!isDynasty && !isSaunaOrColdPlunge && !isSwimSpa && (
+              {!isDynasty && !isPDC && !isSaunaOrColdPlunge && !isSwimSpa && (
                 <div className="flex border border-slate-200 mt-2">
                   {hasColorSelector && (
                     <button
@@ -833,8 +837,8 @@ const ProductDetailPage = () => {
             </div>
           </motion.div>
           
-          {/* Full Specifications Section (Grand River & Dynasty) */}
-          {(isGrandRiver || isDynasty) && !isSwimSpa && product.fullSpecs && (
+          {/* Full Specifications Section (Grand River, Dynasty & PDC) */}
+          {(isGrandRiver || isDynasty || isPDC) && !isSwimSpa && product.fullSpecs && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1531,8 +1535,8 @@ const ProductDetailPage = () => {
             </motion.div>
           )}
           
-          {/* Model Comparison for Dynasty Spas */}
-          {isDynasty && comparableModels.length > 0 && (
+          {/* Model Comparison for Dynasty / PDC Spas */}
+          {(isDynasty || isPDC) && comparableModels.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

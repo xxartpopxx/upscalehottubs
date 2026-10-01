@@ -335,19 +335,19 @@ const AboutPage = () => {
             <WellnessExpertsBanner variant="full" />
           </div>
           
-          {/* Dynasty Spas Video */}
+          {/* PDC Spas Video */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-6">See Dynasty Spas in Action</h2>
+            <h2 className="font-['Barlow_Condensed'] text-2xl font-bold text-[#0A1628] mb-6">See PDC Spas in Action</h2>
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full shadow-xl"
                 src="https://www.youtube.com/embed/aRDW_vz1bUw"
-                title="Dynasty Spas Video"
+                title="PDC Spas Video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -385,7 +385,7 @@ const AboutPage = () => {
               { 
                 title: 'American Jobs', 
                 icon: () => <span className="text-2xl">🇺🇸</span>,
-                text: 'The loss of American family owned manufacturing jobs over the past 15 years has had a staggering effect on the United States economy and job market. Our American made spas and swim spas products further ensure that Dynasty Spas will keep their manufacturing efforts in the United States and employ American workers.' 
+                text: 'The loss of American family owned manufacturing jobs over the past 15 years has had a staggering effect on the United States economy and job market. Our American made spas and swim spas products further ensure that PDC Spas will keep their manufacturing efforts in the United States and employ American workers.' 
               },
               { 
                 title: 'Environmental Concerns', 
@@ -395,12 +395,12 @@ const AboutPage = () => {
               { 
                 title: 'Quality', 
                 icon: Shield,
-                text: 'When you see "Made In The USA" sticker on your spa, you know that you have your hands on good quality American made spa. Dynasty Spas manufactures the spas and swim spas in the U.S. and has full control of the process from the materials being used to the way products are being constructed.' 
+                text: 'When you see "Made In The USA" sticker on your spa, you know that you have your hands on good quality American made spa. PDC Spas manufactures the spas and swim spas in the U.S. and has full control of the process from the materials being used to the way products are being constructed.' 
               },
               { 
                 title: 'Factory Service', 
                 icon: HeadphonesIcon,
-                text: 'Dynasty Spas factory service starts by everyone at Dynasty Spas treating others like they would like to be treated. Returning calls on the same day or next morning. Following up to make certain our customers are taken care of. Getting orders to customers as quickly as possible without quality compromise.' 
+                text: 'PDC Spas factory service starts by everyone at PDC Spas treating others like they would like to be treated. Returning calls on the same day or next morning. Following up to make certain our customers are taken care of. Getting orders to customers as quickly as possible without quality compromise.' 
               },
             ].map((item, idx) => (
               <motion.div 
@@ -427,9 +427,9 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="bg-[#0A1628] text-white p-8 md:p-12 mb-16"
           >
-            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold mb-6">Dynasty Spas 4 Seasons Of Benefits</h2>
+            <h2 className="font-['Barlow_Condensed'] text-3xl font-bold mb-6">PDC Spas 4 Seasons Of Benefits</h2>
             <p className="text-slate-300 mb-6">
-              Taking a spa is enjoyable all year round, but it's even more so in the winter. There is nothing better than enjoying warm and relaxing water to forget the inconveniences of the cold season and appreciate its beauty. The special insulation of Dynasty Spas allows the water to remain at a high temperature even in the coldest weather.
+              Taking a spa is enjoyable all year round, but it's even more so in the winter. There is nothing better than enjoying warm and relaxing water to forget the inconveniences of the cold season and appreciate its beauty. The special insulation of PDC Spas allows the water to remain at a high temperature even in the coldest weather.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <ul className="space-y-2 text-slate-300">
@@ -518,10 +518,10 @@ const AboutPage = () => {
               <h2 className="font-['Barlow_Condensed'] text-3xl font-bold text-[#0A1628]">M.A.E. CERTIFIED</h2>
             </div>
             <p className="text-slate-600 mb-6">
-              At Dynasty Spas, we take pride in our products. We ensure that our spas are aesthetically pleasing, have sturdy construction and are energy efficient for the end user.
+              At PDC Spas, we take pride in our products. We ensure that our spas are aesthetically pleasing, have sturdy construction and are energy efficient for the end user.
             </p>
             <p className="text-slate-600 mb-6">
-              The Dynasty Spas Modernized Appliance Efficiency Laboratory (M.A.E. Lab) is where we apply rigorous test procedures to each of our models. With high precision instruments, we verify that our spas not only maintain a consistent temperature, but also meet the energy requirements stated by the ANSI/APSP 2019 standards, as well as California Title 20.
+              The PDC Spas Modernized Appliance Efficiency Laboratory (M.A.E. Lab) is where we apply rigorous test procedures to each of our models. With high precision instruments, we verify that our spas not only maintain a consistent temperature, but also meet the energy requirements stated by the ANSI/APSP 2019 standards, as well as California Title 20.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -556,7 +556,7 @@ const AboutPage = () => {
             className="bg-[#0A1628] p-8 text-center"
           >
             <p className="text-white text-xl md:text-2xl font-['Barlow_Condensed'] uppercase tracking-wider mb-2">
-              Dynasty Spas is Proud to Make Our Innovative Spas and Swim Spas Right Here in the United States
+              PDC Spas is Proud to Make Our Innovative Spas and Swim Spas Right Here in the United States
             </p>
             <p className="text-[#D4AF37] font-semibold flex items-center justify-center gap-2">
               <span className="text-base">🇺🇸</span> American Made & Proud of It

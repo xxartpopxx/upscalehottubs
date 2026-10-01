@@ -7,7 +7,6 @@ import BuyersGuidesSection from '../components/BuyersGuidesSection';
 
 const brochures = [
   { name: '2025 Grand River Spas Full Brochure', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf', category: 'Full Catalog' },
-  { name: '2025 Dynasty Full Brochure', file: '/brochures/2025_DYNASTY_FULL_BROCHURE.pdf', category: 'Full Catalog' },
   { name: 'Family Collection', file: '/brochures/FAMILY_COLLECTION_PRODUCT_SHEET.pdf', category: 'Collection' },
   { name: 'Swim Spa Collection', file: '/brochures/SWIM_SPA_COLLECTION_PRODUCT_SHEET.pdf', category: 'Collection' },
   // Grand River Spas - Premier Series
@@ -19,24 +18,6 @@ const brochures = [
   // Grand River Spas - Eco Series
   { name: 'Sturgeon Eco', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=15', category: 'Grand River Spas' },
   { name: 'Manistee Eco', file: 'https://customer-assets.emergentagent.com/job_aqua-american/artifacts/n0tw1z76_GR-2025_Brochure_RevA_Update_E_Final_6.16_final_email.pdf#page=15', category: 'Grand River Spas' },
-  // Dynasty Spas
-  { name: 'Paradise Bay', file: '/brochures/PARADISE_BAY_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Palm Island', file: '/brochures/PALM_ISLAND_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Pleasure Cove', file: '/brochures/PLEASURE_COVE_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Coconut Bay', file: '/brochures/COCONUT_BAY_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Caribbean Breeze', file: '/brochures/CARIBBEAN_BREEZE_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Nassau Royale', file: '/brochures/NASSAU_ROYALE_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Cabana Bay', file: '/brochures/CABANA_BAY_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Ocean Breeze', file: '/brochures/OCEAN_BREEZE_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Twin Palms', file: '/brochures/TWIN_PALMS_PRODUCT_SHEET-5ab8b7c0.pdf', category: 'Dynasty Spas' },
-  { name: 'Bimini', file: '/brochures/BIMINI_2_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Sunset Cove', file: '/brochures/SUNSET_COVE_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Tranquility Harbor', file: '/brochures/TRANQUILITY_HARBOR_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Serenity Cove', file: '/brochures/SERENITY_COVE_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Seaside', file: '/brochures/SEASIDE+PRODUCT+SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Bay Bliss', file: '/brochures/BAY+BLISS+PRODUCT+SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'High Tide', file: '/brochures/HIGH+TIDE+PRODUCT+SHEET.pdf', category: 'Dynasty Spas' },
-  { name: 'Treasure Cay', file: '/brochures/TREASURE_CAY_PRODUCT_SHEET.pdf', category: 'Dynasty Spas' },
 ];
 
 const ContactForm = () => {
@@ -169,7 +150,7 @@ const ContactForm = () => {
 const BrochurePage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   
-  const categories = ['all', 'Full Catalog', 'Collection', 'Grand River Spas', 'Dynasty Spas'];
+  const categories = ['all', 'Full Catalog', 'Collection', 'Grand River Spas'];
   
   const filteredBrochures = selectedCategory === 'all' 
     ? brochures 
@@ -179,7 +160,7 @@ const BrochurePage = () => {
     <>
       <Helmet>
         <title>Product Brochures | Upstate Hot Tubs</title>
-        <meta name="description" content="Download free product brochures for Dynasty Spas hot tubs, swim spas, and more. Get detailed specifications and features." />
+        <meta name="description" content="Download free product brochures for Grand River Spas hot tubs, swim spas, and more. Get detailed specifications and features." />
       </Helmet>
 
       <div className="pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-20" style={{
